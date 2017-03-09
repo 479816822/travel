@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cn.qd.travel.dao.MdUserMapper">
+  <resultMap id="BaseResultMap" type="com.cn.qd.travel.entity.MdUser">
+    <id column="MD_USER_RECID" jdbcType="VARCHAR" property="mdUserRecid" />
+    <result column="MD_STDNAME" jdbcType="VARCHAR" property="mdStdname" />
+    <result column="MD_REF_ID" jdbcType="VARCHAR" property="mdRefId" />
+    <result column="MD_STDCODE" jdbcType="DECIMAL" property="mdStdcode" />
+    <result column="MD_ALERT_DATE" jdbcType="DATE" property="mdAlertDate" />
+    <result column="MD_ALERT_USER" jdbcType="VARCHAR" property="mdAlertUser" />
+    <result column="MD_USER_NAME" jdbcType="VARCHAR" property="mdUserName" />
+    <result column="MD_TELEPHONE" jdbcType="VARCHAR" property="mdTelephone" />
+    <result column="MD_SEX" jdbcType="VARCHAR" property="mdSex" />
+    <result column="MD_AGE" jdbcType="DECIMAL" property="mdAge" />
+    <result column="MD_CREATE_TIME" jdbcType="DATE" property="mdCreateTime" />
+    <result column="MD_PASSWORD" jdbcType="VARCHAR" property="mdPassword" />
+    <result column="MD_EMAIL" jdbcType="VARCHAR" property="mdEmail" />
+    <result column="MD_SCHOOL" jdbcType="VARCHAR" property="mdSchool" />
+    <result column="MD_IS_VIP" jdbcType="VARCHAR" property="mdIsVip" />
+    <result column="MD_LEVEL" jdbcType="VARCHAR" property="mdLevel" />
+    <result column="MD_SIGNATURE" jdbcType="VARCHAR" property="mdSignature" />
+    <result column="MD_SCORE" jdbcType="DECIMAL" property="mdScore" />
+    <result column="MD_GRADUATION_DATE" jdbcType="DATE" property="mdGraduationDate" />
+    <result column="MD_EMS_CODE" jdbcType="DECIMAL" property="mdEmsCode" />
+    <result column="MD_PRAISE" jdbcType="DECIMAL" property="mdPraise" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.cn.qd.travel.entity.MdUser">
+    <result column="MD_ICON" jdbcType="CLOB" property="mdIcon" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    MD_USER_RECID, MD_STDNAME, MD_REF_ID, MD_STDCODE, MD_ALERT_DATE, MD_ALERT_USER, MD_USER_NAME, 
+    MD_TELEPHONE, MD_SEX, MD_AGE, MD_CREATE_TIME, MD_PASSWORD, MD_EMAIL, MD_SCHOOL, MD_IS_VIP, 
+    MD_LEVEL, MD_SIGNATURE, MD_SCORE, MD_GRADUATION_DATE, MD_EMS_CODE, MD_PRAISE
+  </sql>
+  <sql id="Blob_Column_List">
+    MD_ICON
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from MD_USER
+    where MD_USER_RECID = #{mdUserRecid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from MD_USER
+    where MD_USER_RECID = #{mdUserRecid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cn.qd.travel.entity.MdUser">
+    insert into MD_USER (MD_USER_RECID, MD_STDNAME, MD_REF_ID, 
+      MD_STDCODE, MD_ALERT_DATE, MD_ALERT_USER, 
+      MD_USER_NAME, MD_TELEPHONE, MD_SEX, 
+      MD_AGE, MD_CREATE_TIME, MD_PASSWORD, 
+      MD_EMAIL, MD_SCHOOL, MD_IS_VIP, 
+      MD_LEVEL, MD_SIGNATURE, MD_SCORE, 
+      MD_GRADUATION_DATE, MD_EMS_CODE, MD_PRAISE, 
+      MD_ICON)
+    values (#{mdUserRecid,jdbcType=VARCHAR}, #{mdStdname,jdbcType=VARCHAR}, #{mdRefId,jdbcType=VARCHAR}, 
+      #{mdStdcode,jdbcType=DECIMAL}, #{mdAlertDate,jdbcType=DATE}, #{mdAlertUser,jdbcType=VARCHAR}, 
+      #{mdUserName,jdbcType=VARCHAR}, #{mdTelephone,jdbcType=VARCHAR}, #{mdSex,jdbcType=VARCHAR}, 
+      #{mdAge,jdbcType=DECIMAL}, #{mdCreateTime,jdbcType=DATE}, #{mdPassword,jdbcType=VARCHAR}, 
+      #{mdEmail,jdbcType=VARCHAR}, #{mdSchool,jdbcType=VARCHAR}, #{mdIsVip,jdbcType=VARCHAR}, 
+      #{mdLevel,jdbcType=VARCHAR}, #{mdSignature,jdbcType=VARCHAR}, #{mdScore,jdbcType=DECIMAL}, 
+      #{mdGraduationDate,jdbcType=DATE}, #{mdEmsCode,jdbcType=DECIMAL}, #{mdPraise,jdbcType=DECIMAL}, 
+      #{mdIcon,jdbcType=CLOB})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cn.qd.travel.entity.MdUser">
+    insert into MD_USER
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mdUserRecid != null">
+        MD_USER_RECID,
+      </if>
+      <if test="mdStdname != null">
+        MD_STDNAME,
+      </if>
+      <if test="mdRefId != null">
+        MD_REF_ID,
+      </if>
+      <if test="mdStdcode != null">
+        MD_STDCODE,
+      </if>
+      <if test="mdAlertDate != null">
+        MD_ALERT_DATE,
+      </if>
+      <if test="mdAlertUser != null">
+        MD_ALERT_USER,
+      </if>
+      <if test="mdUserName != null">
+        MD_USER_NAME,
+      </if>
+      <if test="mdTelephone != null">
+        MD_TELEPHONE,
+      </if>
+      <if test="mdSex != null">
+        MD_SEX,
+      </if>
+      <if test="mdAge != null">
+        MD_AGE,
+      </if>
+      <if test="mdCreateTime != null">
+        MD_CREATE_TIME,
+      </if>
+      <if test="mdPassword != null">
+        MD_PASSWORD,
+      </if>
+      <if test="mdEmail != null">
+        MD_EMAIL,
+      </if>
+      <if test="mdSchool != null">
+        MD_SCHOOL,
+      </if>
+      <if test="mdIsVip != null">
+        MD_IS_VIP,
+      </if>
+      <if test="mdLevel != null">
+        MD_LEVEL,
+      </if>
+      <if test="mdSignature != null">
+        MD_SIGNATURE,
+      </if>
+      <if test="mdScore != null">
+        MD_SCORE,
+      </if>
+      <if test="mdGraduationDate != null">
+        MD_GRADUATION_DATE,
+      </if>
+      <if test="mdEmsCode != null">
+        MD_EMS_CODE,
+      </if>
+      <if test="mdPraise != null">
+        MD_PRAISE,
+      </if>
+      <if test="mdIcon != null">
+        MD_ICON,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mdUserRecid != null">
+        #{mdUserRecid,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStdname != null">
+        #{mdStdname,jdbcType=VARCHAR},
+      </if>
+      <if test="mdRefId != null">
+        #{mdRefId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStdcode != null">
+        #{mdStdcode,jdbcType=DECIMAL},
+      </if>
+      <if test="mdAlertDate != null">
+        #{mdAlertDate,jdbcType=DATE},
+      </if>
+      <if test="mdAlertUser != null">
+        #{mdAlertUser,jdbcType=VARCHAR},
+      </if>
+      <if test="mdUserName != null">
+        #{mdUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="mdTelephone != null">
+        #{mdTelephone,jdbcType=VARCHAR},
+      </if>
+      <if test="mdSex != null">
+        #{mdSex,jdbcType=VARCHAR},
+      </if>
+      <if test="mdAge != null">
+        #{mdAge,jdbcType=DECIMAL},
+      </if>
+      <if test="mdCreateTime != null">
+        #{mdCreateTime,jdbcType=DATE},
+      </if>
+      <if test="mdPassword != null">
+        #{mdPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="mdEmail != null">
+        #{mdEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="mdSchool != null">
+        #{mdSchool,jdbcType=VARCHAR},
+      </if>
+      <if test="mdIsVip != null">
+        #{mdIsVip,jdbcType=VARCHAR},
+      </if>
+      <if test="mdLevel != null">
+        #{mdLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="mdSignature != null">
+        #{mdSignature,jdbcType=VARCHAR},
+      </if>
+      <if test="mdScore != null">
+        #{mdScore,jdbcType=DECIMAL},
+      </if>
+      <if test="mdGraduationDate != null">
+        #{mdGraduationDate,jdbcType=DATE},
+      </if>
+      <if test="mdEmsCode != null">
+        #{mdEmsCode,jdbcType=DECIMAL},
+      </if>
+      <if test="mdPraise != null">
+        #{mdPraise,jdbcType=DECIMAL},
+      </if>
+      <if test="mdIcon != null">
+        #{mdIcon,jdbcType=CLOB},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cn.qd.travel.entity.MdUser">
+    update MD_USER
+    <set>
+      <if test="mdStdname != null">
+        MD_STDNAME = #{mdStdname,jdbcType=VARCHAR},
+      </if>
+      <if test="mdRefId != null">
+        MD_REF_ID = #{mdRefId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStdcode != null">
+        MD_STDCODE = #{mdStdcode,jdbcType=DECIMAL},
+      </if>
+      <if test="mdAlertDate != null">
+        MD_ALERT_DATE = #{mdAlertDate,jdbcType=DATE},
+      </if>
+      <if test="mdAlertUser != null">
+        MD_ALERT_USER = #{mdAlertUser,jdbcType=VARCHAR},
+      </if>
+      <if test="mdUserName != null">
+        MD_USER_NAME = #{mdUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="mdTelephone != null">
+        MD_TELEPHONE = #{mdTelephone,jdbcType=VARCHAR},
+      </if>
+      <if test="mdSex != null">
+        MD_SEX = #{mdSex,jdbcType=VARCHAR},
+      </if>
+      <if test="mdAge != null">
+        MD_AGE = #{mdAge,jdbcType=DECIMAL},
+      </if>
+      <if test="mdCreateTime != null">
+        MD_CREATE_TIME = #{mdCreateTime,jdbcType=DATE},
+      </if>
+      <if test="mdPassword != null">
+        MD_PASSWORD = #{mdPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="mdEmail != null">
+        MD_EMAIL = #{mdEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="mdSchool != null">
+        MD_SCHOOL = #{mdSchool,jdbcType=VARCHAR},
+      </if>
+      <if test="mdIsVip != null">
+        MD_IS_VIP = #{mdIsVip,jdbcType=VARCHAR},
+      </if>
+      <if test="mdLevel != null">
+        MD_LEVEL = #{mdLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="mdSignature != null">
+        MD_SIGNATURE = #{mdSignature,jdbcType=VARCHAR},
+      </if>
+      <if test="mdScore != null">
+        MD_SCORE = #{mdScore,jdbcType=DECIMAL},
+      </if>
+      <if test="mdGraduationDate != null">
+        MD_GRADUATION_DATE = #{mdGraduationDate,jdbcType=DATE},
+      </if>
+      <if test="mdEmsCode != null">
+        MD_EMS_CODE = #{mdEmsCode,jdbcType=DECIMAL},
+      </if>
+      <if test="mdPraise != null">
+        MD_PRAISE = #{mdPraise,jdbcType=DECIMAL},
+      </if>
+      <if test="mdIcon != null">
+        MD_ICON = #{mdIcon,jdbcType=CLOB},
+      </if>
+    </set>
+    where MD_USER_RECID = #{mdUserRecid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.cn.qd.travel.entity.MdUser">
+    update MD_USER
+    set MD_STDNAME = #{mdStdname,jdbcType=VARCHAR},
+      MD_REF_ID = #{mdRefId,jdbcType=VARCHAR},
+      MD_STDCODE = #{mdStdcode,jdbcType=DECIMAL},
+      MD_ALERT_DATE = #{mdAlertDate,jdbcType=DATE},
+      MD_ALERT_USER = #{mdAlertUser,jdbcType=VARCHAR},
+      MD_USER_NAME = #{mdUserName,jdbcType=VARCHAR},
+      MD_TELEPHONE = #{mdTelephone,jdbcType=VARCHAR},
+      MD_SEX = #{mdSex,jdbcType=VARCHAR},
+      MD_AGE = #{mdAge,jdbcType=DECIMAL},
+      MD_CREATE_TIME = #{mdCreateTime,jdbcType=DATE},
+      MD_PASSWORD = #{mdPassword,jdbcType=VARCHAR},
+      MD_EMAIL = #{mdEmail,jdbcType=VARCHAR},
+      MD_SCHOOL = #{mdSchool,jdbcType=VARCHAR},
+      MD_IS_VIP = #{mdIsVip,jdbcType=VARCHAR},
+      MD_LEVEL = #{mdLevel,jdbcType=VARCHAR},
+      MD_SIGNATURE = #{mdSignature,jdbcType=VARCHAR},
+      MD_SCORE = #{mdScore,jdbcType=DECIMAL},
+      MD_GRADUATION_DATE = #{mdGraduationDate,jdbcType=DATE},
+      MD_EMS_CODE = #{mdEmsCode,jdbcType=DECIMAL},
+      MD_PRAISE = #{mdPraise,jdbcType=DECIMAL},
+      MD_ICON = #{mdIcon,jdbcType=CLOB}
+    where MD_USER_RECID = #{mdUserRecid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cn.qd.travel.entity.MdUser">
+    update MD_USER
+    set MD_STDNAME = #{mdStdname,jdbcType=VARCHAR},
+      MD_REF_ID = #{mdRefId,jdbcType=VARCHAR},
+      MD_STDCODE = #{mdStdcode,jdbcType=DECIMAL},
+      MD_ALERT_DATE = #{mdAlertDate,jdbcType=DATE},
+      MD_ALERT_USER = #{mdAlertUser,jdbcType=VARCHAR},
+      MD_USER_NAME = #{mdUserName,jdbcType=VARCHAR},
+      MD_TELEPHONE = #{mdTelephone,jdbcType=VARCHAR},
+      MD_SEX = #{mdSex,jdbcType=VARCHAR},
+      MD_AGE = #{mdAge,jdbcType=DECIMAL},
+      MD_CREATE_TIME = #{mdCreateTime,jdbcType=DATE},
+      MD_PASSWORD = #{mdPassword,jdbcType=VARCHAR},
+      MD_EMAIL = #{mdEmail,jdbcType=VARCHAR},
+      MD_SCHOOL = #{mdSchool,jdbcType=VARCHAR},
+      MD_IS_VIP = #{mdIsVip,jdbcType=VARCHAR},
+      MD_LEVEL = #{mdLevel,jdbcType=VARCHAR},
+      MD_SIGNATURE = #{mdSignature,jdbcType=VARCHAR},
+      MD_SCORE = #{mdScore,jdbcType=DECIMAL},
+      MD_GRADUATION_DATE = #{mdGraduationDate,jdbcType=DATE},
+      MD_EMS_CODE = #{mdEmsCode,jdbcType=DECIMAL},
+      MD_PRAISE = #{mdPraise,jdbcType=DECIMAL}
+    where MD_USER_RECID = #{mdUserRecid,jdbcType=VARCHAR}
+  </update>
+</mapper>

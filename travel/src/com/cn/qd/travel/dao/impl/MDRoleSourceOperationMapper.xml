@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cn.qd.travel.dao.MDRoleSourceOperationMapper">
+  <resultMap id="BaseResultMap" type="com.cn.qd.travel.entity.MDRoleSourceOperation">
+    <id column="MD_RECID" jdbcType="VARCHAR" property="mdRecid" />
+    <result column="MD_STDNAME" jdbcType="VARCHAR" property="mdStdname" />
+    <result column="MD_REF_ID" jdbcType="VARCHAR" property="mdRefId" />
+    <result column="MD_STDCODE" jdbcType="DECIMAL" property="mdStdcode" />
+    <result column="MD_CREATE_TIME" jdbcType="DATE" property="mdCreateTime" />
+    <result column="MD_ALERT_DATE" jdbcType="DATE" property="mdAlertDate" />
+    <result column="MD_ALERT_USER" jdbcType="VARCHAR" property="mdAlertUser" />
+    <result column="MD_LEVEL" jdbcType="DECIMAL" property="mdLevel" />
+    <result column="MD_REF_OP_RECID" jdbcType="VARCHAR" property="mdRefOpRecid" />
+    <result column="MD_REF_ROLE_RECID" jdbcType="VARCHAR" property="mdRefRoleRecid" />
+    <result column="MD_REF_SOURCE_ID" jdbcType="VARCHAR" property="mdRefSourceId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    MD_RECID, MD_STDNAME, MD_REF_ID, MD_STDCODE, MD_CREATE_TIME, MD_ALERT_DATE, MD_ALERT_USER, 
+    MD_LEVEL, MD_REF_OP_RECID, MD_REF_ROLE_RECID, MD_REF_SOURCE_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from MD_ROLE_SOURCE_OPERATION
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from MD_ROLE_SOURCE_OPERATION
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cn.qd.travel.entity.MDRoleSourceOperation">
+    insert into MD_ROLE_SOURCE_OPERATION (MD_RECID, MD_STDNAME, MD_REF_ID, 
+      MD_STDCODE, MD_CREATE_TIME, MD_ALERT_DATE, 
+      MD_ALERT_USER, MD_LEVEL, MD_REF_OP_RECID, 
+      MD_REF_ROLE_RECID, MD_REF_SOURCE_ID)
+    values (#{mdRecid,jdbcType=VARCHAR}, #{mdStdname,jdbcType=VARCHAR}, #{mdRefId,jdbcType=VARCHAR}, 
+      #{mdStdcode,jdbcType=DECIMAL}, #{mdCreateTime,jdbcType=DATE}, #{mdAlertDate,jdbcType=DATE}, 
+      #{mdAlertUser,jdbcType=VARCHAR}, #{mdLevel,jdbcType=DECIMAL}, #{mdRefOpRecid,jdbcType=VARCHAR}, 
+      #{mdRefRoleRecid,jdbcType=VARCHAR}, #{mdRefSourceId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cn.qd.travel.entity.MDRoleSourceOperation">
+    insert into MD_ROLE_SOURCE_OPERATION
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mdRecid != null">
+        MD_RECID,
+      </if>
+      <if test="mdStdname != null">
+        MD_STDNAME,
+      </if>
+      <if test="mdRefId != null">
+        MD_REF_ID,
+      </if>
+      <if test="mdStdcode != null">
+        MD_STDCODE,
+      </if>
+      <if test="mdCreateTime != null">
+        MD_CREATE_TIME,
+      </if>
+      <if test="mdAlertDate != null">
+        MD_ALERT_DATE,
+      </if>
+      <if test="mdAlertUser != null">
+        MD_ALERT_USER,
+      </if>
+      <if test="mdLevel != null">
+        MD_LEVEL,
+      </if>
+      <if test="mdRefOpRecid != null">
+        MD_REF_OP_RECID,
+      </if>
+      <if test="mdRefRoleRecid != null">
+        MD_REF_ROLE_RECID,
+      </if>
+      <if test="mdRefSourceId != null">
+        MD_REF_SOURCE_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mdRecid != null">
+        #{mdRecid,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStdname != null">
+        #{mdStdname,jdbcType=VARCHAR},
+      </if>
+      <if test="mdRefId != null">
+        #{mdRefId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStdcode != null">
+        #{mdStdcode,jdbcType=DECIMAL},
+      </if>
+      <if test="mdCreateTime != null">
+        #{mdCreateTime,jdbcType=DATE},
+      </if>
+      <if test="mdAlertDate != null">
+        #{mdAlertDate,jdbcType=DATE},
+      </if>
+      <if test="mdAlertUser != null">
+        #{mdAlertUser,jdbcType=VARCHAR},
+      </if>
+      <if test="mdLevel != null">
+        #{mdLevel,jdbcType=DECIMAL},
+      </if>
+      <if test="mdRefOpRecid != null">
+        #{mdRefOpRecid,jdbcType=VARCHAR},
+      </if>
+      <if test="mdRefRoleRecid != null">
+        #{mdRefRoleRecid,jdbcType=VARCHAR},
+      </if>
+      <if test="mdRefSourceId != null">
+        #{mdRefSourceId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cn.qd.travel.entity.MDRoleSourceOperation">
+    update MD_ROLE_SOURCE_OPERATION
+    <set>
+      <if test="mdStdname != null">
+        MD_STDNAME = #{mdStdname,jdbcType=VARCHAR},
+      </if>
+      <if test="mdRefId != null">
+        MD_REF_ID = #{mdRefId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStdcode != null">
+        MD_STDCODE = #{mdStdcode,jdbcType=DECIMAL},
+      </if>
+      <if test="mdCreateTime != null">
+        MD_CREATE_TIME = #{mdCreateTime,jdbcType=DATE},
+      </if>
+      <if test="mdAlertDate != null">
+        MD_ALERT_DATE = #{mdAlertDate,jdbcType=DATE},
+      </if>
+      <if test="mdAlertUser != null">
+        MD_ALERT_USER = #{mdAlertUser,jdbcType=VARCHAR},
+      </if>
+      <if test="mdLevel != null">
+        MD_LEVEL = #{mdLevel,jdbcType=DECIMAL},
+      </if>
+      <if test="mdRefOpRecid != null">
+        MD_REF_OP_RECID = #{mdRefOpRecid,jdbcType=VARCHAR},
+      </if>
+      <if test="mdRefRoleRecid != null">
+        MD_REF_ROLE_RECID = #{mdRefRoleRecid,jdbcType=VARCHAR},
+      </if>
+      <if test="mdRefSourceId != null">
+        MD_REF_SOURCE_ID = #{mdRefSourceId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cn.qd.travel.entity.MDRoleSourceOperation">
+    update MD_ROLE_SOURCE_OPERATION
+    set MD_STDNAME = #{mdStdname,jdbcType=VARCHAR},
+      MD_REF_ID = #{mdRefId,jdbcType=VARCHAR},
+      MD_STDCODE = #{mdStdcode,jdbcType=DECIMAL},
+      MD_CREATE_TIME = #{mdCreateTime,jdbcType=DATE},
+      MD_ALERT_DATE = #{mdAlertDate,jdbcType=DATE},
+      MD_ALERT_USER = #{mdAlertUser,jdbcType=VARCHAR},
+      MD_LEVEL = #{mdLevel,jdbcType=DECIMAL},
+      MD_REF_OP_RECID = #{mdRefOpRecid,jdbcType=VARCHAR},
+      MD_REF_ROLE_RECID = #{mdRefRoleRecid,jdbcType=VARCHAR},
+      MD_REF_SOURCE_ID = #{mdRefSourceId,jdbcType=VARCHAR}
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </update>
+</mapper>

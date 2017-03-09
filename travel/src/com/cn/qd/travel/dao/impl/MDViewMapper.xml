@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cn.qd.travel.dao.MDViewMapper">
+  <resultMap id="BaseResultMap" type="com.cn.qd.travel.entity.MDView">
+    <id column="MD_RECID" jdbcType="VARCHAR" property="mdRecid" />
+    <result column="MD_STDNAME" jdbcType="VARCHAR" property="mdStdname" />
+    <result column="MD_REF_ID" jdbcType="VARCHAR" property="mdRefId" />
+    <result column="MD_STDCODE" jdbcType="DECIMAL" property="mdStdcode" />
+    <result column="MD_CREATE_TIME" jdbcType="DATE" property="mdCreateTime" />
+    <result column="MD_ALERT_DATE" jdbcType="DATE" property="mdAlertDate" />
+    <result column="MD_ALERT_USER" jdbcType="VARCHAR" property="mdAlertUser" />
+    <result column="MD_LEVEL" jdbcType="DECIMAL" property="mdLevel" />
+    <result column="MD_VIEW_IMG" jdbcType="VARCHAR" property="mdViewImg" />
+    <result column="MD_CONTENT" jdbcType="VARCHAR" property="mdContent" />
+    <result column="MD_TELEPHONE" jdbcType="VARCHAR" property="mdTelephone" />
+    <result column="MD_COST_TIME" jdbcType="DECIMAL" property="mdCostTime" />
+    <result column="MD_TRFFIC" jdbcType="VARCHAR" property="mdTrffic" />
+    <result column="MD_TICKET" jdbcType="VARCHAR" property="mdTicket" />
+    <result column="MD_SEE_TIME" jdbcType="VARCHAR" property="mdSeeTime" />
+    <result column="MD_ADDRESS" jdbcType="VARCHAR" property="mdAddress" />
+    <result column="MD_CONTINENT" jdbcType="VARCHAR" property="mdContinent" />
+    <result column="MD_COUNTRY" jdbcType="VARCHAR" property="mdCountry" />
+    <result column="MD_PROVINCE" jdbcType="VARCHAR" property="mdProvince" />
+    <result column="MD_CITY" jdbcType="VARCHAR" property="mdCity" />
+    <result column="MD_VIEW_NAME" jdbcType="VARCHAR" property="mdViewName" />
+    <result column="MD_SORT_VIEW" jdbcType="VARCHAR" property="mdSortView" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    MD_RECID, MD_STDNAME, MD_REF_ID, MD_STDCODE, MD_CREATE_TIME, MD_ALERT_DATE, MD_ALERT_USER, 
+    MD_LEVEL, MD_VIEW_IMG, MD_CONTENT, MD_TELEPHONE, MD_COST_TIME, MD_TRFFIC, MD_TICKET, 
+    MD_SEE_TIME, MD_ADDRESS, MD_CONTINENT, MD_COUNTRY, MD_PROVINCE, MD_CITY, MD_VIEW_NAME, 
+    MD_SORT_VIEW
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from MD_VIEW
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from MD_VIEW
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cn.qd.travel.entity.MDView">
+    insert into MD_VIEW (MD_RECID, MD_STDNAME, MD_REF_ID, 
+      MD_STDCODE, MD_CREATE_TIME, MD_ALERT_DATE, 
+      MD_ALERT_USER, MD_LEVEL, MD_VIEW_IMG, 
+      MD_CONTENT, MD_TELEPHONE, MD_COST_TIME, 
+      MD_TRFFIC, MD_TICKET, MD_SEE_TIME, 
+      MD_ADDRESS, MD_CONTINENT, MD_COUNTRY, 
+      MD_PROVINCE, MD_CITY, MD_VIEW_NAME, 
+      MD_SORT_VIEW)
+    values (#{mdRecid,jdbcType=VARCHAR}, #{mdStdname,jdbcType=VARCHAR}, #{mdRefId,jdbcType=VARCHAR}, 
+      #{mdStdcode,jdbcType=DECIMAL}, #{mdCreateTime,jdbcType=DATE}, #{mdAlertDate,jdbcType=DATE}, 
+      #{mdAlertUser,jdbcType=VARCHAR}, #{mdLevel,jdbcType=DECIMAL}, #{mdViewImg,jdbcType=VARCHAR}, 
+      #{mdContent,jdbcType=VARCHAR}, #{mdTelephone,jdbcType=VARCHAR}, #{mdCostTime,jdbcType=DECIMAL}, 
+      #{mdTrffic,jdbcType=VARCHAR}, #{mdTicket,jdbcType=VARCHAR}, #{mdSeeTime,jdbcType=VARCHAR}, 
+      #{mdAddress,jdbcType=VARCHAR}, #{mdContinent,jdbcType=VARCHAR}, #{mdCountry,jdbcType=VARCHAR}, 
+      #{mdProvince,jdbcType=VARCHAR}, #{mdCity,jdbcType=VARCHAR}, #{mdViewName,jdbcType=VARCHAR}, 
+      #{mdSortView,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cn.qd.travel.entity.MDView">
+    insert into MD_VIEW
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mdRecid != null">
+        MD_RECID,
+      </if>
+      <if test="mdStdname != null">
+        MD_STDNAME,
+      </if>
+      <if test="mdRefId != null">
+        MD_REF_ID,
+      </if>
+      <if test="mdStdcode != null">
+        MD_STDCODE,
+      </if>
+      <if test="mdCreateTime != null">
+        MD_CREATE_TIME,
+      </if>
+      <if test="mdAlertDate != null">
+        MD_ALERT_DATE,
+      </if>
+      <if test="mdAlertUser != null">
+        MD_ALERT_USER,
+      </if>
+      <if test="mdLevel != null">
+        MD_LEVEL,
+      </if>
+      <if test="mdViewImg != null">
+        MD_VIEW_IMG,
+      </if>
+      <if test="mdContent != null">
+        MD_CONTENT,
+      </if>
+      <if test="mdTelephone != null">
+        MD_TELEPHONE,
+      </if>
+      <if test="mdCostTime != null">
+        MD_COST_TIME,
+      </if>
+      <if test="mdTrffic != null">
+        MD_TRFFIC,
+      </if>
+      <if test="mdTicket != null">
+        MD_TICKET,
+      </if>
+      <if test="mdSeeTime != null">
+        MD_SEE_TIME,
+      </if>
+      <if test="mdAddress != null">
+        MD_ADDRESS,
+      </if>
+      <if test="mdContinent != null">
+        MD_CONTINENT,
+      </if>
+      <if test="mdCountry != null">
+        MD_COUNTRY,
+      </if>
+      <if test="mdProvince != null">
+        MD_PROVINCE,
+      </if>
+      <if test="mdCity != null">
+        MD_CITY,
+      </if>
+      <if test="mdViewName != null">
+        MD_VIEW_NAME,
+      </if>
+      <if test="mdSortView != null">
+        MD_SORT_VIEW,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mdRecid != null">
+        #{mdRecid,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStdname != null">
+        #{mdStdname,jdbcType=VARCHAR},
+      </if>
+      <if test="mdRefId != null">
+        #{mdRefId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStdcode != null">
+        #{mdStdcode,jdbcType=DECIMAL},
+      </if>
+      <if test="mdCreateTime != null">
+        #{mdCreateTime,jdbcType=DATE},
+      </if>
+      <if test="mdAlertDate != null">
+        #{mdAlertDate,jdbcType=DATE},
+      </if>
+      <if test="mdAlertUser != null">
+        #{mdAlertUser,jdbcType=VARCHAR},
+      </if>
+      <if test="mdLevel != null">
+        #{mdLevel,jdbcType=DECIMAL},
+      </if>
+      <if test="mdViewImg != null">
+        #{mdViewImg,jdbcType=VARCHAR},
+      </if>
+      <if test="mdContent != null">
+        #{mdContent,jdbcType=VARCHAR},
+      </if>
+      <if test="mdTelephone != null">
+        #{mdTelephone,jdbcType=VARCHAR},
+      </if>
+      <if test="mdCostTime != null">
+        #{mdCostTime,jdbcType=DECIMAL},
+      </if>
+      <if test="mdTrffic != null">
+        #{mdTrffic,jdbcType=VARCHAR},
+      </if>
+      <if test="mdTicket != null">
+        #{mdTicket,jdbcType=VARCHAR},
+      </if>
+      <if test="mdSeeTime != null">
+        #{mdSeeTime,jdbcType=VARCHAR},
+      </if>
+      <if test="mdAddress != null">
+        #{mdAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="mdContinent != null">
+        #{mdContinent,jdbcType=VARCHAR},
+      </if>
+      <if test="mdCountry != null">
+        #{mdCountry,jdbcType=VARCHAR},
+      </if>
+      <if test="mdProvince != null">
+        #{mdProvince,jdbcType=VARCHAR},
+      </if>
+      <if test="mdCity != null">
+        #{mdCity,jdbcType=VARCHAR},
+      </if>
+      <if test="mdViewName != null">
+        #{mdViewName,jdbcType=VARCHAR},
+      </if>
+      <if test="mdSortView != null">
+        #{mdSortView,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cn.qd.travel.entity.MDView">
+    update MD_VIEW
+    <set>
+      <if test="mdStdname != null">
+        MD_STDNAME = #{mdStdname,jdbcType=VARCHAR},
+      </if>
+      <if test="mdRefId != null">
+        MD_REF_ID = #{mdRefId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStdcode != null">
+        MD_STDCODE = #{mdStdcode,jdbcType=DECIMAL},
+      </if>
+      <if test="mdCreateTime != null">
+        MD_CREATE_TIME = #{mdCreateTime,jdbcType=DATE},
+      </if>
+      <if test="mdAlertDate != null">
+        MD_ALERT_DATE = #{mdAlertDate,jdbcType=DATE},
+      </if>
+      <if test="mdAlertUser != null">
+        MD_ALERT_USER = #{mdAlertUser,jdbcType=VARCHAR},
+      </if>
+      <if test="mdLevel != null">
+        MD_LEVEL = #{mdLevel,jdbcType=DECIMAL},
+      </if>
+      <if test="mdViewImg != null">
+        MD_VIEW_IMG = #{mdViewImg,jdbcType=VARCHAR},
+      </if>
+      <if test="mdContent != null">
+        MD_CONTENT = #{mdContent,jdbcType=VARCHAR},
+      </if>
+      <if test="mdTelephone != null">
+        MD_TELEPHONE = #{mdTelephone,jdbcType=VARCHAR},
+      </if>
+      <if test="mdCostTime != null">
+        MD_COST_TIME = #{mdCostTime,jdbcType=DECIMAL},
+      </if>
+      <if test="mdTrffic != null">
+        MD_TRFFIC = #{mdTrffic,jdbcType=VARCHAR},
+      </if>
+      <if test="mdTicket != null">
+        MD_TICKET = #{mdTicket,jdbcType=VARCHAR},
+      </if>
+      <if test="mdSeeTime != null">
+        MD_SEE_TIME = #{mdSeeTime,jdbcType=VARCHAR},
+      </if>
+      <if test="mdAddress != null">
+        MD_ADDRESS = #{mdAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="mdContinent != null">
+        MD_CONTINENT = #{mdContinent,jdbcType=VARCHAR},
+      </if>
+      <if test="mdCountry != null">
+        MD_COUNTRY = #{mdCountry,jdbcType=VARCHAR},
+      </if>
+      <if test="mdProvince != null">
+        MD_PROVINCE = #{mdProvince,jdbcType=VARCHAR},
+      </if>
+      <if test="mdCity != null">
+        MD_CITY = #{mdCity,jdbcType=VARCHAR},
+      </if>
+      <if test="mdViewName != null">
+        MD_VIEW_NAME = #{mdViewName,jdbcType=VARCHAR},
+      </if>
+      <if test="mdSortView != null">
+        MD_SORT_VIEW = #{mdSortView,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cn.qd.travel.entity.MDView">
+    update MD_VIEW
+    set MD_STDNAME = #{mdStdname,jdbcType=VARCHAR},
+      MD_REF_ID = #{mdRefId,jdbcType=VARCHAR},
+      MD_STDCODE = #{mdStdcode,jdbcType=DECIMAL},
+      MD_CREATE_TIME = #{mdCreateTime,jdbcType=DATE},
+      MD_ALERT_DATE = #{mdAlertDate,jdbcType=DATE},
+      MD_ALERT_USER = #{mdAlertUser,jdbcType=VARCHAR},
+      MD_LEVEL = #{mdLevel,jdbcType=DECIMAL},
+      MD_VIEW_IMG = #{mdViewImg,jdbcType=VARCHAR},
+      MD_CONTENT = #{mdContent,jdbcType=VARCHAR},
+      MD_TELEPHONE = #{mdTelephone,jdbcType=VARCHAR},
+      MD_COST_TIME = #{mdCostTime,jdbcType=DECIMAL},
+      MD_TRFFIC = #{mdTrffic,jdbcType=VARCHAR},
+      MD_TICKET = #{mdTicket,jdbcType=VARCHAR},
+      MD_SEE_TIME = #{mdSeeTime,jdbcType=VARCHAR},
+      MD_ADDRESS = #{mdAddress,jdbcType=VARCHAR},
+      MD_CONTINENT = #{mdContinent,jdbcType=VARCHAR},
+      MD_COUNTRY = #{mdCountry,jdbcType=VARCHAR},
+      MD_PROVINCE = #{mdProvince,jdbcType=VARCHAR},
+      MD_CITY = #{mdCity,jdbcType=VARCHAR},
+      MD_VIEW_NAME = #{mdViewName,jdbcType=VARCHAR},
+      MD_SORT_VIEW = #{mdSortView,jdbcType=VARCHAR}
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </update>
+</mapper>

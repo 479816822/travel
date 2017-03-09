@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cn.qd.travel.dao.MDBackMapper">
+  <resultMap id="BaseResultMap" type="com.cn.qd.travel.entity.MDBack">
+    <id column="MD_RECID" jdbcType="VARCHAR" property="mdRecid" />
+    <result column="MD_STDNAME" jdbcType="VARCHAR" property="mdStdname" />
+    <result column="MD_REF_ID" jdbcType="VARCHAR" property="mdRefId" />
+    <result column="MD_STDCODE" jdbcType="DECIMAL" property="mdStdcode" />
+    <result column="MD_CREATE_TIME" jdbcType="DATE" property="mdCreateTime" />
+    <result column="MD_ALERT_DATE" jdbcType="DATE" property="mdAlertDate" />
+    <result column="MD_ALERT_USER" jdbcType="VARCHAR" property="mdAlertUser" />
+    <result column="MD_LEVEL" jdbcType="DECIMAL" property="mdLevel" />
+    <result column="MD_BACK_NAME" jdbcType="VARCHAR" property="mdBackName" />
+    <result column="MD_COUNTRY_ID" jdbcType="VARCHAR" property="mdCountryId" />
+    <result column="MD_PROVINCE_ID" jdbcType="VARCHAR" property="mdProvinceId" />
+    <result column="MD_CITY_ID" jdbcType="VARCHAR" property="mdCityId" />
+    <result column="MD_TOWN_ID" jdbcType="VARCHAR" property="mdTownId" />
+    <result column="MD_ADDRESS" jdbcType="VARCHAR" property="mdAddress" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    MD_RECID, MD_STDNAME, MD_REF_ID, MD_STDCODE, MD_CREATE_TIME, MD_ALERT_DATE, MD_ALERT_USER, 
+    MD_LEVEL, MD_BACK_NAME, MD_COUNTRY_ID, MD_PROVINCE_ID, MD_CITY_ID, MD_TOWN_ID, MD_ADDRESS
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from MD_BACK
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from MD_BACK
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cn.qd.travel.entity.MDBack">
+    insert into MD_BACK (MD_RECID, MD_STDNAME, MD_REF_ID, 
+      MD_STDCODE, MD_CREATE_TIME, MD_ALERT_DATE, 
+      MD_ALERT_USER, MD_LEVEL, MD_BACK_NAME, 
+      MD_COUNTRY_ID, MD_PROVINCE_ID, MD_CITY_ID, 
+      MD_TOWN_ID, MD_ADDRESS)
+    values (#{mdRecid,jdbcType=VARCHAR}, #{mdStdname,jdbcType=VARCHAR}, #{mdRefId,jdbcType=VARCHAR}, 
+      #{mdStdcode,jdbcType=DECIMAL}, #{mdCreateTime,jdbcType=DATE}, #{mdAlertDate,jdbcType=DATE}, 
+      #{mdAlertUser,jdbcType=VARCHAR}, #{mdLevel,jdbcType=DECIMAL}, #{mdBackName,jdbcType=VARCHAR}, 
+      #{mdCountryId,jdbcType=VARCHAR}, #{mdProvinceId,jdbcType=VARCHAR}, #{mdCityId,jdbcType=VARCHAR}, 
+      #{mdTownId,jdbcType=VARCHAR}, #{mdAddress,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cn.qd.travel.entity.MDBack">
+    insert into MD_BACK
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mdRecid != null">
+        MD_RECID,
+      </if>
+      <if test="mdStdname != null">
+        MD_STDNAME,
+      </if>
+      <if test="mdRefId != null">
+        MD_REF_ID,
+      </if>
+      <if test="mdStdcode != null">
+        MD_STDCODE,
+      </if>
+      <if test="mdCreateTime != null">
+        MD_CREATE_TIME,
+      </if>
+      <if test="mdAlertDate != null">
+        MD_ALERT_DATE,
+      </if>
+      <if test="mdAlertUser != null">
+        MD_ALERT_USER,
+      </if>
+      <if test="mdLevel != null">
+        MD_LEVEL,
+      </if>
+      <if test="mdBackName != null">
+        MD_BACK_NAME,
+      </if>
+      <if test="mdCountryId != null">
+        MD_COUNTRY_ID,
+      </if>
+      <if test="mdProvinceId != null">
+        MD_PROVINCE_ID,
+      </if>
+      <if test="mdCityId != null">
+        MD_CITY_ID,
+      </if>
+      <if test="mdTownId != null">
+        MD_TOWN_ID,
+      </if>
+      <if test="mdAddress != null">
+        MD_ADDRESS,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mdRecid != null">
+        #{mdRecid,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStdname != null">
+        #{mdStdname,jdbcType=VARCHAR},
+      </if>
+      <if test="mdRefId != null">
+        #{mdRefId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStdcode != null">
+        #{mdStdcode,jdbcType=DECIMAL},
+      </if>
+      <if test="mdCreateTime != null">
+        #{mdCreateTime,jdbcType=DATE},
+      </if>
+      <if test="mdAlertDate != null">
+        #{mdAlertDate,jdbcType=DATE},
+      </if>
+      <if test="mdAlertUser != null">
+        #{mdAlertUser,jdbcType=VARCHAR},
+      </if>
+      <if test="mdLevel != null">
+        #{mdLevel,jdbcType=DECIMAL},
+      </if>
+      <if test="mdBackName != null">
+        #{mdBackName,jdbcType=VARCHAR},
+      </if>
+      <if test="mdCountryId != null">
+        #{mdCountryId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdProvinceId != null">
+        #{mdProvinceId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdCityId != null">
+        #{mdCityId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdTownId != null">
+        #{mdTownId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdAddress != null">
+        #{mdAddress,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cn.qd.travel.entity.MDBack">
+    update MD_BACK
+    <set>
+      <if test="mdStdname != null">
+        MD_STDNAME = #{mdStdname,jdbcType=VARCHAR},
+      </if>
+      <if test="mdRefId != null">
+        MD_REF_ID = #{mdRefId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStdcode != null">
+        MD_STDCODE = #{mdStdcode,jdbcType=DECIMAL},
+      </if>
+      <if test="mdCreateTime != null">
+        MD_CREATE_TIME = #{mdCreateTime,jdbcType=DATE},
+      </if>
+      <if test="mdAlertDate != null">
+        MD_ALERT_DATE = #{mdAlertDate,jdbcType=DATE},
+      </if>
+      <if test="mdAlertUser != null">
+        MD_ALERT_USER = #{mdAlertUser,jdbcType=VARCHAR},
+      </if>
+      <if test="mdLevel != null">
+        MD_LEVEL = #{mdLevel,jdbcType=DECIMAL},
+      </if>
+      <if test="mdBackName != null">
+        MD_BACK_NAME = #{mdBackName,jdbcType=VARCHAR},
+      </if>
+      <if test="mdCountryId != null">
+        MD_COUNTRY_ID = #{mdCountryId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdProvinceId != null">
+        MD_PROVINCE_ID = #{mdProvinceId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdCityId != null">
+        MD_CITY_ID = #{mdCityId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdTownId != null">
+        MD_TOWN_ID = #{mdTownId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdAddress != null">
+        MD_ADDRESS = #{mdAddress,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cn.qd.travel.entity.MDBack">
+    update MD_BACK
+    set MD_STDNAME = #{mdStdname,jdbcType=VARCHAR},
+      MD_REF_ID = #{mdRefId,jdbcType=VARCHAR},
+      MD_STDCODE = #{mdStdcode,jdbcType=DECIMAL},
+      MD_CREATE_TIME = #{mdCreateTime,jdbcType=DATE},
+      MD_ALERT_DATE = #{mdAlertDate,jdbcType=DATE},
+      MD_ALERT_USER = #{mdAlertUser,jdbcType=VARCHAR},
+      MD_LEVEL = #{mdLevel,jdbcType=DECIMAL},
+      MD_BACK_NAME = #{mdBackName,jdbcType=VARCHAR},
+      MD_COUNTRY_ID = #{mdCountryId,jdbcType=VARCHAR},
+      MD_PROVINCE_ID = #{mdProvinceId,jdbcType=VARCHAR},
+      MD_CITY_ID = #{mdCityId,jdbcType=VARCHAR},
+      MD_TOWN_ID = #{mdTownId,jdbcType=VARCHAR},
+      MD_ADDRESS = #{mdAddress,jdbcType=VARCHAR}
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </update>
+</mapper>

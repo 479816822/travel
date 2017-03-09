@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cn.qd.travel.dao.MDAimSortMapper">
+  <resultMap id="BaseResultMap" type="com.cn.qd.travel.entity.MDAimSort">
+    <id column="MD_RECID" jdbcType="VARCHAR" property="mdRecid" />
+    <result column="MD_REF_ID" jdbcType="VARCHAR" property="mdRefId" />
+    <result column="MD_ALERT_USER" jdbcType="VARCHAR" property="mdAlertUser" />
+    <result column="MD_LEVEL" jdbcType="DECIMAL" property="mdLevel" />
+    <result column="MD_STDNAME" jdbcType="VARCHAR" property="mdStdname" />
+    <result column="MD_STDCODE" jdbcType="DECIMAL" property="mdStdcode" />
+    <result column="MD_CREATE_TIME" jdbcType="DATE" property="mdCreateTime" />
+    <result column="MD_ALERT_TIME" jdbcType="DATE" property="mdAlertTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    MD_RECID, MD_REF_ID, MD_ALERT_USER, MD_LEVEL, MD_STDNAME, MD_STDCODE, MD_CREATE_TIME, 
+    MD_ALERT_TIME
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from MD_AIM_SORT
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from MD_AIM_SORT
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cn.qd.travel.entity.MDAimSort">
+    insert into MD_AIM_SORT (MD_RECID, MD_REF_ID, MD_ALERT_USER, 
+      MD_LEVEL, MD_STDNAME, MD_STDCODE, 
+      MD_CREATE_TIME, MD_ALERT_TIME)
+    values (#{mdRecid,jdbcType=VARCHAR}, #{mdRefId,jdbcType=VARCHAR}, #{mdAlertUser,jdbcType=VARCHAR}, 
+      #{mdLevel,jdbcType=DECIMAL}, #{mdStdname,jdbcType=VARCHAR}, #{mdStdcode,jdbcType=DECIMAL}, 
+      #{mdCreateTime,jdbcType=DATE}, #{mdAlertTime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cn.qd.travel.entity.MDAimSort">
+    insert into MD_AIM_SORT
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mdRecid != null">
+        MD_RECID,
+      </if>
+      <if test="mdRefId != null">
+        MD_REF_ID,
+      </if>
+      <if test="mdAlertUser != null">
+        MD_ALERT_USER,
+      </if>
+      <if test="mdLevel != null">
+        MD_LEVEL,
+      </if>
+      <if test="mdStdname != null">
+        MD_STDNAME,
+      </if>
+      <if test="mdStdcode != null">
+        MD_STDCODE,
+      </if>
+      <if test="mdCreateTime != null">
+        MD_CREATE_TIME,
+      </if>
+      <if test="mdAlertTime != null">
+        MD_ALERT_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mdRecid != null">
+        #{mdRecid,jdbcType=VARCHAR},
+      </if>
+      <if test="mdRefId != null">
+        #{mdRefId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdAlertUser != null">
+        #{mdAlertUser,jdbcType=VARCHAR},
+      </if>
+      <if test="mdLevel != null">
+        #{mdLevel,jdbcType=DECIMAL},
+      </if>
+      <if test="mdStdname != null">
+        #{mdStdname,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStdcode != null">
+        #{mdStdcode,jdbcType=DECIMAL},
+      </if>
+      <if test="mdCreateTime != null">
+        #{mdCreateTime,jdbcType=DATE},
+      </if>
+      <if test="mdAlertTime != null">
+        #{mdAlertTime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cn.qd.travel.entity.MDAimSort">
+    update MD_AIM_SORT
+    <set>
+      <if test="mdRefId != null">
+        MD_REF_ID = #{mdRefId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdAlertUser != null">
+        MD_ALERT_USER = #{mdAlertUser,jdbcType=VARCHAR},
+      </if>
+      <if test="mdLevel != null">
+        MD_LEVEL = #{mdLevel,jdbcType=DECIMAL},
+      </if>
+      <if test="mdStdname != null">
+        MD_STDNAME = #{mdStdname,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStdcode != null">
+        MD_STDCODE = #{mdStdcode,jdbcType=DECIMAL},
+      </if>
+      <if test="mdCreateTime != null">
+        MD_CREATE_TIME = #{mdCreateTime,jdbcType=DATE},
+      </if>
+      <if test="mdAlertTime != null">
+        MD_ALERT_TIME = #{mdAlertTime,jdbcType=DATE},
+      </if>
+    </set>
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cn.qd.travel.entity.MDAimSort">
+    update MD_AIM_SORT
+    set MD_REF_ID = #{mdRefId,jdbcType=VARCHAR},
+      MD_ALERT_USER = #{mdAlertUser,jdbcType=VARCHAR},
+      MD_LEVEL = #{mdLevel,jdbcType=DECIMAL},
+      MD_STDNAME = #{mdStdname,jdbcType=VARCHAR},
+      MD_STDCODE = #{mdStdcode,jdbcType=DECIMAL},
+      MD_CREATE_TIME = #{mdCreateTime,jdbcType=DATE},
+      MD_ALERT_TIME = #{mdAlertTime,jdbcType=DATE}
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </update>
+</mapper>

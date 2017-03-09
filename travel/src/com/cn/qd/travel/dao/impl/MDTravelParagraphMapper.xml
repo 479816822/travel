@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cn.qd.travel.dao.MDTravelParagraphMapper">
+  <resultMap id="BaseResultMap" type="com.cn.qd.travel.entity.MDTravelParagraph">
+    <id column="MD_RECID" jdbcType="VARCHAR" property="mdRecid" />
+    <result column="MD_PARAGRAPH_NAME" jdbcType="VARCHAR" property="mdParagraphName" />
+    <result column="MD_IMG" jdbcType="VARCHAR" property="mdImg" />
+    <result column="MD_VIDEO" jdbcType="VARCHAR" property="mdVideo" />
+    <result column="MD_STDCODE" jdbcType="DECIMAL" property="mdStdcode" />
+    <result column="MD_TAVEL_ID" jdbcType="VARCHAR" property="mdTavelId" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.cn.qd.travel.entity.MDTravelParagraph">
+    <result column="MD_CONTENT" jdbcType="CLOB" property="mdContent" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    MD_RECID, MD_PARAGRAPH_NAME, MD_IMG, MD_VIDEO, MD_STDCODE, MD_TAVEL_ID
+  </sql>
+  <sql id="Blob_Column_List">
+    MD_CONTENT
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from MD_TRAVEL_PARAGRAPH
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from MD_TRAVEL_PARAGRAPH
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cn.qd.travel.entity.MDTravelParagraph">
+    insert into MD_TRAVEL_PARAGRAPH (MD_RECID, MD_PARAGRAPH_NAME, MD_IMG, 
+      MD_VIDEO, MD_STDCODE, MD_TAVEL_ID, 
+      MD_CONTENT)
+    values (#{mdRecid,jdbcType=VARCHAR}, #{mdParagraphName,jdbcType=VARCHAR}, #{mdImg,jdbcType=VARCHAR}, 
+      #{mdVideo,jdbcType=VARCHAR}, #{mdStdcode,jdbcType=DECIMAL}, #{mdTavelId,jdbcType=VARCHAR}, 
+      #{mdContent,jdbcType=CLOB})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cn.qd.travel.entity.MDTravelParagraph">
+    insert into MD_TRAVEL_PARAGRAPH
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mdRecid != null">
+        MD_RECID,
+      </if>
+      <if test="mdParagraphName != null">
+        MD_PARAGRAPH_NAME,
+      </if>
+      <if test="mdImg != null">
+        MD_IMG,
+      </if>
+      <if test="mdVideo != null">
+        MD_VIDEO,
+      </if>
+      <if test="mdStdcode != null">
+        MD_STDCODE,
+      </if>
+      <if test="mdTavelId != null">
+        MD_TAVEL_ID,
+      </if>
+      <if test="mdContent != null">
+        MD_CONTENT,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mdRecid != null">
+        #{mdRecid,jdbcType=VARCHAR},
+      </if>
+      <if test="mdParagraphName != null">
+        #{mdParagraphName,jdbcType=VARCHAR},
+      </if>
+      <if test="mdImg != null">
+        #{mdImg,jdbcType=VARCHAR},
+      </if>
+      <if test="mdVideo != null">
+        #{mdVideo,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStdcode != null">
+        #{mdStdcode,jdbcType=DECIMAL},
+      </if>
+      <if test="mdTavelId != null">
+        #{mdTavelId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdContent != null">
+        #{mdContent,jdbcType=CLOB},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cn.qd.travel.entity.MDTravelParagraph">
+    update MD_TRAVEL_PARAGRAPH
+    <set>
+      <if test="mdParagraphName != null">
+        MD_PARAGRAPH_NAME = #{mdParagraphName,jdbcType=VARCHAR},
+      </if>
+      <if test="mdImg != null">
+        MD_IMG = #{mdImg,jdbcType=VARCHAR},
+      </if>
+      <if test="mdVideo != null">
+        MD_VIDEO = #{mdVideo,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStdcode != null">
+        MD_STDCODE = #{mdStdcode,jdbcType=DECIMAL},
+      </if>
+      <if test="mdTavelId != null">
+        MD_TAVEL_ID = #{mdTavelId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdContent != null">
+        MD_CONTENT = #{mdContent,jdbcType=CLOB},
+      </if>
+    </set>
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.cn.qd.travel.entity.MDTravelParagraph">
+    update MD_TRAVEL_PARAGRAPH
+    set MD_PARAGRAPH_NAME = #{mdParagraphName,jdbcType=VARCHAR},
+      MD_IMG = #{mdImg,jdbcType=VARCHAR},
+      MD_VIDEO = #{mdVideo,jdbcType=VARCHAR},
+      MD_STDCODE = #{mdStdcode,jdbcType=DECIMAL},
+      MD_TAVEL_ID = #{mdTavelId,jdbcType=VARCHAR},
+      MD_CONTENT = #{mdContent,jdbcType=CLOB}
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cn.qd.travel.entity.MDTravelParagraph">
+    update MD_TRAVEL_PARAGRAPH
+    set MD_PARAGRAPH_NAME = #{mdParagraphName,jdbcType=VARCHAR},
+      MD_IMG = #{mdImg,jdbcType=VARCHAR},
+      MD_VIDEO = #{mdVideo,jdbcType=VARCHAR},
+      MD_STDCODE = #{mdStdcode,jdbcType=DECIMAL},
+      MD_TAVEL_ID = #{mdTavelId,jdbcType=VARCHAR}
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </update>
+</mapper>
