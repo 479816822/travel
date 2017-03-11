@@ -1,0 +1,87 @@
+body, div, p, ul, li, dd, dl, dt, h3, hr, i, h1, h2, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol {
+    list-style: none
+}
+
+h1,h2,h3,h4,h5,h6 {
+    display: block;
+
+    font-weight: bold;
+}
+div{
+    display: block;
+}
+img {
+    border: 0;
+    vertical-align: middle;
+    padding-top: 3px;
+}
+
+body {
+    font: 12px/150% Arial, Verdana, "\5b8b\4f53";
+    color: #666;
+    background: #fff;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0;
+}
+
+a {
+    color: #c2c2c2;
+    text-decoration: none
+}
+
+a:hover {
+    color: #C81623
+}
+img{
+    border: 0;
+    vertical-align: middle;
+}
+#body{
+    display: block;
+    background-color: #3c3c3c;
+    color: #c2c2c2;
+    line-height: 22px;
+    padding-bottom: 20px;
+    font-size: 12px;
+}
+.foot{
+    width: 70%;
+    margin: 0 15%;
+}
+.footer{
+    padding: 12px 0;
+    margin-top: -1px;
+    border-top: 1px solid #575a5b;
+}
+.left{
+    float: left;
+    margin: 2px 20px 0 0;
+    width: 136px;
+    height: 39px;
+    background: url(../img/q_foot_logo.png) no-repeat 0 -30px;
+    overflow: hidden;
+}
+.right{
+    float: right;
+    padding: 5px 8px 0 0
+}
+.right a{
+    float: left;
+    margin-left: 10px;
+    width: 90px;
+    height: 30px;
+    background: url(../img/q_foot_logo.png) no-repeat 0 -70px;
+    overflow: hidden;
+}
+p{
+    margin: 0;
+    padding: 0;
+    word-wrap: break-word;
+}

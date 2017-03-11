@@ -11,7 +11,10 @@ public class MDTravelParagraph {
 
     private Short mdStdcode;
 
-    private String mdTavelId;
+    /**
+     * 游记主体
+     */
+    private MDTravelNote tavel;
 
     private String mdContent;
 
@@ -55,15 +58,16 @@ public class MDTravelParagraph {
         this.mdStdcode = mdStdcode;
     }
 
-    public String getMdTavelId() {
-        return mdTavelId;
-    }
 
-    public void setMdTavelId(String mdTavelId) {
-        this.mdTavelId = mdTavelId == null ? null : mdTavelId.trim();
-    }
+    public MDTravelNote getTavel() {
+		return tavel;
+	}
 
-    public String getMdContent() {
+	public void setTavel(MDTravelNote tavel) {
+		this.tavel = tavel;
+	}
+
+	public String getMdContent() {
         return mdContent;
     }
 

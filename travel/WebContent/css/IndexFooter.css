@@ -1,0 +1,190 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+ul, ol, li, dl, dd, dt {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #c2c2c2;
+}
+
+#footer {
+    clear: both;
+    background-color: #3c3c3c;
+    color: #c2c2c2;
+    line-height: 22px;
+    padding-bottom: 20px;
+    font-size: 12px;
+}
+
+#footer .highlight {
+    color: #ff9d00;
+}
+
+#footer .content {
+    padding-top: 30px;
+    width: 70%;
+    margin: 0 auto;
+}
+
+#footer .col {
+    float: left;
+}
+
+#footer .links {
+    margin-top: -1px;
+    border-top: 1px solid #575a5b;
+    border-bottom: 1px solid #575a5b;
+    padding: 17px 0 17px 8px;
+}
+
+#footer .copyright {
+    padding: 12px 0;
+    margin-top: -1px;
+    border-top: 1px solid #575a5b;
+}
+
+#footer .intro {
+    width: 200px;
+    margin-right: 68px;
+}
+
+#footer .intro strong {
+    color: #ff9d00;
+    font-weight: normal;
+}
+
+#footer .info dt {
+    height: 30px;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+#footer .about {
+    width: 128px;
+    margin-right: 85px;
+}
+
+#footer .service {
+    width: 175px;
+    margin-right: 70px;
+}
+
+#footer .service li {
+    float: left;
+    padding-right: 35px;
+}
+
+#footer .qrcode {
+    float: right;
+    padding-top: 22px;
+}
+
+#footer .qrcode dd {
+    width: 100px;
+    display: inline;
+    margin-left: 30px;
+    float: right;
+    text-align: center;
+}
+
+#footer .qrcode span {
+    display: block;
+    height: 90px;
+    margin: 0 0 8px 6px;
+}
+
+#footer .qrcode span{
+    background-image: url("../main-img/weixin.png");
+}
+
+#footer .social {
+    clear: both;
+    text-align: center;
+    padding-top: 25px;
+}
+
+#footer .links {
+    margin-top: -1px;
+    border-top: 1px solid #575a5b;
+    border-bottom: 1px solid #575a5b;
+    padding: 17px 0 17px 8px;
+    height: 70px;
+}
+#footer .links a{
+    padding-right: 12px;
+    float: left;
+}
+
+#footer .social .weibo i{
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    background: url("../main-img/icon1.png") no-repeat 0 0;
+    overflow: hidden;
+}
+
+#footer .social .qq i{
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    background: url("../main-img/icon1.png") no-repeat -30px 0;
+    overflow: hidden;
+}
+
+#footer .social .qzone i{
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    background: url("../main-img/icon1.png") no-repeat -60px 0;
+    overflow: hidden;
+}
+
+
+
+
+#footer .safety {
+    float: right;
+    padding: 5px 8px 0 0;
+}
+#footer .safety a{
+    float: left;
+    margin-left: 10px;
+    width: 90px;
+    height: 30px;
+    overflow: hidden;
+}
+#footer .safety .s-a {
+    background: url("../main-img/icon1.png") no-repeat 0 -70px;
+}
+#footer .safety .s-b {
+    background: url("../main-img/icon1.png") no-repeat 0 -110px;
+}
+#footer .safety .s-c {
+    background: url("../main-img/icon1.png") no-repeat 0 -150px;
+}
+#footer .ft-mfw-logo {
+    float: left;
+    margin: 2px 20px 0 0;
+    width: 136px;
+    height: 39px;
+    background: url("../main-img/icon1.png") no-repeat 0 -30px;
+    overflow: hidden;
+}
+#footer .copyright {
+    padding: 12px 0;
+    margin-top: -1px;
+    border-top: 1px solid #575a5b;
+}
+#footer .copyright .logo{
+    float: left;
+    margin: 2px 20px 0 0;
+    width: 136px;
+    height: 39px;
+    background: url("../main-img/icon1.png") no-repeat 0 -30px;
+    overflow: hidden;
+}

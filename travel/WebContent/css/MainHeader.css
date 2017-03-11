@@ -1,0 +1,576 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    list-style: none;
+}
+
+.header{
+    height: 60px;
+    width: 100%;
+    background-color: rgb(24, 25, 25);
+    margin: 0 0;
+    z-index: 90;
+   color :rgb(255, 255, 255)
+}
+
+.mfw_headers {
+    height: 60px;
+    width: 70%;
+    margin: 0 15%;
+    background-color: rgb(24, 25, 25);
+    position: relative;
+    z-index: 90;
+}
+
+
+.mfw_logo {
+    height: 60px;
+    margin: 0 auto;
+    _overflow: hidden;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.mfw_logo_one {
+    float: left;
+    padding: 0px 0px;
+    width: 15%;
+    height: 60px;
+    background: url("") no-repeat;
+    background: orange;
+}
+
+.mfw_logo_two {
+    float: left;
+    display: inline-block;
+    padding: 0 16px;
+    vertical-align: top;
+    overflow: hidden;
+    line-height: 60px;
+    font-size: 16px;
+    margin: 0px auto auto 6px;
+}
+
+.t_header_ul {
+    float: right;
+}
+
+.t_header_li {
+    float: left;
+    line-height: 68px;
+    font-size: 16px;
+    margin-left: 23px;
+    font-family: Arial, "Lucida Grande", "Microsoft Yahei", "Hiragino Sans GB", "Hiragino Sans GB W3", SimSun, "PingFang SC", STHeiti;
+}
+
+.gd{
+    width: 50px;
+}
+
+.t_header_li a:hover {
+    background-color: transparent;
+    color: #ff9d00;
+    cursor: pointer;
+}
+
+.t_search {
+    float: left;
+}
+
+.t_search_input {
+    margin: 15px 15px 15px 15px;
+    width: 88%;
+    height: 30px;
+    border-color: rgb(155, 155, 155);
+    color: rgb(255, 255, 255);
+    background-color: rgb(155, 155, 155);
+}
+
+
+.t_search_1 {
+    float: left;
+}
+
+.t_search_input_1 {
+    margin: 15px 15px 15px 10px;
+    width: 80%;
+    height: 30px;
+    border-color: rgb(155, 155, 155);
+    color: rgb(255, 255, 255);
+    background-color: rgb(155, 155, 155);
+}
+
+
+.div_three {
+    margin-top: 10px;
+    float: right;
+}
+
+#ttt {
+    margin-top: 8px;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+}
+
+.t_info {
+    float: left;
+    color: rgb(255, 255, 255);
+    width: 240px;
+    vertical-align: top
+}
+
+.t_info .user_info {
+    height: 46px;
+    float: right
+}
+
+.t_info .user_info li {
+    float: left;
+    margin-left: 1px;
+    font-size: 12px;
+}
+
+.t_info .user_info li.daka {
+    position: relative;
+    margin-top: 11px;
+    margin-left: 0px;
+    width: 70px;
+    margin-right: 17px;
+}
+
+.daka_btn a {
+    width: 100%;
+    height: 24px;
+    background-color: #1493e3;
+    display: block;
+    font-size: 14px;
+    color:rgb(255, 255, 255);
+    text-align: center;
+    line-height: 24px;
+    border-radius: 4px;
+    cursor: pointer
+}
+
+.daka_complete a {
+    background-color: #ff9d00;
+    font-size: 14px
+}
+
+.daka_complete a:hover {
+    background-color: #ff8a00
+}
+
+.daka_btn .daka_after, .daka_complete .daka_before {
+    display: none
+}
+
+.daka_complete .daka_after {
+    display: inline-block
+}
+
+.daka_tips {
+    width: 166px;
+    height: 134px;
+    background-image: url("");
+    position: absolute;
+    z-index: 200;
+    margin-top: -200px;
+    margin-left: -100px
+}
+
+.daka_tips .on {
+    -webkit-animation: jumpping 1.5s linear 0s 1 forwards;
+    margin-top: 0
+}
+
+.header .new {
+    color: #F30
+}
+
+.daka_btn {
+    display: block;
+    width: 100%
+}
+
+.t_nav li .t a:hover, .user_info .infoItem:hover, .t_nav li:hover .t a, .t_nav li.hover .t a, .user_info .account:hover .infoItem, .user_info .account.hover .infoItem, .user_info .msg:hover .infoItem {
+    background-color: #000
+}
+
+.t_info li.on .c {
+    display: block
+}
+
+.t_info li:hover .c, .t_nav li.hover .c {
+    display: block
+}
+
+.t_info li .c a {
+    display: block;
+    padding: 8px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: normal;
+    height: 15px;
+    line-height: 15px
+}
+
+.t_info li .c a:hover {
+    background-color: #000
+}
+
+.t_info li .t a {
+    float: left;
+    display: block;
+    height: 16px;
+    padding: 15px 17px;
+    color: #fff;
+    line-height: 16px;
+    line-height: 19px \9;
+    overflow: hidden
+}
+
+.t_info li .t a:hover, .t_info li:hover .t a, .t_info li.hover .t a {
+    background-color: #000
+}
+
+.t_info .c {
+    position: absolute;
+    left: 0;
+    top: 46px;
+    width: 110px;
+    background-color: #222;
+    display: none;
+    opacity: .9;
+    filter: alpha(opacity=90);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4)
+}
+
+.t_info a {
+    color: #fff
+}
+
+.t_info .user_info .infoItem {
+    padding-left: 12px;
+    padding-right: 29px;
+    font-size: 16px
+}
+
+.t_info .user_info .infoItem:hover {
+    color: #fff
+}
+
+.t_info .user_info em {
+    font-style: normal
+}
+
+.t_info .user_info .name img {
+    float: left;
+    margin: 1px 5px 0 0
+}
+
+.t_info .user_info .name em {
+    float: left
+}
+
+.t_info .msg {
+    position: relative
+}
+
+.t_info .msg span {
+    display: inline-block
+}
+
+.t_info .msg a {
+    padding-right: 20px
+}
+
+.t_info .account {
+    position: relative;
+    z-index: 10
+}
+
+.t_info .account .t a {
+    padding-right: 25px;
+    padding: 7px 22px 7px 10px;
+    height: auto
+}
+
+.t_info .account .t a img {
+    float: left;
+    margin: 0;
+    border-radius: 32px
+}
+
+.t_info .account .t a b {
+    right: 9px
+}
+
+.uSet {
+    position: absolute;
+    right: 0;
+    top: 46px;
+    width: 130px;
+    background-color: #222;
+    opacity: .9;
+    filter: alpha(opacity=90);
+    padding: 5px 0 10px;
+    display: none
+}
+
+.t_info li .on .uSet {
+    display: block
+}
+
+.t_info li .on .uSet a {
+    display: block;
+    text-align: left;
+    padding: 7px 10px;
+    height: 15px;
+    color: #FFF;
+    opacity: .9
+}
+
+.t_info li .on .uSet a:hover {
+    background-color: #000;
+    text-decoration: none
+}
+
+.t_info li .on .uSet a.containNum {
+    padding: 4px 10px
+}
+
+.t_info li .on .uSet a.containNum span {
+    font-size: 14px;
+    color: #fc9c27;
+    font-family: Arial
+}
+
+.t_info li .on .uSet a.hasLine {
+    position: relative;
+    margin-bottom: 10px
+}
+
+.t_info li .on .uSet a.hasLine:after {
+    content: "";
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    height: 1px;
+    bottom: -6px;
+    background-color: #121212
+}
+
+.header .new {
+    color: #F30
+}
+
+.t_info .user_info .drop-bd {
+    position: absolute;
+    right: 0;
+    width: 130px;
+    top: 46px;
+    background-color: #222;
+    opacity: .9;
+    filter: alpha(opacity=90);
+    padding-bottom: 5px;
+    display: none;
+}
+
+.t_info .user_info .drop-bd {
+    position: absolute;
+    right: 0;
+    width: 130px;
+    top: 46px;
+    background-color: #222;
+    opacity: .9;
+    filter: alpha(opacity=90);
+    padding-bottom: 5px;
+    display: none;
+}
+
+.t_info .user_info li.on .drop-bd {
+    display: block
+}
+
+.t_info .user_info .drop-bd li {
+    height: 29px;
+    float: none;
+    margin: 0;
+    display: block
+}
+
+.t_info .user_info .drop-bd li a {
+    padding: 0 10px;
+    height: 29px;
+    line-height: 29px;
+    display: block;
+    color: #fff;
+    opacity: .9
+}
+
+.t_info .user_info .drop-bd li a:hover {
+    background-color: #000;
+    text-decoration: none
+}
+
+.t_info .user_info .drop-bd li.new-msg-li a {
+    color: #d62d00
+}
+
+.t_info .user_info .drop-bd li.new-msg-line {
+    display: none
+}
+
+.t_info .user_info .ub-new-msg {
+    margin: 0;
+    width: 0;
+    height: 0;
+    position: relative;
+}
+
+.t_info .user_info .new-msg-tips {
+    position: absolute;
+    left: -130px;
+    top: 46px;
+    width: 130px;
+    background-color: #222;
+    opacity: .9;
+    filter: alpha(opacity=90);
+    padding: 0 0 5px
+}
+
+.t_info .user_info .new-msg-tips p {
+    height: 29px
+}
+
+.t_info .user_info .new-msg-tips p a {
+    padding: 0 10px;
+    height: 29px;
+    line-height: 29px;
+    display: block;
+    color: #d62d00;
+    opacity: .9
+}
+
+.t_info .user_info .new-msg-tips p a:hover {
+    background-color: #000;
+    text-decoration: none;
+}
+
+.t_info .user_info .new-msg-tips .new-msg-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    background: url("") no-repeat center center;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.t_info .user_info .infoItem {
+    padding-left: 12px;
+    padding-right: 25px;
+    font-size: 16px
+}
+
+.no_login {
+    float: right;
+    padding: 10px 0;
+    height: 26px;
+    overflow: hidden;
+    line-height: 26px;
+    font-size: 14px
+}
+
+.no_login span {
+    float: left
+}
+
+.no_login a {
+    color: #ff8a00
+}
+
+.no_login .login-qq, .no_login .login-weibo, .no_login .login-renren {
+    float: left;
+    display: inline-block;
+    margin-left: 8px;
+    width: 26px;
+    height: 26px;
+    background: url("") no-repeat
+}
+
+.header .new {
+    color: #F30
+}
+
+.t_info .user_info .drop-bd li a:hover {
+    background-color: #000;
+    text-decoration: none
+}
+
+
+
+.dropdown-menu {
+    margin-top: 60px;
+    background-color: #222;
+    color: rgb(255, 255, 255);
+    width:100px;
+    z-index: 10;
+    padding:  0px 15px 0px 2px;
+    top: 0px;
+    display: none;
+    position: absolute;
+}
+ .dropdown-menu li {
+    float: none;
+    line-height: 40px;
+}
+
+.hover_li a {
+    width:200px;
+    display: inline-block;
+    padding: 0 1px;
+    color: rgb(255, 255, 255);
+    vertical-align: top;
+    overflow: hidden;
+   underline: none;
+}
+
+
+.dropdown-menu1 {
+    margin-top: 35px;
+    background-color: #222;
+    color: rgb(255, 255, 255);
+    width:70px;
+    z-index: 10;
+    font-size: 16px;
+    padding:  0px 15px 0px 2px;
+    top: 0px;
+    display: none;
+    position: absolute;
+}
+.dropdown-menu1 li {
+    float: none;
+    line-height: 30px;
+    font-size: 16px;
+}
+
+.hover_li1 a {
+    display: inline-block;
+    padding: 0 1px;
+    color: rgb(255, 255, 255);
+    vertical-align: top;
+    overflow: hidden;
+    underline: none;
+
+}
+
+.one{
+    margin-top: 10px;
+}

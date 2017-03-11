@@ -2,185 +2,203 @@ package com.cn.qd.travel.entity;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 public class MDTravelNote {
-    private String mdRecid;
 
-    private String mdStdname;
+	/**
+	 * 对应段落
+	 */
+	private List<MDTravelParagraph> listTravlePagragraph;
 
-    private String mdRefId;
+	private String mdRecid;
 
-    private BigDecimal mdStdcode;
+	private String mdStdname;
 
-    private Date mdAlertDate;
+	private String mdRefId;
 
-    private String mdAlertUser;
+	private BigDecimal mdStdcode;
 
-    private Short mdLevel;
+	private Date mdAlertDate;
 
-    private String mdThemeImg;
+	private String mdAlertUser;
 
-    private Date mdCreateTime;
+	private Short mdLevel;
 
-    private String mdCreateUserId;
+	private String mdThemeImg;
 
-    private String mdKeyWord;
+	private Date mdCreateTime;
 
-    private String mdTheme;
+	/**
+	 * 游记主人
+	 */
+	private MdUser user;
 
-    private String mdMusic;
+	private String mdKeyWord;
 
-    private Date mdStartTime;
+	private String mdTheme;
 
-    private Short mdDayNumber;
+	private String mdMusic;
 
-    private String mdTravelPeople;
+	private Date mdStartTime;
 
-    private Long mdCostMoney;
+	private Short mdDayNumber;
 
-    private String mdAimAddress;
+	private String mdTravelPeople;
 
-    public String getMdRecid() {
-        return mdRecid;
-    }
+	private Long mdCostMoney;
 
-    public void setMdRecid(String mdRecid) {
-        this.mdRecid = mdRecid == null ? null : mdRecid.trim();
-    }
+	private String mdAimAddress;
 
-    public String getMdStdname() {
-        return mdStdname;
-    }
+	public String getMdRecid() {
+		return mdRecid;
+	}
 
-    public void setMdStdname(String mdStdname) {
-        this.mdStdname = mdStdname == null ? null : mdStdname.trim();
-    }
+	public void setMdRecid(String mdRecid) {
+		this.mdRecid = mdRecid == null ? null : mdRecid.trim();
+	}
 
-    public String getMdRefId() {
-        return mdRefId;
-    }
+	public String getMdStdname() {
+		return mdStdname;
+	}
 
-    public void setMdRefId(String mdRefId) {
-        this.mdRefId = mdRefId == null ? null : mdRefId.trim();
-    }
+	public void setMdStdname(String mdStdname) {
+		this.mdStdname = mdStdname == null ? null : mdStdname.trim();
+	}
 
-    public BigDecimal getMdStdcode() {
-        return mdStdcode;
-    }
+	public String getMdRefId() {
+		return mdRefId;
+	}
 
-    public void setMdStdcode(BigDecimal mdStdcode) {
-        this.mdStdcode = mdStdcode;
-    }
+	public void setMdRefId(String mdRefId) {
+		this.mdRefId = mdRefId == null ? null : mdRefId.trim();
+	}
 
-    public Date getMdAlertDate() {
-        return mdAlertDate;
-    }
+	public BigDecimal getMdStdcode() {
+		return mdStdcode;
+	}
+	public List<MDTravelParagraph> getListTravlePagragraph() {
+		return listTravlePagragraph;
+	}
+	
+	public void setListTravlePagragraph(List<MDTravelParagraph> listTravlePagragraph) {
+		this.listTravlePagragraph = listTravlePagragraph;
+	}
 
-    public void setMdAlertDate(Date mdAlertDate) {
-        this.mdAlertDate = mdAlertDate;
-    }
+	public void setMdStdcode(BigDecimal mdStdcode) {
+		this.mdStdcode = mdStdcode;
+	}
 
-    public String getMdAlertUser() {
-        return mdAlertUser;
-    }
+	public Date getMdAlertDate() {
+		return mdAlertDate;
+	}
 
-    public void setMdAlertUser(String mdAlertUser) {
-        this.mdAlertUser = mdAlertUser == null ? null : mdAlertUser.trim();
-    }
+	public void setMdAlertDate(Date mdAlertDate) {
+		this.mdAlertDate = mdAlertDate;
+	}
 
-    public Short getMdLevel() {
-        return mdLevel;
-    }
+	public String getMdAlertUser() {
+		return mdAlertUser;
+	}
 
-    public void setMdLevel(Short mdLevel) {
-        this.mdLevel = mdLevel;
-    }
+	public void setMdAlertUser(String mdAlertUser) {
+		this.mdAlertUser = mdAlertUser == null ? null : mdAlertUser.trim();
+	}
 
-    public String getMdThemeImg() {
-        return mdThemeImg;
-    }
+	public Short getMdLevel() {
+		return mdLevel;
+	}
 
-    public void setMdThemeImg(String mdThemeImg) {
-        this.mdThemeImg = mdThemeImg == null ? null : mdThemeImg.trim();
-    }
+	public void setMdLevel(Short mdLevel) {
+		this.mdLevel = mdLevel;
+	}
 
-    public Date getMdCreateTime() {
-        return mdCreateTime;
-    }
+	public String getMdThemeImg() {
+		return mdThemeImg;
+	}
 
-    public void setMdCreateTime(Date mdCreateTime) {
-        this.mdCreateTime = mdCreateTime;
-    }
+	public void setMdThemeImg(String mdThemeImg) {
+		this.mdThemeImg = mdThemeImg == null ? null : mdThemeImg.trim();
+	}
 
-    public String getMdCreateUserId() {
-        return mdCreateUserId;
-    }
+	public Date getMdCreateTime() {
+		return mdCreateTime;
+	}
 
-    public void setMdCreateUserId(String mdCreateUserId) {
-        this.mdCreateUserId = mdCreateUserId == null ? null : mdCreateUserId.trim();
-    }
+	public void setMdCreateTime(Date mdCreateTime) {
+		this.mdCreateTime = mdCreateTime;
+	}
 
-    public String getMdKeyWord() {
-        return mdKeyWord;
-    }
 
-    public void setMdKeyWord(String mdKeyWord) {
-        this.mdKeyWord = mdKeyWord == null ? null : mdKeyWord.trim();
-    }
+	public MdUser getUser() {
+		return user;
+	}
 
-    public String getMdTheme() {
-        return mdTheme;
-    }
+	public void setUser(MdUser user) {
+		this.user = user;
+	}
 
-    public void setMdTheme(String mdTheme) {
-        this.mdTheme = mdTheme == null ? null : mdTheme.trim();
-    }
+	public String getMdKeyWord() {
+		return mdKeyWord;
+	}
 
-    public String getMdMusic() {
-        return mdMusic;
-    }
+	public void setMdKeyWord(String mdKeyWord) {
+		this.mdKeyWord = mdKeyWord == null ? null : mdKeyWord.trim();
+	}
 
-    public void setMdMusic(String mdMusic) {
-        this.mdMusic = mdMusic == null ? null : mdMusic.trim();
-    }
+	public String getMdTheme() {
+		return mdTheme;
+	}
 
-    public Date getMdStartTime() {
-        return mdStartTime;
-    }
+	public void setMdTheme(String mdTheme) {
+		this.mdTheme = mdTheme == null ? null : mdTheme.trim();
+	}
 
-    public void setMdStartTime(Date mdStartTime) {
-        this.mdStartTime = mdStartTime;
-    }
+	public String getMdMusic() {
+		return mdMusic;
+	}
 
-    public Short getMdDayNumber() {
-        return mdDayNumber;
-    }
+	public void setMdMusic(String mdMusic) {
+		this.mdMusic = mdMusic == null ? null : mdMusic.trim();
+	}
 
-    public void setMdDayNumber(Short mdDayNumber) {
-        this.mdDayNumber = mdDayNumber;
-    }
+	public Date getMdStartTime() {
+		return mdStartTime;
+	}
 
-    public String getMdTravelPeople() {
-        return mdTravelPeople;
-    }
+	public void setMdStartTime(Date mdStartTime) {
+		this.mdStartTime = mdStartTime;
+	}
 
-    public void setMdTravelPeople(String mdTravelPeople) {
-        this.mdTravelPeople = mdTravelPeople == null ? null : mdTravelPeople.trim();
-    }
+	public Short getMdDayNumber() {
+		return mdDayNumber;
+	}
 
-    public Long getMdCostMoney() {
-        return mdCostMoney;
-    }
+	public void setMdDayNumber(Short mdDayNumber) {
+		this.mdDayNumber = mdDayNumber;
+	}
 
-    public void setMdCostMoney(Long mdCostMoney) {
-        this.mdCostMoney = mdCostMoney;
-    }
+	public String getMdTravelPeople() {
+		return mdTravelPeople;
+	}
 
-    public String getMdAimAddress() {
-        return mdAimAddress;
-    }
+	public void setMdTravelPeople(String mdTravelPeople) {
+		this.mdTravelPeople = mdTravelPeople == null ? null : mdTravelPeople.trim();
+	}
 
-    public void setMdAimAddress(String mdAimAddress) {
-        this.mdAimAddress = mdAimAddress == null ? null : mdAimAddress.trim();
-    }
+	public Long getMdCostMoney() {
+		return mdCostMoney;
+	}
+
+	public void setMdCostMoney(Long mdCostMoney) {
+		this.mdCostMoney = mdCostMoney;
+	}
+
+	public String getMdAimAddress() {
+		return mdAimAddress;
+	}
+
+	public void setMdAimAddress(String mdAimAddress) {
+		this.mdAimAddress = mdAimAddress == null ? null : mdAimAddress.trim();
+	}
 }

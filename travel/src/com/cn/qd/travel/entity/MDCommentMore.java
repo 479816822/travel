@@ -4,163 +4,203 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 public class MDCommentMore {
-    private String mdRecid;
+	private String mdRecid;
 
-    private String mdStdname;
+	private String mdStdname;
 
-    private String mdRefId;
+	private String mdRefId;
 
-    private BigDecimal mdStdcode;
+	private BigDecimal mdStdcode;
 
-    private Date mdCreateTime;
+	private Date mdCreateTime;
 
-    private Date mdAlertDate;
+	private Date mdAlertDate;
 
-    private String mdAlertUser;
+	private String mdAlertUser;
 
-    private Short mdLevel;
+	private Short mdLevel;
 
-    private Date mdCommentTime;
+	private Date mdCommentTime;
 
-    private String mdCommentContent;
+	private String mdCommentContent;
 
-    private String mdCommentPeople;
+	private String mdCommentPeople;
 
-    private String mdImg;
+	private String mdImg;
 
-    private String mdVideo;
+	private String mdVideo;
 
-    private Long mdPraise;
+	private Long mdPraise;
 
-    private String mdCommentMoreId;
+	private MDCommentMore commentMore;
 
-    private String mdCommentOneId;
+	private MDCommentOne commentOne;
 
-    public String getMdRecid() {
-        return mdRecid;
-    }
+	public MDCommentMore getCommentMore() {
+		return commentMore;
+	}
 
-    public void setMdRecid(String mdRecid) {
-        this.mdRecid = mdRecid == null ? null : mdRecid.trim();
-    }
+	public void setCommentMore(MDCommentMore commentMore) {
+		this.commentMore = commentMore;
+	}
 
-    public String getMdStdname() {
-        return mdStdname;
-    }
+	public MDCommentOne getCommentOne() {
+		return commentOne;
+	}
 
-    public void setMdStdname(String mdStdname) {
-        this.mdStdname = mdStdname == null ? null : mdStdname.trim();
-    }
+	public void setCommentOne(MDCommentOne commentOne) {
+		this.commentOne = commentOne;
+	}
 
-    public String getMdRefId() {
-        return mdRefId;
-    }
+	/**
+	 * 游记评论人
+	 */
+	private MdUser user;
+	/**
+	 * 评论的游记
+	 */
+	private MDTravelNote travel;
 
-    public void setMdRefId(String mdRefId) {
-        this.mdRefId = mdRefId == null ? null : mdRefId.trim();
-    }
+	private String mdCommentMoreId;
 
-    public BigDecimal getMdStdcode() {
-        return mdStdcode;
-    }
+	public MdUser getUser() {
+		return user;
+	}
 
-    public void setMdStdcode(BigDecimal mdStdcode) {
-        this.mdStdcode = mdStdcode;
-    }
+	public void setUser(MdUser user) {
+		this.user = user;
+	}
 
-    public Date getMdCreateTime() {
-        return mdCreateTime;
-    }
+	public MDTravelNote getTravel() {
+		return travel;
+	}
 
-    public void setMdCreateTime(Date mdCreateTime) {
-        this.mdCreateTime = mdCreateTime;
-    }
+	public void setTravel(MDTravelNote travel) {
+		this.travel = travel;
+	}
 
-    public Date getMdAlertDate() {
-        return mdAlertDate;
-    }
+	public String getMdRecid() {
+		return mdRecid;
+	}
 
-    public void setMdAlertDate(Date mdAlertDate) {
-        this.mdAlertDate = mdAlertDate;
-    }
+	public void setMdRecid(String mdRecid) {
+		this.mdRecid = mdRecid == null ? null : mdRecid.trim();
+	}
 
-    public String getMdAlertUser() {
-        return mdAlertUser;
-    }
+	public String getMdStdname() {
+		return mdStdname;
+	}
 
-    public void setMdAlertUser(String mdAlertUser) {
-        this.mdAlertUser = mdAlertUser == null ? null : mdAlertUser.trim();
-    }
+	public void setMdStdname(String mdStdname) {
+		this.mdStdname = mdStdname == null ? null : mdStdname.trim();
+	}
 
-    public Short getMdLevel() {
-        return mdLevel;
-    }
+	public String getMdRefId() {
+		return mdRefId;
+	}
 
-    public void setMdLevel(Short mdLevel) {
-        this.mdLevel = mdLevel;
-    }
+	public void setMdRefId(String mdRefId) {
+		this.mdRefId = mdRefId == null ? null : mdRefId.trim();
+	}
 
-    public Date getMdCommentTime() {
-        return mdCommentTime;
-    }
+	public BigDecimal getMdStdcode() {
+		return mdStdcode;
+	}
 
-    public void setMdCommentTime(Date mdCommentTime) {
-        this.mdCommentTime = mdCommentTime;
-    }
+	public void setMdStdcode(BigDecimal mdStdcode) {
+		this.mdStdcode = mdStdcode;
+	}
 
-    public String getMdCommentContent() {
-        return mdCommentContent;
-    }
+	public Date getMdCreateTime() {
+		return mdCreateTime;
+	}
 
-    public void setMdCommentContent(String mdCommentContent) {
-        this.mdCommentContent = mdCommentContent == null ? null : mdCommentContent.trim();
-    }
+	public void setMdCreateTime(Date mdCreateTime) {
+		this.mdCreateTime = mdCreateTime;
+	}
 
-    public String getMdCommentPeople() {
-        return mdCommentPeople;
-    }
+	public Date getMdAlertDate() {
+		return mdAlertDate;
+	}
 
-    public void setMdCommentPeople(String mdCommentPeople) {
-        this.mdCommentPeople = mdCommentPeople == null ? null : mdCommentPeople.trim();
-    }
+	public void setMdAlertDate(Date mdAlertDate) {
+		this.mdAlertDate = mdAlertDate;
+	}
 
-    public String getMdImg() {
-        return mdImg;
-    }
+	public String getMdAlertUser() {
+		return mdAlertUser;
+	}
 
-    public void setMdImg(String mdImg) {
-        this.mdImg = mdImg == null ? null : mdImg.trim();
-    }
+	public void setMdAlertUser(String mdAlertUser) {
+		this.mdAlertUser = mdAlertUser == null ? null : mdAlertUser.trim();
+	}
 
-    public String getMdVideo() {
-        return mdVideo;
-    }
+	public Short getMdLevel() {
+		return mdLevel;
+	}
 
-    public void setMdVideo(String mdVideo) {
-        this.mdVideo = mdVideo == null ? null : mdVideo.trim();
-    }
+	public void setMdLevel(Short mdLevel) {
+		this.mdLevel = mdLevel;
+	}
 
-    public Long getMdPraise() {
-        return mdPraise;
-    }
+	public Date getMdCommentTime() {
+		return mdCommentTime;
+	}
 
-    public void setMdPraise(Long mdPraise) {
-        this.mdPraise = mdPraise;
-    }
+	public void setMdCommentTime(Date mdCommentTime) {
+		this.mdCommentTime = mdCommentTime;
+	}
 
-    public String getMdCommentMoreId() {
-        return mdCommentMoreId;
-    }
+	public String getMdCommentContent() {
+		return mdCommentContent;
+	}
 
-    public void setMdCommentMoreId(String mdCommentMoreId) {
-        this.mdCommentMoreId = mdCommentMoreId == null ? null : mdCommentMoreId.trim();
-    }
+	public void setMdCommentContent(String mdCommentContent) {
+		this.mdCommentContent = mdCommentContent == null ? null : mdCommentContent.trim();
+	}
 
-    public String getMdCommentOneId() {
-        return mdCommentOneId;
-    }
+	public String getMdCommentPeople() {
+		return mdCommentPeople;
+	}
 
-    public void setMdCommentOneId(String mdCommentOneId) {
-        this.mdCommentOneId = mdCommentOneId == null ? null : mdCommentOneId.trim();
-    }
+	public void setMdCommentPeople(String mdCommentPeople) {
+		this.mdCommentPeople = mdCommentPeople == null ? null : mdCommentPeople.trim();
+	}
+
+	public String getMdImg() {
+		return mdImg;
+	}
+
+	public void setMdImg(String mdImg) {
+		this.mdImg = mdImg == null ? null : mdImg.trim();
+	}
+
+	public String getMdVideo() {
+		return mdVideo;
+	}
+
+	public void setMdVideo(String mdVideo) {
+		this.mdVideo = mdVideo == null ? null : mdVideo.trim();
+	}
+
+	public Long getMdPraise() {
+		return mdPraise;
+	}
+
+	public void setMdPraise(Long mdPraise) {
+		this.mdPraise = mdPraise;
+	}
+
+	public String getMdCommentMoreId() {
+		return mdCommentMoreId;
+	}
+
+	public void setMdCommentMoreId(String mdCommentMoreId) {
+		this.mdCommentMoreId = mdCommentMoreId == null ? null : mdCommentMoreId.trim();
+	}
+
+	public String getMdCommentOneId() {
+		return getMdCommentOneId();
+	}
+
 }
