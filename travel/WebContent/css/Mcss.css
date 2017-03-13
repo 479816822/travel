@@ -1,0 +1,2194 @@
+
+body{
+    font-size: 12px;
+    font-family: Arial, "Lucida Grande", "Microsoft Yahei", "Hiragino Sans GB", "Hiragino Sans GB W3", SimSun, "PingFang SC", STHeiti;
+    _font-family: Tahoma, Arial, Helvetica, STHeiti;
+    background-color: #e2e2e2;
+    color: #666;
+}
+
+.header{
+    z-index: 999;
+    height: 46px;
+    width: 100%;
+    background-color: rgba(34, 35, 36, 0.95);
+    background-color: #2d2e2f \9;
+    position: fixed;
+    top: 0;
+    left: 0;
+    clear: both;
+    font-family: "Microsoft Yahei";
+}
+
+
+
+input, select, textarea, button {
+    font-family: Arial, "Lucida Grande", "Microsoft Yahei", "Hiragino Sans GB", "Hiragino Sans GB W3", "PingFang SC", STHeiti;
+    _font-family: Tahoma, Arial, Helvetica, STHeiti
+}
+
+
+ul, ol, li, dl, dd, dt {
+    margin: 0;
+    padding: 0;
+    list-style: none
+}
+
+a {
+    color: #ff9d00;
+    text-decoration: none;
+    cursor: pointer
+}
+
+a:hover {
+    color: #ff8a00;
+    text-decoration: underline
+}
+
+td {
+    font-size: 12px;
+    color: #666
+}
+
+img {
+    border: 0;
+    vertical-align: middle
+}
+
+.topBarC{
+    width: 70%;
+    margin: 0 auto;
+    height: 46px
+}
+
+.topBarC .logo {
+    float: left;
+    width: 32px;
+    display: inline;
+    margin: 9px 20px 0 0
+}
+
+.topBarC .logo a {
+    display: inline-block;
+    height: 29px;
+    width: 32px;
+    background: url(../syste_img/img/question/logo.png) 0 0 no-repeat;
+    text-indent: -9999px;
+    *text-indent: 0;
+    *line-height: 200px;
+    overflow: hidden;
+    vertical-align: top
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+    .topBarC .logo a {
+        background: url(../syste_img/img/question/twice_logo.png);
+        background-size: 32px 29px
+    }
+}
+
+
+
+.topBarC .t b{
+    position: absolute;
+    right: 12px;
+    top: 22px;
+    width: 0;
+    height: 46px;
+    border-width: 4px;
+    border-style: solid dashed dashed dashed;
+    border-color: #999 transparent transparent transparent
+}
+
+
+.t_nav {
+    float: left
+}
+
+.t_nav li {
+    float: left;
+    height: 46px;
+    margin-right: 1px;
+    position: relative;
+    z-index: 1;
+    zoom: 1
+}
+
+.t_nav li .t {
+    font-size: 16px;
+    color: #fff;
+    font-weight: normal
+}
+
+.t_nav li.drop .t a {
+    padding-right: 25px
+}
+
+.t_nav li .c {
+    position: absolute;
+    left: 0;
+    top: 30px;
+    width: 110px;
+    background-color: #222;
+    display: none;
+    opacity: .9;
+    filter: alpha(opacity=90);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4)
+}
+
+
+
+
+.t_nav li.on .c {
+    display: block
+}
+
+.t_nav li:hover .c, .t_nav li.hover .c {
+    display: block
+}
+
+.t_nav li .c a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: normal;
+    height: 15px;
+    line-height: 15px
+}
+
+.t_nav li .c a:hover {
+    background-color: #000
+}
+
+.t_search {
+    float: left;
+    margin: 10px 0 0 20px;
+    width: 140px;
+    height: 26px;
+    background-color: #4a4b4c;
+    overflow: hidden;
+    position: relative
+}
+
+form {
+    margin: 0;
+    padding: 0
+}
+
+.t_search .key {
+    float: left;
+    width: 112px;
+    height: 26px;
+    margin: 0;
+    padding: 0 30px 0 8px;
+    border: 0 none;
+    background: 0;
+    color: #fff;
+    font-size: 14px;
+    line-height: 14px
+}
+
+.t_search .btn {
+    position: absolute;
+    right: 9px;
+    top: 5px;
+    border: 0 none;
+    width: 16px;
+    height: 16px;
+    background: url(../syste_img/img/question/topbar-bg.png) 0 -34px;
+    background: url(../syste_img/img/question/topBar-bg_ie6.gif) 0 -34px;
+    padding: 0;
+    cursor: pointer
+}
+
+
+.t_nav li .t a{
+    float: left;
+    display: block;
+    height: 16px;
+    padding: 15px 17px;
+    color: #fff;
+    line-height: 16px;
+    line-height: 19px \9;
+    overflow: hidden
+}
+
+.t_nav li .t a:hover, .t_nav li:hover .t a, .t_nav li.hover .t a
+{
+    background-color: #000
+}
+
+
+
+
+
+.t_info {
+    float: left;
+    color: #fff;
+    width: 200px;
+    vertical-align: top
+}
+
+
+.t_info .user_info {
+    height: 46px;
+    float: right
+}
+
+.t_info .user_info li {
+    float: left;
+    margin-left: 1px;
+    font-size: 12px;
+}
+
+
+.t_info .user_info li.daka {
+    position: relative;
+    margin-top: 11px;
+    margin-left: 0px;
+    width: 60px
+}
+
+.daka_btn a {
+    width: 100%;
+    height: 24px;
+    background-color: #1493e3;
+    display: block;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    line-height: 24px;
+    border-radius: 4px;
+    cursor: pointer
+}
+
+.daka_complete a {
+    background-color: #ff9d00;
+    font-size: 12px
+}
+
+.daka_complete a:hover {
+    background-color: #ff8a00
+}
+
+.daka_btn .daka_after, .daka_complete .daka_before {
+    display: none
+}
+
+.daka_complete .daka_after {
+    display: inline-block
+}
+
+
+.daka_tips {
+    width: 166px;
+    height: 134px;
+    background-image: url(../syste_img/img/question/tips_v3.png);
+    position: absolute;
+    z-index: 200;
+    margin-top: -200px;
+    margin-left: -100px
+}
+
+.daka_tips .on {
+    -webkit-animation: jumpping 1.5s linear 0s 1 forwards;
+    margin-top: 0
+}
+
+
+.header .new {
+    color: #F30
+}
+
+
+.daka_btn {
+    display: block;
+    width: 100%
+}
+
+.t_nav li .t a:hover, .user_info .infoItem:hover, .t_nav li:hover .t a, .t_nav li.hover .t a, .user_info .account:hover .infoItem, .user_info .account.hover .infoItem, .user_info .msg:hover .infoItem {
+    background-color: #000
+}
+
+
+
+.t_info li.on .c {
+    display: block
+}
+
+.t_info li:hover .c, .t_nav li.hover .c {
+    display: block
+}
+
+.t_info li .c a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: normal;
+    height: 15px;
+    line-height: 15px
+}
+
+.t_info li .c a:hover {
+    background-color: #000
+}
+
+
+
+.t_info li .t a{
+    float: left;
+    display: block;
+    height: 16px;
+    padding: 15px 17px;
+    color: #fff;
+    line-height: 16px;
+    line-height: 19px \9;
+    overflow: hidden
+}
+
+.t_info li .t a:hover, .t_info li:hover .t a, .t_info li.hover .t a
+{
+    background-color: #000
+}
+
+
+
+
+
+.t_info .c {
+    position: absolute;
+    left: 0;
+    top: 46px;
+    width: 110px;
+    background-color: #222;
+    display: none;
+    opacity: .9;
+    filter: alpha(opacity=90);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4)
+}
+
+.t_info a {
+    color: #fff
+}
+
+
+.t_info .user_info .infoItem {
+    padding-left: 12px;
+    padding-right: 25px;
+    font-size: 16px
+}
+
+.t_info .user_info .infoItem:hover {
+    color: #fff
+}
+
+.t_info .user_info em {
+    font-style: normal
+}
+
+.t_info .user_info .name img {
+    float: left;
+    margin: 1px 5px 0 0
+}
+
+
+
+.t_info .user_info .name em {
+    float: left
+}
+
+.t_info .msg {
+    position: relative
+}
+
+.t_info .msg span {
+    display: inline-block
+}
+
+.t_info .msg a {
+    padding-right: 20px
+}
+
+.t_info .account {
+    position: relative;
+    z-index: 10
+}
+
+.t_info .account .t a {
+    padding-right: 25px;
+    padding: 7px 22px 7px 10px;
+    height: auto
+}
+
+.t_info .account .t a img {
+    float: left;
+    margin: 0;
+    border-radius: 32px
+}
+
+.t_info .account .t a b {
+    right: 9px
+}
+
+
+
+
+.uSet {
+    position: absolute;
+    right: 0;
+    top: 30px;
+    width: 130px;
+    background-color: #222;
+    opacity: .9;
+    filter: alpha(opacity=90);
+    padding: 0px 0 10px;
+    display: none
+}
+
+.t_info li .on .uSet {
+    display: block
+}
+
+.t_info li .on .uSet a {
+    display: block;
+    text-align: left;
+    padding:0px 10px;
+    height: 15px;
+    color: #FFF;
+    opacity: .9
+}
+
+.t_info li .on .uSet a:hover {
+    background-color: #000;
+    text-decoration: none
+}
+
+.t_info li .on .uSet a.containNum {
+    padding: 4px 10px
+}
+
+.t_info li .on .uSet a.containNum span {
+    font-size: 14px;
+    color: #fc9c27;
+    font-family: Arial
+}
+
+.t_info li .on .uSet a.hasLine {
+    position: relative;
+    margin-bottom: 10px
+}
+
+.t_info li .on .uSet a.hasLine:after {
+    content: "";
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    height: 1px;
+    bottom: -6px;
+    background-color: #121212
+}
+.header .new {
+    color: #F30
+}
+
+.t_info .user_info .drop-bd {
+    position: absolute;
+    right: 0;
+    width: 130px;
+    top: 46px;
+    background-color: #222;
+    opacity: .9;
+    filter: alpha(opacity=90);
+    padding-bottom: 5px;
+    display: none;
+}
+
+
+
+.t_info .user_info .drop-bd {
+    position: absolute;
+    right: 0;
+    width: 130px;
+    top: 46px;
+    background-color: #222;
+    opacity: .9;
+    filter: alpha(opacity=90);
+    padding-bottom: 5px;
+    display: none;
+}
+
+.t_info .user_info li.on .drop-bd {
+    display: block
+}
+
+.t_info .user_info .drop-bd li {
+    height: 29px;
+    float: none;
+    margin: 0;
+    display: block
+}
+
+.t_info .user_info .drop-bd li a {
+    padding: 0 10px;
+    height: 29px;
+    line-height: 29px;
+    display: block;
+    color: #fff;
+    opacity: .9
+}
+
+.t_info .user_info .drop-bd li a:hover {
+    background-color: #000;
+    text-decoration: none
+}
+
+.t_info .user_info .drop-bd li.new-msg-li a {
+    color: #d62d00
+}
+
+.t_info .user_info .drop-bd li.new-msg-line {
+    display: none
+}
+
+.t_info .user_info .ub-new-msg {
+    margin: 0;
+    width: 0;
+    height: 0;
+    position: relative;
+}
+
+
+.t_info .user_info .new-msg-tips {
+    position: absolute;
+    left: -130px;
+    top: 46px;
+    width: 130px;
+    background-color: #222;
+    opacity: .9;
+    filter: alpha(opacity=90);
+    padding: 0 0 5px
+}
+
+.t_info .user_info .new-msg-tips p {
+    height: 29px
+}
+
+.t_info .user_info .new-msg-tips p a {
+    padding: 0 10px;
+    height: 29px;
+    line-height: 29px;
+    display: block;
+    color: #d62d00;
+    opacity: .9
+}
+
+.t_info .user_info .new-msg-tips p a:hover {
+    background-color: #000;
+    text-decoration: none
+}
+
+.t_info .user_info .new-msg-tips .new-msg-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    background: url(../syste_img/img/question/btn_close.gif) no-repeat center center;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+
+
+.t_info .user_info .infoItem {
+    padding-left: 12px;
+    padding-right: 25px;
+    font-size: 16px
+}
+
+.no_login {
+    float: right;
+    padding: 10px 0;
+    height: 26px;
+    overflow: hidden;
+    line-height: 26px;
+    font-size: 14px
+}
+
+.no_login span {
+    float: left
+}
+
+.no_login a {
+    color: #ff8a00
+}
+
+.no_login .login-qq, .no_login .login-weibo, .no_login .login-renren {
+    float: left;
+    display: inline-block;
+    margin-left: 8px;
+    width: 26px;
+    height: 26px;
+    background: url(../syste_img/img/question/topbar-bg.png) no-repeat
+}
+
+
+
+.header .new {
+    color: #F30
+}
+
+
+
+.t_info .user_info .drop-bd li a:hover {
+    background-color: #000;
+    text-decoration: none
+}
+
+#ttt{
+    margin-top: 8px;
+}
+
+
+
+
+
+
+.main{
+    width: 100%;
+    left: 0;
+    margin-top: 24px;
+    height: auto;
+    font-family: "Microsoft Yahei"
+}
+
+
+
+
+
+
+
+/* Creator:Oldbin 201505 */
+/* 閹存垹娈戠粣婵嗗敶鐎圭懓灏禍宀�楠囩�佃壈鍩� */
+.tags_bar {
+    height: 58px;
+    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-bottom: #d6d6d6 1px solid;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+}
+
+.tags_bar ul {
+    float: right;
+}
+
+.tags_bar li {
+    float: left;
+    position: relative;
+    z-index: 10;
+}
+
+.tags_bar li .tags_link {
+    display: block;
+    margin-left: 12px;
+    margin-top: 10px;
+    padding: 0 15px;
+    position: relative;
+    font-size: 18px;
+    height: 48px;
+    line-height: 38px;
+    color: #444;
+    border-radius: 5px 5px 0 0;
+    z-index: 1;
+}
+
+.tags_bar li .tags_link:after {
+    content: '';
+    width: 100%;
+    height: 3px;
+    background-color: #ff8a00;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: none;
+}
+
+.tags_bar li .tags_link:hover {
+    text-decoration: none;
+}
+
+.tags_bar li.on .tags_link:after {
+    display: block;
+}
+
+.tags_bar li .tags_link:hover {
+    color: #ff8a00;
+}
+
+.tags_bar .more .tags_link {
+    height: 46px;
+    margin-left: 10px;
+    padding-left: 18px;
+    border: #ffffff 1px solid;
+    border: rgba(255, 255, 255, 0) 1px solid;
+    border-bottom: none;
+    z-index: 12;
+    position: relative;
+}
+
+
+
+.second_tags_bar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 58px;
+}
+
+.second_tags_bar li .tags_link {
+    height: 48px;
+    line-height: 38px;
+}
+
+.second_tags_bar .MAvatar {
+    position: absolute;
+    left: 30px;
+    top: -30px;
+}
+
+.second_tags_bar .MAvatar .MAvaImg {
+    margin-right: 10px;
+}
+
+.second_tags_bar .MAvatar .MAvaEasyWord {
+    margin-top: -7px;
+}
+
+.second_tags_bar .MAvatar .MAvaName {
+    color: #fff;
+    font-size: 16px;
+}
+
+.second_tags_bar .MAvatar .MAvaLevel {
+    font-size: 16px;
+    color: #ea3c1a;
+}
+
+.banner .second_tags_bar .center {
+    height: auto;
+}
+
+
+.banner .second_tags_bar .center {
+    height: auto;
+}
+
+.mygroup_tips:after {
+    content: '';
+    width: 123px;
+    height: 152px;
+    background-image: url('../syste_img/img/travel/default_sprite_v6.png');
+    background-position: -1px -463px;
+    position: absolute;
+    left: 25px;
+    top: -92px;
+}
+
+.MAvatar {
+    text-align: center;
+    font-size: 14px;
+}
+
+
+.MAvaImg {
+    width: 120px;
+    height: 70px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.MAvaImg img {
+    position: relative;
+    top: -50px;
+    z-index: 20;
+    border-radius: 120px;
+}
+
+.MAvaUp {
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    left: 0;
+    top: -50px;
+    z-index: 20;
+    border-radius: 120px;
+}
+
+.MAvaUp:before,
+.MAvaUp:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 120px;
+}
+
+.MAvaUp:before {
+    transform: scale(0);
+    transition: transform 0.3s ease-out 0s;
+    -webkit-transform: scale(0);
+    -webkit-transition: -webkit-transform 0.3s ease-out 0s;
+}
+
+.MAvaUp:after {
+    background-color: #dbdbdb;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    display: none;
+}
+
+.MAvaUp:hover:before {
+    transform: scale(1);
+    transition: none;
+    -webkit-transform: scale(1);
+    -webkit-transition: none;
+}
+
+.MAvaUp:hover:after {
+    display: block;
+    -webkit-animation: scaledown 0.3s ease-out 0s 1 forwards;
+    -moz-animation: scaledown 0.3s ease-out 0s 1 forwards;
+    -o-animation: scaledown 0.3s ease-out 0s 1 forwards;
+    animation: scaledown 0.3s ease-out 0s 1 forwards;
+}
+
+.MAvaUp .Mphoto {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -10px 0 0 -12px;
+}
+
+.MAvaImg.hasAva .MAvaUp .Mphoto {
+    display: none;
+}
+
+.MAvaImg.hasAva .MAvaUp:hover .Mphoto {
+    display: block;
+}
+
+@keyframes scaledown {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+@-webkit-keyframes scaledown {
+    0% {
+        -webkit-transform: scale(1);
+    }
+    100% {
+        -webkit-transform: scale(0);
+    }
+}
+
+@-moz-keyframes scaledown {
+    0% {
+        -moz-transform: scale(1);
+    }
+    100% {
+        -moz-transform: scale(0);
+    }
+}
+
+@-o-keyframes scaledown {
+    0% {
+        -o-transform: scale(1);
+    }
+    100% {
+        -o-transform: scale(0);
+    }
+}
+
+.MAvaName {
+    font-size: 22px;
+    line-height: 24px;
+    margin-top: 16px;
+}
+
+.MAvaName i {
+    vertical-align: middle;
+    margin-left: 7px;
+    display: inline-block;
+    position: relative;
+    top: -2px;
+}
+
+.MAvaInfo {
+    margin-top: 16px;
+    line-height: 16px;
+}
+
+.MAvaInfo span {
+    padding: 0 15px 0 12px;
+    display: inline-block;
+    position: relative;
+}
+
+.MAvaInfo .MAvaSet {
+    display: none;
+}
+
+.MAvaInfo .MAvaSet a:hover {
+    background-position: -108px -166px;
+}
+
+.MAvaInfo .MAvaLevel:after {
+    content: '';
+    background-color: #d6d6d6;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 16px;
+}
+
+.MAvaInfo .MAvaLevel a {
+    color: #ea3c1a;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Arial;
+}
+
+.MAvaMyInfo span {
+    padding: 0 10px 0 7px;
+}
+
+.MAvaMyInfo .MAvaSet {
+    padding: 0 0 0 5px;
+    position: relative;
+    top: -1px;
+    display: inline-block;
+}
+
+.MAvaMyInfo .MAvaSet a {
+    width: 17px;
+    height: 17px;
+    background-image: url('../syste_img/img/travel/ico_sprite_v7.png');
+    background-position: -108px -146px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+
+.MAvaMyInfo .MAvaPlace:after {
+    content: '';
+    background-color: #d6d6d6;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 16px;
+}
+
+.MAvaProfile {
+    margin-top: 20px;
+    padding: 0 20px;
+}
+
+.MAvaProfile .addBtn {
+    line-height: 30px;
+    border-radius: 3px;
+    color: #666;
+    background-color: #efefef;
+    display: block;
+    text-align: center;
+    transition: background-color 0.3s ease-out 0s;
+    -webkit-transition: background-color 0.3s ease-out 0s;
+}
+
+.MAvaProfile .addBtn:hover {
+    background-color: #ff8a00;
+    color: #fff;
+    text-decoration: none;
+}
+
+.MAvaProfile textarea {
+    height: 78px;
+    padding: 15px;
+    background-color: #efefef;
+    line-height: 20px;
+    color: #999;
+    border-style: none;
+    display: block;
+    width: 208px;
+    border: #efefef 1px solid;
+    font-size: 14px;
+    resize: none;
+    transition: 0.3s ease-out 0s;
+    -webkit-transition: 0.3s ease-out 0s;
+}
+
+.MAvatInput {
+    margin-top: 16px;
+}
+
+.MAvaProfile .MAvaBtn {
+    line-height: 30px;
+    border-radius: 3px;
+    color: #fff;
+    background-color: #ccc;
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+    transition: background-color 0.3s ease-out 0s;
+    -webkit-transition: background-color 0.3s ease-out 0s;
+}
+
+.MAvaProfile .MAvaBtn:hover {
+    background-color: #ff8a00;
+    text-decoration: none;
+}
+
+.MAvaProfile .MAvaFocusing textarea {
+    background-color: #fff;
+    border-color: #ffc65a;
+    box-shadow: 0 0 3px #ffc65a;
+}
+
+.MAvaProfile .MAvaFocusing .MAvaBtn {
+    background-color: #ffa800;
+}
+
+.MAvaProfile .MProfile {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6em;
+    text-align: left;
+    padding: 0 0 0 10px;
+    position: relative;
+}
+
+.MAvaProfile .MProfile:before, .MAvaProfile .MProfile:after {
+    content: "";
+    display: block;
+    width: 8px;
+    height: 6px;
+    position: absolute;
+    background: url(../syste_img/img/travel/ico_sprite_v7.png) no-repeat;
+}
+
+.MAvaProfile .MProfile:before {
+    left: 0;
+    top: 5px;
+    background-position: -18px -257px;
+}
+
+.MAvaProfile .MProfile:after {
+    right: 0;
+    bottom: 12px;
+    background-position: -26px -257px;
+}
+
+.MAvaProfile pre {
+    font-family: Arial, verdana, "Lucida Grande", "Microsoft Yahei", "Hiragino Sans GB", "Hiragino Sans GB W3", SimSun, STHeiti;
+}
+
+.MAvaAction {
+    margin-top: 20px;
+    position: relative;
+}
+
+.MAvaAction .MAvaBtn {
+    width: 30px;
+    display: inline-block;
+    margin-right: 5px;
+    line-height: 24px;
+    border: #ffa800 1px solid;
+    border-radius: 3px;
+    vertical-align: middle;
+}
+
+.MAvaAction .MAvaBtn:hover {
+    text-decoration: none;
+}
+
+.MAvaAction .MAvaAttention {
+    padding: 0 16px 0 31px;
+    border-color: #ffa800;
+    background-color: #ffa800;
+    color: #ffffff;
+    position: relative;
+}
+
+.MAvaAction .MAvaAttention:hover {
+    background-color: #ff8a00;
+    border-color: #ff8a00;
+}
+
+.MAvaAction .MAvaAttention:before,
+.MAvaAction .MAvaAttention:after {
+    content: '';
+    position: absolute;
+    line-height: 0px;
+    background-color: #ffffff;
+}
+
+.MAvaAction .MAvaAttention:before {
+    width: 10px;
+    height: 2px;
+    left: 16px;
+    top: 11px;
+}
+
+.MAvaAction .MAvaAttention:after {
+    width: 2px;
+    height: 10px;
+    left: 20px;
+    top: 7px;
+}
+
+.MAvaAction .MAvaAttention .MAed,
+.MAvaAction .MAvaAttention .MAcancel {
+    display: none;
+}
+
+.MAvaAction .MAvaAttentioned {
+    background-color: #999999;
+    border-color: #999;
+    padding: 0;
+    width: 75px;
+    text-align: center;
+}
+
+.MAvaAction .MAvaAttentioned:before,
+.MAvaAction .MAvaAttentioned:after {
+    display: none;
+}
+
+.MAvaAction .MAvaAttentioned .MAing {
+    display: none;
+}
+
+.MAvaAction .MAvaAttentioned .MAed {
+    display: block;
+}
+
+.MAvaAction .MAvaAttentioned:hover {
+    background-color: #ffffff;
+    border-color: #ffa800;
+    color: #ff8a00;
+}
+
+.MAvaAction .MAvaAttentioned:hover .MAcancel {
+    display: inline-block;
+}
+
+.MAvaAction .MAvaAttentioned:hover .MAed {
+    display: none;
+}
+
+.MAvaAction .MAvaEmail {
+    padding: 0 18px;
+    color: #ff8a00;
+}
+
+.MAvaAction .MAvaEmail:hover {
+    color: #fff;
+    background-color: #ffa800;
+}
+
+.MAvaMore {
+    margin-top: 20px;
+    border-top: #e2e2e2 1px solid;
+    border-bottom: #e2e2e2 1px solid;
+}
+
+.MAvaMore .MAvaNums {
+    position: relative;
+    width: 33%;
+    float: left;
+    padding: 10px 0;
+    text-align: center;
+    line-height: 20px;
+}
+
+.MAvaMore .MAvaNums:after {
+    content: '';
+    width: 1px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #e2e2e2;
+}
+
+.MAvaMore .MAvaNums strong {
+    font-size: 20px;
+    color: #444;
+    font-family: Arial;
+}
+
+.MAvaMore .MAvaNums strong a {
+    color: #444;
+}
+
+.MAvaMore .MAvaNums p {
+    font-size: 14px;
+}
+
+.MAvaMore .last:after {
+    display: none;
+}
+
+/* Creator:Oldbin 201505 */
+/* 缁犫偓閺勬挸鑴婄粣妤佺壉瀵拷 */
+.MMessage {
+    position: absolute;
+    top: 32px;
+    left: 137px;
+    width: 320px;
+    padding: 14px 20px 20px;
+    background-color: #ffffff;
+    border: #d6d6d6 1px solid;
+    z-index: 10;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.MMessage .close {
+    font-size: 14px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    transition: transform .6s ease 0s;
+    -webkit-transition: -webkit-transform 0.6s ease 0s;
+    color: #666;
+    width: 12px;
+    line-height: 12px;
+}
+
+.MMessage .close:hover {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    color: #ff7200;
+    text-decoration: none;
+}
+
+.MMessageTitle {
+    font-size: 14px;
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+.MMessageTitle strong {
+    font-weight: normal;
+    color: #ff7200;
+    margin: 0 3px;
+}
+
+.MMessageDetail textarea {
+    padding: 10px 15px;
+    background-color: #efefef;
+    border-style: none;
+    width: 290px;
+    height: 80px;
+    line-height: 22px;
+    font-size: 14px;
+    resize: none;
+    color: #666;
+}
+
+.MMessageBtn {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.MMessageBtn a {
+    line-height: 30px;
+    border-radius: 3px;
+}
+
+
+
+.second_tags_bar .MAvatar {
+    position: absolute;
+    left: 30px;
+    top: -30px;
+}
+
+.second_tags_bar .MAvatar .MAvaImg {
+    margin-right: 10px;
+}
+
+.second_tags_bar .MAvatar .MAvaEasyWord {
+    margin-top: -7px;
+}
+
+.second_tags_bar .MAvatar .MAvaName {
+    color: #fff;
+    font-size: 16px;
+}
+
+.second_tags_bar .MAvatar .MAvaLevel {
+    font-size: 16px;
+    color: #ea3c1a;
+}
+
+
+.second_tags_bar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 58px;
+}
+
+.second_tags_bar li .tags_link {
+    height: 48px;
+    line-height: 38px;
+}
+
+.map_default .center {
+    position: absolute;
+    left: 50%;
+    margin-left: -490px;
+    top: 0;
+    height: 100%;
+}
+
+
+.flt1 {
+    float: left
+}
+
+
+.tags_more_list li a i {
+    background-image: url("../syste_img/img/travel/home_sprite_v13.png");
+}
+
+.tags_more_list li a .ico_rent {
+    background-position: -455px -139px;
+}
+
+.tags_more_list li a:hover .ico_rent {
+    background-position: -455px -156px;
+}
+
+.tags_more_list li a .ico_collect {
+    background-position: -365px -139px;
+}
+
+.tags_more_list li a .ico_order {
+    background-position: -383px -139px;
+}
+
+.tags_more_list li a .ico_ticket {
+    background-position: -400px -139px;
+    width: 18px;
+}
+
+.tags_more_list li a .ico_exchange {
+    background-position: -419px -139px;
+}
+
+.tags_more_list li a .ico_group {
+    background-position: -437px -139px;
+}
+
+
+
+.tags_more_list li a:hover i {
+    background-position: -347px -157px;
+}
+
+.tags_more_list li a:hover .ico_collect {
+    background-position: -365px -157px;
+}
+
+.tags_more_list li a:hover .ico_order {
+    background-position: -383px -157px;
+}
+
+.tags_more_list li a:hover .ico_ticket {
+    background-position: -400px -157px;
+    width: 18px;
+}
+
+.tags_more_list li a:hover .ico_exchange {
+    background-position: -419px -157px;
+}
+
+.tags_more_list li a:hover .ico_group {
+    background-position: -437px -157px;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+    .tags_more_list li a i {
+        background-position: -66px -69px;
+        background-size: 250px 270px;
+    }
+
+    .tags_more_list li a .ico_collect {
+        background-position: -84px -69px;
+    }
+
+    .tags_more_list li a .ico_order {
+        background-position: -102px -69px;
+        width: 17px;
+    }
+
+    .tags_more_list li a .ico_ticket {
+        background-position: -120px -69px;
+    }
+
+    .tags_more_list li a .ico_exchange {
+        background-position: -138px -69px;
+    }
+
+    .tags_more_list li a .ico_group {
+        background-position: -155px -69px;
+    }
+
+    .tags_more_list li a:hover i {
+        background-position: -66px -87px;
+    }
+
+    .tags_more_list li a:hover .ico_collect {
+        background-position: -84px -87px;
+    }
+
+    .tags_more_list li a:hover .ico_order {
+        background-position: -102px -87px;
+    }
+
+    .tags_more_list li a:hover .ico_ticket {
+        background-position: -120px -87px;
+    }
+
+    .tags_more_list li a:hover .ico_exchange {
+        background-position: -138px -87px;
+    }
+
+    .tags_more_list li a:hover .ico_group {
+        background-position: -155px -87px;
+    }
+
+}
+
+li.more:hover .tags_more_list {
+    display: block;
+}
+
+li.more .tags_link:hover:after {
+    display: none;
+}
+
+li.more:hover .tags_link {
+    background-color: #ffffff;
+    border-color: #d6d6d6;
+    color: #444;
+}
+
+li.more:hover .tags_link:before {
+    content: '';
+    position: absolute;
+    width: 1px;
+    right: 0;
+    top: 2px;
+    bottom: 0;
+    border-radius: 0 5px 0 0;
+    box-shadow: 2px 0 3px rgba(80, 80, 80, 0.8);
+}
+
+
+.tags_more_list {
+    position: absolute;
+    right: 0;
+    top: 56px;
+    width: 140px;
+    padding: 18px 0 22px;
+    border: #d6d6d6 1px solid;
+    background-color: #ffffff;
+    border-radius: 10px 0 10px 10px;
+    box-shadow: 2px 2px 3px rgba(144, 144, 144, 0.4);
+    z-index: 10;
+    display: none;
+}
+
+.tags_more_list li a {
+    height: 38px;
+    line-height: 38px;
+    padding: 0 20px;
+    display: block;
+    font-size: 14px;
+    color: #654939;
+    margin: 0 0 2px;
+    width: 100px;
+}
+
+.tags_more_list li a:hover {
+    background-color: #ffa800;
+    color: #fff;
+    text-decoration: none;
+}
+
+.tags_more_list li a span,
+.tags_more_list li a i {
+    vertical-align: middle;
+}
+
+.tags_more_list li a i {
+    width: 16px;
+    height: 17px;
+    display: inline-block;
+    background-image: url('../syste_img/img/travel/home_sprite_v13.png');
+    background-position: -347px -139px;
+    margin-right: 8px;
+}
+
+
+.more_detail input,
+.more_detail textarea {
+    color: #999;
+    font-size: 14px;
+    background-color: #e5e5e5;
+    border: #e5e5e5 1px solid;
+}
+
+.more_detail input {
+    width: 188px;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 10px;
+}
+
+.more_detail textarea {
+    width: 268px;
+    padding: 10px 20px;
+    line-height: 22px;
+    height: 88px;
+    resize: none;
+}
+
+.more_detail.finished input,
+.more_detail.finished textarea,
+.more_detail input:focus,
+.more_detail textarea:focus {
+    border-color: #ffc65a;
+    background-color: #ffffff;
+}
+
+.more_detail input:focus,
+.more_detail textarea:focus {
+    box-shadow: 0 0 3px #ff8a00;
+}
+
+.more_detail .more_select {
+    margin-right: 20px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.more_detail .more_select i,
+.more_detail .more_select label {
+    vertical-align: middle;
+}
+
+.more_detail .more_select i {
+    margin-right: 12px;
+    width: 18px;
+    height: 18px;
+    border: #ffc65a 1px solid;
+    border-radius: 18px;
+    position: relative;
+    display: inline-block;
+}
+
+.more_detail .more_select i:before {
+    content: '';
+    position: absolute;
+    background-color: #ffc65a;
+    width: 16px;
+    height: 16px;
+    left: 1px;
+    top: 1px;
+    transform: scale(0);
+    transition: transform 0.3s ease-out 0s;
+    -webkit-transform: scale(0);
+    -webkit-transition: -webkit-transform 0.3s ease-out 0s;
+    border-radius: 16px;
+}
+
+.more_detail .more_select:hover i:before,
+.more_detail .more_select.on i:before {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+}
+
+.more_detail .more_select label {
+    font-size: 14px;
+    color: #999;
+}
+
+
+.mygroup_tips:after {
+    content: '';
+    width: 123px;
+    height: 152px;
+    background-image: url('../syste_img/img/travel/default_sprite_v6.png');
+    background-position: -1px -463px;
+    position: absolute;
+    left: 25px;
+    top: -92px;
+}
+
+
+/* 缁斿缍嬮幐澶愭尦 */
+.link_cube {
+    display: inline-block;
+    padding: 0 25px;
+    line-height: 38px;
+    background-color: #ffa800;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 5px;
+    box-shadow: 2px 3px 0 #ff8700;
+}
+
+.link_cube:hover {
+    text-decoration: none;
+    background-color: #ff8700;
+    color: #fff;
+}
+
+/* 鐢啫鐪� */
+.center {
+    width: 980px;
+    margin: 0 auto;
+    position: relative;
+}
+
+
+@-webkit-keyframes jumpping {
+    0% {
+        margin-top: -200px
+    }
+    45% {
+        margin-top: 30px
+    }
+    60% {
+        margin-top: 0
+    }
+    74% {
+        margin-top: 20px
+    }
+    82% {
+        margin-top: 0
+    }
+    92% {
+        margin-top: 10px
+    }
+    100% {
+        margin-top: 5px
+    }
+}
+
+.t_nav li .t a:hover, .user_info .infoItem:hover, .t_nav li:hover .t a, .t_nav li.hover .t a, .user_info .account:hover .infoItem, .user_info .account.hover .infoItem, .user_info .msg:hover .infoItem {
+    background-color: #000
+}
+
+
+@keyframes errorShine {
+    0%, 32%, 67%, 100% {
+        color: #f00
+    }
+    16%, 50%, 82% {
+        color: #000
+    }
+}
+
+@-webkit-keyframes errorShine {
+    0%, 32%, 67%, 100% {
+        color: #f00
+    }
+    16%, 50%, 82% {
+        color: #000
+    }
+}
+
+@-moz-keyframes errorShine {
+    0%, 32%, 67%, 100% {
+        color: #f00
+    }
+    16%, 50%, 82% {
+        color: #000
+    }
+}
+
+.new-popbox {
+    width: 420px;
+    background-color: #fff
+}
+
+.new-popbox .pop-ico, .new-popbox .pop-ctn, .new-popbox .pop-con {
+    background: 0
+}
+
+
+
+
+.center1{
+    width: 1015px;
+    height: auto;
+    margin: 0px auto 15px auto;
+}
+
+.left{
+    float: left;
+    width: 280px;
+    margin-top: 18px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.05);
+    position: relative;
+    border-top-style: none;
+    height: auto;
+    padding-bottom: 55px;
+}
+
+.left .user_msg{
+    background-color: rgba(255, 255, 255, 0.85);
+    font-family: Arial,"Lucida Grande","Microsoft Yahei","Hiragino Sans GB","Hiragino Sans GB W3",SimSun,"PingFang SC",STHeiti;
+    color: #666;
+}
+
+
+.left  .user_msg .user_msg_title{
+    font-size: 16px;
+    color: #444;
+    width: 100%;
+    padding-top: 45px;
+    text-align: center;
+}
+
+
+.left  .user_msg .MUsersDetail{
+    color: #444;
+    width: 100%;
+    padding-top: 55px;
+    font-size: 16px;
+}
+
+
+.left  .user_msg .MUsersDetail .all_visitor{
+    color: #999;
+    width: 60%;
+    float: left;
+    font-size: 16px;
+}
+
+
+.left  .user_msg .MUsersDetail .all_visitor .all_visitor_two{
+    width: 20%;
+    color: #999;
+    padding-top: 5px;
+    float: right;
+    color: #dc5614;
+    text-align: left;
+}
+
+
+.left  .user_msg .MUsersDetail .all_visitor .all_visitor_one{
+    width: 80%;
+    color: #999;
+    float: left;
+    text-align: right;
+}
+
+
+
+.left  .user_msg .MUsersDetail .today_visitor{
+    color: #999;
+    width: 40%;
+    float: right;
+    font-size: 16px;
+}
+
+
+.left  .user_msg .MUsersDetail .today_visitor .today_visitor_one{
+    width: 30%;
+    color: #999;
+    float: left;
+    text-align: right;
+}
+
+
+.left  .user_msg .MUsersDetail .today_visitor .today_visitor_two{
+    width: 70%;
+    padding-top: 5px;
+    float: right;
+    color: #dc5614;
+    text-align: left;
+}
+
+
+.left  .user_msg .MUsersBehavior{
+    color: #444;
+    width: 100%;
+    padding-top: 35px;
+    font-size: 16px;
+}
+
+
+.left  .user_msg .MUsersBehavior .MUsersBehavior_border{
+    color: #444;
+    width: 60%;
+    margin: 5px auto;
+    height: 60px;
+    clear: both;
+    border-top: solid 1px #d3d3d3;
+}
+
+
+.left .msg_music{
+    width: 100%;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.85);
+    position: relative;
+    top: 13px;
+}
+
+.left .msg_music .msg_music_one{
+    height: 100%;
+    width: 40%;
+    float: left;
+}
+
+.left .msg_music .msg_music_one .msg_music_one_one{
+    margin: 20px 0px;
+    height: 40%;
+    width: 14%;
+    margin-left: 10px;
+    background: url("../syste_img/img/travel/ico_sprite_v7.png") -86px -118px no-repeat;
+    float: right;
+}
+
+
+.left .msg_music .msg_music_one .msg_music_one_three{
+    margin: 20px 0px;
+    height: 40%;
+    width: 13%;
+    background: url("../syste_img/img/travel/ico_sprite_v7.png") -75px -118px no-repeat;
+    float: right;
+}
+
+
+.left .msg_music .msg_music_one .msg_music_one_two{
+    margin: 10px 0px;
+    height: 60%;
+    width: 50%;
+    background: url("../syste_img/img/travel/nn_sprite_v23.png") -342px -242px no-repeat;
+    float: right;
+}
+
+
+.left .msg_music .msg_music_two{
+    height: 100%;
+    width: 45%;
+    float: right;
+}
+
+.left .msg_music .msg_music_two span{
+    line-height: 35px;
+    vertical-align: middle;
+    padding-left: 9px;
+    padding-top: 30px;
+
+}
+
+.span_font_color{
+    color: #dc5614;
+}
+
+
+
+.rigth{
+    height:auto;
+    width: 710px;
+    margin-top: 18px;
+    float: right;
+    border: #e2e2e2 1px solid;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.05);
+    background-color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 55px;
+}
+
+
+.rigth .travel_news{
+    padding: 5px 30px;
+    line-height: 30px;
+    position: relative;
+    height: 78px;
+    width: 100%;
+}
+
+
+.rigth .travel_news .travel_news_one{
+    height: 78px;
+    width: 29%;
+    float: left;
+}
+
+
+.rigth .travel_news .travel_news_one .travel_news_one_one {
+    margin-top: 18px;
+    margin-right: 10px;
+    padding-right: 10px;
+    text-align: right;
+    height: 25px;
+    width: 65%;
+    font-size: 20px;
+    color: #444;
+    font-family: Arial;
+    float: left;
+}
+
+
+.rigth .travel_news .travel_news_one .travel_news_one_two{
+    text-align: right;
+    margin-right: 10px;
+    height: 25px;
+    width: 70%;
+    float: left;
+    color: #999;
+    font-size: 14px;
+}
+
+
+.rigth .travel_news .travel_news_two{
+    height: 78px;
+    width: 20%;
+    float: left;
+}
+
+
+
+.rigth .travel_news .travel_news_two .travel_news_two_one {
+    margin-top: 18px;
+    text-align: center;
+    height: 25px;
+    width: 100%;
+    font-size: 20px;
+    color: #444;
+    font-family: Arial;
+    float: left;
+}
+
+
+.rigth .travel_news .travel_news_two .travel_news_two_two{
+    text-align: center;
+    height: 25px;
+    width: 100%;
+    float: left;
+    color: #999;
+    font-size: 14px;
+}
+
+
+
+.rigth .travel_news .travel_news_three{
+    height: 78px;
+    width: 35%;
+    float: left;
+}
+
+
+
+
+.rigth .travel_news .travel_news_three .travel_news_three_one {
+    margin-top: 18px;
+    text-align: center;
+    height: 25px;
+    width: 80%;
+    font-size: 20px;
+    color: #444;
+    font-family: Arial;
+    float: left;
+}
+
+
+.rigth .travel_news .travel_news_three .travel_news_three_two{
+    text-align: center;
+    height: 25px;
+    width: 80%;
+    float: left;
+    color: #999;
+    font-size: 14px;
+}
+
+
+.rigth .travel_news .travel_news_four{
+    margin-top: 18px;
+    height: 58px;
+    width: 4%;
+    border-right-style:  dotted  ;
+    border-right-width: 1px;
+    float: left;
+}
+
+
+.rigth .travel_content{
+    height:auto;
+    width: 710px;
+    margin-top: 18px;
+    float: right;
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+
+
+.rigth .travel_content .travel_content_img{
+    height: 360px;
+    width: 680px;
+    margin: auto;
+}
+
+
+.rigth .travel_content .travel_content_Article{
+    height: 115px;
+    width: 80%;
+    float: left;
+}
+
+
+.rigth .travel_content .travel_content_Article .Article_title{
+    height: 40px;
+    line-height: 24px;
+    color: #ff8a00;
+    margin-left: 28px;
+    font-size: 18px;
+    width: 100%;
+    clear: both;
+}
+
+
+.rigth .travel_content .travel_content_Article .Article_date{
+    height: 25px;
+    width: 100%;
+    font-family: Arial;
+    font-size: 16px;
+    vertical-align: middle;
+    line-height: 16px;
+    clear: both;
+}
+
+
+.rigth .travel_content .travel_content_Article .Article_date .Article_date_one{
+    height: 25px;
+    width: 10%;
+    font-family: Arial;
+    font-size: 16px;
+    margin-left: 28px;
+    vertical-align: middle;
+    line-height: 16px;
+    float: left;
+}
+
+
+.rigth .travel_content .travel_content_Article .Article_date .Article_date_one .Article_date_one_one{
+    height: 20px;
+    width: 20px;
+    float: left;
+    background: url("../syste_img/img/travel/ico_sprite_v7.png") -130px -125px no-repeat;
+}
+
+.rigth .travel_content .travel_content_Article .Article_date .Article_date_two{
+    height: 25px;
+    width: 10%;
+    float: left;
+    font-family: Arial;
+    font-size: 16px;
+    vertical-align: middle;
+    line-height: 16px;
+}
+
+
+.rigth .travel_content .travel_content_Article .Article_date .Article_date_two  .Article_date_two_one{
+    height: 20px;
+    width: 20px;
+    float: left;
+    background: url("../syste_img/img/travel/ico_sprite_v7.png") -40px -125px no-repeat;
+}
+
+.rigth .travel_content .travel_content_Article .Article_date .Article_date_three{
+    height: 25px;
+    width: 50%;
+    font-family: Arial;
+    font-size: 16px;
+    vertical-align: middle;
+    line-height: 16px;
+    float: left;
+}
+
+.rigth .travel_content .travel_content_Article .Article_address{
+    font-size: 14px;
+    line-height: 24px;
+    vertical-align: middle;
+    margin-left: 28px;
+    height: 35px;
+    width: 100%;
+    clear: both;
+}
+
+
+
+
+.rigth .travel_content .travel_content_praise {
+    height: 115px;
+    width: 20%;
+    float: right;
+}
+
+
+.rigth .travel_content .travel_content_praise .travel_content_praise_one {
+    height: 115px;
+    width: 40%;
+    float: left;
+    font-size: 16px;
+    line-height: 40px;
+    padding-top: 5px;
+    text-align: right;
+}
+
+
+.rigth .travel_content .travel_content_praise .travel_content_praise_two{
+    height: 70px;
+    width: 55%;
+    font-size: 18px;
+    line-height: 40px;
+    padding-top: 5px;
+    float: right;
+    background: url("../syste_img/img/travel/ding.png") no-repeat;
+    color: #ff8a00;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -65,7 +65,7 @@ img{
     margin: 2px 20px 0 0;
     width: 136px;
     height: 39px;
-    background: url(../img/q_foot_logo.png) no-repeat 0 -30px;
+    background: url(../syste_img/img/q_foot_logo.png) no-repeat 0 -30px;
     overflow: hidden;
 }
 .right{
@@ -77,7 +77,7 @@ img{
     margin-left: 10px;
     width: 90px;
     height: 30px;
-    background: url(../img/q_foot_logo.png) no-repeat 0 -70px;
+    background: url(../syste_img/img/q_foot_logo.png) no-repeat 0 -70px;
     overflow: hidden;
 }
 p{

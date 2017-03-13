@@ -28,6 +28,16 @@ public class Page {
 	 * 每页大小
 	 */
 	private int pageSize;
+	
+	/**
+	 * 数据缓存名字
+	 */
+	private String cache;
+	
+	/**
+	 * 数据总数
+	 */
+	private int dataCount;
 
 	/**
 	 * 初始化分页控件
@@ -35,12 +45,14 @@ public class Page {
 	 * @param pageCount
 	 * @param pageSize
 	 */
-	public Page(int pageCount, int pageSize) {
+	public Page(int pageCount, int pageSize,String cache,int number) {
 		super();
+		this.cache=cache;
 		this.pageCurrent = 1;
 		this.pageCount = pageCount;
 		this.prePage = -1;
 		this.pageSize = pageSize;
+		this.dataCount=number;
 		if (pageCount > pageSize) {
 			this.nextPage = 2;
 		} else {
@@ -87,5 +99,23 @@ public class Page {
 	public void setPageSize(int pageSize) {
 		this.pageSize = pageSize;
 	}
+
+	public String getCache() {
+		return cache;
+	}
+
+	public void setCache(String cache) {
+		this.cache = cache;
+	}
+
+	public int getDataCount() {
+		return dataCount;
+	}
+
+	public void setDataCount(int dataCount) {
+		this.dataCount = dataCount;
+	}
+	
+	
 
 }

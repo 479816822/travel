@@ -31,10 +31,8 @@ a {
 
 .header {
 	width: 100%;
-	height: 59px;
+	height: 60px;
 	margin: 0 auto;
-	/* 	overflow: hidden;
- */
 	position: fixed;
 	z-index: 999;
 	border-bottom: 2px solid #eee;
@@ -58,10 +56,12 @@ a {
 
 #focus {
 	height: 550px;
+	width: 100%;
 }
 
 #wrapper {
-	background-image: url("../img/index-img/taiwan-L.jpg");
+	background-image: url("../syste_img/index/101010.jpg");
+	background: url("../syste_img/index/101010.jpg");
 	width: 100%;
 	height: 100%;
 }
@@ -155,15 +155,14 @@ a {
 .show-more {
 	position: absolute;
 	/* z-index: 2; */
-	right: 42px;
+	right: 32px;
 	top: 200px;
 	margin-top: 175px;
-	width: 110px;
-	height: 110px;
-	height: 35px;
-	background-image: url("../img/index-img/icon1.png");
-	background-position: -60px -50px !important;
+	width: 120px;
+	height: 45px;
 	line-height: 200px;
+	background-image: url("../syste_img/index/101013.png")  ;
+	background-position: -50px -45px !important;
 	overflow: hidden;
 }
 
@@ -207,7 +206,7 @@ a {
 	margin: 5px 5px 0 0;
 	width: 16px;
 	height: 16px;
-	background-image: url("../img/index-img/icon3.png");
+	background-image: url("../syste_img/index/101015.png");
 	background-position: -60px -110px !important;
 }
 
@@ -265,8 +264,8 @@ a {
 	margin-top: 11px;
 	width: 24px;
 	height: 24px;
-	background-image: url("../img/index-img/icon3.png");
-	background-position: 0 -110px !important;
+	background-image: url("../syste_img/index/101013.png");
+	background-position: -54px -127px !important;
 	overflow: hidden;
 	vertical-align: top;
 }
@@ -300,14 +299,13 @@ a {
 	padding: 0 10px;
 }
 
-Inherited from div#_j_check_in.search-date
 .search-group .icon-cal {
 	position: absolute;
 	top: 15px;
 	right: 10px;
 	width: 16px;
 	height: 16px;
-	background-image: url("../img/index-img/icon3.png");
+	background-image: url("../syste_img/index/icon3.png");
 	background-position: 0 -140px !important;
 	overflow: hidden;
 }
@@ -315,6 +313,8 @@ Inherited from div#_j_check_in.search-date
 .hide {
 	display: none;
 }
+
+
 
 .search-suggest-panel {
 	position: absolute;
@@ -491,7 +491,7 @@ Inherited from div#_j_check_in.search-date
 	font-size: 10px;
 	font-style: normal;
 	color: #d0122b;
-	background: url("../img/index-img/icon4.png") 0 -27px no-repeat;
+	background: url("../syste_img/img/index-img/icon4.png") 0 -27px no-repeat;
 	padding-left: 8px;
 }
 
@@ -575,8 +575,8 @@ Inherited from div#_j_check_in.search-date
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: rgba(0, 0, 0, .2) url("../img/index-img/onebuy2.png")
-		no-repeat;
+	background: rgba(0, 0, 0, .2) url("../syste_img/img/index-img/onebuy2.png")
+	no-repeat;
 	text-align: center;
 	color: #fff;
 }
@@ -708,7 +708,7 @@ Inherited from div#_j_check_in.search-date
 	width: 18px;
 	height: 18px;
 	display: inline-block;
-	background: url("../img/index-img/guanggao.png") 0 -180px no-repeat;
+	background: url("../syste_img/img/index-img/guanggao.png") 0 -180px no-repeat;
 	margin: 0 3px 2px 0;
 	vertical-align: middle;
 }
@@ -823,7 +823,7 @@ Inherited from div#_j_check_in.search-date
 	margin: 6px 5px 0 0;
 	width: 11px;
 	height: 8px;
-	background: url("../img/index-img/icon1.png") no-repeat;
+	background: url("../syste_img/img/index-img/icon1.png") no-repeat;
 	background-position: 0 -130px;
 }
 
@@ -874,7 +874,7 @@ Inherited from div#_j_check_in.search-date
 	margin: 9px 4px 0 0;
 	width: 16px;
 	height: 16px;
-	background: url("../img/index-img/icon1.png") no-repeat;
+	background: url("../syste_img/img/index-img/icon1.png") no-repeat;
 	background-position: -100px -30px !important;
 	overflow: hidden;
 }
@@ -892,7 +892,7 @@ Inherited from div#_j_check_in.search-date
 
 .tn-dropdown-pop .close {
 	font-family: serif, verdana, Arial, "Lucida Grande", "Microsoft Yahei",
-		"Hiragino Sans GB", "Hiragino Sans GB W3", SimSun, STHeiti;
+	"Hiragino Sans GB", "Hiragino Sans GB W3", SimSun, STHeiti;
 	width: 16px;
 	height: 16px;
 	position: absolute;
@@ -1099,7 +1099,7 @@ Inherited from div#_j_check_in.search-date
 	height: 16px;
 	background-position: 0 -50px !important;
 	overflow: hidden;
-	background: url("../img/index-img/icon1.png");
+	background: url("../syste_img/img/index-img/icon1.png");
 }
 
 .tn-extra .tn-place a {
@@ -1122,7 +1122,7 @@ Inherited from div#_j_check_in.search-date
 	width: 18px;
 	height: 14px;
 	background-position: -30px -50px !important;
-	background: url("../img/index-img/icon1.png");
+	background: url("../syste_img/img/index-img/icon1.png");
 }
 
 .tn-extra .btn-ding {
@@ -1133,7 +1133,7 @@ Inherited from div#_j_check_in.search-date
 	height: 33px;
 	background-position: -60px 0 !important;
 	overflow: hidden;
-	background: url("../img/index-img/icon1.png");
+	background: url("../syste_img/img/index-img/icon1.png");
 }
 
 .tn-item {
@@ -1173,7 +1173,7 @@ Inherited from div#_j_check_in.search-date
 
 .tn-dropdown-pop .close {
 	font-family: serif, verdana, Arial, "Lucida Grande", "Microsoft Yahei",
-		"Hiragino Sans GB", "Hiragino Sans GB W3", SimSun, STHeiti;
+	"Hiragino Sans GB", "Hiragino Sans GB W3", SimSun, STHeiti;
 	width: 16px;
 	height: 16px;
 	position: absolute;
@@ -1350,7 +1350,7 @@ Inherited from div#_j_check_in.search-date
 }
 
 .m-pagination .pg-first, .m-pagination .pg-prev, .m-pagination .pg-next,
-	.m-pagination .pg-last, .m-pagination .pg-current {
+.m-pagination .pg-last, .m-pagination .pg-current {
 	background-color: #ff9d00;
 }
 
@@ -1367,7 +1367,7 @@ Inherited from div#_j_check_in.search-date
 }
 
 .m-pagination .pg-first, .m-pagination .pg-prev, .m-pagination .pg-next,
-	.m-pagination .pg-last {
+.m-pagination .pg-last {
 	margin-right: 3px;
 	background-color: #ff9d00;
 	padding: 5px;

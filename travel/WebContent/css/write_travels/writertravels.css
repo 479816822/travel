@@ -1,0 +1,546 @@
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+body {
+	margin: 0;
+}
+
+ul, ol, li, dl, dd, dt {
+	list-style: none;
+}
+
+.header {
+	border-bottom: solid 2px #d3d3ca;
+	margin-bottom: 0;
+	background-color: #fff;
+	height: 68px;
+}
+
+
+
+.header1 {
+	width: 100%;
+	height: 60px;
+	margin: 0 auto;
+	position: fixed;
+	z-index: 999;
+	border-bottom: 2px solid #eee;
+}
+
+.header1 iframe {
+	z-index: 999;
+	width: 100%;
+	height: 300px;
+}
+
+.footer1 {
+	clear: both;
+	height: 480px;
+}
+
+.footer1 iframe {
+	width: 100%;
+	height: 480px;
+}
+
+
+
+.all_live {
+	height: 60px;
+	width: 1015px;
+	margin: auto;
+	clear: both;
+}
+
+.all_live_one {
+	height: 60px;
+	width: 30%;
+	float: left;
+}
+
+.all_live_one1 {
+	height: 60px;
+	width: 100%;
+	font-size: 18px;
+}
+
+.all_live_two {
+	text-decoration: underline;
+	height: 60px;
+	width: 33%;
+	float: left;
+	margin-left: 15px;
+	text-align: center;
+	line-height: 40px;
+	color: #999;
+}
+
+.all_live_three {
+	height: 60px;
+	width: 33%;
+	float: right;
+	text-align: center;
+}
+
+.all_live_three_one {
+	color: #ff8a00;
+	font-size: 18px;
+	line-height: 36px;
+	vertical-align: middle;
+	background-color: transparent;
+	text-decoration: none;
+	float: left;
+	margin-left: 70px;
+}
+
+.all_live_three_two {
+	padding: 0 28px;
+	height: 36px;
+	line-height: 36px;
+	font-size: 18px;
+	text-align: center;
+	border-radius: 5px;
+	background: #ffa800;
+	display: inline-block;
+	margin-left: 40px;
+	float: right;
+}
+
+.main {
+	width: 100%;
+	height: auto;
+	margin: auto;
+}
+
+.main_header {
+	height: 480px;
+	width: 100%;
+}
+
+.search_float {
+	width: 880px;
+	height: 50px;
+	background: #fff;
+	border: 1px solid #fff;
+	z-index: 50;
+	margin: 385px;
+	margin-left: 24%;
+	position: absolute;
+	float: left;
+}
+
+.float_input {
+	width: 880px;
+	height: 50px;
+	line-height: 28px;
+	font-size: 16px;
+	border: 0;
+	color: #666;
+	float: left;
+}
+
+.img_float {
+	width: 500px;
+	height: 120px;
+	z-index: 50;
+	margin: 215px;
+	margin-left: 37%;
+	position: absolute;
+	float: left;
+}
+
+.img_float_img {
+	margin: 10px auto;
+	float: left;
+	width: 85px;
+	height: 85px;
+	background: url("../../img/write_travels/img.png");
+}
+
+.add_img {
+	margin: 10px auto;
+	float: left;
+	width: 400px;
+	height: 110px;
+}
+
+.add_img_one {
+	font-size: 24px;
+	color: #333;
+	font-weight: normal;
+	margin-top: 5px;
+	margin-left: 10px;
+	padding-top: 8px;
+	line-height: 30px;
+	float: left;
+}
+
+.add_img_two {
+	margin-top: 12px;
+	font-size: 16px;
+	line-height: 30px;
+	color: #333;
+	font-weight: normal;
+	margin-left: 10px;
+	float: left;
+}
+
+.main_content {
+	width: 1015px;
+	margin: auto;
+}
+
+.main_content_left {
+	width: 700px;
+	margin: auto;
+	float: left;
+}
+
+.main_content_rigth {
+	width: 315px;
+	margin: auto;
+	height: auto;
+	float: right;
+}
+
+.content_1010 {
+	width: 100%;
+	min-height: 400px;
+}
+
+.content_tool {
+	margin-top: 37px;
+	width: 100%;
+	display: block;
+	height: 80px;
+	line-height: 25px;
+	font-size: 14px;
+	font-family: Arial, "Lucida Grande", "Microsoft Yahei",
+		"Hiragino Sans GB", "Hiragino Sans GB W3", SimSun, "PingFang SC",
+		STHeiti;
+	color: #666;
+}
+
+.all_div {
+	width: auto;
+	height: 40px;
+	margin: 17px auto auto 20px;
+	float: left;
+}
+
+.l_div_one {
+	width: 30px;
+	height: 30px;
+	margin: 17px auto auto 20px;
+	float: left;
+	background: url("../../img/write_travels/nn_sprite_v24.png") -148px
+		-28px no-repeat;
+}
+
+.l_div_one1 {
+	width: 30px;
+	height: 31px;
+	float: left;
+	background: url("../../img/write_travels/nn_sprite_v24.png") -206px
+		-28px no-repeat;
+}
+
+.l_div_one2 {
+	width: 32px;
+	height: 32px;
+	float: left;
+	background: url("../../img/write_travels/nn_sprite_v24.png") -176px
+		-28px no-repeat;
+}
+
+.l_div_one3 {
+	width: 30px;
+	height: 30px;
+	float: left;
+	background: url("../../img/write_travels/nn_sprite_v24.png") -236px
+		-28px no-repeat;
+}
+
+.l_div_one4 {
+	width: 30px;
+	height: 30px;
+	float: left;
+	background: url("../../img/write_travels/nn_sprite_v24.png") -265px
+		-28px no-repeat;
+}
+
+.l_div_one5 {
+	width: 24px;
+	height: 27px;
+	float: left;
+	background: url("../../img/write_travels/nn_sprite_v24.png") -119px
+		-55px no-repeat;
+}
+
+.all_font {
+	display: inline-block;
+	line-height: 28px;
+	font-size: 16px;
+	color: #666;
+	margin: 5px auto auto 6px;
+}
+
+.content_music {
+	width: 100%;
+	height: auto;
+	margin-top: 50px;
+}
+
+.music_one {
+	height: 30px;
+	float: left;
+	width: 100%;
+	text-align: left;
+	margin-bottom: 10px;
+	font-size: 18px;
+	font-family: Arial, "Lucida Grande", "Microsoft Yahei",
+		"Hiragino Sans GB", "Hiragino Sans GB W3", SimSun, "PingFang SC",
+		STHeiti;
+	color: #666;
+}
+
+.music_two {
+	width: 100%;
+	height: 40px;
+	float: left;
+	background-color: #efefef;
+	border: 1px solid #efefef;
+}
+
+.music_two_font {
+	margin-top: 8px;
+	max-width: 320px;
+	overflow: hidden;
+	height: 26px;
+	margin-right: 10px;
+	font-size: 14px;
+	line-height: 26px;
+	margin-left: 9px;
+	display: inline-block;
+	font-family: Arial, "Lucida Grande", "Microsoft Yahei",
+		"Hiragino Sans GB", "Hiragino Sans GB W3", SimSun, "PingFang SC",
+		STHeiti;
+	color: #666;
+}
+
+.choose_music {
+	margin-top: 10px;
+	width: 56px;
+	padding: 0;
+	float: right;
+	line-height: 22px;
+	text-align: center;
+	color: #ffffff;
+	border: 2px solid #ccc;
+	background: #ffa800;
+	font-size: 14px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+.content_post {
+	width: 100%;
+	height: 130px;
+	clear: both;
+}
+
+.post_one {
+	float: left;
+	width: 100px;
+	margin-top: 60px;
+	margin-left: 40px;
+	font-size: 18px;
+	color: #ffa800;
+	line-height: 36px;
+	vertical-align: middle;
+	background-color: transparent;
+	text-decoration: none;
+}
+
+.post_two {
+	float: right;
+	vertical-align: middle;
+	margin-top: 60px;
+	padding: 0 28px;
+	height: 36px;
+	line-height: 36px;
+	font-size: 18px;
+	text-align: center;
+	border-radius: 5px;
+	color: #666;
+	background: #eee;
+	margin-right: 15px;
+	font-family: Arial, "Lucida Grande", "Microsoft Yahei",
+		"Hiragino Sans GB", "Hiragino Sans GB W3", SimSun, "PingFang SC",
+		STHeiti;
+}
+
+.post_three {
+	height: 36px;
+	line-height: 36px;
+	font-size: 18px;
+	text-align: center;
+	border-radius: 5px;
+	background: #ffa800;
+	display: inline-block;
+	width: 120px;
+	margin: 60px 25px auto 20px;
+	float: right;
+	color: #fff;
+	font-family: Arial, "Lucida Grande", "Microsoft Yahei",
+		"Hiragino Sans GB", "Hiragino Sans GB W3", SimSun, "PingFang SC",
+		STHeiti;
+}
+
+.rigth_one {
+	width: 100%;
+	clear: both;
+	height: 170px;
+}
+
+.rigth_one_title {
+	width: 100%;
+	margin-bottom: 10px;
+	font-size: 16px;
+	line-height: 15px;
+	padding-left: 10px;
+	font-family: Arial, "Lucida Grande", "Microsoft Yahei",
+		"Hiragino Sans GB", "Hiragino Sans GB W3", SimSun, "PingFang SC",
+		STHeiti;
+	color: #666;
+	clear: both;
+	height: 30px;
+}
+
+.rigth_main_title {
+	width: 100%;
+	padding-left: 10px;
+	font-family: Arial, "Lucida Grande", "Microsoft Yahei",
+		"Hiragino Sans GB", "Hiragino Sans GB W3", SimSun, "PingFang SC",
+		STHeiti;
+	color: #666;
+	clear: both;
+	background-color: transparent;
+	text-decoration: none;
+	line-height: 26px;
+	font-size: 14px;
+}
+
+.close_div {
+	position: absolute;
+	display: none;
+	z-index: 1200;
+}
+
+.show_div {
+	position: absolute;
+	display: block;
+	z-index: 1200;
+}
+
+.ul_rigth1 {
+	line-height: 26px;
+	font-size: 14px;
+	float: left;
+}
+
+.li_rigth1 {
+	width: 100%;
+	float: rigth;
+}
+
+.add_word_v2 {
+	width: 680px;
+	background-color: #fff;
+	margin-bottom: 18px;
+}
+
+.add_word_v2 ._j_edittxtarea {
+	display: block;
+	width: 658px;
+	min-height: 208px;
+	padding: 10px;
+	border: 1px solid #dedede;
+	font-size: 14px;
+	line-height: 24px;
+	color: #666;
+	resize: none;
+	outline: 0;
+	clear:both;
+}
+
+add_article {
+	width: 100%;
+	border-top: 1px solid #e5e5e5;
+	position: relative;
+}
+
+.cancel {
+	width: auto;
+	margin-right: 0;
+	background: #ffa800;
+	padding: 0 25px;
+	line-height: 26px;
+	height: 26px;
+	color: #fff;
+	font-size: 14px;
+	float: right;
+	border-radius: 5px;
+	margin-top: 25px;
+}
+
+.base_info_button {
+	margin-top: 10px;
+}
+
+.paragraph_name {
+	display: block;
+	width: 520px;
+	padding: 10px 14px;
+	line-height: 20px;
+	background-color: #efefef;
+	border: 1px solid #efefef;
+	color: #666;
+	font-size: 16px;
+}
+
+.div_div_div{
+	width:100%;
+	float:left;
+	margin-bottom: 16px;
+	
+}
+
+.btn_big {
+	padding: 0 32px;
+	border-radius: 3px;
+	height: 36px;
+	line-height: 36px;
+	font-size: 18px;
+	text-align: center;
+	background: #ffa800;
+	display: inline-block;
+	color: #fff;
+}
+
+.hide_div{
+	display: none;
+}
+
+.show_11{
+	display: block;
+}
+
+.img_div_img{
+	clear:both;
+	width: 95%;
+	height: 400px;
+	margin: 0px 10px 16px 15px;
+}

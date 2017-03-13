@@ -1,0 +1,445 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>照片pk</title>
+<script src="js/jquery-3.1.0.min.js" type="text/javascript"></script>
+<script src="js/scroll.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="css/q_pk.css">
+<link rel="stylesheet" type="text/css" href="css/q_header.css">
+<style>
+</style>
+<script>
+	$(function() {
+		$("li[name='ol1']").click(function() {
+			$(this).addClass("current");
+			$(this).next().removeClass("current");
+			$(this).parent().prev().css("left", "0px")
+
+		})
+
+		$("li[name='ol2']").click(function() {
+			$(this).addClass("current");
+			$(this).prev().removeClass("current");
+			$(this).parent().prev().css("left", "-980px")
+
+		})
+
+		$(".l1").hover(function() {
+			$(this).css("background-position", "-20px 0px")
+		}, function() {
+			$(this).css("background-position", "0 0px")
+		})
+
+		$(".l2").hover(function() {
+			$(this).css("background-position", "-20px -20px")
+		}, function() {
+			$(this).css("background-position", "0 -20px")
+		})
+		$(".l3").hover(function() {
+			$(this).css("background-position", "-20px -40px")
+		}, function() {
+			$(this).css("background-position", "0 -40px")
+		})
+		$("._j_reply").click(function() {
+			var nam = $(this).prev().prev().children().text();
+			$("._j_comment_pubarea").val("回复" + nam + ":");
+		})
+		$("._j_reply1").click(function() {
+			var nam = $(this).prev().prev().children().text();
+			$("._j_comment_pubarea1").val("回复" + nam + ":");
+		})
+	})
+</script>
+</head>
+<body>
+
+
+
+
+	<div class="header">
+		<div class="topBarC">
+			<!-- 头部-->
+			<!-- 后端处理页面和相应的地方-->
+			<div class="logo">
+				<a title="蚂蜂窝自由行" href="/">蚂蜂窝自由行</a>
+			</div>
+			<div class="t_nav">
+				<ul id="pnl_nav" data-cs-t="headnav_wo">
+					<li data-cs-p="index"><strong class="t"><a
+							href="autoLogin">首页</a></strong></li>
+					<li data-cs-t="wenda" data-cs-p="wenda"><strong class="t"><a
+							href="goIndex">问答</a></strong></li>
+					<li data-cs-t="things" data-cs-p="things"><strong class="t"><a
+							data-cs-p="from_wo_nav" href="">蚂蜂窝周边</a></strong></li>
+					<li data-cs-p="together"><strong class="t"><a
+							href="goTogether">结伴</a></strong></li>
+					<li data-cs-p="group"><strong class="t"><a
+							href="/group/">小组</a></strong></li>
+					<li><strong class="t"><a href="goShop">蜂蜜兑换</a></strong></li>
+					<li class="drop" data-cs-p="other"><strong class="t"><a
+							href="">更多<b></b></a></strong>
+						<div class="c">
+							<a href="goLocal" target="_blank">当地人</a> <a href=""
+								target="_blank">真人兽</a> <a href="" target="_blank">蚂蜂窝高校</a> <a
+								href="goPK" target="_blank">照片PK</a> <a href="" target="_blank">蚂蜂窝拍卖行</a>
+							<a href="" target="_blank">道具商店</a> <a href="" target="_blank">旅行电台</a>
+							<a href="" target="_blank">蜂首聚乐部</a> <a href="" target="_blank">VIP</a>
+							<a href="" target="_blank">分歧终端机</a>
+						</div></li>
+				</ul>
+			</div>
+			<!--用户搜索-->
+			<div class="t_search">
+				<form method="post" action="/group/s.php" name="search">
+					<input type="text" class="key" value="" name="q" id="word">
+					<input type="submit" value="" class="btn">
+				</form>
+			</div>
+
+
+			<div class="t_info">
+				<ul class="user_info" data-cs-t="headnav_wo">
+					<li class="daka">
+						<!--最后处理打卡的功能实现--> <span class="daka_btn" id="_j_dakabtn"
+						data-japp="daka"> <a role="button" title="打卡"
+							class="daka_before">打卡</a> <a role="button" title="打卡推荐"
+							class="daka_after">打卡推荐</a>
+					</span>
+					</li>
+					<li class="account _j_hoverclass" data-hoverclass="on"
+						id="pnl_user_set" data-cs-p="other" class="drop">
+						<!--用户的信息头像--> <strong class="t"><a id="ttt" href="">消息<b></b></a></strong>
+						<div class="uSet c">
+							<a href="http://www.mafengwo.cn/msg/sms/index" rel="nofollow">私信</a>
+							<a href="http://www.mafengwo.cn/msg/entry/article" rel="nofollow">文章消息</a>
+							<a href="http://www.mafengwo.cn/msg/entry/sys" rel="nofollow">系统通知</a>
+							<a href="http://www.mafengwo.cn/msg/entry/group" rel="nofollow">小组消息</a>
+							<a href="http://www.mafengwo.cn/msg/entry/ask" rel="nofollow">问答消息</a>
+
+						</div>
+					</li>
+					<li class="ub-item ub-new-msg" id="head-new-msg"></li>
+					<li class="account _j_hoverclass" data-hoverclass="on"
+						id="pnl_user_set1" data-cs-p="other" class="drop">
+						<!--用户的信息头像--> <span class="t"><a class="infoItem"
+							href="to_myHome"><img src="${user.userHead }" width="32"
+								height="32" align="absmiddle"><b></b></a></span>
+						<div class="uSet c">
+							<a href="" class="containNum" target="_blank">等级 <span>LV.${user.userLevel }</span>
+							</a> <a href="" class="containNum hasLine" target="_blank">蜂蜜 <span
+								id="_j_header_honey">${user.userHoney }</span>
+							</a> <a href="" class="containNum hasLine" target="_blank">金币 <span
+								id="_j_header_coin">${user.userMoney }</span></a> <a
+								href="to_myHome" target="_blank">我的蚂蜂窝</a> <a href="writeTravel"
+								target="_blank" class="menu">写游记</a> <a href="" target="_blank"
+								class="menu">我的好友</a> <a href="" target="_blank" class="menu">我的收藏</a>
+							<a href="" target="_blank">设置</a> <a href="" target="_blank">分享设置</a>
+							<a href="autoLogin">退出</a>
+
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+
+	</div>
+
+
+	<div class="container">
+		<!--二级导航-->
+		<div class="subnav">
+			<ul class=" fl">
+				<li class="on"><a>照片PK</a></li>
+				<li><a href="">排行榜</a></li>
+				<li><a href="">支持好友</a><img src="img/q_pk_subnav1.gif"></img></li>
+				<li><a href="/photo_pk/my.php">我的作品</a></li>
+				<li><a href="/photo_pk/prev.php">往期回顾</a></li>
+				<li><a href="/g/10939.html" target="_blank">进入小组</a></li>
+			</ul>
+			<ul class=" fr">
+				<li class="rule" style="position: relative"><a
+					href="/i/513555.html" target="_blank">照片PK游戏规则</a><i
+					class="ask_new_ico" style="right: -15px;"></i></li>
+				<li class="btns"><a href="/photo_pk/apply.php?next=1">下期报名</a></li>
+				<li class="btns on"><a href="/photo_pk/apply.php"
+					class="current">上传作品</a></li>
+			</ul>
+		</div>
+		<!-- 顶部信息-->
+		<div class="topic_info">
+			<strong>本期主题：《秋意》</strong> 本期活动时间：08月31日 - 10月12日17时
+		</div>
+		<!--秋意-->
+		<div class="headauto" id="_j_banner">
+			<ul class="" style="left: 0px;">
+				<li class="fl"><a href="http://www.mafengwo.cn/i/5646620.html"
+					target="_blank"><img src="img/q_pk_headauto1.jpeg"></a></li>
+				<li class="fl"><a href="http://www.mafengwo.cn/i/3459600.html"
+					target="_blank"><img src="img/q_pk_headauto2.jpeg"></a></li>
+			</ul>
+			<ol>
+				<li class=" fl current" name="ol1"></li>
+				<li class=" fl" name="ol2"></li>
+			</ol>
+		</div>
+		<!--照片PK-->
+		<div class="photo_vs ">
+			<!--左侧-->
+			<c:forEach items="${pk1}" var="pk1">
+				<div class="photo_vsL" id="_j_left_work">
+					<div class="vs_t clearfix">
+						<div class="share" id="_j_sharecnt_169502" data-title="《秋意》"
+							data-content="这张照片很棒哦！我给在蚂蜂窝《秋意》主题的照片PK给它投了一票，你觉得我的品味如何？看看什么是好照片。"
+							data-pic="http://file105.mafengwo.net/s7/M00/59/6F/wKgB6lTRsbGAfVfrAA3H_Qkl_tU18.jpeg?imageView2%2F2%2Fw%2F400%2Fh%2F400%2Fq%2F90"
+							data-url="http://www.mafengwo.cn/photo_pk/pk.php?lid=169502">
+							<span>分享到：</span> <a role="button" title="分享到新浪" class="l1"
+								data-japp="activity_share" data-key="wb"
+								data-data_dom_id="_j_sharecnt_169502"></a> <a role="button"
+								title="分享到微信" class="l2 " data-japp="activity_share"
+								data-wx_qr="http://www.mafengwo.cn/qrcode.php?text=http%3A%2F%2Fm.mafengwo.cn%2Fphoto_pk%2Fwork.php%3Fid%3D169502&amp;size=150&amp;eclevel=H&amp;logo=&amp;__stk__=bf4b13f8335b708856f3b09c77fed0b9_0d5f5d3e877a852bacf97328604947ee"
+								data-key="wx" data-openwindow="0"
+								data-data_dom_id="_j_sharecnt_169502"></a> <a role="button"
+								title="分享到qq空间" class="l3" data-japp="activity_share"
+								data-key="qz" data-data_dom_id="_j_sharecnt_169502"></a>
+						</div>
+						<!-- <span class="count">共<em class="_j_score">897</em>票
+						</span> -->
+					</div>
+					<div class="photo">
+						<span><a
+							href="http://file105.mafengwo.net/s7/M00/59/6F/wKgB6lTRsbGAfVfrAA3H_Qkl_tU18.jpeg"
+							target="_blank" style="cursor: zoom-in"><img
+								src="img/q_pk_pk1.jpeg" width="420px" height="225px"></a></span>
+					</div>
+					<div class="photo_info">
+						<div class="title">${pk1.phTitle }</div>
+						<div class="byU">
+							by <a href="/u/13011106.html" target="_blank"><img src=""></a>
+							<a href="/u/13011106.html" target="_blank">${pk1.userInfo.userName }</a>
+						</div>
+						<div class="clear"></div>
+						<h4>摄于：${pk1.phAdd }</h4>
+						<p class="desc">${pk1.phDesc }</p>
+					</div>
+					<div class="reply re_l">
+						<h2>留言区</h2>
+						<div id="_j_left_comment_wrap">
+							<div id="_j_leftCommentCnt">
+								<form method="post" action="replyl">
+									<div class="re_con">
+										<input type="hidden" value="${pk1.phId }" name="pmPhotoid">
+										<input type="text" cols="" rows="" class="_j_comment_pubarea1"
+											name="pmDesc"></input> <input type="submit" class="zzca"
+											value="留言"> </a>
+										<div class="clear"></div>
+									</div>
+								</form>
+
+								<ul class="_j_comment_list">
+									<c:forEach items="${pk3}" var="pk3">
+										<li class="_j_citem" data-cid="194564" d><h3>
+												<a><img alt="amily" src="${pk3.userInfo.userHead }"
+													style="width: 16px; height: 16px"></a>
+											</h3> <strong> <a target="_blank" href="/u/93725065.html">${pk3.userInfo.userName }</a>
+										</strong> <span><fmt:formatDate value="${pk3.pmDate}"
+													pattern="yyyy-MM-dd " /></span>&nbsp; <a role="button"
+											class="_j_reply1">回复</a>&nbsp;
+
+											<div class="clear"></div>
+											<p>${pk3.pmDesc }</p></li>
+									</c:forEach>
+								</ul>
+								<div class="re_page _j_comment_pagination">
+									<p></p>
+								</div>
+
+
+							</div>
+
+
+						</div>
+					</div>
+				</div>
+			</c:forEach>
+			<!-- 右侧 -->
+			<c:forEach items="${pk2}" var="pk2">
+				<div class="photo_vsR" id="_j_right_work">
+					<div class="vs_t clearfix">
+						<div class="share" id="_j_sharecnt_169085" data-title="《秋意》"
+							data-content="这张照片很棒哦！我给在蚂蜂窝《秋意》主题的照片PK给它投了一票，你觉得我的品味如何？看看什么是好照片。"
+							data-pic="http://file101.mafengwo.net/s9/M00/B3/E3/wKgBs1fJYniAAaWLAA757feQ-U843.jpeg?imageView2%2F2%2Fw%2F400%2Fh%2F400%2Fq%2F90"
+							data-url="http://www.mafengwo.cn/photo_pk/pk.php?lid=169085">
+							<span>分享到：</span> <a role="button" title="分享到新浪" class="l1"
+								data-japp="activity_share" data-key="wb"
+								data-data_dom_id="_j_sharecnt_169085"></a> <a role="button"
+								title="分享到微信" class="l2 " data-japp="activity_share"
+								data-wx_qr="http://www.mafengwo.cn/qrcode.php?text=http%3A%2F%2Fm.mafengwo.cn%2Fphoto_pk%2Fwork.php%3Fid%3D169085&amp;size=150&amp;eclevel=H&amp;logo=&amp;__stk__=bf4b13f8335b708856f3b09c77fed0b9_0d5f5d3e877a852bacf97328604947ee"
+								data-key="wx" data-openwindow="0"
+								data-data_dom_id="_j_sharecnt_169085"></a> <a role="button"
+								title="分享到qq空间" class="l3" data-japp="activity_share"
+								data-key="qz" data-data_dom_id="_j_sharecnt_169085"></a>
+						</div>
+						<!-- 	<span class="count">共<em class="_j_score">924</em>票
+						</span> -->
+					</div>
+					<div class="photo">
+						<span><a
+							href="http://file101.mafengwo.net/s9/M00/B3/E3/wKgBs1fJYniAAaWLAA757feQ-U843.jpeg"
+							target="_blank" style="cursor: zoom-in"><img
+								src="img/q_pk_pk2.jpeg" width="400px" height="210px"></a></span>
+					</div>
+					<div class="photo_info">
+						<div class="title">${pk2.phTitle }</div>
+						<div class="byU">
+							by <a href="/u/71687486.html" target="_blank"><img
+								src="${pk2.userInfo.userIcon }" width="16px" height="16px"></a>
+							<a href="/u/71687486.html" target="_blank">${pk2.userInfo.userName }</a>
+						</div>
+						<div class="clear"></div>
+						<h4>摄于：${pk2.phAdd }</h4>
+						<p class="desc">${pk2.phDesc }</p>
+					</div>
+					<div class="reply re_r">
+						<h2>留言区</h2>
+						<div id="_j_right_comment_wrap">
+							<div id="_j_rightCommentCnt">
+								<form method="post" action="replyl">
+									<div class="re_con">
+										<input type="hidden" value="${pk2.phId }" name="pmPhotoid">
+										<input type="text" cols="" rows="" class="_j_comment_pubarea"
+											name="pmDesc"></input> <input type="submit" class="zzca"
+											value="留言"> </a>
+										<div class="clear"></div>
+									</div>
+								</form>
+								<ul class="_j_comment_list">
+									<c:forEach items="${pk4}" var="pk4">
+										<li class="_j_citem" data-cid="194246" data-username="雨田"><h3>
+												<a target="_blank" href="/u/5535198.html"><img
+													alt="amily" src="${pk4.userInfo.userHead }"
+													style="width: 16px; height: 16px"></a>
+											</h3> <strong> <a target="_blank" href="/u/5535198.html">${pk4.userInfo.userName }</a>
+										</strong> <span><fmt:formatDate value="${pk4.pmDate}"
+													pattern="yyyy-MM-dd " /></span>&nbsp; <a role="button"
+											class="_j_reply">回复</a>&nbsp;
+
+											<div class="clear"></div>
+											<p>${pk4.pmDesc }</p></li>
+									</c:forEach>
+								</ul>
+								<div class="re_page _j_comment_pagination">
+									<p></p>
+								</div>
+
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</c:forEach>
+			<div class="photo_vsC">
+				<a hidefocus="hide" class="btn1 _j_vote" data-position="left"
+					data-id="169088" role="button">支持TA</a> <a hidefocus="hide"
+					class="btn2 _j_vote" data-position="right" data-id="169274"
+					role="button">支持TA</a>
+				<!--  <a class="txt _j_exchange_group" role="button">换一组</a> -->
+			</div>
+			<div class="clear"></div>
+		</div>
+		<!--留言板-->
+
+
+		<div class="clear"></div>
+		<!--粉丝-->
+		<div>
+			<div class="p_fans fl p_fans1" id="_j_left_fans">
+				<div class="ft">
+					<strong><em>TA</em>的粉丝团</strong> <span>人气值22</span>
+					<div class="clear"></div>
+				</div>
+				<ul class="list cf">
+					<img src="img/q_pk_bt1.png" width="382px" height="70px">
+
+				</ul>
+
+			</div>
+			<div class="p_fans fr p_fans1" id="_j_right_fans">
+				<div class="ft">
+					<strong><em>TA</em>的粉丝团</strong> <span>人气值21</span>
+					<div class="clear"></div>
+				</div>
+				<ul class="list cf">
+					<img src="img/q_pk_bt2.png" width="382px" height="70px">
+
+				</ul>
+
+			</div>
+		</div>
+		<div class="clear"></div>
+		<!--最新上传-->
+		<div class="new_upload">
+			<div class="h3">最新上传</div>
+			<div class="list">
+				<img src="img/q_pk_b.png" height="360px" width="980px">
+
+				<div class="clear"></div>
+			</div>
+		</div>
+		<!--帮助-->
+		<div class="event_help">
+			<dl class="col1">
+				<dt class="h3">本期奖品</dt>
+				<dd class="col_cont">
+					<span class="meed1"><img src="img/q_pk_evwnhe3.jpeg"
+						title="加湿器" alt="加湿器">加湿器</span> <span class="meed2"><img
+						src="img/q_pk_evenhe_1.jpeg" title="保暖黄金甲" alt="保暖黄金甲">保暖黄金甲</span>
+					<span class="meed3"><img src="img/q_pk_evenhe_2.jpeg"
+						title="护手霜暖心礼盒" alt="护手霜暖心礼盒">护手霜暖心礼盒</span>
+
+					<div class="clear"></div>
+				</dd>
+			</dl>
+			<dl class="col2">
+				<dt class="h3">关于作品</dt>
+				<dd class="col_cont">
+					<p style="margin-bottom: 10px;">
+						1.本季赛事为主题赛<strong style="color: #FFA800;">《秋意》</strong>
+					</p>
+					<p style="margin-bottom: 10px;">
+						2.上传的作品画面必须是与“<strong style="color: #FFA800;">秋天</strong>”有关的照片。不符合主题的作品将会被删除
+					</p>
+					<p style="margin-bottom: 10px;">3.在照片简介中。用50个字以内说明拍摄照片的故事内容。照片简介是否精彩会成为大家投票的标准。
+					</p>
+					<p style="margin-bottom: 10px;">4.参赛作品必须是原创作品</p>
+				</dd>
+			</dl>
+			<dl class="col3">
+				<dt class="h3">关于投票</dt>
+				<dd class="col_cont">
+					<p>1.本季投票保留了每人每天10票的投票权。</p>
+					<p>
+						2.增加了人气指数：凡一人投票就得一个人气指数。有多少人支持就有多少人气指数。一个人气指数按等级划分如下：Lv.3-Lv.7人气票为10票、Lv.8-Lv.12人气票为25票、Lv.13以上人气票为50票。</p>
+					<p>3.总票数=每日获得的投票+人气指数所换算成的票数。页面当前的票数已经包含了人气指数所转化的票数。</p>
+					<p>4.在本季赛中，系统发现恶意马甲投票，将会处以惩罚，情节严重将被取消参赛资格。</p>
+				</dd>
+			</dl>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div style="width: 100%; height: 90px; margin: 0; padding: 0">
+		<iframe id="top" src="q_footer" frameborder="0" scrolling="no"
+			width="100%" height="90px" align="center"></iframe>
+	</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,456 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>蜂蜜兑换</title>
+<script src="js/jquery-3.1.0.min.js" type="text/javascript"></script>
+<script src="js/scroll.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="css/q_shop.css">
+<link rel="stylesheet" type="text/css" href="css/q_header.css">
+<style>
+</style>
+<script>
+	var i = 0;
+	var timer;
+	$(function() {
+		//得到焦点顶部图片停止
+		$(".bn-slide").hover(
+				function() {
+					clearTimeout(timer);
+					//向后按钮
+					$("#top_next").click(
+							function() {
+								var i = $(".bg").index();
+								i++;
+								if (i == 3) {
+									i = 0;
+								}
+								$("#q")
+										.attr("src",
+												"img/q_shop_" + i + ".jpeg");
+								$("#top_travel_btn").children().eq(i).addClass(
+										"bg").siblings().removeClass("bg");
+							});
+					//向前按钮
+					$("#top_prev").click(
+							function() {
+								var i = $(".bg").index();
+								i = i - 1;
+								if (i == -1) {
+									i = 2;
+								}
+								$("#q")
+										.attr("src",
+												"img/q_shop_" + i + ".jpeg");
+								$("#top_travel_btn").children().eq(i).addClass(
+										"bg").siblings().removeClass("bg");
+							});
+					//小按钮
+					$("#top_travel_btn li").click(
+							function() {
+								var i = $(this).index();
+								$("#q")
+										.attr("src",
+												"img/q_shop_" + i + ".jpeg");
+								$("#top_travel_btn").children().eq(i).addClass(
+										"bg").siblings().removeClass("bg");
+
+							});
+
+				}, function() {
+					timer = setTimeout("chang()", 1500);
+				});
+	});
+	$(function() {
+		//底部文字滚动，引用scroll.js
+		$(".bd").myScroll({
+			speed : 40, //数值越大，速度越慢
+			rowHeight : 51
+		//li的高度
+		});
+		chang();
+	})
+	//顶部图片变换
+	function chang() {
+		i++;
+		if (i == 3) {
+			i = 0;
+		}
+		$("#q").attr("src", "img/q_shop_" + i + ".jpeg");
+		$("#top_travel_btn").children().eq(i).addClass("bg").siblings()
+				.removeClass("bg");
+		timer = setTimeout('chang()', 1500);
+	}
+</script>
+</head>
+<body>
+	<div class="header">
+		<div class="topBarC">
+			<!-- 头部-->
+			<!-- 后端处理页面和相应的地方-->
+			<div class="logo">
+				<a title="蚂蜂窝自由行" href="/">蚂蜂窝自由行</a>
+			</div>
+			<div class="t_nav">
+				<ul id="pnl_nav" data-cs-t="headnav_wo">
+					<li data-cs-p="index"><strong class="t"><a href="autoLogin">首页</a></strong>
+					</li>
+					<li data-cs-t="wenda" data-cs-p="wenda"><strong class="t"><a
+							data-cs-p="from_wo_nav" href="goIndex">问答</a></strong></li>
+					<li data-cs-t="things" data-cs-p="things"><strong class="t"><a
+							data-cs-p="from_wo_nav" href="goLocal">当地人</a></strong></li>
+					<li data-cs-p="together"><strong class="t"><a
+							href="goTogether">结伴</a></strong></li>
+					<li data-cs-p="group"><strong class="t"><a
+							href="goPK">照片pk</a></strong></li>
+					<li data-cs-p="mall"><strong class="t"><a
+							href="goShop">蜂蜜兑换</a></strong></li>
+				</ul>
+			</div>
+			<!--用户搜索-->
+			<div class="t_search">
+				<form method="post" action="/group/s.php" name="search">
+					<input type="text" class="key" value="" name="q" id="word">
+					<input type="submit" value="" class="btn">
+				</form>
+			</div>
+
+
+			<div class="t_info">
+				<ul class="user_info" data-cs-t="headnav_wo">
+					<li class="daka">
+						<!--最后处理打卡的功能实现--> <span class="daka_btn" id="_j_dakabtn"
+						data-japp="daka"> <a role="button" title="打卡"
+							class="daka_before">打卡</a> <a role="button" title="打卡推荐"
+							class="daka_after">打卡推荐</a>
+					</span>
+					</li>
+					<li class="account _j_hoverclass" data-hoverclass="on"
+						id="pnl_user_set" data-cs-p="other" class="drop">
+						<!--用户的信息头像--> <strong class="t"><a id="ttt" href="">消息<b></b></a></strong>
+						<div class="uSet c">
+							<a href="http://www.mafengwo.cn/msg/sms/index" rel="nofollow">私信</a>
+							<a href="http://www.mafengwo.cn/msg/entry/article" rel="nofollow">文章消息</a>
+							<a href="http://www.mafengwo.cn/msg/entry/sys" rel="nofollow">系统通知</a>
+							<a href="http://www.mafengwo.cn/msg/entry/group" rel="nofollow">小组消息</a>
+							<a href="http://www.mafengwo.cn/msg/entry/ask" rel="nofollow">问答消息</a>
+
+						</div>
+					<li class="ub-item ub-new-msg" id="head-new-msg"></li>
+					<li class="account _j_hoverclass" data-hoverclass="on"
+						id="pnl_user_set1" data-cs-p="other" class="drop">
+						<!--用户的信息头像--> <span class="t"><a class="infoItem"
+							href="to_myHome"><img src="${user.userHead }"
+								width="32" height="32" align="absmiddle"><b></b></a></span>
+						<div class="uSet c">
+							<a href="" class="containNum" target="_blank">等级
+								<span>LV.${user.userLevel }</span>
+							</a> <a href="/mall/" class="containNum hasLine" target="_blank">蜂蜜
+								<span id="_j_header_honey">${user.userHoney }</span>
+							</a> <a href="/user/lv.php#coin" class="containNum hasLine"
+								target="_blank">金币 <span id="_j_header_coin">${user.userMoney }</span></a> <a
+								href="to_myHome" target="_blank">我的蚂蜂窝</a> <a
+								href="writeTravel" target="_blank" class="menu">写游记</a>
+							<a href="" target="_blank" class="menu">我的好友</a>
+							<a href="" target="_blank" class="menu">我的收藏</a>
+							<a href="" target="_blank">设置</a> <a
+								href="" target="_blank">分享设置</a> <a
+								href="autoLogin">退出</a>
+
+						</div>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+
+
+	
+	
+	
+	<div class="wrapper">
+		<div class="mnav">
+			<span class="wealth"> 我的蜂蜜： <b></b> <var>/</var> <a
+				class="btn"> <i></i> 我的兑换
+			</a>
+			</span> <a class="mt_what">蜂蜜是什么？如何获得蜂蜜</a> <a href="/mall/">蜂蜜兑换</a> <a
+				href="/mall/things.php">蚂蜂窝周边<span>HOT</span></a> <a
+				href="/mall/lottery.php">幸运大转盘</a> <a
+				href="/mall/zhongchou.php?zid=10002">蜂蜜众筹<i class="ask_new_ico"></i></a>
+			<a href="/mall/virtual_goods.php">道具商店</a>
+		</div>
+		<div class="clear"></div>
+		<div class="b1">
+			<div class="b1l">
+				<ul>
+					<li class="nav-digital"><a href="/mall/exchangelist.php?c=1"><i
+							class="icon1"></i>数码产品</a></li>
+					<li class="nav-life"><a href="/mall/exchangelist.php?c=2"><i
+							class="icon2"></i>家居生活</a></li>
+					<li class="nav-beauty"><a href="/mall/exchangelist.php?c=3"><i
+							class="icon3"></i>美丽专区</a></li>
+					<li class="nav-outdoor"><a href="/mall/exchangelist.php?c=4"><i
+							class="icon4"></i>户外度假</a></li>
+				</ul>
+			</div>
+			<div class="bn-slide" id="bn-slide">
+				<ul style="width: 3920px; left: -1664px;" id="top_travel_scroll">
+					<li><a href="/mall/detail.php?pid=147367093" target="_blank">
+							<img width="832" height="400" name="de" id="q" src="img/qs1.jpeg">
+					</a>
+				</ul>
+				<ol id="top_travel_btn">
+					<li class="" data="0" total="3" class="bg"></li>
+					<li data="1" total="3" class=""></li>
+					<li data="2" total="3"></li>
+				</ol>
+				<a class="btn-prev" id="top_prev"></a> <a class="btn-next"
+					id="top_next"></a>
+			</div>
+			<div class="b2">
+				<div class="fl">
+					<div class="rec">
+						<div class="clear"></div>
+						<div class="hd">推荐商品</div>
+						<div class="bd">
+							<ul>
+								<li class="item-large"><a target=""><img
+										src="img/q_shop_bd5.png" width="384px" height="389px"> </a>
+								</li>
+								<li class="item"><a target=""><img
+										src="img/q_shop_bd1.png" width="146px" height="194px"></a></li>
+								<li class="item"><a target=""><img
+										src="img/q_shop_bd2.png" width="146px" height="194px"></a></li>
+								<li class="item"><a target=""><img
+										src="img/q_shop_bd3.png" width="146px" height="194px"></a></li>
+								<li class="item"><a target=""><img
+										src="img/q_shop_bd4.png" width="146px" height="194px"></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="floor1 floor">
+						<a class="floor-show" href="/mall/exchangelist.php?c=1"
+							target="_blank">
+							<h3 class="f-title"></h3> <i class="arrow"></i> <span
+							class="f-img"></span>
+						</a>
+						<ul class="list">
+							<c:forEach items="${floor1}" var="StoreInfoList1">
+								<li class="item"><a target="" href=""> <img
+										src="${StoreInfoList1.proImg}" width="184px" height="194px">
+								</a></li>
+							</c:forEach>
+						</ul>
+					</div>
+					<div class="floor2 floor">
+						<a class="floor-show" href="/mall/exchangelist.php?c=1"
+							target="_blank">
+							<h3 class="f-title"></h3> <i class="arrow"></i> <span
+							class="f-img"></span>
+						</a>
+						<ul class="list">
+							<c:forEach items="${floor2}" var="StoreInfoList2">
+								<li class="item"><a target="" href=""> <img
+										src="${StoreInfoList2.proImg}" width="184px" height="194px">
+								</a></li>
+							</c:forEach>
+						</ul>
+					</div>
+					<div class="floor3 floor">
+						<a class="floor-show" href="/mall/exchangelist.php?c=1"
+							target="_blank">
+							<h3 class="f-title"></h3> <i class="arrow"></i> <span
+							class="f-img"></span>
+						</a>
+						<ul class="list">
+							<c:forEach items="${floor3}" var="StoreInfoList3">
+								<li class="item"><a target="" href=""> <img
+										src="${StoreInfoList3.proImg}" width="184px" height="194px">
+								</a></li>
+							</c:forEach>
+						</ul>
+					</div>
+					<div class="floor4 floor">
+						<a class="floor-show" href="/mall/exchangelist.php?c=1"
+							target="_blank">
+							<h3 class="f-title"></h3> <i class="arrow"></i> <span
+							class="f-img"></span>
+						</a>
+						<ul class="list">
+							<c:forEach items="${floor4}" var="StoreInfoList4">
+								<li class="item"><a target="" href=""> <img
+										src="${StoreInfoList4.proImg}" width="184px" height="194px">
+								</a></li>
+							</c:forEach>
+						</ul>
+					</div>
+				</div>
+				<div class="fr">
+					<div class="m-notice">
+						<div class="hd">公告/讨论</div>
+						<ul class="bd">
+							<li><i></i><a href="http://www.mafengwo.cn/i/2947856.html"
+								target="_blank">什么是【蜂蜜】以及怎么获得【蜂蜜】</a></li>
+							<li><i></i><a href="http://www.mafengwo.cn/i/3046580.html"
+								target="_blank">【蜂 蜜 商 城 兑 换 规 则】新新版</a></li>
+							<li><i></i><a href="http://www.mafengwo.cn/i/5649470.html"
+								target="_blank">【蜂蜜商城2.0版】介绍及上新规则公告</a></li>
+							<li><i></i><a
+								href="http://www.mafengwo.cn/activity/mall/notebook"
+								target="_blank">【蚂蜂窝手账本】献给不被打扰的时刻</a></li>
+							<li><i></i><a href="http://www.mafengwo.cn/i/2968921.html"
+								target="_blank">关于刷蜂蜜的【惩 罚 措 施】</a></li>
+							<li><i></i><a href="http://www.mafengwo.cn/i/3046580.html"
+								target="_blank">【蜂 蜜 商 城 兑 换 规 则】新新版</a></li>
+						</ul>
+					</div>
+					<div class="m-group">
+						<div class="hd">相关小组</div>
+						<div class="bd">
+							<a href="/g/13692.html" target="_blank"> <img
+								src="img/q_f1.jpeg">
+								<h3>蜂蜜商城</h3>
+								<p>4533276成员 / 327 帖子</p>
+							</a>
+						</div>
+					</div>
+					<div class="m-service">
+						<div class="bd">
+							<a class="btn _j_service" href="javascript:;void(0)"> <span
+								class="bee"></span> <span class="txt"></span>
+							</a>
+						</div>
+						<div class="bdphone">客服电话：4006345678转4</div>
+					</div>
+					<%-- <div class="m-comment _j_comment_box">
+						<div class="hd">留言板</div>
+						<div class="bd">
+							<div class="pub _j_publish">
+								<form name="comment_form">
+									<textarea name="content"></textarea>
+									<input type="button" value="发布" class="p-fb _j_sumbit">
+								</form>
+							</div>
+							<ul class="list  _j_clist">
+							
+								<li class="_j_citem" data-cid="195686"
+									data-username="WhistlerLll">
+									<!-- <a href="#" class="_j_quote">引用</a> --> <a href="#"
+									class="reply _j_reply">回复</a>
+									<div style="white-space: nowrap;">
+										<a class="user" href="/u/33530651.html" target="_blank"> <img
+											height="16"
+											src="http://file32.mafengwo.net/M00/70/19/wKgBs1eDgxuAEqE4AABTwdu6NbQ60.head.w48.jpeg">WhistlerLll
+										</a> <span class="date" style="white-space: nowrap;">2016-09-09
+											15:07</span>
+									</div>
+									<p>回复小乱是怪咖:哦哦，你说的是哪个小包呀·不客气</p>
+								</li>
+								
+							</ul>
+							<div class="pagin _j_cpage">
+								<span>1/1914</span> <a class="btn-left _j_comment_pager"
+									href="#" data-start="0" title="上一页"></a> <a
+									class="btn-right _j_comment_pager" href="#" data-start="5"
+									title="下一页"></a>
+							</div>
+						</div>
+					</div> --%>
+					<div class="m-status">
+						<div class="hd">最新动态</div>
+						<div class="bd" style="height: 170px;">
+							<ul class="_j_orders" style="margin-top: -320px;">
+								<li><span>2016-08-29 10:02</span><br> <a
+									href="/u/77583641.html" target="_blank" title="仝">仝</a> 兑换了 <strong>小米（MI）智能手</strong>，花费<em>1300</em>蜂蜜
+								</li>
+								<li><span>2016-08-29 09:03</span><br> <a
+									href="/u/5119641.html" target="_blank" title="o聆雪o">o聆雪o</a>
+									兑换了 <strong>数码收纳包</strong>，花费<em>702</em>蜂蜜</li>
+								<li><span>2016-08-29 08:45</span><br> <a
+									href="/u/40913139.html" target="_blank" title="38548103">38548103</a>
+									兑换了 <strong>小米（MI）智能手</strong>，花费<em>1300</em>蜂蜜</li>
+								<li><span>2016-08-29 08:36</span><br> <a
+									href="/u/5598771.html" target="_blank" title="哏纠花花麻">哏纠花</a>
+									兑换了 <strong>松下（Panasonic） EH</strong>，花费<em>7020</em>蜂蜜</li>
+								<li><span>2016-08-29 08:13</span><br> <a
+									href="/u/66498135.html" target="_blank" title="瓜尔佳">瓜尔佳</a> 兑换了
+									<strong>飞科-电动剃须刀</strong>，花费<em>1180</em>蜂蜜</li>
+								<li><span>2016-08-29 07:50</span><br> <a
+									href="/u/32950453.html" target="_blank" title="川藏神鹰车队">川藏神</a>
+									兑换了 <strong>小米（MI）圈铁入</strong>，花费<em>1755</em>蜂蜜</li>
+								<li><span>2016-08-29 00:09</span><br> <a
+									href="/u/5450693.html" target="_blank" title="记忆旅行">记忆旅</a> 兑换了
+									<strong>花王（KAO）蒸汽眼</strong>，花费<em>720</em>蜂蜜</li>
+								<li><span>2016-08-28 22:08</span><br> <a
+									href="/u/55509808.html" target="_blank" title="這i輩孓">這i輩</a>
+									兑换了 <strong>富士白边相纸</strong>，花费<em>1152</em>蜂蜜</li>
+								<li><span>2016-08-28 19:09</span><br> <a
+									href="/u/50507480.html" target="_blank" title="Yeonqiu">Yeonqiu</a>
+									兑换了 <strong>三利字母印花毛巾</strong>，花费<em>675</em>蜂蜜</li>
+								<li><span>2016-08-28 16:41</span><br> <a
+									href="/u/61352511.html" target="_blank" title="盖茨比">盖茨比</a> 兑换了
+									<strong>小甘菊柔皙护手霜</strong>，花费<em>520</em>蜂蜜</li>
+								<li><span>2016-08-28 11:15</span><br> <a
+									href="/u/71277003.html" target="_blank" title="_绿先生">_绿先</a>
+									兑换了 <strong>花王（KAO）蒸汽眼</strong>，花费<em>800</em>蜂蜜</li>
+								<li><span>2016-08-28 10:48</span><br> <a
+									href="/u/67749551.html" target="_blank" title="ABC">ABC</a> 兑换了
+									<strong>小米（MI）智能手</strong>，花费<em>1300</em>蜂蜜</li>
+								<li><span>2016-08-28 09:50</span><br> <a
+									href="/u/89942960.html" target="_blank" title="为你而“链”">为你而</a>
+									兑换了 <strong>三利字母印花毛巾</strong>，花费<em>750</em>蜂蜜</li>
+								<li><span>2016-08-28 09:42</span><br> <a
+									href="/u/76426656.html" target="_blank" title="波仔">波仔</a> 兑换了 <strong>蓝橙
+										旅行分装瓶</strong>，花费<em>780</em>蜂蜜</li>
+								<li><span>2016-08-28 04:33</span><br> <a
+									href="/u/13085707.html" target="_blank" title="出发吧肉丸子">出发吧</a>
+									兑换了 <strong>男士劲能深层净化</strong>，花费<em>720</em>蜂蜜</li>
+								<li><span>2016-08-27 23:06</span><br> <a
+									href="/u/114994.html" target="_blank" title="板砖">板砖</a> 兑换了 <strong>加加林七格电子定</strong>，花费<em>1170</em>蜂蜜
+								</li>
+								<li><span>2016-08-27 23:00</span><br> <a
+									href="/u/19540438.html" target="_blank" title="芳草柠檬">芳草柠</a>
+									兑换了 <strong>飞科-电动剃须刀</strong>，花费<em>1062</em>蜂蜜</li>
+								<li><span>2016-08-27 21:59</span><br> <a
+									href="/u/17074517.html" target="_blank" title="Cc">Cc</a> 兑换了 <strong>丝塔芙洁面乳118ml</strong>，花费<em>810</em>蜂蜜
+								</li>
+								<li><span>2016-08-27 21:40</span><br> <a
+									href="/u/30936032.html" target="_blank" title="masmascat">masmascat</a>
+									兑换了 <strong>捷波朗-蓝牙耳机</strong>，花费<em>2780</em>蜂蜜</li>
+								<li><span>2016-08-27 20:36</span><br> <a
+									href="/u/33761919.html" target="_blank" title="*⒈9９！、">*⒈9９</a>
+									兑换了 <strong>花王（KAO）蒸汽眼</strong>，花费<em>720</em>蜂蜜</li>
+								<li><span>2016-08-27 18:16</span><br> <a
+									href="/u/55629814.html" target="_blank" title="糖pangpang">糖pangpa</a>
+									兑换了 <strong>小米（MI）智能手</strong>，花费<em>1300</em>蜂蜜</li>
+								<li><span>2016-08-27 17:50</span><br> <a
+									href="/u/72868540.html" target="_blank" title="逗拌">逗拌</a> 兑换了 <strong>飞科负离子吹风机</strong>，花费<em>1500</em>蜂蜜
+								</li>
+								<li><span>2016-08-27 17:01</span><br> <a
+									href="/u/809582.html" target="_blank" title="沉鱼落雁">沉鱼落</a> 兑换了
+									<strong>飞科-电动剃须刀</strong>，花费<em>1062</em>蜂蜜</li>
+								<li><span>2016-08-27 15:12</span><br> <a
+									href="/u/60454381.html" target="_blank" title="糖水妞">糖水妞</a> 兑换了
+									<strong>忆捷 8G U盘</strong>，花费<em>680</em>蜂蜜</li>
+								<li><span>2016-08-27 11:47</span><br> <a
+									href="/u/55052957.html" target="_blank" title="muhuoshan">muhuoshan</a>
+									兑换了 <strong>az安洁免洗手消毒</strong>，花费<em>400</em>蜂蜜</li>
+
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div style="width: 100%; height: 90px; margin: 0; padding: 0">
+		<iframe id="top" src="q_footer" frameborder="0" scrolling="no"
+			width="100%" height="90px" align="center"></iframe>
+	</div>
+</body>
+</html>

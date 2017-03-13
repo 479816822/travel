@@ -1,0 +1,513 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+
+body {
+	/*overflow: hidden;*/
+	font-size: 12px;
+	font-family: Arial, "Lucida Grande", "Microsoft Yahei",
+		"Hiragino Sans GB", "Hiragino Sans GB W3", SimSun, "PingFang SC",
+		STHeiti;
+	_font-family: Tahoma, Arial, Helvetica, STHeiti;
+	color: #666;
+	background: url("../syste_img/img/lilizaimu-img/back1.jpg") fixed;
+}
+
+body, p, div {
+	word-wrap: break-word;
+}
+
+li {
+	display: list-item;
+	text-align: -webkit-match-parent;
+	list-style: none;
+}
+
+a {
+	background-color: transparent;
+	text-decoration: none;
+	color: #ff9d00;
+	cursor: pointer;
+}
+
+ul, ol, li, dl, dd, dt {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+b, strong {
+	font-weight: bold;
+}
+
+button, select {
+	text-transform: none;
+}
+
+.header {
+	width: 100%;
+	height: 59px;
+	margin: 0px auto;
+/* 	overflow: hidden;
+ */	position: fixed;
+	z-index: 999;
+	border-bottom: 2px solid #eee;
+}
+
+.header iframe {
+	overflow: hidden;
+	width: 100%;
+	height: 300px;
+}
+
+.footer {
+	margin-top: 120px;
+	clear: both;
+	overflow: hidden;
+}
+
+.footer iframe {
+	width: 100%;
+	height: 470px;
+}
+
+hr {
+	/*width: 100%;*/
+	color: #ccc;
+	margin-bottom: 10px;
+}
+
+.content {
+	width: 100%;
+	/*margin: 90px 0px;*/
+	position: relative;
+	top: 90px;
+}
+
+.calendar {
+	margin-bottom: 20px;
+}
+
+.calendar .hd {
+	height: 50px;
+	width: 980px;
+	margin: 0 auto;
+	padding: 15px 0;
+	overflow: hidden;
+}
+
+.calendar .hd-title {
+	float: left;
+	width: 268px;
+	height: 57px;
+	background: url("../syste_img/img/lilizaimu-img/cal-bg3.png") no-repeat 0 0;
+	overflow: hidden;
+	text-indent: -9999px;
+}
+
+.calendar .hd dl {
+	float: right;
+}
+
+.calendar .hd dt {
+	float: right;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 26px;
+	color: #4c4844;
+}
+
+.calendar .hd dd {
+	float: right;
+	margin: 25px 0px;
+}
+
+.calendar .hd .cur-month {
+	margin: 0 10px 0 20px;
+	font-size: 50px;
+}
+
+.calendar .hd select {
+	margin-right: 5px;
+	float: left;
+	height: 17px;
+	padding: 0;
+	line-height: 16px;
+	font-size: 11px;
+	overflow: hidden;
+}
+
+.calendar .month {
+	margin: 10px auto;
+	width: 980px;
+	height: 50px;
+	overflow: hidden;
+}
+
+.month li {
+	float: left;
+}
+
+.calendar .month ul {
+	margin-left: -4px;
+}
+
+.calendar .month li {
+	display: inline;
+	margin-left: 35px;
+	float: left;
+	width: 45px;
+	height: 50px;
+	text-align: center;
+	line-height: 48px;
+}
+
+.calendar .month span {
+	display: inline-block;
+	width: 43px;
+	height: 49px;
+	background: url("../syste_img/img/lilizaimu-img/cal-bg3.png") no-repeat 0 -57px;
+	cursor: pointer;
+	overflow: hidden;
+	vertical-align: top;
+	line-height: 200px;
+}
+
+.calendar .month .on .jan {
+	background-position: 0 -106px;
+}
+
+.calendar .month .on .feb {
+	background-position: -43px -106px;
+}
+
+.calendar .month .on .mar {
+	background-position: -86px -106px;
+}
+
+.calendar .month .on .apr {
+	background-position: -129px -106px;
+}
+
+.calendar .month .on .may {
+	background-position: -172px -106px;
+}
+
+.calendar .month .on .jun {
+	background-position: -215px -106px;
+}
+
+.calendar .month .on .jul {
+	background-position: -258px -106px;
+}
+
+.calendar .month .on .aug {
+	background-position: -301px -106px;
+}
+
+.calendar .month .on .sep {
+	background-position: -344px -106px;
+}
+
+.calendar .month .jan {
+	background-position: 0 -57px;
+}
+
+.calendar .month .feb {
+	background-position: -43px -57px;
+}
+
+.calendar .month .mar {
+	background-position: -86px -57px;
+}
+
+.calendar .month .apr {
+	background-position: -129px -57px;
+}
+
+.calendar .month .may {
+	background-position: -172px -57px;
+}
+
+.calendar .month.jun {
+	background-position: -215px -57px;
+}
+
+.calendar .month .jul {
+	background-position: -258px -57px;
+}
+
+.calendar .month .aug {
+	background-position: -301px -57px;
+}
+
+.calendar .month .sep {
+	background-position: -344px -57px;
+}
+
+.calendar .month .no .oct {
+	background-position: -387px -155px;
+}
+
+.calendar .month .no .nov {
+	background-position: -430px -155px;
+}
+
+.calendar .month .no .dec {
+	background-position: -473px -155px;
+}
+
+.calendar .week {
+	height: 33px;
+	margin: 10px 0 25px;
+	position: relative;
+}
+
+.calendar .week-bg {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	_height: 33px;
+	background-color: #fff;
+	opacity: 0.5;
+	filter: alpha(opacity = 50);
+}
+
+.calendar .week ul {
+	position: relative;
+	width: 980px;
+	height: 33px;
+	margin: 0 auto;
+	background: url("../syste_img/img/lilizaimu-img/cal-bg3.png") no-repeat 0 -205px;
+	overflow: hidden;
+}
+
+.calendar .week li {
+	float: left;
+	margin-left: 6px;
+	display: inline;
+	width: 125px;
+	height: 30px;
+	overflow: hidden;
+	line-height: 100px;
+	font-size: 20px;
+	color: #999;
+}
+
+.calendar .bd {
+	width: 100%;
+	position: relative;
+}
+
+.calendar .viewport {
+	width: 981px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.calendar .overview {
+	width: 981px;
+}
+
+.month-panel {
+	margin-left: -6px;
+	overflow: hidden;
+}
+
+.month-panel li {
+	display: inline;
+	float: left;
+	margin: 6px 0 0 6px;
+	width: 135px;
+	height: 84px;
+	position: relative;
+	overflow: hidden;
+}
+
+.month-panel .after span {
+	border: 1px solid #e6e6e6;
+	height: 82px;
+}
+
+.month-panel li span {
+	display: block;
+}
+
+.month-panel .after em {
+	color: #c2c2c2;
+	text-shadow: none;
+}
+
+.month-panel li em {
+	position: absolute;
+	left: 5px;
+	bottom: 3px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-style: normal;
+	font-size: 22px;
+	color: #fff;
+	text-shadow: 0 0 3px rgba(0, 0, 0, 1);
+}
+
+a {
+	background-color: transparent;
+	text-decoration: none;
+	color: #ff9d00;
+	cursor: pointer;
+}
+
+img {
+	border: 0;
+	vertical-align: middle;
+}
+
+.month-panel .mark {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#cc000011,
+		endColorstr=#cc000011);
+	font-size: 24px;
+	color: #fff;
+	text-align: center;
+	line-height: 78px;
+	overflow: hidden;
+	visibility: hidden;
+}
+
+.month-panel .mark a {
+	color: #fff;
+	font-size: 24px;
+}
+
+.month-panel .mark .user {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	/*_right: -1px;*/
+	width: 16px;
+	height: 16px;
+	padding: 2px 0 0 2px;
+	background-color: #fff;
+	line-height: 0;
+	overflow: hidden;
+}
+
+.month-panel .mark img {
+	vertical-align: top;
+}
+
+.extra-btn {
+	position: absolute;
+	left: 50%;
+	top: 6px;
+	z-index: 2;
+	margin-left: 505px;
+}
+
+.extra-btn a {
+	display: block;
+	width: 52px;
+	height: 269px;
+	background: url("../syste_img/img/lilizaimu-img/btn-club2.png") no-repeat;
+	text-indent: -999px;
+	overflow: hidden;
+}
+
+.extra-btn img {
+	position: absolute;
+	right: -12px;
+	top: 10px;
+}
+
+/*--------------------------------*/
+.mfw-toolbar {
+	position: fixed;
+	right: 125px;
+	bottom: -20px;
+	height: auto;
+	margin-right: 0;
+}
+
+.toolbar-item-top, .toolbar-item-feedback, .toolbar-item-code,
+	.toolbar-item-down {
+	margin-bottom: -1px;
+}
+
+.mfw-toolbar .btn {
+	width: 43px;
+	height: 43px;
+	display: block;
+	border: 1px solid #e5e5e5;
+	text-align: center;
+	background-color: #fff;
+	position: relative;
+}
+
+.mfw-toolbar .icon_top {
+	width: 21px;
+	height: 12px;
+	background-position: -60px -165px;
+	margin-top: 16px;
+}
+
+.mfw-toolbar i {
+	background: url("../syste_img/img/lilizaimu-img/icon1.png") no-repeat 0 0;
+	display: inline-block;
+}
+
+.mfw-toolbar .btn em {
+	width: 35px;
+	background-color: #aaa;
+	font-size: 12px;
+	line-height: 16px;
+	color: #fff;
+	font-style: normal;
+	position: absolute;
+	left: -1px;
+	top: -1px;
+	z-index: 2;
+	display: none;
+	padding: 5px 4px 0 4px;
+	height: 38px;
+	border: 1px solid #aaa;
+}
+
+.mfw-toolbar .icon_feedback {
+	width: 18px;
+	height: 18px;
+	background-position: -90px -165px;
+	margin-top: 13px;
+}
+
+.mfw-toolbar .icon_code {
+	width: 19px;
+	height: 19px;
+	background-position: -120px -165px;
+	margin-top: 13px;
+}
+
+.toolbar-item-code .mfw-code {
+	border: 1px solid #e5e5e5;
+	display: none;
+	position: absolute;
+	right: 55px;
+	bottom: 0;
+	background-color: #fff;
+	padding: 6px;
+	color: #999;
+}
+
+img {
+	border: 0;
+	vertical-align: middle;
+}

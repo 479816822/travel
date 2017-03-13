@@ -1,5 +1,7 @@
 package com.cn.qd.travel.dao;
 
+import java.util.List;
+
 import com.cn.qd.travel.entity.MDTravelNote;
 
 public interface MDTravelNoteMapper {
@@ -14,4 +16,6 @@ public interface MDTravelNoteMapper {
     int updateByPrimaryKeySelective(MDTravelNote record);
 
     int updateByPrimaryKey(MDTravelNote record);
+
+	List<MDTravelNote> selectList();
 }

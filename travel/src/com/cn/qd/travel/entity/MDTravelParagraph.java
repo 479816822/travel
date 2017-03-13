@@ -10,6 +10,8 @@ public class MDTravelParagraph {
     private String mdVideo;
 
     private Short mdStdcode;
+    
+    private String mdTavelId;
 
     /**
      * 游记主体
@@ -74,4 +76,13 @@ public class MDTravelParagraph {
     public void setMdContent(String mdContent) {
         this.mdContent = mdContent == null ? null : mdContent.trim();
     }
+
+	public String getMdTavelId() {
+		return mdTavelId;
+	}
+
+	public void setMdTavelId(String mdTavelId) {
+		this.mdTavelId = mdTavelId;
+	}
+    
 }

@@ -1,15 +1,14 @@
 package com.cn.qd.travel.core;
 
-import java.util.List;
+import java.util.ArrayList;
 import java.util.Map;
 
 /**
  * 所有服务接口,统一实现对数据库进行操作
- * 1.TClass 是对应的类
  * @author liufu
  *
  */
-public interface Service<TClass> {
+public interface Service{
 
 	
 	/**
@@ -19,8 +18,7 @@ public interface Service<TClass> {
 	 * @param map
 	 * @return
 	 */
-	@SuppressWarnings("rawtypes")
-	public int insert(TClass t,Map map);
+	public int insert(Object t,Map<String, Object> map);
 	
 	/**
 	 * 通过传入的类,进行数据修改
@@ -29,8 +27,7 @@ public interface Service<TClass> {
 	 * @param map
 	 * @return
 	 */
-	@SuppressWarnings("rawtypes")
-	public int update(TClass t,Map map);
+	public int update(Object t,Map<String, Object> map);
 	
 	/**
 	 * 通过传入的类,进行数据删除
@@ -39,8 +36,7 @@ public interface Service<TClass> {
 	 * @param map
 	 * @return
 	 */
-	@SuppressWarnings("rawtypes")
-	public int delete(TClass t,Map map);
+	public int delete(Object t,Map<String, Object> map);
 	
 	
 	/**
@@ -50,8 +46,7 @@ public interface Service<TClass> {
 	 * @param map
 	 * @return
 	 */
-	@SuppressWarnings("rawtypes")
-	public List<TClass> oneResultProvider(TClass t,Map map);
+	public ArrayList<Object> oneResultProvider(Object t,Map<String, Object> map);
 	
 	/**
 	 * 通过传入的类,查询多行的数据
@@ -60,7 +55,6 @@ public interface Service<TClass> {
 	 * @param map
 	 * @return
 	 */
-	@SuppressWarnings("rawtypes")
-	public List<TClass> oneListResultProvider(TClass t,Map map);
+	public ArrayList<Object> oneListResultProvider(Object t,Map<String, Object> map);
 	
 }

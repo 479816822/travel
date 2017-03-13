@@ -1,0 +1,849 @@
+@charset "UTF-8";
+.nav img {
+    margin: 0 auto
+}
+
+.header-mafengwo-wrap {
+    height: 70px;
+    width: 100%;
+    background: #fff
+}
+
+.header-mafengwo {
+    width: 980px;
+    height: 70px;
+    margin: 0 auto;
+}
+
+.focus {
+    height: 379px;
+    position: relative
+}
+
+.focus-h {
+    height: 347px
+}
+
+.focus .slider {
+    width: 100%;
+    height: 379px;
+    position: relative;
+    overflow: hidden
+}
+
+.focus .slider-h {
+    height: 347px
+}
+
+.focus .slider_main {
+    width: 8000px;
+    position: absolute;
+    left: 0;
+    top: 0
+}
+
+.focus .slider_main li {
+    width: 100%;
+    height: 379px;
+    float: left
+}
+
+.focus .point {
+    width: 128px;
+    position: absolute;
+    bottom: 23px;
+    left: 50%;
+    margin-left: -64px
+}
+
+.focus .point a {
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    float: left;
+    cursor: pointer;
+    border-radius: 50%;
+    margin-right: 24px;
+    display: inline-block
+}
+
+.focus .point .on {
+    background-color: #ff9d00
+}
+
+.special-mafengwo {
+    width: 980px;
+    margin: 0 auto;
+    overflow: hidden
+}
+
+.special-mafengwo-t, .problems {
+    padding-top: 31px;
+    line-height: 27px;
+    height: 55px
+}
+
+.special-mafengwo-t-l {
+    height: 27px;
+    font-size: 24px;
+    color: #333;
+    float: left
+}
+
+.special-mafengwo-t-l i {
+    display: inline-block;
+    vertical-align: middle;
+    font-style: normal;
+    width: 27px;
+    height: 27px;
+    margin: -5px 10px 0 0
+}
+
+.special-mafengwo-t-r {
+    float: right;
+    font-size: 16px;
+    color: #ff9d00;
+    padding-right: 16px
+}
+
+.special-mafengwo-t-r i {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    font-style: normal;
+    vertical-align: middle;
+}
+
+.arrow i {
+}
+
+.special-mafengwo ul, .list-xiangxi-r ul {
+    width: 159%
+}
+
+.special-mafengwo ul li {
+    width: 436px;
+    height: 220px;
+    float: left;
+    border: 1px solid #dfdfdf;
+    margin: 0 60px 42px 0;
+    padding: 31px 0 0 22px;
+    background: #fff;
+    line-height: 20px
+}
+
+.special-mafengwo ul li a, .list-xiangxi-r ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    position: relative;
+    z-index: 0
+}
+
+.list-xiangxi-r ul li a .left-hot {
+    width: 50px;
+    height: 21px;
+    background: #ff9d00;
+    position: absolute;
+    left: -68px;
+    top: -38px;
+    text-align: center;
+    line-height: 21px;
+    font-size: 14px;
+    color: #fff;
+    margin-top: 0
+}
+
+.special-mafengwo ul li a span, .list-xiangxi-r ul li a span {
+    font-size: 26px
+}
+
+.special-mafengwo ul li a .main-content, .list-xiangxi-r ul li a .main-content {
+    margin-top: 21px;
+    position: relative
+}
+
+.special-mafengwo ul li a .hover-after, .list-xiangxi-r ul li a .hover-after {
+    margin-top: -93px;
+    position: absolute;
+    left: 0;
+    top: 93px;
+    display: none
+}
+
+.special-mafengwo ul li a .hover-after p span, .list-xiangxi-r ul li a .hover-after p span {
+    font-size: 14px;
+    color: #ff9d00;
+    margin-left: 18px;
+    padding-top: 0
+}
+
+.special-mafengwo ul li a p, .list-xiangxi-r ul li a p {
+    font-size: 14px;
+    color: #797979;
+    line-height: 31px
+}
+
+.special-mafengwo ul li a p:before, .list-xiangxi-r ul li a p:before {
+}
+
+.special-mafengwo ul li a .main-content span, .list-xiangxi-r ul li a .main-content span {
+    font-size: 24px;
+    color: #ff9000;
+    padding-top: 9px;
+    display: inline-block;
+    position: relative
+}
+
+.special-mafengwo ul li a img, .list-xiangxi-r ul li a img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: -31px;
+    z-index: -1
+}
+
+.list-xiangxi-r ul li a img {
+    top: -6px
+}
+
+.special-mafengwo ul li a .triangle, .list-xiangxi-r ul li a .triangle, .premium dl dd .triangle {
+    width: 0;
+    height: 0;
+    border-width: 5px 5px 5px 5px;
+    border-color: transparent #ff9d00 #ff9d00 transparent;
+    border-style: dashed solid solid dashed;
+    position: absolute;
+    right: 0;
+    bottom: -20px;
+    display: none
+}
+
+.list-xiangxi-r ul li a .triangle {
+    margin-top: 21px;
+    display: none
+}
+
+.price-sale, .sale-btn {
+    display: inline-block
+}
+
+.price-sale {
+    font-size: 24px;
+    color: #ff9000;
+    margin-top: 21px;
+    height: 40px
+}
+
+.sale-btn {
+    width: 92px;
+    height: 35px;
+    background: #ff8b00;
+    border-radius: 1px;
+    font-size: 16px;
+    color: #fff;
+    margin: -8px 0 20px 14px;
+    text-align: center;
+    line-height: 35px;
+    position: absolute;
+    z-index: 1;
+    display: none
+}
+
+.special-mafengwo ul li a .price-sale span, .list-xiangxi-r ul li a .price-sale span {
+    font-size: 46px
+}
+
+.list-xiangxi-r ul li a .triangle {
+    top: 184px
+}
+
+.special-mafengwo ul li a .hover-after p:before, .list-xiangxi-r ul li a .hover-after p:before {
+}
+
+.special-mafengwo ul li:hover, .list-xiangxi-r ul li:hover {
+    border: 1px solid #ff8c02
+}
+
+.special-mafengwo ul li:hover .sale-btn, .list-xiangxi-r ul li:hover .sale-btn {
+    display: inline-block
+}
+
+.special-mafengwo ul li:hover .triangle, .list-xiangxi-r ul li:hover .triangle {
+    display: block
+}
+
+.special-mafengwo ul li:hover .sale, .list-xiangxi-r ul li:hover .sale {
+    display: block
+}
+
+.special-mafengwo ul li:hover .content, .list-xiangxi-r ul li:hover .content {
+    visibility: hidden
+}
+
+.special-mafengwo ul li:hover .hover-after, .list-xiangxi-r ul li:hover .hover-after {
+    display: block
+}
+
+.special-mafengwo ul li a span span, .list-xiangxi-r ul li a span span {
+    font-size: 46px;
+    margin-left: 8px
+}
+
+.zonghe {
+    background: #f8f8f8
+}
+
+.zonghe-mafengwo i {
+    background-position: -119px -113px
+}
+
+.liucheng {
+    width: 100%;
+    height: 180px;
+    background: #f3f3f3
+}
+
+.liucheng-wrap {
+    width: 980px;
+    height: 180px;
+    margin: 0 auto
+}
+
+.problems-wrap {
+    height: 246px
+}
+
+.problems {
+    width: 980px;
+    height: 290px;
+    margin: 0 auto
+}
+
+.problems-t {
+    height: 27px;
+    font-size: 24px;
+    color: #333
+}
+
+.problems-t i {
+    font-style: normal;
+    display: inline-block;
+    vertical-align: middle;
+    width: 27px;
+    height: 27px;
+    margin: -2px 11px 0 0
+}
+
+.more {
+    float: right;
+    margin: 37px 86px 0 0
+}
+
+.more a {
+    font-size: 16px;
+    color: #ff9d00;
+    text-decoration: none;
+    display: block;
+    width: 98px;
+    height: 40px;
+    border: 2px solid #ff9d00;
+    border-radius: 50px;
+    line-height: 40px;
+    padding-left: 13px
+}
+
+.problems-b ul {
+    padding: 42px 0 0 41px;
+    float: left;
+    width: 737px
+}
+
+.problems-b ul li {
+    float: left;
+    width: 364px;
+    height: 48px
+}
+
+.more span {
+    margin-left: 2px;
+    font-size: 14px
+}
+
+.more span span {
+    margin-left: 4px
+}
+
+.problems a:hover {
+    text-decoration: none
+}
+
+.problems-b ul li a {
+    color: #666;
+    font-size: 16px
+}
+
+.problems-b ul li a i {
+    font-style: normal;
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background: #b5b5b5;
+    border-radius: 50%;
+    margin: -2px 13px 0 0;
+    vertical-align: middle
+}
+
+.problems-b ul li a:hover {
+    color: #ff9d00
+}
+
+.problems-b ul li a:hover i {
+    background: #ff9d00
+}
+
+.stbar-nav .stbar-item .stbar-icon-m {
+}
+
+.stbar-nav .stbar-item .number-flot {
+    width: 319px;
+    height: 137px;
+    position: absolute;
+    left: -324px;
+    top: 0
+}
+
+.stbar-nav .stbar-item .number-flot b {
+    font-size: 14px;
+    color: #333;
+    font-weight: normal;
+    position: absolute;
+    left: 16px;
+    top: 30px
+}
+
+.number-flot input {
+    display: inline-block;
+    width: 193px;
+    height: 37px;
+    background: #f6f6f6;
+    border: 1px solid #d3d3d3;
+    position: absolute;
+    left: 16px;
+    top: 58px
+}
+
+.number-flot a.sure-btn {
+    display: inline-block;
+    width: 60px;
+    height: 38px;
+    background: #ff9d00;
+    border-radius: 1px;
+    margin: 58px 0 0 226px;
+    line-height: 38px;
+    text-align: center
+}
+
+.statement-wrap {
+    width: 100%;
+    height: 191px;
+    background: #f3f3f3;
+    padding-top: 54px
+}
+
+.statement {
+    width: 939px;
+    height: 77px;
+    background: #fff;
+    border: 1px solid #d8d8d8;
+    margin: 0 auto;
+    padding: 27px 0 0 41px;
+    color: #666;
+    font-size: 16px
+}
+
+.statement i {
+    display: inline-block;
+    font-style: normal;
+    vertical-align: middle;
+    width: 41px;
+    height: 41px;
+}
+
+.statement b {
+    font-weight: normal;
+    font-size: 20px;
+    color: #ff9d00;
+    margin-left: 12px
+}
+
+.special-mafengwo-t-l i {
+    width: 26px;
+    height: 28px;
+    background-position: -149px -82px
+}
+
+.special-mafengwo ul li {
+    width: 227px;
+    height: 228px;
+    border: 1px solid #d8d8d8;
+    background: #fff;
+    float: left;
+    overflow: hidden;
+    display: inline;
+    margin: 0 20px 27px 0;
+    padding: 0;
+    line-height: normal
+}
+
+.special-mafengwo ul li:hover {
+    box-shadow: 2px 3px 0 rgba(116, 116, 116, .2);
+    border-color: #d8d8d8
+}
+
+.special-mafengwo ul li .pic {
+    position: relative
+}
+
+.special-mafengwo ul li .pic i {
+    font-size: 18px;
+    color: #fff;
+    font-style: normal;
+    position: absolute;
+    bottom: -6px
+}
+
+.special-mafengwo ul li .pic i b {
+    font-weight: normal;
+    color: #fc9c27
+}
+
+.shadow_insure {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 12px 0 0;
+    height: 57px;
+    line-height: 56px;
+    font-size: 24px;
+    font-weight: normal;
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 10px, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.8) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(15%, rgba(0, 0, 0, 0)), color-stop(50%, rgba(0, 0, 0, 0.2)), color-stop(100%, rgba(0, 0, 0, 0.8)));
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 10px, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.8) 100%);
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 10px, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.5) 100%);
+    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 10px, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.8) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 10px, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.8) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#99000000', GradientType=0)
+}
+
+.special-mafengwo li .info {
+    padding: 25px 12px 18px 9px;
+    font-size: 14px;
+    color: #797979;
+    overflow: hidden
+}
+
+.special-mafengwo ul li a img {
+    position: static;
+    margin-top: 0
+}
+
+.special-mafengwo li .info em {
+    float: right;
+    font-style: normal;
+    margin-top: -5px
+}
+
+.special-mafengwo li .info em b {
+    font-size: 18px;
+    color: #fc9c27;
+    font-weight: normal
+}
+
+.special-mafengwo li .info em b u {
+    font-size: 24px;
+    text-decoration: none
+}
+
+.special-mafengwo ul {
+    width: 1100px
+}
+
+.zonghe-mafengwo i {
+    height: 30px;
+    background-position: -154px -116px
+}
+
+.special-mafengwo {
+    padding-bottom: 24px
+}
+
+.statement-wrap {
+    background: 0 none
+}
+
+.statement {
+    height: auto;
+    padding: 27px 26px 20px 41px;
+    width: 911px
+}
+
+.state-bg {
+    padding-left: 60px
+}
+
+.statement b {
+    margin-left: 0
+}
+
+.statement a {
+    text-decoration: underline;
+    color: #666
+}
+
+.sales-toolbar {
+    position: fixed;
+    z-index: 200;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    height: 100%;
+    border-left: 5px solid #777981
+}
+
+.stbar-middle {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -75px;
+    width: 40px
+}
+
+.stbar-nav {
+    margin: 25px 0
+}
+
+.stbar-item {
+    height: 35px;
+    position: relative;
+    margin-bottom: 1px
+}
+
+.stbar-item a {
+    display: block;
+    height: 35px;
+    text-align: center;
+    color: #fff;
+    line-height: 35px;
+    font-size: 14px;
+    position: relative
+}
+
+.stbar-item .stbar-text {
+    position: absolute;
+    top: 0;
+    left: 35px;
+    width: 58px;
+    height: 35px;
+    padding: 0 10px;
+    background-color: #777981;
+    white-space: nowrap;
+    -webkit-transition: left .5s ease-in-out .1s;
+    transition: left .5s ease-in-out .1s;
+    text-align: center
+}
+
+.stbar-coupon .stbar-text {
+    width: 70px
+}
+
+.stbar-item .stbar-icon {
+    display: block;
+    width: 35px;
+    height: 35px;
+    padding-right: 5px;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    border-radius: 2px 0 0 2px;
+    cursor: pointer
+}
+
+.stbar-order .stbar-icon {
+    background-position: 0 -35px
+}
+
+.stbar-coupon .stbar-icon {
+    background-position: 0 -70px
+}
+
+.stbar-weibo .stbar-icon {
+    background-position: 0 -105px
+}
+
+.stbar-weixin .stbar-icon {
+    background-position: 0 -140px
+}
+
+.stbar-app .stbar-icon {
+    background-position: 0 -175px
+}
+
+.stbar-item:hover a, .stbar-item-hover a {
+    background-color: #ff9d00;
+    text-decoration: none
+}
+
+.stbar-item:hover .stbar-icon, .stbar-item-hover .stbar-icon {
+    background-color: #ff9d00;
+    border-radius: 0
+}
+
+.stbar-item:hover .stbar-text, .stbar-item-hover .stbar-text {
+    left: -73px;
+    background-color: #ff9d00
+}
+
+.stbar-coupon:hover .stbar-text, .stbar-coupon.stbar-item-hover .stbar-text {
+    left: -88px;
+    background-color: #ff9d00
+}
+
+.stbar-qrcode, .stbar-pop {
+    position: absolute;
+    left: -108px;
+    width: 104px;
+    height: 104px;
+    border: 2px solid #ff9d00;
+    opacity: 0;
+    display: none \9;
+    -webkit-transition: opacity .3s ease-in-out .1s;
+    transition: opacity .3s ease-in-out .1s;
+    visibility: hidden;
+    color: #666;
+    line-height: 24px;
+    background-color: #fff
+}
+
+.stbar-item:hover .stbar-qrcode, .stbar-item:hover .stbar-pop {
+    opacity: 1;
+    display: block \9;
+    visibility: visible
+}
+
+.stbar-weibo .stbar-qrcode, .stbar-weibo .stbar-pop {
+    top: 0
+}
+
+.stbar-weixin .stbar-qrcode {
+    top: -36px
+}
+
+.stbar-app .stbar-qrcode {
+    bottom: 0
+}
+
+.stbar-weibo .btn-follow {
+    display: inline-block;
+    margin: 25px 0 7px;
+    line-height: 30px;
+    padding: 0 10px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #fd6b24
+}
+
+.smenu-bar {
+    position: fixed;
+    right: 10px;
+    top: 10%;
+    z-index: 200;
+    width: 94px
+}
+
+.smenu-bar .smenu-item {
+    border: 1px solid #f1f1f1;
+    border-right-width: 2px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #999;
+    background-color: #fff;
+    margin-top: -1px;
+    border-radius: 2px 0 0 2px;
+    position: relative
+}
+
+.smenu-bar .smenu-item a {
+    color: #999
+}
+
+.smenu-bar .smenu-icon {
+    float: left;
+    width: 30px;
+    height: 30px;
+    overflow: hidden
+}
+
+.smenu-bar .smenu-item-active {
+    border-right-color: #ff9d00;
+    color: #ff9d00
+}
+
+.smenu-bar .smenu-item-active a {
+    color: #ff9d00
+}
+
+.smenu-bar .smenu-item-active .smenu-arr {
+    position: absolute;
+    right: 0;
+    top: 11px;
+    border-right: 4px solid #ff9d00;
+    border-top: 4px dashed transparent;
+    border-bottom: 4px dashed transparent;
+    overflow: hidden
+}
+
+.smenu-bar .smenu-item-sales.smenu-item-active .smenu-icon {
+    background-position: -65px 0
+}
+
+.smenu-bar .smenu-item-local .smenu-icon {
+    background-position: -35px -30px
+}
+
+.smenu-bar .smenu-item-local.smenu-item-active .smenu-icon {
+    background-position: -65px -30px
+}
+
+.smenu-bar .smenu-item-visa .smenu-icon {
+    background-position: -35px -60px
+}
+
+.smenu-bar .smenu-item-visa.smenu-item-active .smenu-icon {
+    background-position: -65px -60px
+}
+
+.smenu-bar .smenu-item-car .smenu-icon {
+    background-position: -35px -90px
+}
+
+.smenu-bar .smenu-item-car.smenu-item-active .smenu-icon {
+    background-position: -65px -90px
+}
+
+.smenu-bar .smenu-item-insure .smenu-icon {
+    background-position: -35px -120px
+}
+
+.smenu-bar .smenu-item-insure.smenu-item-active .smenu-icon {
+    background-position: -65px -120px
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+    .smenu-bar .smenu-item-local .smenu-icon, .smenu-bar .smenu-item-visa .smenu-icon, .smenu-bar .smenu-item-car .smenu-icon, .smenu-bar .smenu-item-insure .smenu-icon {
+        background-size: 100px
+    }
+}

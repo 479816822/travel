@@ -3,6 +3,7 @@ package com.cn.qd.travel.service;
 import java.util.Map;
 
 import com.cn.qd.travel.core.Service;
+import com.cn.qd.travel.entity.MDTravelNote;
 
 /**
  * 游记处理服务
@@ -11,7 +12,7 @@ import com.cn.qd.travel.core.Service;
  * @param <TClass>
  */
 
-public interface TravelService<TClass> extends Service<TClass> {
+public interface TravelService extends Service {
 
 	/**
 	 * 新增游记
@@ -20,7 +21,7 @@ public interface TravelService<TClass> extends Service<TClass> {
 	 * @param map
 	 * @return
 	 */
-	public boolean insertTravel(TClass T,Map<String, Object> map);
+	public boolean insertTravel(MDTravelNote T,Map<String, Object> map);
 	
 	/**
 	 * 修改游记
@@ -29,7 +30,7 @@ public interface TravelService<TClass> extends Service<TClass> {
 	 * @param map
 	 * @return
 	 */
-	public boolean updateTravel(TClass T,Map<String, Object> map);
+	public boolean updateTravel(MDTravelNote T,Map<String, Object> map);
 	
 	
 	/**
@@ -39,5 +40,5 @@ public interface TravelService<TClass> extends Service<TClass> {
 	 * @param map
 	 * @return
 	 */
-	public boolean deleteTravel(TClass T,Map<String, Object> map);
+	public boolean deleteTravel(MDTravelNote T,Map<String, Object> map);
 }

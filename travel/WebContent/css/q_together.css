@@ -1,0 +1,639 @@
+
+body, div, p, ul, li, dd, dl, dt, h3, hr, i, h1, h2, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol {
+    list-style: none
+}
+
+h1, h2, h3, h4, h5, h6 {
+    display: block;
+
+    font-weight: bold;
+}
+
+div {
+    display: block;
+}
+
+img {
+    border: 0;
+    vertical-align: middle;
+    padding-top: 3px;
+}
+
+body {
+    font: 12px/150% Arial, Verdana, "\5b8b\4f53";
+    color: #666;
+    background: #fff;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover {
+    color: #C81623
+}
+
+img {
+    border: 0;
+    vertical-align: middle;
+}
+/*头部背景*/
+.header{
+    height: 380px;
+    background: url(../img/q_together1.jpg) no-repeat center bottom;
+    background-size: cover;
+}
+/*头部实体*/
+.hb {
+    width: 980px;
+    margin: 0 auto;
+}
+/*头首*/
+.hbh {
+    padding: 15px 0;
+    font-size: 14px;
+    color: #fff;
+}
+.hbh a {
+    float: left;
+    margin-right: 20px;
+    color: #fff;
+}
+.hbh a:hover {
+   text-decoration: underline;
+}
+/*头尾*/
+.hb .info {
+    padding-top: 60px;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 0 2px rgba(0,0,0,.4);
+}
+.info .num {
+    font-size: 28px;
+    font-weight: bold;
+    min-height: 80px;
+    height: auto;
+}
+.info .total {
+    font-size: 18px;
+}
+.info .total span {
+    padding: 0 8px;
+    font-size: 30px;
+    vertical-align: middle;
+}
+/*头身小圆点*/
+.dot {
+    display: inline-block;
+    margin-left: 8px;
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+    border-radius: 50%;
+    vertical-align: middle;
+    overflow: hidden;
+}
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    height: 42px;
+    padding: 0 42px;
+    border: 2px solid #fff;
+    line-height: 42px;
+    font-size: 18px;
+    color: #fff;
+    font-weight: bold;}
+.btn:hover {
+
+    background-color: rgba(255,255,255,.3);
+    text-decoration: none;
+    color: #fff;
+   }
+/*第一部分照片*/
+.by1{
+    width: 980px;
+    margin: 0 auto;
+}
+.row{
+    padding: 40px 0 50px;
+}
+.by1 .mod_title{
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 40px;
+}
+.by1 .bd{
+    overflow: hidden;
+}
+.by1 ul{
+    width: 1030px;
+}
+.by1 li{
+    float: left;
+    width: 220px;
+    height: 220px;
+    display: inline;
+    margin: 0 33px 33px 0;
+}
+.by1 .mdd{
+    display: block;
+    height: 220px;
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+}
+.mdd .image{
+    width: 220px;
+    height: 220px;
+    overflow: hidden;
+}
+.mdd .bg{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 220px;
+    background-color: #000;
+    opacity: 0;
+    filter: alpha(opacity:30);
+    overflow: hidden;
+    display: none\0;
+    -webkit-transition: opacity .5s ease 0s;
+    transition: opacity .5s ease 0s;
+}
+.by1 .txt{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 0 15px 10px;
+    width: 190px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 20px;
+}
+.by1 strong{
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 28px;
+    font-weight: normal;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    line-height: 30px;
+}
+.by1 p{
+    border-left: 4px solid #ffa800;
+    padding-left: 12px;
+    margin-left: -15px;
+    height: 0;
+    overflow: hidden;
+    -webkit-transition: height .3s ease 0s;
+    transition: height .3s ease 0s;
+}
+.by1 .mdd:hover p{
+    height: 60px;
+}
+.bar{
+    width: 980px;
+    margin: 0 auto;
+}
+.bar .place{
+    float: left;
+    margin-right: 2px;
+    width: 200px;
+}
+.place .sp{
+
+}
+.bar input{
+    height: 38px;
+    padding: 0 18px;
+    background-color: #efefef;
+    border: 1px solid #efefef;
+    margin: 0;
+    line-height: 32px;
+    font-size: 14px;
+    color: #666;
+    outline: 0;
+    vertical-align: top;
+}
+.place .dp{
+    background-color: #fff;
+    border: 1px solid #d5d5d5;
+    box-shadow: 2px 2px 2px rgba(0,0,0,.1);
+    position: absolute;
+    z-index: 10;
+    width: 460px;
+    display: none;
+}
+.dp .all{
+
+}
+
+.dp a{
+    display: block;
+    height: 48px;
+    line-height: 48px;
+    border-bottom: 1px solid #efefef;
+    padding: 0 18px;
+    color: #666;
+    font-size: 14px;
+    position: relative;
+    overflow: hidden;
+}
+.dp .num {
+    float: right;
+    color: #999;
+    font-size: 12px;
+}
+.dp .num em {
+    font-style: normal;
+    font-size: 18px;
+}
+.dp .ale{
+float: left;
+width: 198px;
+border-right: 1px solid #d5d5d5;}
+
+.ale  .on{
+
+}
+.icon-arrow {
+    position: absolute;
+    top: 18px;
+    right: 12px;
+    width: 8px;
+    height: 14px;
+    background: url(/images/together/v2/sprites5.png) no-repeat -120px -120px;
+    overflow: hidden;
+    display: none;}
+.dp .ari{
+    float: left;
+    width: 241px;
+    display: inline;
+    padding: 0 10px;
+    height: 440px;
+    overflow: auto;
+}
+.ari a{
+    padding: 0 10px;
+}
+
+.bar .date{
+    float: left;
+    width: 250px;
+    margin-right: 5px;
+}
+.date .ui-input{
+    position: relative;
+    background-color: #efefef;
+}
+.icon-date {
+    position: absolute;
+    width: 16px;
+    height: 14px;
+    background: url(../img/q_together2.png) no-repeat 0 -120px;
+    overflow: hidden;
+    cursor: pointer;
+    right: 15px;
+    top: 10px;
+}
+.bar .list{
+    float: left;
+    padding-top: 6px;
+    font-size: 14px;
+    line-height: 26px;
+}
+.list a{
+    float: left;
+    height: 26px;
+    margin-right: 5px;
+    padding: 0 10px;
+    border: 2px solid #fff;
+    color: #ff8a00;
+}
+.list .aon{
+    border-color: #ffa800;
+}
+.list  i {
+    display: none;
+    margin-left: 1px;
+    width: 14px;
+    height: 10px;
+    background: url(../img/q_together2.png) no-repeat -140px -120px;
+}
+.list .aon i {
+    display: inline-block;
+    margin-left: 1px;
+    width: 14px;
+    height: 10px;
+    background: url(../img/q_together2.png) no-repeat -140px -120px;
+}
+.btn-add {
+    float: right;
+    font-size: 16px;
+    line-height: 40px;
+    color: #fff;
+    background-color: #ffa800;
+    padding: 0 28px;
+    border-radius: 3px;
+}
+.btn-add i{
+    float: left;
+    margin: 13px 5px 0 0;
+    width: 14px;
+    height: 14px;
+    background: url(../img/q_together2.png) no-repeat 0px 0px;
+    overflow: hidden;
+}
+/*第二部分照片*/
+.by2{
+    width: 980px;
+    margin: 0 auto;
+    padding: 40px 0 50px;
+
+}
+.by2 .not-found{
+    display: none;
+}
+.by2 .blt{
+}
+.blt .together-list {
+    margin: 0 -40px 0 -20px;
+    position: relative;
+}
+.together-list .item {
+    float: left;
+    width: 240px;
+    display: inline;
+    margin-right: 20px;
+}
+.item a {
+    display: block;
+    margin: 0 20px;
+    padding: 50px 0 46px;
+    border-bottom: 1px solid #d5d5d5;
+}
+ .item a:hover {
+    background-color: #fff;
+    margin: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-decoration: none;
+}
+.together-list .image {
+    position: relative;
+    padding-bottom: 30px;
+    margin-bottom: 35px;
+    width: 200px;
+}
+.together-list .after {
+    position: absolute;
+    right: -3px;
+    bottom: -3px;
+    width: 72px;
+    height: 41px;
+    padding-top: 20px;
+    background: url(../img/q_together2.png) no-repeat -80px 0;
+    overflow: hidden;
+    text-align: center;
+    color: #999;}
+.together-list .after b {
+    color: #409f97;
+    font-size: 28px;
+    vertical-align: baseline;
+}
+.together-list hr {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 118px;
+    height: 1px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-top: 1px solid #d5d5d5;
+    overflow: hidden;
+}
+
+.together-list .title {
+    width: 200px;
+    height: 26px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #444;
+    font-weight: normal;
+    line-height: 26px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.together-list .desc {
+    margin-bottom: 25px;
+    height: 48px;
+    font-size: 14px;
+    color: #666;
+    line-height: 24px;
+    overflow: hidden;
+}
+.together-list .user {
+    margin: 25px 0;
+    padding-left: 63px;
+    line-height: 20px;
+}
+.together-list .avatar {
+    float: left;
+    margin: -3px 0 0 -63px;
+    width: 48px;
+    height: 48px;
+    position: relative;
+}
+.together-list .avatar i {
+    position: absolute;
+    right: -6px;
+    bottom: -3px;
+}
+.female {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(../img/q_together2.png) no-repeat -200px -120px;
+    overflow: hidden;
+    vertical-align: -4px;
+}
+.together-list .name {
+    display: block;
+    width: 130px;
+    height: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 14px;
+    color: #ff7200;
+    overflow: hidden;
+}
+.container .level {
+    font-weight: bold;
+    color: #ea3c1a;
+    font-family: Verdana;
+}
+.together-list .attention {
+    line-height: 38px;
+    font-size: 14px;
+    color: #666;
+    position: relative;
+}
+.together-list .icon-arrow {
+    float: right;
+    width: 38px;
+    height: 38px;
+    background: url(../img/q_together2.png) no-repeat 0 -80px;
+    display: inline-block;
+    top: 0px;
+}
+.together-list .item a:hover .icon-arrow {
+    background-position: -80px -80px;
+}
+.together-list .attention b {
+    padding: 0 5px;
+    font-size: 28px;
+    vertical-align: -4px;
+}
+.post .ft{
+    padding-top: 60px;
+    text-align: center;
+    font-size: 30px;
+    color: #999;
+    line-height: 40px;
+}
+.ft .btn-prev {
+    display: inline-block;
+    width: 21px;
+    height: 40px;
+    background: url(../img/q_together2.png) no-repeat -80px -160px;
+    vertical-align: middle;
+}
+.ft .num {
+    padding: 0 20px;
+}
+.ft .num span {
+    color: #ff8a00;
+}
+.ft .btn-next {
+    display: inline-block;
+    width: 21px;
+    height: 40px;
+    background: url(../img/q_together2.png) no-repeat -120px -160px;
+    vertical-align: middle;
+}
+.jr{
+    padding-top: 10px;
+    width: 980px;
+    margin: 0 auto;
+}
+.dt{
+    float: left;
+    margin: 25px 0 0 -130px;
+    display: inline;
+    font-size: 18px;
+}
+.dd{
+    padding: 15px 0;
+    border-bottom: 1px dashed #d7d7d7;
+    line-height: 24px;
+}
+.jr li{
+
+    float: left;
+    width: 90px;
+    height: 24px;
+    padding-left: 5px;
+    overflow: hidden;
+}
+
+.dd a {
+    color: #654939;
+}
+dl {
+    padding-left: 130px;
+}
+dt {
+    float: left;
+    clear: left;
+    margin: 25px 0 0 -130px;
+    display: inline;
+    font-size: 18px;
+}
+dt b {
+    font-size: 20px;
+    color: #ff8a00;
+}
+dd {
+    padding: 15px 0;
+    border-bottom: 1px dashed #d7d7d7;
+    line-height: 24px;
+}
+dd ul {
+    margin-right: -10px;
+}
+dd li{
+
+    float: left;
+    width: 90px;
+    height: 24px;
+    padding-left: 5px;
+    overflow: hidden;
+
+}
+dl .clearfix{
+    height: 62px;
+}
+.footer{
+    padding-top: 10px;
+    width: 980px;
+    margin: 0 auto;
+}
+.footer .bd {
+    position: relative;
+    height: 450px;}
+.footer .itemn {
+    position: absolute;
+    line-height: 20px;
+    width: 440px;
+}
+.footer .avatar {
+    float: left;
+    margin: -5px 15px 0 0;
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.footer .itemn a {
+    display: inline;
+    color: #ff8a00;
+}
+.footer .bd .item2 {
+    position: absolute;
+    line-height: 20px;
+    width: 440px;
+    left: 520px;
+    top: 60px;
+}
+.footer .item3 {
+    left: 270px;
+    top: 200px;
+}
+.footer .item4 {
+    left: 20px;
+    bottom: 20px;
+}

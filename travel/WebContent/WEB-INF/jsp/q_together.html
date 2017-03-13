@@ -1,0 +1,612 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<jsp:useBean id="now" class="java.util.Date" />
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>结伴</title>
+<script src="js/jquery-3.1.0.min.js" type="text/javascript"></script>
+<script src="js/jquery.datetimepicker.full.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="css/q_together.css">
+<link rel="stylesheet" type="text/css" href="css/q_header.css">
+<link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css">
+<style>
+.custom-date-style {
+	background-color: red !important;
+}
+</style>
+
+<script>
+	var pageSize = parseInt($("#pageSize").text());
+	var toTitle;
+	var toDate1;
+	$(function() {
+		$('#datetimepicker1').datetimepicker({
+			yearOffset:0,
+			monthOffset:-1,
+			lang:'ch',
+			timepicker:false,
+			format:'Y/m/d',
+			formatDate:'Y/m/d',
+			minDate:'-1970/01/02', // yesterday is minimum date
+			maxDate:'+2020/01/02' // and tommorow is maximum date calendar
+		});
+	    $("#datetimepicker1").change(function(){
+		   var c=$(this).val();
+		   $("#datetimepicker2").val(c);
+		   toDate1=c;
+		   toTitle=$("#show").val();
+		   BindData(); 
+		   getContent();
+		 
+	   }) ;
+ 
+		var $b = $("#b");
+		$("#show").on({
+			"click" : function() {
+				$b.toggle();
+				return false;
+			}
+		});
+		$(document).on({
+			"click" : function(e) {
+				var src = e.target;
+
+				if (src.id && src.id === "b") {
+					return false;
+				} else {
+					$b.hide();
+				}
+			}
+		});
+		//隐藏框点击
+		$("._j_country_select").click(function(){
+			toDate1=0;
+			 $("#datetimepicker1").val("");
+			 $("#datetimepicker2").val(""); 
+			var s=$(this).find("a").text();
+			$("#show").val(s);
+			toTitle=s;
+			
+			BindData();
+			getContent();
+		});
+		//风景图点击
+		$(".bd").children().eq(0).children().click(function(){
+			toDate1=0;
+		  $("#datetimepicker1").val("");
+			 $("#datetimepicker2").val(""); 
+			var s=$(this).find("strong").text();
+			$("#show").val(s);
+			toTitle=s;
+			BindData();
+			getContent();
+		});
+		$("#next").click(function() {
+			toDate1=0;
+			toTitle=$("#show").val();
+			var pageCount = $("#pageCount").val();
+			pageNum = $("#lblCurent").val();
+			if (pageNum != pageCount) {
+				pageNum++;
+				$("#lblCurent").val(pageNum);
+				$(".num0").text(pageNum);
+			}
+			BindData();
+			
+		});
+		$("#prep").click(function() {
+			toDate1=0;
+			toTitle=$("#show").val();
+			var pageCount = $("#pageCount").val();
+			pageNum = $("#lblCurent").val();
+			if (pageNum != 1) {
+				pageNum = pageNum - 1;
+				$("#lblCurent").val(pageNum);
+				$(".num0").text(pageNum);
+			}
+			BindData();
+			
+		});
+		
+	})
+
+	function BindData() {
+		$
+				.ajax({
+					type : "POST",
+					url : "checkto",
+					async : false,
+					data : {
+
+						pageNum : $("#lblCurent").val(),
+						pageSize : $("#pageSize").val(),
+						toTitle:toTitle,
+						toDate1:toDate1,
+
+					},
+
+					dataType : "json",
+					success : function(data) {
+
+						$("#zcba").empty();
+
+						$
+								.each(
+										data,
+										function(pageNum, n) {
+
+											$("#zcba")
+													.append(
+															"<li class='item'><a target='_blank'><div class='image'><img src='"+ n.toPhoto +"' style='width: 200px; height: 130px;'></div><h3 class='title'>"
+																	
+																	+ n.toTitle
+																	+ "</h3><div class='desc'>"
+																	+ n.toDesc
+																	+ "</div><div class='user clearfix'><span class='avatar'><img src='"+n.userInfo.userIcon+"' width='48'> </span> <span class='name'>"
+																	+ n.userInfo.userName
+																	+ " </span> <span class='level'>LV.7</span></div><div class='attention'><i class='icon-arrow'></i>已有<b>"
+																	+ n.toFollow
+																	+ "</b>人关注</div></a></li> ")
+										});
+					}
+
+				});
+	}
+	function getContent(){
+		$
+		.ajax({
+			type : "POST",
+			url : "checkCity",
+			async : false,
+			data : {
+				toTitle:toTitle,
+				toDate1:toDate1,
+			},
+
+			dataType : "json",
+			success : function(data) {
+				if(data.pageCount==0){
+					$(".ft").css('display','none');
+				}else{
+					$(".ft").show();
+				$("#lblCurent").val(data.pageNum);	
+				$("#pageCount").val(data.pageCount);
+				$(".num0").text(data.pageNum);
+				$(".num1").text("/"+data.pageCount);
+			}
+				}
+			
+		})}
+</script>
+</head>
+<body>
+<div class="header">
+		<div class="topBarC">
+			<!-- 头部-->
+			<!-- 后端处理页面和相应的地方-->
+			<div class="logo">
+				<a title="蚂蜂窝自由行" href="/">蚂蜂窝自由行</a>
+			</div>
+			<div class="t_nav">
+				<ul id="pnl_nav" data-cs-t="headnav_wo">
+					<li data-cs-p="index"><strong class="t"><a href="autoLogin">首页</a></strong>
+					</li>
+					<li data-cs-t="wenda" data-cs-p="wenda"><strong class="t"><a
+							data-cs-p="from_wo_nav" href="goIndex">问答</a></strong></li>
+					<li data-cs-t="things" data-cs-p="things"><strong class="t"><a
+							data-cs-p="from_wo_nav" href="goLocal">当地人</a></strong></li>
+					<li data-cs-p="together"><strong class="t"><a
+							href="goTogether">结伴</a></strong></li>
+					<li data-cs-p="group"><strong class="t"><a
+							href="goPK">照片pk</a></strong></li>
+					<li data-cs-p="mall"><strong class="t"><a
+							href="goShop">蜂蜜兑换</a></strong></li>
+				</ul>
+			</div>
+			<!--用户搜索-->
+			<div class="t_search">
+				<form method="post" action="/group/s.php" name="search">
+					<input type="text" class="key" value="" name="q" id="word">
+					<input type="submit" value="" class="btn">
+				</form>
+			</div>
+
+
+			<div class="t_info">
+				<ul class="user_info" data-cs-t="headnav_wo">
+					<li class="daka">
+						<!--最后处理打卡的功能实现--> <span class="daka_btn" id="_j_dakabtn"
+						data-japp="daka"> <a role="button" title="打卡"
+							class="daka_before">打卡</a> <a role="button" title="打卡推荐"
+							class="daka_after">打卡推荐</a>
+					</span>
+					</li>
+					<li class="account _j_hoverclass" data-hoverclass="on"
+						id="pnl_user_set" data-cs-p="other" class="drop">
+						<!--用户的信息头像--> <strong class="t"><a id="ttt" href="">消息<b></b></a></strong>
+						<div class="uSet c">
+							<a href="http://www.mafengwo.cn/msg/sms/index" rel="nofollow">私信</a>
+							<a href="http://www.mafengwo.cn/msg/entry/article" rel="nofollow">文章消息</a>
+							<a href="http://www.mafengwo.cn/msg/entry/sys" rel="nofollow">系统通知</a>
+							<a href="http://www.mafengwo.cn/msg/entry/group" rel="nofollow">小组消息</a>
+							<a href="http://www.mafengwo.cn/msg/entry/ask" rel="nofollow">问答消息</a>
+
+						</div>
+					<li class="ub-item ub-new-msg" id="head-new-msg"></li>
+					<li class="account _j_hoverclass" data-hoverclass="on"
+						id="pnl_user_set1" data-cs-p="other" class="drop">
+						<!--用户的信息头像--> <span class="t"><a class="infoItem"
+							href="to_myHome"><img src="${user.userHead }"
+								width="32" height="32" align="absmiddle"><b></b></a></span>
+						<div class="uSet c">
+							<a href="" class="containNum" target="_blank">等级
+								<span>LV.${user.userLevel }</span>
+							</a> <a href="/mall/" class="containNum hasLine" target="_blank">蜂蜜
+								<span id="_j_header_honey">${user.userHoney }</span>
+							</a> <a href="/user/lv.php#coin" class="containNum hasLine"
+								target="_blank">金币 <span id="_j_header_coin">${user.userMoney }</span></a> <a
+								href="to_myHome" target="_blank">我的蚂蜂窝</a> <a
+								href="writeTravel" target="_blank" class="menu">写游记</a>
+							<a href="" target="_blank" class="menu">我的好友</a>
+							<a href="" target="_blank" class="menu">我的收藏</a>
+							<a href="" target="_blank">设置</a> <a
+								href="" target="_blank">分享设置</a> <a
+								href="autoLogin">退出</a>
+
+						</div>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+
+
+
+	<div class="container">
+		<div class="head">
+			<div class="hb">
+				<div class="hbh">
+					<a>结伴首页</a> <a
+						href="http://www.mafengwo.cn/u/70705986/together.html">我的结伴</a>
+				</div>
+				<div class="info">
+					<div class="num">
+						我们共有<strong style="font-size: 80px; vertical-align: middle;">260646</strong>个计划
+					</div>
+					<div class="total">
+						<span>431585</span>人关注<em class="dot"></em><span>554431</span>人报名
+					</div>
+					<a class="btn" href="http://www.mafengwo.cn/together/publish/">发布我的结伴计划</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="by1">
+				<h3 class="mod_title">结伴热门目的地</h3>
+				<div class="bd">
+					<ul>
+						<li><a class="mdd" data-mddname="青海湖" data-mddid="10799">
+								<div class="image">
+									<img src="img/q_t1.jpeg" style="width: 220px; height: 220px;">
+								</div>
+								<div class="bg"></div>
+								<div class="txt">
+									<strong>青海湖</strong>
+									<p>
+										发起 364 个结伴<br>5311 人关注<br>1034 人报名
+									</p>
+								</div>
+						</a></li>
+						<li><a class="mdd" data-mddname="敦煌" data-mddid="10240">
+								<div class="image">
+									<img src="img/q_t2.jpeg" style="width: 220px; height: 220px;">
+								</div>
+								<div class="bg"></div>
+								<div class="txt">
+									<strong>敦煌</strong>
+									<p>
+										发起 305 个结伴<br>4494 人关注<br>877 人报名
+									</p>
+								</div>
+						</a></li>
+						<li><a class="mdd" data-mddname="西藏" data-mddid="12700">
+								<div class="image">
+									<img src="img/q_t3.png" style="width: 220px; height: 220px;">
+								</div>
+								<div class="bg"></div>
+								<div class="txt">
+									<strong>西藏</strong>
+									<p>
+										发起 700 个结伴<br>8559 人关注<br>1922 人报名
+									</p>
+								</div>
+						</a></li>
+						<li><a class="mdd" data-mddname="拉萨" data-mddid="10442">
+								<div class="image">
+									<img src="img/q_t4.png" style="width: 220px; height: 220px;">
+								</div>
+								<div class="bg"></div>
+								<div class="txt">
+									<strong>拉萨</strong>
+									<p>
+										发起 308 个结伴<br>3679 人关注<br>922 人报名
+									</p>
+								</div>
+						</a></li>
+						<li><a class="mdd" data-mddname="张掖" data-mddid="11340">
+								<div class="image">
+									<img src="img/q_t5.jpeg" style="width: 220px; height: 220px;">
+								</div>
+								<div class="bg"></div>
+								<div class="txt">
+									<strong>张掖</strong>
+									<p>
+										发起 232 个结伴<br>3326 人关注<br>631 人报名
+									</p>
+								</div>
+						</a></li>
+						<li><a class="mdd" data-mddname="喀纳斯" data-mddid="10732">
+								<div class="image">
+									<img src="img/q_t6.jpeg" style="width: 220px; height: 220px;">
+								</div>
+								<div class="bg"></div>
+								<div class="txt">
+									<strong>喀纳斯</strong>
+									<p>
+										发起 232 个结伴<br>2387 人关注<br>617 人报名
+									</p>
+								</div>
+						</a></li>
+						<li><a class="mdd" data-mddname="稻城" data-mddid="10061">
+								<div class="image">
+									<img src="img/q_t7.jpeg" style="width: 220px; height: 220px;">
+								</div>
+								<div class="bg"></div>
+								<div class="txt">
+									<strong>稻城</strong>
+									<p>
+										发起 288 个结伴<br>2969 人关注<br>804 人报名
+									</p>
+								</div>
+						</a></li>
+						<li><a class="mdd" data-mddname="曼谷" data-mddid="11045">
+								<div class="image">
+									<img src="img/q_t8.jpeg" style="width: 220px; height: 220px;">
+								</div>
+								<div class="bg"></div>
+								<div class="txt">
+									<strong>曼谷</strong>
+									<p>
+										发起 231 个结伴<br>3425 人关注<br>468 人报名
+									</p>
+								</div>
+						</a></li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="bar">
+				<div class="place" style="margin-right: 14px;"> 
+		<div class="sp">
+					<input type="text" id="show" class="_j_mdd_input have"
+						placeholder="所有目的地" onchange="as">
+				</div>
+				<div class="dp" id="b">
+			
+					<ul class="ale">
+
+					
+						<li class="_j_country_select" data-index="1" data-name="东南亚"><a>全部</a></li>
+						<li class="_j_country_select" data-index="1" data-name="东南亚"><a>青海湖</a></li>
+						<li class="_j_country_select" data-index="2" data-name="日韩"><a>敦煌</a></li>
+						<li class="_j_country_select" data-index="3" data-name="港澳台"><a>西藏</a></li>
+						<li class="_j_country_select" data-index="4" data-name="亚洲精选"><a>拉萨</a></li>
+						<li class="_j_country_select" data-index="5" data-name="美洲"><a>张掖</a></li>
+						<li class="_j_country_select" data-index="6" data-name="欧洲"><a>喀纳斯</a></li>
+						<li class="_j_country_select" data-index="7" data-name="大洋洲"><a>稻城</a></li>
+						<li class="_j_country_select" data-index="8" data-name="非洲"><a>曼谷</a></li>
+
+					</ul>
+			
+				</div>
+			</div> 
+			 <div class="date">
+				<div class="ui-input">
+					<input type="text" placeholder="全部时间" id="datetimepicker2" class="datetimepicker2" > <i class="icon-date"></i>
+					<input type="text" 
+					value="" 
+				
+						id="datetimepicker1"
+						style="width: 30px; height: 30px; border: none; padding: 0; margin: 0; position: absolute; left: 215px; top: 0; opacity: 0"
+						class="hasDatepicker">
+				</div>
+
+			</div> 
+			<!-- <div class="list">
+				<a class="aon" data-flag="3">热门结伴<i></i></a>
+				<a data-flag="2">最新发表<i></i></a>
+				<a data-flag="1">即将出发<i></i></a>
+			</div> -->
+			<!-- <a href="" class="btn-add"><i></i>发布我的结伴计划</a> -->
+		</div>
+		<div class="by2">
+			<!--未搜索到信息-->
+			<div class="not-found"></div>
+			<!--遍历列表-->
+			<div class="blt">
+				<ul class="together-list" id="zcba">
+
+					<c:forEach items="${tl }" var="tl" begin="0"
+						end="${pageNum*pageSize }">
+						<li class="item"><a target="_blank">
+								<div class="image">
+									<img src="${tl.toPhoto }" style="width: 200px; height: 130px;">
+									<%-- <div class="after">
+										<b>${tl.toDate2 } </b>天后
+									</div>
+									<hr> --%>
+								</div>
+								<h3 class="title">${tl.toTitle }</h3>
+								<div class="desc">${tl.toDesc}</div>
+								<div class="user clearfix">
+									<span class="avatar"><img src="${tl.userInfo.userHead }"
+										width="48"> <!-- <i class="female"></i> --> </span> <span
+										class="name">${tl.userInfo.userNick } </span> <span
+										class="level">LV.7</span>
+								</div>
+								<div class="attention">
+									<i class="icon-arrow"></i>已有<b>${tl.toFollow }</b>人关注
+								</div>
+						</a></li>
+					</c:forEach>
+
+				</ul>
+			</div>
+			<div class="post" style="clear: left">
+				<div class="ft">
+					 <input class="count" type="hidden" value="${pageNum}" id="lblCurent" /> 
+					 <input class="count" type="hidden"	value="${pageSize }" id="pageSize" />  
+						<input class="count" type="hidden" value="${pageCount }" id="pageCount" />
+						 <a class="disable" data-page="0" id="prep"> <i class="btn-prev"></i></a> 
+						 <span class="num0"> ${pageNum }</span><span class="num1">/${pageCount }
+					</span> <a class="btn-next" data-page="2" id="next"> <i></i>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="jr">
+			<h3>结伴热门目的地</h3>
+			<div class="bd">
+				<dl class="clearfix">
+					<dt>
+						境内 · <b>4099</b>
+					</dt>
+					<dd class="clearfix">
+						<ul>
+							<li><a class="_j_hot_mdd" data-mddname="青海湖"
+								data-mddid="10799">青海湖 364</a></li>
+							<li><a class="_j_hot_mdd" data-mddname="敦煌"
+								data-mddid="10240">敦煌 305</a></li>
+							<li><a class="_j_hot_mdd" data-mddname="西藏"
+								data-mddid="12700">西藏 700</a></li>
+							<li><a class="_j_hot_mdd" data-mddname="拉萨"
+								data-mddid="10442">拉萨 308</a></li>
+							<li><a class="_j_hot_mdd" data-mddname="张掖"
+								data-mddid="11340">张掖 232</a></li>
+							<li><a class="_j_hot_mdd" data-mddname="喀纳斯"
+								data-mddid="10732">喀纳斯 232</a></li>
+							<li><a class="_j_hot_mdd" data-mddname="稻城"
+								data-mddid="10061">稻城 288</a></li>
+							<li><a class="_j_hot_mdd" data-mddname="额济纳旗"
+								data-mddid="10456">额济纳旗 231</a></li>
+							<li><a class="_j_hot_mdd" data-mddname="亚丁"
+								data-mddid="10091">亚丁 189</a></li>
+							<li><a class="_j_hot_mdd" data-mddname="色达"
+								data-mddid="10011">色达 203</a></li>
+							<li><a class="_j_hot_mdd" data-mddname="西宁"
+								data-mddid="10800">西宁 168</a></li>
+							<li><a class="_j_hot_mdd" data-mddname="新疆"
+								data-mddid="13061">新疆 403</a></li>
+							<li><a class="_j_hot_mdd" data-mddname="丽江"
+								data-mddid="10186">丽江 154</a></li>
+							<li><a class="_j_hot_mdd" data-mddname="禾木"
+								data-mddid="10832">禾木 113</a></li>
+							<li><a class="_j_hot_mdd" data-mddname="云南"
+								data-mddid="12711">云南 308</a></li>
+							<li><a class="_j_hot_mdd" data-mddname="成都"
+								data-mddid="10035">成都 118</a></li>
+							<li><a class="_j_hot_mdd" data-mddname="阿里"
+								data-mddid="10073">阿里 105</a></li>
+							<li><a class="_j_hot_mdd" data-mddname="大理"
+								data-mddid="10487">大理 108</a></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl class="clearfix">
+					<dt>
+						境外 · <b>3581</b>
+					</dt>
+					<dd class="clearfix">
+						<ul>
+							<li><a class="_j_hot_mdd" data-mddname="曼谷"
+								data-mddid="11045">曼谷 231</a></li>
+							<li><a class="_j_hot_mdd" data-mddname="泰国"
+								data-mddid="10083">泰国 610</a></li>
+							<li><a class="_j_hot_mdd" data-mddname="清迈"
+								data-mddid="15284">清迈 197</a></li>
+							<li><a class="_j_hot_mdd" data-mddname="台湾"
+								data-mddid="12684">台湾 262</a></li>
+							<li><a class="_j_hot_mdd" data-mddname="斯里兰卡"
+								data-mddid="11058">斯里兰卡 160</a></li>
+							<li><a class="_j_hot_mdd" data-mddname="越南"
+								data-mddid="10180">越南 170</a></li>
+							<li><a class="_j_hot_mdd" data-mddname="普吉岛"
+								data-mddid="11047">普吉岛 121</a></li>
+							<li><a class="_j_hot_mdd" data-mddname="日本"
+								data-mddid="10183">日本 318</a></li>
+							<li><a class="_j_hot_mdd" data-mddname="东京"
+								data-mddid="10222">东京 108</a></li>
+							<li><a class="_j_hot_mdd" data-mddname="大阪"
+								data-mddid="10765">大阪 101</a></li>
+							<li><a class="_j_hot_mdd" data-mddname="新西兰"
+								data-mddid="10544">新西兰 110</a></li>
+							<li><a class="_j_hot_mdd" data-mddname="仙本那"
+								data-mddid="28411">仙本那 93</a></li>
+							<li><a class="_j_hot_mdd" data-mddname="洛杉矶"
+								data-mddid="10926">洛杉矶 74</a></li>
+							<li><a class="_j_hot_mdd" data-mddname="京都"
+								data-mddid="11042">京都 80</a></li>
+							<li><a class="_j_hot_mdd" data-mddname="尼泊尔"
+								data-mddid="10069">尼泊尔 78</a></li>
+							<li><a class="_j_hot_mdd" data-mddname="意大利"
+								data-mddid="10051">意大利 107</a></li>
+							<li><a class="_j_hot_mdd" data-mddname="首尔"
+								data-mddid="10130">首尔 81</a></li>
+							<li><a class="_j_hot_mdd" data-mddname="菲律宾"
+								data-mddid="10067">菲律宾 131</a></li>
+						</ul>
+					</dd>
+				</dl>
+			</div>
+			
+		</div>
+		<div class="footer">
+			<h3>结伴最近回应</h3>
+			<div class="bd">
+				<div class="item2 itemn">
+					<a class="avatar avatar90" href="/u/79394311.html"><img
+						src="img/q_t9.jpeg" width="90"></a>
+					<p>
+						<a href="/u/79394311.html">蒋丽</a> 回应了 <a class="title"
+							href="/together/detail/1381945.html">（更新）十一国庆，让我们一起去大西北看看
+							（自...</a><br>10.3号两女孩拉萨出发走青藏线在拼两人，联系微信mm540888 第1天：拉萨--羊八...
+					</p>
+				</div>
+				<div class="itemn item3">
+					<a class="avatar " href="/u/79394311.html"><img
+						src="img/q_t9.jpeg" width="68"></a>
+					<p>
+						<a href="/u/79394311.html">蒋丽</a> 回应了 <a class="title"
+							href="/together/detail/1391002.html">集结号</a><br>10.3号两女孩拉萨出发走青藏线在拼两人，联系微信mm540888
+						第1天：拉萨--羊八...
+					</p>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<div style="width: 100%; height: 90px; margin: 0; padding: 0">
+		<iframe id="top" src="q_footer" frameborder="0" scrolling="no"
+			width="100%" height="90px" align="center"></iframe>
+	</div>
+	</div>
+</body>
+</html>
