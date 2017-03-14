@@ -1,0 +1,1226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cn.qd.travel.dao.MDTravelNoteMapper">
+  <resultMap id="BaseResultMap" type="com.cn.qd.travel.entity.MDTravelNote">
+    <id column="MD_RECID" jdbcType="VARCHAR" property="mdRecid" />
+    <result column="MD_STDNAME" jdbcType="VARCHAR" property="mdStdname" />
+    <result column="MD_REF_ID" jdbcType="VARCHAR" property="mdRefId" />
+    <result column="MD_STDCODE" jdbcType="DECIMAL" property="mdStdcode" />
+    <result column="MD_ALERT_DATE" jdbcType="DATE" property="mdAlertDate" />
+    <result column="MD_ALERT_USER" jdbcType="VARCHAR" property="mdAlertUser" />
+    <result column="MD_LEVEL" jdbcType="DECIMAL" property="mdLevel" />
+    <result column="MD_THEME_IMG" jdbcType="VARCHAR" property="mdThemeImg" />
+    <result column="MD_CREATE_TIME" jdbcType="DATE" property="mdCreateTime" />
+    <result column="MD_CREATE_USER_ID" jdbcType="VARCHAR" property="mdCreateUserId" />
+    <result column="MD_KEY_WORD" jdbcType="VARCHAR" property="mdKeyWord" />
+    <result column="MD_THEME" jdbcType="VARCHAR" property="mdTheme" />
+    <result column="MD_MUSIC" jdbcType="VARCHAR" property="mdMusic" />
+    <result column="MD_START_TIME" jdbcType="DATE" property="mdStartTime" />
+    <result column="MD_DAY_NUMBER" jdbcType="DECIMAL" property="mdDayNumber" />
+    <result column="MD_TRAVEL_PEOPLE" jdbcType="VARCHAR" property="mdTravelPeople" />
+    <result column="MD_COST_MONEY" jdbcType="DECIMAL" property="mdCostMoney" />
+    <result column="MD_AIM_ADDRESS" jdbcType="VARCHAR" property="mdAimAddress" />
+    
+     <collection property="listTravlePagragraph" column="MD_RECID" select="getStudents"></collection>
+      </resultMap>
+  <sql id="Base_Column_List">
+    MD_RECID, MD_STDNAME, MD_REF_ID, MD_STDCODE, MD_ALERT_DATE, MD_ALERT_USER, MD_LEVEL, 
+    MD_THEME_IMG, MD_CREATE_TIME, MD_CREATE_USER_ID, MD_KEY_WORD, MD_THEME, MD_MUSIC, 
+    MD_START_TIME, MD_DAY_NUMBER, MD_TRAVEL_PEOPLE, MD_COST_MONEY, MD_AIM_ADDRESS
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from MD_TRAVE_NOTE
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from MD_TRAVE_NOTE
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cn.qd.travel.entity.MDTravelNote">
+    insert into MD_TRAVE_NOTE (MD_RECID, MD_STDNAME, MD_REF_ID, 
+      MD_STDCODE, MD_ALERT_DATE, MD_ALERT_USER, 
+      MD_LEVEL, MD_THEME_IMG, MD_CREATE_TIME, 
+      MD_CREATE_USER_ID, MD_KEY_WORD, MD_THEME, 
+      MD_MUSIC, MD_START_TIME, MD_DAY_NUMBER, 
+      MD_TRAVEL_PEOPLE, MD_COST_MONEY, MD_AIM_ADDRESS
+      )
+    values (#{mdRecid,jdbcType=VARCHAR}, #{mdStdname,jdbcType=VARCHAR}, #{mdRefId,jdbcType=VARCHAR}, 
+      #{mdStdcode,jdbcType=DECIMAL}, #{mdAlertDate,jdbcType=DATE}, #{mdAlertUser,jdbcType=VARCHAR}, 
+      #{mdLevel,jdbcType=DECIMAL}, #{mdThemeImg,jdbcType=VARCHAR}, #{mdCreateTime,jdbcType=DATE}, 
+      #{mdCreateUserId,jdbcType=VARCHAR}, #{mdKeyWord,jdbcType=VARCHAR}, #{mdTheme,jdbcType=VARCHAR}, 
+      #{mdMusic,jdbcType=VARCHAR}, #{mdStartTime,jdbcType=DATE}, #{mdDayNumber,jdbcType=DECIMAL}, 
+      #{mdTravelPeople,jdbcType=VARCHAR}, #{mdCostMoney,jdbcType=DECIMAL}, #{mdAimAddress,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.cn.qd.travel.entity.MDTravelNote">
+    insert into MD_TRAVE_NOTE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mdRecid != null">
+        MD_RECID,
+      </if>
+      <if test="mdStdname != null">
+        MD_STDNAME,
+      </if>
+      <if test="mdRefId != null">
+        MD_REF_ID,
+      </if>
+      <if test="mdStdcode != null">
+        MD_STDCODE,
+      </if>
+      <if test="mdAlertDate != null">
+        MD_ALERT_DATE,
+      </if>
+      <if test="mdAlertUser != null">
+        MD_ALERT_USER,
+      </if>
+      <if test="mdLevel != null">
+        MD_LEVEL,
+      </if>
+      <if test="mdThemeImg != null">
+        MD_THEME_IMG,
+      </if>
+      <if test="mdCreateTime != null">
+        MD_CREATE_TIME,
+      </if>
+      <if test="mdCreateUserId != null">
+        MD_CREATE_USER_ID,
+      </if>
+      <if test="mdKeyWord != null">
+        MD_KEY_WORD,
+      </if>
+      <if test="mdTheme != null">
+        MD_THEME,
+      </if>
+      <if test="mdMusic != null">
+        MD_MUSIC,
+      </if>
+      <if test="mdStartTime != null">
+        MD_START_TIME,
+      </if>
+      <if test="mdDayNumber != null">
+        MD_DAY_NUMBER,
+      </if>
+      <if test="mdTravelPeople != null">
+        MD_TRAVEL_PEOPLE,
+      </if>
+      <if test="mdCostMoney != null">
+        MD_COST_MONEY,
+      </if>
+      <if test="mdAimAddress != null">
+        MD_AIM_ADDRESS,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mdRecid != null">
+        #{mdRecid,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStdname != null">
+        #{mdStdname,jdbcType=VARCHAR},
+      </if>
+      <if test="mdRefId != null">
+        #{mdRefId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStdcode != null">
+        #{mdStdcode,jdbcType=DECIMAL},
+      </if>
+      <if test="mdAlertDate != null">
+        #{mdAlertDate,jdbcType=DATE},
+      </if>
+      <if test="mdAlertUser != null">
+        #{mdAlertUser,jdbcType=VARCHAR},
+      </if>
+      <if test="mdLevel != null">
+        #{mdLevel,jdbcType=DECIMAL},
+      </if>
+      <if test="mdThemeImg != null">
+        #{mdThemeImg,jdbcType=VARCHAR},
+      </if>
+      <if test="mdCreateTime != null">
+        #{mdCreateTime,jdbcType=DATE},
+      </if>
+      <if test="mdCreateUserId != null">
+        #{mdCreateUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdKeyWord != null">
+        #{mdKeyWord,jdbcType=VARCHAR},
+      </if>
+      <if test="mdTheme != null">
+        #{mdTheme,jdbcType=VARCHAR},
+      </if>
+      <if test="mdMusic != null">
+        #{mdMusic,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStartTime != null">
+        #{mdStartTime,jdbcType=DATE},
+      </if>
+      <if test="mdDayNumber != null">
+        #{mdDayNumber,jdbcType=DECIMAL},
+      </if>
+      <if test="mdTravelPeople != null">
+        #{mdTravelPeople,jdbcType=VARCHAR},
+      </if>
+      <if test="mdCostMoney != null">
+        #{mdCostMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="mdAimAddress != null">
+        #{mdAimAddress,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cn.qd.travel.entity.MDTravelNote">
+    update MD_TRAVE_NOTE
+    <set>
+      <if test="mdStdname != null">
+        MD_STDNAME = #{mdStdname,jdbcType=VARCHAR},
+      </if>
+      <if test="mdRefId != null">
+        MD_REF_ID = #{mdRefId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStdcode != null">
+        MD_STDCODE = #{mdStdcode,jdbcType=DECIMAL},
+      </if>
+      <if test="mdAlertDate != null">
+        MD_ALERT_DATE = #{mdAlertDate,jdbcType=DATE},
+      </if>
+      <if test="mdAlertUser != null">
+        MD_ALERT_USER = #{mdAlertUser,jdbcType=VARCHAR},
+      </if>
+      <if test="mdLevel != null">
+        MD_LEVEL = #{mdLevel,jdbcType=DECIMAL},
+      </if>
+      <if test="mdThemeImg != null">
+        MD_THEME_IMG = #{mdThemeImg,jdbcType=VARCHAR},
+      </if>
+      <if test="mdCreateTime != null">
+        MD_CREATE_TIME = #{mdCreateTime,jdbcType=DATE},
+      </if>
+      <if test="mdCreateUserId != null">
+        MD_CREATE_USER_ID = #{mdCreateUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdKeyWord != null">
+        MD_KEY_WORD = #{mdKeyWord,jdbcType=VARCHAR},
+      </if>
+      <if test="mdTheme != null">
+        MD_THEME = #{mdTheme,jdbcType=VARCHAR},
+      </if>
+      <if test="mdMusic != null">
+        MD_MUSIC = #{mdMusic,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStartTime != null">
+        MD_START_TIME = #{mdStartTime,jdbcType=DATE},
+      </if>
+      <if test="mdDayNumber != null">
+        MD_DAY_NUMBER = #{mdDayNumber,jdbcType=DECIMAL},
+      </if>
+      <if test="mdTravelPeople != null">
+        MD_TRAVEL_PEOPLE = #{mdTravelPeople,jdbcType=VARCHAR},
+      </if>
+      <if test="mdCostMoney != null">
+        MD_COST_MONEY = #{mdCostMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="mdAimAddress != null">
+        MD_AIM_ADDRESS = #{mdAimAddress,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cn.qd.travel.entity.MDTravelNote">
+    update MD_TRAVE_NOTE
+    set MD_STDNAME = #{mdStdname,jdbcType=VARCHAR},
+      MD_REF_ID = #{mdRefId,jdbcType=VARCHAR},
+      MD_STDCODE = #{mdStdcode,jdbcType=DECIMAL},
+      MD_ALERT_DATE = #{mdAlertDate,jdbcType=DATE},
+      MD_ALERT_USER = #{mdAlertUser,jdbcType=VARCHAR},
+      MD_LEVEL = #{mdLevel,jdbcType=DECIMAL},
+      MD_THEME_IMG = #{mdThemeImg,jdbcType=VARCHAR},
+      MD_CREATE_TIME = #{mdCreateTime,jdbcType=DATE},
+      MD_CREATE_USER_ID = #{mdCreateUserId,jdbcType=VARCHAR},
+      MD_KEY_WORD = #{mdKeyWord,jdbcType=VARCHAR},
+      MD_THEME = #{mdTheme,jdbcType=VARCHAR},
+      MD_MUSIC = #{mdMusic,jdbcType=VARCHAR},
+      MD_START_TIME = #{mdStartTime,jdbcType=DATE},
+      MD_DAY_NUMBER = #{mdDayNumber,jdbcType=DECIMAL},
+      MD_TRAVEL_PEOPLE = #{mdTravelPeople,jdbcType=VARCHAR},
+      MD_COST_MONEY = #{mdCostMoney,jdbcType=DECIMAL},
+      MD_AIM_ADDRESS = #{mdAimAddress,jdbcType=VARCHAR}
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </update>
+  <resultMap id="BaseResultMap" type="com.cn.qd.travel.entity.MDTravelNote">
+    <id column="MD_RECID" jdbcType="VARCHAR" property="mdRecid" />
+    <result column="MD_STDNAME" jdbcType="VARCHAR" property="mdStdname" />
+    <result column="MD_REF_ID" jdbcType="VARCHAR" property="mdRefId" />
+    <result column="MD_STDCODE" jdbcType="DECIMAL" property="mdStdcode" />
+    <result column="MD_ALERT_DATE" jdbcType="DATE" property="mdAlertDate" />
+    <result column="MD_ALERT_USER" jdbcType="VARCHAR" property="mdAlertUser" />
+    <result column="MD_LEVEL" jdbcType="DECIMAL" property="mdLevel" />
+    <result column="MD_THEME_IMG" jdbcType="VARCHAR" property="mdThemeImg" />
+    <result column="MD_CREATE_TIME" jdbcType="DATE" property="mdCreateTime" />
+    <result column="MD_CREATE_USER_ID" jdbcType="VARCHAR" property="mdCreateUserId" />
+    <result column="MD_KEY_WORD" jdbcType="VARCHAR" property="mdKeyWord" />
+    <result column="MD_THEME" jdbcType="VARCHAR" property="mdTheme" />
+    <result column="MD_MUSIC" jdbcType="VARCHAR" property="mdMusic" />
+    <result column="MD_START_TIME" jdbcType="DATE" property="mdStartTime" />
+    <result column="MD_DAY_NUMBER" jdbcType="DECIMAL" property="mdDayNumber" />
+    <result column="MD_TRAVEL_PEOPLE" jdbcType="VARCHAR" property="mdTravelPeople" />
+    <result column="MD_COST_MONEY" jdbcType="DECIMAL" property="mdCostMoney" />
+    <result column="MD_AIM_ADDRESS" jdbcType="VARCHAR" property="mdAimAddress" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    MD_RECID, MD_STDNAME, MD_REF_ID, MD_STDCODE, MD_ALERT_DATE, MD_ALERT_USER, MD_LEVEL, 
+    MD_THEME_IMG, MD_CREATE_TIME, MD_CREATE_USER_ID, MD_KEY_WORD, MD_THEME, MD_MUSIC, 
+    MD_START_TIME, MD_DAY_NUMBER, MD_TRAVEL_PEOPLE, MD_COST_MONEY, MD_AIM_ADDRESS
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from MD_TRAVE_NOTE
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from MD_TRAVE_NOTE
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cn.qd.travel.entity.MDTravelNote">
+    insert into MD_TRAVE_NOTE (MD_RECID, MD_STDNAME, MD_REF_ID, 
+      MD_STDCODE, MD_ALERT_DATE, MD_ALERT_USER, 
+      MD_LEVEL, MD_THEME_IMG, MD_CREATE_TIME, 
+      MD_CREATE_USER_ID, MD_KEY_WORD, MD_THEME, 
+      MD_MUSIC, MD_START_TIME, MD_DAY_NUMBER, 
+      MD_TRAVEL_PEOPLE, MD_COST_MONEY, MD_AIM_ADDRESS
+      )
+    values (#{mdRecid,jdbcType=VARCHAR}, #{mdStdname,jdbcType=VARCHAR}, #{mdRefId,jdbcType=VARCHAR}, 
+      #{mdStdcode,jdbcType=DECIMAL}, #{mdAlertDate,jdbcType=DATE}, #{mdAlertUser,jdbcType=VARCHAR}, 
+      #{mdLevel,jdbcType=DECIMAL}, #{mdThemeImg,jdbcType=VARCHAR}, #{mdCreateTime,jdbcType=DATE}, 
+      #{mdCreateUserId,jdbcType=VARCHAR}, #{mdKeyWord,jdbcType=VARCHAR}, #{mdTheme,jdbcType=VARCHAR}, 
+      #{mdMusic,jdbcType=VARCHAR}, #{mdStartTime,jdbcType=DATE}, #{mdDayNumber,jdbcType=DECIMAL}, 
+      #{mdTravelPeople,jdbcType=VARCHAR}, #{mdCostMoney,jdbcType=DECIMAL}, #{mdAimAddress,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.cn.qd.travel.entity.MDTravelNote">
+    insert into MD_TRAVE_NOTE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mdRecid != null">
+        MD_RECID,
+      </if>
+      <if test="mdStdname != null">
+        MD_STDNAME,
+      </if>
+      <if test="mdRefId != null">
+        MD_REF_ID,
+      </if>
+      <if test="mdStdcode != null">
+        MD_STDCODE,
+      </if>
+      <if test="mdAlertDate != null">
+        MD_ALERT_DATE,
+      </if>
+      <if test="mdAlertUser != null">
+        MD_ALERT_USER,
+      </if>
+      <if test="mdLevel != null">
+        MD_LEVEL,
+      </if>
+      <if test="mdThemeImg != null">
+        MD_THEME_IMG,
+      </if>
+      <if test="mdCreateTime != null">
+        MD_CREATE_TIME,
+      </if>
+      <if test="mdCreateUserId != null">
+        MD_CREATE_USER_ID,
+      </if>
+      <if test="mdKeyWord != null">
+        MD_KEY_WORD,
+      </if>
+      <if test="mdTheme != null">
+        MD_THEME,
+      </if>
+      <if test="mdMusic != null">
+        MD_MUSIC,
+      </if>
+      <if test="mdStartTime != null">
+        MD_START_TIME,
+      </if>
+      <if test="mdDayNumber != null">
+        MD_DAY_NUMBER,
+      </if>
+      <if test="mdTravelPeople != null">
+        MD_TRAVEL_PEOPLE,
+      </if>
+      <if test="mdCostMoney != null">
+        MD_COST_MONEY,
+      </if>
+      <if test="mdAimAddress != null">
+        MD_AIM_ADDRESS,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mdRecid != null">
+        #{mdRecid,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStdname != null">
+        #{mdStdname,jdbcType=VARCHAR},
+      </if>
+      <if test="mdRefId != null">
+        #{mdRefId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStdcode != null">
+        #{mdStdcode,jdbcType=DECIMAL},
+      </if>
+      <if test="mdAlertDate != null">
+        #{mdAlertDate,jdbcType=DATE},
+      </if>
+      <if test="mdAlertUser != null">
+        #{mdAlertUser,jdbcType=VARCHAR},
+      </if>
+      <if test="mdLevel != null">
+        #{mdLevel,jdbcType=DECIMAL},
+      </if>
+      <if test="mdThemeImg != null">
+        #{mdThemeImg,jdbcType=VARCHAR},
+      </if>
+      <if test="mdCreateTime != null">
+        #{mdCreateTime,jdbcType=DATE},
+      </if>
+      <if test="mdCreateUserId != null">
+        #{mdCreateUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdKeyWord != null">
+        #{mdKeyWord,jdbcType=VARCHAR},
+      </if>
+      <if test="mdTheme != null">
+        #{mdTheme,jdbcType=VARCHAR},
+      </if>
+      <if test="mdMusic != null">
+        #{mdMusic,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStartTime != null">
+        #{mdStartTime,jdbcType=DATE},
+      </if>
+      <if test="mdDayNumber != null">
+        #{mdDayNumber,jdbcType=DECIMAL},
+      </if>
+      <if test="mdTravelPeople != null">
+        #{mdTravelPeople,jdbcType=VARCHAR},
+      </if>
+      <if test="mdCostMoney != null">
+        #{mdCostMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="mdAimAddress != null">
+        #{mdAimAddress,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cn.qd.travel.entity.MDTravelNote">
+    update MD_TRAVE_NOTE
+    <set>
+      <if test="mdStdname != null">
+        MD_STDNAME = #{mdStdname,jdbcType=VARCHAR},
+      </if>
+      <if test="mdRefId != null">
+        MD_REF_ID = #{mdRefId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStdcode != null">
+        MD_STDCODE = #{mdStdcode,jdbcType=DECIMAL},
+      </if>
+      <if test="mdAlertDate != null">
+        MD_ALERT_DATE = #{mdAlertDate,jdbcType=DATE},
+      </if>
+      <if test="mdAlertUser != null">
+        MD_ALERT_USER = #{mdAlertUser,jdbcType=VARCHAR},
+      </if>
+      <if test="mdLevel != null">
+        MD_LEVEL = #{mdLevel,jdbcType=DECIMAL},
+      </if>
+      <if test="mdThemeImg != null">
+        MD_THEME_IMG = #{mdThemeImg,jdbcType=VARCHAR},
+      </if>
+      <if test="mdCreateTime != null">
+        MD_CREATE_TIME = #{mdCreateTime,jdbcType=DATE},
+      </if>
+      <if test="mdCreateUserId != null">
+        MD_CREATE_USER_ID = #{mdCreateUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdKeyWord != null">
+        MD_KEY_WORD = #{mdKeyWord,jdbcType=VARCHAR},
+      </if>
+      <if test="mdTheme != null">
+        MD_THEME = #{mdTheme,jdbcType=VARCHAR},
+      </if>
+      <if test="mdMusic != null">
+        MD_MUSIC = #{mdMusic,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStartTime != null">
+        MD_START_TIME = #{mdStartTime,jdbcType=DATE},
+      </if>
+      <if test="mdDayNumber != null">
+        MD_DAY_NUMBER = #{mdDayNumber,jdbcType=DECIMAL},
+      </if>
+      <if test="mdTravelPeople != null">
+        MD_TRAVEL_PEOPLE = #{mdTravelPeople,jdbcType=VARCHAR},
+      </if>
+      <if test="mdCostMoney != null">
+        MD_COST_MONEY = #{mdCostMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="mdAimAddress != null">
+        MD_AIM_ADDRESS = #{mdAimAddress,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cn.qd.travel.entity.MDTravelNote">
+    update MD_TRAVE_NOTE
+    set MD_STDNAME = #{mdStdname,jdbcType=VARCHAR},
+      MD_REF_ID = #{mdRefId,jdbcType=VARCHAR},
+      MD_STDCODE = #{mdStdcode,jdbcType=DECIMAL},
+      MD_ALERT_DATE = #{mdAlertDate,jdbcType=DATE},
+      MD_ALERT_USER = #{mdAlertUser,jdbcType=VARCHAR},
+      MD_LEVEL = #{mdLevel,jdbcType=DECIMAL},
+      MD_THEME_IMG = #{mdThemeImg,jdbcType=VARCHAR},
+      MD_CREATE_TIME = #{mdCreateTime,jdbcType=DATE},
+      MD_CREATE_USER_ID = #{mdCreateUserId,jdbcType=VARCHAR},
+      MD_KEY_WORD = #{mdKeyWord,jdbcType=VARCHAR},
+      MD_THEME = #{mdTheme,jdbcType=VARCHAR},
+      MD_MUSIC = #{mdMusic,jdbcType=VARCHAR},
+      MD_START_TIME = #{mdStartTime,jdbcType=DATE},
+      MD_DAY_NUMBER = #{mdDayNumber,jdbcType=DECIMAL},
+      MD_TRAVEL_PEOPLE = #{mdTravelPeople,jdbcType=VARCHAR},
+      MD_COST_MONEY = #{mdCostMoney,jdbcType=DECIMAL},
+      MD_AIM_ADDRESS = #{mdAimAddress,jdbcType=VARCHAR}
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </update>
+  <resultMap id="BaseResultMap" type="com.cn.qd.travel.entity.MDTravelNote">
+    <id column="MD_RECID" jdbcType="VARCHAR" property="mdRecid" />
+    <result column="MD_STDNAME" jdbcType="VARCHAR" property="mdStdname" />
+    <result column="MD_REF_ID" jdbcType="VARCHAR" property="mdRefId" />
+    <result column="MD_STDCODE" jdbcType="DECIMAL" property="mdStdcode" />
+    <result column="MD_ALERT_DATE" jdbcType="DATE" property="mdAlertDate" />
+    <result column="MD_ALERT_USER" jdbcType="VARCHAR" property="mdAlertUser" />
+    <result column="MD_LEVEL" jdbcType="DECIMAL" property="mdLevel" />
+    <result column="MD_THEME_IMG" jdbcType="VARCHAR" property="mdThemeImg" />
+    <result column="MD_CREATE_TIME" jdbcType="DATE" property="mdCreateTime" />
+    <result column="MD_CREATE_USER_ID" jdbcType="VARCHAR" property="mdCreateUserId" />
+    <result column="MD_KEY_WORD" jdbcType="VARCHAR" property="mdKeyWord" />
+    <result column="MD_THEME" jdbcType="VARCHAR" property="mdTheme" />
+    <result column="MD_MUSIC" jdbcType="VARCHAR" property="mdMusic" />
+    <result column="MD_START_TIME" jdbcType="DATE" property="mdStartTime" />
+    <result column="MD_DAY_NUMBER" jdbcType="DECIMAL" property="mdDayNumber" />
+    <result column="MD_TRAVEL_PEOPLE" jdbcType="VARCHAR" property="mdTravelPeople" />
+    <result column="MD_COST_MONEY" jdbcType="DECIMAL" property="mdCostMoney" />
+    <result column="MD_AIM_ADDRESS" jdbcType="VARCHAR" property="mdAimAddress" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    MD_RECID, MD_STDNAME, MD_REF_ID, MD_STDCODE, MD_ALERT_DATE, MD_ALERT_USER, MD_LEVEL, 
+    MD_THEME_IMG, MD_CREATE_TIME, MD_CREATE_USER_ID, MD_KEY_WORD, MD_THEME, MD_MUSIC, 
+    MD_START_TIME, MD_DAY_NUMBER, MD_TRAVEL_PEOPLE, MD_COST_MONEY, MD_AIM_ADDRESS
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from MD_TRAVE_NOTE
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from MD_TRAVE_NOTE
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cn.qd.travel.entity.MDTravelNote">
+    insert into MD_TRAVE_NOTE (MD_RECID, MD_STDNAME, MD_REF_ID, 
+      MD_STDCODE, MD_ALERT_DATE, MD_ALERT_USER, 
+      MD_LEVEL, MD_THEME_IMG, MD_CREATE_TIME, 
+      MD_CREATE_USER_ID, MD_KEY_WORD, MD_THEME, 
+      MD_MUSIC, MD_START_TIME, MD_DAY_NUMBER, 
+      MD_TRAVEL_PEOPLE, MD_COST_MONEY, MD_AIM_ADDRESS
+      )
+    values (#{mdRecid,jdbcType=VARCHAR}, #{mdStdname,jdbcType=VARCHAR}, #{mdRefId,jdbcType=VARCHAR}, 
+      #{mdStdcode,jdbcType=DECIMAL}, #{mdAlertDate,jdbcType=DATE}, #{mdAlertUser,jdbcType=VARCHAR}, 
+      #{mdLevel,jdbcType=DECIMAL}, #{mdThemeImg,jdbcType=VARCHAR}, #{mdCreateTime,jdbcType=DATE}, 
+      #{mdCreateUserId,jdbcType=VARCHAR}, #{mdKeyWord,jdbcType=VARCHAR}, #{mdTheme,jdbcType=VARCHAR}, 
+      #{mdMusic,jdbcType=VARCHAR}, #{mdStartTime,jdbcType=DATE}, #{mdDayNumber,jdbcType=DECIMAL}, 
+      #{mdTravelPeople,jdbcType=VARCHAR}, #{mdCostMoney,jdbcType=DECIMAL}, #{mdAimAddress,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.cn.qd.travel.entity.MDTravelNote">
+    insert into MD_TRAVE_NOTE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mdRecid != null">
+        MD_RECID,
+      </if>
+      <if test="mdStdname != null">
+        MD_STDNAME,
+      </if>
+      <if test="mdRefId != null">
+        MD_REF_ID,
+      </if>
+      <if test="mdStdcode != null">
+        MD_STDCODE,
+      </if>
+      <if test="mdAlertDate != null">
+        MD_ALERT_DATE,
+      </if>
+      <if test="mdAlertUser != null">
+        MD_ALERT_USER,
+      </if>
+      <if test="mdLevel != null">
+        MD_LEVEL,
+      </if>
+      <if test="mdThemeImg != null">
+        MD_THEME_IMG,
+      </if>
+      <if test="mdCreateTime != null">
+        MD_CREATE_TIME,
+      </if>
+      <if test="mdCreateUserId != null">
+        MD_CREATE_USER_ID,
+      </if>
+      <if test="mdKeyWord != null">
+        MD_KEY_WORD,
+      </if>
+      <if test="mdTheme != null">
+        MD_THEME,
+      </if>
+      <if test="mdMusic != null">
+        MD_MUSIC,
+      </if>
+      <if test="mdStartTime != null">
+        MD_START_TIME,
+      </if>
+      <if test="mdDayNumber != null">
+        MD_DAY_NUMBER,
+      </if>
+      <if test="mdTravelPeople != null">
+        MD_TRAVEL_PEOPLE,
+      </if>
+      <if test="mdCostMoney != null">
+        MD_COST_MONEY,
+      </if>
+      <if test="mdAimAddress != null">
+        MD_AIM_ADDRESS,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mdRecid != null">
+        #{mdRecid,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStdname != null">
+        #{mdStdname,jdbcType=VARCHAR},
+      </if>
+      <if test="mdRefId != null">
+        #{mdRefId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStdcode != null">
+        #{mdStdcode,jdbcType=DECIMAL},
+      </if>
+      <if test="mdAlertDate != null">
+        #{mdAlertDate,jdbcType=DATE},
+      </if>
+      <if test="mdAlertUser != null">
+        #{mdAlertUser,jdbcType=VARCHAR},
+      </if>
+      <if test="mdLevel != null">
+        #{mdLevel,jdbcType=DECIMAL},
+      </if>
+      <if test="mdThemeImg != null">
+        #{mdThemeImg,jdbcType=VARCHAR},
+      </if>
+      <if test="mdCreateTime != null">
+        #{mdCreateTime,jdbcType=DATE},
+      </if>
+      <if test="mdCreateUserId != null">
+        #{mdCreateUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdKeyWord != null">
+        #{mdKeyWord,jdbcType=VARCHAR},
+      </if>
+      <if test="mdTheme != null">
+        #{mdTheme,jdbcType=VARCHAR},
+      </if>
+      <if test="mdMusic != null">
+        #{mdMusic,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStartTime != null">
+        #{mdStartTime,jdbcType=DATE},
+      </if>
+      <if test="mdDayNumber != null">
+        #{mdDayNumber,jdbcType=DECIMAL},
+      </if>
+      <if test="mdTravelPeople != null">
+        #{mdTravelPeople,jdbcType=VARCHAR},
+      </if>
+      <if test="mdCostMoney != null">
+        #{mdCostMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="mdAimAddress != null">
+        #{mdAimAddress,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cn.qd.travel.entity.MDTravelNote">
+    update MD_TRAVE_NOTE
+    <set>
+      <if test="mdStdname != null">
+        MD_STDNAME = #{mdStdname,jdbcType=VARCHAR},
+      </if>
+      <if test="mdRefId != null">
+        MD_REF_ID = #{mdRefId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStdcode != null">
+        MD_STDCODE = #{mdStdcode,jdbcType=DECIMAL},
+      </if>
+      <if test="mdAlertDate != null">
+        MD_ALERT_DATE = #{mdAlertDate,jdbcType=DATE},
+      </if>
+      <if test="mdAlertUser != null">
+        MD_ALERT_USER = #{mdAlertUser,jdbcType=VARCHAR},
+      </if>
+      <if test="mdLevel != null">
+        MD_LEVEL = #{mdLevel,jdbcType=DECIMAL},
+      </if>
+      <if test="mdThemeImg != null">
+        MD_THEME_IMG = #{mdThemeImg,jdbcType=VARCHAR},
+      </if>
+      <if test="mdCreateTime != null">
+        MD_CREATE_TIME = #{mdCreateTime,jdbcType=DATE},
+      </if>
+      <if test="mdCreateUserId != null">
+        MD_CREATE_USER_ID = #{mdCreateUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdKeyWord != null">
+        MD_KEY_WORD = #{mdKeyWord,jdbcType=VARCHAR},
+      </if>
+      <if test="mdTheme != null">
+        MD_THEME = #{mdTheme,jdbcType=VARCHAR},
+      </if>
+      <if test="mdMusic != null">
+        MD_MUSIC = #{mdMusic,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStartTime != null">
+        MD_START_TIME = #{mdStartTime,jdbcType=DATE},
+      </if>
+      <if test="mdDayNumber != null">
+        MD_DAY_NUMBER = #{mdDayNumber,jdbcType=DECIMAL},
+      </if>
+      <if test="mdTravelPeople != null">
+        MD_TRAVEL_PEOPLE = #{mdTravelPeople,jdbcType=VARCHAR},
+      </if>
+      <if test="mdCostMoney != null">
+        MD_COST_MONEY = #{mdCostMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="mdAimAddress != null">
+        MD_AIM_ADDRESS = #{mdAimAddress,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cn.qd.travel.entity.MDTravelNote">
+    update MD_TRAVE_NOTE
+    set MD_STDNAME = #{mdStdname,jdbcType=VARCHAR},
+      MD_REF_ID = #{mdRefId,jdbcType=VARCHAR},
+      MD_STDCODE = #{mdStdcode,jdbcType=DECIMAL},
+      MD_ALERT_DATE = #{mdAlertDate,jdbcType=DATE},
+      MD_ALERT_USER = #{mdAlertUser,jdbcType=VARCHAR},
+      MD_LEVEL = #{mdLevel,jdbcType=DECIMAL},
+      MD_THEME_IMG = #{mdThemeImg,jdbcType=VARCHAR},
+      MD_CREATE_TIME = #{mdCreateTime,jdbcType=DATE},
+      MD_CREATE_USER_ID = #{mdCreateUserId,jdbcType=VARCHAR},
+      MD_KEY_WORD = #{mdKeyWord,jdbcType=VARCHAR},
+      MD_THEME = #{mdTheme,jdbcType=VARCHAR},
+      MD_MUSIC = #{mdMusic,jdbcType=VARCHAR},
+      MD_START_TIME = #{mdStartTime,jdbcType=DATE},
+      MD_DAY_NUMBER = #{mdDayNumber,jdbcType=DECIMAL},
+      MD_TRAVEL_PEOPLE = #{mdTravelPeople,jdbcType=VARCHAR},
+      MD_COST_MONEY = #{mdCostMoney,jdbcType=DECIMAL},
+      MD_AIM_ADDRESS = #{mdAimAddress,jdbcType=VARCHAR}
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </update>
+  <resultMap id="BaseResultMap" type="com.cn.qd.travel.entity.MDTravelNote">
+    <id column="MD_RECID" jdbcType="VARCHAR" property="mdRecid" />
+    <result column="MD_STDNAME" jdbcType="VARCHAR" property="mdStdname" />
+    <result column="MD_REF_ID" jdbcType="VARCHAR" property="mdRefId" />
+    <result column="MD_STDCODE" jdbcType="DECIMAL" property="mdStdcode" />
+    <result column="MD_ALERT_DATE" jdbcType="DATE" property="mdAlertDate" />
+    <result column="MD_ALERT_USER" jdbcType="VARCHAR" property="mdAlertUser" />
+    <result column="MD_LEVEL" jdbcType="DECIMAL" property="mdLevel" />
+    <result column="MD_THEME_IMG" jdbcType="VARCHAR" property="mdThemeImg" />
+    <result column="MD_CREATE_TIME" jdbcType="DATE" property="mdCreateTime" />
+    <result column="MD_CREATE_USER_ID" jdbcType="VARCHAR" property="mdCreateUserId" />
+    <result column="MD_KEY_WORD" jdbcType="VARCHAR" property="mdKeyWord" />
+    <result column="MD_THEME" jdbcType="VARCHAR" property="mdTheme" />
+    <result column="MD_MUSIC" jdbcType="VARCHAR" property="mdMusic" />
+    <result column="MD_START_TIME" jdbcType="DATE" property="mdStartTime" />
+    <result column="MD_DAY_NUMBER" jdbcType="DECIMAL" property="mdDayNumber" />
+    <result column="MD_TRAVEL_PEOPLE" jdbcType="VARCHAR" property="mdTravelPeople" />
+    <result column="MD_COST_MONEY" jdbcType="DECIMAL" property="mdCostMoney" />
+    <result column="MD_AIM_ADDRESS" jdbcType="VARCHAR" property="mdAimAddress" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    MD_RECID, MD_STDNAME, MD_REF_ID, MD_STDCODE, MD_ALERT_DATE, MD_ALERT_USER, MD_LEVEL, 
+    MD_THEME_IMG, MD_CREATE_TIME, MD_CREATE_USER_ID, MD_KEY_WORD, MD_THEME, MD_MUSIC, 
+    MD_START_TIME, MD_DAY_NUMBER, MD_TRAVEL_PEOPLE, MD_COST_MONEY, MD_AIM_ADDRESS
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from MD_TRAVE_NOTE
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from MD_TRAVE_NOTE
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cn.qd.travel.entity.MDTravelNote">
+    insert into MD_TRAVE_NOTE (MD_RECID, MD_STDNAME, MD_REF_ID, 
+      MD_STDCODE, MD_ALERT_DATE, MD_ALERT_USER, 
+      MD_LEVEL, MD_THEME_IMG, MD_CREATE_TIME, 
+      MD_CREATE_USER_ID, MD_KEY_WORD, MD_THEME, 
+      MD_MUSIC, MD_START_TIME, MD_DAY_NUMBER, 
+      MD_TRAVEL_PEOPLE, MD_COST_MONEY, MD_AIM_ADDRESS
+      )
+    values (#{mdRecid,jdbcType=VARCHAR}, #{mdStdname,jdbcType=VARCHAR}, #{mdRefId,jdbcType=VARCHAR}, 
+      #{mdStdcode,jdbcType=DECIMAL}, #{mdAlertDate,jdbcType=DATE}, #{mdAlertUser,jdbcType=VARCHAR}, 
+      #{mdLevel,jdbcType=DECIMAL}, #{mdThemeImg,jdbcType=VARCHAR}, #{mdCreateTime,jdbcType=DATE}, 
+      #{mdCreateUserId,jdbcType=VARCHAR}, #{mdKeyWord,jdbcType=VARCHAR}, #{mdTheme,jdbcType=VARCHAR}, 
+      #{mdMusic,jdbcType=VARCHAR}, #{mdStartTime,jdbcType=DATE}, #{mdDayNumber,jdbcType=DECIMAL}, 
+      #{mdTravelPeople,jdbcType=VARCHAR}, #{mdCostMoney,jdbcType=DECIMAL}, #{mdAimAddress,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.cn.qd.travel.entity.MDTravelNote">
+    insert into MD_TRAVE_NOTE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mdRecid != null">
+        MD_RECID,
+      </if>
+      <if test="mdStdname != null">
+        MD_STDNAME,
+      </if>
+      <if test="mdRefId != null">
+        MD_REF_ID,
+      </if>
+      <if test="mdStdcode != null">
+        MD_STDCODE,
+      </if>
+      <if test="mdAlertDate != null">
+        MD_ALERT_DATE,
+      </if>
+      <if test="mdAlertUser != null">
+        MD_ALERT_USER,
+      </if>
+      <if test="mdLevel != null">
+        MD_LEVEL,
+      </if>
+      <if test="mdThemeImg != null">
+        MD_THEME_IMG,
+      </if>
+      <if test="mdCreateTime != null">
+        MD_CREATE_TIME,
+      </if>
+      <if test="mdCreateUserId != null">
+        MD_CREATE_USER_ID,
+      </if>
+      <if test="mdKeyWord != null">
+        MD_KEY_WORD,
+      </if>
+      <if test="mdTheme != null">
+        MD_THEME,
+      </if>
+      <if test="mdMusic != null">
+        MD_MUSIC,
+      </if>
+      <if test="mdStartTime != null">
+        MD_START_TIME,
+      </if>
+      <if test="mdDayNumber != null">
+        MD_DAY_NUMBER,
+      </if>
+      <if test="mdTravelPeople != null">
+        MD_TRAVEL_PEOPLE,
+      </if>
+      <if test="mdCostMoney != null">
+        MD_COST_MONEY,
+      </if>
+      <if test="mdAimAddress != null">
+        MD_AIM_ADDRESS,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mdRecid != null">
+        #{mdRecid,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStdname != null">
+        #{mdStdname,jdbcType=VARCHAR},
+      </if>
+      <if test="mdRefId != null">
+        #{mdRefId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStdcode != null">
+        #{mdStdcode,jdbcType=DECIMAL},
+      </if>
+      <if test="mdAlertDate != null">
+        #{mdAlertDate,jdbcType=DATE},
+      </if>
+      <if test="mdAlertUser != null">
+        #{mdAlertUser,jdbcType=VARCHAR},
+      </if>
+      <if test="mdLevel != null">
+        #{mdLevel,jdbcType=DECIMAL},
+      </if>
+      <if test="mdThemeImg != null">
+        #{mdThemeImg,jdbcType=VARCHAR},
+      </if>
+      <if test="mdCreateTime != null">
+        #{mdCreateTime,jdbcType=DATE},
+      </if>
+      <if test="mdCreateUserId != null">
+        #{mdCreateUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdKeyWord != null">
+        #{mdKeyWord,jdbcType=VARCHAR},
+      </if>
+      <if test="mdTheme != null">
+        #{mdTheme,jdbcType=VARCHAR},
+      </if>
+      <if test="mdMusic != null">
+        #{mdMusic,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStartTime != null">
+        #{mdStartTime,jdbcType=DATE},
+      </if>
+      <if test="mdDayNumber != null">
+        #{mdDayNumber,jdbcType=DECIMAL},
+      </if>
+      <if test="mdTravelPeople != null">
+        #{mdTravelPeople,jdbcType=VARCHAR},
+      </if>
+      <if test="mdCostMoney != null">
+        #{mdCostMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="mdAimAddress != null">
+        #{mdAimAddress,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cn.qd.travel.entity.MDTravelNote">
+    update MD_TRAVE_NOTE
+    <set>
+      <if test="mdStdname != null">
+        MD_STDNAME = #{mdStdname,jdbcType=VARCHAR},
+      </if>
+      <if test="mdRefId != null">
+        MD_REF_ID = #{mdRefId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStdcode != null">
+        MD_STDCODE = #{mdStdcode,jdbcType=DECIMAL},
+      </if>
+      <if test="mdAlertDate != null">
+        MD_ALERT_DATE = #{mdAlertDate,jdbcType=DATE},
+      </if>
+      <if test="mdAlertUser != null">
+        MD_ALERT_USER = #{mdAlertUser,jdbcType=VARCHAR},
+      </if>
+      <if test="mdLevel != null">
+        MD_LEVEL = #{mdLevel,jdbcType=DECIMAL},
+      </if>
+      <if test="mdThemeImg != null">
+        MD_THEME_IMG = #{mdThemeImg,jdbcType=VARCHAR},
+      </if>
+      <if test="mdCreateTime != null">
+        MD_CREATE_TIME = #{mdCreateTime,jdbcType=DATE},
+      </if>
+      <if test="mdCreateUserId != null">
+        MD_CREATE_USER_ID = #{mdCreateUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdKeyWord != null">
+        MD_KEY_WORD = #{mdKeyWord,jdbcType=VARCHAR},
+      </if>
+      <if test="mdTheme != null">
+        MD_THEME = #{mdTheme,jdbcType=VARCHAR},
+      </if>
+      <if test="mdMusic != null">
+        MD_MUSIC = #{mdMusic,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStartTime != null">
+        MD_START_TIME = #{mdStartTime,jdbcType=DATE},
+      </if>
+      <if test="mdDayNumber != null">
+        MD_DAY_NUMBER = #{mdDayNumber,jdbcType=DECIMAL},
+      </if>
+      <if test="mdTravelPeople != null">
+        MD_TRAVEL_PEOPLE = #{mdTravelPeople,jdbcType=VARCHAR},
+      </if>
+      <if test="mdCostMoney != null">
+        MD_COST_MONEY = #{mdCostMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="mdAimAddress != null">
+        MD_AIM_ADDRESS = #{mdAimAddress,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cn.qd.travel.entity.MDTravelNote">
+    update MD_TRAVE_NOTE
+    set MD_STDNAME = #{mdStdname,jdbcType=VARCHAR},
+      MD_REF_ID = #{mdRefId,jdbcType=VARCHAR},
+      MD_STDCODE = #{mdStdcode,jdbcType=DECIMAL},
+      MD_ALERT_DATE = #{mdAlertDate,jdbcType=DATE},
+      MD_ALERT_USER = #{mdAlertUser,jdbcType=VARCHAR},
+      MD_LEVEL = #{mdLevel,jdbcType=DECIMAL},
+      MD_THEME_IMG = #{mdThemeImg,jdbcType=VARCHAR},
+      MD_CREATE_TIME = #{mdCreateTime,jdbcType=DATE},
+      MD_CREATE_USER_ID = #{mdCreateUserId,jdbcType=VARCHAR},
+      MD_KEY_WORD = #{mdKeyWord,jdbcType=VARCHAR},
+      MD_THEME = #{mdTheme,jdbcType=VARCHAR},
+      MD_MUSIC = #{mdMusic,jdbcType=VARCHAR},
+      MD_START_TIME = #{mdStartTime,jdbcType=DATE},
+      MD_DAY_NUMBER = #{mdDayNumber,jdbcType=DECIMAL},
+      MD_TRAVEL_PEOPLE = #{mdTravelPeople,jdbcType=VARCHAR},
+      MD_COST_MONEY = #{mdCostMoney,jdbcType=DECIMAL},
+      MD_AIM_ADDRESS = #{mdAimAddress,jdbcType=VARCHAR}
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </update>
+  <resultMap id="BaseResultMap" type="com.cn.qd.travel.entity.MDTravelNote">
+    <id column="MD_RECID" jdbcType="VARCHAR" property="mdRecid" />
+    <result column="MD_STDNAME" jdbcType="VARCHAR" property="mdStdname" />
+    <result column="MD_REF_ID" jdbcType="VARCHAR" property="mdRefId" />
+    <result column="MD_STDCODE" jdbcType="DECIMAL" property="mdStdcode" />
+    <result column="MD_ALERT_DATE" jdbcType="DATE" property="mdAlertDate" />
+    <result column="MD_ALERT_USER" jdbcType="VARCHAR" property="mdAlertUser" />
+    <result column="MD_LEVEL" jdbcType="DECIMAL" property="mdLevel" />
+    <result column="MD_THEME_IMG" jdbcType="VARCHAR" property="mdThemeImg" />
+    <result column="MD_CREATE_TIME" jdbcType="DATE" property="mdCreateTime" />
+    <result column="MD_CREATE_USER_ID" jdbcType="VARCHAR" property="mdCreateUserId" />
+    <result column="MD_KEY_WORD" jdbcType="VARCHAR" property="mdKeyWord" />
+    <result column="MD_THEME" jdbcType="VARCHAR" property="mdTheme" />
+    <result column="MD_MUSIC" jdbcType="VARCHAR" property="mdMusic" />
+    <result column="MD_START_TIME" jdbcType="DATE" property="mdStartTime" />
+    <result column="MD_DAY_NUMBER" jdbcType="DECIMAL" property="mdDayNumber" />
+    <result column="MD_TRAVEL_PEOPLE" jdbcType="VARCHAR" property="mdTravelPeople" />
+    <result column="MD_COST_MONEY" jdbcType="DECIMAL" property="mdCostMoney" />
+    <result column="MD_AIM_ADDRESS" jdbcType="VARCHAR" property="mdAimAddress" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    MD_RECID, MD_STDNAME, MD_REF_ID, MD_STDCODE, MD_ALERT_DATE, MD_ALERT_USER, MD_LEVEL, 
+    MD_THEME_IMG, MD_CREATE_TIME, MD_CREATE_USER_ID, MD_KEY_WORD, MD_THEME, MD_MUSIC, 
+    MD_START_TIME, MD_DAY_NUMBER, MD_TRAVEL_PEOPLE, MD_COST_MONEY, MD_AIM_ADDRESS
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from MD_TRAVE_NOTE
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from MD_TRAVE_NOTE
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cn.qd.travel.entity.MDTravelNote">
+    insert into MD_TRAVE_NOTE (MD_RECID, MD_STDNAME, MD_REF_ID, 
+      MD_STDCODE, MD_ALERT_DATE, MD_ALERT_USER, 
+      MD_LEVEL, MD_THEME_IMG, MD_CREATE_TIME, 
+      MD_CREATE_USER_ID, MD_KEY_WORD, MD_THEME, 
+      MD_MUSIC, MD_START_TIME, MD_DAY_NUMBER, 
+      MD_TRAVEL_PEOPLE, MD_COST_MONEY, MD_AIM_ADDRESS
+      )
+    values (#{mdRecid,jdbcType=VARCHAR}, #{mdStdname,jdbcType=VARCHAR}, #{mdRefId,jdbcType=VARCHAR}, 
+      #{mdStdcode,jdbcType=DECIMAL}, #{mdAlertDate,jdbcType=DATE}, #{mdAlertUser,jdbcType=VARCHAR}, 
+      #{mdLevel,jdbcType=DECIMAL}, #{mdThemeImg,jdbcType=VARCHAR}, #{mdCreateTime,jdbcType=DATE}, 
+      #{mdCreateUserId,jdbcType=VARCHAR}, #{mdKeyWord,jdbcType=VARCHAR}, #{mdTheme,jdbcType=VARCHAR}, 
+      #{mdMusic,jdbcType=VARCHAR}, #{mdStartTime,jdbcType=DATE}, #{mdDayNumber,jdbcType=DECIMAL}, 
+      #{mdTravelPeople,jdbcType=VARCHAR}, #{mdCostMoney,jdbcType=DECIMAL}, #{mdAimAddress,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.cn.qd.travel.entity.MDTravelNote">
+    insert into MD_TRAVE_NOTE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mdRecid != null">
+        MD_RECID,
+      </if>
+      <if test="mdStdname != null">
+        MD_STDNAME,
+      </if>
+      <if test="mdRefId != null">
+        MD_REF_ID,
+      </if>
+      <if test="mdStdcode != null">
+        MD_STDCODE,
+      </if>
+      <if test="mdAlertDate != null">
+        MD_ALERT_DATE,
+      </if>
+      <if test="mdAlertUser != null">
+        MD_ALERT_USER,
+      </if>
+      <if test="mdLevel != null">
+        MD_LEVEL,
+      </if>
+      <if test="mdThemeImg != null">
+        MD_THEME_IMG,
+      </if>
+      <if test="mdCreateTime != null">
+        MD_CREATE_TIME,
+      </if>
+      <if test="mdCreateUserId != null">
+        MD_CREATE_USER_ID,
+      </if>
+      <if test="mdKeyWord != null">
+        MD_KEY_WORD,
+      </if>
+      <if test="mdTheme != null">
+        MD_THEME,
+      </if>
+      <if test="mdMusic != null">
+        MD_MUSIC,
+      </if>
+      <if test="mdStartTime != null">
+        MD_START_TIME,
+      </if>
+      <if test="mdDayNumber != null">
+        MD_DAY_NUMBER,
+      </if>
+      <if test="mdTravelPeople != null">
+        MD_TRAVEL_PEOPLE,
+      </if>
+      <if test="mdCostMoney != null">
+        MD_COST_MONEY,
+      </if>
+      <if test="mdAimAddress != null">
+        MD_AIM_ADDRESS,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mdRecid != null">
+        #{mdRecid,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStdname != null">
+        #{mdStdname,jdbcType=VARCHAR},
+      </if>
+      <if test="mdRefId != null">
+        #{mdRefId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStdcode != null">
+        #{mdStdcode,jdbcType=DECIMAL},
+      </if>
+      <if test="mdAlertDate != null">
+        #{mdAlertDate,jdbcType=DATE},
+      </if>
+      <if test="mdAlertUser != null">
+        #{mdAlertUser,jdbcType=VARCHAR},
+      </if>
+      <if test="mdLevel != null">
+        #{mdLevel,jdbcType=DECIMAL},
+      </if>
+      <if test="mdThemeImg != null">
+        #{mdThemeImg,jdbcType=VARCHAR},
+      </if>
+      <if test="mdCreateTime != null">
+        #{mdCreateTime,jdbcType=DATE},
+      </if>
+      <if test="mdCreateUserId != null">
+        #{mdCreateUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdKeyWord != null">
+        #{mdKeyWord,jdbcType=VARCHAR},
+      </if>
+      <if test="mdTheme != null">
+        #{mdTheme,jdbcType=VARCHAR},
+      </if>
+      <if test="mdMusic != null">
+        #{mdMusic,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStartTime != null">
+        #{mdStartTime,jdbcType=DATE},
+      </if>
+      <if test="mdDayNumber != null">
+        #{mdDayNumber,jdbcType=DECIMAL},
+      </if>
+      <if test="mdTravelPeople != null">
+        #{mdTravelPeople,jdbcType=VARCHAR},
+      </if>
+      <if test="mdCostMoney != null">
+        #{mdCostMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="mdAimAddress != null">
+        #{mdAimAddress,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cn.qd.travel.entity.MDTravelNote">
+    update MD_TRAVE_NOTE
+    <set>
+      <if test="mdStdname != null">
+        MD_STDNAME = #{mdStdname,jdbcType=VARCHAR},
+      </if>
+      <if test="mdRefId != null">
+        MD_REF_ID = #{mdRefId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStdcode != null">
+        MD_STDCODE = #{mdStdcode,jdbcType=DECIMAL},
+      </if>
+      <if test="mdAlertDate != null">
+        MD_ALERT_DATE = #{mdAlertDate,jdbcType=DATE},
+      </if>
+      <if test="mdAlertUser != null">
+        MD_ALERT_USER = #{mdAlertUser,jdbcType=VARCHAR},
+      </if>
+      <if test="mdLevel != null">
+        MD_LEVEL = #{mdLevel,jdbcType=DECIMAL},
+      </if>
+      <if test="mdThemeImg != null">
+        MD_THEME_IMG = #{mdThemeImg,jdbcType=VARCHAR},
+      </if>
+      <if test="mdCreateTime != null">
+        MD_CREATE_TIME = #{mdCreateTime,jdbcType=DATE},
+      </if>
+      <if test="mdCreateUserId != null">
+        MD_CREATE_USER_ID = #{mdCreateUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdKeyWord != null">
+        MD_KEY_WORD = #{mdKeyWord,jdbcType=VARCHAR},
+      </if>
+      <if test="mdTheme != null">
+        MD_THEME = #{mdTheme,jdbcType=VARCHAR},
+      </if>
+      <if test="mdMusic != null">
+        MD_MUSIC = #{mdMusic,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStartTime != null">
+        MD_START_TIME = #{mdStartTime,jdbcType=DATE},
+      </if>
+      <if test="mdDayNumber != null">
+        MD_DAY_NUMBER = #{mdDayNumber,jdbcType=DECIMAL},
+      </if>
+      <if test="mdTravelPeople != null">
+        MD_TRAVEL_PEOPLE = #{mdTravelPeople,jdbcType=VARCHAR},
+      </if>
+      <if test="mdCostMoney != null">
+        MD_COST_MONEY = #{mdCostMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="mdAimAddress != null">
+        MD_AIM_ADDRESS = #{mdAimAddress,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cn.qd.travel.entity.MDTravelNote">
+    update MD_TRAVE_NOTE
+    set MD_STDNAME = #{mdStdname,jdbcType=VARCHAR},
+      MD_REF_ID = #{mdRefId,jdbcType=VARCHAR},
+      MD_STDCODE = #{mdStdcode,jdbcType=DECIMAL},
+      MD_ALERT_DATE = #{mdAlertDate,jdbcType=DATE},
+      MD_ALERT_USER = #{mdAlertUser,jdbcType=VARCHAR},
+      MD_LEVEL = #{mdLevel,jdbcType=DECIMAL},
+      MD_THEME_IMG = #{mdThemeImg,jdbcType=VARCHAR},
+      MD_CREATE_TIME = #{mdCreateTime,jdbcType=DATE},
+      MD_CREATE_USER_ID = #{mdCreateUserId,jdbcType=VARCHAR},
+      MD_KEY_WORD = #{mdKeyWord,jdbcType=VARCHAR},
+      MD_THEME = #{mdTheme,jdbcType=VARCHAR},
+      MD_MUSIC = #{mdMusic,jdbcType=VARCHAR},
+      MD_START_TIME = #{mdStartTime,jdbcType=DATE},
+      MD_DAY_NUMBER = #{mdDayNumber,jdbcType=DECIMAL},
+      MD_TRAVEL_PEOPLE = #{mdTravelPeople,jdbcType=VARCHAR},
+      MD_COST_MONEY = #{mdCostMoney,jdbcType=DECIMAL},
+      MD_AIM_ADDRESS = #{mdAimAddress,jdbcType=VARCHAR}
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </update>
+</mapper>

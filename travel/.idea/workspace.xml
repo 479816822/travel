@@ -21,11 +21,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="writertravels.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="writertravels.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebContent/css/write_travels/writertravels.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.66709346">
+            <state vertical-scroll-proportion="-5.107843">
               <caret line="527" column="22" selection-start-line="527" selection-start-column="22" selection-end-line="527" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VisitHead.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/VisitHead.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.33333334">
+              <caret line="131" column="69" selection-start-line="131" selection-start-column="69" selection-end-line="131" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -72,10 +82,10 @@
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/jsp/show_travels.html" />
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/jsp/mytravels.html" />
         <option value="$PROJECT_DIR$/WebContent/css/travels/travels.css" />
-        <option value="$PROJECT_DIR$/WebContent/WEB-INF/jsp/VisitHead.html" />
         <option value="$PROJECT_DIR$/WebContent/css/VisitHeader.css" />
         <option value="$PROJECT_DIR$/WebContent/css/write_travels/writertravels.css" />
         <option value="$PROJECT_DIR$/WebContent/WEB-INF/jsp/Writetravel.html" />
+        <option value="$PROJECT_DIR$/WebContent/WEB-INF/jsp/VisitHead.html" />
       </list>
     </option>
   </component>
@@ -150,6 +160,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="travel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="travel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebContent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jsp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -603,8 +635,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WebContent/css/write_travels/writertravels.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.66709346">
+        <state vertical-scroll-proportion="-5.107843">
           <caret line="527" column="22" selection-start-line="527" selection-start-column="22" selection-end-line="527" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/VisitHead.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="131" column="69" selection-start-line="131" selection-start-column="69" selection-end-line="131" selection-end-column="69" />
           <folding />
         </state>
       </provider>

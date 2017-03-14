@@ -3,6 +3,8 @@ package com.cn.qd.travel.service;
 import java.util.ArrayList;
 import java.util.Map;
 
+import org.springframework.stereotype.Service;
+
 import com.cn.qd.travel.core.BaseService;
 import com.cn.qd.travel.entity.MdUser;
 
@@ -13,6 +15,7 @@ import com.cn.qd.travel.entity.MdUser;
  * @author liufu
  *
  */
+@Service
 public interface UserService extends BaseService {
 
 	/**

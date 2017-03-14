@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cn.qd.travel.dao.MDUserIconMapper">
+  <resultMap id="BaseResultMap" type="com.cn.qd.travel.entity.MDUserIcon">
+    <id column="MD_ICON_ID" jdbcType="VARCHAR" property="mdIconId" />
+    <result column="MD_STDNAME" jdbcType="VARCHAR" property="mdStdname" />
+    <result column="MD_REF_ID" jdbcType="VARCHAR" property="mdRefId" />
+    <result column="MD_STDCODE" jdbcType="DECIMAL" property="mdStdcode" />
+    <result column="MD_CREATE_TIME" jdbcType="DATE" property="mdCreateTime" />
+    <result column="MD_ALERT_DATE" jdbcType="DATE" property="mdAlertDate" />
+    <result column="MD_ALERT_USER" jdbcType="VARCHAR" property="mdAlertUser" />
+    <result column="MD_LEVEL" jdbcType="DECIMAL" property="mdLevel" />
+    <result column="MD_USER_ID" jdbcType="VARCHAR" property="mdUserId" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.cn.qd.travel.entity.MDUserIcon">
+    <result column="MD_ICON" jdbcType="CLOB" property="mdIcon" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    MD_ICON_ID, MD_STDNAME, MD_REF_ID, MD_STDCODE, MD_CREATE_TIME, MD_ALERT_DATE, MD_ALERT_USER, 
+    MD_LEVEL, MD_USER_ID
+  </sql>
+  <sql id="Blob_Column_List">
+    MD_ICON
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from MD_USER_ICON
+    where MD_ICON_ID = #{mdIconId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from MD_USER_ICON
+    where MD_ICON_ID = #{mdIconId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cn.qd.travel.entity.MDUserIcon">
+    insert into MD_USER_ICON (MD_ICON_ID, MD_STDNAME, MD_REF_ID, 
+      MD_STDCODE, MD_CREATE_TIME, MD_ALERT_DATE, 
+      MD_ALERT_USER, MD_LEVEL, MD_USER_ID, 
+      MD_ICON)
+    values (#{mdIconId,jdbcType=VARCHAR}, #{mdStdname,jdbcType=VARCHAR}, #{mdRefId,jdbcType=VARCHAR}, 
+      #{mdStdcode,jdbcType=DECIMAL}, #{mdCreateTime,jdbcType=DATE}, #{mdAlertDate,jdbcType=DATE}, 
+      #{mdAlertUser,jdbcType=VARCHAR}, #{mdLevel,jdbcType=DECIMAL}, #{mdUserId,jdbcType=VARCHAR}, 
+      #{mdIcon,jdbcType=CLOB})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cn.qd.travel.entity.MDUserIcon">
+    insert into MD_USER_ICON
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mdIconId != null">
+        MD_ICON_ID,
+      </if>
+      <if test="mdStdname != null">
+        MD_STDNAME,
+      </if>
+      <if test="mdRefId != null">
+        MD_REF_ID,
+      </if>
+      <if test="mdStdcode != null">
+        MD_STDCODE,
+      </if>
+      <if test="mdCreateTime != null">
+        MD_CREATE_TIME,
+      </if>
+      <if test="mdAlertDate != null">
+        MD_ALERT_DATE,
+      </if>
+      <if test="mdAlertUser != null">
+        MD_ALERT_USER,
+      </if>
+      <if test="mdLevel != null">
+        MD_LEVEL,
+      </if>
+      <if test="mdUserId != null">
+        MD_USER_ID,
+      </if>
+      <if test="mdIcon != null">
+        MD_ICON,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mdIconId != null">
+        #{mdIconId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStdname != null">
+        #{mdStdname,jdbcType=VARCHAR},
+      </if>
+      <if test="mdRefId != null">
+        #{mdRefId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStdcode != null">
+        #{mdStdcode,jdbcType=DECIMAL},
+      </if>
+      <if test="mdCreateTime != null">
+        #{mdCreateTime,jdbcType=DATE},
+      </if>
+      <if test="mdAlertDate != null">
+        #{mdAlertDate,jdbcType=DATE},
+      </if>
+      <if test="mdAlertUser != null">
+        #{mdAlertUser,jdbcType=VARCHAR},
+      </if>
+      <if test="mdLevel != null">
+        #{mdLevel,jdbcType=DECIMAL},
+      </if>
+      <if test="mdUserId != null">
+        #{mdUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdIcon != null">
+        #{mdIcon,jdbcType=CLOB},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cn.qd.travel.entity.MDUserIcon">
+    update MD_USER_ICON
+    <set>
+      <if test="mdStdname != null">
+        MD_STDNAME = #{mdStdname,jdbcType=VARCHAR},
+      </if>
+      <if test="mdRefId != null">
+        MD_REF_ID = #{mdRefId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStdcode != null">
+        MD_STDCODE = #{mdStdcode,jdbcType=DECIMAL},
+      </if>
+      <if test="mdCreateTime != null">
+        MD_CREATE_TIME = #{mdCreateTime,jdbcType=DATE},
+      </if>
+      <if test="mdAlertDate != null">
+        MD_ALERT_DATE = #{mdAlertDate,jdbcType=DATE},
+      </if>
+      <if test="mdAlertUser != null">
+        MD_ALERT_USER = #{mdAlertUser,jdbcType=VARCHAR},
+      </if>
+      <if test="mdLevel != null">
+        MD_LEVEL = #{mdLevel,jdbcType=DECIMAL},
+      </if>
+      <if test="mdUserId != null">
+        MD_USER_ID = #{mdUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdIcon != null">
+        MD_ICON = #{mdIcon,jdbcType=CLOB},
+      </if>
+    </set>
+    where MD_ICON_ID = #{mdIconId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.cn.qd.travel.entity.MDUserIcon">
+    update MD_USER_ICON
+    set MD_STDNAME = #{mdStdname,jdbcType=VARCHAR},
+      MD_REF_ID = #{mdRefId,jdbcType=VARCHAR},
+      MD_STDCODE = #{mdStdcode,jdbcType=DECIMAL},
+      MD_CREATE_TIME = #{mdCreateTime,jdbcType=DATE},
+      MD_ALERT_DATE = #{mdAlertDate,jdbcType=DATE},
+      MD_ALERT_USER = #{mdAlertUser,jdbcType=VARCHAR},
+      MD_LEVEL = #{mdLevel,jdbcType=DECIMAL},
+      MD_USER_ID = #{mdUserId,jdbcType=VARCHAR},
+      MD_ICON = #{mdIcon,jdbcType=CLOB}
+    where MD_ICON_ID = #{mdIconId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cn.qd.travel.entity.MDUserIcon">
+    update MD_USER_ICON
+    set MD_STDNAME = #{mdStdname,jdbcType=VARCHAR},
+      MD_REF_ID = #{mdRefId,jdbcType=VARCHAR},
+      MD_STDCODE = #{mdStdcode,jdbcType=DECIMAL},
+      MD_CREATE_TIME = #{mdCreateTime,jdbcType=DATE},
+      MD_ALERT_DATE = #{mdAlertDate,jdbcType=DATE},
+      MD_ALERT_USER = #{mdAlertUser,jdbcType=VARCHAR},
+      MD_LEVEL = #{mdLevel,jdbcType=DECIMAL},
+      MD_USER_ID = #{mdUserId,jdbcType=VARCHAR}
+    where MD_ICON_ID = #{mdIconId,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cn.qd.travel.dao.MDCommentMoreMapper">
+  <resultMap id="BaseResultMap" type="com.cn.qd.travel.entity.MDCommentMore">
+    <id column="MD_RECID" jdbcType="VARCHAR" property="mdRecid" />
+    <result column="MD_STDNAME" jdbcType="VARCHAR" property="mdStdname" />
+    <result column="MD_REF_ID" jdbcType="VARCHAR" property="mdRefId" />
+    <result column="MD_STDCODE" jdbcType="DECIMAL" property="mdStdcode" />
+    <result column="MD_CREATE_TIME" jdbcType="DATE" property="mdCreateTime" />
+    <result column="MD_ALERT_DATE" jdbcType="DATE" property="mdAlertDate" />
+    <result column="MD_ALERT_USER" jdbcType="VARCHAR" property="mdAlertUser" />
+    <result column="MD_LEVEL" jdbcType="DECIMAL" property="mdLevel" />
+    <result column="MD_COMMENT_TIME" jdbcType="DATE" property="mdCommentTime" />
+    <result column="MD_COMMENT_CONTENT" jdbcType="VARCHAR" property="mdCommentContent" />
+    <result column="MD_COMMENT_PEOPLE" jdbcType="VARCHAR" property="mdCommentPeople" />
+    <result column="MD_IMG" jdbcType="VARCHAR" property="mdImg" />
+    <result column="MD_VIDEO" jdbcType="VARCHAR" property="mdVideo" />
+    <result column="MD_PRAISE" jdbcType="DECIMAL" property="mdPraise" />
+    <result column="MD_COMMENT_MORE_ID" jdbcType="VARCHAR" property="mdCommentMoreId" />
+    <result column="MD_COMMENT_ONE_ID" jdbcType="VARCHAR" property="mdCommentOneId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    MD_RECID, MD_STDNAME, MD_REF_ID, MD_STDCODE, MD_CREATE_TIME, MD_ALERT_DATE, MD_ALERT_USER, 
+    MD_LEVEL, MD_COMMENT_TIME, MD_COMMENT_CONTENT, MD_COMMENT_PEOPLE, MD_IMG, MD_VIDEO, 
+    MD_PRAISE, MD_COMMENT_MORE_ID, MD_COMMENT_ONE_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from MD_COMMENT_MORE
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from MD_COMMENT_MORE
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cn.qd.travel.entity.MDCommentMore">
+    insert into MD_COMMENT_MORE (MD_RECID, MD_STDNAME, MD_REF_ID, 
+      MD_STDCODE, MD_CREATE_TIME, MD_ALERT_DATE, 
+      MD_ALERT_USER, MD_LEVEL, MD_COMMENT_TIME, 
+      MD_COMMENT_CONTENT, MD_COMMENT_PEOPLE, MD_IMG, 
+      MD_VIDEO, MD_PRAISE, MD_COMMENT_MORE_ID, 
+      MD_COMMENT_ONE_ID)
+    values (#{mdRecid,jdbcType=VARCHAR}, #{mdStdname,jdbcType=VARCHAR}, #{mdRefId,jdbcType=VARCHAR}, 
+      #{mdStdcode,jdbcType=DECIMAL}, #{mdCreateTime,jdbcType=DATE}, #{mdAlertDate,jdbcType=DATE}, 
+      #{mdAlertUser,jdbcType=VARCHAR}, #{mdLevel,jdbcType=DECIMAL}, #{mdCommentTime,jdbcType=DATE}, 
+      #{mdCommentContent,jdbcType=VARCHAR}, #{mdCommentPeople,jdbcType=VARCHAR}, #{mdImg,jdbcType=VARCHAR}, 
+      #{mdVideo,jdbcType=VARCHAR}, #{mdPraise,jdbcType=DECIMAL}, #{mdCommentMoreId,jdbcType=VARCHAR}, 
+      #{mdCommentOneId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cn.qd.travel.entity.MDCommentMore">
+    insert into MD_COMMENT_MORE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mdRecid != null">
+        MD_RECID,
+      </if>
+      <if test="mdStdname != null">
+        MD_STDNAME,
+      </if>
+      <if test="mdRefId != null">
+        MD_REF_ID,
+      </if>
+      <if test="mdStdcode != null">
+        MD_STDCODE,
+      </if>
+      <if test="mdCreateTime != null">
+        MD_CREATE_TIME,
+      </if>
+      <if test="mdAlertDate != null">
+        MD_ALERT_DATE,
+      </if>
+      <if test="mdAlertUser != null">
+        MD_ALERT_USER,
+      </if>
+      <if test="mdLevel != null">
+        MD_LEVEL,
+      </if>
+      <if test="mdCommentTime != null">
+        MD_COMMENT_TIME,
+      </if>
+      <if test="mdCommentContent != null">
+        MD_COMMENT_CONTENT,
+      </if>
+      <if test="mdCommentPeople != null">
+        MD_COMMENT_PEOPLE,
+      </if>
+      <if test="mdImg != null">
+        MD_IMG,
+      </if>
+      <if test="mdVideo != null">
+        MD_VIDEO,
+      </if>
+      <if test="mdPraise != null">
+        MD_PRAISE,
+      </if>
+      <if test="mdCommentMoreId != null">
+        MD_COMMENT_MORE_ID,
+      </if>
+      <if test="mdCommentOneId != null">
+        MD_COMMENT_ONE_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mdRecid != null">
+        #{mdRecid,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStdname != null">
+        #{mdStdname,jdbcType=VARCHAR},
+      </if>
+      <if test="mdRefId != null">
+        #{mdRefId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStdcode != null">
+        #{mdStdcode,jdbcType=DECIMAL},
+      </if>
+      <if test="mdCreateTime != null">
+        #{mdCreateTime,jdbcType=DATE},
+      </if>
+      <if test="mdAlertDate != null">
+        #{mdAlertDate,jdbcType=DATE},
+      </if>
+      <if test="mdAlertUser != null">
+        #{mdAlertUser,jdbcType=VARCHAR},
+      </if>
+      <if test="mdLevel != null">
+        #{mdLevel,jdbcType=DECIMAL},
+      </if>
+      <if test="mdCommentTime != null">
+        #{mdCommentTime,jdbcType=DATE},
+      </if>
+      <if test="mdCommentContent != null">
+        #{mdCommentContent,jdbcType=VARCHAR},
+      </if>
+      <if test="mdCommentPeople != null">
+        #{mdCommentPeople,jdbcType=VARCHAR},
+      </if>
+      <if test="mdImg != null">
+        #{mdImg,jdbcType=VARCHAR},
+      </if>
+      <if test="mdVideo != null">
+        #{mdVideo,jdbcType=VARCHAR},
+      </if>
+      <if test="mdPraise != null">
+        #{mdPraise,jdbcType=DECIMAL},
+      </if>
+      <if test="mdCommentMoreId != null">
+        #{mdCommentMoreId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdCommentOneId != null">
+        #{mdCommentOneId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cn.qd.travel.entity.MDCommentMore">
+    update MD_COMMENT_MORE
+    <set>
+      <if test="mdStdname != null">
+        MD_STDNAME = #{mdStdname,jdbcType=VARCHAR},
+      </if>
+      <if test="mdRefId != null">
+        MD_REF_ID = #{mdRefId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdStdcode != null">
+        MD_STDCODE = #{mdStdcode,jdbcType=DECIMAL},
+      </if>
+      <if test="mdCreateTime != null">
+        MD_CREATE_TIME = #{mdCreateTime,jdbcType=DATE},
+      </if>
+      <if test="mdAlertDate != null">
+        MD_ALERT_DATE = #{mdAlertDate,jdbcType=DATE},
+      </if>
+      <if test="mdAlertUser != null">
+        MD_ALERT_USER = #{mdAlertUser,jdbcType=VARCHAR},
+      </if>
+      <if test="mdLevel != null">
+        MD_LEVEL = #{mdLevel,jdbcType=DECIMAL},
+      </if>
+      <if test="mdCommentTime != null">
+        MD_COMMENT_TIME = #{mdCommentTime,jdbcType=DATE},
+      </if>
+      <if test="mdCommentContent != null">
+        MD_COMMENT_CONTENT = #{mdCommentContent,jdbcType=VARCHAR},
+      </if>
+      <if test="mdCommentPeople != null">
+        MD_COMMENT_PEOPLE = #{mdCommentPeople,jdbcType=VARCHAR},
+      </if>
+      <if test="mdImg != null">
+        MD_IMG = #{mdImg,jdbcType=VARCHAR},
+      </if>
+      <if test="mdVideo != null">
+        MD_VIDEO = #{mdVideo,jdbcType=VARCHAR},
+      </if>
+      <if test="mdPraise != null">
+        MD_PRAISE = #{mdPraise,jdbcType=DECIMAL},
+      </if>
+      <if test="mdCommentMoreId != null">
+        MD_COMMENT_MORE_ID = #{mdCommentMoreId,jdbcType=VARCHAR},
+      </if>
+      <if test="mdCommentOneId != null">
+        MD_COMMENT_ONE_ID = #{mdCommentOneId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cn.qd.travel.entity.MDCommentMore">
+    update MD_COMMENT_MORE
+    set MD_STDNAME = #{mdStdname,jdbcType=VARCHAR},
+      MD_REF_ID = #{mdRefId,jdbcType=VARCHAR},
+      MD_STDCODE = #{mdStdcode,jdbcType=DECIMAL},
+      MD_CREATE_TIME = #{mdCreateTime,jdbcType=DATE},
+      MD_ALERT_DATE = #{mdAlertDate,jdbcType=DATE},
+      MD_ALERT_USER = #{mdAlertUser,jdbcType=VARCHAR},
+      MD_LEVEL = #{mdLevel,jdbcType=DECIMAL},
+      MD_COMMENT_TIME = #{mdCommentTime,jdbcType=DATE},
+      MD_COMMENT_CONTENT = #{mdCommentContent,jdbcType=VARCHAR},
+      MD_COMMENT_PEOPLE = #{mdCommentPeople,jdbcType=VARCHAR},
+      MD_IMG = #{mdImg,jdbcType=VARCHAR},
+      MD_VIDEO = #{mdVideo,jdbcType=VARCHAR},
+      MD_PRAISE = #{mdPraise,jdbcType=DECIMAL},
+      MD_COMMENT_MORE_ID = #{mdCommentMoreId,jdbcType=VARCHAR},
+      MD_COMMENT_ONE_ID = #{mdCommentOneId,jdbcType=VARCHAR}
+    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+  </update>
+</mapper>

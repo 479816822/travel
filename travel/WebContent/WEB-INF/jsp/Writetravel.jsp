@@ -30,8 +30,7 @@
 						itemHeight : "700px", // 文件项的高度
 						url : "upload", // 上传文件的路径
 						fileType : ["jpeg", "JPG","JPEG","jpg", "png", "txt", "js", "exe" ],// 上传文件的类型
-						fileSize : 51200000000, // 上传文件的大小
-						multiple : true, // 是否可以多个文件上传
+						fileSize : 51200000000, // 上传文件的大小 multiple : true, // 是否可以多个文件上传
 						dragDrop : true, // 是否可以拖动上传文件
 						tailor : true, // 是否可以裁剪图片
 						del : true, // 是否可以删除文件
