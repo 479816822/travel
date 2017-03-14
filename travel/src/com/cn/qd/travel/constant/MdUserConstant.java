@@ -1,7 +1,7 @@
 package com.cn.qd.travel.constant;
 
 /**
- * ÓÃ»§±í ÁĞÃû±íÃû³£Á¿
+ * ç”¨æˆ·è¡¨ åˆ—åè¡¨åå¸¸é‡
  * 
  * @author liufu
  *
@@ -10,95 +10,95 @@ package com.cn.qd.travel.constant;
 public interface MdUserConstant {
 
 	/**
-	 * ÓÃ»§±í--------------±íÃû
+	 * ç”¨æˆ·è¡¨--------------è¡¨å
 	 */
 	public static final String USER_TABLE_NAME = "md_user";
 	/**
-	 * ÓÃ»§±í--------------±íÖ÷¼ü
+	 * ç”¨æˆ·è¡¨--------------è¡¨ä¸»é”®
 	 */
 	public static final String USER_TABLE_ZJ = "mdUserRecid";
 	/**
-	 * ÏµÍ³×Ö¶Î--------------Ãû
+	 * ç³»ç»Ÿå­—æ®µ--------------å
 	 */
 	public static final String SYS_NAME="mdStdname";
 	/**
-	 * ÏµÍ³×Ö¶Î--------------¹ØÁªÍâ¼ü
+	 * ç³»ç»Ÿå­—æ®µ--------------å…³è”å¤–é”®
 	 */
 	public static final String SYS_REF_ID="mdRefId";
 	/**
-	 * ÏµÍ³×Ö¶Î--------------±íµÄ´úÂë
+	 * ç³»ç»Ÿå­—æ®µ--------------è¡¨çš„ä»£ç 
 	 */
 	public static final String SYS_CODE="mdStdcode";
 	/**
-	 * ÏµÍ³×Ö¶Î--------------ĞŞ¸ÄµÄÈÕÆÚ
+	 * ç³»ç»Ÿå­—æ®µ--------------ä¿®æ”¹çš„æ—¥æœŸ
 	 */
 	public static final String SYS_ALERT_TIME="mdAlertDate";
 	/**
-	 * ÏµÍ³×Ö¶Î--------------ĞŞ¸ÄÈË
+	 * ç³»ç»Ÿå­—æ®µ--------------ä¿®æ”¹äºº
 	 */
 	public static final String SYS_ALSERT_USER="mdAlertUser";
 	/**
-	 * ÓÃ»§±í--------------ÓÃ»§Ãû
+	 * ç”¨æˆ·è¡¨--------------ç”¨æˆ·å
 	 */
 	public static final String USER_NAME="mdUserName";
 	/**
-	 *  ÓÃ»§±í--------------ÓÃ»§µç»°ºÅÂë
+	 *  ç”¨æˆ·è¡¨--------------ç”¨æˆ·ç”µè¯å·ç 
 	 */
 	public static final String MD_USER_PHONE="mdTelephone";
 	/**
-	 *  ÓÃ»§±í--------------ÓÃ»§ĞÔ±ğ
+	 *  ç”¨æˆ·è¡¨--------------ç”¨æˆ·æ€§åˆ«
 	 */
 	public static final String USER_SEX="mdSex";
 	/**
-	 *  ÓÃ»§±í--------------ÓÃ»§ÄêÁä
+	 *  ç”¨æˆ·è¡¨--------------ç”¨æˆ·å¹´é¾„
 	 */
 	public static final String USER_age="mdAge";
 	/**
-	 *  ÓÃ»§±í--------------ÓÃ»§×¢²áÈÕÆÚ
+	 *  ç”¨æˆ·è¡¨--------------ç”¨æˆ·æ³¨å†Œæ—¥æœŸ
 	 */
 	public static final String MD_USER_REGISTER_TIME="mdCreateTime";
 	/**
-	 *  ÓÃ»§±í--------------ÓÃ»§ÃÜÂë
+	 *  ç”¨æˆ·è¡¨--------------ç”¨æˆ·å¯†ç 
 	 */
 	public static final String USER_PASSWORD="mdPassword";
 	/**
-	 *  ÓÃ»§±í--------------ÓÃ»§ÓÊÏä
+	 *  ç”¨æˆ·è¡¨--------------ç”¨æˆ·é‚®ç®±
 	 */
 	public static final String USER_EAMIL="mdEmail";
 	/**
-	 *  ÓÃ»§±í--------------ÓÃ»§±ÏÒµÑ§Ğ£
+	 *  ç”¨æˆ·è¡¨--------------ç”¨æˆ·æ¯•ä¸šå­¦æ ¡
 	 */
 	public static final String USER_GRADUATE_SCHOOL="mdSchool";
 	/**
-	 *  ÓÃ»§±í--------------ÓÃ»§ÊÇ·ñVIP
+	 *  ç”¨æˆ·è¡¨--------------ç”¨æˆ·æ˜¯å¦VIP
 	 */
 	public static final String USER_IS_VIP="mdIsVip";
 	/**
-	 *  ÓÃ»§±í--------------ÓÃ»§µÈ¼¶
+	 *  ç”¨æˆ·è¡¨--------------ç”¨æˆ·ç­‰çº§
 	 */
 	public static final String USER_LEVEL="mdLevel";
 	/**
-	 *  ÓÃ»§±í--------------ÓÃ»§¸öĞÔÇ©Ãû
+	 *  ç”¨æˆ·è¡¨--------------ç”¨æˆ·ä¸ªæ€§ç­¾å
 	 */
 	public static final String USER_SIGNATURE="mdSignature";
 	/**
-	 *  ÓÃ»§±í--------------ÓÃ»§»ı·Ö
+	 *  ç”¨æˆ·è¡¨--------------ç”¨æˆ·ç§¯åˆ†
 	 */
 	public static final String USER_SCORE="mdScore";
 	/**
-	 *  ÓÃ»§±í--------------ÓÃ»§±ÏÒµÊ±¼ä
+	 *  ç”¨æˆ·è¡¨--------------ç”¨æˆ·æ¯•ä¸šæ—¶é—´
 	 */
 	public static final String USER_GRADUATE_DATE="mdGraduationDate";
 	/**
-	 *  ÓÃ»§±í--------------ÓÃ»§µØÖ·ÓÊ±à
+	 *  ç”¨æˆ·è¡¨--------------ç”¨æˆ·åœ°å€é‚®ç¼–
 	 */
 	public static final String USER_ADDRESS_CODE="mdEmsCode";
 	/**
-	 *  ÓÃ»§±í--------------ÓÃ»§»ñÔŞÊı
+	 *  ç”¨æˆ·è¡¨--------------ç”¨æˆ·è·èµæ•°
 	 */
 	public static final String USER_PRAISE="mdPraise";
 	/**
-	 *  ÓÃ»§±í--------------ÓÃ»§Í·Ïñ
+	 *  ç”¨æˆ·è¡¨--------------ç”¨æˆ·å¤´åƒ
 	 */
 	public static final String USER_ICON="mdIcon";
 }

@@ -11,12 +11,12 @@ import java.util.Calendar;
  * 
  * @author liufu
  *
- *         ÎÄ¼şÉÏ´«
+ *         æ–‡ä»¶ä¸Šä¼ 
  */
 public class FileUpAndDown {
 
 	/**
-	 * ¸ù¾İÎÄ¼şÂ·¾¶¡¢ÎÄ¼şÀàĞÍ¡¢µ¼³öÏàÓ¦µÄÎÄ¼ş
+	 * æ ¹æ®æ–‡ä»¶è·¯å¾„ã€æ–‡ä»¶ç±»å‹ã€å¯¼å‡ºç›¸åº”çš„æ–‡ä»¶
 	 * 
 	 * @param filePath
 	 * @param fileType
@@ -25,7 +25,7 @@ public class FileUpAndDown {
 	 */
 	public static String fileInport(String filePath, String fileType, InputStream in) {
 		Log log = Log.getLogger();
-		// ÎÄ¼şÂ·¾¢ÎªÖ¸¶¨µÄ¾ßÌåÂ·¾¢¼ÓÉÏ¶ÔÓ¦µÄÈÕÆÚ
+		// æ–‡ä»¶è·¯åŠ²ä¸ºæŒ‡å®šçš„å…·ä½“è·¯åŠ²åŠ ä¸Šå¯¹åº”çš„æ—¥æœŸ
 		String path = Calendar.getInstance().hashCode() + "." + fileType;
 		File fl = new File(filePath + path);
 		DataOutputStream out = null;

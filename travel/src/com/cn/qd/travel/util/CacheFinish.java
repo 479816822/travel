@@ -8,7 +8,7 @@ import com.cn.qd.travel.core.Cache;
 import com.cn.qd.travel.core.CacheManager;
 
 /**
- * µ÷ÓÃÊµÏÖ»º´æÊı¾İ 1.»º´æÊı¾İ 2.¶ÁÈ¡Êı¾İ
+ * è°ƒç”¨å®ç°ç¼“å­˜æ•°æ® 1.ç¼“å­˜æ•°æ® 2.è¯»å–æ•°æ®
  * 
  * @author liufu
  *
@@ -16,7 +16,7 @@ import com.cn.qd.travel.core.CacheManager;
 public class CacheFinish {
 
 	/**
-	 * ´´½¨»º´æ
+	 * åˆ›å»ºç¼“å­˜
 	 * 
 	 * @return
 	 */
@@ -32,7 +32,7 @@ public class CacheFinish {
 	}
 
 	/**
-	 * »ñÈ¡Ö¸¶¨»º´æµÄÊı¾İ
+	 * è·å–æŒ‡å®šç¼“å­˜çš„æ•°æ®
 	 * 
 	 * @return
 	 */
@@ -49,7 +49,7 @@ public class CacheFinish {
 	}
 
 	/**
-	 * »ñÈ¡Ö¸¶¨»º´æµÄÖ¸¶¨Êı¾İ
+	 * è·å–æŒ‡å®šç¼“å­˜çš„æŒ‡å®šæ•°æ®
 	 * 
 	 * @return
 	 */
@@ -59,7 +59,7 @@ public class CacheFinish {
 	}
 
 	/**
-	 * »ñÈ¡Ö¸¶¨»º´æµÄÖ¸¶¨Êı¾İ
+	 * è·å–æŒ‡å®šç¼“å­˜çš„æŒ‡å®šæ•°æ®
 	 * 
 	 * @return
 	 */

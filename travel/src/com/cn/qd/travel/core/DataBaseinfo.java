@@ -3,7 +3,7 @@ package com.cn.qd.travel.core;
 import java.util.Map;
 
 /**
- * 提供创建易用的sql
+ * 鎻愪緵鍒涘缓鏄撶敤鐨剆ql
  * 
  * @author liufu
  *
@@ -11,7 +11,7 @@ import java.util.Map;
 public class DataBaseinfo {
 
 	/**
-	 * 创建sql语句
+	 * 鍒涘缓sql璇彞
 	 */
 	private String sql;
 	private Map<String, Object> map;
@@ -32,7 +32,7 @@ public class DataBaseinfo {
 		this.map = map;
 	}
 
-	// 枚举
+	// 鏋氫妇
 	public enum enumMethod {
 		Add, Update, Delete
 	}

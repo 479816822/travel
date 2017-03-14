@@ -2,15 +2,15 @@ package com.cn.qd.travel.core;
 
 
 /**
- * »º´æÀà
+ * ç¼“å­˜ç±»
  * @author liufu
  *
  */
 public class Cache {
-	  private String key;//»º´æID 
-      private Object value;//»º´æÊı¾İ 
-      private long timeOut;//¸üĞÂÊ±¼ä 
-      private boolean expired; //ÊÇ·ñÖÕÖ¹ 
+	  private String key;//ç¼“å­˜ID 
+      private Object value;//ç¼“å­˜æ•°æ® 
+      private long timeOut;//æ›´æ–°æ—¶é—´ 
+      private boolean expired; //æ˜¯å¦ç»ˆæ­¢ 
       public Cache() { 
               super(); 
       } 

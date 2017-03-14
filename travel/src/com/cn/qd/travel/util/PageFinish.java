@@ -6,7 +6,7 @@ import java.util.Calendar;
 public class PageFinish {
 
 	/**
-	 * ³õÊ¼»¯·ÖÒ³ ³õÊ¼»¯Êı¾İ»º´æ
+	 * åˆå§‹åŒ–åˆ†é¡µ åˆå§‹åŒ–æ•°æ®ç¼“å­˜
 	 */
 	@SuppressWarnings("unchecked")
 	public static Page initPage(int pageSize, Object data) {
@@ -16,7 +16,7 @@ public class PageFinish {
 		if (dataList.size() % pageSize != 0) {
 			pageCount++;
 		}
-		// »º´æÊı¾İ
+		// ç¼“å­˜æ•°æ®
 		String cacheName = "" + Calendar.getInstance();
 		if (CacheFinish.memoryData(dataList, cacheName)) {
 			page = new Page(pageCount, pageSize, cacheName, dataList.size());
@@ -25,13 +25,13 @@ public class PageFinish {
 	}
 
 	/**
-	 * »ñÈ¡Ö¸¶¨Ò³µÄÊı¾İ ÎŞÉÏÏÂÒ³Ê±,°ÑÉÏÏÂÒ³ÖÃÎª-1
+	 * è·å–æŒ‡å®šé¡µçš„æ•°æ® æ— ä¸Šä¸‹é¡µæ—¶,æŠŠä¸Šä¸‹é¡µç½®ä¸º-1
 	 * 
 	 * @param page
 	 * @return
 	 */
 	public static ArrayList<?> getPageData(Page page) {
-		// 1.Ò³Âëµ÷Õû
+		// 1.é¡µç è°ƒæ•´
 		if (page.getPageCurrent() < page.getPageCount()) {
 			page.setNextPage((page.getPageCurrent() + 1));
 			if (page.getPageCurrent() == 1) {
@@ -50,7 +50,7 @@ public class PageFinish {
 
 		}
 		System.out.println(page.getNextPage() + "jj" + page.getPageCurrent() + "dddd" + page.getPrePage());
-		// 2.»ñÈ¡µ±Ç°Ò³µÄÊı¾İ
+		// 2.è·å–å½“å‰é¡µçš„æ•°æ®
 		return CacheFinish.getData(page.getPageSize(), page.getPageCurrent(), page.getCache());
 	}
 }

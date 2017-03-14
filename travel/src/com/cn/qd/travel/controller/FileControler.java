@@ -21,7 +21,7 @@ import com.cn.qd.travel.util.FileUpAndDown;
 import com.cn.qd.travel.util.Log;
 
 /**
- * ÎÄ¼ş´¦Àí¿ØÖÆ²ã
+ * æ–‡ä»¶å¤„ç†æ§åˆ¶å±‚
  * 
  * @author liufu
  *
@@ -32,7 +32,7 @@ public class FileControler {
 	private Log log = Log.getLogger();
 
 	/**
-	 * ÎÄ¼şÉÏ´«,Í³Ò»´æ´¢ÔÚuploadÎÄ¼ş¼ĞÏÂ¡¢ÔÙ¸ù¾İÎÄ¼şÀàĞÍ·ÖÎÄ¼ş¼Ğ´æ´¢
+	 * æ–‡ä»¶ä¸Šä¼ ,ç»Ÿä¸€å­˜å‚¨åœ¨uploadæ–‡ä»¶å¤¹ä¸‹ã€å†æ ¹æ®æ–‡ä»¶ç±»å‹åˆ†æ–‡ä»¶å¤¹å­˜å‚¨
 	 * 
 	 * @param doc
 	 * @param file
@@ -68,7 +68,7 @@ public class FileControler {
 	}
 
 	/**
-	 * ÎÄ¼şÏÂÔØ
+	 * æ–‡ä»¶ä¸‹è½½
 	 * 
 	 * @param name
 	 * @param request
@@ -88,17 +88,17 @@ public class FileControler {
 			/**
 			 * css,js,json,gif,png,bmp,jpg,ico,doc,docx,xls,xlsx,txt,swf,pdf
 			 **/
-			// ÉèÖÃÎÄ¼şÀàĞÍ
+			// è®¾ç½®æ–‡ä»¶ç±»å‹
 			response.setContentType(fileType);
-			// ÉèÖÃContent-Disposition
+			// è®¾ç½®Content-Disposition
 			response.setHeader("Content-Disposition", "attachment;fileName=" + fileName);
-			// ¶ÁÈ¡Ä¿±êÎÄ¼ş£¬Í¨¹ıresponse½«Ä¿±êÎÄ¼şĞ´µ½¿Í»§¶Ë
-			// »ñÈ¡Ä¿±êÎÄ¼şµÄ¾ø¶ÔÂ·¾¶
+			// è¯»å–ç›®æ ‡æ–‡ä»¶ï¼Œé€šè¿‡responseå°†ç›®æ ‡æ–‡ä»¶å†™åˆ°å®¢æˆ·ç«¯
+			// è·å–ç›®æ ‡æ–‡ä»¶çš„ç»å¯¹è·¯å¾„
 			String fullFileName = request.getRealPath("/WEB-INF/upload/" + fileType + fileName);
-			// ¶ÁÈ¡ÎÄ¼ş
+			// è¯»å–æ–‡ä»¶
 			in = new FileInputStream(fullFileName);
 			out = response.getOutputStream();
-			// Ğ´ÎÄ¼ş
+			// å†™æ–‡ä»¶
 			int b;
 			while ((b = in.read()) != -1) {
 				out.write(b);

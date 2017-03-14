@@ -20,11 +20,17 @@ body{
     font-family: "Microsoft Yahei";
 }
 
-
-.header iframe {
-    z-index: 999;
+.header1 {
     width: 100%;
-    height: 46px;
+    height: 100%;
+    margin: 0 ;
+}
+
+.header1 iframe {
+    z-index: -990;
+    width: 100%;
+    height: 300px;
+
 }
 
 

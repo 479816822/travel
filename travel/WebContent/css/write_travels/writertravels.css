@@ -49,8 +49,8 @@ ul, ol, li, dl, dd, dt {
 
 .all_live {
 	height: 60px;
-	width: 1015px;
-	margin: auto;
+	width: 70%;
+	margin: 0px auto;
 	clear: both;
 }
 
@@ -61,20 +61,29 @@ ul, ol, li, dl, dd, dt {
 }
 
 .all_live_one1 {
-	height: 60px;
+	height: 40px;
+	margin-top: 20px;
 	width: 100%;
 	font-size: 18px;
 }
 
 .all_live_two {
-	text-decoration: underline;
-	height: 60px;
+
+	height: 40px;
 	width: 33%;
 	float: left;
 	margin-left: 15px;
+	margin-top: 10px;
 	text-align: center;
 	line-height: 40px;
 	color: #999;
+}{}
+
+.all_live_two_one{
+	color: orange;
+}
+.all_live_two_two{
+	text-decoration: underline;
 }
 
 .all_live_three {
@@ -91,8 +100,9 @@ ul, ol, li, dl, dd, dt {
 	vertical-align: middle;
 	background-color: transparent;
 	text-decoration: none;
+	margin-top: 13px;
 	float: left;
-	margin-left: 70px;
+	margin-left: 40%;
 }
 
 .all_live_three_two {
@@ -102,6 +112,7 @@ ul, ol, li, dl, dd, dt {
 	font-size: 18px;
 	text-align: center;
 	border-radius: 5px;
+	margin-top: 13px;
 	background: #ffa800;
 	display: inline-block;
 	margin-left: 40px;
@@ -120,22 +131,23 @@ ul, ol, li, dl, dd, dt {
 }
 
 .search_float {
-	width: 880px;
+	width: 65%;
 	height: 50px;
 	background: #fff;
 	border: 1px solid #fff;
 	z-index: 50;
 	margin: 385px;
-	margin-left: 24%;
+	margin-left: 18%;
 	position: absolute;
 	float: left;
 }
 
 .float_input {
-	width: 880px;
-	height: 50px;
+	width: 98%;
+	height:50px;
 	line-height: 28px;
-	font-size: 16px;
+	padding-left: 17px;
+	font-size: 18px;
 	border: 0;
 	color: #666;
 	float: left;
@@ -156,7 +168,7 @@ ul, ol, li, dl, dd, dt {
 	float: left;
 	width: 85px;
 	height: 85px;
-	background: url("../../img/write_travels/img.png");
+	background: url("../../syste_img/img/write_travels/img.png");
 }
 
 .add_img {
@@ -188,18 +200,18 @@ ul, ol, li, dl, dd, dt {
 }
 
 .main_content {
-	width: 1015px;
+	width: 70%;
 	margin: auto;
 }
 
 .main_content_left {
-	width: 700px;
+	width: 70%;
 	margin: auto;
 	float: left;
 }
 
 .main_content_rigth {
-	width: 315px;
+	width: 28%;
 	margin: auto;
 	height: auto;
 	float: right;
@@ -222,11 +234,13 @@ ul, ol, li, dl, dd, dt {
 		STHeiti;
 	color: #666;
 }
+.div_div_tt{
+}
 
 .all_div {
 	width: auto;
 	height: 40px;
-	margin: 17px auto auto 20px;
+	margin: 17px auto auto 33px;
 	float: left;
 }
 
@@ -235,7 +249,7 @@ ul, ol, li, dl, dd, dt {
 	height: 30px;
 	margin: 17px auto auto 20px;
 	float: left;
-	background: url("../../img/write_travels/nn_sprite_v24.png") -148px
+	background: url("../../syste_img/img/write_travels/nn_sprite_v24.png") -148px
 		-28px no-repeat;
 }
 
@@ -243,7 +257,7 @@ ul, ol, li, dl, dd, dt {
 	width: 30px;
 	height: 31px;
 	float: left;
-	background: url("../../img/write_travels/nn_sprite_v24.png") -206px
+	background: url("../../syste_img/img/write_travels/nn_sprite_v24.png") -206px
 		-28px no-repeat;
 }
 
@@ -251,7 +265,7 @@ ul, ol, li, dl, dd, dt {
 	width: 32px;
 	height: 32px;
 	float: left;
-	background: url("../../img/write_travels/nn_sprite_v24.png") -176px
+	background: url("../../syste_img/img/write_travels/nn_sprite_v24.png") -176px
 		-28px no-repeat;
 }
 
@@ -259,7 +273,7 @@ ul, ol, li, dl, dd, dt {
 	width: 30px;
 	height: 30px;
 	float: left;
-	background: url("../../img/write_travels/nn_sprite_v24.png") -236px
+	background: url("../../syste_img/img/write_travels/nn_sprite_v24.png") -236px
 		-28px no-repeat;
 }
 
@@ -267,7 +281,7 @@ ul, ol, li, dl, dd, dt {
 	width: 30px;
 	height: 30px;
 	float: left;
-	background: url("../../img/write_travels/nn_sprite_v24.png") -265px
+	background: url("../../syste_img/img/write_travels/nn_sprite_v24.png") -265px
 		-28px no-repeat;
 }
 
@@ -275,7 +289,7 @@ ul, ol, li, dl, dd, dt {
 	width: 24px;
 	height: 27px;
 	float: left;
-	background: url("../../img/write_travels/nn_sprite_v24.png") -119px
+	background: url("../../syste_img/img/write_travels/nn_sprite_v24.png") -119px
 		-55px no-repeat;
 }
 
@@ -307,15 +321,15 @@ ul, ol, li, dl, dd, dt {
 }
 
 .music_two {
-	width: 100%;
-	height: 40px;
+	width: 97%;
+	height: 50px;
 	float: left;
 	background-color: #efefef;
 	border: 1px solid #efefef;
 }
 
 .music_two_font {
-	margin-top: 8px;
+	margin-top: 12px;
 	max-width: 320px;
 	overflow: hidden;
 	height: 26px;

@@ -6,7 +6,7 @@ import com.cn.qd.travel.core.Service;
 import com.cn.qd.travel.entity.MDTravelNote;
 
 /**
- * 游记处理服务
+ * 娓歌澶勭悊鏈嶅姟
  * @author liufu
  *
  * @param <TClass>
@@ -15,7 +15,7 @@ import com.cn.qd.travel.entity.MDTravelNote;
 public interface TravelService extends Service {
 
 	/**
-	 * 新增游记
+	 * 鏂板娓歌
 	 * 
 	 * @param T
 	 * @param map
@@ -24,7 +24,7 @@ public interface TravelService extends Service {
 	public boolean insertTravel(MDTravelNote T,Map<String, Object> map);
 	
 	/**
-	 * 修改游记
+	 * 淇敼娓歌
 	 * 
 	 * @param T
 	 * @param map
@@ -34,7 +34,7 @@ public interface TravelService extends Service {
 	
 	
 	/**
-	 * 删除游记
+	 * 鍒犻櫎娓歌
 	 * 
 	 * @param T
 	 * @param map

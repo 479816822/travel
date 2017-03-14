@@ -5,7 +5,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
- * 日期格式化统一处理
+ * 鏃ユ湡鏍煎紡鍖栫粺涓�澶勭悊
  * @author liufu
  *
  */
@@ -13,7 +13,7 @@ public class FormatDate {
 
 	
 	/**
-	 * 获取当前的系统时间格式为yyyy-MM-dd HH:mm:ss
+	 * 鑾峰彇褰撳墠鐨勭郴缁熸椂闂存牸寮忎负yyyy-MM-dd HH:mm:ss
 	 * @return
 	 */
 	public static String getFormatDateStr() {
@@ -26,7 +26,7 @@ public class FormatDate {
 	
 
 	/**
-	 * 获取当前的系统时间格式为yyyy-MM-dd
+	 * 鑾峰彇褰撳墠鐨勭郴缁熸椂闂存牸寮忎负yyyy-MM-dd
 	 * @return
 	 */
 	public static String getFormatDateStrs() {
@@ -38,7 +38,7 @@ public class FormatDate {
 	
 
 	/**
-	 * 传入时间转换格式为yyyy-MM-dd
+	 * 浼犲叆鏃堕棿杞崲鏍煎紡涓簓yyy-MM-dd
 	 * @return
 	 */
 	public static String ChangeFormatDateStrs(Date date) {
@@ -48,7 +48,7 @@ public class FormatDate {
 	
 
 	/**
-	 * 传入时间转换格式为yyyy-MM-dd HH:mm:ss
+	 * 浼犲叆鏃堕棿杞崲鏍煎紡涓簓yyy-MM-dd HH:mm:ss
 	 * @return
 	 */
 	public static String ChangeFormatDateStr(Date date) {
@@ -57,7 +57,7 @@ public class FormatDate {
 	}
 	
 	/**
-	 * 获取传入时间的当前年
+	 * 鑾峰彇浼犲叆鏃堕棿鐨勫綋鍓嶅勾
 	 * @return
 	 */
 	public static String getYear(Date date) {
@@ -73,7 +73,7 @@ public class FormatDate {
 		return day;
 	}
 	/**
-	 * 获取传入时间的当前月
+	 * 鑾峰彇浼犲叆鏃堕棿鐨勫綋鍓嶆湀
 	 * @return
 	 */
 	public static String getMonth(Date date) {
@@ -89,7 +89,7 @@ public class FormatDate {
 		return day;
 	}
 	/**
-	 * 获取传入时间的当前天
+	 * 鑾峰彇浼犲叆鏃堕棿鐨勫綋鍓嶅ぉ
 	 * @return
 	 */
 	public static String getDay(Date date) {

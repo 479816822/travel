@@ -12,7 +12,7 @@ import com.cn.qd.travel.util.Page;
 import com.cn.qd.travel.util.PageFinish;
 
 /**
- * ÓÎ¼Ç·şÎñ´¦ÀíÀà
+ * æ¸¸è®°æœåŠ¡å¤„ç†ç±»
  * 
  * @author liufu
  *
@@ -46,7 +46,7 @@ public class TravelServiceImpl implements TravelService {
 	}
 
 	/**
-	 * ²éÑ¯ËùÓĞ ²ÉÓÃ»º´æ
+	 * æŸ¥è¯¢æ‰€æœ‰ é‡‡ç”¨ç¼“å­˜
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
@@ -59,7 +59,7 @@ public class TravelServiceImpl implements TravelService {
 	}
 
 	/**
-	 * ĞÂÔöÓÎ¼Ç
+	 * æ–°å¢æ¸¸è®°
 	 */
 	@Override
 	public boolean insertTravel(MDTravelNote trNote, Map<String, Object> map) {

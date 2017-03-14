@@ -4,25 +4,25 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
 /**
- * ×Ô¶¨ÒåµÄÈÕÖ¾,´æ´¢ÔÚWEB-INFµÄmylogÎÄ¼ş¼ĞÖĞ
+ * è‡ªå®šä¹‰çš„æ—¥å¿—,å­˜å‚¨åœ¨WEB-INFçš„mylogæ–‡ä»¶å¤¹ä¸­
  * 
  * @author liufu
  *
  */
 public class Log {
 	public Logger logger;
-	// ½«LogÀà·â×°Îªµ¥ÀıÄ£Ê½
+	// å°†Logç±»å°è£…ä¸ºå•ä¾‹æ¨¡å¼
 	private static Log log;
 
-	// ¹¹Ôìº¯Êı£¬ÓÃÓÚ³õÊ¼»¯LoggerÅäÖÃĞèÒªµÄÊôĞÔ
+	// æ„é€ å‡½æ•°ï¼Œç”¨äºåˆå§‹åŒ–Loggeré…ç½®éœ€è¦çš„å±æ€§
 	private Log() {
-		// »ñµÃµ±Ç°Ä¿Â¼Â·¾¶
+		// è·å¾—å½“å‰ç›®å½•è·¯å¾„
 		String filePath = this.getClass().getResource("/").getPath();
-		// ÕÒµ½log4j.propertiesÅäÖÃÎÄ¼şËùÔÚµÄÄ¿Â¼(ÒÑ¾­´´½¨ºÃ)
+		// æ‰¾åˆ°log4j.propertiesé…ç½®æ–‡ä»¶æ‰€åœ¨çš„ç›®å½•(å·²ç»åˆ›å»ºå¥½)
 		filePath = filePath.substring(1).replace("bin", "src");
-		// »ñµÃÈÕÖ¾ÀàloggerµÄÊµÀı
+		// è·å¾—æ—¥å¿—ç±»loggerçš„å®ä¾‹
 		logger = Logger.getLogger(this.getClass());
-		// loggerËùĞèµÄÅäÖÃÎÄ¼şÂ·¾¶
+		// loggeræ‰€éœ€çš„é…ç½®æ–‡ä»¶è·¯å¾„
 		PropertyConfigurator.configure(filePath + "log4j.properties");
 	}
 

@@ -2,28 +2,28 @@ package com.cn.qd.travel.constant;
 
 
 /**
- * ÏµÍ³³£ÓÃ³£Á¿
+ * ç³»ç»Ÿå¸¸ç”¨å¸¸é‡
  * @author liufu
  *
  */
 public class SystemConstant {
 	
 	/**
-	 * Ö÷½çÃæµÄÓÎ¼Ç·ÖÒ³ÌõÊı-------------------ÌõÊı
+	 * ä¸»ç•Œé¢çš„æ¸¸è®°åˆ†é¡µæ¡æ•°-------------------æ¡æ•°
 	 */
 	public static final int INDEX_TRAVEL_PAGE_SIZE=20;
 	
 	/**
-	 * Ö÷½çÃæµÄÓÎ¼ÇµÄ»º´æÃû×Ö-------------------»º´æÃû×Ö
+	 * ä¸»ç•Œé¢çš„æ¸¸è®°çš„ç¼“å­˜åå­—-------------------ç¼“å­˜åå­—
 	 */
 	public static final String INDEX_TRAVEL_CACHE_NAME="indexTravel";
 	
 	/**
-	 * ÓÃ»§Ö÷½çÃæÏÔÊ¾ÓÎ¼Ç---------------------ÌõÊı
+	 * ç”¨æˆ·ä¸»ç•Œé¢æ˜¾ç¤ºæ¸¸è®°---------------------æ¡æ•°
 	 */
 	public static final int MAIN_TRAVEL_PAGE_SIZE=10;
 	/**
-	 * ÓÃ»§Ö÷½çÃæµÄÓÎ¼ÇµÄ»º´æÃû×Ö-------------------»º´æÃû×Ö
+	 * ç”¨æˆ·ä¸»ç•Œé¢çš„æ¸¸è®°çš„ç¼“å­˜åå­—-------------------ç¼“å­˜åå­—
 	 */
 	public static final String MAIN_TRAVEL_CACHE_NAME="mainTravel";
 

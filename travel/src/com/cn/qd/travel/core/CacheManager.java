@@ -5,9 +5,9 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 /**
- * ÊµÏÖ»º´æÊı¾İ
- * Ò»¼¶ÊÇ¸ù»º´æ
- * ¶ş¼¶ÊÇÊµ¼ÊµÄ»º´æ
+ * å®ç°ç¼“å­˜æ•°æ®
+ * ä¸€çº§æ˜¯æ ¹ç¼“å­˜
+ * äºŒçº§æ˜¯å®é™…çš„ç¼“å­˜
  * 
  * @author liufu
  *
@@ -16,14 +16,14 @@ public class CacheManager {
 	private static HashMap<String, Object> cacheMap = new HashMap<String, Object>();
 
 	/**
-	 * µ¥ÊµÀı¹¹Ôì·½·¨
+	 * å•å®ä¾‹æ„é€ æ–¹æ³•
 	 */
 	private CacheManager() {
 		super();
 	}
 
 	/**
-	 * »ñÈ¡²¼¶ûÖµµÄ»º´æ
+	 * è·å–å¸ƒå°”å€¼çš„ç¼“å­˜
 	 * 
 	 * @param key
 	 * @return
@@ -37,7 +37,7 @@ public class CacheManager {
 	}
 
 	/**
-	 * »ñÈ¡³¤ÕûĞÍµÄ»º´æ
+	 * è·å–é•¿æ•´å‹çš„ç¼“å­˜
 	 * 
 	 * @param key
 	 * @return
@@ -51,7 +51,7 @@ public class CacheManager {
 	}
 
 	/**
-	 * ÉèÖÃ²¼¶ûÖµµÄ»º´æ
+	 * è®¾ç½®å¸ƒå°”å€¼çš„ç¼“å­˜
 	 * 
 	 * @param key
 	 * @param flag
@@ -67,7 +67,7 @@ public class CacheManager {
 	}
 
 	/**
-	 * ÉèÖÃ ³¤ÕûĞÍµÄ»º´æ
+	 * è®¾ç½® é•¿æ•´å‹çš„ç¼“å­˜
 	 * 
 	 * @param key
 	 * @param flag
@@ -83,7 +83,7 @@ public class CacheManager {
 	}
 
 	/**
-	 * »ñÈ¡Ö¸¶¨Ãû×ÖµÄ»º´æ»º´æ
+	 * è·å–æŒ‡å®šåå­—çš„ç¼“å­˜ç¼“å­˜
 	 * 
 	 * @param key
 	 * @return
@@ -93,7 +93,7 @@ public class CacheManager {
 	}
 
 	/**
-	 * ÅĞ¶ÏÊÇ·ñ´æÔÚÒ»¸ö»º´æ
+	 * åˆ¤æ–­æ˜¯å¦å­˜åœ¨ä¸€ä¸ªç¼“å­˜
 	 * 
 	 * @param key
 	 * @return
@@ -103,14 +103,14 @@ public class CacheManager {
 	}
 
 	/**
-	 * Çå³ıËùÓĞ»º´æ
+	 * æ¸…é™¤æ‰€æœ‰ç¼“å­˜
 	 */
 	public synchronized static void clearAll() {
 		cacheMap.clear();
 	}
 
 	/**
-	 * Çå³ıÄ³Ò»ÀàÌØ¶¨»º´æ,Í¨¹ı±éÀúHASHMAPÏÂµÄËùÓĞ¶ÔÏó£¬À´ÅĞ¶ÏËüµÄKEYÓë´«ÈëµÄTYPEÊÇ·ñÆ¥Åä
+	 * æ¸…é™¤æŸä¸€ç±»ç‰¹å®šç¼“å­˜,é€šè¿‡éå†HASHMAPä¸‹çš„æ‰€æœ‰å¯¹è±¡ï¼Œæ¥åˆ¤æ–­å®ƒçš„KEYä¸ä¼ å…¥çš„TYPEæ˜¯å¦åŒ¹é…
 	 * 
 	 * @param type
 	 */
@@ -133,7 +133,7 @@ public class CacheManager {
 	}
 
 	/**
-	 * Çå³ıÖ¸¶¨µÄ»º´æ
+	 * æ¸…é™¤æŒ‡å®šçš„ç¼“å­˜
 	 * 
 	 * @param key
 	 */
@@ -142,7 +142,7 @@ public class CacheManager {
 	}
 
 	/**
-	 * ÔØÈë»º´æ
+	 * è½½å…¥ç¼“å­˜
 	 * 
 	 * @param key
 	 * @param obj
@@ -152,7 +152,7 @@ public class CacheManager {
 	}
 
 	/**
-	 * »ñÈ¡»º´æĞÅÏ¢
+	 * è·å–ç¼“å­˜ä¿¡æ¯
 	 * 
 	 * @param key
 	 * @return
@@ -161,7 +161,7 @@ public class CacheManager {
 
 		if (hasCache(key)) {
 			Cache cache = getCache(key);
-			if (cacheExpired(cache)) { // µ÷ÓÃÅĞ¶ÏÊÇ·ñÖÕÖ¹·½·¨
+			if (cacheExpired(cache)) { // è°ƒç”¨åˆ¤æ–­æ˜¯å¦ç»ˆæ­¢æ–¹æ³•
 				cache.setExpired(true);
 			}
 			return cache;
@@ -170,7 +170,7 @@ public class CacheManager {
 	}
 
 	/**
-	 * ÔØÈë»º´æĞÅÏ¢
+	 * è½½å…¥ç¼“å­˜ä¿¡æ¯
 	 * 
 	 * @param key
 	 * @param obj
@@ -180,14 +180,14 @@ public class CacheManager {
 	public static void putCacheInfo(String key, Cache obj, long dt, boolean expired) {
 		Cache cache = new Cache();
 		cache.setKey(key);
-		cache.setTimeOut(dt + System.currentTimeMillis()); // ÉèÖÃ¶à¾Ãºó¸üĞÂ»º´æ
+		cache.setTimeOut(dt + System.currentTimeMillis()); // è®¾ç½®å¤šä¹…åæ›´æ–°ç¼“å­˜
 		cache.setValue(obj);
-		cache.setExpired(expired); // »º´æÄ¬ÈÏÔØÈëÊ±£¬ÖÕÖ¹×´Ì¬ÎªFALSE
+		cache.setExpired(expired); // ç¼“å­˜é»˜è®¤è½½å…¥æ—¶ï¼Œç»ˆæ­¢çŠ¶æ€ä¸ºFALSE
 		cacheMap.put(key, cache);
 	}
 
 	/**
-	 * ÖØĞ´ÔØÈë»º´æĞÅÏ¢·½·¨
+	 * é‡å†™è½½å…¥ç¼“å­˜ä¿¡æ¯æ–¹æ³•
 	 * 
 	 * @param key
 	 * @param obj
@@ -203,26 +203,26 @@ public class CacheManager {
 	}
 
 	/**
-	 * ÅĞ¶Ï»º´æÊÇ·ñÖÕÖ¹
+	 * åˆ¤æ–­ç¼“å­˜æ˜¯å¦ç»ˆæ­¢
 	 * 
 	 * @param cache
 	 * @return
 	 */
 	public static boolean cacheExpired(Cache cache) {
-		if (null == cache) { // ´«ÈëµÄ»º´æ²»´æÔÚ
+		if (null == cache) { // ä¼ å…¥çš„ç¼“å­˜ä¸å­˜åœ¨
 			return false;
 		}
-		long nowDt = System.currentTimeMillis(); // ÏµÍ³µ±Ç°µÄºÁÃëÊı
-		long cacheDt = cache.getTimeOut(); // »º´æÄÚµÄ¹ıÆÚºÁÃëÊı
-		if (cacheDt >= nowDt && cacheDt <= 0) { // ¹ıÆÚÊ±¼äĞ¡ÓÚµÈÓÚÁãÊ±,»òÕß¹ıÆÚÊ±¼ä´óÓÚµ±Ç°Ê±¼äÊ±£¬ÔòÎªFALSE
+		long nowDt = System.currentTimeMillis(); // ç³»ç»Ÿå½“å‰çš„æ¯«ç§’æ•°
+		long cacheDt = cache.getTimeOut(); // ç¼“å­˜å†…çš„è¿‡æœŸæ¯«ç§’æ•°
+		if (cacheDt >= nowDt && cacheDt <= 0) { // è¿‡æœŸæ—¶é—´å°äºç­‰äºé›¶æ—¶,æˆ–è€…è¿‡æœŸæ—¶é—´å¤§äºå½“å‰æ—¶é—´æ—¶ï¼Œåˆ™ä¸ºFALSE
 			return false;
-		} else { // ´óÓÚ¹ıÆÚÊ±¼ä ¼´¹ıÆÚ
+		} else { // å¤§äºè¿‡æœŸæ—¶é—´ å³è¿‡æœŸ
 			return true;
 		}
 	}
 
 	/**
-	 * »ñÈ¡»º´æÖĞµÄ´óĞ¡
+	 * è·å–ç¼“å­˜ä¸­çš„å¤§å°
 	 * 
 	 * @return
 	 */
@@ -231,7 +231,7 @@ public class CacheManager {
 	}
 
 	/**
-	 * »ñÈ¡Ö¸¶¨µÄÀàĞÍµÄ´óĞ¡
+	 * è·å–æŒ‡å®šçš„ç±»å‹çš„å¤§å°
 	 * 
 	 * @param type
 	 * @return
@@ -257,7 +257,7 @@ public class CacheManager {
 	}
 
 	/**
-	 * »ñÈ¡»º´æ¶ÔÏóÖĞµÄËùÓĞ¼üÖµÃû³Æ
+	 * è·å–ç¼“å­˜å¯¹è±¡ä¸­çš„æ‰€æœ‰é”®å€¼åç§°
 	 * 
 	 * @return
 	 */
@@ -277,7 +277,7 @@ public class CacheManager {
 	}
 
 	/**
-	 * »ñÈ¡»º´æ¶ÔÏóÖĞÖ¸¶¨ÀàĞÍ µÄ¼üÖµÃû³Æ
+	 * è·å–ç¼“å­˜å¯¹è±¡ä¸­æŒ‡å®šç±»å‹ çš„é”®å€¼åç§°
 	 * 
 	 * @param type
 	 * @return

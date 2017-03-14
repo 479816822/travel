@@ -8,7 +8,7 @@ import com.cn.qd.travel.entity.MdUser;
 public interface MdUserMapper {
 	
 	/**
-	 * ¶àÌõ¼şÉ¾³ıÉ¾³ı
+	 * å¤šæ¡ä»¶åˆ é™¤åˆ é™¤
 	 * @param mdUserRecid
 	 * @return
 	 */
@@ -16,28 +16,28 @@ public interface MdUserMapper {
 	int deleteByMore(Map map);
 	
 	/**
-	 * Ö÷¼üÉ¾³ı
+	 * ä¸»é”®åˆ é™¤
 	 * @param mdUserRecid
 	 * @return
 	 */
     int deleteByPrimaryKey(String mdUserRecid);
     
     /**
-     * Êı¾İ²åÈë
+     * æ•°æ®æ’å…¥
      * @param record
      * @return
      */
     int insert(MdUser record);
 
     /**
-     * Êı¾İÓĞÌõ¼şµÄ²åÈë
+     * æ•°æ®æœ‰æ¡ä»¶çš„æ’å…¥
      * @param record
      * @return
      */
     int insertSelective(MdUser record);
 
     /**
-     * Êı¾İ²éÑ¯,µ¥ĞĞÊı¾İ²éÑ¯
+     * æ•°æ®æŸ¥è¯¢,å•è¡Œæ•°æ®æŸ¥è¯¢
      * @param mdUserRecid
      * @return
      */
@@ -45,14 +45,14 @@ public interface MdUserMapper {
     
     
     /**
-     * Êı¾İ²éÑ¯,µ¥ĞĞÊı¾İ²éÑ¯
+     * æ•°æ®æŸ¥è¯¢,å•è¡Œæ•°æ®æŸ¥è¯¢
      * @param mdUserRecid
      * @return
      */
     MdUser selectByPrimaryKey(String mdUserRecid);
     
     /**
-     * Êı¾İ²éÑ¯,¶àĞĞĞĞÊı¾İ²éÑ¯
+     * æ•°æ®æŸ¥è¯¢,å¤šè¡Œè¡Œæ•°æ®æŸ¥è¯¢
      * @param mdUserRecid
      * @return
      */
@@ -60,7 +60,7 @@ public interface MdUserMapper {
     
     
     /**
-     * Êı¾İ²éÑ¯,¶àĞĞĞĞÊı¾İ²éÑ¯
+     * æ•°æ®æŸ¥è¯¢,å¤šè¡Œè¡Œæ•°æ®æŸ¥è¯¢
      * @param mdUserRecid
      * @return
      */
@@ -69,27 +69,27 @@ public interface MdUserMapper {
     
     
     /**
-     * Êı¾İ¸üĞÂ
+     * æ•°æ®æ›´æ–°
      * @param mdUserRecid
      * @return
      */
     int updateByPrimaryKeySelective(MdUser record);
 
     /**
-     * Êı¾İ¸üĞÂ
+     * æ•°æ®æ›´æ–°
      * @param mdUserRecid
      * @return
      */
     int updateByPrimaryKeyWithBLOBs(MdUser record);
     /**
-     * Êı¾İ¸üĞÂ
+     * æ•°æ®æ›´æ–°
      * @param mdUserRecid
      * @return
      */
     int updateByPrimaryKey(MdUser record);
     
     /**
-     * Êı¾İ¸üĞÂ
+     * æ•°æ®æ›´æ–°
      * @param mdUserRecid
      * @return
      */

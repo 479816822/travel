@@ -1,7 +1,7 @@
 package com.cn.qd.travel.util;
 
 /**
- * ·ÖÒ³Àà
+ * åˆ†é¡µç±»
  * 
  * @author liufu
  *
@@ -9,38 +9,38 @@ package com.cn.qd.travel.util;
 
 public class Page {
 	/**
-	 * µ±Ç°Ò³
+	 * å½“å‰é¡µ
 	 */
 	private int pageCurrent;
 	/**
-	 * ×ÜÒ³Êı
+	 * æ€»é¡µæ•°
 	 */
 	private int pageCount;
 	/**
-	 * ÏÂÒ»Ò³
+	 * ä¸‹ä¸€é¡µ
 	 */
 	private int nextPage;
 	/**
-	 * ÉÏÒ»Ò³
+	 * ä¸Šä¸€é¡µ
 	 */
 	private int prePage;
 	/**
-	 * Ã¿Ò³´óĞ¡
+	 * æ¯é¡µå¤§å°
 	 */
 	private int pageSize;
 	
 	/**
-	 * Êı¾İ»º´æÃû×Ö
+	 * æ•°æ®ç¼“å­˜åå­—
 	 */
 	private String cache;
 	
 	/**
-	 * Êı¾İ×ÜÊı
+	 * æ•°æ®æ€»æ•°
 	 */
 	private int dataCount;
 
 	/**
-	 * ³õÊ¼»¯·ÖÒ³¿Ø¼ş
+	 * åˆå§‹åŒ–åˆ†é¡µæ§ä»¶
 	 * 
 	 * @param pageCount
 	 * @param pageSize

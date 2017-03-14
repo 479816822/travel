@@ -7,8 +7,8 @@ import com.cn.qd.travel.core.Service;
 import com.cn.qd.travel.entity.MdUser;
 
 /**
- * ÓÃ»§·şÎñ½Ó¿Ú£¬ÓÃ»§µÄ´¦Àí±ØĞëÊµÏÖ¸Ã½Ó¿Ú,¸Ã½Ó¿ÚÍ³Ò»¼Ì³ĞÁËService½Ó¿Ú²Ù×÷Êı¾İ¿â 1.Ìá¹©ÓÃ»§µÄÔöÉ¾¸Ä²é 2.²éÑ¯Ìá¹©µ¥ĞĞ·µ»Ø²éÑ¯¡¢¶àĞĞ·µ»Ø²éÑ¯
- * 3.¾ßÌåÊµÏÖÊµÏÖ,ÖØĞ´¾ßÌåµÄ·½·¨ 4.TClass²ÉÓÃ·ºĞÍ ×¢£º¾ßÌåµÄ·şÎñÓĞÆäÓàµÄĞèÒª,ÔÙ×ÔĞĞÌí¼Ó²¹³ä
+ * ç”¨æˆ·æœåŠ¡æ¥å£ï¼Œç”¨æˆ·çš„å¤„ç†å¿…é¡»å®ç°è¯¥æ¥å£,è¯¥æ¥å£ç»Ÿä¸€ç»§æ‰¿äº†Serviceæ¥å£æ“ä½œæ•°æ®åº“ 1.æä¾›ç”¨æˆ·çš„å¢åˆ æ”¹æŸ¥ 2.æŸ¥è¯¢æä¾›å•è¡Œè¿”å›æŸ¥è¯¢ã€å¤šè¡Œè¿”å›æŸ¥è¯¢
+ * 3.å…·ä½“å®ç°å®ç°,é‡å†™å…·ä½“çš„æ–¹æ³• 4.TClassé‡‡ç”¨æ³›å‹ æ³¨ï¼šå…·ä½“çš„æœåŠ¡æœ‰å…¶ä½™çš„éœ€è¦,å†è‡ªè¡Œæ·»åŠ è¡¥å……
  * 
  * @author liufu
  *
@@ -16,7 +16,7 @@ import com.cn.qd.travel.entity.MdUser;
 public interface UserService extends Service {
 
 	/**
-	 * ÓÃ»§×¢²á,×¢²á³É¹¦·µ»Øtrue ·ñÔòfalse
+	 * ç”¨æˆ·æ³¨å†Œ,æ³¨å†ŒæˆåŠŸè¿”å›true å¦åˆ™false
 	 * 
 	 * @param T
 	 * @param map
@@ -25,7 +25,7 @@ public interface UserService extends Service {
 	public boolean insertRegister(MdUser T, Map<String, Object> map);
 
 	/**
-	 * ÓÃ»§µÇÂ½,µÇÂ½³É¹¦·µ»Øtrue ·ñÔòfalse
+	 * ç”¨æˆ·ç™»é™†,ç™»é™†æˆåŠŸè¿”å›true å¦åˆ™false
 	 * 
 	 * @param T
 	 * @param map
@@ -35,7 +35,7 @@ public interface UserService extends Service {
 	public boolean getLogin(MdUser T, Map map);
 
 	/**
-	 * ÓÃ»§ĞÅÏ¢ĞŞ¸Ä,sqlĞ´³ÉÍ¨ÓÃ ²ÉÓÃmap´«Öµ
+	 * ç”¨æˆ·ä¿¡æ¯ä¿®æ”¹,sqlå†™æˆé€šç”¨ é‡‡ç”¨mapä¼ å€¼
 	 * 
 	 * @param t
 	 * @param map
@@ -44,7 +44,7 @@ public interface UserService extends Service {
 	public int updateUser(MdUser t, Map<String, Object> map);
 
 	/**
-	 * ÓÃ»§É¾³ı ²ÉÓÃmap´«Öµ
+	 * ç”¨æˆ·åˆ é™¤ é‡‡ç”¨mapä¼ å€¼
 	 * 
 	 * @param t
 	 * @param map
@@ -53,7 +53,7 @@ public interface UserService extends Service {
 	public int deleteUser(MdUser t, Map<String, Object> map);
 
 	/**
-	 * »ñÈ¡ÓÃ»§µÄ½ÇÉ« ²ÉÓÃmap´«Öµ
+	 * è·å–ç”¨æˆ·çš„è§’è‰² é‡‡ç”¨mapä¼ å€¼
 	 * 
 	 * @param t
 	 * @param map
@@ -63,7 +63,7 @@ public interface UserService extends Service {
 	public ArrayList<Object> getUserRole(MdUser t, Map map);
 
 	/**
-	 * »ñÈ¡ÓÃ»§µÄÈ¨ÏŞ ²ÉÓÃmap´«Öµ
+	 * è·å–ç”¨æˆ·çš„æƒé™ é‡‡ç”¨mapä¼ å€¼
 	 * 
 	 * @param t
 	 * @param map
@@ -72,7 +72,7 @@ public interface UserService extends Service {
 	public ArrayList<Object> getUserAuthority(MdUser t, Map<String, Object> map);
 	
 	/**
-	 * ÓÃ»§ÊÇ·ñÓĞÄ³½ÇÉ«
+	 * ç”¨æˆ·æ˜¯å¦æœ‰æŸè§’è‰²
 	 * 
 	 * @param t
 	 * @param map
@@ -81,7 +81,7 @@ public interface UserService extends Service {
 	public boolean hasRole(MdUser t, Map<String, Object> map);
 
 	/**
-	 * »ñÈ¡ÓÃ»§µÄÈ¨ÏŞ ²ÉÓÃmap´«Öµ
+	 * è·å–ç”¨æˆ·çš„æƒé™ é‡‡ç”¨mapä¼ å€¼
 	 * 
 	 * @param t
 	 * @param map

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 /**
- * ËùÓĞ·şÎñ½Ó¿Ú,Í³Ò»ÊµÏÖ¶ÔÊı¾İ¿â½øĞĞ²Ù×÷
+ * æ‰€æœ‰æœåŠ¡æ¥å£,ç»Ÿä¸€å®ç°å¯¹æ•°æ®åº“è¿›è¡Œæ“ä½œ
  * @author liufu
  *
  */
@@ -12,8 +12,8 @@ public interface Service{
 
 	
 	/**
-	 * Í¨¹ı´«ÈëµÄÀà,×Ö¶Î½øĞĞÊı¾İÔö¼Ó
-	 * ÆäÓàµÄ×Ö¶Î²ÉÓÃmap´«Öµ
+	 * é€šè¿‡ä¼ å…¥çš„ç±»,å­—æ®µè¿›è¡Œæ•°æ®å¢åŠ 
+	 * å…¶ä½™çš„å­—æ®µé‡‡ç”¨mapä¼ å€¼
 	 * @param t
 	 * @param map
 	 * @return
@@ -21,8 +21,8 @@ public interface Service{
 	public int insert(Object t,Map<String, Object> map);
 	
 	/**
-	 * Í¨¹ı´«ÈëµÄÀà,½øĞĞÊı¾İĞŞ¸Ä
-	 * ²ÉÓÃmap´«Öµ
+	 * é€šè¿‡ä¼ å…¥çš„ç±»,è¿›è¡Œæ•°æ®ä¿®æ”¹
+	 * é‡‡ç”¨mapä¼ å€¼
 	 * @param t
 	 * @param map
 	 * @return
@@ -30,8 +30,8 @@ public interface Service{
 	public int update(Object t,Map<String, Object> map);
 	
 	/**
-	 * Í¨¹ı´«ÈëµÄÀà,½øĞĞÊı¾İÉ¾³ı
-	 * ²ÉÓÃmap´«Öµ
+	 * é€šè¿‡ä¼ å…¥çš„ç±»,è¿›è¡Œæ•°æ®åˆ é™¤
+	 * é‡‡ç”¨mapä¼ å€¼
 	 * @param t
 	 * @param map
 	 * @return
@@ -40,8 +40,8 @@ public interface Service{
 	
 	
 	/**
-	 * Í¨¹ı´«ÈëµÄÀà,²éÑ¯µ±ĞĞµÄÊı¾İ
-	 * ²ÉÓÃmap´«Öµ
+	 * é€šè¿‡ä¼ å…¥çš„ç±»,æŸ¥è¯¢å½“è¡Œçš„æ•°æ®
+	 * é‡‡ç”¨mapä¼ å€¼
 	 * @param t
 	 * @param map
 	 * @return
@@ -49,8 +49,8 @@ public interface Service{
 	public ArrayList<Object> oneResultProvider(Object t,Map<String, Object> map);
 	
 	/**
-	 * Í¨¹ı´«ÈëµÄÀà,²éÑ¯¶àĞĞµÄÊı¾İ
-	 * ²ÉÓÃmap´«Öµ
+	 * é€šè¿‡ä¼ å…¥çš„ç±»,æŸ¥è¯¢å¤šè¡Œçš„æ•°æ®
+	 * é‡‡ç”¨mapä¼ å€¼
 	 * @param t
 	 * @param map
 	 * @return

@@ -6,11 +6,8 @@
 <title>write travels</title>
 <link href="../../css/write_travels/writertravels.css" rel="stylesheet"
 	type="text/css">
-<link href="../../css/write_travels/writer_header_css.css" rel="stylesheet"
-	type="text/css">
-<link rel="stylesheet" href="../../css/write_travels/footer1.css">
 <!-- 引用图片上传的插件的js和css -->
-<script type="text/javascript" src="../../js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="../../js/jquery-3.1.0.min.js"></script>
 
 <link rel="stylesheet"
 	href="publicity/zyupload/skins/zyupload-1.0.0.min.css " type="text/css">
@@ -192,6 +189,11 @@
 				}
 			});
 
+			$(".l_div_one").click(function(){
+				alert(ddd);
+				this.next().hide();
+			});
+
 		});
 
 		var $mode4 = $(".img111");
@@ -206,28 +208,19 @@
 
 </head>
 <body>
-
-
-
 	<div class="header">
 		<div class="header1">
-		<iframe src="MainHeader.html" frameborder="0" scrolling="no" marginheight="0"
+		<iframe src="VisitHead.html" frameborder="0" scrolling="no" marginheight="0"
 				marginwidth="0" style="margin: 0px auto;"></iframe>
 	</div>
 	</div>
-
-
-
-
-
-
 
 
 	<div class="all_live">
 
 		<div class="all_live_one">
 			<a>
-				<div class="all_live_one1">游记完成度 20%</div>
+				<div class="all_live_one1">游记完成度------------------- 20%</div>
 			</a>
 		</div>
 
@@ -237,7 +230,7 @@
 		<!-- 这是上传图片的div不上传时是隐藏着 -->
 
 		<div class="all_live_two">
-			<span>完成度详情</span> <span>&nbsp; 游记常见问题与解答</span>
+			<span class="all_live_two_one">完成度详情&nbsp;&nbsp;</span> <span class="all_live_two_two"> 游记常见问题与解答</span>
 
 		</div>
 		<div class="all_live_three">
@@ -245,6 +238,7 @@
 			<div class="all_live_three_two">预览</div>
 		</div>
 	</div>
+
 	<div class="mian">
 
 		<div class="img_float">
@@ -265,7 +259,7 @@
 		</div>
 		<!-- 封面的图片 -->
 		<div class="main_header">
-			<img src="img/write_travels/page_bg.jpg" class="main_header">
+			<img src="../../syste_img/img/write_travels/page_bg.jpg" class="main_header">
 		</div>
 		<!--*******************88浮动的标题框************************88-->
 		<!--*******************88浮动的标题框************************88-->
@@ -277,9 +271,13 @@
 				<div class="content_1010">
 					<!-- 这是添加内容的选项实现图片和段落和文字内容 -->
 					<div class="content_tool">
+						<div l_div_one>
 						<a>
 							<div class="l_div_one"></div>
-						</a> <a class="add_the_content">
+						</a>
+						</div>
+						<div class="div_div_tt">
+						<a class="add_the_content">
 							<div class="all_div">
 								<div class="l_div_one1"></div>
 								<span class="all_font"> 添加文字 </span>
@@ -299,14 +297,10 @@
 								<div class="l_div_one4"></div>
 								<span class="all_font"> 添加段落标题 </span>
 							</div>
-						</a> <a>
-							<div class="all_div">
-								<div class="l_div_one5"></div>
-							</div>
 						</a>
+						</div>
 					</div>
 					<!-- 这里是展示数据的地方 -->
-
 				</div>
 
 
@@ -336,25 +330,15 @@
 					<ul class="ul_rigth1">
 					</ul>
 				</div>
-
 			</div>
-
 		</div>
-
-
 	</div>
-
-
-
-
 	<div id="footer">
 		<div class="footer1">
 			<iframe src="IndexFooter.html" frameborder="0" scrolling="no" marginheight="0"
 					marginwidth="0" style="margin: 0px auto;"></iframe>
 		</div>
 	</div>
-
-
 
 	<div class='add_word_v2 hide_div'>
 		<textarea class='_j_edittxtarea' placeholder='在这儿添加游记文字......'></textarea>
@@ -376,8 +360,5 @@
 			<a class="btn_big">确定</a>
 		</div>
 	</div>
-
-
-
 </body>
 </html>
