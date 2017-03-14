@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -90,7 +93,7 @@
     <div class="mfw-header">
         <div class="header-wrap">
             <div class="logo">
-                <a class="mfw-logo" title="爱旅 U" href="VisitPage">爱旅 U</a>
+                <a class="mfw-logo" title="爱旅 U" href="VisitPage"></a>
             </div>
             <ul class="nav" data-cs-t="headnav" id="_j_head_nav">
                 <li class="index mainNav"><a href="">首页</a></li>

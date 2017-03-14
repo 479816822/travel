@@ -205,13 +205,14 @@ ul, ol, li, dl, dd, dt {
 }
 
 .main_content_left {
-	width: 70%;
+	width: 72%;
 	margin: auto;
+	margin-left: 20px;
 	float: left;
 }
 
 .main_content_rigth {
-	width: 28%;
+	width: 24%;
 	margin: auto;
 	height: auto;
 	float: right;
@@ -220,6 +221,10 @@ ul, ol, li, dl, dd, dt {
 .content_1010 {
 	width: 100%;
 	min-height: 400px;
+}
+
+.div_div_ttt{
+	display: none;
 }
 
 .content_tool {
@@ -234,8 +239,7 @@ ul, ol, li, dl, dd, dt {
 		STHeiti;
 	color: #666;
 }
-.div_div_tt{
-}
+.div_div_tt{}
 
 .all_div {
 	width: auto;
@@ -521,6 +525,7 @@ add_article {
 	line-height: 20px;
 	background-color: #efefef;
 	border: 1px solid #efefef;
+	text-align: center;
 	color: #666;
 	font-size: 16px;
 }

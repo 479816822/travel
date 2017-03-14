@@ -3,7 +3,7 @@ package com.cn.qd.travel.service;
 import java.util.ArrayList;
 import java.util.Map;
 
-import com.cn.qd.travel.core.Service;
+import com.cn.qd.travel.core.BaseService;
 import com.cn.qd.travel.entity.MdUser;
 
 /**
@@ -13,7 +13,7 @@ import com.cn.qd.travel.entity.MdUser;
  * @author liufu
  *
  */
-public interface UserService extends Service {
+public interface UserService extends BaseService {
 
 	/**
 	 * 用户注册,注册成功返回true 否则false

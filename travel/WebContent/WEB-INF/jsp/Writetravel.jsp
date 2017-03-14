@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,9 +13,9 @@
 <script type="text/javascript" src="../../js/jquery-3.1.0.min.js"></script>
 
 <link rel="stylesheet"
-	href="publicity/zyupload/skins/zyupload-1.0.0.min.css " type="text/css">
+	href="../../pluing/publicity/zyupload/skins/zyupload-1.0.0.min.css " type="text/css">
 <script type="text/javascript"
-	src="publicity/zyupload/zyupload-1.0.0.min.js"></script>
+	src="../../pluing/publicity/zyupload/zyupload-1.0.0.min.js"></script>
 
 <!-- 初始化文件上传 -->
 <script type="text/javascript">
@@ -89,17 +92,32 @@
 			var $newnode = $model1.clone(true);
 			$newnode.removeClass("hide_div");
 			fun1($(".main_header"))
-			$(this).parent().after($newnode);
+			$(this).parent().parent().after($newnode);
+		})
+
+
+
+		//隐藏
+		$(".click_cl").click(function() {
+			if($(this).next().hasClass("div_div_ttt")){
+				$(this).next().show();
+				$(this).next().addClass("div_div_tt");
+				$(this).next().removeClass("div_div_ttt");
+			}else if($(this).next().hasClass("div_div_tt")){
+				$(this).next().addClass("div_div_ttt");
+				$(this).next().removeClass("div_div_tt");
+				$(this).next().hide();
+			}
 		})
 
 		//上传照片
 		$(".add_the_phote").click(function() {
 			var $newnode = $mode4.clone(true);
 			$newnode.removeClass("hide_div");
-			$(this).parent().after($newnode);
+			$(this).parent().parent().after($newnode);
 			
 			var $newnode11 = $model5.clone(true);
-			$(this).parent().before($newnode11);
+			$(this).parent().parent().before($newnode11);
 			
 			var $p = $newnode
 			$(".close_div").show();
@@ -111,7 +129,7 @@
 		$(".add_the_title11").click(function() {
 			var $newnode = $model2.clone(true);
 			$newnode.removeClass("hide_div");
-			$(this).parent().after($newnode);
+			$(this).parent().parent().after($newnode);
 		})
 
 		//点击完成时文字
@@ -175,7 +193,7 @@
 			//使用ajax进行数据的传送
 			$.ajax({
 				type : "POST",
-				url : "upTravel",
+				url : "writeTravel",
 				data : JSON.stringify(objArray),
 				contentType : 'application/json; charset=utf-8',
 				dataType : 'json',
@@ -189,10 +207,7 @@
 				}
 			});
 
-			$(".l_div_one").click(function(){
-				alert(ddd);
-				this.next().hide();
-			});
+
 
 		});
 
@@ -271,12 +286,10 @@
 				<div class="content_1010">
 					<!-- 这是添加内容的选项实现图片和段落和文字内容 -->
 					<div class="content_tool">
-						<div l_div_one>
-						<a>
+						<a class="click_cl">
 							<div class="l_div_one"></div>
 						</a>
-						</div>
-						<div class="div_div_tt">
+						<div class="div_div_ttt hide_show">
 						<a class="add_the_content">
 							<div class="all_div">
 								<div class="l_div_one1"></div>
@@ -339,6 +352,8 @@
 					marginwidth="0" style="margin: 0px auto;"></iframe>
 		</div>
 	</div>
+
+
 
 	<div class='add_word_v2 hide_div'>
 		<textarea class='_j_edittxtarea' placeholder='在这儿添加游记文字......'></textarea>

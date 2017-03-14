@@ -8,7 +8,7 @@ import java.util.Map;
  * @author liufu
  *
  */
-public interface Service{
+public interface BaseService{
 
 	
 	/**
