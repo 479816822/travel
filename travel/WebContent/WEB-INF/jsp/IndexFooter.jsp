@@ -6,10 +6,10 @@
 <head>
     <meta charset="UTF-8">
     <title>MFW footer</title>
-    <link href="../../css/IndexFooter.css" rel="stylesheet" type="text/css"/>
-    <script language="javascript" src="../../js/jquery-3.1.0.min.js"
+    <link href="css/IndexFooter.css" rel="stylesheet" type="text/css"/>
+    <script language="javascript" src="js/jquery-3.1.0.min.js"
     type="text/javascript"></script>
-    <script language="javascript" src="../../js/jquery-validation-1.15.1.js"></script>
+    <script language="javascript" src="js/jquery-validation-1.15.1.js"></script>
 </head>
 <body>
 <div id="footer">

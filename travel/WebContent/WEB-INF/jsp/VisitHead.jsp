@@ -1,12 +1,14 @@
-<!DOCTYPE html> <html lang="en">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> <!DOCTYPE html> <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>爱旅U Head</title>
 
-    <link href="../../css/VisitHeader.css" rel="stylesheet">
-    <script language="javascript" src="../../js/jquery-3.1.0.min.js"
+    <link href="css/VisitHeader.css" rel="stylesheet">
+    <script language="javascript" src="js/jquery-3.1.0.min.js"
             type="text/javascript"></script>
-    <script language="javascript" src="../../js/jquery-validation-1.15.1.js"
+    <script language="javascript" src="js/jquery-validation-1.15.1.js"
             type="text/javascript"></script>
 
  <script type="text/javascript">
@@ -172,7 +174,7 @@
 
 
 
-            <!--c:if test="${user != null}">
+            <c:if test="${user != null}">
                 <div class="login-info">
                     <div class="head-user" id="_j_head_user">
                         <a target="_blank" class="drop-trigger" href="to_myHome"
@@ -188,8 +190,8 @@
                            id="head-btn-daka" title="打卡" data-japp="daka">打卡</a>
                     </div>
                 </div>
-            </c:if-->
-            <!--c:if test="${user == null }"-->
+            </c:if>
+            <c:if test="${user == null }">
                 <div class="login-out">
                     <a class="weibo-login third-party-login" href="" title="微博登录"
                        rel="nofollow"></a> <a class="qq-login third-party-login" href=""
@@ -200,7 +202,7 @@
                         class="split">|</span> <a href="register" target="_blank"
                                                   title="注册帐号" rel="nofollow" class="regis under-line">注册</a>
                 </div>
-            <!--/c:if-->
+            </c:if>
 
 
 
