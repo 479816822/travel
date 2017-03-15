@@ -24,13 +24,9 @@ public class MDCommentOne {
 
 	private String mdCommentContent;
 
-	/**
-	 * 游记评论人
-	 */
+
 	private MdUser user;
-	/**
-	 * 评论的游记
-	 */
+
 	private MDTravelNote travel;
 
 	private String mdImg;

@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.cn.qd.travel.dao.MDTravelNoteMapper;
 import com.cn.qd.travel.dao.MDTravelParagraphMapper;
 import com.cn.qd.travel.entity.MDTravelNote;
@@ -18,11 +21,13 @@ import com.cn.qd.travel.util.PageFinish;
  *
  * @param <Object>
  */
-
+@Service
 public class TravelServiceImpl implements TravelService {
 
 	private Page page;
+	@Autowired
 	MDTravelNoteMapper travel;
+	@Autowired
 	MDTravelParagraphMapper parageaph;
 
 	@Override

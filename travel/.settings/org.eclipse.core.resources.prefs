@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+encoding//WebContent/Mheader.jsp=UTF-8
 encoding//WebContent/WEB-INF/jsp=UTF-8
 encoding//WebContent/WEB-INF/jsp/IndexFooter.jsp=UTF-8
 encoding//WebContent/WEB-INF/jsp/VisitHead.html=UTF-8
@@ -13,6 +14,7 @@ encoding//src/com/cn/qd/travel/core/Cache.java=UTF-8
 encoding//src/com/cn/qd/travel/core/CacheManager.java=UTF-8
 encoding//src/com/cn/qd/travel/core/DataBaseinfo.java=UTF-8
 encoding//src/com/cn/qd/travel/dao/MdUserMapper.java=UTF-8
+encoding//src/com/cn/qd/travel/entity/MDTravelParagraph.java=UTF-8
 encoding//src/com/cn/qd/travel/service/TravelService.java=UTF-8
 encoding//src/com/cn/qd/travel/service/UserService.java=UTF-8
 encoding//src/com/cn/qd/travel/service/impl/TravelServiceImpl.java=UTF-8

@@ -13,9 +13,7 @@ public class MDTravelParagraph {
     
     private String mdTavelId;
 
-    /**
-     * 游记主体
-     */
+  
     private MDTravelNote tavel;
 
     private String mdContent;

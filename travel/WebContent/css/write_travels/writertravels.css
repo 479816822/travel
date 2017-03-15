@@ -471,7 +471,7 @@ ul, ol, li, dl, dd, dt {
 
 .li_rigth1 {
 	width: 100%;
-	float: rigth;
+	float:right;
 }
 
 .add_word_v2 {
@@ -494,7 +494,7 @@ ul, ol, li, dl, dd, dt {
 	clear:both;
 }
 
-add_article {
+.add_article {
 	width: 100%;
 	border-top: 1px solid #e5e5e5;
 	position: relative;
