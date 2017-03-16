@@ -88,7 +88,7 @@
     <div class="mfw-header">
         <div class="header-wrap">
             <div class="logo">
-                <a class="mfw-logo" title="爱旅 U" href="VisitPage"></a>
+                <a class="mfw-logo" title="爱旅 U" href=""></a>
             </div>
             <ul class="nav" data-cs-t="headnav" id="_j_head_nav">
                 <li class="index mainNav"><a href="">首页</a></li>

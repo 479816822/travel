@@ -68,10 +68,12 @@ public class TravelServiceImpl implements TravelService {
 	 */
 	@Override
 	public boolean insertTravel(MDTravelNote trNote, Map<String, Object> map) {
-		travel.insert(trNote);
+		int retCode = travel.insert(trNote);
 		for (int i = 0; i < trNote.getListTravlePagragraph().size(); i++) {
-			trNote.getListTravlePagragraph().get(i).setMdTavelId(trNote.getMdRecid());
 			parageaph.insert(trNote.getListTravlePagragraph().get(i));
+		}
+		if (retCode > 0) {
+			return true;
 		}
 		return false;
 	}

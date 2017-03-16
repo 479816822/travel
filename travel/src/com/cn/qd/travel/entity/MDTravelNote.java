@@ -6,9 +6,6 @@ import java.util.List;
 
 public class MDTravelNote {
 
-	/**
-	 * 对应段落
-	 */
 	private List<MDTravelParagraph> listTravlePagragraph;
 
 	private String mdRecid;
@@ -29,9 +26,6 @@ public class MDTravelNote {
 
 	private Date mdCreateTime;
 
-	/**
-	 * 游记主人
-	 */
 	private MdUser user;
 
 	private String mdKeyWord;
@@ -49,6 +43,17 @@ public class MDTravelNote {
 	private Long mdCostMoney;
 
 	private String mdAimAddress;
+	
+	private String mdCreateUserId;
+	
+
+	public String getMdCreateUserId() {
+		return mdCreateUserId;
+	}
+
+	public void setMdCreateUserId(String mdCreateUserId) {
+		this.mdCreateUserId = mdCreateUserId;
+	}
 
 	public String getMdRecid() {
 		return mdRecid;

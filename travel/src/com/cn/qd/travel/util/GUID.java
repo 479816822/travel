@@ -12,17 +12,11 @@ import java.util.Calendar;
  */
 public class GUID {
 
-	public  String GUID;
-
-	public GUID() {
-		GUID =createGuid();
-	}
-
 	/**
 	 * 生成25位的永不重复的字符串
 	 * @return
 	 */
-	private static String createGuid() {
+	public static String createGuid() {
 		Calendar c = Calendar.getInstance();
 		Long l = c.getTimeInMillis();
 		int num = 0;
@@ -41,12 +35,5 @@ public class GUID {
 		return str.toString();
 	}
 	
-	/**
-	 * 获取25位的永不重复的字符串
-	 * @return
-	 */
-	public  String getGUID() {
-		return GUID;
-	}
 
 }

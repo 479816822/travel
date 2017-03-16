@@ -156,7 +156,6 @@
 		})
 		
 		
-
 		function copy_node(p) {
 			var $newnode = $model.clone(true);
 			p.after($newnode);
@@ -169,11 +168,11 @@
 			var j = 0;
 			var objArray = new Array();
 			while (i < num) {
-				if ($p.eq(i).hasClass("add_word_v2")) {
+				if ($p.eq(i).hasClass("add_word_v2")) {//文字
 					objArray[j] = "0" + $p.eq(i).children().val();
-				} else if ($p.eq(i).hasClass("img111")) {
+				} else if ($p.eq(i).hasClass("img111")) {//图片
 					objArray[j] = "1" + $p.eq(i).children().attr("src");
-				} else if ($p.eq(i).hasClass("div_div_div")) {
+				} else if ($p.eq(i).hasClass("div_div_div")) {//段落名
 					objArray[j] = "2" + $p.eq(i).children().val();
 				}
 				j = j + 1;
@@ -298,7 +297,6 @@
 				</div>
 
 
-				<!-- é³ä¹ -->
 				<div class="content_music">
 					<div class="music_one">游记音乐</div>
 					<div class="music_two">
