@@ -5,10 +5,15 @@ import java.util.Map;
 
 import com.cn.qd.travel.entity.MdUser;
 
+/**
+ * @author anmeihua
+ *	用户Dao
+ */
+
 public interface MdUserMapper {
 	
 	/**
-	 * 多条件删除删除
+	 * 多条件删除
 	 * @param mdUserRecid
 	 * @return
 	 */
@@ -81,6 +86,7 @@ public interface MdUserMapper {
      * @return
      */
     int updateByPrimaryKeyWithBLOBs(MdUser record);
+    
     /**
      * 数据更新
      * @param mdUserRecid
@@ -95,5 +101,7 @@ public interface MdUserMapper {
      */
     @SuppressWarnings("rawtypes")
 	int updateByMap(Map map);
+
+	int checkPhone(String mdTelephone);
     
 }

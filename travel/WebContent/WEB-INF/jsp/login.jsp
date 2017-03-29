@@ -23,7 +23,7 @@
         <div class="signup-forms flip">
             <div class="login-box" id="_j_login_box">
                 <div class="inner">
-                    <form action="/login/" method="post" id="_j_login_form">
+                    <form action="/alu/login/" method="post" id="_j_login_form">
                         <div class="form-field">
                             <input name="passport" placeholder="您的邮箱/手机号" autocomplete="off"
                                    data-verification-name="帐号"

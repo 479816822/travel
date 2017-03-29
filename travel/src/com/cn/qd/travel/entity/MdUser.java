@@ -3,8 +3,22 @@ package com.cn.qd.travel.entity;
 import java.math.BigDecimal;
 import java.util.Date;
 
+/**
+ * @author anmeihua
+ *	用户Entity
+ */
 public class MdUser {
-    private String mdUserRecid;
+    private String mdUserRecid;	//id
+    
+    private String mdUserName;	//用户名
+
+    private String mdTelephone;	//电话
+    
+    private String mdPassword;	//密码
+
+    private String mdEmail;	//邮箱
+
+    private String mdNewPassword;	//新密码                                     
 
     private String mdStdname;
 
@@ -16,21 +30,11 @@ public class MdUser {
 
     private String mdAlertUser;
 
-    private String mdUserName;
-
-    private String mdTelephone;
-
     private String mdSex;
 
     private Short mdAge;
 
     private Date mdCreateTime;
-
-    private String mdPassword;
-
-    private String mdEmail;
-
-    private String mdSchool;
 
     private String mdIsVip;
 
@@ -152,14 +156,6 @@ public class MdUser {
         this.mdEmail = mdEmail == null ? null : mdEmail.trim();
     }
 
-    public String getMdSchool() {
-        return mdSchool;
-    }
-
-    public void setMdSchool(String mdSchool) {
-        this.mdSchool = mdSchool == null ? null : mdSchool.trim();
-    }
-
     public String getMdIsVip() {
         return mdIsVip;
     }
@@ -223,4 +219,12 @@ public class MdUser {
     public void setMdIcon(String mdIcon) {
         this.mdIcon = mdIcon == null ? null : mdIcon.trim();
     }
+
+	public String getMdNewPassword() {
+		return mdNewPassword;
+	}
+
+	public void setMdNewPassword(String mdNewPassword) {
+		this.mdNewPassword = mdNewPassword;
+	}
 }

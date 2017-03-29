@@ -150,7 +150,7 @@ input {
     display: block;
     text-indent: -999px;
     overflow: hidden;
-    background: url("img/reg&log/logo.png") no-repeat;
+    background: url("../syste_img/img/reglog/logo.png") no-repeat;
     margin: 0 auto;
 }
 /* retina css */
@@ -419,7 +419,7 @@ and (min-device-pixel-ratio: 2) {
 .signup-forms .connect a i {
     width: 42px;
     height: 42px;
-    background: url(img/reg&log/icon.gif) no-repeat;
+    background: url(../syste_img/img/reglog/icon.gif) no-repeat;
     display: block;
     margin: 0 0 4px 10px;
     cursor: pointer;
