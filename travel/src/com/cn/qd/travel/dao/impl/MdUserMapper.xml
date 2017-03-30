@@ -35,6 +35,19 @@
   <sql id="Blob_Column_List">
     MD_ICON
   </sql>
+  
+  <!-- 检查电话号码 -->
+	<select id="checkPhone" parameterType="java.lang.String" resultType="java.lang.Integer">
+		select count(*)
+		from MD_USER
+		where MD_TELEPHONE = #{mdTelephone,jdbcType=VARCHAR}
+	</select>
+  
+  
+  
+  
+  
+  
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
     select *
     from MD_USER
@@ -84,9 +97,9 @@
       #{mdIcon,jdbcType=CLOB})
   </insert>
   
-  <!-- 按条件插入 -->
+  <!-- 注册按条件插入 -->
   <insert id="insertSelective" parameterType="com.cn.qd.travel.entity.MdUser">
-    insert into MD_USER
+		insert into MD_USER
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="mdUserRecid != null">
         MD_USER_RECID,
