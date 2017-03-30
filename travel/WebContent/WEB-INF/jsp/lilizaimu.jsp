@@ -1,14 +1,17 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>lilizaimu</title>
-    <link rel="stylesheet" href="../../css/lilizaimu.css">
+    <link rel="stylesheet" href="css/lilizaimu.css">
     
 </head>
 <body>
 <div class="header">
-    <iframe src="VisitHead.html" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+    <iframe src="VisitHead" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
             style="margin: 0px auto;"></iframe>
 </div>
 
@@ -75,205 +78,205 @@
                         <li class="after"><span></span><em></em></li>
                         <li class="after"><span></span><em></em></li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b1.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b1.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>1</em>
                             <span class="mark"><a href="" target="_blank">贝加尔湖</a><a class="user" href=""
                                                                                      target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b1-s.jpg" title="若谷"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b1-s.jpg" title="若谷"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b2.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b2.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>2</em>
                             <span class="mark"><a href="" target="_blank">年保玉则</a><a class="user" href=""
                                                                                      target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b2-s.jpg" title="米粥"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b2-s.jpg" title="米粥"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b3.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b3.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>3</em>
                             <span class="mark"><a href="" target="_blank">尼泊尔</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b3-s.jpg" title="恶魔哭泣"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b3-s.jpg" title="恶魔哭泣"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b4.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b4.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>4</em>
                             <span class="mark"><a href="" target="_blank">台湾</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b4-s.jpg" title="池袋西口公园"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b4-s.jpg" title="池袋西口公园"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b5.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b5.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>5</em>
                             <span class="mark"><a href="" target="_blank">意大利</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b5-s.jpg" title="十三疯"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b5-s.jpg" title="十三疯"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b6.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b6.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>6</em>
                             <span class="mark"><a href="" target="_blank">巴基斯坦</a><a class="user" href=""
                                                                                      target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b6-s.jpg" title="kido"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b6-s.jpg" title="kido"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b7.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b7.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>7</em>
                             <span class="mark"><a href="" target="_blank">西北</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b7-s.jpg" title="一蕊Aries"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b7-s.jpg" title="一蕊Aries"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b8.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b8.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>8</em>
                             <span class="mark"><a href="" target="_blank">日本</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b8-s.jpg" title="榛美去"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b8-s.jpg" title="榛美去"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b9.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b9.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>9</em>
                             <span class="mark"><a href="" target="_blank">云南</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b9-s.jpg" title="一切旎好"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b9-s.jpg" title="一切旎好"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b10.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b10.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>10</em>
                             <span class="mark"><a href="" target="_blank">台湾</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b10-s.jpg" title="Cheer* 淇"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b10-s.jpg" title="Cheer* 淇"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b11.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b11.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>11</em>
                             <span class="mark"><a href="" target="_blank">清迈</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b10-s.jpg" title="馮花夫司基"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b10-s.jpg" title="馮花夫司基"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b12.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b12.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>12</em>
                             <span class="mark"><a href="" target="_blank">阿里</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b12-s.jpg" title="杨舒涵-YOUNG"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b12-s.jpg" title="杨舒涵-YOUNG"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b13.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b13.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>13</em>
                             <span class="mark"><a href="" target="_blank">摩洛哥</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b13-s.jpg" title="Eskimoldova"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b13-s.jpg" title="Eskimoldova"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b14.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b14.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>14</em>
                             <span class="mark"><a href="" target="_blank">印度</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b14-s.jpg" title="校长老婆"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b14-s.jpg" title="校长老婆"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b15.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b15.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>15</em>
                             <span class="mark"><a href="" target="_blank">英国</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b15-s.jpg" title="—簬晑北"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b15-s.jpg" title="—簬晑北"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b16.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b16.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>16</em>
                             <span class="mark"><a href="" target="_blank">哈尔滨</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b16-s.jpg" title="忆路有你"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b16-s.jpg" title="忆路有你"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b17.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b17.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>17</em>
                             <span class="mark"><a href="" target="_blank">夏威夷</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b17-s.jpg" title="冰糖葫芦娃"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b17-s.jpg" title="冰糖葫芦娃"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b18.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b18.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>18</em>
                             <span class="mark"><a href="" target="_blank">济州岛</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b18-s.jpg" title="丁susu"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b18-s.jpg" title="丁susu"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b19.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b19.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>19</em>
                             <span class="mark"><a href="" target="_blank">斯洛文尼亚</a><a class="user" href=""
                                                                                       target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b19-s.jpg" title="孟夕"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b19-s.jpg" title="孟夕"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b20.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b20.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>20</em>
                             <span class="mark"><a href="" target="_blank">虎跳峡</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b20-s.jpg" title="伍子。"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b20-s.jpg" title="伍子。"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b21.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b21.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>21</em>
                             <span class="mark"><a href="" target="_blank">东京</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b21-s.jpg" title="BIGYY"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b21-s.jpg" title="BIGYY"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b22.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b22.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>22</em>
                             <span class="mark"><a href="" target="_blank">俄罗斯</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b22-s.jpg" title="bxalice"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b22-s.jpg" title="bxalice"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b23.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b23.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>23</em>
                             <span class="mark"><a href="" target="_blank">土耳其</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b23-s.jpg" title="小A"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b23-s.jpg" title="小A"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b24.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b24.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>24</em>
                             <span class="mark"><a href="" target="_blank">海南</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b24-s.jpg" title="摄影旅行嘉"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b24-s.jpg" title="摄影旅行嘉"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b25.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b25.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>25</em>
                             <span class="mark"><a href="" target="_blank">芬兰</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b25-s.jpg" title="张幻想"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b25-s.jpg" title="张幻想"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b26.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b26.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>26</em>
                             <span class="mark"><a href="" target="_blank">缅甸</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b26-s.jpg" title="alickli"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b26-s.jpg" title="alickli"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b27.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b27.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>27</em>
                             <span class="mark"><a href="" target="_blank">坦桑尼亚</a><a class="user" href=""
                                                                                      target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b27-s.jpg" title="杜创"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b27-s.jpg" title="杜创"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b28.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b28.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>28</em>
                             <span class="mark"><a href="" target="_blank">首尔</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b28-s.jpg" title="CCChen"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b28-s.jpg" title="CCChen"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b29.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b29.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>29</em>
                             <span class="mark"><a href="" target="_blank">川西</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b29-s.jpg" title="叫我小缪"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b29-s.jpg" title="叫我小缪"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b30.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b30.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>30</em>
                             <span class="mark"><a href="" target="_blank">柬埔寨</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b30-s.jpg" title="雍容makiori"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b30-s.jpg" title="雍容makiori"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b31.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b31.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>31</em>
                             <span class="mark"><a href="" target="_blank">东欧</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b31-s.jpg" title="Cinderella囡囡"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b31-s.jpg" title="Cinderella囡囡"></a></span>
                         </li>
                         <li class="after"><span></span><em></em></li>
                         <li class="after"><span></span><em></em></li>
@@ -286,7 +289,7 @@
             </div>
             <div class="extra-btn" style="position: absolute; top: 6px;"><a href="/club/"
                                                                             target="_blank">蜂首俱乐部秘密通道</a><img
-                    src="../../syste_img/img/lilizaimu-img/new3_v=2.gif"></div>
+                    src="syste_img/img/lilizaimu-img/new3_v=2.gif"></div>
         </div>
     </div>
 
@@ -352,205 +355,205 @@
                         <!--<li class="after"><span></span><em></em></li>-->
                         <!--<li class="after"><span></span><em></em></li>-->
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b1.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b1.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>1</em>
                             <span class="mark"><a href="" target="_blank">贝加尔湖</a><a class="user" href=""
                                                                                      target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b1-s.jpg" title="若谷"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b1-s.jpg" title="若谷"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b2.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b2.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>2</em>
                             <span class="mark"><a href="" target="_blank">年保玉则</a><a class="user" href=""
                                                                                      target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b2-s.jpg" title="米粥"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b2-s.jpg" title="米粥"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b3.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b3.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>3</em>
                             <span class="mark"><a href="" target="_blank">尼泊尔</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b3-s.jpg" title="恶魔哭泣"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b3-s.jpg" title="恶魔哭泣"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b4.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b4.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>4</em>
                             <span class="mark"><a href="" target="_blank">台湾</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b4-s.jpg" title="池袋西口公园"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b4-s.jpg" title="池袋西口公园"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b5.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b5.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>5</em>
                             <span class="mark"><a href="" target="_blank">意大利</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b5-s.jpg" title="十三疯"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b5-s.jpg" title="十三疯"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b6.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b6.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>6</em>
                             <span class="mark"><a href="" target="_blank">巴基斯坦</a><a class="user" href=""
                                                                                      target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b6-s.jpg" title="kido"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b6-s.jpg" title="kido"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b7.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b7.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>7</em>
                             <span class="mark"><a href="" target="_blank">西北</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b7-s.jpg" title="一蕊Aries"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b7-s.jpg" title="一蕊Aries"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b8.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b8.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>8</em>
                             <span class="mark"><a href="" target="_blank">日本</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b8-s.jpg" title="榛美去"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b8-s.jpg" title="榛美去"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b9.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b9.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>9</em>
                             <span class="mark"><a href="" target="_blank">云南</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b9-s.jpg" title="一切旎好"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b9-s.jpg" title="一切旎好"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b10.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b10.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>10</em>
                             <span class="mark"><a href="" target="_blank">台湾</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b10-s.jpg" title="Cheer* 淇"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b10-s.jpg" title="Cheer* 淇"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b11.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b11.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>11</em>
                             <span class="mark"><a href="" target="_blank">清迈</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b10-s.jpg" title="馮花夫司基"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b10-s.jpg" title="馮花夫司基"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b12.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b12.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>12</em>
                             <span class="mark"><a href="" target="_blank">阿里</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b12-s.jpg" title="杨舒涵-YOUNG"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b12-s.jpg" title="杨舒涵-YOUNG"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b13.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b13.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>13</em>
                             <span class="mark"><a href="" target="_blank">摩洛哥</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b13-s.jpg" title="Eskimoldova"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b13-s.jpg" title="Eskimoldova"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b14.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b14.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>14</em>
                             <span class="mark"><a href="" target="_blank">印度</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b14-s.jpg" title="校长老婆"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b14-s.jpg" title="校长老婆"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b15.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b15.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>15</em>
                             <span class="mark"><a href="" target="_blank">英国</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b15-s.jpg" title="—簬晑北"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b15-s.jpg" title="—簬晑北"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b16.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b16.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>16</em>
                             <span class="mark"><a href="" target="_blank">哈尔滨</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b16-s.jpg" title="忆路有你"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b16-s.jpg" title="忆路有你"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b17.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b17.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>17</em>
                             <span class="mark"><a href="" target="_blank">夏威夷</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b17-s.jpg" title="冰糖葫芦娃"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b17-s.jpg" title="冰糖葫芦娃"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b18.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b18.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>18</em>
                             <span class="mark"><a href="" target="_blank">济州岛</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b18-s.jpg" title="丁susu"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b18-s.jpg" title="丁susu"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b19.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b19.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>19</em>
                             <span class="mark"><a href="" target="_blank">斯洛文尼亚</a><a class="user" href=""
                                                                                       target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b19-s.jpg" title="孟夕"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b19-s.jpg" title="孟夕"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b20.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b20.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>20</em>
                             <span class="mark"><a href="" target="_blank">虎跳峡</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b20-s.jpg" title="伍子。"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b20-s.jpg" title="伍子。"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b21.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b21.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>21</em>
                             <span class="mark"><a href="" target="_blank">东京</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b21-s.jpg" title="BIGYY"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b21-s.jpg" title="BIGYY"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b22.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b22.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>22</em>
                             <span class="mark"><a href="" target="_blank">俄罗斯</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b22-s.jpg" title="bxalice"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b22-s.jpg" title="bxalice"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b23.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b23.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>23</em>
                             <span class="mark"><a href="" target="_blank">土耳其</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b23-s.jpg" title="小A"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b23-s.jpg" title="小A"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b24.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b24.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>24</em>
                             <span class="mark"><a href="" target="_blank">海南</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b24-s.jpg" title="摄影旅行嘉"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b24-s.jpg" title="摄影旅行嘉"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b25.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b25.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>25</em>
                             <span class="mark"><a href="" target="_blank">芬兰</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b25-s.jpg" title="张幻想"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b25-s.jpg" title="张幻想"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b26.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b26.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>26</em>
                             <span class="mark"><a href="" target="_blank">缅甸</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b26-s.jpg" title="alickli"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b26-s.jpg" title="alickli"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b27.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b27.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>27</em>
                             <span class="mark"><a href="" target="_blank">坦桑尼亚</a><a class="user" href=""
                                                                                      target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b27-s.jpg" title="杜创"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b27-s.jpg" title="杜创"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b28.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b28.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>28</em>
                             <span class="mark"><a href="" target="_blank">首尔</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b28-s.jpg" title="CCChen"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b28-s.jpg" title="CCChen"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b29.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b29.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>29</em>
                             <span class="mark"><a href="" target="_blank">川西</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b29-s.jpg" title="叫我小缪"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b29-s.jpg" title="叫我小缪"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b30.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b30.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>30</em>
                             <span class="mark"><a href="" target="_blank">柬埔寨</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b30-s.jpg" title="雍容makiori"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b30-s.jpg" title="雍容makiori"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b31.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b31.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>31</em>
                             <span class="mark"><a href="" target="_blank">东欧</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b31-s.jpg" title="Cinderella囡囡"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b31-s.jpg" title="Cinderella囡囡"></a></span>
                         </li>
                         <li class="after"><span></span><em></em></li>
                         <li class="after"><span></span><em></em></li>
@@ -626,205 +629,205 @@
                         <li class="after"><span></span><em></em></li>
                         <li class="after"><span></span><em></em></li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b1.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b1.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>1</em>
                             <span class="mark"><a href="" target="_blank">贝加尔湖</a><a class="user" href=""
                                                                                      target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b1-s.jpg" title="若谷"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b1-s.jpg" title="若谷"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b2.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b2.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>2</em>
                             <span class="mark"><a href="" target="_blank">年保玉则</a><a class="user" href=""
                                                                                      target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b2-s.jpg" title="米粥"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b2-s.jpg" title="米粥"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b3.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b3.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>3</em>
                             <span class="mark"><a href="" target="_blank">尼泊尔</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b3-s.jpg" title="恶魔哭泣"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b3-s.jpg" title="恶魔哭泣"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b4.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b4.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>4</em>
                             <span class="mark"><a href="" target="_blank">台湾</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b4-s.jpg" title="池袋西口公园"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b4-s.jpg" title="池袋西口公园"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b5.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b5.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>5</em>
                             <span class="mark"><a href="" target="_blank">意大利</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b5-s.jpg" title="十三疯"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b5-s.jpg" title="十三疯"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b6.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b6.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>6</em>
                             <span class="mark"><a href="" target="_blank">巴基斯坦</a><a class="user" href=""
                                                                                      target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b6-s.jpg" title="kido"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b6-s.jpg" title="kido"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b7.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b7.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>7</em>
                             <span class="mark"><a href="" target="_blank">西北</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b7-s.jpg" title="一蕊Aries"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b7-s.jpg" title="一蕊Aries"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b8.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b8.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>8</em>
                             <span class="mark"><a href="" target="_blank">日本</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b8-s.jpg" title="榛美去"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b8-s.jpg" title="榛美去"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b9.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b9.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>9</em>
                             <span class="mark"><a href="" target="_blank">云南</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b9-s.jpg" title="一切旎好"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b9-s.jpg" title="一切旎好"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b10.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b10.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>10</em>
                             <span class="mark"><a href="" target="_blank">台湾</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b10-s.jpg" title="Cheer* 淇"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b10-s.jpg" title="Cheer* 淇"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b11.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b11.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>11</em>
                             <span class="mark"><a href="" target="_blank">清迈</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b10-s.jpg" title="馮花夫司基"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b10-s.jpg" title="馮花夫司基"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b12.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b12.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>12</em>
                             <span class="mark"><a href="" target="_blank">阿里</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b12-s.jpg" title="杨舒涵-YOUNG"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b12-s.jpg" title="杨舒涵-YOUNG"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b13.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b13.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>13</em>
                             <span class="mark"><a href="" target="_blank">摩洛哥</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b13-s.jpg" title="Eskimoldova"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b13-s.jpg" title="Eskimoldova"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b14.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b14.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>14</em>
                             <span class="mark"><a href="" target="_blank">印度</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b14-s.jpg" title="校长老婆"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b14-s.jpg" title="校长老婆"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b15.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b15.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>15</em>
                             <span class="mark"><a href="" target="_blank">英国</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b15-s.jpg" title="—簬晑北"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b15-s.jpg" title="—簬晑北"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b16.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b16.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>16</em>
                             <span class="mark"><a href="" target="_blank">哈尔滨</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b16-s.jpg" title="忆路有你"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b16-s.jpg" title="忆路有你"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b17.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b17.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>17</em>
                             <span class="mark"><a href="" target="_blank">夏威夷</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b17-s.jpg" title="冰糖葫芦娃"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b17-s.jpg" title="冰糖葫芦娃"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b18.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b18.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>18</em>
                             <span class="mark"><a href="" target="_blank">济州岛</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b18-s.jpg" title="丁susu"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b18-s.jpg" title="丁susu"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b19.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b19.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>19</em>
                             <span class="mark"><a href="" target="_blank">斯洛文尼亚</a><a class="user" href=""
                                                                                       target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b19-s.jpg" title="孟夕"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b19-s.jpg" title="孟夕"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b20.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b20.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>20</em>
                             <span class="mark"><a href="" target="_blank">虎跳峡</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b20-s.jpg" title="伍子。"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b20-s.jpg" title="伍子。"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b21.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b21.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>21</em>
                             <span class="mark"><a href="" target="_blank">东京</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b21-s.jpg" title="BIGYY"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b21-s.jpg" title="BIGYY"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b22.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b22.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>22</em>
                             <span class="mark"><a href="" target="_blank">俄罗斯</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b22-s.jpg" title="bxalice"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b22-s.jpg" title="bxalice"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b23.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b23.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>23</em>
                             <span class="mark"><a href="" target="_blank">土耳其</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b23-s.jpg" title="小A"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b23-s.jpg" title="小A"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b24.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b24.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>24</em>
                             <span class="mark"><a href="" target="_blank">海南</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b24-s.jpg" title="摄影旅行嘉"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b24-s.jpg" title="摄影旅行嘉"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b25.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b25.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>25</em>
                             <span class="mark"><a href="" target="_blank">芬兰</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b25-s.jpg" title="张幻想"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b25-s.jpg" title="张幻想"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b26.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b26.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>26</em>
                             <span class="mark"><a href="" target="_blank">缅甸</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b26-s.jpg" title="alickli"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b26-s.jpg" title="alickli"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b27.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b27.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>27</em>
                             <span class="mark"><a href="" target="_blank">坦桑尼亚</a><a class="user" href=""
                                                                                      target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b27-s.jpg" title="杜创"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b27-s.jpg" title="杜创"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b28.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b28.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>28</em>
                             <span class="mark"><a href="" target="_blank">首尔</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b28-s.jpg" title="CCChen"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b28-s.jpg" title="CCChen"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b29.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b29.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>29</em>
                             <span class="mark"><a href="" target="_blank">川西</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b29-s.jpg" title="叫我小缪"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b29-s.jpg" title="叫我小缪"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b30.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b30.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>30</em>
                             <span class="mark"><a href="" target="_blank">柬埔寨</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b30-s.jpg" title="雍容makiori"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b30-s.jpg" title="雍容makiori"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b31.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b31.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>31</em>
                             <span class="mark"><a href="" target="_blank">东欧</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b31-s.jpg" title="Cinderella囡囡"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b31-s.jpg" title="Cinderella囡囡"></a></span>
                         </li>
                     </ul>
                 </div>
@@ -890,205 +893,205 @@
                 <div class="overview">
                     <ul class="month-panel">
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b1.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b1.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>1</em>
                             <span class="mark"><a href="" target="_blank">贝加尔湖</a><a class="user" href=""
                                                                                      target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b1-s.jpg" title="若谷"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b1-s.jpg" title="若谷"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b2.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b2.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>2</em>
                             <span class="mark"><a href="" target="_blank">年保玉则</a><a class="user" href=""
                                                                                      target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b2-s.jpg" title="米粥"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b2-s.jpg" title="米粥"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b3.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b3.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>3</em>
                             <span class="mark"><a href="" target="_blank">尼泊尔</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b3-s.jpg" title="恶魔哭泣"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b3-s.jpg" title="恶魔哭泣"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b4.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b4.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>4</em>
                             <span class="mark"><a href="" target="_blank">台湾</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b4-s.jpg" title="池袋西口公园"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b4-s.jpg" title="池袋西口公园"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b5.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b5.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>5</em>
                             <span class="mark"><a href="" target="_blank">意大利</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b5-s.jpg" title="十三疯"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b5-s.jpg" title="十三疯"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b6.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b6.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>6</em>
                             <span class="mark"><a href="" target="_blank">巴基斯坦</a><a class="user" href=""
                                                                                      target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b6-s.jpg" title="kido"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b6-s.jpg" title="kido"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b7.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b7.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>7</em>
                             <span class="mark"><a href="" target="_blank">西北</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b7-s.jpg" title="一蕊Aries"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b7-s.jpg" title="一蕊Aries"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b8.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b8.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>8</em>
                             <span class="mark"><a href="" target="_blank">日本</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b8-s.jpg" title="榛美去"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b8-s.jpg" title="榛美去"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b9.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b9.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>9</em>
                             <span class="mark"><a href="" target="_blank">云南</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b9-s.jpg" title="一切旎好"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b9-s.jpg" title="一切旎好"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b10.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b10.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>10</em>
                             <span class="mark"><a href="" target="_blank">台湾</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b10-s.jpg" title="Cheer* 淇"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b10-s.jpg" title="Cheer* 淇"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b11.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b11.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>11</em>
                             <span class="mark"><a href="" target="_blank">清迈</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b10-s.jpg" title="馮花夫司基"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b10-s.jpg" title="馮花夫司基"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b12.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b12.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>12</em>
                             <span class="mark"><a href="" target="_blank">阿里</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b12-s.jpg" title="杨舒涵-YOUNG"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b12-s.jpg" title="杨舒涵-YOUNG"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b13.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b13.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>13</em>
                             <span class="mark"><a href="" target="_blank">摩洛哥</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b13-s.jpg" title="Eskimoldova"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b13-s.jpg" title="Eskimoldova"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b14.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b14.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>14</em>
                             <span class="mark"><a href="" target="_blank">印度</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b14-s.jpg" title="校长老婆"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b14-s.jpg" title="校长老婆"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b15.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b15.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>15</em>
                             <span class="mark"><a href="" target="_blank">英国</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b15-s.jpg" title="—簬晑北"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b15-s.jpg" title="—簬晑北"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b16.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b16.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>16</em>
                             <span class="mark"><a href="" target="_blank">哈尔滨</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b16-s.jpg" title="忆路有你"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b16-s.jpg" title="忆路有你"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b17.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b17.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>17</em>
                             <span class="mark"><a href="" target="_blank">夏威夷</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b17-s.jpg" title="冰糖葫芦娃"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b17-s.jpg" title="冰糖葫芦娃"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b18.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b18.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>18</em>
                             <span class="mark"><a href="" target="_blank">济州岛</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b18-s.jpg" title="丁susu"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b18-s.jpg" title="丁susu"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b19.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b19.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>19</em>
                             <span class="mark"><a href="" target="_blank">斯洛文尼亚</a><a class="user" href=""
                                                                                       target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b19-s.jpg" title="孟夕"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b19-s.jpg" title="孟夕"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b20.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b20.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>20</em>
                             <span class="mark"><a href="" target="_blank">虎跳峡</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b20-s.jpg" title="伍子。"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b20-s.jpg" title="伍子。"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b21.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b21.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>21</em>
                             <span class="mark"><a href="" target="_blank">东京</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b21-s.jpg" title="BIGYY"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b21-s.jpg" title="BIGYY"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b22.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b22.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>22</em>
                             <span class="mark"><a href="" target="_blank">俄罗斯</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b22-s.jpg" title="bxalice"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b22-s.jpg" title="bxalice"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b23.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b23.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>23</em>
                             <span class="mark"><a href="" target="_blank">土耳其</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b23-s.jpg" title="小A"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b23-s.jpg" title="小A"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b24.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b24.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>24</em>
                             <span class="mark"><a href="" target="_blank">海南</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b24-s.jpg" title="摄影旅行嘉"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b24-s.jpg" title="摄影旅行嘉"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b25.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b25.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>25</em>
                             <span class="mark"><a href="" target="_blank">芬兰</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b25-s.jpg" title="张幻想"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b25-s.jpg" title="张幻想"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b26.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b26.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>26</em>
                             <span class="mark"><a href="" target="_blank">缅甸</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b26-s.jpg" title="alickli"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b26-s.jpg" title="alickli"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b27.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b27.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>27</em>
                             <span class="mark"><a href="" target="_blank">坦桑尼亚</a><a class="user" href=""
                                                                                      target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b27-s.jpg" title="杜创"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b27-s.jpg" title="杜创"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b28.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b28.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>28</em>
                             <span class="mark"><a href="" target="_blank">首尔</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b28-s.jpg" title="CCChen"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b28-s.jpg" title="CCChen"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b29.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b29.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>29</em>
                             <span class="mark"><a href="" target="_blank">川西</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b29-s.jpg" title="叫我小缪"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b29-s.jpg" title="叫我小缪"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b30.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b30.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>30</em>
                             <span class="mark"><a href="" target="_blank">柬埔寨</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b30-s.jpg" title="雍容makiori"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b30-s.jpg" title="雍容makiori"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b31.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b31.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>31</em>
                             <span class="mark"><a href="" target="_blank">东欧</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b31-s.jpg" title="Cinderella囡囡"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b31-s.jpg" title="Cinderella囡囡"></a></span>
                         </li>
                         <li class="after"><span></span><em></em></li>
                         <li class="after"><span></span><em></em></li>
@@ -1160,205 +1163,205 @@
                         <li class="after"><span></span><em></em></li>
                         <li class="after"><span></span><em></em></li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b1.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b1.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>1</em>
                             <span class="mark"><a href="" target="_blank">贝加尔湖</a><a class="user" href=""
                                                                                      target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b1-s.jpg" title="若谷"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b1-s.jpg" title="若谷"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b2.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b2.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>2</em>
                             <span class="mark"><a href="" target="_blank">年保玉则</a><a class="user" href=""
                                                                                      target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b2-s.jpg" title="米粥"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b2-s.jpg" title="米粥"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b3.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b3.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>3</em>
                             <span class="mark"><a href="" target="_blank">尼泊尔</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b3-s.jpg" title="恶魔哭泣"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b3-s.jpg" title="恶魔哭泣"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b4.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b4.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>4</em>
                             <span class="mark"><a href="" target="_blank">台湾</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b4-s.jpg" title="池袋西口公园"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b4-s.jpg" title="池袋西口公园"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b5.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b5.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>5</em>
                             <span class="mark"><a href="" target="_blank">意大利</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b5-s.jpg" title="十三疯"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b5-s.jpg" title="十三疯"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b6.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b6.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>6</em>
                             <span class="mark"><a href="" target="_blank">巴基斯坦</a><a class="user" href=""
                                                                                      target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b6-s.jpg" title="kido"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b6-s.jpg" title="kido"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b7.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b7.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>7</em>
                             <span class="mark"><a href="" target="_blank">西北</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b7-s.jpg" title="一蕊Aries"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b7-s.jpg" title="一蕊Aries"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b8.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b8.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>8</em>
                             <span class="mark"><a href="" target="_blank">日本</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b8-s.jpg" title="榛美去"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b8-s.jpg" title="榛美去"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b9.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b9.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>9</em>
                             <span class="mark"><a href="" target="_blank">云南</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b9-s.jpg" title="一切旎好"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b9-s.jpg" title="一切旎好"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b10.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b10.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>10</em>
                             <span class="mark"><a href="" target="_blank">台湾</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b10-s.jpg" title="Cheer* 淇"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b10-s.jpg" title="Cheer* 淇"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b11.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b11.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>11</em>
                             <span class="mark"><a href="" target="_blank">清迈</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b10-s.jpg" title="馮花夫司基"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b10-s.jpg" title="馮花夫司基"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b12.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b12.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>12</em>
                             <span class="mark"><a href="" target="_blank">阿里</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b12-s.jpg" title="杨舒涵-YOUNG"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b12-s.jpg" title="杨舒涵-YOUNG"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b13.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b13.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>13</em>
                             <span class="mark"><a href="" target="_blank">摩洛哥</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b13-s.jpg" title="Eskimoldova"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b13-s.jpg" title="Eskimoldova"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b14.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b14.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>14</em>
                             <span class="mark"><a href="" target="_blank">印度</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b14-s.jpg" title="校长老婆"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b14-s.jpg" title="校长老婆"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b15.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b15.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>15</em>
                             <span class="mark"><a href="" target="_blank">英国</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b15-s.jpg" title="—簬晑北"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b15-s.jpg" title="—簬晑北"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b16.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b16.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>16</em>
                             <span class="mark"><a href="" target="_blank">哈尔滨</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b16-s.jpg" title="忆路有你"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b16-s.jpg" title="忆路有你"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b17.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b17.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>17</em>
                             <span class="mark"><a href="" target="_blank">夏威夷</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b17-s.jpg" title="冰糖葫芦娃"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b17-s.jpg" title="冰糖葫芦娃"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b18.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b18.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>18</em>
                             <span class="mark"><a href="" target="_blank">济州岛</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b18-s.jpg" title="丁susu"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b18-s.jpg" title="丁susu"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b19.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b19.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>19</em>
                             <span class="mark"><a href="" target="_blank">斯洛文尼亚</a><a class="user" href=""
                                                                                       target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b19-s.jpg" title="孟夕"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b19-s.jpg" title="孟夕"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b20.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b20.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>20</em>
                             <span class="mark"><a href="" target="_blank">虎跳峡</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b20-s.jpg" title="伍子。"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b20-s.jpg" title="伍子。"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b21.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b21.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>21</em>
                             <span class="mark"><a href="" target="_blank">东京</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b21-s.jpg" title="BIGYY"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b21-s.jpg" title="BIGYY"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b22.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b22.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>22</em>
                             <span class="mark"><a href="" target="_blank">俄罗斯</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b22-s.jpg" title="bxalice"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b22-s.jpg" title="bxalice"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b23.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b23.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>23</em>
                             <span class="mark"><a href="" target="_blank">土耳其</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b23-s.jpg" title="小A"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b23-s.jpg" title="小A"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b24.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b24.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>24</em>
                             <span class="mark"><a href="" target="_blank">海南</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b24-s.jpg" title="摄影旅行嘉"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b24-s.jpg" title="摄影旅行嘉"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b25.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b25.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>25</em>
                             <span class="mark"><a href="" target="_blank">芬兰</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b25-s.jpg" title="张幻想"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b25-s.jpg" title="张幻想"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b26.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b26.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>26</em>
                             <span class="mark"><a href="" target="_blank">缅甸</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b26-s.jpg" title="alickli"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b26-s.jpg" title="alickli"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b27.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b27.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>27</em>
                             <span class="mark"><a href="" target="_blank">坦桑尼亚</a><a class="user" href=""
                                                                                      target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b27-s.jpg" title="杜创"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b27-s.jpg" title="杜创"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b28.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b28.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>28</em>
                             <span class="mark"><a href="" target="_blank">首尔</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b28-s.jpg" title="CCChen"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b28-s.jpg" title="CCChen"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b29.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b29.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>29</em>
                             <span class="mark"><a href="" target="_blank">川西</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b29-s.jpg" title="叫我小缪"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b29-s.jpg" title="叫我小缪"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b30.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b30.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>30</em>
                             <span class="mark"><a href="" target="_blank">柬埔寨</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b30-s.jpg" title="雍容makiori"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b30-s.jpg" title="雍容makiori"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b31.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b31.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>31</em>
                             <span class="mark"><a href="" target="_blank">东欧</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b31-s.jpg" title="Cinderella囡囡"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b31-s.jpg" title="Cinderella囡囡"></a></span>
                         </li>
                         <li class="after"><span></span><em></em></li>
                     </ul>
@@ -1430,205 +1433,205 @@
                         <li class="after"><span></span><em></em></li>
                         <li class="after"><span></span><em></em></li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b1.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b1.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>1</em>
                             <span class="mark"><a href="" target="_blank">贝加尔湖</a><a class="user" href=""
                                                                                      target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b1-s.jpg" title="若谷"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b1-s.jpg" title="若谷"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b2.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b2.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>2</em>
                             <span class="mark"><a href="" target="_blank">年保玉则</a><a class="user" href=""
                                                                                      target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b2-s.jpg" title="米粥"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b2-s.jpg" title="米粥"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b3.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b3.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>3</em>
                             <span class="mark"><a href="" target="_blank">尼泊尔</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b3-s.jpg" title="恶魔哭泣"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b3-s.jpg" title="恶魔哭泣"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b4.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b4.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>4</em>
                             <span class="mark"><a href="" target="_blank">台湾</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b4-s.jpg" title="池袋西口公园"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b4-s.jpg" title="池袋西口公园"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b5.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b5.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>5</em>
                             <span class="mark"><a href="" target="_blank">意大利</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b5-s.jpg" title="十三疯"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b5-s.jpg" title="十三疯"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b6.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b6.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>6</em>
                             <span class="mark"><a href="" target="_blank">巴基斯坦</a><a class="user" href=""
                                                                                      target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b6-s.jpg" title="kido"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b6-s.jpg" title="kido"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b7.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b7.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>7</em>
                             <span class="mark"><a href="" target="_blank">西北</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b7-s.jpg" title="一蕊Aries"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b7-s.jpg" title="一蕊Aries"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b8.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b8.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>8</em>
                             <span class="mark"><a href="" target="_blank">日本</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b8-s.jpg" title="榛美去"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b8-s.jpg" title="榛美去"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b9.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b9.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>9</em>
                             <span class="mark"><a href="" target="_blank">云南</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b9-s.jpg" title="一切旎好"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b9-s.jpg" title="一切旎好"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b10.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b10.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>10</em>
                             <span class="mark"><a href="" target="_blank">台湾</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b10-s.jpg" title="Cheer* 淇"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b10-s.jpg" title="Cheer* 淇"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b11.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b11.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>11</em>
                             <span class="mark"><a href="" target="_blank">清迈</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b10-s.jpg" title="馮花夫司基"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b10-s.jpg" title="馮花夫司基"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b12.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b12.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>12</em>
                             <span class="mark"><a href="" target="_blank">阿里</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b12-s.jpg" title="杨舒涵-YOUNG"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b12-s.jpg" title="杨舒涵-YOUNG"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b13.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b13.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>13</em>
                             <span class="mark"><a href="" target="_blank">摩洛哥</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b13-s.jpg" title="Eskimoldova"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b13-s.jpg" title="Eskimoldova"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b14.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b14.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>14</em>
                             <span class="mark"><a href="" target="_blank">印度</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b14-s.jpg" title="校长老婆"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b14-s.jpg" title="校长老婆"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b15.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b15.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>15</em>
                             <span class="mark"><a href="" target="_blank">英国</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b15-s.jpg" title="—簬晑北"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b15-s.jpg" title="—簬晑北"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b16.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b16.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>16</em>
                             <span class="mark"><a href="" target="_blank">哈尔滨</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b16-s.jpg" title="忆路有你"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b16-s.jpg" title="忆路有你"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b17.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b17.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>17</em>
                             <span class="mark"><a href="" target="_blank">夏威夷</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b17-s.jpg" title="冰糖葫芦娃"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b17-s.jpg" title="冰糖葫芦娃"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b18.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b18.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>18</em>
                             <span class="mark"><a href="" target="_blank">济州岛</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b18-s.jpg" title="丁susu"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b18-s.jpg" title="丁susu"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b19.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b19.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>19</em>
                             <span class="mark"><a href="" target="_blank">斯洛文尼亚</a><a class="user" href=""
                                                                                       target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b19-s.jpg" title="孟夕"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b19-s.jpg" title="孟夕"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b20.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b20.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>20</em>
                             <span class="mark"><a href="" target="_blank">虎跳峡</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b20-s.jpg" title="伍子。"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b20-s.jpg" title="伍子。"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b21.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b21.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>21</em>
                             <span class="mark"><a href="" target="_blank">东京</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b21-s.jpg" title="BIGYY"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b21-s.jpg" title="BIGYY"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b22.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b22.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>22</em>
                             <span class="mark"><a href="" target="_blank">俄罗斯</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b22-s.jpg" title="bxalice"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b22-s.jpg" title="bxalice"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b23.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b23.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>23</em>
                             <span class="mark"><a href="" target="_blank">土耳其</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b23-s.jpg" title="小A"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b23-s.jpg" title="小A"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b24.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b24.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>24</em>
                             <span class="mark"><a href="" target="_blank">海南</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b24-s.jpg" title="摄影旅行嘉"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b24-s.jpg" title="摄影旅行嘉"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b25.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b25.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>25</em>
                             <span class="mark"><a href="" target="_blank">芬兰</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b25-s.jpg" title="张幻想"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b25-s.jpg" title="张幻想"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b26.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b26.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>26</em>
                             <span class="mark"><a href="" target="_blank">缅甸</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b26-s.jpg" title="alickli"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b26-s.jpg" title="alickli"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b27.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b27.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>27</em>
                             <span class="mark"><a href="" target="_blank">坦桑尼亚</a><a class="user" href=""
                                                                                      target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b27-s.jpg" title="杜创"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b27-s.jpg" title="杜创"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b28.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b28.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>28</em>
                             <span class="mark"><a href="" target="_blank">首尔</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b28-s.jpg" title="CCChen"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b28-s.jpg" title="CCChen"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b29.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b29.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>29</em>
                             <span class="mark"><a href="" target="_blank">川西</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b29-s.jpg" title="叫我小缪"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b29-s.jpg" title="叫我小缪"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b30.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b30.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>30</em>
                             <span class="mark"><a href="" target="_blank">柬埔寨</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b30-s.jpg" title="雍容makiori"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b30-s.jpg" title="雍容makiori"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b31.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b31.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>31</em>
                             <span class="mark"><a href="" target="_blank">东欧</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b31-s.jpg" title="Cinderella囡囡"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b31-s.jpg" title="Cinderella囡囡"></a></span>
                         </li>
                         <li class="after"><span></span><em></em></li>
                         <li class="after"><span></span><em></em></li>
@@ -1700,205 +1703,205 @@
                         <li class="after"><span></span><em></em></li>
                         <li class="after"><span></span><em></em></li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b1.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b1.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>1</em>
                             <span class="mark"><a href="" target="_blank">贝加尔湖</a><a class="user" href=""
                                                                                      target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b1-s.jpg" title="若谷"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b1-s.jpg" title="若谷"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b2.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b2.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>2</em>
                             <span class="mark"><a href="" target="_blank">年保玉则</a><a class="user" href=""
                                                                                      target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b2-s.jpg" title="米粥"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b2-s.jpg" title="米粥"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b3.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b3.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>3</em>
                             <span class="mark"><a href="" target="_blank">尼泊尔</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b3-s.jpg" title="恶魔哭泣"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b3-s.jpg" title="恶魔哭泣"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b4.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b4.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>4</em>
                             <span class="mark"><a href="" target="_blank">台湾</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b4-s.jpg" title="池袋西口公园"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b4-s.jpg" title="池袋西口公园"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b5.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b5.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>5</em>
                             <span class="mark"><a href="" target="_blank">意大利</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b5-s.jpg" title="十三疯"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b5-s.jpg" title="十三疯"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b6.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b6.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>6</em>
                             <span class="mark"><a href="" target="_blank">巴基斯坦</a><a class="user" href=""
                                                                                      target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b6-s.jpg" title="kido"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b6-s.jpg" title="kido"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b7.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b7.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>7</em>
                             <span class="mark"><a href="" target="_blank">西北</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b7-s.jpg" title="一蕊Aries"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b7-s.jpg" title="一蕊Aries"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b8.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b8.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>8</em>
                             <span class="mark"><a href="" target="_blank">日本</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b8-s.jpg" title="榛美去"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b8-s.jpg" title="榛美去"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b9.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b9.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>9</em>
                             <span class="mark"><a href="" target="_blank">云南</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b9-s.jpg" title="一切旎好"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b9-s.jpg" title="一切旎好"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b10.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b10.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>10</em>
                             <span class="mark"><a href="" target="_blank">台湾</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b10-s.jpg" title="Cheer* 淇"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b10-s.jpg" title="Cheer* 淇"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b11.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b11.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>11</em>
                             <span class="mark"><a href="" target="_blank">清迈</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b10-s.jpg" title="馮花夫司基"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b10-s.jpg" title="馮花夫司基"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b12.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b12.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>12</em>
                             <span class="mark"><a href="" target="_blank">阿里</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b12-s.jpg" title="杨舒涵-YOUNG"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b12-s.jpg" title="杨舒涵-YOUNG"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b13.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b13.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>13</em>
                             <span class="mark"><a href="" target="_blank">摩洛哥</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b13-s.jpg" title="Eskimoldova"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b13-s.jpg" title="Eskimoldova"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b14.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b14.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>14</em>
                             <span class="mark"><a href="" target="_blank">印度</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b14-s.jpg" title="校长老婆"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b14-s.jpg" title="校长老婆"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b15.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b15.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>15</em>
                             <span class="mark"><a href="" target="_blank">英国</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b15-s.jpg" title="—簬晑北"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b15-s.jpg" title="—簬晑北"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b16.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b16.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>16</em>
                             <span class="mark"><a href="" target="_blank">哈尔滨</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b16-s.jpg" title="忆路有你"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b16-s.jpg" title="忆路有你"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b17.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b17.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>17</em>
                             <span class="mark"><a href="" target="_blank">夏威夷</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b17-s.jpg" title="冰糖葫芦娃"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b17-s.jpg" title="冰糖葫芦娃"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b18.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b18.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>18</em>
                             <span class="mark"><a href="" target="_blank">济州岛</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b18-s.jpg" title="丁susu"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b18-s.jpg" title="丁susu"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b19.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b19.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>19</em>
                             <span class="mark"><a href="" target="_blank">斯洛文尼亚</a><a class="user" href=""
                                                                                       target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b19-s.jpg" title="孟夕"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b19-s.jpg" title="孟夕"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b20.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b20.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>20</em>
                             <span class="mark"><a href="" target="_blank">虎跳峡</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b20-s.jpg" title="伍子。"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b20-s.jpg" title="伍子。"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b21.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b21.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>21</em>
                             <span class="mark"><a href="" target="_blank">东京</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b21-s.jpg" title="BIGYY"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b21-s.jpg" title="BIGYY"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b22.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b22.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>22</em>
                             <span class="mark"><a href="" target="_blank">俄罗斯</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b22-s.jpg" title="bxalice"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b22-s.jpg" title="bxalice"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b23.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b23.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>23</em>
                             <span class="mark"><a href="" target="_blank">土耳其</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b23-s.jpg" title="小A"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b23-s.jpg" title="小A"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b24.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b24.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>24</em>
                             <span class="mark"><a href="" target="_blank">海南</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b24-s.jpg" title="摄影旅行嘉"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b24-s.jpg" title="摄影旅行嘉"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b25.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b25.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>25</em>
                             <span class="mark"><a href="" target="_blank">芬兰</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b25-s.jpg" title="张幻想"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b25-s.jpg" title="张幻想"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b26.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b26.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>26</em>
                             <span class="mark"><a href="" target="_blank">缅甸</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b26-s.jpg" title="alickli"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b26-s.jpg" title="alickli"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b27.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b27.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>27</em>
                             <span class="mark"><a href="" target="_blank">坦桑尼亚</a><a class="user" href=""
                                                                                      target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b27-s.jpg" title="杜创"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b27-s.jpg" title="杜创"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b28.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b28.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>28</em>
                             <span class="mark"><a href="" target="_blank">首尔</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b28-s.jpg" title="CCChen"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b28-s.jpg" title="CCChen"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b29.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b29.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>29</em>
                             <span class="mark"><a href="" target="_blank">川西</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b29-s.jpg" title="叫我小缪"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b29-s.jpg" title="叫我小缪"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b30.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b30.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>30</em>
                             <span class="mark"><a href="" target="_blank">柬埔寨</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b30-s.jpg" title="雍容makiori"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b30-s.jpg" title="雍容makiori"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b31.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b31.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>31</em>
                             <span class="mark"><a href="" target="_blank">东欧</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b31-s.jpg" title="Cinderella囡囡"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b31-s.jpg" title="Cinderella囡囡"></a></span>
                         </li>
                         <li class="after"><span></span><em></em></li>
                         <li class="after"><span></span><em></em></li>
@@ -1970,205 +1973,205 @@
                         <li class="after"><span></span><em></em></li>
                         <li class="after"><span></span><em></em></li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b1.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b1.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>1</em>
                             <span class="mark"><a href="" target="_blank">贝加尔湖</a><a class="user" href=""
                                                                                      target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b1-s.jpg" title="若谷"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b1-s.jpg" title="若谷"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b2.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b2.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>2</em>
                             <span class="mark"><a href="" target="_blank">年保玉则</a><a class="user" href=""
                                                                                      target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b2-s.jpg" title="米粥"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b2-s.jpg" title="米粥"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b3.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b3.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>3</em>
                             <span class="mark"><a href="" target="_blank">尼泊尔</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b3-s.jpg" title="恶魔哭泣"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b3-s.jpg" title="恶魔哭泣"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b4.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b4.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>4</em>
                             <span class="mark"><a href="" target="_blank">台湾</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b4-s.jpg" title="池袋西口公园"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b4-s.jpg" title="池袋西口公园"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b5.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b5.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>5</em>
                             <span class="mark"><a href="" target="_blank">意大利</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b5-s.jpg" title="十三疯"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b5-s.jpg" title="十三疯"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b6.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b6.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>6</em>
                             <span class="mark"><a href="" target="_blank">巴基斯坦</a><a class="user" href=""
                                                                                      target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b6-s.jpg" title="kido"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b6-s.jpg" title="kido"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b7.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b7.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>7</em>
                             <span class="mark"><a href="" target="_blank">西北</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b7-s.jpg" title="一蕊Aries"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b7-s.jpg" title="一蕊Aries"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b8.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b8.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>8</em>
                             <span class="mark"><a href="" target="_blank">日本</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b8-s.jpg" title="榛美去"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b8-s.jpg" title="榛美去"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b9.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b9.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>9</em>
                             <span class="mark"><a href="" target="_blank">云南</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b9-s.jpg" title="一切旎好"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b9-s.jpg" title="一切旎好"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b10.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b10.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>10</em>
                             <span class="mark"><a href="" target="_blank">台湾</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b10-s.jpg" title="Cheer* 淇"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b10-s.jpg" title="Cheer* 淇"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b11.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b11.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>11</em>
                             <span class="mark"><a href="" target="_blank">清迈</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b10-s.jpg" title="馮花夫司基"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b10-s.jpg" title="馮花夫司基"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b12.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b12.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>12</em>
                             <span class="mark"><a href="" target="_blank">阿里</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b12-s.jpg" title="杨舒涵-YOUNG"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b12-s.jpg" title="杨舒涵-YOUNG"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b13.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b13.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>13</em>
                             <span class="mark"><a href="" target="_blank">摩洛哥</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b13-s.jpg" title="Eskimoldova"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b13-s.jpg" title="Eskimoldova"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b14.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b14.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>14</em>
                             <span class="mark"><a href="" target="_blank">印度</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b14-s.jpg" title="校长老婆"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b14-s.jpg" title="校长老婆"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b15.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b15.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>15</em>
                             <span class="mark"><a href="" target="_blank">英国</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b15-s.jpg" title="—簬晑北"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b15-s.jpg" title="—簬晑北"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b16.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b16.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>16</em>
                             <span class="mark"><a href="" target="_blank">哈尔滨</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b16-s.jpg" title="忆路有你"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b16-s.jpg" title="忆路有你"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b17.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b17.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>17</em>
                             <span class="mark"><a href="" target="_blank">夏威夷</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b17-s.jpg" title="冰糖葫芦娃"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b17-s.jpg" title="冰糖葫芦娃"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b18.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b18.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>18</em>
                             <span class="mark"><a href="" target="_blank">济州岛</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b18-s.jpg" title="丁susu"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b18-s.jpg" title="丁susu"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b19.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b19.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>19</em>
                             <span class="mark"><a href="" target="_blank">斯洛文尼亚</a><a class="user" href=""
                                                                                       target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b19-s.jpg" title="孟夕"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b19-s.jpg" title="孟夕"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b20.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b20.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>20</em>
                             <span class="mark"><a href="" target="_blank">虎跳峡</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b20-s.jpg" title="伍子。"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b20-s.jpg" title="伍子。"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b21.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b21.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>21</em>
                             <span class="mark"><a href="" target="_blank">东京</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b21-s.jpg" title="BIGYY"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b21-s.jpg" title="BIGYY"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b22.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b22.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>22</em>
                             <span class="mark"><a href="" target="_blank">俄罗斯</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b22-s.jpg" title="bxalice"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b22-s.jpg" title="bxalice"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b23.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b23.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>23</em>
                             <span class="mark"><a href="" target="_blank">土耳其</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b23-s.jpg" title="小A"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b23-s.jpg" title="小A"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b24.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b24.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>24</em>
                             <span class="mark"><a href="" target="_blank">海南</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b24-s.jpg" title="摄影旅行嘉"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b24-s.jpg" title="摄影旅行嘉"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b25.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b25.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>25</em>
                             <span class="mark"><a href="" target="_blank">芬兰</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b25-s.jpg" title="张幻想"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b25-s.jpg" title="张幻想"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b26.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b26.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>26</em>
                             <span class="mark"><a href="" target="_blank">缅甸</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b26-s.jpg" title="alickli"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b26-s.jpg" title="alickli"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b27.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b27.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>27</em>
                             <span class="mark"><a href="" target="_blank">坦桑尼亚</a><a class="user" href=""
                                                                                      target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b27-s.jpg" title="杜创"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b27-s.jpg" title="杜创"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b28.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b28.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>28</em>
                             <span class="mark"><a href="" target="_blank">首尔</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b28-s.jpg" title="CCChen"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b28-s.jpg" title="CCChen"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b29.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b29.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>29</em>
                             <span class="mark"><a href="" target="_blank">川西</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b29-s.jpg" title="叫我小缪"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b29-s.jpg" title="叫我小缪"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b30.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b30.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>30</em>
                             <span class="mark"><a href="" target="_blank">柬埔寨</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b30-s.jpg" title="雍容makiori"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b30-s.jpg" title="雍容makiori"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b31.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b31.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>31</em>
                             <span class="mark"><a href="" target="_blank">东欧</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b31-s.jpg" title="Cinderella囡囡"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b31-s.jpg" title="Cinderella囡囡"></a></span>
                         </li>
                         <li class="after"><span></span><em></em></li>
                         <li class="after"><span></span><em></em></li>
@@ -2240,205 +2243,205 @@
                     <ul class="month-panel">
                         <li class="after"><span></span><em></em></li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b1.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b1.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>1</em>
                             <span class="mark"><a href="" target="_blank">贝加尔湖</a><a class="user" href=""
                                                                                      target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b1-s.jpg" title="若谷"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b1-s.jpg" title="若谷"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b2.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b2.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>2</em>
                             <span class="mark"><a href="" target="_blank">年保玉则</a><a class="user" href=""
                                                                                      target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b2-s.jpg" title="米粥"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b2-s.jpg" title="米粥"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b3.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b3.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>3</em>
                             <span class="mark"><a href="" target="_blank">尼泊尔</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b3-s.jpg" title="恶魔哭泣"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b3-s.jpg" title="恶魔哭泣"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b4.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b4.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>4</em>
                             <span class="mark"><a href="" target="_blank">台湾</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b4-s.jpg" title="池袋西口公园"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b4-s.jpg" title="池袋西口公园"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b5.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b5.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>5</em>
                             <span class="mark"><a href="" target="_blank">意大利</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b5-s.jpg" title="十三疯"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b5-s.jpg" title="十三疯"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b6.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b6.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>6</em>
                             <span class="mark"><a href="" target="_blank">巴基斯坦</a><a class="user" href=""
                                                                                      target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b6-s.jpg" title="kido"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b6-s.jpg" title="kido"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b7.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b7.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>7</em>
                             <span class="mark"><a href="" target="_blank">西北</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b7-s.jpg" title="一蕊Aries"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b7-s.jpg" title="一蕊Aries"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b8.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b8.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>8</em>
                             <span class="mark"><a href="" target="_blank">日本</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b8-s.jpg" title="榛美去"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b8-s.jpg" title="榛美去"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b9.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b9.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>9</em>
                             <span class="mark"><a href="" target="_blank">云南</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b9-s.jpg" title="一切旎好"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b9-s.jpg" title="一切旎好"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b10.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b10.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>10</em>
                             <span class="mark"><a href="" target="_blank">台湾</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b10-s.jpg" title="Cheer* 淇"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b10-s.jpg" title="Cheer* 淇"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b11.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b11.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>11</em>
                             <span class="mark"><a href="" target="_blank">清迈</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b10-s.jpg" title="馮花夫司基"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b10-s.jpg" title="馮花夫司基"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b12.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b12.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>12</em>
                             <span class="mark"><a href="" target="_blank">阿里</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b12-s.jpg" title="杨舒涵-YOUNG"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b12-s.jpg" title="杨舒涵-YOUNG"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b13.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b13.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>13</em>
                             <span class="mark"><a href="" target="_blank">摩洛哥</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b13-s.jpg" title="Eskimoldova"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b13-s.jpg" title="Eskimoldova"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b14.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b14.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>14</em>
                             <span class="mark"><a href="" target="_blank">印度</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b14-s.jpg" title="校长老婆"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b14-s.jpg" title="校长老婆"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b15.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b15.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>15</em>
                             <span class="mark"><a href="" target="_blank">英国</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b15-s.jpg" title="—簬晑北"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b15-s.jpg" title="—簬晑北"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b16.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b16.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>16</em>
                             <span class="mark"><a href="" target="_blank">哈尔滨</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b16-s.jpg" title="忆路有你"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b16-s.jpg" title="忆路有你"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b17.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b17.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>17</em>
                             <span class="mark"><a href="" target="_blank">夏威夷</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b17-s.jpg" title="冰糖葫芦娃"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b17-s.jpg" title="冰糖葫芦娃"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b18.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b18.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>18</em>
                             <span class="mark"><a href="" target="_blank">济州岛</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b18-s.jpg" title="丁susu"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b18-s.jpg" title="丁susu"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b19.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b19.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>19</em>
                             <span class="mark"><a href="" target="_blank">斯洛文尼亚</a><a class="user" href=""
                                                                                       target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b19-s.jpg" title="孟夕"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b19-s.jpg" title="孟夕"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b20.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b20.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>20</em>
                             <span class="mark"><a href="" target="_blank">虎跳峡</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b20-s.jpg" title="伍子。"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b20-s.jpg" title="伍子。"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b21.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b21.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>21</em>
                             <span class="mark"><a href="" target="_blank">东京</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b21-s.jpg" title="BIGYY"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b21-s.jpg" title="BIGYY"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b22.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b22.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>22</em>
                             <span class="mark"><a href="" target="_blank">俄罗斯</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b22-s.jpg" title="bxalice"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b22-s.jpg" title="bxalice"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b23.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b23.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>23</em>
                             <span class="mark"><a href="" target="_blank">土耳其</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b23-s.jpg" title="小A"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b23-s.jpg" title="小A"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b24.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b24.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>24</em>
                             <span class="mark"><a href="" target="_blank">海南</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b24-s.jpg" title="摄影旅行嘉"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b24-s.jpg" title="摄影旅行嘉"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b25.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b25.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>25</em>
                             <span class="mark"><a href="" target="_blank">芬兰</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b25-s.jpg" title="张幻想"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b25-s.jpg" title="张幻想"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b26.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b26.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>26</em>
                             <span class="mark"><a href="" target="_blank">缅甸</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b26-s.jpg" title="alickli"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b26-s.jpg" title="alickli"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b27.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b27.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>27</em>
                             <span class="mark"><a href="" target="_blank">坦桑尼亚</a><a class="user" href=""
                                                                                      target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b27-s.jpg" title="杜创"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b27-s.jpg" title="杜创"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b28.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b28.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>28</em>
                             <span class="mark"><a href="" target="_blank">首尔</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b28-s.jpg" title="CCChen"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b28-s.jpg" title="CCChen"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b29.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b29.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>29</em>
                             <span class="mark"><a href="" target="_blank">川西</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b29-s.jpg" title="叫我小缪"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b29-s.jpg" title="叫我小缪"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b30.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b30.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>30</em>
                             <span class="mark"><a href="" target="_blank">柬埔寨</a><a class="user" href=""
                                                                                     target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b30-s.jpg" title="雍容makiori"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b30-s.jpg" title="雍容makiori"></a></span>
                         </li>
                         <li class="_j_hover">
-                            <span><a href="" target="_blank"><img src="../../syste_img/img/lilizaimu-img/b31.jpg" target="_blank"
+                            <span><a href="" target="_blank"><img src="syste_img/img/lilizaimu-img/b31.jpg" target="_blank"
                                                                   style="width: 135px;height: 84px;"></a></span><em>31</em>
                             <span class="mark"><a href="" target="_blank">东欧</a><a class="user" href="" target="_blank"><img
-                                    src="../../syste_img/img/lilizaimu-img/b31-s.jpg" title="Cinderella囡囡"></a></span>
+                                    src="syste_img/img/lilizaimu-img/b31-s.jpg" title="Cinderella囡囡"></a></span>
                         </li>
                         <li class="after"><span></span><em></em></li>
                         <li class="after"><span></span><em></em></li>
@@ -2482,7 +2485,7 @@
 </div>
 
 <div class="footer">
-    <iframe src="IndexFooter.html" frameborder="0" scrolling="no" marginheight="0"
+    <iframe src="IndexFooter" frameborder="0" scrolling="no" marginheight="0"
             marginwidth="0"
             style="margin: 0px auto;"></iframe>
 </div>

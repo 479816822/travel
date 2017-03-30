@@ -1,11 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>购物车</title>
-    <link href="../../css/MainFooter.css" rel="stylesheet" type="text/css"/>
-    <script language="javascript" src="../../js/jquery-3.1.0.min.js"
+    <link href="css/MainFooter.css" rel="stylesheet" type="text/css"/>
+    <script language="javascript" src="js/jquery-3.1.0.min.js"
     type="text/javascript"></script>
-    <script language="javascript" src="../../js/jquery-validation-1.15.1.js"></script>
+    <script language="javascript" src="js/jquery-validation-1.15.1.js"></script>
 </head>
 <body>
 <div id="body">

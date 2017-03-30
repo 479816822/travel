@@ -1,13 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>${userInfo.userNick}-蚂蜂窝</title>
-<link href="../../css/myhome/myHome.css" rel="stylesheet" type="text/css" />
-<link href="../../css/myhome/footer.css" rel="stylesheet" type="text/css" />
-<link href="../../css/myhome/myHome1.css" rel="stylesheet" type="text/css" />
-<link href="../../css/myhome/toolbar.css" rel="stylesheet" type="text/css" />
+<link href="css/myhome/myHome.css" rel="stylesheet" type="text/css" />
+<link href="css/myhome/footer.css" rel="stylesheet" type="text/css" />
+<link href="css/myhome/myHome1.css" rel="stylesheet" type="text/css" />
+<link href="css/myhome/toolbar.css" rel="stylesheet" type="text/css" />
 
-<script language="javascript" src="../../css/myhome/myhome.js"
+<script language="javascript" src="css/myhome/myhome.js"
 	type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -139,7 +142,7 @@
 		"world_mdd_lng_lat" : [],
 		"target_uid" : 62143073,
 		"WWW_HOST" : "www.mafengwo.cn",
-		"IMG_HOST" : "images.mafengwo.net",
+		"syste_img/img_HOST" : "images.mafengwo.net",
 		"P_HOST" : "passport.mafengwo.cn",
 		"P_HTTP" : "https:\/\/passport.mafengwo.cn",
 		"UID" : 62143073,
@@ -148,143 +151,143 @@
 </script>
 
 <script type="text/javascript">
-	$(function() {
-		//js代码处理动态效果
-		var url = "";
+$(function() {
+	//js代码处理动态效果
+	var url = "";
 
-		var img_src = "";
+	var img_src = "";
 
-		//1.ajax数据异步更新用户的个性签名
-		$("#_j_introsaver").click(function() {
-			var string = $("#_j_introarea").val();
-			var id = $("#user_id").html();
-			var user = {
-				"userId" : id,
-				"userSignature" : string
-			}
-			url = "updataSign"
-			ajax(user);
-		});
-
-		//2.ajax进行顶的数据同步更新
-		$(".praise_1").click(function() {
-			var travel = {
-				"traId" : $(this).parent().children().html(),
-				"traPraise" : $(this).parent().children().next().html()
-			}
-			url = "updataPraise"
-			ajax1($(this).parent().children().next(), travel);
-		});
-
-		//3.用户重新设置封面
-		$(".set_set11")
-				.click(
-						function() {
-							$(".page_img").addClass("page_img1");
-							//进行ajax数据用户当前游记的所有的图片查询
-							var travelA = {
-								"traId" : $(this).prev().html()
-							};
-							$
-									.ajax({
-										type : "POST",
-										url : "getAllTravelImg",
-										data : JSON.stringify(travelA),
-										contentType : 'application/json; charset=utf-8',
-										dataType : 'json',
-										success : function(msg) {
-											//更新数据插入所有的图片数据
-											var strs = new Array(); //定义一数组
-											strs = msg.allImg.split(";"); //字符分割 
-											//创建li元素进行数据的显示
-											for (i = 0; i < strs.length; i++) {
-												var str = "<li class='page_img113'><img class='page_img114' src='img/"+strs[i]+"'></li>"
-												var $node = $(str);
-												$(".page_img112").append($node);
-											}
-											$(".page_img1111").addClass(
-													"page_img111112");
-										},
-										error : function(msg) {
-											//提示输需要入的信息
-										}
-									});
-
-						})
-
-		//4.确定替换封面的背景图片true_true
-		$(".true_true").click(function() {
-			$()
-		});
-
-		//5.取消则退出,移除样式
-		$(".back").click(function() {
-			$("#page").next().removeClass("page_img111112");
-			$(".page_img").removeClass("page_img1");
-		});
-
-		//6.图片获得焦点时给img_src赋值
-		$(".page_img114").click(function() {
-			img_src = $(this).children().attr("src");
-		})
-
-		//7.用户进行留言
-		$(".leave_word")
-				.click(
-						function() {
-							//获得留言的内容
-
-							var leave = {
-								"homeId" : $("#user_id").html(),
-								"leaveMsg" : $(this).prev().val()
-							};
-
-							$
-									.ajax({
-										type : "POST",
-										url : "leave_word",
-										data : JSON.stringify(leave),
-										contentType : 'application/json; charset=utf-8',
-										dataType : 'json',
-										success : function(msg) {
-											//更新数据
-											var str = "<li><div class='word_one'><div class='word_one_one'><img  src='"+msg.result.leave.userHead+" 'class='word_one_one'></div><div class='word_one_two'><div class='word_one_two_one'>"
-													+ msg.result.leave.userNick
-													+ "</div><div class='word_one_two_two'>"
-													+ msg.result.time
-													+ "</div></div></div><div class='word_two'>"
-													+ msg.result.leaveMsg
-													+ "</div></li>";
-											var $node = $(str);
-											$("._j_msgboard_list")
-													.append($node);
-											$("._j_msgboard_area").val("");
-										},
-										error : function(msg) {
-											//提示输需要入的信息
-
-										}
-									});
-
-						})
-
-		//ajax公用的方法
-		function ajax(user) {
-			$.ajax({
-				type : "POST",
-				url : url,
-				data : JSON.stringify(user),
-				contentType : 'application/json; charset=utf-8',
-				dataType : 'json',
-				success : function(msg) {
-					$("#true").show();
-				},
-				error : function(msg) {
-					//提示输需要入的信息
-
-				}
-			});
+	//1.ajax数据异步更新用户的个性签名
+	$("#_j_introsaver").click(function() {
+		var string = $("#_j_introarea").val();
+		var id = $("#user_id").html();
+		var user = {
+			"userId" : id,
+			"userSignature" : string
 		}
+		url = "updataSign"
+		ajax(user);
+	});
+
+	//2.ajax进行顶的数据同步更新
+	$(".praise_1").click(function() {
+		var travel = {
+			"traId" : $(this).parent().children().html(),
+			"traPraise" : $(this).parent().children().next().html()
+		}
+		url = "updataPraise"
+		ajax1($(this).parent().children().next(), travel);
+	});
+
+	//3.用户重新设置封面
+	$(".set_set11")
+			.click(
+					function() {
+						$(".page_img").addClass("page_img1");
+						//进行ajax数据用户当前游记的所有的图片查询
+						var travelA = {
+							"traId" : $(this).prev().html()
+						};
+						$
+								.ajax({
+									type : "POST",
+									url : "getAllTravelImg",
+									data : JSON.stringify(travelA),
+									contentType : 'application/json; charset=utf-8',
+									dataType : 'json',
+									success : function(msg) {
+										//更新数据插入所有的图片数据
+										var strs = new Array(); //定义一数组
+										strs = msg.allImg.split(";"); //字符分割 
+										//创建li元素进行数据的显示
+										for (i = 0; i < strs.length; i++) {
+											var str = "<li class='page_img113'><img class='page_img114' src='img/"+strs[i]+"'></li>"
+											var $node = $(str);
+											$(".page_img112").append($node);
+										}
+										$(".page_img1111").addClass(
+												"page_img111112");
+									},
+									error : function(msg) {
+										//提示输需要入的信息
+									}
+								});
+
+					})
+
+	//4.确定替换封面的背景图片true_true
+	$(".true_true").click(function() {
+		$()
+	});
+
+	//5.取消则退出,移除样式
+	$(".back").click(function() {
+		$("#page").next().removeClass("page_img111112");
+		$(".page_img").removeClass("page_img1");
+	});
+
+	//6.图片获得焦点时给img_src赋值
+	$(".page_img114").click(function() {
+		img_src = $(this).children().attr("src");
+	})
+
+	//7.用户进行留言
+	$(".leave_word")
+			.click(
+					function() {
+						//获得留言的内容
+
+						var leave = {
+							"homeId" : $("#user_id").html(),
+							"leaveMsg" : $(this).prev().val()
+						};
+
+						$
+								.ajax({
+									type : "POST",
+									url : "leave_word",
+									data : JSON.stringify(leave),
+									contentType : 'application/json; charset=utf-8',
+									dataType : 'json',
+									success : function(msg) {
+										//更新数据
+										var str = "<li><div class='word_one'><div class='word_one_one'><img  src='"+msg.result.leave.userHead+" 'class='word_one_one'></div><div class='word_one_two'><div class='word_one_two_one'>"
+												+ msg.result.leave.userNick
+												+ "</div><div class='word_one_two_two'>"
+												+ msg.result.time
+												+ "</div></div></div><div class='word_two'>"
+												+ msg.result.leaveMsg
+												+ "</div></li>";
+										var $node = $(str);
+										$("._j_msgboard_list")
+												.append($node);
+										$("._j_msgboard_area").val("");
+									},
+									error : function(msg) {
+										//提示输需要入的信息
+
+									}
+								});
+
+					})
+
+	//ajax公用的方法
+	function ajax(user) {
+		$.ajax({
+			type : "POST",
+			url : url,
+			data : JSON.stringify(user),
+			contentType : 'application/json; charset=utf-8',
+			dataType : 'json',
+			success : function(msg) {
+				$("#true").show();
+			},
+			error : function(msg) {
+				//提示输需要入的信息
+
+			}
+		});
+	}
 
 		//ajax公用的方法
 		function ajax1(p, travel) {
@@ -317,10 +320,11 @@
 	<div class="topBar">
 
 		<div class="header1">
-			<iframe src="Mheader.html" frameborder="0" scrolling="no" marginheight="0"
+			<iframe src="Mheader" frameborder="0" scrolling="no" marginheight="0"
 					marginwidth="0" style="margin: 0px auto;"></iframe>
 		</div>
 	</div>
+
 
 
 
@@ -639,19 +643,19 @@
 
 								<!--变化不同的地图-->
 								<li class="_j_map_themetype  on" data-option="0"><a
-									role="button"><img src="img/myHome/m1.gif"></a>
+									role="button"><img src="syste_img/img/myHome/m1.gif"></a>
 									<p>经典</p></li>
 								<li class="_j_map_themetype " data-option="1"><a
-									role="button"><img src="img/myHome/m2.gif"></a>
+									role="button"><img src="syste_img/img/myHome/m2.gif"></a>
 									<p>跃入蓝色星球</p></li>
 								<li class="_j_map_themetype " data-option="2"><a
-									role="button"><img src="img/myHome/m3.gif"></a>
+									role="button"><img src="syste_img/img/myHome/m3.gif"></a>
 									<p>旅行让世界有光</p></li>
 								<li class="_j_map_themetype " data-option="3"><a
-									role="button"><img src="img/myHome/m4.gif"></a>
+									role="button"><img src="syste_img/img/myHome/m4.gif"></a>
 									<p>大航海时代</p></li>
 								<li class="_j_map_themetype " data-option="4"><a
-									role="button"><img src="img/myHome/m5.gif"></a>
+									role="button"><img src="syste_img/img/myHome/m5.gif"></a>
 									<p>PINK PUNK</p></li>
 							</ul>
 						</div>
@@ -685,11 +689,11 @@
 							class="_j_bgoption" data-option="1"><img
 								src="img/myHome/b2.png" height="48" width="48"></a> <a
 							role="button" class="_j_bgoption" data-option="2"><img
-								src="img/myHome/b3.png" height="48" width="48"></a> <a
+								src="syste_img/img/myHome/b3.png" height="48" width="48"></a> <a
 							role="button" class="_j_bgoption" data-option="3"><img
-								src="img/myHome/b4.png" height="48" width="48"></a> <a
+								src="syste_img/img/myHome/b4.png" height="48" width="48"></a> <a
 							role="button" class="_j_bgoption" data-option="4"><img
-								src="img/myHome/b5.png" height="48" width="48"></a>
+								src="syste_img/img/myHome/b5.png" height="48" width="48"></a>
 						</span>
 					</div>
 				</div>
@@ -704,6 +708,7 @@
 				<style>
 .MProfile pre {
 	white-space: pre-wrap;
+	word-break: break-word;
 	word-wrap: break-word;
 }
 </style>
@@ -730,7 +735,7 @@
 							href="" target="_blank" title="分舵"><i class="duo"></i> <a
 							href="" target="_blank" title="指路人"><i class="zhiluren"></i></a>
 							<a href="" target="_blank" title="旅行家"><i class="traveller"></i></a>
-					 </div>
+					</div>
 					<div class="MAvaInfo clearfix MAvaMyInfo">
 						<span class="MAvaLevel flt1">等级：<a href=""
 							title="${userInfo.userLevel}" target="_blank">Lv.${user.userLevel }</a></span>
@@ -806,56 +811,56 @@
 						<div class="MUsersAtom">
 							<ul class="clearfix _j_followlist">
 								<li><a href="" target="_blank"> <img
-										src="../syste_img/img/img/1.png" height="48" width="48" alt="蜂窝机器人"
+										src="syste_img/img/img/1.png" height="48" width="48" alt="蜂窝机器人"
 										title="蜂窝机器人">
 								</a>
 									<p>
 										<a href="" target="_blank" title="蜂窝机器人">蜂窝机器人</a>
 									</p></li>
 								<li><a href="" target="_blank"> <img
-										src="../syste_img/img/img/2.png" height="48" width="48" alt="蚂蜂窝攻略组"
+										src="syste_img/img/img/2.png" height="48" width="48" alt="蚂蜂窝攻略组"
 										title="蚂蜂窝攻略组">
 								</a>
 									<p>
 										<a href="" target="_blank" title="蚂蜂窝攻略组">蚂蜂窝攻略组</a>
 									</p></li>
 								<li><a href="" target="_blank"> <img
-										src="../syste_img/img/img/3png.png" height="48" width="48" alt="蜂窝机器人2号"
+										src="syste_img/img/img/3png.png" height="48" width="48" alt="蜂窝机器人2号"
 										title="蜂窝机器人2号">
 								</a>
 									<p>
 										<a href="" target="_blank" title="蜂窝机器人2号">蜂窝机器人2号</a>
 									</p></li>
 								<li><a href="" target="_blank"> <img
-										src="../syste_img/img/img/4.png" height="48" width="48" alt="蚂蜂窝宝藏办"
+										src="syste_img/img/img/4.png" height="48" width="48" alt="蚂蜂窝宝藏办"
 										title="蚂蜂窝宝藏办">
 								</a>
 									<p>
 										<a href="" target="_blank" title="蚂蜂窝宝藏办">蚂蜂窝宝藏办</a>
 									</p></li>
 								<li><a href="" target="_blank"> <img
-										src="../syste_img/img/img/5.png" height="48" width="48" alt="总编辑时间"
+										src="syste_img/img/img/5.png" height="48" width="48" alt="总编辑时间"
 										title="总编辑时间">
 								</a>
 									<p>
 										<a href="" target="_blank" title="总编辑时间">总编辑时间</a>
 									</p></li>
 								<li><a href="" target="_blank"> <img
-										src="../syste_img/img/img/9.jpeg" height="48" width="48" alt="蚂蜂窝活动君"
+										src="syste_img/img/img/9.jpeg" height="48" width="48" alt="蚂蜂窝活动君"
 										title="蚂蜂窝活动君">
 								</a>
 									<p>
 										<a href="" target="_blank" title="蚂蜂窝活动君">蚂蜂窝活动君</a>
 									</p></li>
 								<li><a href="" target="_blank"> <img
-										src="../syste_img/img/img/7.gif" height="48" width="48" alt="蚂蜂窝长老会"
+										src="syste_img/img/img/7.gif" height="48" width="48" alt="蚂蜂窝长老会"
 										title="蚂蜂窝长老会">
 								</a>
 									<p>
 										<a href="" target="_blank" title="蚂蜂窝长老会">蚂蜂窝长老会</a>
 									</p></li>
 								<li><a href="" target="_blank"> <img
-										src="../syste_img/img/img/8.png" height="48" width="48" alt="酒店专家助理"
+										src="syste_img/img/img/8.png" height="48" width="48" alt="酒店专家助理"
 										title="酒店专家助理">
 								</a>
 									<p>
@@ -880,24 +885,24 @@
 					<div class="MGroupDetail">
 						<ul>
 							<li><a href="" target="_blank"><img
-									src="../syste_img/img/img/12.jpeg" height="80" width="80" alt=""></a> <a
+									src="syste_img/img/img/12.jpeg" height="80" width="80" alt=""></a> <a
 								href="" target="_blank" class="name" title="蜂窝广场">蜂窝广场</a> <!--<p>3243贴子</p>-->
 							</li>
-							<li><a href="" target="_blank"><img src="../syste_img/img/img/13.png"
+							<li><a href="" target="_blank"><img src="syste_img/img/img/13.png"
 									height="80" width="80" alt=""></a> <a href="" target="_blank"
 								class="name" title="照片PK讨论">照片PK讨论</a> <!--<p>3243贴子</p>--></li>
-							<li><a href="" target="_blank"><img src="../syste_img/img/img/14.png"
+							<li><a href="" target="_blank"><img src="syste_img/img/img/14.png"
 									height="80" width="80" alt=""></a> <a href="/g/13356.html"
 								target="_blank" class="name" title="MFW问答">MFW问答</a> <!--<p>3243贴子</p>-->
 							</li>
 							<li><a href="" target="_blank"><img
-									src="../syste_img/img/img/15.jpeg" height="80" width="80" alt=""></a> <a
+									src="syste_img/img/img/15.jpeg" height="80" width="80" alt=""></a> <a
 								href="" target="_blank" class="name" title="蜂蜜商城">蜂蜜商城</a> <!--<p>3243贴子</p>-->
 							</li>
 							<li><a href="" target="_blank"><img
-									src="../syste_img/img/img/16.jpeg" height="80" width="80" alt=""></a> <a
-								href=""
-								target="_blank"  class="name" title="MFW足迹点">MFW足迹点</a>
+									src="syste_img/img/img/16.jpeg" height="80" width="80" alt=""></a> <a
+								href="
+								target=" _blank" class="name" title="MFW足迹点">MFW足迹点</a>
 								<!--<p>3243贴子</p>--></li>
 						</ul>
 					</div>
@@ -922,7 +927,7 @@
 					</div>
 					<div class="MGuestList">
 						<ul class="_j_msgboard_list">
-							<!--c:if test="${messageList != null }">
+							<c:if test="${messageList != null }">
 								<c:forEach items="${messageList}" var="message">
 									<li>
 										<div class='word_one'>
@@ -937,7 +942,7 @@
 										<div class='word_two'>${message.leaveMsg}</div>
 									</li>
 								</c:forEach>
-							</c:if-->
+							</c:if>
 
 
 						</ul>
@@ -957,10 +962,10 @@
 							</a> <span class="ico_slide prev _j_prev"></span> <span
 								class="ico_slide next _j_next"></span>
 						</div>
-						<!--div class="music_info">
+						<div class="music_info">
 							<span class="name"></span> <span>来自</span> <a
 								href="javascript:void(0);">暂无</a>
-						</div-->
+						</div>
 					</div>
 
 				</div>
@@ -1096,7 +1101,7 @@
 				<!-- -**********用户的游记的************** -->
 				<!-- -**********用户的游记的************** -->
 				<!-- -**********用户的游记的************** -->
-				<!--c:forEach items="${trackList}" var="trackInfo">
+				<c:forEach items="${trackList}" var="trackInfo">
 
 
 					<div class="common_block my_notes">
@@ -1170,7 +1175,7 @@
 				</c:forEach>
 
 				<!-- ---------***********************************用户问答************************* -->
-				<!--c:if-- test="${anserList != null }">
+				<c:if test="${anserList != null }">
 					<div class="question_answer">
 						<c:forEach items="${anserList}" var="anser">
 							<div class="question_answer_one">
@@ -1194,7 +1199,7 @@
 							共<span>${anserList.size()}</span>回答
 						</div>
 					</div>
-				</c:if---->
+				</c:if>
 
 
 				<!-- ---------***********************************用户的点评************************* -->
@@ -1262,7 +1267,7 @@
 				<!-- 用户的回答*************************************************8 -->
 				<!-- 用户的回答*************************************************8 -->
 
-				<!--c:if test="${anserList == null }">
+				<c:if test="${anserList == null }">
 					<div class="common_block my_notes">
 						<div class="common_title clearfix">
 							<h2>我的回答</h2>
@@ -1276,7 +1281,7 @@
 							</div>
 						</div>
 					</div>
-				</c:if-->
+				</c:if>
 				<!-- 用户的回答*************************************************8 -->
 			</div>
 		</div>
@@ -1284,9 +1289,8 @@
 
 
 
-
 	<div class="footer">
-			<iframe src="MainFooter.html" frameborder="0" scrolling="no" marginheight="0"
+			<iframe src="MainFooter" frameborder="0" scrolling="no" marginheight="0"
 					marginwidth="0" style="margin: 0px auto;"></iframe>
 
 	</div>
@@ -1306,10 +1310,10 @@
 		</div>
 		<div class="toolbar-item-code">
 			<a role="button" class="btn"> <i class="icon_code"></i>
-			</a> <a role="button" class="mfw-code _j_code"> <img
+			</a> <a role="button" class="mfw-code _j_code"> <syste_img/img
 				src="http://images.mafengwo.net/images/qrcode-weixin.gif">
 			</a>
-			<!--<div class="wx-official-pop"><img src="http://images.mafengwo.net/images/qrcode-weixin.gif"><i class="_j_closeqrcode"></i></div>-->
+			<!--<div class="wx-official-pop"><syste_img/img src="http://images.mafengwo.net/images/qrcode-weixin.gif"><i class="_j_closeqrcode"></i></div>-->
 		</div>
 		<div class="toolbar-item-down">
 			<a role="button" class="btn _j_gobottom"> <i class="icon_down"></i>
@@ -1333,17 +1337,17 @@
 	<!-- ************************************设置封面的图片************************** -->
 	<!-- ************************************设置封面的图片************************** -->
 
-	<div class="page_img" id="page"></div>
-	<div class="page_img1111">
-		<div class="page_img1112">
+	<div class="page_syste_img/img" id="page"></div>
+	<div class="page_syste_img/img1111">
+		<div class="page_syste_img/img1112">
 			<h1 style="margin: 10px auto auto 30px;">选择封面的图片</h1>
 		</div>
-		<div class="page_img1113">
-			<ul class="page_img112">
+		<div class="page_syste_img/img1113">
+			<ul class="page_syste_img/img112">
 
 			</ul>
 		</div>
-		<div class="page_img1114">
+		<div class="page_syste_img/img1114">
 			<span class="true_true">确定</span> <span class="back">&nbsp;取消</span>
 		</div>
 	</div>

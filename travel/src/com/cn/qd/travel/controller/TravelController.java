@@ -47,6 +47,7 @@ public class TravelController {
 				travel = new MDTravelParagraph();
 				travel.setMdVideo(objArray[i].substring(3));
 			}
+			travel.setMdStdcode((short)i);
 			travel.setMdRecid(GUID.createGuid());
 			travel.setMdTavelId(travelId);
 			travelList.add(travel);
@@ -72,5 +73,54 @@ public class TravelController {
 		// 进行数据封装
 		return "Writetravel";
 	}
+	
+	
+	/**
+	 * 根据游记id查询
+	 * @param model
+	 * @param session
+	 * @return
+	 */
+	@RequestMapping(value = "showTravel")
+	public String showTravel(Model model, HttpSession session){
+		ArrayList<Object> travels=new ArrayList<Object>();
+		travels.addAll(travelService.oneResultProvider("KXA148966872479441780YTOG", null));
+		MDTravelNote travelInfo =null;
+		if(travels.size()>=1){
+			travelInfo=(MDTravelNote)travels.get(0);
+		}
+		model.addAttribute("travelinfo", travelInfo);
+		return "show_travels";
+	}
+	
+	
+	/**
+	 * 网站首页，每页的游记显示数为20条
+	 * @param model
+	 * @param session
+	 * @return
+	 */
+	@RequestMapping(value = "toIndex")
+	public String toIndex(Model model, HttpSession session){
+		
+		return "index";
+	}
+	
+
+
+	/**
+	 * 
+	 * @param model
+	 * @param session
+	 * @return
+	 */
+	@RequestMapping(value = "toMyTravel")
+	public String toMyTravel(Model model, HttpSession session){
+		return "mytravels";
+	}
+	
+	
+	
+	
 
 }

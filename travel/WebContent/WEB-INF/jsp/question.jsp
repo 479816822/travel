@@ -1,14 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8"
-	import="com.mfw.dao.*, com.mfw.entity.*,java.util.List,java.util.ArrayList"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
-<%
-	String path = request.getContextPath();
-	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
-			+ path + "/";
-%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -533,7 +525,7 @@
 											<div class="question_1">
 												<!-- 关键字分解 -->
 												<c:set var="split"
-													value='${fn:split(question.keyWord,";") }'></c:set>
+													value='${d }'></c:set>
 
 												<c:forEach items="${split }" var="sp">
 													<a class="question_title">${sp }</a>

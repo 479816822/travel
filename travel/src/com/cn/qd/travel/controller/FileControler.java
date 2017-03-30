@@ -1,9 +1,11 @@
 package com.cn.qd.travel.controller;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.Calendar;
 
 import javax.print.Doc;
 import javax.servlet.http.HttpServletRequest;
@@ -30,6 +32,43 @@ import com.cn.qd.travel.util.Log;
 public class FileControler {
 
 	private Log log = Log.getLogger();
+	
+	/**
+	 * 文件上传
+	 * @param files
+	 * @param request
+	 * @return
+	 */
+		@ResponseBody
+		@RequestMapping("upload")
+		public String[] productInfo(@RequestParam("file") CommonsMultipartFile[] files, HttpServletRequest request) {
+			String savePath = request.getSession().getServletContext().getRealPath("upload");
+			String[] filePath = null;
+			if (files[0].getSize() > 0)
+				filePath = uploadFile(savePath, files);
+			return filePath;
+		}
+
+		public String[] uploadFile(String savePath, CommonsMultipartFile[] files) {
+			String[] filePaths = new String[files.length];
+			Calendar date=Calendar.getInstance();
+			// 循环进行数据处理
+			for (int i = 0; i < files.length; i++) {
+				String fileName=date.getTimeInMillis()+ files[i].getOriginalFilename();
+				File targetFile = new File(savePath, fileName);
+				if (!targetFile.exists()) {
+					targetFile.mkdirs();
+				}
+				try {
+					files[i].transferTo(targetFile);
+				} catch (Exception e) {
+					log.logger.debug("文件上传失败",e);
+				}
+				filePaths[i] = "upload/" + fileName;
+			}
+			return filePaths;
+		}
+
 
 	/**
 	 * 文件上传,统一存储在upload文件夹下、再根据文件类型分文件夹存储
@@ -39,10 +78,9 @@ public class FileControler {
 	 * @param request
 	 * @return
 	 */
-	@SuppressWarnings("deprecation")
-	@RequestMapping(value = "/upload", method = RequestMethod.POST)
 	@ResponseBody
-	public String upload(Doc doc, @RequestParam("uploadFile") CommonsMultipartFile file, HttpServletRequest request) {
+	@RequestMapping(value = "uploadMy")
+	public String uploadFile(@RequestParam("file") CommonsMultipartFile file, HttpServletRequest request) {
 		// String savePath = request.getServletPath();
 		// savePath=savePath+"WEB-INF/upload";
 		String realpath = request.getRealPath("WEB-INF/upload");

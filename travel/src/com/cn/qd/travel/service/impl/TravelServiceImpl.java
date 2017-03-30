@@ -45,9 +45,14 @@ public class TravelServiceImpl implements TravelService {
 		return 0;
 	}
 
+	/**
+	 * 查询指定recid的游记
+	 */
 	@Override
 	public ArrayList<Object> oneResultProvider(Object t, Map<String, Object> map) {
-		return null;
+		ArrayList<Object> tra=new ArrayList<Object>();
+		tra.addAll(travel.selectTravel((String)t));
+		return tra;
 	}
 
 	/**

@@ -477,6 +477,7 @@ ul, ol, li, dl, dd, dt {
 .add_word_v2 {
 	width: 680px;
 	background-color: #fff;
+	margin-left:15px;
 	margin-bottom: 18px;
 }
 

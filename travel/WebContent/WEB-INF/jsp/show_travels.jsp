@@ -1,14 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>Title</title>
-<link href="../../css/show_travels/show_travels.css" rel="stylesheet"
+<link href="css/show_travels/show_travels.css" rel="stylesheet"
 	type="text/css">
-<link href="../../css/write_travels/writer_header_css.css" rel="stylesheet"
-	type="text/css">
-<link rel="stylesheet" href="../../css/show_travels/footer1.css">
+
+
 <!-- 引用图片上传的插件的js和css -->
-<script type="text/javascript" src="../../js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
 
 <link rel="stylesheet"
 	href="publicity/zyupload/skins/zyupload-1.0.0.min.css " type="text/css">
@@ -142,7 +144,7 @@
 
 	<div class="header">
 		<div class="header1">
-			<iframe src="Mheader.html" frameborder="0" scrolling="no" marginheight="0"
+			<iframe src="Mheader" frameborder="0" scrolling="no" marginheight="0"
 					marginwidth="0" style="margin: 0px auto;"></iframe>
 		</div>
 	</div>
@@ -153,16 +155,17 @@
 
 		<!-- 游记的封面图 -->
 		<div class="main_header">
-			<img src="${travelinfo.traImg }" class="main_header"> <span
-				class="user_travel_id" style="display: none;">${travelinfo.traId }</span>
+			<img src="${travelinfo.mdThemeImg }" class="main_header"> <span
+				class="user_travel_id" style="display: none;">${travelinfo.mdRecid }</span>
 		</div>
+
 		<div class="mian_one">
 			<div class="main_main">
 				<div class="main_header_left">
 					<div class="main_header_left_one">
 						<a class="per_name" href="">${userInfo.userNick} </a>
 						<!-- 游记用户的id隐藏 -->
-						<span class="it_is_my_id" style="display: none;">${userInfo.userId}</span>
+						<span class="it_is_my_id" style="display: none;">${userInfo.mdRecid}</span>
 					</div>
 					<div class="main_header_left_two">
 						<a class="a_one">LV.${userInfo.userLevel} </a>
@@ -171,14 +174,14 @@
 						<!-- 更新它的关注的信息 -->
 						<a class="a_three"><span>[关注TA]</span> </a>
 					</div>
-					<div class="main_header_left_four">${travelinfo.sendDate}</div>
+					<div class="main_header_left_four">${travelinfo.mdCreateTime}</div>
 					<div class="main_header_left_five"></div>
-					<div class="main_header_left_six">${travelinfo.traPraise}</div>
+					<div class="main_header_left_six">${travelinfo}</div>
 				</div>
 				<div class="main_header_rigth">
 					<div class="main_header_rigth_one1">
 						<!-- 背景音乐 -->
-						<img src="img/show_travels/music.gif" height="18px" width="20px"
+						<img src="syste_img/img/show_travels/music.gif" height="18px" width="20px"
 							class="music_img" alt="">
 					</div>
 					<div class="main_header_rigth_one">
@@ -192,13 +195,11 @@
 				</div>
 			</div>
 		</div>
+
 		<!--中间的主要内容-->
 		<div class="main_center">
-
 			<div class="center">
-
 				<div class="center_left">
-
 					<div class="left_one">
 						<ul>
 							<li class="time">出发时间<span>/</span>2015-10-17<i></i></li>
@@ -215,7 +216,6 @@
 						<!--这里根据内容选择图片的div和文字的div-->
 
 						<c:forEach items="${travelDetailsList}" var="travelDetail">
-
 							<c:choose>
 								<c:when test="${travelDetail.traImg != null }">
 									<div class="show_img ">
@@ -227,9 +227,6 @@
 									<div class="show_font ">${travelDetail.traMsg}</div>
 								</c:when>
 							</c:choose>
-
-
-
 						</c:forEach>
 
 						<!--这里根据内容选择图片的div和文字的div-->
@@ -343,78 +340,66 @@
 				</div>
 
 
-
-
-
-			</div>
-		</div>
-	</div>
-
-	<div class="center_rigth">
-		<!--推荐的地址-->
-		<div class="center_rigth1">
-			<!--相关的地址-->
-			<div class="center_rigth1_address">
-				<span class="span_one">相关目的地：</span> <a> 印度尼西亚 </a>
-			</div>
-			<div class="center_rigth1_img">
-				<img src="img/show_travels/img_1.jpeg" class="class_2010" alt="巴布亚省">
-				<strong class="strong1">巴布亚省</strong>
-			</div>
-			<div class="center_rigth1_img_num">
-				<div class="show_num">
-					有<span class="show_num1">686</span>张照片
-				</div>
-				<div class="show_rigth">
-					<a class="a_a11" href=""> > </a>
-				</div>
-			</div>
-		</div>
-		<!--相关的游记-->
-		<div class="center_rigth2">
-			<dl>
-				<dt>
-					<img class="img_111" src="img/show_travels/img_12.jpeg">
-				</dt>
-				<dd class="dl_dd">2016年3月3日 蜂首纪念</dd>
-			</dl>
-		</div>
-		<!--游记的段落-->
-		<div class="center_rigth3">
-			<div class="center_paragraph">游记目录</div>
-			<div class="center_paragraph11">
-				<div class="paragraph">
-					<!-- 循环显示用户的游记的段落 -->
-					<c:set var="num" value="0"></c:set>
-					<c:forEach items="${travelDetailsList}" var="travel">
-						<c:if test="${travel.paragraphName!=null }">
-							<c:set var="num" value="${num+1}"></c:set>
-							<div class="paragraph_main">
-								<span class="span_span">${num}/0</span><a>
-									${travel.paragraphName} </a>
+				<div class="center_rigth">
+					<!--推荐的地址-->
+					<div class="center_rigth1">
+						<!--相关的地址-->
+						<div class="center_rigth1_address">
+							<span class="span_one">相关目的地：</span> <a> 印度尼西亚 </a>
+						</div>
+						<div class="center_rigth1_img">
+							<img src="syste_img/img/show_travels/img_1.jpeg" class="class_2010" alt="巴布亚省">
+							<strong class="strong1">巴布亚省</strong>
+						</div>
+						<div class="center_rigth1_img_num">
+							<div class="show_num">
+								有<span class="show_num1">686</span>张照片
 							</div>
-						</c:if>
-					</c:forEach>
+							<div class="show_rigth">
+								<a class="a_a11" href=""> > </a>
+							</div>
+						</div>
+					</div>
+					<!--相关的游记-->
+					<div class="center_rigth2">
+						<dl>
+							<dt>
+								<img class="img_111" src="syste_img/img/show_travels/img_12.jpeg">
+							</dt>
+							<dd class="dl_dd">2016年3月3日 蜂首纪念</dd>
+						</dl>
+					</div>
+					<!--游记的段落-->
+					<div class="center_rigth3">
+						<div class="center_paragraph">游记目录</div>
+						<div class="center_paragraph11">
+							<div class="paragraph">
+								<!-- 循环显示用户的游记的段落 -->
+								<c:set var="num" value="0"></c:set>
+								<c:forEach items="${travelDetailsList}" var="travel">
+									<c:if test="${travel.paragraphName!=null }">
+										<c:set var="num" value="${num+1}"></c:set>
+										<div class="paragraph_main">
+											<span class="span_span">${num}/0</span><a>
+											${travel.paragraphName} </a>
+										</div>
+									</c:if>
+								</c:forEach>
+							</div>
+						</div>
+					</div>
 				</div>
+
+
+
 			</div>
 		</div>
 	</div>
 
-
-	</div>
-
-
-	</div>
-
-
-	</div>
-
-
-	</div>
 
 	<div id="footer">
 		<div class="footer1">
-			<iframe src="IndexFooter.html" frameborder="0" scrolling="no" marginheight="0"
+			<iframe src="IndexFooter" frameborder="0" scrolling="no" marginheight="0"
 					marginwidth="0" style="margin: 0px auto;"></iframe>
 		</div>
 	</div>

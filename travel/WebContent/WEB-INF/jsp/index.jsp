@@ -1,13 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>index</title>
-<link href="../../css/index.css" rel="stylesheet">
+<link href="css/index.css" rel="stylesheet">
 
-	<script language="javascript" src="../../js/jquery-3.1.0.min.js"
+	<script language="javascript" src="js/jquery-3.1.0.min.js"
 			type="text/javascript"></script>
-	<script language="javascript" src="../../js/jquery-validation-1.15.1.js"></script>
+	<script language="javascript" src="js/jquery-validation-1.15.1.js"></script>
 <script type="text/javascript">
 	$(function() {
 		var Scroll = function($ul) {
@@ -515,7 +518,7 @@
 
 
 	<div class="header">
-		<iframe src="VisitHead.html" frameborder="0" scrolling="no" marginheight="0"
+		<iframe src="VisitHead" frameborder="0" scrolling="no" marginheight="0"
 			marginwidth="0" style="margin: 0px auto;"></iframe>
 	</div>
 	<div id="focus">
@@ -601,13 +604,13 @@
 			</ul>
 			<div id="small">
 				<ul class="littleImg">
-					<li><img src="../../syste_img/index/101011.jpg" height="70px" width="120px"></li>
-					<li><img src="../../syste_img/index/101011.jpg"  height="70px" width="120px"></li>
-					<li><img src="../../syste_img/index/101011.jpg"  height="70px" width="120px"></li>
-					<li><img src="../../syste_img/index/101011.jpg"  height="70px" width="120px"></li>
-					<li><img src="../../syste_img/index/101011.jpg"  height="70px" width="120px"></li>
+					<li><img src="syste_img/index/101011.jpg" height="70px" width="120px"></li>
+					<li><img src="syste_img/index/101011.jpg"  height="70px" width="120px"></li>
+					<li><img src="syste_img/index/101011.jpg"  height="70px" width="120px"></li>
+					<li><img src="syste_img/index/101011.jpg"  height="70px" width="120px"></li>
+					<li><img src="syste_img/index/101011.jpg"  height="70px" width="120px"></li>
 				</ul>
-				<a class="show-more" target="_blank" href="">历历在目</a>
+				<a class="show-more" target="_blank" href="beautifulPage">历历在目</a>
 			</div>
 		</div>
 
@@ -698,7 +701,7 @@
 	<div id="content">
 		<div id="c-l">
 			<div id="c-l-1">
-				<img src="../../syste_img/img/index-img/cl1.jpg">
+				<img src="syste_img/img/index-img/cl1.jpg">
 			</div>
 			<div id="c-l-2">
 				<div class="title">
@@ -709,23 +712,23 @@
 				</div>
 				<div id="little-wrapper">
 					<ul>
-						<li><img src="../../syste_img/img/index-img/little-ad1.jpg">
+						<li><img src="syste_img/img/index-img/little-ad1.jpg">
 							<p>
 								<span>鱼、鱼、鱼</span>我似乎只能面对那盆鱼发出哀怨的祈求：拜托了！
 							</p></li>
-						<li><img src="../../syste_img/img/index-img/little-ad2.jpg">
+						<li><img src="syste_img/img/index-img/little-ad2.jpg">
 							<p>
 								<span>首尔市立美术馆才是韩国灵魂</span>首尔多丘陵，首尔市立美术馆的西小门本馆便藏在德寿宫旁的一个小丘上。
 							</p></li>
-						<li><img src="../../syste_img/img/index-img/little-ad3.jpg">
+						<li><img src="syste_img/img/index-img/little-ad3.jpg">
 							<p>
 								<span>姬百合之塔：岛歌声中的"军国少女"</span>姬百合之塔，为何这般隆重？
 							</p></li>
-						<li><img src="../../syste_img/img/index-img/little-ad4.jpg">
+						<li><img src="syste_img/img/index-img/little-ad4.jpg">
 							<p>
 								<span>一封伊斯坦布尔的来信</span>博斯普鲁斯已经不在了，只剩下了土耳其。
 							</p></li>
-						<li><img src="../../syste_img/img/index-img/little-ad5.jpg">
+						<li><img src="syste_img/img/index-img/little-ad5.jpg">
 							<p>
 								<span>她们在黄金时代到来</span>她们的存在，也帮我有定力，审视自己成长间内化的，那些陈腐的关于女人的一生应该如何度过的观念。
 							</p></li>
@@ -745,7 +748,7 @@
 					<p>更多</p>
 				</div>
 				<div id="c-l-31">
-					<img src="../../syste_img/img/index-img/cl3.jpg">
+					<img src="syste_img/img/index-img/cl3.jpg">
 				</div>
 				<div id="c-l-32">
 					<h2>
@@ -765,7 +768,7 @@
 				</div>
 			</div>
 			<div id="c-l-4">
-				<img src="../../syste_img/img/index-img/cl4.jpg">
+				<img src="syste_img/img/index-img/cl4.jpg">
 			</div>
 			<div id="c-l-5">
 				<div class="title">
@@ -774,16 +777,16 @@
 						<span>正在进行</span>
 					</p>
 				</div>
-				<a> <img src="../../syste_img/img/index-img/activity1.png"> <strong>发现华盛顿之美</strong><br>定制华盛顿之旅，赢往返机票！
-				</a> <a> <img src="../../syste_img/img/index-img/activity2.png"> <strong>寻艺江苏，让旅行别有心意</strong><br>我是小小莎，跟我来学门新手艺
-				</a> <a> <img src="../../syste_img/img/index-img/activity3.png"> <strong>自驾招募
+				<a> <img src="syste_img/img/index-img/activity1.png"> <strong>发现华盛顿之美</strong><br>定制华盛顿之旅，赢往返机票！
+				</a> <a> <img src="syste_img/img/index-img/activity2.png"> <strong>寻艺江苏，让旅行别有心意</strong><br>我是小小莎，跟我来学门新手艺
+				</a> <a> <img src="syste_img/img/index-img/activity3.png"> <strong>自驾招募
 						带你探索世界鲜见之美</strong><br>体验一段难以复制的秘境探索旅程
-				</a> <a> <img src="../../syste_img/img/index-img/activity4.png"> <strong>欢迎旅行，欢迎回家</strong><br>无论哪里，同一份中式礼遇。
-				</a> <a> <img src="../../syste_img/img/index-img/activity5.png"> <strong>欢迎旅行，欢迎回家</strong><br>看大片阅美文，开启你的两栖之旅
+				</a> <a> <img src="syste_img/img/index-img/activity4.png"> <strong>欢迎旅行，欢迎回家</strong><br>无论哪里，同一份中式礼遇。
+				</a> <a> <img src="syste_img/img/index-img/activity5.png"> <strong>欢迎旅行，欢迎回家</strong><br>看大片阅美文，开启你的两栖之旅
 				</a>
 			</div>
 			<div id="c-l-6">
-				<img src="../../syste_img/img/index-img/cl5.jpg">
+				<img src="syste_img/img/index-img/cl5.jpg">
 			</div>
 			<div id="c-l-7">
 				<div class="title">
@@ -793,7 +796,7 @@
 					</p>
 				</div>
 				<div>
-					<a href="" target="_blank"> <img src="../../syste_img/img/index-img/cl7.jpg"></a>
+					<a href="" target="_blank"> <img src="syste_img/img/index-img/cl7.jpg"></a>
 					<ul id="found">
 						<li><a href="" target="_blank"><span>申请职位&gt;</span>广告销售经理<i>HOT</i></a></li>
 						<li><a href="" target="_blank"><span>申请职位&gt;</span>资深PHP开发工程师<i>HOT</i></a></li>
@@ -822,8 +825,8 @@
 			<div id="c-r-1">
 				<div style="position: relative">
 					<a target="_blank" href="" rel="nofollow"> <img border="0"
-						src="../../syste_img/img/index-img/cr1.jpg" />
-					</a> <img src="../../syste_img/img/index-img/guanggao.png"
+						src="syste_img/img/index-img/cr1.jpg" />
+					</a> <img src="syste_img/img/index-img/guanggao.png"
 						style="position: absolute; bottom: 4px; left: 4px; width: 22px; height: 12px;" />
 				</div>
 			</div>
@@ -836,7 +839,7 @@
 				</div>
 				<div data-zcp="0">
 					<div class="pro_pic">
-						<a href="" target="_blank"> <img src="../../syste_img/img/index-img/cr2.png"
+						<a href="" target="_blank"> <img src="syste_img/img/index-img/cr2.png"
 							width="280" height="180" alt="">
 							<div class="nums">
 								<span class="joins" data-people="2386"> <b><span
@@ -969,56 +972,56 @@
 								<li class="_j_gs_item _j_gs_sn_417_1" data-objid="417"
 									data-type="1" data-name="吃遍天下"><a
 									href="javascript:void(0);"> <span class="img"><img
-											width="110" src="../../syste_img/img/index-img/filter-cbtx.jpg"></span>
+											width="110" src="syste_img/img/index-img/filter-cbtx.jpg"></span>
 										<h3>吃遍天下</h3>
 										<p>无敌手</p>
 								</a></li>
 								<li class="_j_gs_item _j_gs_sn_452_1" data-objid="452"
 									data-type="1" data-name="带着对象"><a
 									href="javascript:void(0);"> <span class="img"><img
-											width="110" src="../../syste_img/img/index-img/filter-dzdx.jpg"></span>
+											width="110" src="syste_img/img/index-img/filter-dzdx.jpg"></span>
 										<h3>带着对象</h3>
 										<p>去虐狗</p>
 								</a></li>
 								<li class="_j_gs_item _j_gs_sn_427_1" data-objid="427"
 									data-type="1" data-name="姑娘漂亮"><a
 									href="javascript:void(0);"> <span class="img"><img
-											width="110" src="../../syste_img/img/index-img/filter-gnpl.jpg"></span>
+											width="110" src="syste_img/img/index-img/filter-gnpl.jpg"></span>
 										<h3>姑娘漂亮</h3>
 										<p>就是美</p>
 								</a></li>
 								<li class="_j_gs_item _j_gs_sn_436_1" data-objid="436"
 									data-type="1" data-name="带着孩子"><a
 									href="javascript:void(0);"> <span class="img"><img
-											width="110" src="../../syste_img/img/index-img/filter-dzhz.jpg"></span>
+											width="110" src="syste_img/img/index-img/filter-dzhz.jpg"></span>
 										<h3>带着孩子</h3>
 										<p>看世界</p>
 								</a></li>
 								<li class="_j_gs_item _j_gs_sn_423_1" data-objid="423"
 									data-type="1" data-name="登山徒步"><a
 									href="javascript:void(0);"> <span class="img"><img
-											width="110" src="../../syste_img/img/index-img/filter-dstb.jpg"></span>
+											width="110" src="syste_img/img/index-img/filter-dstb.jpg"></span>
 										<h3>登山徒步</h3>
 										<p>用脚走</p>
 								</a></li>
 								<li class="_j_gs_item _j_gs_sn_435_1" data-objid="435"
 									data-type="1" data-name="带着父母"><a
 									href="javascript:void(0);"> <span class="img"><img
-											width="110" src="../../syste_img/img/index-img/filter-dzfm.jpg"></span>
+											width="110" src="syste_img/img/index-img/filter-dzfm.jpg"></span>
 										<h3>带着父母</h3>
 										<p>去远方</p>
 								</a></li>
 								<li class="_j_gs_item _j_gs_sn_451_1" data-objid="451"
 									data-type="1" data-name="独自一人"><a
 									href="javascript:void(0);"> <span class="img"><img
-											width="110" src="../../syste_img/img/index-img/filter-dzyr.jpg"></span>
+											width="110" src="syste_img/img/index-img/filter-dzyr.jpg"></span>
 										<h3>独自一人</h3>
 										<p>最自由</p>
 								</a></li>
 								<li class="_j_gs_item _j_gs_sn_453_1" data-objid="453"
 									data-type="1" data-name="短途周末"><a
 									href="javascript:void(0);"> <span class="img"><img
-											width="110" src="../../syste_img/img/index-img/filter-dtzm.jpg"></span>
+											width="110" src="syste_img/img/index-img/filter-dtzm.jpg"></span>
 										<h3>短途周末</h3>
 										<p>散散心</p>
 								</a></li>
@@ -1033,7 +1036,7 @@
 					<div class="tn-content">
 						<div class="tn-list">
 							<div id="template">
-								<!--c:forEach items="${list }" var="listItem">
+								<c:forEach items="${list }" var="listItem">
 									<div class="tn-item clearfix">
 										<div class="tn-image">
 											<a
@@ -1053,7 +1056,7 @@
 
 													<!-- 用来寻找第一个段落作为显示的 -->
 
-													<!--c:set var="flag" value="true" />
+													<c:set var="flag" value="true" />
 													<c:forEach items="${listItem.travelDetailsList}" var="i"
 														varStatus="loopstatus">
 														<c:if test="${ flag && (i.traMsg != null) }">
@@ -1085,7 +1088,7 @@
 											</div>
 										</div>
 									</div>
-								</c:forEach-->
+								</c:forEach>
 							</div>
 						</div>
 					</div>
@@ -1102,7 +1105,7 @@
 						class="count">共${pageCount }页 / ${count }条</span>
 
 
-					<!--c:if test="${pageCount <=4 }">
+					<c:if test="${pageCount <=4 }">
 						<c:set var="nums" value="${pageCount }" />
 					</c:if>
 
@@ -1119,7 +1122,7 @@
 							<a class="a_font"><span class="page">${i }</span></a>
 						</c:if>
 
-					</c:forEach-->
+					</c:forEach>
 					<a class="pg-first pageitem" href="autoLogin" rel="nofollow">首页</a>
 					<a class="pg_prev pageitem" rel="nofollow">上一页</a> <a
 						class="pg_next pageitem" rel="nofollow">下一页</a> <a
@@ -1129,11 +1132,11 @@
 		</div>
 	</div>
 	<div id="c-r-last">
-		<a href="" target="_blank"> <img src="../../syste_img/img/index-img/bottom.jpg">
+		<a href="" target="_blank"> <img src="syste_img/img/index-img/bottom.jpg">
 		</a>
 	</div>
 	<div class="footer">
-		<iframe src="IndexFooter.html" frameborder="0" scrolling="no" marginheight="0"
+		<iframe src="IndexFooter" frameborder="0" scrolling="no" marginheight="0"
 			marginwidth="0" style="margin: 0px auto;"></iframe>
 	</div>
 

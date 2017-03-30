@@ -17,6 +17,8 @@ public class MDTravelParagraph {
     private MDTravelNote tavel;
 
     private String mdContent;
+    
+    
 
     public String getMdRecid() {
         return mdRecid;

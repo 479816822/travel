@@ -18,16 +18,17 @@
 
 <script type="text/javascript">
 	$(function() {
+		var phote;
 		// 初始化插件
-		function fun1(p) {
+		function fun1(p,num) {
 			$("#zyupload").zyUpload(
 					{
-						width : "800px", // 宽度
-						height : "700px", // 宽度
-						itemWidth : "800px", // 文件项的宽度
-						itemHeight : "700px", // 文件项的高度
+						width : "700px", // 宽度
+						height : "1000px", // 宽度
+						itemWidth : "140px", // 文件项的宽度
+						itemHeight : "140px", // 文件项的高度
 						url : "upload", // 上传文件的路径
-						fileType : ["jpeg", "JPG","JPEG","jpg", "png", "txt", "js", "exe" ],// 上传文件的类型
+						fileType : ["jpeg", "JPG","JPEG","jpg", "png"],// 上传文件的类型
 						fileSize : 51200000000, // 上传文件的大小
 						multiple : true, // 是否可以多个文件上传
 						dragDrop : true, // 是否可以拖动上传文件
@@ -51,7 +52,7 @@
 							$("#uploadInf").append(
 									"<p style='display:none' class='img_only_id'>"
 											+ response + "</p>");
-							fun($(this), response, p);
+							fun($(this), response, p,num);
 							//	$(".close_div").hide();
 						},
 						onFailure : function(file, response) { // 文件上传失败的回调方法
@@ -66,17 +67,29 @@
 		}
 
 
-		function fun(p, str, t) {
+		function fun(p, str, t,num) {
 			$(".close_div").remove();
 			var str1 = str.length;
 			var n = str1 - 2;
 			var str2 = str.substring(2, n)
-			t.attr("src", str2);
+			if(num==1){
+				$(".header_imgs").attr("src", str2);
+				$(".img_float").hide();
+			}else{
+	    	var $newnode = $mode4.clone(true);
+			$newnode.removeClass("hide_div");
+			t.parent().parent().after($newnode);
+			
+		    var $p = $newnode
+	    	copy_node($p);
+		    ($p).children().attr("src", str2);
+			}
 		}
 		$(".img_float_img").click(function() {
 			var $newnode = $model5.clone(true);
-			$(this).parent().append($newnode);
-			fun1($(".main_header"))
+			$(this).parent().parent().parent().prev().append($newnode);
+			var num=1;
+			fun1($(".main_header"),num)
 			$(".close_div").show();
 		})
 
@@ -103,17 +116,19 @@
 		})
 
 		$(".add_the_phote").click(function() {
-			var $newnode = $mode4.clone(true);
-			$newnode.removeClass("hide_div");
-			$(this).parent().parent().after($newnode);
+			phote=$(this);
+	//		var $newnode = $mode4.clone(true);
+	//		$newnode.removeClass("hide_div");
+	//		phote.parent().parent().after($newnode);
 			
 			var $newnode11 = $model5.clone(true);
 			$(this).parent().parent().before($newnode11);
-			
-			var $p = $newnode
 			$(".close_div").show();
-			fun1(($p).children())
-			copy_node($p);
+			
+			fun1($(this))
+		//	var $p = $newnode
+	//		fun1(($p).children())
+	    	copy_node($p);
 		})
 
 		$(".add_the_title11").click(function() {
@@ -237,12 +252,11 @@
 		<div class="all_live_three">
 			<div class="all_live_three_one">保存草稿</div>
 			<div class="all_live_three_two">预览</div>
-		</div>
-	</div>
+		</div> </div>
 
 	<div class="mian">
 
-		<div class="img_float">
+		<div class="img_float head_head_img">
 			<a target="_self">
 				<div class="img_float_img"></div>
 			</a>
@@ -259,7 +273,7 @@
 			</form>
 		</div>
 		<div class="main_header">
-			<img src="syste_img/img/write_travels/page_bg.jpg" class="main_header">
+			<img src="syste_img/img/write_travels/page_bg.jpg" class="main_header header_imgs">
 		</div>
 
 

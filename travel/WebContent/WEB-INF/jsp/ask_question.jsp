@@ -1,19 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>sak-question</title>
 
-<link href="../../css/ask_question/ask_question.css" rel="stylesheet"
+<link href="css/ask_question/ask_question.css" rel="stylesheet"
 	type="text/css">
-<link href="../../css/write_travels/writer_header_css.css" rel="stylesheet"
+<link href="css/write_travels/writer_header_css.css" rel="stylesheet"
 	type="text/css">
-<link rel="stylesheet" href="../../css/show_travels/footer1.css">
+<link rel="stylesheet" href="css/show_travels/footer1.css">
 
 
-<script language="javascript" src="../../js/jquery-3.1.0.min.js"
+<script language="javascript" src="js/jquery-3.1.0.min.js"
 	type="text/javascript"></script>
-<script language="javascript" src="../../js/jquery-validation-1.15.1.js"
+<script language="javascript" src="js/jquery-validation-1.15.1.js"
 	type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -40,7 +43,7 @@
 <body>
 	<div class="header">
 		<div class="header1">
-			<iframe src="MainHeader.html" frameborder="0" scrolling="no" marginheight="0"
+			<iframe src="MainHeader" frameborder="0" scrolling="no" marginheight="0"
 					marginwidth="0" style="margin: 0px auto;"></iframe>
 		</div>
 	</div>

@@ -1,12 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>用户主页 mainHeader</title>
-    <link href="../../css/MainHeader.css" rel="stylesheet" type="text/css"/>
-    <script language="javascript" src="../../js/jquery-3.1.0.min.js"
+    <link href="css/MainHeader.css" rel="stylesheet" type="text/css"/>
+    <script language="javascript" src="js/jquery-3.1.0.min.js"
             type="text/javascript"></script>
-    <script language="javascript" src="../../js/jquery-validation-1.15.1.js"></script>
+    <script language="javascript" src="js/jquery-validation-1.15.1.js"></script>
 
     <script type="text/javascript">
         $(function () {

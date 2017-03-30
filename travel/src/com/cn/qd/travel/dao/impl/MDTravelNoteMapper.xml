@@ -1,7 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cn.qd.travel.dao.MDTravelNoteMapper">
-  <resultMap id="BaseResultMap" type="com.cn.qd.travel.entity.MDTravelNote">
+
+
+   <resultMap id="UserResultMap" type="com.cn.qd.travel.entity.MdUser">
+    <id column="MD_USER_RECID" jdbcType="VARCHAR" property="mdUserRecid" />
+    <result column="MD_STDNAME" jdbcType="VARCHAR" property="mdStdname" />
+    <result column="MD_REF_ID" jdbcType="VARCHAR" property="mdRefId" />
+    <result column="MD_STDCODE" jdbcType="DECIMAL" property="mdStdcode" />
+    <result column="MD_ALERT_DATE" jdbcType="DATE" property="mdAlertDate" />
+    <result column="MD_ALERT_USER" jdbcType="VARCHAR" property="mdAlertUser" />
+    <result column="MD_USER_NAME" jdbcType="VARCHAR" property="mdUserName" />
+    <result column="MD_TELEPHONE" jdbcType="VARCHAR" property="mdTelephone" />
+    <result column="MD_SEX" jdbcType="VARCHAR" property="mdSex" />
+    <result column="MD_AGE" jdbcType="DECIMAL" property="mdAge" />
+    <result column="MD_CREATE_TIME" jdbcType="DATE" property="mdCreateTime" />
+    <result column="MD_PASSWORD" jdbcType="VARCHAR" property="mdPassword" />
+    <result column="MD_EMAIL" jdbcType="VARCHAR" property="mdEmail" />
+    <result column="MD_SCHOOL" jdbcType="VARCHAR" property="mdSchool" />
+    <result column="MD_IS_VIP" jdbcType="VARCHAR" property="mdIsVip" />
+    <result column="MD_LEVEL" jdbcType="VARCHAR" property="mdLevel" />
+    <result column="MD_SIGNATURE" jdbcType="VARCHAR" property="mdSignature" />
+    <result column="MD_SCORE" jdbcType="DECIMAL" property="mdScore" />
+    <result column="MD_GRADUATION_DATE" jdbcType="DATE" property="mdGraduationDate" />
+    <result column="MD_EMS_CODE" jdbcType="DECIMAL" property="mdEmsCode" />
+    <result column="MD_PRAISE" jdbcType="DECIMAL" property="mdPraise" />
+  </resultMap>
+  <resultMap extends="UserResultMap" id="UserResultMapWithBLOBs" type="com.cn.qd.travel.entity.MdUser">
+    <result column="MD_ICON" jdbcType="CLOB" property="mdIcon" />
+  </resultMap>
+  
+   <resultMap id="TravelPaResultMap" type="com.cn.qd.travel.entity.MDTravelParagraph">
+    <id column="MD_RECID" jdbcType="VARCHAR" property="mdRecid" />
+    <result column="MD_PARAGRAPH_NAME" jdbcType="VARCHAR" property="mdParagraphName" />
+    <result column="MD_IMG" jdbcType="VARCHAR" property="mdImg" />
+    <result column="MD_VIDEO" jdbcType="VARCHAR" property="mdVideo" />
+    <result column="MD_STDCODE" jdbcType="DECIMAL" property="mdStdcode" />
+    <result column="MD_TAVEL_ID" jdbcType="VARCHAR" property="mdTavelId" />
+     <collection property="tavel" resultMap="TravelResultMap"></collection>
+     
+  </resultMap>
+  <resultMap extends="TravelPaResultMap" id="TravelPaResultMapWithBLOBs" type="com.cn.qd.travel.entity.MDTravelParagraph">
+    <result column="MD_CONTENT" jdbcType="CLOB" property="mdContent" />
+  </resultMap>
+
+  <resultMap id="TravelResultMap" type="com.cn.qd.travel.entity.MDTravelNote">
     <id column="MD_RECID" jdbcType="VARCHAR" property="mdRecid" />
     <result column="MD_STDNAME" jdbcType="VARCHAR" property="mdStdname" />
     <result column="MD_REF_ID" jdbcType="VARCHAR" property="mdRefId" />
@@ -20,13 +63,34 @@
     <result column="MD_TRAVEL_PEOPLE" jdbcType="VARCHAR" property="mdTravelPeople" />
     <result column="MD_COST_MONEY" jdbcType="DECIMAL" property="mdCostMoney" />
     <result column="MD_AIM_ADDRESS" jdbcType="VARCHAR" property="mdAimAddress" />
-  </resultMap>
+    <association property="user" column="MD_CREATE_USER_ID" resultMap="UserResultMapWithBLOBs" columnPrefix="user_"/>
+    <collection property="listTravlePagragraph" column="MD_RECID" resultMap="TravelPaResultMapWithBLOBs"
+     ofType="com.cn.qd.travel.entity.MDTravelParagraph" columnPrefix="p_"></collection> 
+    
+  </resultMap> 
   <sql id="Base_Column_List">
     MD_RECID, MD_STDNAME, MD_REF_ID, MD_STDCODE, MD_ALERT_DATE, MD_ALERT_USER, MD_LEVEL, 
     MD_THEME_IMG, MD_CREATE_TIME, MD_CREATE_USER_ID, MD_KEY_WORD, MD_THEME, MD_MUSIC, 
     MD_START_TIME, MD_DAY_NUMBER, MD_TRAVEL_PEOPLE, MD_COST_MONEY, MD_AIM_ADDRESS
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+  
+  
+  <!-- 查询指定recid的游记-->
+    <select id="selectTravel" parameterType="java.lang.String" resultMap="TravelResultMap">
+    select 
+   t.*, d.MD_RECID as p_MD_RECID,
+   d.MD_PARAGRAPH_NAME as p_MD_PARAGRAPH_NAME,
+   d.MD_IMG as p_MD_IMG,
+   d.MD_VIDEO as p_MD_VIDEO,
+   d.MD_STDCODE as p_MD_STDCODE,
+   d.MD_TAVEL_ID as p_MD_TAVEL_ID 
+   from MD_TRAVE_NOTE t,MD_TRAVEL_PARAGRAPH d
+    where t.MD_REF_ID = #{id,jdbcType=VARCHAR} and d.MD_TAVEL_ID=t.MD_REF_ID
+  </select>
+  
+  
+  
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="TravelResultMap">
     select 
     <include refid="Base_Column_List" />
     from MD_TRAVE_NOTE

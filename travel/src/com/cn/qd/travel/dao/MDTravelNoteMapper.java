@@ -16,6 +16,8 @@ public interface MDTravelNoteMapper {
     int updateByPrimaryKeySelective(MDTravelNote record);
 
     int updateByPrimaryKey(MDTravelNote record);
+    
+    List<MDTravelNote> selectTravel(String id);
 
 	List<MDTravelNote> selectList();
 }

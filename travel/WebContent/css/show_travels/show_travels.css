@@ -44,6 +44,11 @@ body {
     height: 300px;
 }
 
+.footer{
+    clear: both;
+    height: auto;
+}
+
 .footer1 {
     clear: both;
     height: 480px;
@@ -146,7 +151,7 @@ body {
     width: 20px;
     float: left;
     height: 20px;
-    background: url("../../img/show_travels/sprite_v33.jpg") -4px -9px no-repeat;
+    background: url("../../syste_img/img/show_travels/sprite_v33.jpg") -4px -9px no-repeat;
     margin-left: 8px;
     margin-top: 50px;
 }
@@ -201,14 +206,14 @@ body {
     height: 50px;
     float: right;
     margin: 20px 40px auto 10px;
-    background: url("../../img/show_travels/sprite_v33.png") no-repeat -235px -550px;
+    background: url("../../syste_img/img/show_travels/sprite_v33.png") no-repeat -235px -550px;
 }
 
 .one_one1 {
     width: 32px;
     height: 50px;
     margin: 20px 10px auto 41px;
-    background: url("../../img/show_travels/sprite_v33.png") no-repeat -265px -550px;
+    background: url("../../syste_img/img/show_travels/sprite_v33.png") no-repeat -265px -550px;
 }
 
 .one_two {
@@ -235,7 +240,7 @@ body {
 
 
 .center {
-    width: 1015px;
+    width: 70%;
     margin: auto;
     height: 100%;
 
@@ -244,11 +249,11 @@ body {
 .center_left {
     float: left;
     height: 100%;
-    width: 765px; 
+    width: 74%;
 }
 
 .center_rigth {
-    width: 250px;
+    width: 25%;
     height: 100%;
     float: left;
    
@@ -828,7 +833,7 @@ ul, li, ol {
 }
 
 .div_face {
-    background: url("../../img/show_travels/sprite_2x_v2.png") -30px -840px no-repeat;
+    background: url("../../syste_img/img/show_travels/sprite_2x_v2.png") -30px -840px no-repeat;
     background-size: 120px auto;
     display: block;
     float: left;
@@ -845,7 +850,7 @@ ul, li, ol {
 }
 
 .div_face1 {
-    background: url("../../img/show_travels/sprite_2x_v2.png") -60px -840px no-repeat;
+    background: url("../../syste_img/img/show_travels/sprite_2x_v2.png") -60px -840px no-repeat;
     background-size: 120px auto;
     display: block;
     float: left;
@@ -856,7 +861,7 @@ ul, li, ol {
 }
 
 .div_face3 {
-    background: url("../../img/show_travels/sprite_2x_v2.png") -0px -310px no-repeat;
+    background: url("../../syste_img/img/show_travels/sprite_2x_v2.png") -0px -310px no-repeat;
     width: 105px;
     height: 68px;
     padding: 3px 0;
@@ -871,7 +876,7 @@ ul, li, ol {
 }
 
 .div_face4 {
-    background: url("../../img/show_travels/sprite_2x_v2.png") -0px -590px no-repeat;
+    background: url("../../syste_img/img/show_travels/sprite_2x_v2.png") -0px -590px no-repeat;
     width: 105px;
     float: right;
     height: 68px;
@@ -885,7 +890,7 @@ ul, li, ol {
 }
 
 .div_face5 {
-    background: url("../../img/show_travels/sprite_2x_v2.png") -00px -730px no-repeat;
+    background: url("../../syste_img/img/show_travels/sprite_2x_v2.png") -00px -730px no-repeat;
     width: 105px;
     height: 68px;
     padding: 3px 0;
