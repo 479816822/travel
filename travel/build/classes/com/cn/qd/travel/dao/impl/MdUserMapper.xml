@@ -35,11 +35,21 @@
   <sql id="Blob_Column_List">
     MD_ICON
   </sql>
+  
+  <!-- 检查电话号码 -->
+	<select id="checkPhone" parameterType="java.lang.String" resultType="java.lang.Integer">
+		select count(*)
+		from MD_USER
+		where MD_TELEPHONE = #{mdTelephone,jdbcType=VARCHAR}
+	</select>
+  
+  
+  
+  
+  
+  
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
-    select 
-    <include refid="Base_Column_List" />
-    ,
-    <include refid="Blob_Column_List" />
+    select *
     from MD_USER
     where MD_USER_RECID = #{mdUserRecid,jdbcType=VARCHAR}
   </select>
@@ -86,26 +96,13 @@
       #{mdGraduationDate,jdbcType=DATE}, #{mdEmsCode,jdbcType=DECIMAL}, #{mdPraise,jdbcType=DECIMAL}, 
       #{mdIcon,jdbcType=CLOB})
   </insert>
+  
+  <!-- 注册按条件插入 -->
   <insert id="insertSelective" parameterType="com.cn.qd.travel.entity.MdUser">
-    insert into MD_USER
+		insert into MD_USER
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="mdUserRecid != null">
         MD_USER_RECID,
-      </if>
-      <if test="mdStdname != null">
-        MD_STDNAME,
-      </if>
-      <if test="mdRefId != null">
-        MD_REF_ID,
-      </if>
-      <if test="mdStdcode != null">
-        MD_STDCODE,
-      </if>
-      <if test="mdAlertDate != null">
-        MD_ALERT_DATE,
-      </if>
-      <if test="mdAlertUser != null">
-        MD_ALERT_USER,
       </if>
       <if test="mdUserName != null">
         MD_USER_NAME,
@@ -113,67 +110,16 @@
       <if test="mdTelephone != null">
         MD_TELEPHONE,
       </if>
-      <if test="mdSex != null">
-        MD_SEX,
-      </if>
-      <if test="mdAge != null">
-        MD_AGE,
-      </if>
-      <if test="mdCreateTime != null">
-        MD_CREATE_TIME,
-      </if>
       <if test="mdPassword != null">
         MD_PASSWORD,
       </if>
       <if test="mdEmail != null">
         MD_EMAIL,
       </if>
-      <if test="mdSchool != null">
-        MD_SCHOOL,
-      </if>
-      <if test="mdIsVip != null">
-        MD_IS_VIP,
-      </if>
-      <if test="mdLevel != null">
-        MD_LEVEL,
-      </if>
-      <if test="mdSignature != null">
-        MD_SIGNATURE,
-      </if>
-      <if test="mdScore != null">
-        MD_SCORE,
-      </if>
-      <if test="mdGraduationDate != null">
-        MD_GRADUATION_DATE,
-      </if>
-      <if test="mdEmsCode != null">
-        MD_EMS_CODE,
-      </if>
-      <if test="mdPraise != null">
-        MD_PRAISE,
-      </if>
-      <if test="mdIcon != null">
-        MD_ICON,
-      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="mdUserRecid != null">
         #{mdUserRecid,jdbcType=VARCHAR},
-      </if>
-      <if test="mdStdname != null">
-        #{mdStdname,jdbcType=VARCHAR},
-      </if>
-      <if test="mdRefId != null">
-        #{mdRefId,jdbcType=VARCHAR},
-      </if>
-      <if test="mdStdcode != null">
-        #{mdStdcode,jdbcType=DECIMAL},
-      </if>
-      <if test="mdAlertDate != null">
-        #{mdAlertDate,jdbcType=DATE},
-      </if>
-      <if test="mdAlertUser != null">
-        #{mdAlertUser,jdbcType=VARCHAR},
       </if>
       <if test="mdUserName != null">
         #{mdUserName,jdbcType=VARCHAR},
@@ -181,47 +127,11 @@
       <if test="mdTelephone != null">
         #{mdTelephone,jdbcType=VARCHAR},
       </if>
-      <if test="mdSex != null">
-        #{mdSex,jdbcType=VARCHAR},
-      </if>
-      <if test="mdAge != null">
-        #{mdAge,jdbcType=DECIMAL},
-      </if>
-      <if test="mdCreateTime != null">
-        #{mdCreateTime,jdbcType=DATE},
-      </if>
       <if test="mdPassword != null">
         #{mdPassword,jdbcType=VARCHAR},
       </if>
       <if test="mdEmail != null">
         #{mdEmail,jdbcType=VARCHAR},
-      </if>
-      <if test="mdSchool != null">
-        #{mdSchool,jdbcType=VARCHAR},
-      </if>
-      <if test="mdIsVip != null">
-        #{mdIsVip,jdbcType=VARCHAR},
-      </if>
-      <if test="mdLevel != null">
-        #{mdLevel,jdbcType=VARCHAR},
-      </if>
-      <if test="mdSignature != null">
-        #{mdSignature,jdbcType=VARCHAR},
-      </if>
-      <if test="mdScore != null">
-        #{mdScore,jdbcType=DECIMAL},
-      </if>
-      <if test="mdGraduationDate != null">
-        #{mdGraduationDate,jdbcType=DATE},
-      </if>
-      <if test="mdEmsCode != null">
-        #{mdEmsCode,jdbcType=DECIMAL},
-      </if>
-      <if test="mdPraise != null">
-        #{mdPraise,jdbcType=DECIMAL},
-      </if>
-      <if test="mdIcon != null">
-        #{mdIcon,jdbcType=CLOB},
       </if>
     </trim>
   </insert>
@@ -420,5 +330,5 @@
       MD_EMS_CODE = #{mdEmsCode,jdbcType=DECIMAL},
       MD_PRAISE = #{mdPraise,jdbcType=DECIMAL}
     where MD_USER_RECID = #{mdUserRecid,jdbcType=VARCHAR}
-  </update>
+  </update> 
 </mapper>
