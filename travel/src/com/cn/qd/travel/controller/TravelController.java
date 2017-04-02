@@ -27,13 +27,13 @@ public class TravelController {
 
 	// 游记写入成功插入数据库
 	@RequestMapping(value = "writeTravel", method = { RequestMethod.POST })
-	public int saveTravel(@RequestBody String[] objArray, HttpSession session) {
+	public Object saveTravel(@RequestBody String[] objArray, HttpSession session) {
 		MdUser user = (MdUser) session.getAttribute("loginUser");
 		String travelId = GUID.createGuid();
 		// 进行数据封装
 		MDTravelParagraph travel = null;
 		List<MDTravelParagraph> travelList = new ArrayList<MDTravelParagraph>();
-		for (int i = 0; i < objArray.length - 2; i++) {
+		for (int i = 0; i < objArray.length - 3; i++) {
 			if (objArray[i].startsWith("0")) {
 				travel = new MDTravelParagraph();
 				travel.setMdContent(objArray[i].substring(1));
@@ -53,16 +53,21 @@ public class TravelController {
 			travelList.add(travel);
 		}
 		MDTravelNote travelInfo = new MDTravelNote();
-		travelInfo.setMdThemeImg(objArray[objArray.length - 1]);
-		travelInfo.setMdTheme(objArray[objArray.length - 2]);
+		if(objArray[objArray.length - 2]!=null)
+		travelInfo.setMdThemeImg(objArray[objArray.length - 2]);
+		if(objArray[objArray.length - 3]!=null)
+		travelInfo.setMdTheme(objArray[objArray.length - 3]);
+		if(objArray[objArray.length - 1]!=null)
+		travelInfo.setMdMusic(objArray[objArray.length - 1]);
 		travelInfo.setListTravlePagragraph(travelList);
 		travelInfo.setMdRecid(travelId);
 		travelInfo.setUser(user);
 		boolean trueOrFfalse = travelService.insertTravel(travelInfo, null);
 		if (trueOrFfalse) {
-			return 3;
+			return trueOrFfalse;
+		}else{
+			return null;
 		}
-		return 0;
 	}
 
 	// 游记写入成功插入数据库
@@ -84,12 +89,12 @@ public class TravelController {
 	@RequestMapping(value = "showTravel")
 	public String showTravel(Model model, HttpSession session){
 		ArrayList<Object> travels=new ArrayList<Object>();
-		travels.addAll(travelService.oneResultProvider("KXA148966872479441780YTOG", null));
+		travels.addAll(travelService.oneResultProvider("CEE149094883048298964LCQP", null));
 		MDTravelNote travelInfo =null;
 		if(travels.size()>=1){
 			travelInfo=(MDTravelNote)travels.get(0);
 		}
-		model.addAttribute("travelinfo", travelInfo);
+		model.addAttribute("travelInfo", travelInfo);
 		return "show_travels";
 	}
 	

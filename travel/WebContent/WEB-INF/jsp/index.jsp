@@ -1036,12 +1036,12 @@
 					<div class="tn-content">
 						<div class="tn-list">
 							<div id="template">
-								<c:forEach items="${list }" var="listItem">
+								<c:forEach items="${travelList }" var="listItem">
 									<div class="tn-item clearfix">
 										<div class="tn-image">
 											<a
-												href="showTravel?traId=${listItem.traId }&userId=${listItem.user.userId }"
-												target="_blank"> <img src="${listItem.traImg }"
+												href="showTravel?traId=${listItem.mdRecid }&userId=${listItem.user.mdUserRecid }"
+												target="_blank"> <img src="${listItem.mdThemeImg }"
 												style="display: inline;">
 											</a>
 										</div>
@@ -1049,18 +1049,18 @@
 											<dl>
 												<dt>
 													<a
-														href="showTravel?traId=${listItem.traId }&userId=${listItem.user.userId }"
-														target="_blank">${listItem.traTitle }</a>
+														href="showTravel?traId=${listItem.mdRecid }&userId=${listItem.user.mdUserRecid }"
+														target="_blank">${listItem.mdThemeImg }</a>
 												</dt>
 												<dd style="height:80px;;overflow:hidden;text-overflow:ellipsis; ">
 
 													<!-- 用来寻找第一个段落作为显示的 -->
 
 													<c:set var="flag" value="true" />
-													<c:forEach items="${listItem.travelDetailsList}" var="i"
+													<c:forEach items="${listItem.listTravlePagragraph}" var="i"
 														varStatus="loopstatus">
-														<c:if test="${ flag && (i.traMsg != null) }">
-															<c:set var="data" value="${i.traMsg }" />
+														<c:if test="${ flag && (i.mdContent != null) }">
+															<c:set var="data" value="${i.mdContent }" />
 														</c:if>
 														<c:if test="${i.traMsg != null}">
 															<c:set var="flag" value="false" />
@@ -1068,7 +1068,7 @@
 													</c:forEach>
 
 													<a
-														href="showTravel?traId=${listItem.traId }&userId=${listItem.user.userId }"
+														href="showTravel?traId=${listItem.mdRecid }&userId=${listItem.user.mdUserRecid }"
 														target="_blank"> ${data } ...</a>
 												</dd>
 											</dl>
@@ -1078,9 +1078,9 @@
 													class="btn-ding " rel="nofollow"></a> <em id="">${listItem.traPraise }
 												</em>
 												</span> <span class="tn-place"><i></i><a
-													href="showTravel?traId=${listItem.traId }&userId=${listItem.user.userId }"
-													class="_j_gs_item" rel="nofollow">${listItem.viewName }</a>，by
-													${listItem.user.userNick }</span> <span class="tn-user"> <a
+													href="showTravel?traId=${listItem.mdRecid }&userId=${listItem.user.mdUserRecid }"
+													class="_j_gs_item" rel="nofollow">${listItem.mdTheme }</a>，by
+													${listItem.user.mdUserName }</span> <span class="tn-user"> <a
 													href="" target="_blank" rel="nofollow"> <img
 														src="${listItem.user.userHead }">
 												</a>
@@ -1098,11 +1098,11 @@
 				<!-- 分页显示 -->
 				<div align="right" class="m-pagination" id="tn_pagination"
 					data-type="0" data-objid="0">
-					<input class="count" type="hidden" value="${pageNum}"
+					<input class="count" type="hidden" value="${page.pageCount}"
 						id="lblCurent" /> <input class="count" type="hidden"
 						value="${pageSize }" id="pageSize" /> <input class="count"
-						type="hidden" value="${pageCount }" id="pageCount" /> <span
-						class="count">共${pageCount }页 / ${count }条</span>
+						type="hidden" value="${dataCount }" id="pageCount" /> <span
+						class="count">共${pageCount }页 / ${dataCount }条</span>
 
 
 					<c:if test="${pageCount <=4 }">

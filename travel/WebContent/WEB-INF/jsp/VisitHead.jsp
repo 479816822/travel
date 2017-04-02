@@ -91,7 +91,7 @@
                 <a class="mfw-logo" title="爱旅 U" href=""></a>
             </div>
             <ul class="nav" data-cs-t="headnav" id="_j_head_nav">
-                <li class="index mainNav"><a href="">首页</a></li>
+                <li class="index mainNav"><a href="logins">首页</a></li>
                 <li class="place mainNav"><a href="" title="目的地"
                                              target="_blank">目的地</a></li>
                 <li class="gonglve mainNav"><a href=""
@@ -178,9 +178,9 @@
                 <div class="login-info">
                     <div class="head-user" id="_j_head_user">
                         <a target="_blank" class="drop-trigger" href="to_myHome"
-                           title="${user.userNick }的窝" rel="nofollow">
+                           title="${user.mdUserName }的窝" rel="nofollow">
                             <div class="user-image">
-                                <img src="${user.userHead }" class="img_img" alt="的窝">
+                                <img src="${user.userHeadImg }" class="img_img" alt="的窝">
                             </div>
                         </a>
                     </div>
@@ -192,6 +192,7 @@
                 </div>
             </c:if>
             <c:if test="${user == null }">
+            <c:out value="${user}"></c:out>
                 <div class="login-out">
                     <a class="weibo-login third-party-login" href="" title="微博登录"
                        rel="nofollow"></a> <a class="qq-login third-party-login" href=""

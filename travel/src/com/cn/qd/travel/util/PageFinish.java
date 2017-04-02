@@ -49,7 +49,6 @@ public class PageFinish {
 			}
 
 		}
-		System.out.println(page.getNextPage() + "jj" + page.getPageCurrent() + "dddd" + page.getPrePage());
 		// 2.获取当前页的数据
 		return CacheFinish.getData(page.getPageSize(), page.getPageCurrent(), page.getCache());
 	}

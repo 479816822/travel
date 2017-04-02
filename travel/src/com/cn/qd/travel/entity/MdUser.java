@@ -3,10 +3,31 @@ package com.cn.qd.travel.entity;
 import java.math.BigDecimal;
 import java.util.Date;
 
+/**
+ * @author anmeihua
+ *	用户Entity
+ */
 public class MdUser {
-    private String mdUserRecid;
+	
+	private String passport;//找回密码
+	
+	private String userHeadImg;
+	
+	private String Code;//验证码
+	
+    private String mdUserRecid;	//id
+    
+    private String mdUserName;	//用户名
 
-    private String mdStdname;
+    private String mdTelephone;	//电话
+    
+    private String mdPassword;	//密码
+
+    private String mdEmail;	//邮箱
+
+    private String mdNewPassword;	//新密码                                     
+
+    private String mdStdname;//记录是否已经登陆
 
     private String mdRefId;
 
@@ -16,21 +37,11 @@ public class MdUser {
 
     private String mdAlertUser;
 
-    private String mdUserName;
-
-    private String mdTelephone;
-
     private String mdSex;
 
     private Short mdAge;
 
     private Date mdCreateTime;
-
-    private String mdPassword;
-
-    private String mdEmail;
-
-    private String mdSchool;
 
     private String mdIsVip;
 
@@ -46,9 +57,46 @@ public class MdUser {
 
     private Long mdPraise;
 
-    private String mdIcon;
+    private byte[]  mdIcon;
+    
+    private String mdSchool;
+    
+    
+    
 
-    public String getMdUserRecid() {
+    public String getPassport() {
+		return passport;
+	}
+
+	public void setPassport(String passport) {
+		this.passport = passport;
+	}
+
+	public String getUserHeadImg() {
+		return userHeadImg;
+	}
+
+	public void setUserHeadImg(String userHeadImg) {
+		this.userHeadImg = userHeadImg;
+	}
+
+	public String getMdSchool() {
+		return mdSchool;
+	}
+
+	public void setMdSchool(String mdSchool) {
+		this.mdSchool = mdSchool;
+	}
+
+	public String getCode() {
+		return Code;
+	}
+
+	public void setCode(String code) {
+		Code = code;
+	}
+
+	public String getMdUserRecid() {
         return mdUserRecid;
     }
 
@@ -152,14 +200,6 @@ public class MdUser {
         this.mdEmail = mdEmail == null ? null : mdEmail.trim();
     }
 
-    public String getMdSchool() {
-        return mdSchool;
-    }
-
-    public void setMdSchool(String mdSchool) {
-        this.mdSchool = mdSchool == null ? null : mdSchool.trim();
-    }
-
     public String getMdIsVip() {
         return mdIsVip;
     }
@@ -216,11 +256,20 @@ public class MdUser {
         this.mdPraise = mdPraise;
     }
 
-    public String getMdIcon() {
-        return mdIcon;
-    }
 
-    public void setMdIcon(String mdIcon) {
-        this.mdIcon = mdIcon == null ? null : mdIcon.trim();
-    }
+	public byte[] getMdIcon() {
+		return mdIcon;
+	}
+
+	public void setMdIcon(byte[] mdIcon) {
+		this.mdIcon = mdIcon;
+	}
+
+	public String getMdNewPassword() {
+		return mdNewPassword;
+	}
+
+	public void setMdNewPassword(String mdNewPassword) {
+		this.mdNewPassword = mdNewPassword;
+	}
 }

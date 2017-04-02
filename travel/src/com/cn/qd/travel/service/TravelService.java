@@ -4,6 +4,7 @@ import java.util.Map;
 
 import com.cn.qd.travel.core.BaseService;
 import com.cn.qd.travel.entity.MDTravelNote;
+import com.cn.qd.travel.util.Page;
 
 import org.springframework.stereotype.Service;
 
@@ -44,4 +45,8 @@ public interface TravelService extends BaseService {
 	 * @return
 	 */
 	public boolean deleteTravel(MDTravelNote T, Map<String, Object> map);
+	
+	public Page getPage();
+
+	public void setPage(Page page) ;
 }

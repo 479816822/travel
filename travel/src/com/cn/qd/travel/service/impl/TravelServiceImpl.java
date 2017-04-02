@@ -56,6 +56,7 @@ public class TravelServiceImpl implements TravelService {
 	}
 
 	/**
+	 * 缓存所有的数据,返回第一页的数据
 	 * 查询所有 采用缓存
 	 */
 	@SuppressWarnings("unchecked")
@@ -93,12 +94,16 @@ public class TravelServiceImpl implements TravelService {
 		return false;
 	}
 
+	@Override
 	public Page getPage() {
-		return page;
+		return this.page;
 	}
 
+	@Override
 	public void setPage(Page page) {
-		this.page = page;
+		this.page=page;
 	}
+
+
 
 }

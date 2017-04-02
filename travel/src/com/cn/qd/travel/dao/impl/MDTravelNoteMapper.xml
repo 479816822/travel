@@ -78,14 +78,33 @@
   <!-- 查询指定recid的游记-->
     <select id="selectTravel" parameterType="java.lang.String" resultMap="TravelResultMap">
     select 
-   t.*, d.MD_RECID as p_MD_RECID,
+   t.*, 
+   d.MD_RECID as p_MD_RECID,
    d.MD_PARAGRAPH_NAME as p_MD_PARAGRAPH_NAME,
    d.MD_IMG as p_MD_IMG,
    d.MD_VIDEO as p_MD_VIDEO,
+   d.MD_CONTENT as p_MD_CONTENT,
    d.MD_STDCODE as p_MD_STDCODE,
    d.MD_TAVEL_ID as p_MD_TAVEL_ID 
    from MD_TRAVE_NOTE t,MD_TRAVEL_PARAGRAPH d
-    where t.MD_REF_ID = #{id,jdbcType=VARCHAR} and d.MD_TAVEL_ID=t.MD_REF_ID
+    where t.MD_RECID = #{id,jdbcType=VARCHAR} and d.MD_TAVEL_ID=t.MD_RECID
+  </select>
+  
+  
+    
+  <!-- 查询所有的游记-->
+    <select id="selectList"  resultMap="TravelResultMap">
+    select 
+   t.*, 
+   d.MD_RECID as p_MD_RECID,
+   d.MD_PARAGRAPH_NAME as p_MD_PARAGRAPH_NAME,
+   d.MD_IMG as p_MD_IMG,
+   d.MD_VIDEO as p_MD_VIDEO,
+   d.MD_CONTENT as p_MD_CONTENT,
+   d.MD_STDCODE as p_MD_STDCODE,
+   d.MD_TAVEL_ID as p_MD_TAVEL_ID 
+   from MD_TRAVE_NOTE t,MD_TRAVEL_PARAGRAPH d
+    where  d.MD_TAVEL_ID=t.MD_RECID
   </select>
   
   

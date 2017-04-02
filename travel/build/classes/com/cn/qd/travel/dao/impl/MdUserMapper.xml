@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cn.qd.travel.dao.MdUserMapper">
-  <resultMap id="UserResultMap" type="com.cn.qd.travel.entity.MdUser">
+  <resultMap id="BaseResultMap" type="com.cn.qd.travel.entity.MdUser">
     <id column="MD_USER_RECID" jdbcType="VARCHAR" property="mdUserRecid" />
     <result column="MD_STDNAME" jdbcType="VARCHAR" property="mdStdname" />
     <result column="MD_REF_ID" jdbcType="VARCHAR" property="mdRefId" />
@@ -24,8 +24,8 @@
     <result column="MD_EMS_CODE" jdbcType="DECIMAL" property="mdEmsCode" />
     <result column="MD_PRAISE" jdbcType="DECIMAL" property="mdPraise" />
   </resultMap>
-  <resultMap extends="UserResultMap" id="UserResultMapWithBLOBs" type="com.cn.qd.travel.entity.MdUser">
-    <result column="MD_ICON" jdbcType="CLOB" property="mdIcon" />
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.cn.qd.travel.entity.MdUser">
+    <result column="MD_ICON" jdbcType="BLOB" property="mdIcon" />
   </resultMap>
   <sql id="Base_Column_List">
     MD_USER_RECID, MD_STDNAME, MD_REF_ID, MD_STDCODE, MD_ALERT_DATE, MD_ALERT_USER, MD_USER_NAME, 
@@ -35,26 +35,38 @@
   <sql id="Blob_Column_List">
     MD_ICON
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="UserResultMapWithBLOBs">
+  
+  <!-- 检查电话号码 -->
+	<select id="checkPhone" parameterType="java.lang.String" resultType="java.lang.Integer">
+		select count(*)
+		from MD_USER
+		where MD_TELEPHONE = #{mdTelephone,jdbcType=VARCHAR}
+	</select>
+  
+  
+  
+  
+  
+  
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
+    select *
+    from MD_USER
+    where MD_USER_RECID = #{mdUserRecid,jdbcType=VARCHAR}
+  </select>
+  
+  
+  <!--用户登录-->
+  <select id="selectListBy" parameterType="com.cn.qd.travel.entity.MdUser" resultMap="ResultMapWithBLOBs">
     select 
     <include refid="Base_Column_List" />
     ,
     <include refid="Blob_Column_List" />
     from MD_USER
-    where MD_USER_RECID = #{mdUserRecid,jdbcType=VARCHAR}
-  </select>
-  
-  <select id="selectListBy" parameterType="java.lang.String" resultMap="UserResultMapWithBLOBs">
-    select 
-    <include refid="Base_Column_List" />
-    ,
-    <include refid="Blob_Column_List" />
-    from MD_USER
-    where MD_USER_RECID = #{mdUserRecid,jdbcType=VARCHAR}
+    where MD_TELEPHONE = #{mdTelephone,jdbcType=VARCHAR} and MD_PASSWORD=#{mdPassword,jdbcType=VARCHAR}
   </select>
   
   
-    <select id="selectListRecords" parameterType="java.lang.String" resultMap="UserResultMapWithBLOBs">
+    <select id="selectListRecords" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
     select 
     <include refid="Base_Column_List" />
     ,
@@ -86,8 +98,10 @@
       #{mdGraduationDate,jdbcType=DATE}, #{mdEmsCode,jdbcType=DECIMAL}, #{mdPraise,jdbcType=DECIMAL}, 
       #{mdIcon,jdbcType=CLOB})
   </insert>
+  
+  <!-- 注册按条件插入 -->
   <insert id="insertSelective" parameterType="com.cn.qd.travel.entity.MdUser">
-    insert into MD_USER
+     insert into MD_USER
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="mdUserRecid != null">
         MD_USER_RECID,
@@ -165,17 +179,17 @@
       </if>
       <if test="mdRefId != null">
         #{mdRefId,jdbcType=VARCHAR},
-      </if>
-      <if test="mdStdcode != null">
-        #{mdStdcode,jdbcType=DECIMAL},
+     </if>
+     <if test="mdStdcode != null">
+       #{mdStdcode,jdbcType=DECIMAL},
       </if>
       <if test="mdAlertDate != null">
         #{mdAlertDate,jdbcType=DATE},
       </if>
       <if test="mdAlertUser != null">
         #{mdAlertUser,jdbcType=VARCHAR},
-      </if>
-      <if test="mdUserName != null">
+     </if>
+     <if test="mdUserName != null">
         #{mdUserName,jdbcType=VARCHAR},
       </if>
       <if test="mdTelephone != null">
@@ -209,7 +223,7 @@
         #{mdSignature,jdbcType=VARCHAR},
       </if>
       <if test="mdScore != null">
-        #{mdScore,jdbcType=DECIMAL},
+       #{mdScore,jdbcType=DECIMAL},
       </if>
       <if test="mdGraduationDate != null">
         #{mdGraduationDate,jdbcType=DATE},
@@ -218,10 +232,10 @@
         #{mdEmsCode,jdbcType=DECIMAL},
       </if>
       <if test="mdPraise != null">
-        #{mdPraise,jdbcType=DECIMAL},
-      </if>
-      <if test="mdIcon != null">
-        #{mdIcon,jdbcType=CLOB},
+       #{mdPraise,jdbcType=DECIMAL},
+     </if>
+     <if test="mdIcon != null">
+       #{mdIcon,jdbcType=BLOB},
       </if>
     </trim>
   </insert>
@@ -302,76 +316,18 @@
   
   
   
-  
+  <!--修改用户的登陆状态-->
   <update id="updateByPrimaryKeySelective" parameterType="com.cn.qd.travel.entity.MdUser">
     update MD_USER
     <set>
       <if test="mdStdname != null">
         MD_STDNAME = #{mdStdname,jdbcType=VARCHAR},
       </if>
-      <if test="mdRefId != null">
-        MD_REF_ID = #{mdRefId,jdbcType=VARCHAR},
-      </if>
-      <if test="mdStdcode != null">
-        MD_STDCODE = #{mdStdcode,jdbcType=DECIMAL},
-      </if>
-      <if test="mdAlertDate != null">
-        MD_ALERT_DATE = #{mdAlertDate,jdbcType=DATE},
-      </if>
-      <if test="mdAlertUser != null">
-        MD_ALERT_USER = #{mdAlertUser,jdbcType=VARCHAR},
-      </if>
-      <if test="mdUserName != null">
-        MD_USER_NAME = #{mdUserName,jdbcType=VARCHAR},
-      </if>
-      <if test="mdTelephone != null">
-        MD_TELEPHONE = #{mdTelephone,jdbcType=VARCHAR},
-      </if>
-      <if test="mdSex != null">
-        MD_SEX = #{mdSex,jdbcType=VARCHAR},
-      </if>
-      <if test="mdAge != null">
-        MD_AGE = #{mdAge,jdbcType=DECIMAL},
-      </if>
-      <if test="mdCreateTime != null">
-        MD_CREATE_TIME = #{mdCreateTime,jdbcType=DATE},
-      </if>
-      <if test="mdPassword != null">
-        MD_PASSWORD = #{mdPassword,jdbcType=VARCHAR},
-      </if>
-      <if test="mdEmail != null">
-        MD_EMAIL = #{mdEmail,jdbcType=VARCHAR},
-      </if>
-      <if test="mdSchool != null">
-        MD_SCHOOL = #{mdSchool,jdbcType=VARCHAR},
-      </if>
-      <if test="mdIsVip != null">
-        MD_IS_VIP = #{mdIsVip,jdbcType=VARCHAR},
-      </if>
-      <if test="mdLevel != null">
-        MD_LEVEL = #{mdLevel,jdbcType=VARCHAR},
-      </if>
-      <if test="mdSignature != null">
-        MD_SIGNATURE = #{mdSignature,jdbcType=VARCHAR},
-      </if>
-      <if test="mdScore != null">
-        MD_SCORE = #{mdScore,jdbcType=DECIMAL},
-      </if>
-      <if test="mdGraduationDate != null">
-        MD_GRADUATION_DATE = #{mdGraduationDate,jdbcType=DATE},
-      </if>
-      <if test="mdEmsCode != null">
-        MD_EMS_CODE = #{mdEmsCode,jdbcType=DECIMAL},
-      </if>
-      <if test="mdPraise != null">
-        MD_PRAISE = #{mdPraise,jdbcType=DECIMAL},
-      </if>
-      <if test="mdIcon != null">
-        MD_ICON = #{mdIcon,jdbcType=CLOB},
-      </if>
     </set>
     where MD_USER_RECID = #{mdUserRecid,jdbcType=VARCHAR}
   </update>
+  
+ 
   <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.cn.qd.travel.entity.MdUser">
     update MD_USER
     set MD_STDNAME = #{mdStdname,jdbcType=VARCHAR},
@@ -397,28 +353,11 @@
       MD_ICON = #{mdIcon,jdbcType=CLOB}
     where MD_USER_RECID = #{mdUserRecid,jdbcType=VARCHAR}
   </update>
+  <!--找回密码-->
+    
   <update id="updateByPrimaryKey" parameterType="com.cn.qd.travel.entity.MdUser">
     update MD_USER
-    set MD_STDNAME = #{mdStdname,jdbcType=VARCHAR},
-      MD_REF_ID = #{mdRefId,jdbcType=VARCHAR},
-      MD_STDCODE = #{mdStdcode,jdbcType=DECIMAL},
-      MD_ALERT_DATE = #{mdAlertDate,jdbcType=DATE},
-      MD_ALERT_USER = #{mdAlertUser,jdbcType=VARCHAR},
-      MD_USER_NAME = #{mdUserName,jdbcType=VARCHAR},
-      MD_TELEPHONE = #{mdTelephone,jdbcType=VARCHAR},
-      MD_SEX = #{mdSex,jdbcType=VARCHAR},
-      MD_AGE = #{mdAge,jdbcType=DECIMAL},
-      MD_CREATE_TIME = #{mdCreateTime,jdbcType=DATE},
-      MD_PASSWORD = #{mdPassword,jdbcType=VARCHAR},
-      MD_EMAIL = #{mdEmail,jdbcType=VARCHAR},
-      MD_SCHOOL = #{mdSchool,jdbcType=VARCHAR},
-      MD_IS_VIP = #{mdIsVip,jdbcType=VARCHAR},
-      MD_LEVEL = #{mdLevel,jdbcType=VARCHAR},
-      MD_SIGNATURE = #{mdSignature,jdbcType=VARCHAR},
-      MD_SCORE = #{mdScore,jdbcType=DECIMAL},
-      MD_GRADUATION_DATE = #{mdGraduationDate,jdbcType=DATE},
-      MD_EMS_CODE = #{mdEmsCode,jdbcType=DECIMAL},
-      MD_PRAISE = #{mdPraise,jdbcType=DECIMAL}
-    where MD_USER_RECID = #{mdUserRecid,jdbcType=VARCHAR}
-  </update>
+    set  MD_PASSWORD = #{mdPassword,jdbcType=VARCHAR}
+    where MD_TELEPHONE = #{passport,jdbcType=VARCHAR} or MD_EMAIL = #{passport,jdbcType=VARCHAR}
+  </update> 
 </mapper>

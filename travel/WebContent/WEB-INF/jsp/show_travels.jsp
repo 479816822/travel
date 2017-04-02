@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html lang="en">
 <head>
@@ -7,20 +7,15 @@
 <title>Title</title>
 <link href="css/show_travels/show_travels.css" rel="stylesheet"
 	type="text/css">
+	<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
 
 
 <!-- 引用图片上传的插件的js和css -->
-<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
-
 <link rel="stylesheet"
-	href="publicity/zyupload/skins/zyupload-1.0.0.min.css " type="text/css">
+	href="pluing/publicity/zyupload/skins/zyupload-1.0.0.min.css "
+	type="text/css">
 <script type="text/javascript"
-	src="publicity/zyupload/zyupload-1.0.0.min.js"></script>
-
-
-<script language="javascript" src="css/myhome/myhome.js"
-	type="text/javascript"></script>
-
+	src="pluing/publicity/zyupload/zyupload-1.0.0.min.js"></script>
 <script type="text/javascript">
 	$(function() {
 
@@ -61,25 +56,24 @@
 			//进行数据的插入
 			$(".text_area").val("");
 			var num;
-			num=$(".answer_msg").length;
-			num=num+1;
-			
+			num = $(".answer_msg").length;
+			num = num + 1;
 
 			$newnode.children().eq(0).children().eq(0).children().attr("src",
 					reply.user.userHead);
 			$newnode.children().eq(0).children().eq(1).children().eq(1)
 					.children().html(reply.user.userNick);
-			
-			$newnode.children().eq(0).children().eq(2).html(""+num+"#");
+
+			$newnode.children().eq(0).children().eq(2).html("" + num + "#");
 
 			$newnode.children().eq(0).children().eq(1).children().eq(0)
 					.children().html("LV" + reply.user.userLevel);
 
-			var i=0;
+			var i = 0;
 			if (reply.replyImg != null) {
 				$newnode.children().eq(1).children().eq(0).attr("src",
 						reply.replyImg);
-				i=1;
+				i = 1;
 			} else {
 				$newnode.children().eq(1).children().eq(0).remove();
 			}
@@ -90,7 +84,6 @@
 				$newnode.children().eq(1).children().eq(1).remove();
 			}
 
-			
 			$newnode.children().eq(2).children().eq(0).html(reply.replyDate);
 
 			$(".page_page").before($newnode);
@@ -145,7 +138,7 @@
 	<div class="header">
 		<div class="header1">
 			<iframe src="Mheader" frameborder="0" scrolling="no" marginheight="0"
-					marginwidth="0" style="margin: 0px auto;"></iframe>
+				marginwidth="0" style="margin: 0px auto;"></iframe>
 		</div>
 	</div>
 
@@ -155,7 +148,7 @@
 
 		<!-- 游记的封面图 -->
 		<div class="main_header">
-			<img src="${travelinfo.mdThemeImg }" class="main_header"> <span
+			<img src="${travelInfo.mdThemeImg }" class="main_header"> <span
 				class="user_travel_id" style="display: none;">${travelinfo.mdRecid }</span>
 		</div>
 
@@ -174,15 +167,18 @@
 						<!-- 更新它的关注的信息 -->
 						<a class="a_three"><span>[关注TA]</span> </a>
 					</div>
-					<div class="main_header_left_four">${travelinfo.mdCreateTime}</div>
+					<div class="main_header_left_four">${travelInfo.mdCreateTime}</div>
 					<div class="main_header_left_five"></div>
 					<div class="main_header_left_six">${travelinfo}</div>
 				</div>
 				<div class="main_header_rigth">
 					<div class="main_header_rigth_one1">
 						<!-- 背景音乐 -->
-						<img src="syste_img/img/show_travels/music.gif" height="18px" width="20px"
-							class="music_img" alt="">
+						<audio src="${travelInfo.mdMusic }" controls="controls"  class="music_img" height="18px" width="40px" >
+Your browser does not support the audio element.
+</audio>
+ <!--img src="syste_img/img/show_travels/music.gif" height="18px"
+							width="20px" class="music_img" alt=""-->
 					</div>
 					<div class="main_header_rigth_one">
 						<div class="one_one1"></div>
@@ -215,16 +211,24 @@
 					<div class="div_two">
 						<!--这里根据内容选择图片的div和文字的div-->
 
-						<c:forEach items="${travelDetailsList}" var="travelDetail">
+						<c:forEach items="${travelInfo.listTravlePagragraph}"
+							var="travelDetail">
 							<c:choose>
-								<c:when test="${travelDetail.traImg != null }">
+								<c:when test="${travelDetail.mdImg != null }">
 									<div class="show_img ">
-										<img class="img_imgs" src="${travelDetail.traImg}">
+										<img class="img_imgs" src="${travelDetail.mdImg}">
 									</div>
 								</c:when>
 
-								<c:when test="${travelDetail.traMsg != null }">
-									<div class="show_font ">${travelDetail.traMsg}</div>
+								<c:when test="${travelDetail.mdVideo != null }">
+									<div class="show_video ">
+									<video src="up${travelDetail.mdVideo}" controls="controls" width="600px" heith="600px">
+			your browser does not support the video tag </video>
+									</div>
+								</c:when> 
+								
+								<c:when test="${travelDetail.mdContent != null }">
+									<div class="show_font ">${travelDetail.mdContent}</div>
 								</c:when>
 							</c:choose>
 						</c:forEach>
@@ -348,8 +352,8 @@
 							<span class="span_one">相关目的地：</span> <a> 印度尼西亚 </a>
 						</div>
 						<div class="center_rigth1_img">
-							<img src="syste_img/img/show_travels/img_1.jpeg" class="class_2010" alt="巴布亚省">
-							<strong class="strong1">巴布亚省</strong>
+							<img src="syste_img/img/show_travels/img_1.jpeg"
+								class="class_2010" alt="巴布亚省"> <strong class="strong1">巴布亚省</strong>
 						</div>
 						<div class="center_rigth1_img_num">
 							<div class="show_num">
@@ -364,7 +368,8 @@
 					<div class="center_rigth2">
 						<dl>
 							<dt>
-								<img class="img_111" src="syste_img/img/show_travels/img_12.jpeg">
+								<img class="img_111"
+									src="syste_img/img/show_travels/img_12.jpeg">
 							</dt>
 							<dd class="dl_dd">2016年3月3日 蜂首纪念</dd>
 						</dl>
@@ -376,12 +381,12 @@
 							<div class="paragraph">
 								<!-- 循环显示用户的游记的段落 -->
 								<c:set var="num" value="0"></c:set>
-								<c:forEach items="${travelDetailsList}" var="travel">
-									<c:if test="${travel.paragraphName!=null }">
+								<c:forEach items="${travelInfo.listTravlePagragraph}" var="travel">
+									<c:if test="${travel.mdParagraphName!=null }">
 										<c:set var="num" value="${num+1}"></c:set>
 										<div class="paragraph_main">
 											<span class="span_span">${num}/0</span><a>
-											${travel.paragraphName} </a>
+												${travel.mdParagraphName} </a>
 										</div>
 									</c:if>
 								</c:forEach>
@@ -399,8 +404,8 @@
 
 	<div id="footer">
 		<div class="footer1">
-			<iframe src="IndexFooter" frameborder="0" scrolling="no" marginheight="0"
-					marginwidth="0" style="margin: 0px auto;"></iframe>
+			<iframe src="IndexFooter" frameborder="0" scrolling="no"
+				marginheight="0" marginwidth="0" style="margin: 0px auto;"></iframe>
 		</div>
 	</div>
 </body>

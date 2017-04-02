@@ -16,8 +16,9 @@ import com.cn.qd.travel.entity.MdUser;
  *
  */
 @Service
-public interface UserService extends BaseService {
+public interface UserService extends BaseService{
 
+	
 	/**
 	 * 用户注册,注册成功返回true 否则false
 	 * 
@@ -45,6 +46,16 @@ public interface UserService extends BaseService {
 	 * @return
 	 */
 	public int updateUser(MdUser t, Map<String, Object> map);
+	
+	/**
+	 * 用户信息修改
+	 * 
+	 * @param t
+	 * @param map
+	 * @return
+	 */
+	public int updateUserPass(MdUser t, Map<String, Object> map);
+
 
 	/**
 	 * 用户删除 采用map传值
@@ -91,4 +102,10 @@ public interface UserService extends BaseService {
 	 * @return
 	 */
 	public boolean hasAuthority(MdUser t, Map<String, Object> map);
+	
+	//手机号码验证
+	public int checkPhone(String mdTelephone);
+	
+	//按条件插入
+	public int insertSelective(MdUser user);
 }
