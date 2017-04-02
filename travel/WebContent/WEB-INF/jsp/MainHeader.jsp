@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>用户主页 mainHeader</title>
+    <title>用户主页头</title>
     <link href="css/MainHeader.css" rel="stylesheet" type="text/css"/>
     <script language="javascript" src="js/jquery-3.1.0.min.js"
             type="text/javascript"></script>
@@ -46,7 +46,7 @@
             <div class="mfw_logo_one"></div>
             <div class="mfw_logo_two">
                 <ul class="t_header_ul">
-                    <li class="t_header_li"><a> 首页 </a></li>
+                    <li class="t_header_li"><a href="to_index"> 首页 </a></li>
                     <li class="t_header_li"><a> 目的地 </a></li>
                     <li class="t_header_li"><a> 旅游攻略 </a></li>
                     <li class="t_header_li"><a> 自由行商城 </a></li>
@@ -88,23 +88,23 @@
                         <li class="account _j_hoverclass" data-hoverclass="on"
                             id="pnl_user_set1" data-cs-p="other" class="drop">
                             <!--用户的信息头像--> <span class="t"><a class="infoItem"
-                                                              href=""><img src="${user.userHead }" width="32"
+                                                              href=""><img src="${user.userHeadImg }" width="32"
                                                                            height="32"
                                                                            align="absmiddle"><b></b></a></span>
                             <div class="uSet c">
-                                <a href="" class="containNum" target="_blank">等级 <span>LV.${user.userLevel }</span>
+                                <a href="" class="containNum" target="_blank">等级 <span>LV.${user.mdLevel }</span>
                                 </a> <a href="" class="containNum hasLine" target="_blank">蜂蜜 <span
-                                    id="_j_header_honey">${user.userHoney }</span>
+                                    id="_j_header_honey">${user.userBank.mdBalance }</span><!-- 用户余额 -->
                             </a> <a href="" class="containNum hasLine" target="_blank">金币 <span
-                                    id="_j_header_coin">${user.userHoney }</span></a> <a
-                                    href="to_myHome" target="_blank">我的蚂蜂窝</a> <a href=""
+                                    id="_j_header_coin">${user.userBank.mdBalance }</span></a> <a
+                                    href="toMyHome" target="_blank">我的主页</a> <a href="to_Writetravel"
                                                                                   target="_blank" class="menu">写游记</a>
-                                <a href=""
+                                <a href="toFriend"
                                    target="_blank" class="menu">我的好友</a> <a href=""
                                                                             target="_blank" class="menu">我的收藏</a> <a
                                     href=""
                                     target="_blank">设置</a> <a href="" target="_blank">分享设置</a> <a
-                                    href="to_out">退出</a>
+                                    href="toOutLogin">退出</a>
 
                             </div>
                         </li>

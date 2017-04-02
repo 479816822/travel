@@ -928,7 +928,7 @@
 							id="zuixin">最新发表</a></li>
 					</ul>
 					<div class="tn-write">
-						<a class="btn-add" href="to_writeTravel" target="_blank"><i></i>写游记</a>
+						<a class="btn-add" href="to_Writetravel" target="_blank"><i></i>写游记</a>
 					</div>
 					<a class="tn-tips" href="" target="_blank"><i></i>我要上首页</a>
 				</div>
@@ -1062,7 +1062,7 @@
 														<c:if test="${ flag && (i.mdContent != null) }">
 															<c:set var="data" value="${i.mdContent }" />
 														</c:if>
-														<c:if test="${i.traMsg != null}">
+														<c:if test="${i.mdContent != null}">
 															<c:set var="flag" value="false" />
 														</c:if>
 													</c:forEach>
@@ -1074,15 +1074,15 @@
 											</dl>
 											<div class="tn-extra">
 												<span class="tn-ding praise_1"> <span
-													style="display: none;">${listItem.traId }</span> <a
-													class="btn-ding " rel="nofollow"></a> <em id="">${listItem.traPraise }
+													style="display: none;">${listItem.mdRecid }</span> <a
+													class="btn-ding " rel="nofollow"></a> <em id="">${listItem.mdStdname }<!-- 获赞数 -->
 												</em>
 												</span> <span class="tn-place"><i></i><a
 													href="showTravel?traId=${listItem.mdRecid }&userId=${listItem.user.mdUserRecid }"
 													class="_j_gs_item" rel="nofollow">${listItem.mdTheme }</a>，by
 													${listItem.user.mdUserName }</span> <span class="tn-user"> <a
 													href="" target="_blank" rel="nofollow"> <img
-														src="${listItem.user.userHead }">
+														src="${listItem.user.userHeadImg }">
 												</a>
 												</span> <span class="tn-nums"><i></i>15620/262</span>
 											</div>
@@ -1121,6 +1121,7 @@
 						<c:if test="${i !=1 }">
 							<a class="a_font"><span class="page">${i }</span></a>
 						</c:if>
+
 
 					</c:forEach>
 					<a class="pg-first pageitem" href="autoLogin" rel="nofollow">首页</a>

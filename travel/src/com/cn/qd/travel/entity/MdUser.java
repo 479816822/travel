@@ -61,10 +61,19 @@ public class MdUser {
     
     private String mdSchool;
     
-    
+    //用户银行
+    private MD_BANK_ACUONT userBank;
     
 
-    public String getPassport() {
+    public MD_BANK_ACUONT getUserBank() {
+		return userBank;
+	}
+
+	public void setUserBank(MD_BANK_ACUONT userBank) {
+		this.userBank = userBank;
+	}
+
+	public String getPassport() {
 		return passport;
 	}
 

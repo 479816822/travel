@@ -71,7 +71,7 @@ public class TravelController {
 	}
 
 	// 游记写入成功插入数据库
-	@RequestMapping(value = "test")
+	@RequestMapping(value = "to_Writetravel")
 	public String test(Model model, HttpServletRequest request) {
 		// 用户
 		// MdUser user = (MdUser) session.getAttribute("user");
