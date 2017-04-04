@@ -18,6 +18,14 @@ public interface MDTravelNoteMapper {
     int updateByPrimaryKey(MDTravelNote record);
     
     List<MDTravelNote> selectTravel(String id);
+    
+    /**
+     * 查询指定用户recid的游记
+     * @param id
+     * @return
+     */
+    List<MDTravelNote> selectTravelByUser(String id);
+    
 
 	List<MDTravelNote> selectList();
 	/**

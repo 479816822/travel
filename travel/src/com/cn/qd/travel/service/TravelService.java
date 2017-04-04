@@ -1,12 +1,13 @@
 package com.cn.qd.travel.service;
 
+import java.util.List;
 import java.util.Map;
+
+import org.springframework.stereotype.Service;
 
 import com.cn.qd.travel.core.BaseService;
 import com.cn.qd.travel.entity.MDTravelNote;
 import com.cn.qd.travel.util.Page;
-
-import org.springframework.stereotype.Service;
 
 /**
  * 游记处理服务
@@ -18,6 +19,15 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface TravelService extends BaseService {
+
+	/**
+	 * 查询指定条件的游记
+	 * 
+	 * @param travelNote
+	 * @param choose
+	 * @return
+	 */
+	List<MDTravelNote> selectTravelList(MDTravelNote travelNote, String choose);
 
 	/**
 	 * 新增游记
@@ -45,8 +55,8 @@ public interface TravelService extends BaseService {
 	 * @return
 	 */
 	public boolean deleteTravel(MDTravelNote T, Map<String, Object> map);
-	
+
 	public Page getPage();
 
-	public void setPage(Page page) ;
+	public void setPage(Page page);
 }

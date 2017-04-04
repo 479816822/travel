@@ -24,7 +24,6 @@ import com.cn.qd.travel.util.GUID;
  * @author anmeihua 用户注册 Controller
  */
 @Controller
-@RequestMapping(value = "/alu")
 public class RegisterController {
 
 	@Autowired
@@ -79,6 +78,8 @@ public class RegisterController {
 		user.setMdPraise((long)0);
 		user.setMdSignature("青春是一辈子的财富！！！");
 		user.setMdIcon(pic);
+		user.setMdScore((long)0);
+		user.setMdStdname("未登陆");
 		int ret = userService.insertSelective(user);
 		if (ret > 0) {
 			model.addAttribute("registMsg", "注册成功！");
@@ -97,7 +98,8 @@ public class RegisterController {
 		String code2 = session.getAttribute("code").toString();
 		Map<String, String> result = new HashMap<String, String>();
 		if (!code1.equalsIgnoreCase(code2)) { // 忽略验证码大小写
-			return null;
+			result.put("success", "error");
+			return result;
 		} else {
 			result.put("success", "success");
 			return result;

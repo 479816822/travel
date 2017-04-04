@@ -141,11 +141,10 @@
 		//2.ajax进行顶的数据同步更新
 		$(".praise_1").click(function() {
 			url="updatePraise";
-			alert($(this).children().html())
 			var travel= { mdRecid : $(this).children().html(),
 				mdStdname : $(this).children().next().next().html()
 			}
-			ajax1($(this).children().next().next(), travel);
+			ajax1($(this).children().next().next(), travel,url);
 		});
 		//搜索框
 		$(".search-option li").click(
@@ -264,11 +263,11 @@
 
 
 		//游记显示---分页获取数据
-		function BindData(url) {
+		function BindData(urls) {
 			$
 					.ajax({
 						type : "POST",
-						url : url,
+						url : urls,
 						async : false,
 						data : {
 							pageNum : $("#lblCurent").val(),
@@ -449,14 +448,15 @@
 	
 
 	//ajax公用的方法
-	function ajax1(p, travel) {
+	function ajax1(p, travel,add) {
+		alert(add)
 		var num=p.html();
 		if(num==null)
 			num="0";
 		var n=parseInt(num);
 		$.ajax({
 			type : "POST",
-			url : url,
+			url : add,
 			data : travel,
 			dataType : "json",
 			success : function(msg) {

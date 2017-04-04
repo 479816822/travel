@@ -58,6 +58,8 @@ public class TravelServiceImpl implements TravelService {
 		tra.addAll(travel.selectTravel((String)t));
 		return tra;
 	}
+	
+	
 
 	/**
 	 * 缓存所有的数据,返回第一页的数据
@@ -106,6 +108,15 @@ public class TravelServiceImpl implements TravelService {
 	@Override
 	public void setPage(Page page) {
 		this.page=page;
+	}
+
+	/**
+	 * 查询指定条件的游记
+	 *  
+	 */
+	@Override
+	public List<MDTravelNote> selectTravelList(MDTravelNote travelNote, String choose) {
+		return travel.selectTravelByUser(choose);
 	}
 
 

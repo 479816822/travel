@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>${userInfo.userNick}-蚂蜂窝</title>
+<title>${user.mdUserName}-ALU主页</title>
 <link href="css/myhome/myHome.css" rel="stylesheet" type="text/css" />
 <link href="css/myhome/footer.css" rel="stylesheet" type="text/css" />
 <link href="css/myhome/myHome1.css" rel="stylesheet" type="text/css" />
@@ -159,13 +159,12 @@ $(function() {
 
 	//1.ajax数据异步更新用户的个性签名
 	$("#_j_introsaver").click(function() {
-		var string = $("#_j_introarea").val();
-		var id = $("#user_id").html();
-		var user = {
-			"userId" : id,
-			"userSignature" : string
-		}
-		url = "updataSign"
+		var string= $("#_j_introarea").val();
+		var id= $("#user_id").html();
+		var user= {
+				mdUserRecid:id,
+				mdSignature:string}
+		url = "signatureUpdate"
 		ajax(user);
 	});
 
@@ -236,7 +235,6 @@ $(function() {
 			.click(
 					function() {
 						//获得留言的内容
-
 						var leave = {
 							"homeId" : $("#user_id").html(),
 							"leaveMsg" : $(this).prev().val()
@@ -276,10 +274,10 @@ $(function() {
 		$.ajax({
 			type : "POST",
 			url : url,
-			data : JSON.stringify(user),
-			contentType : 'application/json; charset=utf-8',
-			dataType : 'json',
+			data : user,
+			dataType : "json",
 			success : function(msg) {
+				alert(msg)
 				$("#true").show();
 			},
 			error : function(msg) {
@@ -316,7 +314,7 @@ $(function() {
 <body>
 
 	<!-- 本用户的id -->
-	<span style="display: none;" id="user_id">${user.userId}</span>
+	<span style="display: none;" id="user_id">${user.mdUserRecid}</span>
 	<div class="topBar">
 
 		<div class="header1">
@@ -455,7 +453,7 @@ $(function() {
 				<div class="center clearfix">
 					<ul class="flt2">
 						<!--主要需要实现的功能-->
-						<li class="on"><a class="tags_link" href="" title="我的窝">我的窝</a></li>
+						<li class="on"><a class="tags_link" href="/" title="我的窝">我的窝</a></li>
 						<li><a class="tags_link" href="toMyTravel" title="我的游记">我的游记</a></li>
 						<li><a class="tags_link" href="to_question" title="我的问答">我的问答</a></li>
 						<li id="_j_pathnav"><a class="tags_link" href="my_track"
@@ -723,11 +721,11 @@ $(function() {
 						<!--用户的头像-->
 						<!--用户的头像-->
 						<!--用户的详细的信息-->
-						<img src="${user.userHead }" height="120" width="120"
-							alt="${user.userNick}"><a href="" class="MAvaUp"><i
+						<img src="${user.userHeadImg }" height="120" width="120"
+							alt="${user.mdUserName}"><a href="" class="MAvaUp"><i
 							class="Mphoto"></i></a></i>
 					</div>
-					<div class="MAvaName">${userInfo.userNick}<i
+					<div class="MAvaName">${user.mdUserName}<i
 							class="MGenderMale"></i>
 					</div>
 					<div class="its_tags">
@@ -738,7 +736,7 @@ $(function() {
 					</div>
 					<div class="MAvaInfo clearfix MAvaMyInfo">
 						<span class="MAvaLevel flt1">等级：<a href=""
-							title="${userInfo.userLevel}" target="_blank">Lv.${user.userLevel }</a></span>
+							title="${user.mdLevel}" target="_blank">Lv.${user.mdLevel }</a></span>
 						<span class="MAvaPlace flt1" title="青岛">现居：青岛</span> <span
 							class="MAvaSet"><a title="设置" href="updateUserNews"
 							target="_blank"></a></span>
@@ -746,8 +744,8 @@ $(function() {
 					<!-- 用户的个性签名 -->
 					<div id="_j_profilearea" class="MAvaProfile">
 						<div class="MProfile _j_showintrobox"
-							data-intro="${user.userSignature}">
-							<pre>${user.userSignature}</pre>
+							data-intro="${user.mdSignature}">
+							<pre>${user.mdSignature}</pre>
 						</div>
 						<!-- 用户个性签名的输入 -->
 						<!-- 用户个性签名的输入 -->
@@ -977,7 +975,7 @@ $(function() {
 			<div class="content flt2">
 				<div class="common_block main_links">
 					<ul class="clearfix">
-						<li><a href="writeTravel" target="_blank"><i
+						<li><a href="to_Writetravel" target="_blank"><i
 								class="write_note"></i><span>写游记</span></a></li>
 						<li><a href="" target="_blank"><i class="ask_expert"></i><span>问达人</span></a></li>
 						<li><a href="" target="_blank"><i class="add_footprint"></i><span>添加足迹</span></a></li>
@@ -1007,7 +1005,7 @@ $(function() {
 				<div class="common_block personal_info" id="_j_taskwrap">
 					<div class="personal_tips">
 						<p>
-							<strong>浪人</strong>，这里是你的【窝】！
+							<strong>${user.mdUserName }</strong>，这里是你的【窝】！
 						</p>
 						<p>是记录你的旅行记忆，结交各路豪杰的地盘儿。现在开启蚂蜂窝旅程！</p>
 					</div>
@@ -1074,7 +1072,7 @@ $(function() {
 
 
             </script>
-				<!--动态的更新信息-->
+				<!--动态的更新信息  -->
 				<!--动态的更新信息-->
 				<div class="common_block relative_info">
 					<!--<span class="MLittleClose" title="关闭"></span>-->
@@ -1112,7 +1110,7 @@ $(function() {
 										<dt>
 											<!-- 封面的图片对应的是游记的标题图片 -->
 											<a href="" target="_blank" id="_j_coverlink_5663645"><img
-												src="${trackInfo.traImg}" height="400"
+												src="${trackInfo.mdThemeImg}" height="400"
 												width="680" alt="封面"></a>
 											<div class="hover_item">
 												<div class="thumb_description"></div>
@@ -1122,7 +1120,7 @@ $(function() {
 													data-iid="5663645" title="置顶"></a>
 												<div class="notes_status">
 													<!-- 存储游记的id -->
-													<span style="display: none">${trackInfo.traId}</span> <a
+													<span style="display: none">${trackInfo.mdRecid}</span> <a
 														class="flt2 notes_handles cover set_set11" role="button"
 														><i></i>设置封面</a>
 													<!-- *********************重新打开游记的编辑页进行重新的编辑******************** -->
@@ -1136,22 +1134,22 @@ $(function() {
 										<dd>
 											<div class="note_title clearfix">
 												<div class="MDing">
-													<span style="display: none;" class="praise_one">${trackInfo.traId}</span>
-													<span id="topvote5663645">${trackInfo.traPraise}</span> <a
+													<span style="display: none;" class="praise_one">${trackInfo.mdRecid}</span>
+													<span id="topvote5663645">${trackInfo.mdStdname}</span> <a
 														class="praise_1" data-vote="0" title="顶一下">顶</a>
 													<!-- 顶一下更新数据库的内容 -->
 													<!--用户的游记-->
 												</div>
 												<div class="note_info">
 													<h3>
-														<a href="" target="_blank" title="${trackInfo.traTitle}">${trackInfo.traTitle}</a>
+														<a href="" target="_blank" title="${trackInfo.mdTheme}">${trackInfo.mdTheme}</a>
 													</h3>
 													<div class="note_more">
 
-														<span class="MInfoNum"><i class="MIcoView"></i><em>${trackInfo.traPraise+10}/0</em></span>
+														<span class="MInfoNum"><i class="MIcoView"></i><em>${trackInfo.mdStdname+10}/0</em></span>
 
-														<span class="MInfoNum"><i class="MIcoStar"></i><em>${trackInfo.traPraise}</em></span>
-														<span class="time">${trackInfo.sendDate}</span>
+														<span class="MInfoNum"><i class="MIcoStar"></i><em>${trackInfo.mdStdname}</em></span>
+														<span class="time">${trackInfo.mdCreateTime}</span>
 													</div>
 												</div>
 											</div>

@@ -110,4 +110,12 @@ public class MdUserServiceImpl implements UserService{
 		return userDao.updateByPrimaryKey(t);
 	}
 
+	/**
+	 * sql执行
+	 */
+	@Override
+	public int updateBySql(Map<String, Object> map) {
+		return userDao.updateBySql((String)map.get("sql"));
+	}
+
 }

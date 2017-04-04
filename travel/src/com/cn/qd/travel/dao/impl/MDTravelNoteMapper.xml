@@ -79,6 +79,28 @@
     <select id="selectTravel" parameterType="java.lang.String" resultMap="TravelResultMap">
     select 
    t.*, 
+   u.MD_GRADUATION_DATE as user_MD_GRADUATION_DATE,
+   u.MD_EMS_CODE as user_MD_EMS_CODE,
+   u.MD_PRAISE as user_MD_PRAISE,
+   u.MD_ICON as user_MD_ICON,
+   u.MD_PASSWORD as user_MD_PASSWORD,
+   u.MD_EMAIL as user_MD_EMAIL,
+   u.MD_SCHOOL as user_MD_SCHOOL,
+   u.MD_IS_VIP as user_MD_IS_VIP,
+   u.MD_LEVEL as user_MD_LEVEL,
+   u.MD_SIGNATURE as user_MD_SIGNATURE,
+   u.MD_SCORE as user_MD_SCORE,
+   u.MD_USER_RECID as user_MD_USER_RECID,
+   u.MD_STDNAME as user_MD_STDNAME,
+   u.MD_REF_ID as user_MD_REF_ID,
+   u.MD_STDCODE as user_MD_STDCODE,
+   u.MD_ALERT_DATE as user_MD_ALERT_DATE,
+   u.MD_ALERT_USER as user_MD_ALERT_USER,
+   u.MD_USER_NAME as user_MD_USER_NAME,
+   u.MD_TELEPHONE as user_MD_TELEPHONE,
+   u.MD_SEX as user_MD_SEX,
+   u.MD_AGE as user_MD_AGE,
+   u.MD_CREATE_TIME as user_MD_CREATE_TIME, 
    d.MD_RECID as p_MD_RECID,
    d.MD_PARAGRAPH_NAME as p_MD_PARAGRAPH_NAME,
    d.MD_IMG as p_MD_IMG,
@@ -86,8 +108,48 @@
    d.MD_CONTENT as p_MD_CONTENT,
    d.MD_STDCODE as p_MD_STDCODE,
    d.MD_TAVEL_ID as p_MD_TAVEL_ID 
-   from MD_TRAVE_NOTE t,MD_TRAVEL_PARAGRAPH d
-    where t.MD_RECID = #{id,jdbcType=VARCHAR} and d.MD_TAVEL_ID=t.MD_RECID
+   from MD_TRAVE_NOTE t,MD_TRAVEL_PARAGRAPH d,MD_USER u
+    where t.MD_RECID = #{id,jdbcType=VARCHAR} and t.MD_CREATE_USER_ID=u.MD_USER_RECID
+  </select>
+  
+  
+    <!-- 查询指定用户recid的游记-->
+    <select id="selectTravelByUser" parameterType="java.lang.String" resultMap="TravelResultMap">
+    select 
+   t.*, 
+   u.MD_GRADUATION_DATE as user_MD_GRADUATION_DATE,
+   u.MD_EMS_CODE as user_MD_EMS_CODE,
+   u.MD_PRAISE as user_MD_PRAISE,
+   u.MD_ICON as user_MD_ICON,
+   u.MD_PASSWORD as user_MD_PASSWORD,
+   u.MD_EMAIL as user_MD_EMAIL,
+   u.MD_SCHOOL as user_MD_SCHOOL,
+   u.MD_IS_VIP as user_MD_IS_VIP,
+   u.MD_LEVEL as user_MD_LEVEL,
+   u.MD_SIGNATURE as user_MD_SIGNATURE,
+   u.MD_SCORE as user_MD_SCORE,
+   u.MD_USER_RECID as user_MD_USER_RECID,
+   u.MD_STDNAME as user_MD_STDNAME,
+   u.MD_REF_ID as user_MD_REF_ID,
+   u.MD_STDCODE as user_MD_STDCODE,
+   u.MD_ALERT_DATE as user_MD_ALERT_DATE,
+   u.MD_ALERT_USER as user_MD_ALERT_USER,
+   u.MD_USER_NAME as user_MD_USER_NAME,
+   u.MD_TELEPHONE as user_MD_TELEPHONE,
+   u.MD_SEX as user_MD_SEX,
+   u.MD_AGE as user_MD_AGE,
+   u.MD_CREATE_TIME as user_MD_CREATE_TIME, 
+   d.MD_RECID as p_MD_RECID,
+   d.MD_PARAGRAPH_NAME as p_MD_PARAGRAPH_NAME,
+   d.MD_IMG as p_MD_IMG,
+   d.MD_VIDEO as p_MD_VIDEO,
+   d.MD_CONTENT as p_MD_CONTENT,
+   d.MD_STDCODE as p_MD_STDCODE,
+   d.MD_TAVEL_ID as p_MD_TAVEL_ID 
+   from MD_TRAVE_NOTE t left outer join MD_TRAVEL_PARAGRAPH d 
+   on t.MD_CREATE_USER_ID = #{id,jdbcType=VARCHAR} and d.MD_TAVEL_ID=t.MD_RECID
+   left outer join MD_USER u
+   on t.MD_CREATE_USER_ID=u.MD_USER_RECID
   </select>
   
   
@@ -96,6 +158,28 @@
     <select id="selectList"  resultMap="TravelResultMap">
     select 
    t.*, 
+   u.MD_GRADUATION_DATE as user_MD_GRADUATION_DATE,
+   u.MD_EMS_CODE as user_MD_EMS_CODE,
+   u.MD_PRAISE as user_MD_PRAISE,
+   u.MD_ICON as user_MD_ICON,
+   u.MD_PASSWORD as user_MD_PASSWORD,
+   u.MD_EMAIL as user_MD_EMAIL,
+   u.MD_SCHOOL as user_MD_SCHOOL,
+   u.MD_IS_VIP as user_MD_IS_VIP,
+   u.MD_LEVEL as user_MD_LEVEL,
+   u.MD_SIGNATURE as user_MD_SIGNATURE,
+   u.MD_SCORE as user_MD_SCORE,
+   u.MD_USER_RECID as user_MD_USER_RECID,
+   u.MD_STDNAME as user_MD_STDNAME,
+   u.MD_REF_ID as user_MD_REF_ID,
+   u.MD_STDCODE as user_MD_STDCODE,
+   u.MD_ALERT_DATE as user_MD_ALERT_DATE,
+   u.MD_ALERT_USER as user_MD_ALERT_USER,
+   u.MD_USER_NAME as user_MD_USER_NAME,
+   u.MD_TELEPHONE as user_MD_TELEPHONE,
+   u.MD_SEX as user_MD_SEX,
+   u.MD_AGE as user_MD_AGE,
+   u.MD_CREATE_TIME as user_MD_CREATE_TIME, 
    d.MD_RECID as p_MD_RECID,
    d.MD_PARAGRAPH_NAME as p_MD_PARAGRAPH_NAME,
    d.MD_IMG as p_MD_IMG,
@@ -103,8 +187,8 @@
    d.MD_CONTENT as p_MD_CONTENT,
    d.MD_STDCODE as p_MD_STDCODE,
    d.MD_TAVEL_ID as p_MD_TAVEL_ID 
-   from MD_TRAVE_NOTE t,MD_TRAVEL_PARAGRAPH d
-    where  d.MD_TAVEL_ID=t.MD_RECID
+   from MD_TRAVE_NOTE t,MD_TRAVEL_PARAGRAPH d,MD_USER u
+    where  d.MD_TAVEL_ID=t.MD_RECID and t.MD_CREATE_USER_ID=u.MD_USER_RECID
   </select>
   
   
@@ -115,7 +199,7 @@
     from MD_TRAVE_NOTE
     where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+ <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from MD_TRAVE_NOTE
     where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
   </delete>

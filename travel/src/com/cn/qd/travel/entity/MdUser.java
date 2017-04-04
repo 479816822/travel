@@ -2,12 +2,15 @@ package com.cn.qd.travel.entity;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author anmeihua
  *	用户Entity
  */
 public class MdUser {
+	
+	private List<MDFriendShip> frind;//好友
 	
 	private String passport;//找回密码
 	
@@ -83,6 +86,15 @@ public class MdUser {
 
 	public String getUserHeadImg() {
 		return userHeadImg;
+	}
+
+
+	public List<MDFriendShip> getFrind() {
+		return frind;
+	}
+
+	public void setFrind(List<MDFriendShip> frind) {
+		this.frind = frind;
 	}
 
 	public void setUserHeadImg(String userHeadImg) {

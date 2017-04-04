@@ -108,4 +108,11 @@ public interface UserService extends BaseService{
 	
 	//按条件插入
 	public int insertSelective(MdUser user);
+	
+	/**
+	 * 通过传入的sql执行
+	 * @param map
+	 * @return
+	 */
+	public int updateBySql(Map<String,Object> map);
 }

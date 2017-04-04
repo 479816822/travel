@@ -81,10 +81,7 @@
                             target="_blank">金币 <span id="_j_header_coin">${user.userBank.mdBalance }</span></a>
                         <a href="toMyHome" target="_blank">我的主页</a> <a
                             href="to_Writetravel" target="_blank" class="menu">写游记</a> <a
-                            href="" target="_blank" class="menu">我的好友</a> <a href=""
-                                                                             target="_blank" class="menu">我的收藏</a> <a
-                            href="" target="_blank">设置</a>
-                        <a href="toOutLogin" target="_blank">分享设置</a> <a href="to_out">退出</a>
+                            href="" target="_blank" class="menu">我的好友</a>  <a href="toOutLogin" target="_blank">退出</a>
 
                     </div>
                 </li>

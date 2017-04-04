@@ -7,15 +7,15 @@
 <head>
 <meta charset="UTF-8">
 <title>帐号注册2-爱旅U</title>
-<link href="../css/reglog.css" rel="stylesheet" type="text/css">
-<script src="../js/jquery-3.1.0.min.js"></script>
+<link href="css/reglog.css" rel="stylesheet" type="text/css">
+<script src="js/jquery-3.1.0.min.js"></script>
 <script>
 	$(function() {
 
 		 $(".err-tip").css("visibility","hidden");
 		var i = Math.floor(Math.random() * 11 + 1);
 		$("body").css({
-			"backgroundImage" : "url(../syste_img/img/reglog/back" + i + ".jpg)",
+			"backgroundImage" : "url(syste_img/img/reglog/back" + i + ".jpg)",
 			"backgroundSize" : "100% 100%"
 		});
 		
@@ -32,6 +32,13 @@
 				contentType : 'application/json; charset=utf-8',
 				dataType : 'json',
 				success : function(msg) {
+					if(msg.success=="error"){//验证码出错
+						$("#code").next().css("visibility", "visible").css(
+								"border", "none");
+						$(".clearfix").show();
+					}else{
+						$(".clearfix").hidn();
+					}
 
 				},
 				error : function(msg) {
@@ -117,7 +124,7 @@
 				<div class="signup-box">
 					<div class="add-info">
 						<div class="hd">帐号注册</div>
-						<form action="/Travel/alu/register2" method="post" id="_j_signup_mobile_form">
+						<form action="/Travel/register2" method="post" id="_j_signup_mobile_form">
 							<div class="form-field" style="display: none;">
 							<input name="mdTelephone" value="${mdTelephone }">
 							</div>

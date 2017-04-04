@@ -7,15 +7,15 @@
 <head>
 <meta charset="UTF-8">
 <title>帐号注册-爱旅U</title>
-<link href="../css/reglog.css" rel="stylesheet" type="text/css">
-<script src="../js/jquery-3.1.0.min.js"></script>
+<link href="css/reglog.css" rel="stylesheet" type="text/css">
+<script src="js/jquery-3.1.0.min.js"></script>
 <script>
 	$(function() {
         $(".error-tip").css("visibility","hidden");
 
 		var i = Math.floor(Math.random() * 11 + 1);
 		$("body").css({
-			"backgroundImage" : "url(../syste_img/img/reglog/back" + i + ".jpg)",
+			"backgroundImage" : "url(syste_img/img/reglog/back" + i + ".jpg)",
 			"backgroundSize" : "100% 100%"
 		});
 
@@ -54,7 +54,7 @@
 			<div class="signup-forms">
 				<div class="signup-box" id="_j_signup_box">
 					<div class="inner">
-						<form action="/Travel/alu/regists" method="post" id="_j_signup_form">
+						<form action="/Travel/regists" method="post" id="_j_signup_form">
 							<div class="form-field">
 								<input name="mdTelephone" placeholder="您的手机号码" autocomplete="off"
 									data-type="mobile" data-verification-name="手机号码"

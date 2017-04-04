@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cn.qd.travel.dao.MdUserMapper">
+
+	<resultMap id="FriendResultMap" type="com.cn.qd.travel.entity.MDFriendShip">
+    <id column="MD_RECID" jdbcType="VARCHAR" property="mdRecid" />
+    <result column="MD_STDNAME" jdbcType="VARCHAR" property="mdStdname" />
+    <result column="MD_REF_ID" jdbcType="VARCHAR" property="mdRefId" />
+    <result column="MD_STDCODE" jdbcType="DECIMAL" property="mdStdcode" />
+    <result column="MD_ALERT_DATE" jdbcType="DATE" property="mdAlertDate" />
+    <result column="MD_ALERT_USER" jdbcType="VARCHAR" property="mdAlertUser" />
+    <result column="MD_LEVEL" jdbcType="DECIMAL" property="mdLevel" />
+    <result column="MD_HOST_USER_ID" jdbcType="VARCHAR" property="mdHostUserId" />
+    <result column="MD_FRIEND_ID" jdbcType="VARCHAR" property="mdFriendId" />
+    <result column="MD_CREATE_TIME" jdbcType="DATE" property="mdCreateTime" />
+    <result column="MD_GROUP_NAME" jdbcType="VARCHAR" property="mdGroupName" />
+    <result column="MD_REMARK" jdbcType="VARCHAR" property="mdRemark" />
+    <result column="MD_FRIEND_NAME" jdbcType="VARCHAR" property="mdFriendName" />
+    <result column="MD_PRAISE" jdbcType="DECIMAL" property="mdPraise" />
+  </resultMap>
+  
+    <resultMap id="BankResultMap" type="com.cn.qd.travel.entity.MD_BANK_ACUONT">
+    <id column="MD_RECID" jdbcType="VARCHAR" property="mdRecid" />
+    <result column="MD_STDNAME" jdbcType="VARCHAR" property="mdStdname" />
+    <result column="MD_REF_ID" jdbcType="VARCHAR" property="mdRefId" />
+    <result column="MD_STDCODE" jdbcType="DECIMAL" property="mdStdcode" />
+    <result column="MD_CREATE_TIME" jdbcType="DATE" property="mdCreateTime" />
+    <result column="MD_ALERT_DATE" jdbcType="DATE" property="mdAlertDate" />
+    <result column="MD_ALERT_USER" jdbcType="VARCHAR" property="mdAlertUser" />
+    <result column="MD_LEVEL" jdbcType="DECIMAL" property="mdLevel" />
+    <result column="MD_ACCOUNT" jdbcType="VARCHAR" property="mdAccount" />
+    <result column="MD_BALANCE" jdbcType="DECIMAL" property="mdBalance" />
+    <result column="MD_USER_ID" jdbcType="VARCHAR" property="mdUserId" />
+    <result column="MD_BACK_ID" jdbcType="VARCHAR" property="mdBackId" />
+  </resultMap>
+
   <resultMap id="BaseResultMap" type="com.cn.qd.travel.entity.MdUser">
     <id column="MD_USER_RECID" jdbcType="VARCHAR" property="mdUserRecid" />
     <result column="MD_STDNAME" jdbcType="VARCHAR" property="mdStdname" />
@@ -23,6 +56,9 @@
     <result column="MD_GRADUATION_DATE" jdbcType="DATE" property="mdGraduationDate" />
     <result column="MD_EMS_CODE" jdbcType="DECIMAL" property="mdEmsCode" />
     <result column="MD_PRAISE" jdbcType="DECIMAL" property="mdPraise" />
+    <association property="userBank" column="MD_USER_ID" resultMap="BankResultMap" columnPrefix="bk_"/>
+     <collection property="frind" column="MD_HOST_USER_ID" resultMap="FriendResultMap"
+     ofType="com.cn.qd.travel.entity.MDFriendShip" columnPrefix="f_"></collection> 
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.cn.qd.travel.entity.MdUser">
     <result column="MD_ICON" jdbcType="BLOB" property="mdIcon" />
@@ -43,10 +79,38 @@
 		where MD_TELEPHONE = #{mdTelephone,jdbcType=VARCHAR}
 	</select>
   
-  
-  
-  
-  
+    <!-- 查询用户的详细 -->
+	<select id="selectByUserId" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
+		select m.*,
+		b.MD_ACCOUNT as bk_MD_ACCOUNT,
+		b.MD_BALANCE as bk_MD_BALANCE,
+		b.MD_USER_ID as bk_MD_USER_ID,
+		b.MD_BACK_ID as bk_MD_BACK_ID,
+		b.MD_RECID as bk_MD_RECID,
+		b.MD_STDNAME as bk_MD_STDNAME,
+		b.MD_REF_ID as bk_MD_REF_ID,
+		b.MD_STDCODE as bk_MD_STDCODE,
+		b.MD_CREATE_TIME as bk_MD_CREATE_TIME,
+		b.MD_ALERT_DATE as bk_MD_ALERT_DATE,
+		b.MD_ALERT_USER as bk_MD_ALERT_USER,
+		b.MD_LEVEL as bk_MD_LEVEL,
+		f.MD_RECID as f_MD_RECID,
+		f.MD_STDNAME as f_MD_STDNAME,
+		f.MD_STDCODE as f_MD_STDCODE,
+		f.MD_ALERT_DATE as f_MD_ALERT_DATE,
+		f.MD_ALERT_USER as f_MD_ALERT_USER,
+		f.MD_LEVEL as f_MD_LEVEL,
+		f.MD_HOST_USER_ID as f_MD_HOST_USER_ID,
+		f.MD_FRIEND_ID as f_MD_FRIEND_ID,
+		f.MD_CREATE_TIME as f_MD_CREATE_TIME,
+		f.MD_REMARK as f_MD_REMARK,
+		f.MD_FRIEND_NAME as f_MD_FRIEND_NAME,
+		f.MD_PRAISE as f_MD_PRAISE
+		from MD_USER m left outer join MD_FRIEND_SHIP f  
+		on m.MD_USER_RECID= #{id,jdbcType=VARCHAR} and m.MD_USER_RECID=f.MD_HOST_USER_ID
+		left outer join MD_BANK_ACOUNT b
+		on b.MD_USER_ID=m.MD_USER_RECID
+	</select>
   
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
     select *
@@ -58,12 +122,39 @@
   <!--用户登录-->
   <select id="selectListBy" parameterType="com.cn.qd.travel.entity.MdUser" resultMap="ResultMapWithBLOBs">
     select 
-    <include refid="Base_Column_List" />
-    ,
-    <include refid="Blob_Column_List" />
-    from MD_USER
-    where MD_TELEPHONE = #{mdTelephone,jdbcType=VARCHAR} and MD_PASSWORD=#{mdPassword,jdbcType=VARCHAR}
-  </select>
+    m.*,
+    b.MD_ACCOUNT as bk_MD_ACCOUNT,
+		b.MD_BALANCE as bk_MD_BALANCE,
+		b.MD_USER_ID as bk_MD_USER_ID,
+		b.MD_BACK_ID as bk_MD_BACK_ID,
+		b.MD_RECID as bk_MD_RECID,
+		b.MD_STDNAME as bk_MD_STDNAME,
+		b.MD_REF_ID as bk_MD_REF_ID,
+		b.MD_STDCODE as bk_MD_STDCODE,
+		b.MD_CREATE_TIME as bk_MD_CREATE_TIME,
+		b.MD_ALERT_DATE as bk_MD_ALERT_DATE,
+		b.MD_ALERT_USER as bk_MD_ALERT_USER,
+		b.MD_LEVEL as bk_MD_LEVEL,
+		f.MD_RECID as f_MD_RECID,
+		f.MD_STDNAME as f_MD_STDNAME,
+		f.MD_STDCODE as f_MD_STDCODE,
+		f.MD_ALERT_DATE as f_MD_ALERT_DATE,
+		f.MD_ALERT_USER as f_MD_ALERT_USER,
+		f.MD_LEVEL as f_MD_LEVEL,
+		f.MD_HOST_USER_ID as f_MD_HOST_USER_ID,
+		f.MD_FRIEND_ID as f_MD_FRIEND_ID,
+		f.MD_CREATE_TIME as f_MD_CREATE_TIME,
+		f.MD_REMARK as f_MD_REMARK,
+		f.MD_FRIEND_NAME as f_MD_FRIEND_NAME,
+		f.MD_PRAISE as f_MD_PRAISE
+    from MD_USER m left outer join MD_FRIEND_SHIP f
+    on 
+    m.MD_TELEPHONE = #{mdTelephone,jdbcType=VARCHAR} and m.MD_PASSWORD=#{mdPassword,jdbcType=VARCHAR}  
+    and m.MD_USER_RECID=f.MD_HOST_USER_ID
+    left outer join
+    MD_BANK_ACOUNT b
+    on b.MD_USER_ID=m.MD_USER_RECID
+     </select>
   
   
     <select id="selectListRecords" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
@@ -239,6 +330,11 @@
       </if>
     </trim>
   </insert>
+  
+  <!--通过sql执行-->
+   <update id="updateBySql" parameterType="String">
+    ${value} 
+  </update>
   
   
   
