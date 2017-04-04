@@ -1,8 +1,8 @@
 package com.cn.qd.travel.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.cn.qd.travel.entity.MDTravelNote;
 import com.cn.qd.travel.entity.MdUser;
+import com.cn.qd.travel.entity.MdUserLeaveMessage;
+import com.cn.qd.travel.service.CommentLeavelService;
 import com.cn.qd.travel.service.TravelService;
 import com.cn.qd.travel.service.UserService;
 
@@ -22,6 +24,8 @@ public class UserController {
 	UserService userService;
 	@Autowired
 	TravelService travelService;
+	@Autowired 
+	CommentLeavelService comment;
 
 	/**
 	 * 用户主页
@@ -35,7 +39,12 @@ public class UserController {
 		 MdUser user = (MdUser) session.getAttribute("user");
 		 //查询用户的所有游记
 		 List<MDTravelNote> travelList=travelService.selectTravelList(null, user.getMdUserRecid());
+		 //查询留言
+		 MdUserLeaveMessage comments=new MdUserLeaveMessage();
+		 comments.setMdHostUserRecid(user.getMdUserRecid());
+		 ArrayList<MdUserLeaveMessage> commnetList= comment.selectById(comments);
 		 model.addAttribute("trackList", travelList);
+		 model.addAttribute("message", commnetList);
 		return "myHome";
 	}
 

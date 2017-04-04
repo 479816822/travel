@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.cn.qd.travel.entity.MdUser;
+import com.cn.qd.travel.entity.MdUserLeaveMessage;
+import com.cn.qd.travel.service.CommentLeavelService;
 import com.cn.qd.travel.service.TravelService;
 import com.cn.qd.travel.service.UserService;
 
@@ -29,6 +31,8 @@ public class HomeController {
 	UserService userService;
 	@Autowired
 	TravelService travelService;
+	@Autowired 
+	CommentLeavelService comment;
 
 	/**
 	 * 用户个性签名修改
@@ -63,11 +67,19 @@ public class HomeController {
 	 * @param session
 	 * @return
 	 */
-	@RequestMapping(value = "leaveWord")
-	public String leaveWord(Model model, HttpSession session) {
-
-		return "updateUserInfo";
+	@RequestMapping(value = "leaveWord", method = { RequestMethod.POST })
+	@ResponseBody
+	public  Map<String, String> leaveWord(Model model, HttpSession session,MdUserLeaveMessage message) {
+		Map<String, String> result = new HashMap<String, String>();
+		int ret =comment.insert(message,null );	
+		if (ret > 0) {
+			result.put("success", "success");
+		} else {
+			result.put("success", "error");
+		}
+		return result;
 	}
+	
 	
 	/**
 	 * 用户信息修改
