@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>index</title>
+<title>爱旅游U首页</title>
 <link href="css/index.css" rel="stylesheet">
 
 	<script language="javascript" src="js/jquery-3.1.0.min.js"
@@ -101,9 +101,9 @@
 	var ads_L = [ "taiwan", "putaoya", "yabi", "xinjiapo", "hangzhou" ];
 	var pageSize = parseInt($("#pageSize").text());
 	var loAdd = "";
+	var url;
 
 	$(function() {
-
 		adCirculation();
 
 		//游记筛选
@@ -135,11 +135,15 @@
 			timer = setTimeout("adCirculation()", 4000);
 		});
 
+
+	
+		
 		//2.ajax进行顶的数据同步更新
 		$(".praise_1").click(function() {
-			var travel = {
-				"traId" : $(this).children().html(),
-				"traPraise" : $(this).children().next().next().html()
+			url="updatePraise";
+			alert($(this).children().html())
+			var travel= { mdRecid : $(this).children().html(),
+				mdStdname : $(this).children().next().next().html()
 			}
 			ajax1($(this).children().next().next(), travel);
 		});
@@ -181,64 +185,40 @@
 		});
 
 		//分页
+		//首页
+		$(".pg-first").click(function() {
+			var pageNum = parseInt($(".pg-current").html());//获得当前页的页码
+			//设置当前页为第一页
+			$(".pg-current").html(1);
+			pageFunction(pageNum);
+			});
+		
+		
+		
+			
+		
+		//分页
 		//下一页
 		$(".pg_next").click(function() {
-			var pageCount = parseInt($("#pageCount").val());
+			var pageCount = parseInt($("#lblCurent").val());//总页数
 			var pageNum = parseInt($(".pg-current").html());//获得当前页的页码
-			if (pageNum != pageCount) {
+			if (pageNum < pageCount) {
 				pageNum++;
 				$("#lblCurent").val(pageNum);
 			}
-			//处理当前页面的页码之间的关系
-			$(".page").removeClass("pg-current");
-			
-			if(pageNum <= 4){
-				$(".a_font").eq(pageNum-1).children().addClass("pg-current");
-			}else{
-				var n=pageNum-3;
-				$(".a_font").eq(0).children().html(n);
-				n=n+1;
-				$(".a_font").eq(1).children().html(n);
-				n=n+1;
-				$(".a_font").eq(2).children().html(n);
-				n=n+1;
-				$(".a_font").eq(3).children().html(n);
-				$(".a_font").eq(3).children().addClass("pg-current");
-			}
-			
-			
-			BindData("get_page", pageNum);
+			$(".pg-current").html(pageNum);
+			pageFunction(pageNum);
 		});
 
 		//上一页
 		$(".pg_prev").click(function() {
-			var pageCount = parseInt($("#pageCount").text());
+			var pageCount = parseInt($("#lblCurent").text());
 			var pageNum = parseInt($(".pg-current").html());//获得当前页的页码
 			if (pageNum != 1) {
 				pageNum = pageNum - 1;
-				$("#lblCurent").val(pageNum);
 			}
-			
-			
-			
-			//处理当前页面的页码之间的关系
-			$(".page").removeClass("pg-current");
-			
-			if(pageNum <= 4){
-				$(".a_font").eq(pageNum-1).children().addClass("pg-current");
-			}else{
-				var n=pageNum;
-				$(".a_font").eq(0).children().html(n);
-				n=n+1;
-				$(".a_font").eq(1).children().html(n);
-				n=n+1;
-				$(".a_font").eq(2).children().html(n);
-				n=n+1;
-				$(".a_font").eq(3).children().html(n);
-				$(".a_font").eq(0).children().addClass("pg-current");
-			}
-			
-			BindData("get_page", pageNum);
+			$(".pg-current").html(pageNum)
+			pageFunction(pageNum);
 		});
 
 		//指定的页pg-current
@@ -256,29 +236,31 @@
 		
 		//尾页
 		$(".pg_last").click(function() {
-			
-			var pageCount = parseInt($("#pageCount").val());
-			
-			//处理当前页面的页码之间的关系
-			$(".page").removeClass("pg-current");
-			
-			
-			if(pageCount <= 4){
-				$(".a_font").eq(pageCount-1).children().addClass("pg-current");
-			}else{
-				var n=pageCount-3;
-				$(".a_font").eq(0).children().html(n);
-				n=n+1;
-				$(".a_font").eq(1).children().html(n);
-				n=n+1;
-				$(".a_font").eq(2).children().html(n);
-				n=n+1;
-				$(".a_font").eq(3).children().html(n);
-				
-				$(".a_font").eq(0).children().addClass("pg-current");
-			}
-			fun0("get_page", pageCount);
+			var pageCount = parseInt($("#lblCurent").val());
+			$(".pg-current").html(pageCount);
+			pageFunction(pageCount);
 		});
+
+		
+		//page处理,条用ajax查询数据
+		function pageFunction(pageCurrent) {
+			var pageCount = parseInt($("#lblCurent").val());//总页数
+			var numbers= parseInt($("#pageCount").val());//总条数
+			var pageSize= parseInt($("#pageSize").val());//每页大小
+			var cache=$("#cache").val()//缓存名
+			
+			var page={
+					pageCount:pageCount,
+					pageSize:pageSize,
+					dataCount:numbers,
+					pageCurrent:pageCurrent,
+					cache:cache
+			} 
+			
+			var urls="pageData";
+		//查询分页数据
+			getPageData(page,urls);
+		}
 
 
 		//游记显示---分页获取数据
@@ -301,9 +283,9 @@
 											data,
 											function(pageNum, n) {
 												var msg;
-												for (i = 0; i < n.travelDetailsList.length; i++) {
-													if (n.travelDetailsList[i].traMsg != null) {
-														msg = n.travelDetailsList[i].traMsg;
+												for (i = 0; i < n.listTravlePagragraph.length; i++) {
+													if (n.listTravlePagragraph[i].mdContent != null) {
+														msg = n.listTravlePagragraph[i].mdContent;
 														break;
 													}
 												}
@@ -313,24 +295,24 @@
 																"<div class='tn-item clearfix'>"
 																		+ "<div class='tn-image'>"
 																		+ "<a href='showTravel?traId="
-																		+ n.traId
+																		+ n.mdRecid
 																		+ "&userId="
-																		+ n.user.userId
-																		+ "' target='_blank'><img class=''  src='"+n.traImg+"' style='display: inline;'></a>"
+																		+ n.user.mdUserRecid
+																		+ "' target='_blank'><img class=''  src='"+n.mdThemeImg+"' style='display: inline;'></a>"
 																		+ "</div>"
 																		+ "<div class='tn-wrapper'>"
 																		+ "<dl>"
 																		+ "<dt><a href='showTravel?traId="
-																		+ n.traId
+																		+ n.mdRecid
 																		+ "&userId="
-																		+ n.user.userId
+																		+ n.user.mdUserRecid
 																		+ "' target='_blank'>"
-																		+ n.traTitle
+																		+ n.mdTheme
 																		+ "</a> </dt>"
 																		+ "<dd style='height:80px;;overflow:hidden;text-overflow:ellipsis; '><a  href='showTravel?traId="
-																		+ n.traId
+																		+ n.mdRecid
 																		+ "&userId="
-																		+ n.user.userId
+																		+ n.user.mdUserRecid
 																		+ "' target='_blank'>"
 																		+ msg
 																		+ "...</a></dd>"
@@ -338,27 +320,27 @@
 																		+ "<div class='tn-extra'>"
 																		+ "<span class='tn-ding ' onclick='funs(this)'> "
 																		+ "<span style='display: none;'>"
-																		+ n.traId
+																		+ n.mdRecid
 																		+ "</span> <a class='btn-ding ' rel='nofollow'></a> <em>"
-																		+ n.traPraise
+																		+ n.mdStdname
 																		+ "</em>"
 																		+ "</span> "
 																		+ "  <span class='tn-place'><i></i><a  href='showTravel?traId="
-																		+ n.traId
+																		+ n.mdRecid
 																		+ "&userId="
-																		+ n.user.userId
+																		+ n.user.mdUserRecid
 																		+ "' class='_j_gs_item' rel='nofollow'>"
 																		+ n.viewName
 																		+ "</a>，by "
-																		+ n.user.userNick
+																		+ n.user.mdUserName
 																		+ "</span>"
 																		+ "<span class='tn-user'> "
 																		+ "	<a  href='showTravel?traId="
-																		+ n.traId
+																		+ n.mdRecid
 																		+ "&userId="
-																		+ n.user.userId
+																		+ n.user.mdUserRecid
 																		+ "' target='_blank' rel='nofollow'> <img src='"
-																		+ n.user.userHead
+																		+ n.user.userHeadImg
 																		+"'>"
 																		+ "</a>"
 																		+ "</span> <span class='tn-nums'><i></i>15620/262</span>"
@@ -370,15 +352,13 @@
 		}
 
 		//分页处理
-		function fun0(url, page) {
+		function getPageData(page,urls) {
 			$
 					.ajax({
 						type : "POST",
-						url : url,
+						url : urls,
 						async : false,
-						data : {
-							pageNum : page
-						},
+						data : page,
 						dataType : "json",
 						success : function(data) {
 							$(".tn-list").children().remove();
@@ -387,9 +367,9 @@
 											data,
 											function(pageNum, n) {
 												var msg;
-												for (i = 0; i < n.travelDetailsList.length; i++) {
-													if (n.travelDetailsList[i].traMsg != null) {
-														msg = n.travelDetailsList[i].traMsg;
+												for (i = 0; i < n.listTravlePagragraph.length; i++) {
+													if (n.listTravlePagragraph[i].mdContent != null) {
+														msg = n.listTravlePagragraph[i].mdContent;
 														break;
 													}
 												}
@@ -399,24 +379,24 @@
 																"<div class='tn-item clearfix'>"
 																		+ "<div class='tn-image'>"
 																		+ "<a href='showTravel?traId="
-																		+ n.traId
+																		+ n.mdRecid
 																		+ "&userId="
-																		+ n.user.userId
-																		+ "' target='_blank'><img class=''  src='"+n.traImg+"' style='display: inline;'></a>"
+																		+ n.user.mdUserRecid
+																		+ "' target='_blank'><img class=''  src='"+n.mdThemeImg+"' style='display: inline;'></a>"
 																		+ "</div>"
 																		+ "<div class='tn-wrapper'>"
 																		+ "<dl>"
 																		+ "<dt><a href='showTravel?traId="
-																		+ n.traId
+																		+ n.mdRecid
 																		+ "&userId="
-																		+ n.user.userId
+																		+ n.user.mdUserRecid
 																		+ "' target='_blank'>"
-																		+ n.traTitle
+																		+ n.mdTheme
 																		+ "</a> </dt>"
 																		+ "<dd style='height:80px;;overflow:hidden;text-overflow:ellipsis; '><a  href='showTravel?traId="
-																		+ n.traId
+																		+ n.mdRecid
 																		+ "&userId="
-																		+ n.user.userId
+																		+ n.user.mdUserRecid
 																		+ "' target='_blank'>"
 																		+ msg
 																		+ "...</a></dd>"
@@ -424,27 +404,27 @@
 																		+ "<div class='tn-extra'>"
 																		+ "<span class='tn-ding ' onclick='funs(this)'> "
 																		+ "<span style='display: none;'>"
-																		+ n.traId
+																		+ n.mdRecid
 																		+ "</span> <a class='btn-ding ' rel='nofollow'></a> <em>"
-																		+ n.traPraise
+																		+ n.mdStdname
 																		+ "</em>"
 																		+ "</span> "
 																		+ "  <span class='tn-place'><i></i><a  href='showTravel?traId="
-																		+ n.traId
+																		+ n.mdRecid
 																		+ "&userId="
-																		+ n.user.userId
+																		+ n.user.mdUserRecid
 																		+ "' class='_j_gs_item' rel='nofollow'>"
-																		+ n.viewName
+																		+ n.mdTheme
 																		+ "</a>，by "
-																		+ n.user.userNick
+																		+ n.user.mdUserName
 																		+ "</span>"
 																		+ "<span class='tn-user'> "
 																		+ "	<a  href='showTravel?traId="
-																		+ n.traId
+																		+ n.mdRecid
 																		+ "&userId="
-																		+ n.user.userId
+																		+ n.user.mdUserRecid
 																		+ "' target='_blank' rel='nofollow'> <img src='"
-																		+ n.user.userHead
+																		+ n.user.userHeadImgs
 																		+"'>"
 																		+ "</a>"
 																		+ "</span> <span class='tn-nums'><i></i>15620/262</span>"
@@ -458,42 +438,47 @@
 	});
 
 	function funs(p) {
-
-
 		var travel = {
-			"traId" : $(p).children().html(),
-			"traPraise" : $(p).children().next().next().html()
+			"mdRecid" : $(p).children().html(),
+			"mdStdName" : $(p).children().next().next().html()
 		}
 		ajax1($(p).children().next().next(), travel);
 
 	}
+	
+	
 
 	//ajax公用的方法
 	function ajax1(p, travel) {
+		var num=p.html();
+		if(num==null)
+			num="0";
+		var n=parseInt(num);
 		$.ajax({
 			type : "POST",
-			url : "updataPraise",
-			data : JSON.stringify(travel),
-			contentType : 'application/json; charset=utf-8',
-			dataType : 'json',
+			url : url,
+			data : travel,
+			dataType : "json",
 			success : function(msg) {
-				//更新数据
-				p.html(msg.praiseNum.traPraise);
+				if(url=="updatePraise"&&msg>0){
+					n=n+1;
+				p.html(n);
+				}
 			},
 			error : function(msg) {
 				//提示输需要入的信息
-
 			}
 		});
 	}
-
+	
+	
 	//图片自动切换
-	/**
 	function adCirculation() {
+	
 		if (i == 5)
 			i = 0;
 		$("#wrapper").css("background-image",
-				"url(../sys" + ads_L[i] + "-L.jpg)");
+				"url(syste_img/img/index-img/" + ads_L[i] + "-L.jpg)");
 		$(".des").children().eq(i).css("display", "block").siblings().css(
 				"display", "none");
 		$(".des2").children().eq(i).css("display", "block").siblings().css(
@@ -509,7 +494,7 @@
 
 		timer = setTimeout("adCirculation()", 4000);
 		i++;
-	}**/
+	}
 </script>
 
 </head>
@@ -604,11 +589,11 @@
 			</ul>
 			<div id="small">
 				<ul class="littleImg">
-					<li><img src="syste_img/index/101011.jpg" height="70px" width="120px"></li>
-					<li><img src="syste_img/index/101011.jpg"  height="70px" width="120px"></li>
-					<li><img src="syste_img/index/101011.jpg"  height="70px" width="120px"></li>
-					<li><img src="syste_img/index/101011.jpg"  height="70px" width="120px"></li>
-					<li><img src="syste_img/index/101011.jpg"  height="70px" width="120px"></li>
+					<li><img src="syste_img/img/index-img/taiwan-S.jpg" height="70px" width="120px"></li>
+					<li><img src="syste_img/img/index-img/putaoya-S.jpg"  height="70px" width="120px"></li>
+					<li><img src="syste_img/img/index-img/yabi-S.jpg"  height="70px" width="120px"></li>
+					<li><img src="syste_img/img/index-img/xinjiapo-S.jpg"  height="70px" width="120px"></li>
+					<li><img src="syste_img/img/index-img/hangzhou-S.jpg"  height="70px" width="120px"></li>
 				</ul>
 				<a class="show-more" target="_blank" href="beautifulPage">历历在目</a>
 			</div>
@@ -1037,6 +1022,7 @@
 						<div class="tn-list">
 							<div id="template">
 								<c:forEach items="${travelList }" var="listItem">
+								<c:if test="${listItem!=null }">
 									<div class="tn-item clearfix">
 										<div class="tn-image">
 											<a
@@ -1050,7 +1036,7 @@
 												<dt>
 													<a
 														href="showTravel?traId=${listItem.mdRecid }&userId=${listItem.user.mdUserRecid }"
-														target="_blank">${listItem.mdThemeImg }</a>
+														target="_blank">${listItem.mdTheme }</a>
 												</dt>
 												<dd style="height:80px;;overflow:hidden;text-overflow:ellipsis; ">
 
@@ -1075,8 +1061,8 @@
 											<div class="tn-extra">
 												<span class="tn-ding praise_1"> <span
 													style="display: none;">${listItem.mdRecid }</span> <a
-													class="btn-ding " rel="nofollow"></a> <em id="">${listItem.mdStdname }<!-- 获赞数 -->
-												</em>
+													class="btn-ding praise" rel="nofollow"></a> <em id="">${listItem.mdStdname }
+												</em><!-- 获赞数 -->
 												</span> <span class="tn-place"><i></i><a
 													href="showTravel?traId=${listItem.mdRecid }&userId=${listItem.user.mdUserRecid }"
 													class="_j_gs_item" rel="nofollow">${listItem.mdTheme }</a>，by
@@ -1088,6 +1074,7 @@
 											</div>
 										</div>
 									</div>
+									</c:if>
 								</c:forEach>
 							</div>
 						</div>
@@ -1100,31 +1087,15 @@
 					data-type="0" data-objid="0">
 					<input class="count" type="hidden" value="${page.pageCount}"
 						id="lblCurent" /> <input class="count" type="hidden"
-						value="${pageSize }" id="pageSize" /> <input class="count"
-						type="hidden" value="${dataCount }" id="pageCount" /> <span
-						class="count">共${pageCount }页 / ${dataCount }条</span>
+						value="${page.pageSize }" id="pageSize" />  <input class="count" type="hidden"
+						value="${page.cache }" id="cache" /><input class="count"
+						type="hidden" value="${page.dataCount }" id="pageCount" /> <span
+						class="count">共${page.pageCount }页 / ${page.dataCount }条</span>
+
+							<a class="a_font"> <span class="pg-current page">${page.pageCurrent }</span></a> 
 
 
-					<c:if test="${pageCount <=4 }">
-						<c:set var="nums" value="${pageCount }" />
-					</c:if>
-
-					<c:if test="${pageCount >4 }">
-						<c:set var="nums" value="4" />
-					</c:if>
-
-					<c:forEach var="i" begin="1" end="${nums}">
-						<c:if test="${i==1 }">
-							<a class="a_font"> <span class="pg-current page">${i }</span></a>
-						</c:if>
-
-						<c:if test="${i !=1 }">
-							<a class="a_font"><span class="page">${i }</span></a>
-						</c:if>
-
-
-					</c:forEach>
-					<a class="pg-first pageitem" href="autoLogin" rel="nofollow">首页</a>
+					<a class="pg-first pageitem" rel="nofollow">首页</a>
 					<a class="pg_prev pageitem" rel="nofollow">上一页</a> <a
 						class="pg_next pageitem" rel="nofollow">下一页</a> <a
 						class="pg_last pageitem" rel="nofollow">末页</a>

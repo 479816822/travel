@@ -20,4 +20,11 @@ public interface MDTravelNoteMapper {
     List<MDTravelNote> selectTravel(String id);
 
 	List<MDTravelNote> selectList();
+	/**
+	 * 通过传入SQL进行数据更新，更新用户游记的获赞数
+	 * @param sql
+	 * @return
+	 */
+	int updateBySql(MDTravelNote travel);
+//	int updateBySql(String sql);
 }

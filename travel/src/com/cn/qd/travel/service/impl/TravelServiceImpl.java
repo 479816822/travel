@@ -35,9 +35,13 @@ public class TravelServiceImpl implements TravelService {
 		return 0;
 	}
 
+	/**
+	 * 更新用户点赞数
+	 */
 	@Override
 	public int update(Object t, Map<String, Object> map) {
-		return 0;
+		return travel.updateBySql((MDTravelNote)t);
+//		return travel.updateBySql((String)map.get("sql"));
 	}
 
 	@Override
