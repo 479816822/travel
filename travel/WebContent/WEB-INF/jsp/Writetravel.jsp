@@ -6,10 +6,21 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>write travels</title>
+<title>发表游记</title>
 <link href="css/write_travels/writertravels.css" rel="stylesheet"
 	type="text/css">
 <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+
+
+   <script src="js/jquery-3.1.0.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="css/baseNews.css">
+
+
+    <link href="css/jquery-ui.css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery-1.8.1.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/dateinput-ch-ZN.js"></script>
+    <link href="css/red-datepicker.css" rel="stylesheet">
 
 <link rel="stylesheet"
 	href="pluing/publicity/zyupload/skins/zyupload-1.0.0.min.css "
@@ -124,6 +135,27 @@
 				$(this).next().hide();
 			}
 		})
+		
+		
+		
+		//*****************************************************填写信息
+		  $('#dp1491376550436').datepicker(); //绑定输入框
+
+
+            //选择人物
+            $("input[name='mdTravelPeople']").blur(function() {
+                $(this).next().next().show();
+            });
+
+            //获取焦点
+            $("._j_personitem").click(function(){
+               var values= $(this).children().html();
+                var tt=$("input[name='mdTravelPeople']");
+                tt.val(values);
+                $("input[name='mdTravelPeople']").next().next().hide();
+            });
+		
+		//***********************************************************填写信息
 
 		$(".add_the_phote").click(function() {
 			phote = $(this);
@@ -206,6 +238,62 @@
 		}
 
 		
+		//打开信息填写界面
+		$(".now_write").click(function(){
+			$(".base_new").show();
+			$(".base_new").removeClass("base_new_hide_base");
+		});
+		
+		//确定信息更新
+		$(".true_true").click(function(){
+			$(".a1000").html($("input[name='mdTravelPeople']").val())
+			$(".a1001").html($("input[name='mdCostMoney']").val())
+			$(".a1002").html($("input[name='mdDayNumber']").val())
+			$(".a1003").html($("input[name='mdStartTime']").val())
+			mdTravelPeople =$(".a1000").html();
+			mdCostMoney = $(".a1001").html();
+			mdDayNumber = $(".a1002").html();
+			mdStartTime = $(".a1003").html(); 
+			travels ={
+					mdRecid : $(".travel_id").html(),
+					mdTravelPeople : mdTravelPeople,
+					mdCostMoney : mdCostMoney,
+					mdDayNumber : mdDayNumber,
+					mdStartTime : mdStartTime 
+					};
+			
+			var objArray = new Array();
+			objArray[0]=$(".travel_id").html();
+			objArray[1]=mdTravelPeople;
+			objArray[2]=mdCostMoney;
+			objArray[3]=mdDayNumber;
+			objArray[4]=mdStartTime;
+			
+			$.ajax({
+				type : "POST",
+				url : "updateTravelNews",
+				data : JSON.stringify(objArray),
+				contentType : 'application/json; charset=utf-8',
+				dataType : 'json',
+				success : function(msg) {
+					//成功了
+				$("#hideid").hide();
+				location.href = "toMyHome";
+				//location.href = "toMyHome";
+				},
+				error : function(msg) {
+					$("#hideid").hide();
+				}
+			});
+		});
+		
+		//取消
+		$(".close_close").click(function(){
+			$("#hideid").hide();
+		})
+		
+		
+		//发表游记
 		$(".post_three").click(function() {
 			var num = $(".content_1010").children().length;
 			var $p = $(".content_1010").children();
@@ -237,7 +325,10 @@
 				contentType : 'application/json; charset=utf-8',
 				dataType : 'json',
 				success : function(msg) {
-					location.href = "toMyHome";
+					//成功了
+					$(".travel_id").html(msg.id);
+					travelSuccess();
+				//location.href = "toMyHome";
 				},
 				error : function(msg) {
 					location.href = "toMyHome";
@@ -245,6 +336,20 @@
 			});
 
 		});
+		
+		//邮寄发表成功
+		function travelSuccess(){
+			//隐藏编辑
+			//1.游记完成度
+			$(".all_live").hide();
+			//工具
+			$(".content_tool").hide();
+			
+			//打开信息填写
+			$(".hide_base_base").show();
+			
+		}
+		
 
 		var $mode4 = $(".img111");
 		var $model = $(".content_tool");
@@ -259,6 +364,14 @@
 
 </head>
 <body>
+
+<div class="a1000" style="display: none;"></div>
+<div class="a1001" style="display: none;"></div>
+<div  class="a1002" style="display: none;"></div>
+<div class="a1003" style="display: none;"></div>
+
+<div class="travel_id" style="display: none;"></div>
+
 	<div class="header">
 		<div class="header1">
 			<iframe src="VisitHead" frameborder="0" scrolling="no"
@@ -266,6 +379,61 @@
 		</div>
 	</div>
 
+
+		
+	<div class="base_new base_new_hide_base" id="hideid">
+    <div class="base_one">
+        <h2>填写基本信息</h2>
+    </div>
+
+     <div class="base_two">
+             <dl class="base_info_detail">
+                 <dt></dt>
+                 <dd class="go_date">
+                     <strong class="dd_title">
+                         <i class="send_date"></i>出发时间<span>*</span></strong>
+                     <div class="dd_select">
+                         <input value=""  name="mdStartTime" style="z-index: 551; position: relative;" id="dp1491376550436" type="text">
+
+                         <a role="button" tabindex="0" class="time _j_dateicon"></a>
+                     </div>             </dd>             <dd class="go_days">
+                 <strong class="dd_title"><i class="send_num"></i>出行天数<span>*</span></strong>
+                 <div class="dd_select">
+                 <input value="" name="mdDayNumber" class="dayscount" type="text">
+                 </div>
+                 <span class="dd_unit">天</span>
+             </dd>
+                 <dd class="go_figure" style="position:relative;z-index:10;(fuck IE7/6)">
+                 <strong class="dd_title">
+                     <i class="send_peo"></i>人&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;物<span>*</span></strong>
+                 <div class="dd_select">                     <input class="_j_personhiddeninput" name="mdTravelPeople0" type="hidden" >
+                     <input class="_j_personinput" value="请选择出行人物"  type="text" name="mdTravelPeople">
+                     <a role="button" tabindex="0" class="down _j_downarr"></a>
+                     <ul class="down_con hidn_news" >
+                         <li data-person="1" class="_j_personitem"><a role="button">一个人</a></li>
+                         <li data-person="2" class="_j_personitem"><a role="button">小两口</a></li>
+                         <li data-person="3" class="_j_personitem"><a role="button">带小孩</a></li>
+                         <li data-person="4" class="_j_personitem"><a role="button">家族出游</a></li>
+                         <li data-person="5" class="_j_personitem"><a role="button">和朋友</a></li>
+                         <li data-person="9" class="_j_personitem"><a role="button">其它</a></li>
+                     </ul>                 </div>             </dd>             <dd class="go_money">
+                 <strong class="dd_title"><i class="send_cost"></i>人均费用</strong>
+                 <div class="dd_select">
+                     <input value="" name="mdCostMoney" type="text" class="expense">
+                 </div>
+                 <span class="dd_unit">元</span>
+             </dd>         </dl>
+             <div class="base_info_error">请将所有带*号的项目填写完成</div>
+              <div class="base_info_buttons">
+                 <a  role="button" tabindex="0" class="btn_qx  close_close" title="取消">取消</a>
+                 <a role="button" tabindex="0" class="btn_big  true_true" title="确定">确定</a>
+             </div>
+         </div>
+     </div>
+  </div>
+
+			
+			
 
 	<div class="all_live">
 
@@ -288,6 +456,10 @@
 			<div class="all_live_three_two">预览</div>
 		</div>
 	</div>
+	
+	
+	
+	
 
 	<div class="mian">
 
@@ -315,6 +487,39 @@
 
 		<div class="main_content">
 			<div class="main_content_left">
+			
+			
+			<!-- 填写基本信息 -->
+	
+			
+			
+				
+		<!-- 填写基本信息 -->
+		<div class="base_news hide_base_base"> 
+		
+            <div class="flt1 ">还差一步，让你的游记更容易被搜出</div>
+            <div class="flt2 "><a role="button" tabindex="0"   style="color: orange;" class="now_write">马上填写&gt;&gt;</a></div>
+		  </div>
+		
+		<!-- 展示基本信息 -->
+				<div class="left_one hide_base_news">
+						<ul>
+							<li class="times">出发时间<span>/</span>2015-10-17</li>
+							</li>
+						</ul>
+						<ul>
+							<li class="day">出行天数<span>/</span>5 天
+							</li>
+							<li class="people">人物<span>/</span>小两口
+							</li>
+							<li class="cost">人均费用<span>/</span>6000RMB
+						
+						</ul>
+				</div>
+			
+			
+			
+			
 				<div class="content_1010">
 					<div class="content_tool">
 						<a class="click_cl">

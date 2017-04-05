@@ -236,25 +236,25 @@ $(function() {
 					function() {
 						//获得留言的内容
 						var leave = {
-							"homeId" : $("#user_id").html(),
-							"leaveMsg" : $(this).prev().val()
+							mdHostUserRecid : $("#user_id").html(),
+							mdLvMessage : $(this).prev().val(),
+							mdLvRefId : ""//父节点
 						};
-
+						
 						$
 								.ajax({
 									type : "POST",
-									url : "leave_word",
-									data : JSON.stringify(leave),
-									contentType : 'application/json; charset=utf-8',
+									url : "leaveWord",
+									data : leave,
 									dataType : 'json',
 									success : function(msg) {
 										//更新数据
-										var str = "<li><div class='word_one'><div class='word_one_one'><img  src='"+msg.result.leave.userHead+" 'class='word_one_one'></div><div class='word_one_two'><div class='word_one_two_one'>"
-												+ msg.result.leave.userNick
+										var str = "<li><div class='word_one'><div class='word_one_one'><img  src='"+msg.message.lvUser.userHeadImg+" 'class='word_one_one'></div><div class='word_one_two'><div class='word_one_two_one'>"
+												+ msg.message.lvUser.mdUserName
 												+ "</div><div class='word_one_two_two'>"
-												+ msg.result.time
+												+ msg.message.mdLvTime
 												+ "</div></div></div><div class='word_two'>"
-												+ msg.result.leaveMsg
+												+ msg.message.mdLvMessage
 												+ "</div></li>";
 										var $node = $(str);
 										$("._j_msgboard_list")
@@ -263,7 +263,6 @@ $(function() {
 									},
 									error : function(msg) {
 										//提示输需要入的信息
-
 									}
 								});
 

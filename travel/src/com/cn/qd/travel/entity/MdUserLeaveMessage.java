@@ -20,13 +20,13 @@ public class MdUserLeaveMessage {
 
 	private String mdLvUserRecid;//留言人
 
-	private String mdLvNestUserRecid;//父级点
+	private String mdLvNestUserRecid;
 
 	private String mdHostUserRecid;//被留言人
 
 	private Short mdLvLevel;
 
-	private String mdLvRefId;
+	private String mdLvRefId;//父级点
 
 	
 	

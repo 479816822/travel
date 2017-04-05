@@ -37,7 +37,7 @@
 								"border", "none");
 						$(".clearfix").show();
 					}else{
-						$(".clearfix").hidn();
+						$(".clearfix").hide();
 					}
 
 				},

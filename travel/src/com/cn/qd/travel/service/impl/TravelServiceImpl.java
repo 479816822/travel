@@ -90,9 +90,16 @@ public class TravelServiceImpl implements TravelService {
 		return false;
 	}
 
+	/**
+	 * 更新游记基本信息
+	 */
 	@Override
 	public boolean updateTravel(MDTravelNote T, Map<String, Object> map) {
-		return false;
+		if(travel.updateByPrimaryKeySelective(T)>0){
+			return true;
+		}else{
+			return false;
+		}
 	}
 
 	@Override

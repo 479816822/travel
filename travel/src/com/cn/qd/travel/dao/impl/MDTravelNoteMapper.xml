@@ -334,6 +334,8 @@
       </if>
     </trim>
   </insert>
+  
+    <!--更新游记基本信息-->
   <update id="updateByPrimaryKeySelective" parameterType="com.cn.qd.travel.entity.MDTravelNote">
     update MD_TRAVE_NOTE
     <set>
@@ -391,6 +393,8 @@
     </set>
     where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
   </update>
+  
+
   <update id="updateByPrimaryKey" parameterType="com.cn.qd.travel.entity.MDTravelNote">
     update MD_TRAVE_NOTE
     set MD_STDNAME = #{mdStdname,jdbcType=VARCHAR},

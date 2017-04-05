@@ -23,9 +23,6 @@ public class CommentLeavelServiceImpl implements CommentLeavelService {
 	 */
 	@Override
 	public int insert(Object t, Map<String, Object> map) {
-		MdUserLeaveMessage message = (MdUserLeaveMessage) t;
-		message.setMdLvRecid(GUID.createGuid());
-		message.setMdLvTime(new Date());
 		return leaveMessage.insertSelective((MdUserLeaveMessage) t);
 	}
 
