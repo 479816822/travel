@@ -2,12 +2,22 @@ package com.cn.qd.travel.entity;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author anmeihua
  *	用户Entity
  */
 public class MdUser {
+	
+	private List<MDFriendShip> frind;//好友
+	
+	private String passport;//找回密码
+	
+	private String userHeadImg;
+	
+	private String Code;//验证码
+	
     private String mdUserRecid;	//id
     
     private String mdUserName;	//用户名
@@ -20,7 +30,7 @@ public class MdUser {
 
     private String mdNewPassword;	//新密码                                     
 
-    private String mdStdname;
+    private String mdStdname;//记录是否已经登陆
 
     private String mdRefId;
 
@@ -50,9 +60,64 @@ public class MdUser {
 
     private Long mdPraise;
 
-    private String mdIcon;
+    private byte[]  mdIcon;
+    
+    private String mdSchool;
+    
+    //用户银行
+    private MD_BANK_ACUONT userBank;
+    
 
-    public String getMdUserRecid() {
+    public MD_BANK_ACUONT getUserBank() {
+		return userBank;
+	}
+
+	public void setUserBank(MD_BANK_ACUONT userBank) {
+		this.userBank = userBank;
+	}
+
+	public String getPassport() {
+		return passport;
+	}
+
+	public void setPassport(String passport) {
+		this.passport = passport;
+	}
+
+	public String getUserHeadImg() {
+		return userHeadImg;
+	}
+
+
+	public List<MDFriendShip> getFrind() {
+		return frind;
+	}
+
+	public void setFrind(List<MDFriendShip> frind) {
+		this.frind = frind;
+	}
+
+	public void setUserHeadImg(String userHeadImg) {
+		this.userHeadImg = userHeadImg;
+	}
+
+	public String getMdSchool() {
+		return mdSchool;
+	}
+
+	public void setMdSchool(String mdSchool) {
+		this.mdSchool = mdSchool;
+	}
+
+	public String getCode() {
+		return Code;
+	}
+
+	public void setCode(String code) {
+		Code = code;
+	}
+
+	public String getMdUserRecid() {
         return mdUserRecid;
     }
 
@@ -212,13 +277,14 @@ public class MdUser {
         this.mdPraise = mdPraise;
     }
 
-    public String getMdIcon() {
-        return mdIcon;
-    }
 
-    public void setMdIcon(String mdIcon) {
-        this.mdIcon = mdIcon == null ? null : mdIcon.trim();
-    }
+	public byte[] getMdIcon() {
+		return mdIcon;
+	}
+
+	public void setMdIcon(byte[] mdIcon) {
+		this.mdIcon = mdIcon;
+	}
 
 	public String getMdNewPassword() {
 		return mdNewPassword;

@@ -7,19 +7,20 @@
 <head>
 <meta charset="UTF-8">
 <title>帐号注册2-爱旅U</title>
-<link href="../css/reglog.css" rel="stylesheet" type="text/css">
-<script src="../js/jquery-3.1.0.min.js"></script>
+<link href="css/reglog.css" rel="stylesheet" type="text/css">
+<script src="js/jquery-3.1.0.min.js"></script>
 <script>
 	$(function() {
 
+		 $(".err-tip").css("visibility","hidden");
 		var i = Math.floor(Math.random() * 11 + 1);
 		$("body").css({
-			"backgroundImage" : "url(../syste_img/img/reglog/back" + i + ".jpg)",
+			"backgroundImage" : "url(syste_img/img/reglog/back" + i + ".jpg)",
 			"backgroundSize" : "100% 100%"
 		});
 		
 		//ajax异步验证码验证
-		$("input[name='code']").blur(function() {
+		$("input[name='smscode']").blur(function() {
 			var $p = $(this);
 			var user = {
 				"code" : $(this).val()
@@ -31,6 +32,13 @@
 				contentType : 'application/json; charset=utf-8',
 				dataType : 'json',
 				success : function(msg) {
+					if(msg.success=="error"){//验证码出错
+						$("#code").next().css("visibility", "visible").css(
+								"border", "none");
+						$(".clearfix").show();
+					}else{
+						$(".clearfix").hidn();
+					}
 
 				},
 				error : function(msg) {
@@ -64,7 +72,7 @@
 			$(this).css("border", "1px solid lightblue");
 		});
 
-		$("input[name='name']").blur(
+		$("input[name='mdUserName']").blur(
 				function() {
 					if (!$(this).val()) {
 						$(this).next().css("visibility", "visible").css(
@@ -73,7 +81,7 @@
 						$(this).next().css("visibility", "hidden");
 					}
 				});
-		$("input[name='password']").blur(
+		$("input[name='mdPassword']").blur(
 				function() {
 					if ($(this).val().length < 6) {
 						$(this).next().css("visibility", "visible").css(
@@ -93,7 +101,7 @@
 					}
 				});
 
-		$("input[name='email']")
+		$("input[name='mdEmail']")
 				.blur(
 						function() {
 							var reg = /^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/;
@@ -116,16 +124,16 @@
 				<div class="signup-box">
 					<div class="add-info">
 						<div class="hd">帐号注册</div>
-						<form action="/alu/mobile" method="post" id="_j_signup_mobile_form">
+						<form action="/Travel/register2" method="post" id="_j_signup_mobile_form">
 							<div class="form-field" style="display: none;">
 							<input name="mdTelephone" value="${mdTelephone }">
 							</div>
 							<div class="form-field">
-								<input name="name" placeholder="您的名号" type="text">
+								<input name="mdUserName" placeholder="您的名号" type="text">
 								<div class="error-tip" style="display: block; border: none;">名号不能为空</div>
 							</div>
 							<div class="form-field">
-								<input name="password" placeholder="您的密码"
+								<input name="mdPassword" placeholder="您的密码"
 									class="verification[required,minSize[6],maxSize[50]]"
 									type="password">
 								<div class="err-tip" style="display: block; border: none;">密码至少六位</div>
@@ -133,10 +141,10 @@
 							<div class="form-field">
 								<input name="rpassword" placeholder="确认密码" 
 									class="verification[equals[password]]" type="password">
-									<div class="err-tip" style="display: block; border: none;">格式不正确</div>
+									<div class="err-tip" style="display: block; border: none;">两次密码不匹配</div>
 							</div>
 							<div class="form-field">
-							<input name="email" placeholder="您的邮箱">
+							<input name="mdEmail" placeholder="您的邮箱">
 							<div class="err-tip" style="display: block; border: none;">格式不正确</div>
 						</div>
 							<div class="form-field">
