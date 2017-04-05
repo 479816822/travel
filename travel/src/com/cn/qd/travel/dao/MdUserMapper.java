@@ -74,7 +74,17 @@ public interface MdUserMapper {
     
     
     /**
+     * 查询指定用户的详细的信息
+     * @param mdUserRecid
+     * @return
+     */
+	List<MdUser> selectByUserId(String id);
+    
+    
+    
+    /**
      * 数据更新
+     * 更新用户的登陆状态
      * @param mdUserRecid
      * @return
      */
@@ -88,7 +98,7 @@ public interface MdUserMapper {
     int updateByPrimaryKeyWithBLOBs(MdUser record);
     
     /**
-     * 数据更新
+     * 数据更新,修改用户密码，找回密码
      * @param mdUserRecid
      * @return
      */
@@ -101,6 +111,13 @@ public interface MdUserMapper {
      */
     @SuppressWarnings("rawtypes")
 	int updateByMap(Map map);
+    
+    /**
+     * 数据更新,通过sql
+     * @param mdUserRecid
+     * @return
+     */
+	int updateBySql(String sql);
 
 	int checkPhone(String mdTelephone);
     

@@ -115,7 +115,7 @@ a:hover {
 .logo .mfw-logo {
     display: block;
     height: 39px;
-    background: url("../syste_img/header/logo.jpg") no-repeat 0 0;
+    background: url("syste_img/Header/logo.jpg") -20px 0px no-repeat;
 }
 
 .dropdown .dropdown-menu {

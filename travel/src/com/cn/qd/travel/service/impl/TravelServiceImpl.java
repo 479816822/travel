@@ -35,9 +35,13 @@ public class TravelServiceImpl implements TravelService {
 		return 0;
 	}
 
+	/**
+	 * 更新用户点赞数
+	 */
 	@Override
 	public int update(Object t, Map<String, Object> map) {
-		return 0;
+		return travel.updateBySql((MDTravelNote)t);
+//		return travel.updateBySql((String)map.get("sql"));
 	}
 
 	@Override
@@ -45,12 +49,20 @@ public class TravelServiceImpl implements TravelService {
 		return 0;
 	}
 
+	/**
+	 * 查询指定recid的游记
+	 */
 	@Override
 	public ArrayList<Object> oneResultProvider(Object t, Map<String, Object> map) {
-		return null;
+		ArrayList<Object> tra=new ArrayList<Object>();
+		tra.addAll(travel.selectTravel((String)t));
+		return tra;
 	}
+	
+	
 
 	/**
+	 * 缓存所有的数据,返回第一页的数据
 	 * 查询所有 采用缓存
 	 */
 	@SuppressWarnings("unchecked")
@@ -88,12 +100,25 @@ public class TravelServiceImpl implements TravelService {
 		return false;
 	}
 
+	@Override
 	public Page getPage() {
-		return page;
+		return this.page;
 	}
 
+	@Override
 	public void setPage(Page page) {
-		this.page = page;
+		this.page=page;
 	}
+
+	/**
+	 * 查询指定条件的游记
+	 *  
+	 */
+	@Override
+	public List<MDTravelNote> selectTravelList(MDTravelNote travelNote, String choose) {
+		return travel.selectTravelByUser(choose);
+	}
+
+
 
 }

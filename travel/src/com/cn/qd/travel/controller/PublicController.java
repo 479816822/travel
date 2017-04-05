@@ -15,4 +15,28 @@ public class PublicController {
 	public String goIndexFooter() {
 		return "IndexFooter";
 	}
+	
+	@RequestMapping("Mheader")
+	public String goMheader() {
+		return "Mheader";
+	}
+	
+	@RequestMapping("MainFooter")
+	public String goMainFooter() {
+		return "MainFooter";
+	}
+	
+	@RequestMapping("MainHeader")
+	public String goMainHeader() {
+		return "MainHeader";
+	}
+	
+	/**
+	 * 历历在目
+	 * @return
+	 */
+	@RequestMapping("beautifulPage")
+	public String goBeauitfulPage() {
+		return "lilizaimu";
+	}
 }

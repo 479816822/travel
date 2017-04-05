@@ -7,12 +7,12 @@
 <head>
     <meta charset="UTF-8">
     <title>帐号登录</title>
-    <link href="reg&log.css" rel="stylesheet" type="text/css">
+    <link href="css/reglog.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-3.1.0.min.js"></script>
     <script>
         $(function(){
             var i = Math.floor(Math.random() * 11 + 1);
-            $("body").css({"backgroundImage": "url(img/reg&log/back" + i + ".jpg)","backgroundSize":"100%"});
+            $("body").css({"backgroundImage": "url(syste_img/img/reglog/back" + i + ".jpg)","backgroundSize":"100%"});
         })
     </script>
 </head>
@@ -23,16 +23,16 @@
         <div class="signup-forms flip">
             <div class="login-box" id="_j_login_box">
                 <div class="inner">
-                    <form action="/alu/login/" method="post" id="_j_login_form">
+                    <form action="/Travel/logins" method="post" id="_j_login_form">
                         <div class="form-field">
-                            <input name="passport" placeholder="您的邮箱/手机号" autocomplete="off"
+                            <input name="mdTelephone" placeholder="您的邮箱/手机号" autocomplete="off"
                                    data-verification-name="帐号"
                                    class="verification[required,maxSize[50],funcCall[checkShowCode]]"
                                    value="" type="text">
                             <div class="err-tip"></div>
                         </div>
                         <div class="form-field">
-                            <input name="password" placeholder="您的密码" autocomplete="off"
+                            <input name="mdPassword" placeholder="您的密码" autocomplete="off"
                                    data-verification-name="密码"
                                    class="verification[required,minSize[4],maxSize[50]]"
                                    type="password">
@@ -50,7 +50,7 @@
                             <div class="err-tip clearfix"></div>
                         </div>
                         <div class="form-link">
-                            <a href="/forget">忘记密码</a>
+                            <a href="/Travel/forget">忘记密码</a>
                         </div>
                         <div class="submit-btn">
                             <button>登 录</button>

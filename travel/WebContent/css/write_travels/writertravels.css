@@ -334,7 +334,7 @@ ul, ol, li, dl, dd, dt {
 
 .music_two_font {
 	margin-top: 12px;
-	max-width: 320px;
+	max-width: 390px;
 	overflow: hidden;
 	height: 26px;
 	margin-right: 10px;
@@ -350,7 +350,8 @@ ul, ol, li, dl, dd, dt {
 
 .choose_music {
 	margin-top: 10px;
-	width: 56px;
+	margin-right:20px;
+	width: 65px;
 	padding: 0;
 	float: right;
 	line-height: 22px;
@@ -477,6 +478,7 @@ ul, ol, li, dl, dd, dt {
 .add_word_v2 {
 	width: 680px;
 	background-color: #fff;
+	margin-left:15px;
 	margin-bottom: 18px;
 }
 

@@ -18,9 +18,9 @@ public class MDFriendShip {
 
     private Short mdLevel;
 
-    private String mdHostUserId;
+    private String mdHostUserId;//自己id
 
-    private String mdFriendId;
+    private String mdFriendId;//朋友id
 
     private Date mdCreateTime;
 

@@ -10,7 +10,7 @@ public class MDTravelNote {
 
 	private String mdRecid;
 
-	private String mdStdname;
+	private String mdStdname;//获赞数
 
 	private String mdRefId;
 
@@ -25,6 +25,7 @@ public class MDTravelNote {
 	private String mdThemeImg;
 
 	private Date mdCreateTime;
+	
 
 	private MdUser user;
 

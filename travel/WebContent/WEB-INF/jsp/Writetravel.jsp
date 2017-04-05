@@ -12,23 +12,26 @@
 <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
 
 <link rel="stylesheet"
-	href="pluing/publicity/zyupload/skins/zyupload-1.0.0.min.css " type="text/css">
+	href="pluing/publicity/zyupload/skins/zyupload-1.0.0.min.css "
+	type="text/css">
 <script type="text/javascript"
 	src="pluing/publicity/zyupload/zyupload-1.0.0.min.js"></script>
 
 <script type="text/javascript">
 	$(function() {
+		var phote;
 		// 初始化插件
-		function fun1(p) {
+		function fun1(p, num) {
 			$("#zyupload").zyUpload(
 					{
-						width : "800px", // 宽度
-						height : "700px", // 宽度
-						itemWidth : "800px", // 文件项的宽度
-						itemHeight : "700px", // 文件项的高度
+						width : "700px", // 宽度
+						height : "1000px", // 宽度
+						itemWidth : "140px", // 文件项的宽度
+						itemHeight : "140px", // 文件项的高度
 						url : "upload", // 上传文件的路径
-						fileType : ["jpeg", "JPG","JPEG","jpg", "png", "txt", "js", "exe" ],// 上传文件的类型
-						fileSize : 51200000000, // 上传文件的大小
+						fileType : [ "jpeg", "JPG", "JPEG", "jpg", "png",
+								"ogg", "mp4", "WebM", "MPEG4","MP3","WMA","MOD","flac" ],// 上传文件的类型
+						fileSize : 5120000000000, // 上传文件的大小
 						multiple : true, // 是否可以多个文件上传
 						dragDrop : true, // 是否可以拖动上传文件
 						tailor : true, // 是否可以裁剪图片
@@ -51,7 +54,7 @@
 							$("#uploadInf").append(
 									"<p style='display:none' class='img_only_id'>"
 											+ response + "</p>");
-							fun($(this), response, p);
+							fun($(this), response, p, num);
 							//	$(".close_div").hide();
 						},
 						onFailure : function(file, response) { // 文件上传失败的回调方法
@@ -65,18 +68,40 @@
 					});
 		}
 
-
-		function fun(p, str, t) {
+		function fun(p, str, t, num) {
 			$(".close_div").remove();
 			var str1 = str.length;
 			var n = str1 - 2;
 			var str2 = str.substring(2, n)
-			t.attr("src", str2);
+			if (num == 1) {
+				$(".header_imgs").attr("src", str2);
+				$(".img_float").hide();
+			} else if (num == 2) {
+				var $newnode = $modelvideo.clone(true);
+				$newnode.removeClass("hide_div");
+				t.parent().parent().after($newnode);
+
+				var $p = $newnode
+				copy_node($p);
+				($p).children().attr("src", str2);
+			}else if (num == 3) {//音乐
+				$(".music_two_font").html(str2);
+			} else {
+				var $newnode = $mode4.clone(true);
+				$newnode.removeClass("hide_div");
+				t.parent().parent().after($newnode);
+
+				var $p = $newnode
+				copy_node($p);
+				($p).children().attr("src", str2);
+			}
 		}
+
 		$(".img_float_img").click(function() {
 			var $newnode = $model5.clone(true);
-			$(this).parent().append($newnode);
-			fun1($(".main_header"))
+			$(this).parent().parent().parent().prev().append($newnode);
+			var num = 1;
+			fun1($(".main_header"), num)
 			$(".close_div").show();
 		})
 
@@ -87,15 +112,13 @@
 			$(this).parent().parent().after($newnode);
 		})
 
-
-
 		//隐藏
 		$(".click_cl").click(function() {
-			if($(this).next().hasClass("div_div_ttt")){
+			if ($(this).next().hasClass("div_div_ttt")) {
 				$(this).next().show();
 				$(this).next().addClass("div_div_tt");
 				$(this).next().removeClass("div_div_ttt");
-			}else if($(this).next().hasClass("div_div_tt")){
+			} else if ($(this).next().hasClass("div_div_tt")) {
 				$(this).next().addClass("div_div_ttt");
 				$(this).next().removeClass("div_div_tt");
 				$(this).next().hide();
@@ -103,16 +126,28 @@
 		})
 
 		$(".add_the_phote").click(function() {
-			var $newnode = $mode4.clone(true);
-			$newnode.removeClass("hide_div");
-			$(this).parent().parent().after($newnode);
-			
+			phote = $(this);
+			//		var $newnode = $mode4.clone(true);
+			//		$newnode.removeClass("hide_div");
+			//		phote.parent().parent().after($newnode);
+
 			var $newnode11 = $model5.clone(true);
 			$(this).parent().parent().before($newnode11);
-			
-			var $p = $newnode
 			$(".close_div").show();
-			fun1(($p).children())
+
+			fun1($(this))
+			//	var $p = $newnode
+			//		fun1(($p).children())
+			copy_node($p);
+		})
+
+		//添加视频
+		$(".add_the_video").click(function() {
+			var $newnode11 = $model5.clone(true);
+			$(this).parent().parent().before($newnode11);
+			$(".close_div").show();
+
+			fun1($(this), 2)
 			copy_node($p);
 		})
 
@@ -127,40 +162,50 @@
 			$(this).hide();
 		})
 
-		$(".base_info_button")
-				.click(
-						function() {
-							var numbers=$(".li_rigth1").length;
-							numbers=numbers+1;
-							copy_node($(this).parent());
-							var str = '<li class="li_rigth1"><span> 0/'+numbers
-									+ '&nbsp;</span><span>'
-									+ $(this).prev().val() + '</span></li>'
-							$node = $(str);
-							$(".ul_rigth1").append($node);
-							$(this).hide();
-							$(this).addClass("noshow");
-						})
+		$(".base_info_button").click(
+				function() {
+					var numbers = $(".li_rigth1").length;
+					numbers = numbers + 1;
+					copy_node($(this).parent());
+					var str = '<li class="li_rigth1"><span> 0/' + numbers
+							+ '&nbsp;</span><span>' + $(this).prev().val()
+							+ '</span></li>'
+					$node = $(str);
+					$(".ul_rigth1").append($node);
+					$(this).hide();
+					$(this).addClass("noshow");
+				})
 
-						
-		$(".paragraph_name").blur(function() {
-			var numbers=$(".paragraph_name").length;
-			if($(this).next().hasClass("noshow")){
-				numbers=numbers+1;
-			var str = $(this).val();
-			var strs="0/"+numbers+" ";
-			numbers=numbers-1;
-			$(".ul_rigth1").children().eq(numbers).children().eq(0).html(strs);
-			$(".ul_rigth1").children().eq(numbers).children().eq(1).html(str);
-			}
-		})
-		
-		
+		$(".paragraph_name").blur(
+				function() {
+					var numbers = $(".paragraph_name").length;
+					if ($(this).next().hasClass("noshow")) {
+						numbers = numbers + 1;
+						var str = $(this).val();
+						var strs = "0/" + numbers + " ";
+						numbers = numbers - 1;
+						$(".ul_rigth1").children().eq(numbers).children().eq(0)
+								.html(strs);
+						$(".ul_rigth1").children().eq(numbers).children().eq(1)
+								.html(str);
+					}
+				})
+
+		//选择音乐
+		$(".choose_music").click(
+				function() {
+					var $newnode11 = $model5.clone(true);
+					$(this).parent().parent().before($newnode11);
+					$(".close_div").show();
+					fun1($(this),3)
+				})
+
 		function copy_node(p) {
 			var $newnode = $model.clone(true);
 			p.after($newnode);
 		}
 
+		
 		$(".post_three").click(function() {
 			var num = $(".content_1010").children().length;
 			var $p = $(".content_1010").children();
@@ -174,12 +219,16 @@
 					objArray[j] = "1" + $p.eq(i).children().attr("src");
 				} else if ($p.eq(i).hasClass("div_div_div")) {//段落名
 					objArray[j] = "2" + $p.eq(i).children().val();
+				} else if ($p.eq(i).hasClass("add_video")) {//视频
+					objArray[j] = "3" + $p.eq(i).children().attr("src");
 				}
 				j = j + 1;
 				i = i + 2;
 			}
-			objArray[j] = $(".float_input").val();
-			objArray[j + 1] = $(".main_header").attr("src");
+			objArray[j] = $(".float_input").val();//标题
+			objArray[j + 1] = $(".header_imgs").attr("src");//主题图片
+			var text= document.getElementById("music").innerHTML; 
+			objArray[j+2] = text;//音乐
 
 			$.ajax({
 				type : "POST",
@@ -188,22 +237,21 @@
 				contentType : 'application/json; charset=utf-8',
 				dataType : 'json',
 				success : function(msg) {
-					location.href = "to_myHome";
+					location.href = "toMyHome";
 				},
 				error : function(msg) {
-					alert("error")
+					location.href = "toMyHome";
 				}
 			});
-
-
 
 		});
 
 		var $mode4 = $(".img111");
 		var $model = $(".content_tool");
+		var $modelvideo = $(".add_video");
 		var $model1 = $(".add_word_v2").detach();
 		var $model2 = $(".div_div_div").detach();
-		
+
 		var $model5 = $(".zyupload").detach();
 
 	});
@@ -213,9 +261,9 @@
 <body>
 	<div class="header">
 		<div class="header1">
-		<iframe src="VisitHead" frameborder="0" scrolling="no" marginheight="0"
-				marginwidth="0" style="margin: 0px auto;"></iframe>
-	</div>
+			<iframe src="VisitHead" frameborder="0" scrolling="no"
+				marginheight="0" marginwidth="0" style="margin: 0px auto;"></iframe>
+		</div>
 	</div>
 
 
@@ -228,10 +276,11 @@
 		</div>
 
 		<div id="zyupload" class="zyupload close_div"></div>
-		
+
 
 		<div class="all_live_two">
-			<span class="all_live_two_one">完成度详情&nbsp;&nbsp;</span> <span class="all_live_two_two"> 游记常见问题与解答</span>
+			<span class="all_live_two_one">完成度详情&nbsp;&nbsp;</span> <span
+				class="all_live_two_two"> 游记常见问题与解答</span>
 
 		</div>
 		<div class="all_live_three">
@@ -242,7 +291,7 @@
 
 	<div class="mian">
 
-		<div class="img_float">
+		<div class="img_float head_head_img">
 			<a target="_self">
 				<div class="img_float_img"></div>
 			</a>
@@ -259,7 +308,8 @@
 			</form>
 		</div>
 		<div class="main_header">
-			<img src="syste_img/img/write_travels/page_bg.jpg" class="main_header">
+			<img src="syste_img/img/write_travels/page_bg.jpg"
+				class="main_header header_imgs">
 		</div>
 
 
@@ -271,27 +321,27 @@
 							<div class="l_div_one"></div>
 						</a>
 						<div class="div_div_ttt hide_show">
-						<a class="add_the_content">
-							<div class="all_div">
-								<div class="l_div_one1"></div>
-								<span class="all_font"> 添加文字</span>
-							</div>
-						</a> <a class="add_the_phote">
-							<div class="all_div">
-								<div class="l_div_one2"></div>
-								<span class="all_font"> 添加照片 </span>
-							</div>
-						</a> <a>
-							<div class="all_div">
-								<div class="l_div_one3"></div>
-								<span class="all_font"> 添加视频 </span>
-							</div>
-						</a> <a class="add_the_title11">
-							<div class="all_div">
-								<div class="l_div_one4"></div>
-								<span class="all_font">添加段落标题 </span>
-							</div>
-						</a>
+							<a class="add_the_content">
+								<div class="all_div">
+									<div class="l_div_one1"></div>
+									<span class="all_font"> 添加文字</span>
+								</div>
+							</a> <a class="add_the_phote">
+								<div class="all_div">
+									<div class="l_div_one2"></div>
+									<span class="all_font"> 添加照片 </span>
+								</div>
+							</a> <a class="add_the_video">
+								<div class="all_div">
+									<div class="l_div_one3"></div>
+									<span class="all_font"> 添加视频 </span>
+								</div>
+							</a> <a class="add_the_title11">
+								<div class="all_div">
+									<div class="l_div_one4"></div>
+									<span class="all_font">添加段落标题 </span>
+								</div>
+							</a>
 						</div>
 					</div>
 				</div>
@@ -300,7 +350,7 @@
 				<div class="content_music">
 					<div class="music_one">游记音乐</div>
 					<div class="music_two">
-						<div class="music_two_font">背景音乐请选择后缀为.mp3的音乐文件</div>
+						<div class="music_two_font" id="music">背景音乐请选择后缀为.mp3的音乐文件</div>
 						<div class="choose_music">选择</div>
 					</div>
 				</div>
@@ -317,7 +367,8 @@
 				<div class="rigth_one_title">游记目录</div>
 				<div class="rigth_main_title">
 					<ul class="ul_rigth1">
-					<li class="li_rigth1"><span> 0/1</span><span> &nbsp;默认段落</span></li>
+						<li class="li_rigth1"><span> 0/1</span><span>
+								&nbsp;默认段落</span></li>
 					</ul>
 				</div>
 			</div>
@@ -325,11 +376,20 @@
 	</div>
 	<div id="footer">
 		<div class="footer1">
-			<iframe src="IndexFooter" frameborder="0" scrolling="no" marginheight="0"
-					marginwidth="0" style="margin: 0px auto;"></iframe>
+			<iframe src="IndexFooter" frameborder="0" scrolling="no"
+				marginheight="0" marginwidth="0" style="margin: 0px auto;"></iframe>
 		</div>
 	</div>
 
+
+
+
+	<!-- 视频 -->
+	<div class='add_video hide_div'>
+		<video src="" controls="controls" width="600px" heith="600px">
+			your browser does not support the video tag
+		</video>
+	</div>
 
 
 	<div class='add_word_v2 hide_div'>

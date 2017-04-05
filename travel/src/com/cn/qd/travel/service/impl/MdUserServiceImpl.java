@@ -22,9 +22,12 @@ public class MdUserServiceImpl implements UserService{
 		return 0;
 	}
 
+	/**
+	 * 修改用户的登陆状态
+	 */
 	@Override
 	public int update(Object t, Map<String, Object> map) {
-		return 0;
+		return userDao.updateByPrimaryKeySelective((MdUser)t);
 	}
 
 	@Override
@@ -37,10 +40,15 @@ public class MdUserServiceImpl implements UserService{
 		return null;
 	}
 
+	/**
+	 * 查找用户 密码和电话号码
+	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public ArrayList<Object> oneListResultProvider(Object t,
 			Map<String, Object> map) {
-		return null;
+		Object list=userDao.selectListBy((MdUser)t);
+		return (ArrayList<Object>)list;
 	}
 
 	@Override
@@ -49,7 +57,7 @@ public class MdUserServiceImpl implements UserService{
 	}
 
 	@Override
-	public boolean getLogin(MdUser T, Map map) {
+	public boolean getLogin(MdUser T, @SuppressWarnings("rawtypes") Map map) {
 		return false;
 	}
 
@@ -92,6 +100,22 @@ public class MdUserServiceImpl implements UserService{
 	@Override
 	public int insertSelective(MdUser user) {
 		return userDao.insertSelective(user);
+	}
+
+	/**
+	 * 修改密码
+	 */
+	@Override
+	public int updateUserPass(MdUser t, Map<String, Object> map) {
+		return userDao.updateByPrimaryKey(t);
+	}
+
+	/**
+	 * sql执行
+	 */
+	@Override
+	public int updateBySql(Map<String, Object> map) {
+		return userDao.updateBySql((String)map.get("sql"));
 	}
 
 }

@@ -53,10 +53,10 @@
             });
 
             $(".qq-login").hover(function () {
-                $(this).css("background", "url(img/index-img/icon3.png) -30px -80px");
+                $(this).css("background", "url(syste_img/img/index-img/icon3.png) -30px -80px");
                 $(this).css("background-position", "-30px -80px");
             }, function () {
-                $(this).css("background", "url(img/index-img/icon3.png) -30px -50px");
+                $(this).css("background", "url(syste_img/img/index-img/icon3.png) -30px -50px");
                 $(this).css("background-position", "-30px -50px");
             });
 
@@ -88,10 +88,10 @@
     <div class="mfw-header">
         <div class="header-wrap">
             <div class="logo">
-                <a class="mfw-logo" title="爱旅 U" href=""></a>
+                <a class="mfw-logo" title="爱旅 U" href="to_index"></a>
             </div>
             <ul class="nav" data-cs-t="headnav" id="_j_head_nav">
-                <li class="index mainNav"><a href="">首页</a></li>
+                <li class="index mainNav"><a href="to_index">首页</a></li>
                 <li class="place mainNav"><a href="" title="目的地"
                                              target="_blank">目的地</a></li>
                 <li class="gonglve mainNav"><a href=""
@@ -177,10 +177,10 @@
             <c:if test="${user != null}">
                 <div class="login-info">
                     <div class="head-user" id="_j_head_user">
-                        <a target="_blank" class="drop-trigger" href="to_myHome"
-                           title="${user.userNick }的窝" rel="nofollow">
+                        <a target="_blank" class="drop-trigger" href="toMyHome"
+                           title="${user.mdUserName }的窝" rel="nofollow">
                             <div class="user-image">
-                                <img src="${user.userHead }" class="img_img" alt="的窝">
+                                <img src="${user.userHeadImg }" class="img_img" alt="的窝">
                             </div>
                         </a>
                     </div>
@@ -199,7 +199,7 @@
                         class="weixin-login third-party-login" href="" title="微信登录"
                         rel="nofollow"></a> <a id="showlogin" title="登录蚂蜂窝" href="login"
                                                target="_blank" rel="nofollow" class="login under-line">登录</a> <span
-                        class="split">|</span> <a href="register" target="_blank"
+                        class="split">|</span> <a href="regist" target="_blank"
                                                   title="注册帐号" rel="nofollow" class="regis under-line">注册</a>
                 </div>
             </c:if>

@@ -46,6 +46,16 @@ public interface UserService extends BaseService{
 	 * @return
 	 */
 	public int updateUser(MdUser t, Map<String, Object> map);
+	
+	/**
+	 * 用户信息修改
+	 * 
+	 * @param t
+	 * @param map
+	 * @return
+	 */
+	public int updateUserPass(MdUser t, Map<String, Object> map);
+
 
 	/**
 	 * 用户删除 采用map传值
@@ -98,4 +108,11 @@ public interface UserService extends BaseService{
 	
 	//按条件插入
 	public int insertSelective(MdUser user);
+	
+	/**
+	 * 通过传入的sql执行
+	 * @param map
+	 * @return
+	 */
+	public int updateBySql(Map<String,Object> map);
 }

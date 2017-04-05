@@ -696,6 +696,10 @@ and (min-device-pixel-ratio: 2) {
     text-decoration: underline;
 }
 
+.error_hide{
+	display: none;
+}
+
 .add-info .m-t-10 {
     margin-top: 10px;
 }

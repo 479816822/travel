@@ -39,168 +39,17 @@
 		</javaClientGenerator>
 		
 		<!--对应数据库表名1 -->
-		<table tableName="MD_USER" domainObjectName="MdUser"
+	<table tableName="MD_USER_LEAVE_MESSAGE" domainObjectName="MdUserLeaveMessage"
 			enableCountByExample="false" enableDeleteByExample="false"
 			enableSelectByExample="false" enableUpdateByExample="false">
 			<property name="useActualColumnNames" value="false" />
 		</table>
 		
-				<!--对应数据库表名 2-->
-		<table tableName="MD_USER_ICON" domainObjectName="MDUserIcon"
+    	<table tableName="MD_USER_LEAVE_MORE_MESSAGE" domainObjectName="MdUserLeaveMoreMessage"
 			enableCountByExample="false" enableDeleteByExample="false"
 			enableSelectByExample="false" enableUpdateByExample="false">
 			<property name="useActualColumnNames" value="false" />
 		</table>
 		
-		<!--对应数据库表名3 -->
-		<table tableName="MD_AREA" domainObjectName="MDArea"
-			enableCountByExample="false" enableDeleteByExample="false"
-			enableSelectByExample="false" enableUpdateByExample="false">
-			<property name="useActualColumnNames" value="false" />
-		</table>
-
-
-		<!--对应数据库表名4 -->
-		<table tableName="MD_ROLE" domainObjectName="MDRole"
-			enableCountByExample="false" enableDeleteByExample="false"
-			enableSelectByExample="false" enableUpdateByExample="false">
-			<property name="useActualColumnNames" value="false" />
-		</table>
-
-
-		<!--对应数据库表名5 -->
-		<table tableName="MD_TRAVE_NOTE" domainObjectName="MDTravelNote"
-			enableCountByExample="false" enableDeleteByExample="false"
-			enableSelectByExample="false" enableUpdateByExample="false">
-			<property name="useActualColumnNames" value="false" />
-		</table>
-		
-		<!--对应数据库表名6 -->
-		<table tableName="MD_ROLE_USER_REF" domainObjectName="MDRoleUserRef"
-			enableCountByExample="false" enableDeleteByExample="false"
-			enableSelectByExample="false" enableUpdateByExample="false">
-			<!-- 如果设置为true，生成的entity类会直接使用column本身的名字，而不会再使用驼峰命名方法，比如BORN_DATE_Time，生成的属性名字就是BORN_DATE,而不会是bornDateTime -->
-			<property name="useActualColumnNames" value="false" />
-		</table>
-
-
-		<!--对应数据库表名7 -->
-		<table tableName="MD_OPERATION" domainObjectName="MDOperation"
-			enableCountByExample="false" enableDeleteByExample="false"
-			enableSelectByExample="false" enableUpdateByExample="false">
-			<property name="useActualColumnNames" value="false" />
-		</table>
-
-		<!--对应数据库表名8 -->
-		<table tableName="MD_ROLE_SOURCE_OPERATION" domainObjectName="MDRoleSourceOperation"
-			enableCountByExample="false" enableDeleteByExample="false"
-			enableSelectByExample="false" enableUpdateByExample="false">
-			<property name="useActualColumnNames" value="false" />
-		</table>
-
-		<!--对应数据库表名9 -->
-		<table tableName="MD_BACK" domainObjectName="MDBack"
-			enableCountByExample="false" enableDeleteByExample="false"
-			enableSelectByExample="false" enableUpdateByExample="false">
-			<property name="useActualColumnNames" value="false" />
-		</table>
-		
-		<!--对应数据库表名 10-->
-		<table tableName="MD_BANK_ACOUNT" domainObjectName="MD_BANK_ACUONT"
-			enableCountByExample="false" enableDeleteByExample="false"
-			enableSelectByExample="false" enableUpdateByExample="false">
-			<property name="useActualColumnNames" value="false" />
-		</table>
-
-		<!--对应数据库表名11 -->
-		<table tableName="MD_TRAFFIC" domainObjectName="MDTraffic"
-			enableCountByExample="false" enableDeleteByExample="false"
-			enableSelectByExample="false" enableUpdateByExample="false">
-			<property name="useActualColumnNames" value="false" />
-		</table>
-
-
-		<!--对应数据库表名 12-->
-		<table tableName="MD_USER_BLOG" domainObjectName="MDUserBlog"
-			enableCountByExample="false" enableDeleteByExample="false"
-			enableSelectByExample="false" enableUpdateByExample="false">
-			<property name="useActualColumnNames" value="false" />
-		</table>
-
-		<!--对应数据库表名13 -->
-		<table tableName="MD_SYSTEM_BLOG" domainObjectName="MDSystemBlog"
-			enableCountByExample="false" enableDeleteByExample="false"
-			enableSelectByExample="false" enableUpdateByExample="false">
-			<property name="useActualColumnNames" value="false" />
-		</table>
-		
-		<!--对应数据库表名14 -->
-		<table tableName="MD_FRIEND_SHIP" domainObjectName="MDFriendShip"
-			enableCountByExample="false" enableDeleteByExample="false"
-			enableSelectByExample="false" enableUpdateByExample="false">
-			<property name="useActualColumnNames" value="false" />
-		</table>
-		
-
-		<!--对应数据库表名15 -->
-		<table tableName="MD_TRAVEL_PARAGRAPH" domainObjectName="MDTravelParagraph"
-			enableCountByExample="false" enableDeleteByExample="false"
-			enableSelectByExample="false" enableUpdateByExample="false">
-			<property name="useActualColumnNames" value="false" />
-		</table>
-
-
-		<!--对应数据库表名16 -->
-		<table tableName="MD_COMMENT_ONE" domainObjectName="MDCommentOne"
-			enableCountByExample="false" enableDeleteByExample="false"
-			enableSelectByExample="false" enableUpdateByExample="false">
-			<property name="useActualColumnNames" value="false" />
-		</table>
-
-		<!--对应数据库表名17 -->
-		<table tableName="MD_COMMENT_MORE" domainObjectName="MDCommentMore"
-			enableCountByExample="false" enableDeleteByExample="false"
-			enableSelectByExample="false" enableUpdateByExample="false">
-			<property name="useActualColumnNames" value="false" />
-		</table>
-
-		<!--对应数据库表名18 -->
-		<table tableName="MD_ROAD_WAY" domainObjectName="MDRoadWay"
-			enableCountByExample="false" enableDeleteByExample="false"
-			enableSelectByExample="false" enableUpdateByExample="false">
-			<property name="useActualColumnNames" value="false" />
-		</table>
-
-
-		<!--对应数据库表名19 -->
-		<table tableName="MD_COMMENT_ROAD" domainObjectName="MDCommentRoad"
-			enableCountByExample="false" enableDeleteByExample="false"
-			enableSelectByExample="false" enableUpdateByExample="false">
-			<property name="useActualColumnNames" value="false" />
-		</table>
-
-
-		<!--对应数据库表名20 -->
-		<table tableName="MD_AIM_SORT" domainObjectName="MDAimSort"
-			enableCountByExample="false" enableDeleteByExample="false"
-			enableSelectByExample="false" enableUpdateByExample="false">
-			<property name="useActualColumnNames" value="false" />
-		</table>
-
-
-
-		<!--对应数据库表名21 -->
-		<table tableName="MD_VIEW" domainObjectName="MDView"
-			enableCountByExample="false" enableDeleteByExample="false"
-			enableSelectByExample="false" enableUpdateByExample="false">
-			<property name="useActualColumnNames" value="false" />
-		</table>
-
-		<!--对应数据库表名22 -->
-		<table tableName="MD_VIEW_COMMENT" domainObjectName="MDViewComment"
-			enableCountByExample="false" enableDeleteByExample="false"
-			enableSelectByExample="false" enableUpdateByExample="false">
-			<property name="useActualColumnNames" value="false" />
-		</table>
 	</context>
 </generatorConfiguration>
