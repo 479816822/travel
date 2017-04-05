@@ -1,7 +1,6 @@
 package com.cn.qd.travel.dao;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import com.cn.qd.travel.entity.MdUserLeaveMessage;
 
@@ -35,9 +34,9 @@ public interface MdUserLeaveMessageMapper {
      * @param sql
      * @return
      */
-    List<MdUserLeaveMessage> selectListBySql(String sql);
+    ArrayList<MdUserLeaveMessage> selectListBySql(String sql);
     
-    List<MdUserLeaveMessage> selectList();
+    ArrayList<MdUserLeaveMessage> selectList();
     
     /**
      * 查询指定用户的所有留言

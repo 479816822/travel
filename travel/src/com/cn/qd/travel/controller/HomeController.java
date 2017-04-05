@@ -32,7 +32,7 @@ public class HomeController {
 	@Autowired
 	TravelService travelService;
 	@Autowired 
-	CommentLeavelService comment;
+	CommentLeavelService commentService;
 
 	/**
 	 * 用户个性签名修改
@@ -71,7 +71,7 @@ public class HomeController {
 	@ResponseBody
 	public  Map<String, String> leaveWord(Model model, HttpSession session,MdUserLeaveMessage message) {
 		Map<String, String> result = new HashMap<String, String>();
-		int ret =comment.insert(message,null );	
+		int ret =commentService.insert(message,null );	
 		if (ret > 0) {
 			result.put("success", "success");
 		} else {

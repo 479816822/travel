@@ -5,12 +5,14 @@ import java.util.Date;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.cn.qd.travel.dao.MdUserLeaveMessageMapper;
 import com.cn.qd.travel.entity.MdUserLeaveMessage;
 import com.cn.qd.travel.service.CommentLeavelService;
 import com.cn.qd.travel.util.GUID;
 
+@Service
 public class CommentLeavelServiceImpl implements CommentLeavelService {
 
 	@Autowired

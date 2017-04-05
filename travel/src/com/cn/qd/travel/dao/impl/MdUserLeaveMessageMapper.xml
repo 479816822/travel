@@ -26,7 +26,7 @@
     <result column="MD_EMS_CODE" jdbcType="DECIMAL" property="mdEmsCode" />
     <result column="MD_PRAISE" jdbcType="DECIMAL" property="mdPraise" />
   </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.cn.qd.travel.entity.MdUser">
+  <resultMap extends="UserResultMap" id="ResultMapWithBLOBs" type="com.cn.qd.travel.entity.MdUser">
     <result column="MD_ICON" jdbcType="BLOB" property="mdIcon" />
   </resultMap>
 
@@ -35,14 +35,11 @@
     <id column="MD_LV_RECID" jdbcType="VARCHAR" property="mdLvRecid" />
     <result column="MD_LV_MESSAGE" jdbcType="VARCHAR" property="mdLvMessage" />
     <result column="MD_LV_TIME" jdbcType="DATE" property="mdLvTime" />
-    <result column="MD_LV_USER_RECID" jdbcType="VARCHAR" property="mdLvUserRecid" />
     <result column="MD_LV_NEST_USER_RECID" jdbcType="VARCHAR" property="mdLvNestUserRecid" />
-    <result column="MD_HOST_USER_RECID" jdbcType="VARCHAR" property="mdHostUserRecid" />
     <result column="MD_LV_LEVEL" jdbcType="DECIMAL" property="mdLvLevel" />
-    <result column="MD_LV_REF_ID" jdbcType="VARCHAR" property="mdLvRefId" />
-     <association property="hostUser" column="MD_HOST_USER_RECID" resultMap="UserResultMap" columnPrefix="h_"/>
-     <association property="lvUser" column="MD_LV_USER_RECID" resultMap="UserResultMap" columnPrefix="l_"/>
-     <collection property="lvMoreMessage" column="MD_LV_M_RECID"  select="selectList" resultMap="BaseResultMap"></collection> 
+     <association property="hostUser" column="MD_HOST_USER_RECID" resultMap="ResultMapWithBLOBs" columnPrefix="h_"/>
+     <association property="lvUser" column="MD_LV_USER_RECID" resultMap="ResultMapWithBLOBs" columnPrefix="l_"/>
+     <collection property="lvMoreMessage" column="MD_LV_REF_ID"   resultMap="ResultMapWithBLOBs"></collection> 
   </resultMap>
   <sql id="Base_Column_List">
     MD_LV_RECID, MD_LV_MESSAGE, MD_LV_TIME, MD_LV_USER_RECID, MD_LV_NEST_USER_RECID, 
