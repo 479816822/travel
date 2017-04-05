@@ -99,7 +99,7 @@
   
   <!-- 注册按条件插入 -->
   <insert id="insertSelective" parameterType="com.cn.qd.travel.entity.MdUser">
-		insert into MD_USER
+		insert into MD_USER FROM DUAL
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="mdUserRecid != null">
         MD_USER_RECID,
