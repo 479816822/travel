@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cn.qd.travel.dao.MdUserLeaveMessageMapper">
+
+
+  <resultMap id="UserResultMap" type="com.cn.qd.travel.entity.MdUser">
+    <id column="MD_USER_RECID" jdbcType="VARCHAR" property="mdUserRecid" />
+    <result column="MD_STDNAME" jdbcType="VARCHAR" property="mdStdname" />
+    <result column="MD_REF_ID" jdbcType="VARCHAR" property="mdRefId" />
+    <result column="MD_STDCODE" jdbcType="DECIMAL" property="mdStdcode" />
+    <result column="MD_ALERT_DATE" jdbcType="DATE" property="mdAlertDate" />
+    <result column="MD_ALERT_USER" jdbcType="VARCHAR" property="mdAlertUser" />
+    <result column="MD_USER_NAME" jdbcType="VARCHAR" property="mdUserName" />
+    <result column="MD_TELEPHONE" jdbcType="VARCHAR" property="mdTelephone" />
+    <result column="MD_SEX" jdbcType="VARCHAR" property="mdSex" />
+    <result column="MD_AGE" jdbcType="DECIMAL" property="mdAge" />
+    <result column="MD_CREATE_TIME" jdbcType="DATE" property="mdCreateTime" />
+    <result column="MD_PASSWORD" jdbcType="VARCHAR" property="mdPassword" />
+    <result column="MD_EMAIL" jdbcType="VARCHAR" property="mdEmail" />
+    <result column="MD_SCHOOL" jdbcType="VARCHAR" property="mdSchool" />
+    <result column="MD_IS_VIP" jdbcType="VARCHAR" property="mdIsVip" />
+    <result column="MD_LEVEL" jdbcType="VARCHAR" property="mdLevel" />
+    <result column="MD_SIGNATURE" jdbcType="VARCHAR" property="mdSignature" />
+    <result column="MD_SCORE" jdbcType="DECIMAL" property="mdScore" />
+    <result column="MD_GRADUATION_DATE" jdbcType="DATE" property="mdGraduationDate" />
+    <result column="MD_EMS_CODE" jdbcType="DECIMAL" property="mdEmsCode" />
+    <result column="MD_PRAISE" jdbcType="DECIMAL" property="mdPraise" />
+  </resultMap>
+  <resultMap extends="UserResultMap" id="ResultMapWithBLOBs" type="com.cn.qd.travel.entity.MdUser">
+    <result column="MD_ICON" jdbcType="BLOB" property="mdIcon" />
+  </resultMap>
+
+
+  <resultMap id="BaseResultMap" type="com.cn.qd.travel.entity.MdUserLeaveMessage">
+    <id column="MD_LV_RECID" jdbcType="VARCHAR" property="mdLvRecid" />
+    <result column="MD_LV_MESSAGE" jdbcType="VARCHAR" property="mdLvMessage" />
+    <result column="MD_LV_TIME" jdbcType="DATE" property="mdLvTime" />
+    <result column="MD_LV_NEST_USER_RECID" jdbcType="VARCHAR" property="mdLvNestUserRecid" />
+    <result column="MD_LV_LEVEL" jdbcType="DECIMAL" property="mdLvLevel" />
+     <association property="hostUser" column="MD_HOST_USER_RECID" resultMap="ResultMapWithBLOBs" columnPrefix="h_"/>
+     <association property="lvUser" column="MD_LV_USER_RECID" resultMap="ResultMapWithBLOBs" columnPrefix="l_"/>
+     <collection property="lvMoreMessage" column="MD_LV_REF_ID"   resultMap="ResultMapWithBLOBs"></collection> 
+  </resultMap>
+  <sql id="Base_Column_List">
+    MD_LV_RECID, MD_LV_MESSAGE, MD_LV_TIME, MD_LV_USER_RECID, MD_LV_NEST_USER_RECID, 
+    MD_HOST_USER_RECID, MD_LV_LEVEL, MD_LV_REF_ID
+  </sql>
+  
+  
+  
+  
+    <!--查询SQL-->
+   <select id="selectListBySql" parameterType="java.lang.String" resultMap="BaseResultMap">
+    ${value}
+   </select>
+  
+  
+  
+  <!--查询指定用户的所有的留言-->
+   <select id="selectListById" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    m.*,
+   h.MD_GRADUATION_DATE as h_MD_GRADUATION_DATE,
+   h.MD_EMS_CODE as h_MD_EMS_CODE,
+   h.MD_PRAISE as h_MD_PRAISE,
+   h.MD_ICON as h_MD_ICON,
+   h.MD_PASSWORD as h_MD_PASSWORD,
+   h.MD_EMAIL as h_MD_EMAIL,
+   h.MD_SCHOOL as h_MD_SCHOOL,
+   h.MD_IS_VIP as h_MD_IS_VIP,
+   h.MD_LEVEL as h_MD_LEVEL,
+   h.MD_SIGNATURE as h_MD_SIGNATURE,
+   h.MD_SCORE as h_MD_SCORE,
+   h.MD_h_RECID as h_MD_h_RECID,
+   h.MD_STDNAME as h_MD_STDNAME,
+   h.MD_REF_ID as h_MD_REF_ID,
+   h.MD_STDCODE as h_MD_STDCODE,
+   h.MD_ALERT_DATE as h_MD_ALERT_DATE,
+   h.MD_ALERT_USER as h_MD_ALERT_USER,
+   h.MD_h_NAME as h_MD_h_NAME,
+   h.MD_TELEPHONE as h_MD_TELEPHONE,
+   h.MD_SEX as h_MD_SEX,
+   h.MD_AGE as h_MD_AGE,
+   h.MD_CREATE_TIME as h_MD_CREATE_TIME,
+   l.MD_GRADUATION_DATE as h_MD_GRADUATION_DATE,
+   l.MD_EMS_CODE as h_MD_EMS_CODE,
+   l.MD_PRAISE as h_MD_PRAISE,
+   l.MD_ICON as h_MD_ICON,
+   l.MD_PASSWORD as h_MD_PASSWORD,
+   l.MD_EMAIL as h_MD_EMAIL,
+   l.MD_SCHOOL as h_MD_SCHOOL,
+   l.MD_IS_VIP as h_MD_IS_VIP,
+   l.MD_LEVEL as h_MD_LEVEL,
+   l.MD_SIGNATURE as h_MD_SIGNATURE,
+   l.MD_SCORE as h_MD_SCORE,
+   l.MD_h_RECID as h_MD_h_RECID,
+   l.MD_STDNAME as h_MD_STDNAME,
+   l.MD_REF_ID as h_MD_REF_ID,
+   l.MD_STDCODE as h_MD_STDCODE,
+   l.MD_ALERT_DATE as h_MD_ALERT_DATE,
+   l.MD_ALERT_USER as h_MD_ALERT_USER,
+   l.MD_h_NAME as h_MD_h_NAME,
+   l.MD_TELEPHONE as h_MD_TELEPHONE,
+   l.MD_SEX as h_MD_SEX,
+   l.MD_AGE as h_MD_AGE,
+   l.MD_CREATE_TIME as h_MD_CREATE_TIME
+    from MD_USER_LEAVE_MESSAGE m ,  MD_USER l ,MD_USER h
+    where m.MD_HOST_USER_RECID=#{id,jdbcType=VARCHAR} and m.MD_HOST_USER_RECID=h.MD_USER_RECID and m.MD_LV_USER_RECID=l.MD_USER_RECID
+  </select>
+  
+    <!--查询下级的留言-->
+   <select id="selectList"  resultMap="BaseResultMap">
+    select 
+    u.*,
+       h.MD_GRADUATION_DATE as h_MD_GRADUATION_DATE,
+   h.MD_EMS_CODE as h_MD_EMS_CODE,
+   h.MD_PRAISE as h_MD_PRAISE,
+   h.MD_ICON as h_MD_ICON,
+   h.MD_PASSWORD as h_MD_PASSWORD,
+   h.MD_EMAIL as h_MD_EMAIL,
+   h.MD_SCHOOL as h_MD_SCHOOL,
+   h.MD_IS_VIP as h_MD_IS_VIP,
+   h.MD_LEVEL as h_MD_LEVEL,
+   h.MD_SIGNATURE as h_MD_SIGNATURE,
+   h.MD_SCORE as h_MD_SCORE,
+   h.MD_h_RECID as h_MD_h_RECID,
+   h.MD_STDNAME as h_MD_STDNAME,
+   h.MD_REF_ID as h_MD_REF_ID,
+   h.MD_STDCODE as h_MD_STDCODE,
+   h.MD_ALERT_DATE as h_MD_ALERT_DATE,
+   h.MD_ALERT_USER as h_MD_ALERT_USER,
+   h.MD_h_NAME as h_MD_h_NAME,
+   h.MD_TELEPHONE as h_MD_TELEPHONE,
+   h.MD_SEX as h_MD_SEX,
+   h.MD_AGE as h_MD_AGE,
+   h.MD_CREATE_TIME as h_MD_CREATE_TIME,
+   l.MD_GRADUATION_DATE as h_MD_GRADUATION_DATE,
+   l.MD_EMS_CODE as h_MD_EMS_CODE,
+   l.MD_PRAISE as h_MD_PRAISE,
+   l.MD_ICON as h_MD_ICON,
+   l.MD_PASSWORD as h_MD_PASSWORD,
+   l.MD_EMAIL as h_MD_EMAIL,
+   l.MD_SCHOOL as h_MD_SCHOOL,
+   l.MD_IS_VIP as h_MD_IS_VIP,
+   l.MD_LEVEL as h_MD_LEVEL,
+   l.MD_SIGNATURE as h_MD_SIGNATURE,
+   l.MD_SCORE as h_MD_SCORE,
+   l.MD_h_RECID as h_MD_h_RECID,
+   l.MD_STDNAME as h_MD_STDNAME,
+   l.MD_REF_ID as h_MD_REF_ID,
+   l.MD_STDCODE as h_MD_STDCODE,
+   l.MD_ALERT_DATE as h_MD_ALERT_DATE,
+   l.MD_ALERT_USER as h_MD_ALERT_USER,
+   l.MD_h_NAME as h_MD_h_NAME,
+   l.MD_TELEPHONE as h_MD_TELEPHONE,
+   l.MD_SEX as h_MD_SEX,
+   l.MD_AGE as h_MD_AGE,
+   l.MD_CREATE_TIME as h_MD_CREATE_TIME
+    from MD_USER_LEAVE_MESSAGE m , MD_USER_LEAVE_MESSAGE u ,,  MD_USER l ,MD_USER h where 
+   m.MD_LV_RECID=u.MD_LV_REF_ID and u.MD_HOST_USER_RECID=h.MD_USER_RECID and u.MD_LV_USER_RECID=l.MD_USER_RECID
+  </select>
+  
+  
+  
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from MD_USER_LEAVE_MESSAGE
+    where MD_LV_RECID = #{mdLvRecid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from MD_USER_LEAVE_MESSAGE
+    where MD_LV_RECID = #{mdLvRecid,jdbcType=VARCHAR}
+  </delete>
+  
+  
+  <insert id="insert" parameterType="com.cn.qd.travel.entity.MdUserLeaveMessage">
+    insert into MD_USER_LEAVE_MESSAGE (MD_LV_RECID, MD_LV_MESSAGE, MD_LV_TIME, 
+      MD_LV_USER_RECID, MD_LV_NEST_USER_RECID, MD_HOST_USER_RECID, 
+      MD_LV_LEVEL, MD_LV_REF_ID)
+    values (#{mdLvRecid,jdbcType=VARCHAR}, #{mdLvMessage,jdbcType=VARCHAR}, #{mdLvTime,jdbcType=DATE}, 
+      #{mdLvUserRecid,jdbcType=VARCHAR}, #{mdLvNestUserRecid,jdbcType=VARCHAR}, #{mdHostUserRecid,jdbcType=VARCHAR}, 
+      #{mdLvLevel,jdbcType=DECIMAL}, #{mdLvRefId,jdbcType=VARCHAR})
+  </insert>
+  
+  <!--按条件插入留言数据-->
+  <insert id="insertSelective" parameterType="com.cn.qd.travel.entity.MdUserLeaveMessage">
+    insert into MD_USER_LEAVE_MESSAGE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mdLvRecid != null">
+        MD_LV_RECID,
+      </if>
+      <if test="mdLvMessage != null">
+        MD_LV_MESSAGE,
+      </if>
+      <if test="mdLvTime != null">
+        MD_LV_TIME,
+      </if>
+      <if test="mdLvUserRecid != null">
+        MD_LV_USER_RECID,
+      </if>
+      <if test="mdLvNestUserRecid != null">
+        MD_LV_NEST_USER_RECID,
+      </if>
+      <if test="mdHostUserRecid != null">
+        MD_HOST_USER_RECID,
+      </if>
+      <if test="mdLvLevel != null">
+        MD_LV_LEVEL,
+      </if>
+      <if test="mdLvRefId != null">
+        MD_LV_REF_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mdLvRecid != null">
+        #{mdLvRecid,jdbcType=VARCHAR},
+      </if>
+      <if test="mdLvMessage != null">
+        #{mdLvMessage,jdbcType=VARCHAR},
+      </if>
+      <if test="mdLvTime != null">
+        #{mdLvTime,jdbcType=DATE},
+      </if>
+      <if test="mdLvUserRecid != null">
+        #{mdLvUserRecid,jdbcType=VARCHAR},
+      </if>
+      <if test="mdLvNestUserRecid != null">
+        #{mdLvNestUserRecid,jdbcType=VARCHAR},
+      </if>
+      <if test="mdHostUserRecid != null">
+        #{mdHostUserRecid,jdbcType=VARCHAR},
+      </if>
+      <if test="mdLvLevel != null">
+        #{mdLvLevel,jdbcType=DECIMAL},
+      </if>
+      <if test="mdLvRefId != null">
+        #{mdLvRefId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cn.qd.travel.entity.MdUserLeaveMessage">
+    update MD_USER_LEAVE_MESSAGE
+    <set>
+      <if test="mdLvMessage != null">
+        MD_LV_MESSAGE = #{mdLvMessage,jdbcType=VARCHAR},
+      </if>
+      <if test="mdLvTime != null">
+        MD_LV_TIME = #{mdLvTime,jdbcType=DATE},
+      </if>
+      <if test="mdLvUserRecid != null">
+        MD_LV_USER_RECID = #{mdLvUserRecid,jdbcType=VARCHAR},
+      </if>
+      <if test="mdLvNestUserRecid != null">
+        MD_LV_NEST_USER_RECID = #{mdLvNestUserRecid,jdbcType=VARCHAR},
+      </if>
+      <if test="mdHostUserRecid != null">
+        MD_HOST_USER_RECID = #{mdHostUserRecid,jdbcType=VARCHAR},
+      </if>
+      <if test="mdLvLevel != null">
+        MD_LV_LEVEL = #{mdLvLevel,jdbcType=DECIMAL},
+      </if>
+      <if test="mdLvRefId != null">
+        MD_LV_REF_ID = #{mdLvRefId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where MD_LV_RECID = #{mdLvRecid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cn.qd.travel.entity.MdUserLeaveMessage">
+    update MD_USER_LEAVE_MESSAGE
+    set MD_LV_MESSAGE = #{mdLvMessage,jdbcType=VARCHAR},
+      MD_LV_TIME = #{mdLvTime,jdbcType=DATE},
+      MD_LV_USER_RECID = #{mdLvUserRecid,jdbcType=VARCHAR},
+      MD_LV_NEST_USER_RECID = #{mdLvNestUserRecid,jdbcType=VARCHAR},
+      MD_HOST_USER_RECID = #{mdHostUserRecid,jdbcType=VARCHAR},
+      MD_LV_LEVEL = #{mdLvLevel,jdbcType=DECIMAL},
+      MD_LV_REF_ID = #{mdLvRefId,jdbcType=VARCHAR}
+    where MD_LV_RECID = #{mdLvRecid,jdbcType=VARCHAR}
+  </update>
+</mapper>

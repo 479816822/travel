@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cn.qd.travel.dao.MdUserLeaveMoreMessageMapper">
+  <resultMap id="BaseResultMap" type="com.cn.qd.travel.entity.MdUserLeaveMoreMessage">
+    <id column="MD_LV_M_RECID" jdbcType="VARCHAR" property="mdLvMRecid" />
+    <result column="MD_LV_M_MESSAGE" jdbcType="VARCHAR" property="mdLvMMessage" />
+    <result column="MD_LV_M_TIME" jdbcType="DATE" property="mdLvMTime" />
+    <result column="MD_LV_M_USER_RECID" jdbcType="VARCHAR" property="mdLvMUserRecid" />
+    <result column="MD_HOST_M_USER_RECID" jdbcType="VARCHAR" property="mdHostMUserRecid" />
+    <result column="MD_LV_REF_M_ID" jdbcType="VARCHAR" property="mdLvRefMId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    MD_LV_M_RECID, MD_LV_M_MESSAGE, MD_LV_M_TIME, MD_LV_M_USER_RECID, MD_HOST_M_USER_RECID, 
+    MD_LV_REF_M_ID
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from MD_USER_LEAVE_MORE_MESSAGE
+    where MD_LV_M_RECID = #{mdLvMRecid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from MD_USER_LEAVE_MORE_MESSAGE
+    where MD_LV_M_RECID = #{mdLvMRecid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cn.qd.travel.entity.MdUserLeaveMoreMessage">
+    insert into MD_USER_LEAVE_MORE_MESSAGE (MD_LV_M_RECID, MD_LV_M_MESSAGE, MD_LV_M_TIME, 
+      MD_LV_M_USER_RECID, MD_HOST_M_USER_RECID, MD_LV_REF_M_ID
+      )
+    values (#{mdLvMRecid,jdbcType=VARCHAR}, #{mdLvMMessage,jdbcType=VARCHAR}, #{mdLvMTime,jdbcType=DATE}, 
+      #{mdLvMUserRecid,jdbcType=VARCHAR}, #{mdHostMUserRecid,jdbcType=VARCHAR}, #{mdLvRefMId,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.cn.qd.travel.entity.MdUserLeaveMoreMessage">
+    insert into MD_USER_LEAVE_MORE_MESSAGE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mdLvMRecid != null">
+        MD_LV_M_RECID,
+      </if>
+      <if test="mdLvMMessage != null">
+        MD_LV_M_MESSAGE,
+      </if>
+      <if test="mdLvMTime != null">
+        MD_LV_M_TIME,
+      </if>
+      <if test="mdLvMUserRecid != null">
+        MD_LV_M_USER_RECID,
+      </if>
+      <if test="mdHostMUserRecid != null">
+        MD_HOST_M_USER_RECID,
+      </if>
+      <if test="mdLvRefMId != null">
+        MD_LV_REF_M_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mdLvMRecid != null">
+        #{mdLvMRecid,jdbcType=VARCHAR},
+      </if>
+      <if test="mdLvMMessage != null">
+        #{mdLvMMessage,jdbcType=VARCHAR},
+      </if>
+      <if test="mdLvMTime != null">
+        #{mdLvMTime,jdbcType=DATE},
+      </if>
+      <if test="mdLvMUserRecid != null">
+        #{mdLvMUserRecid,jdbcType=VARCHAR},
+      </if>
+      <if test="mdHostMUserRecid != null">
+        #{mdHostMUserRecid,jdbcType=VARCHAR},
+      </if>
+      <if test="mdLvRefMId != null">
+        #{mdLvRefMId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cn.qd.travel.entity.MdUserLeaveMoreMessage">
+    update MD_USER_LEAVE_MORE_MESSAGE
+    <set>
+      <if test="mdLvMMessage != null">
+        MD_LV_M_MESSAGE = #{mdLvMMessage,jdbcType=VARCHAR},
+      </if>
+      <if test="mdLvMTime != null">
+        MD_LV_M_TIME = #{mdLvMTime,jdbcType=DATE},
+      </if>
+      <if test="mdLvMUserRecid != null">
+        MD_LV_M_USER_RECID = #{mdLvMUserRecid,jdbcType=VARCHAR},
+      </if>
+      <if test="mdHostMUserRecid != null">
+        MD_HOST_M_USER_RECID = #{mdHostMUserRecid,jdbcType=VARCHAR},
+      </if>
+      <if test="mdLvRefMId != null">
+        MD_LV_REF_M_ID = #{mdLvRefMId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where MD_LV_M_RECID = #{mdLvMRecid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cn.qd.travel.entity.MdUserLeaveMoreMessage">
+    update MD_USER_LEAVE_MORE_MESSAGE
+    set MD_LV_M_MESSAGE = #{mdLvMMessage,jdbcType=VARCHAR},
+      MD_LV_M_TIME = #{mdLvMTime,jdbcType=DATE},
+      MD_LV_M_USER_RECID = #{mdLvMUserRecid,jdbcType=VARCHAR},
+      MD_HOST_M_USER_RECID = #{mdHostMUserRecid,jdbcType=VARCHAR},
+      MD_LV_REF_M_ID = #{mdLvRefMId,jdbcType=VARCHAR}
+    where MD_LV_M_RECID = #{mdLvMRecid,jdbcType=VARCHAR}
+  </update>
+</mapper>
