@@ -1,0 +1,1055 @@
+/*账户安全css & 设置密码css*/
+
+@charset "UTF-8";
+
+body {
+	font-size: 12px;
+	font-family: Arial, "Lucida Grande", "Microsoft Yahei",
+		"Hiragino Sans GB", "Hiragino Sans GB W3", SimSun, "PingFang SC",
+		STHeiti;
+	_font-family: Tahoma, Arial, Helvetica, STHeiti;
+	color: #666
+}
+
+html.hasFontSmoothing-false body {
+	font-family: Arial, SimSun, "Lucida Grande", "Hiragino Sans GB",
+		"Hiragino Sans GB W3", "PingFang SC", STHeiti
+}
+
+input, select, textarea, button {
+	font-family: Arial, "Lucida Grande", "Microsoft Yahei",
+		"Hiragino Sans GB", "Hiragino Sans GB W3", "PingFang SC", STHeiti;
+	_font-family: Tahoma, Arial, Helvetica, STHeiti
+}
+
+body, p, div {
+	margin: 0;
+	padding: 0;
+	word-wrap: break-word
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+	font-size: 100%
+}
+
+ul, ol, li, dl, dd, dt {
+	margin: 0;
+	padding: 0;
+	list-style: none
+}
+
+a {
+	color: #ff9d00;
+	text-decoration: none;
+	cursor: pointer
+}
+
+a:hover {
+	color: #ff8a00;
+	text-decoration: underline
+}
+
+td {
+	font-size: 12px;
+	color: #666
+}
+
+img {
+	border: 0;
+	vertical-align: middle
+}
+
+input {
+	outline: 0
+}
+
+.line20 {
+	line-height: 20px
+}
+
+.tdcenter {
+	text-align: center
+}
+
+.hide {
+	display: none
+}
+
+.clearbg {
+	background: 0
+}
+
+.clear {
+	clear: both;
+	display: block;
+	height: 0;
+	font-size: 0;
+	line-height: 0;
+	overflow: hidden
+}
+
+.clearfix:after, .wrapper:after, .article:after {
+	content: '\20';
+	clear: both;
+	display: block
+}
+
+.clearfix, .wrapper, .article {
+	*zoom: 1
+}
+/* iSetting */
+body {
+	background: #fff;
+}
+
+.wrapper {
+	width: 1000px;
+	margin: 0 auto;
+	padding: 25px 0;
+	font-size: 14px;
+	color: #666;
+}
+
+.aside {
+	width: 220px;
+	float: left;
+}
+
+.content {
+	width: 740px;
+	min-height: 480px;
+	float: right;
+	background: #fff;
+}
+
+.cssradio {
+	position: relative;
+	cursor: pointer;
+	display: inline-block;
+	vertical-align: middle;
+	width: 18px;
+	height: 18px;
+	line-height: 18px;
+}
+
+.cssradio input[type=radio] {
+	position: absolute;
+	opacity: 0;
+	margin: 0;
+	width: 16px;
+	height: 16px;
+	top: 1px;
+	left: 1px;
+}
+
+.cssradio span {
+	position: relative;
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	border-radius: 100%;
+	background: #fff;
+	border: 1px solid #ffa800;
+}
+
+.cssradio span:after {
+	content: "";
+	position: absolute;
+	top: 2px;
+	right: 2px;
+	bottom: 2px;
+	left: 2px;
+	border-radius: 100%;
+	background-color: #fff;
+	opacity: 0;
+	-webkit-transition: all .15s ease-out;
+	transition: all .15s ease-out;
+	-webkit-transform: scale(.5);
+	transform: scale(.5);
+}
+
+.cssradio input:checked+span:after {
+	opacity: 1;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	background-color: #ffa800;
+}
+
+.alert {
+	padding: 15px 35px 15px 15px;
+	color: #fff;
+	border: 1px solid transparent;
+	margin-bottom: 20px;
+	border-radius: 3px;
+}
+
+.alert .close {
+	float: right;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 1;
+	cursor: pointer;
+	position: relative;
+	top: -8px;
+	right: -22px;
+	color: #000;
+	opacity: .25;
+	background: 0 0;
+	border: 0;
+	padding: 0;
+}
+
+.alert .close:hover {
+	opacity: .5;
+}
+
+.alert-success {
+	border-color: #d6e9c6;
+	background-color: #dff0d8;
+	color: #468847;
+}
+
+.alert-error {
+	border-color: #eed3d7;
+	background-color: #f2dede;
+	color: #b94a48;
+}
+
+.alert-notice {
+	border-color: #faebcc;
+	background-color: #fcf8e3;
+	color: #8a6d3b;
+}
+
+/* Aside */
+.aside a {
+	display: block;
+	line-height: 46px;
+	font-size: 14px;
+	color: #666;
+	border-radius: 3px;
+	margin-bottom: 8px;
+	position: relative;
+	overflow: hidden;
+}
+
+.aside a:hover {
+	background-color: #f0f0f0;
+	text-decoration: none;
+}
+
+.aside a.on {
+	background-color: #ffa800;
+	color: #fff;
+}
+
+.aside a.on:hover {
+	text-decoration: none;
+}
+
+.aside a span.ripple {
+	display: block;
+	position: absolute;
+	background: rgba(102, 102, 102, .3);
+	border-radius: 100%;
+	-webkit-transform: scale(0);
+	transform: scale(0);
+	width: 201px;
+	height: 201px;
+}
+
+.aside a span.ripple.animate {
+	-webkit-animation: ripple 1s ease-out;
+	animation: ripple 1s ease-out;
+}
+
+.aside i {
+	width: 22px;
+	height: 22px;
+	display: inline-block;
+	background: url(syste_img/alterInfo_img/i_left4.png) no-repeat;
+	margin: 0 10px 0 24px;
+	vertical-align: middle;
+}
+
+.aside .i1 {
+	background-position: 0 0;
+}
+
+.aside a.on .i1 {
+	background-position: -22px 0;
+}
+
+.aside .i2 {
+	background-position: 0 -22px;
+}
+
+.aside a.on .i2 {
+	background-position: -22px -22px;
+}
+
+.aside .i3 {
+	background-position: 0 -44px;
+}
+
+.aside a.on .i3 {
+	background-position: -22px -44px;
+}
+
+.aside .i4 {
+	background-position: 0 -66px;
+}
+
+.aside a.on .i4 {
+	background-position: -22px -66px;
+}
+
+.aside .i5 {
+	background-position: 0 -88px;
+}
+
+.aside a.on .i5 {
+	background-position: -22px -88px;
+}
+
+.aside .i6 {
+	background-position: 0 -110px;
+}
+
+.aside a.on .i6 {
+	background-position: -22px -110px;
+}
+
+.aside .i7 {
+	background-position: 0 -132px;
+}
+
+.aside a.on .i7 {
+	background-position: -22px -132px;
+}
+
+.aside .i8 {
+	background-position: 0 -154px;
+}
+
+.aside a.on .i8 {
+	background-position: -22px -154px;
+}
+
+.aside .i9 {
+	background-position: 0 -176px;
+}
+
+.aside a.on .i9 {
+	background-position: -22px -176px;
+}
+
+.aside .i10 {
+	background-position: 0 -198px;
+}
+
+.aside a.on .i10 {
+	background-position: -22px -198px;
+}
+
+/* Content */
+.content .hd {
+	padding-bottom: 18px;
+	margin: 0 0 20px 0;
+	*position: relative;
+	border-bottom: 1px solid #eee;
+}
+
+.content .hd strong {
+	font-size: 24px;
+	color: #444;
+	font-weight: normal;
+}
+
+.content .hd span {
+	margin-left: 18px;
+	font-size: 14px;
+	color: #999;
+}
+
+.content .hd .progress {
+	width: 110px;
+	height: 16px;
+	display: inline-block;
+	background-color: #bddf7d;
+	margin-left: 8px;
+	position: relative;
+	vertical-align: middle;
+	*position: absolute;
+	*left: 200px;
+	*top: 10px;
+}
+
+.content .hd .progress .on {
+	background-color: #add75c;
+	height: 16px;
+}
+
+.content .hd .progress .num {
+	font-size: 12px;
+	color: #fff;
+	position: absolute;
+	right: 3px;
+	line-height: 16px;
+}
+
+.content dl {
+	clear: both;
+	padding-bottom: 15px;
+}
+
+.content dt {
+	width: 85px;
+	float: left;
+	padding: 6px 10px 0 0;
+	text-align: right;
+	color: #a1a1a1;
+	font-size: 16px;
+}
+
+.content dd {
+	width: 490px;
+	float: left;
+}
+
+.content dd label {
+	padding-right: 20px;
+	line-height: 32px;
+	float: left;
+	cursor: pointer;
+}
+
+.content dd label .cssradio {
+	float: left;
+	margin: 6px 6px 0 0;
+}
+
+.content dd input[type=text], .content dd input[type=password] {
+	width: 208px;
+	border: 1px solid #d3d3d3;
+	height: 18px;
+	padding: 6px 8px;
+	line-height: 18px;
+	font-size: 14px;
+	color: #999;
+	outline: none;
+	transition: box-shadow 0.25s linear 0s;
+	border-radius: 3px;
+}
+
+.content dd input[type=text]:focus, .content dd input[type=password]:focus
+	{
+	border: 1px solid #ffa800;
+	transition: box-shadow 0.25s linear 0s;
+	box-shadow: 0 0 5px #ffa200;
+}
+
+.content i.radio {
+	width: 18px;
+	height: 19px;
+	display: inline-block;
+	background: url(syste_img/alterInfo_img/icon.png) -36px 0 no-repeat;
+	float: left;
+}
+
+.content i.radio.on {
+	background-position: -54px 0;
+}
+
+.content i.checkbox {
+	width: 18px;
+	height: 19px;
+	display: inline-block;
+	background: url(syste_img/alterInfo_img/icon.png) 0 0 no-repeat;
+	vertical-align: middle;
+	margin-right: 10px;
+	cursor: pointer;
+}
+
+.content i.checkbox.on {
+	background-position: -18px 0;
+}
+
+.content .input-group {
+	position: relative;
+}
+
+.content .input-group .input-suggest {
+	position: absolute;
+	z-index: 99;
+	width: 218px;
+	border: 1px solid #dfdede;
+	background: #fff;
+	line-height: 24px;
+	font-size: 12px;
+	left: 3px;
+	top: 31px;
+	display: none;
+}
+
+.content .input-group .input-suggest li a {
+	padding: 5px 7px;
+	display: block;
+	height: 24px;
+	color: #999;
+	overflow: hidden;
+}
+
+.content .input-group .input-suggest li a:hover {
+	background: #efefef;
+	text-decoration: none;
+	color: #ffa800;
+}
+
+.content .input-group .input-suggest i {
+	float: left;
+	margin-right: 9px;
+	width: 24px;
+	height: 24px;
+	background: url(/images/suggest-sprite5.png) no-repeat;
+	overflow: hidden;
+}
+
+.content .input-group .input-suggest i.place {
+	background-position: 0 0;
+}
+
+.content .input-group .input-suggest em {
+	padding-left: 10px;
+	font-style: normal;
+}
+
+.content dl.error dt {
+	color: #ff3c00;
+}
+
+.content dl.error dd input[type=text] {
+	border-color: #ff3c00;
+}
+
+.content dl.error dd label {
+	color: #ff3c00;
+}
+
+/* UserPass 帐号安全 */
+.userpass {
+	width: 560px;
+}
+
+.userpass dl {
+	clear: both;
+	width: 560px;
+	padding-bottom: 15px;
+}
+
+.userpass dt {
+	width: 75px;
+	float: left;
+	padding: 4px 10px 0 0;
+	text-align: right;
+	font-size: 14px;
+}
+
+.userpass dd {
+	width: 455px;
+	float: left;
+	line-height: 1.8em;
+	color: #666;
+}
+
+*+html .userpass dt {
+	width: 85px !important;
+}
+
+*+html .userpass dd {
+	width: 415px !important;
+}
+
+.userpass dd input {
+	border: 1px solid #d3d3d3;
+	height: 14px;
+	padding: 6px 8px;
+	line-height: 14px;
+	font-size: 12px;
+	color: #999;
+	outline: none;
+	transition: box-shadow 0.25s linear 0s;
+}
+
+.userpass dd input:focus {
+	border: 1px solid #ffa800;
+	transition: box-shadow 0.25s linear 0s;
+	box-shadow: 0 0 5px #ffa200;
+}
+
+.userpass a {
+	font-size: 14px;
+	color: #ffa800;
+}
+
+.userpass .set-tips {
+	margin-left: 10px;
+	font-size: 12px;
+}
+
+.userpass .set-tips strong {
+	color: #654939;
+	font-weight: normal;
+}
+
+.userpass #set-pw {
+	padding-top: 15px;
+	display: none;
+}
+
+.userpass .ways {
+	
+}
+
+.userpass .ways a {
+	display: inline-block;
+	text-align: center;
+	font-size: 14px;
+	color: #999;
+	padding-bottom: 30px;
+}
+
+.userpass .ways a:hover {
+	text-decoration: none;
+	color: #ffa800;
+}
+
+.userpass .ways a.disable {
+	cursor: default;
+}
+
+.userpass .ways a.disable:hover {
+	text-decoration: none;
+	color: #999;
+}
+
+.userpass .ways i {
+	width: 54px;
+	height: 54px;
+	display: inline-block;
+	background: url(syste_img/alterInfo_img/icon_pw.png) no-repeat;
+	margin: 20px 0 10px;
+}
+
+.userpass .ways a.byphone {
+	
+}
+
+.userpass .ways a.byphone i {
+	background-position: 0 0;
+}
+
+.userpass .ways a.byphone.disable i {
+	background-position: 0 -54px;
+}
+
+.userpass .ways a.bymail {
+	margin-left: 45px;
+}
+
+.userpass .ways a.bymail i {
+	background-position: -54px 0;
+}
+
+.userpass .ways a.bymail.disable i {
+	background-position: -54px -54px;
+}
+
+.userpass .item-list {
+	padding-bottom: 20px;
+	position: relative;
+}
+
+.userpass .item-info {
+	display: inline-block;
+	width: 88px;
+	text-align: left;
+	font-size: 14px;
+	vertical-align: top;
+	padding-top: 4px;
+	float: left;
+}
+
+.userpass dd i {
+	width: 18px;
+	height: 18px;
+	display: inline-block;
+	background: url(syste_img/alterInfo_img/icon.png) -72px -1px no-repeat;
+	margin: 0 4px 0 15px;
+	vertical-align: middle;
+}
+
+.userpass dd .status {
+	font-size: 12px;
+	color: #999;
+}
+
+.userpass dd .security {
+	position: absolute;
+	left: 325px;
+	top: 0;
+	font-size: 12px;
+	color: #666;
+	line-height: 1em;
+}
+
+.userpass dd .security .level {
+	padding: 5px 0 0;
+}
+
+.userpass dd .security .level b {
+	width: 30px;
+	height: 10px;
+	margin-right: 5px;
+	background-color: #d6ebad;
+	display: inline-block;
+}
+
+.userpass dd .security .level b.on {
+	background-color: #add75c;
+}
+
+.userpass .btn-sub {
+	padding: 20px 0 0 80px;
+}
+
+.userpass .btn-sub button {
+	width: 112px;
+	height: 36px;
+	display: block;
+	line-height: 36px;
+	background-color: #ffa800;
+	text-align: center;
+	font-size: 16px;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.userpass .btn-sub button:hover {
+	background-color: #ff8a00;
+}
+
+/* setMail 设置邮箱 */
+.setmail {
+	width: 670px;
+	padding: 0 0 0 50px;
+}
+
+.setmail dt {
+	width: 85px;
+}
+
+.setmail .navtag {
+	
+}
+
+.setmail .navtag a {
+	display: inline-block;
+	height: 60px;
+	border-bottom: 2px solid #e0e0e0;
+	text-align: center;
+	font-size: 18px;
+	color: #999;
+}
+
+.setmail .navtag a.on {
+	color: #ffa800;
+	border-bottom: 2px solid #ffc65a;
+}
+
+.setmail .navtag a.step1 {
+	width: 230px;
+}
+
+.setmail .navtag a.step2 {
+	width: 216px;
+}
+
+.setmail .navtag a.step3 {
+	width: 221px;
+}
+
+.setmail .navtag i {
+	width: 40px;
+	height: 41px;
+	display: inline-block;
+	vertical-align: middle;
+	background: url(syste_img/alterInfo_img/i_email.png) no-repeat;
+	margin-right: 8px;
+}
+
+.setmail a.step1 i {
+	background-position: 0 0;
+}
+
+.setmail a.step2 i {
+	background-position: -40px 0;
+}
+
+.setmail a.step3 i {
+	background-position: -80px 0;
+}
+
+.setmail a.on i {
+	background-position: -120px 0;
+}
+
+.setmail .set-mail {
+	padding-top: 50px;
+}
+
+.setmail .tips {
+	padding: 0 0 25px 95px;
+	font-size: 12px;
+	color: #999;
+}
+
+.setmail .btns {
+	padding: 10px 0 0 95px;
+}
+
+.setmail .btn-sub {
+	width: 176px;
+	height: 36px;
+	line-height: 36px;
+	background-color: #ffa800;
+	text-align: center;
+	font-size: 16px;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	display: inline-block;
+}
+
+.setmail .btn-sub:hover {
+	background-color: #ff8a00;
+	text-decoration: none;
+}
+
+.setmail .btn-exit {
+	width: 110px;
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+	font-size: 16px;
+	background-color: #eee;
+	color: #999;
+	margin-left: 10px;
+	border: none;
+	border-radius: 5px;
+	display: inline-block;
+}
+
+.setmail .btn-exit:hover {
+	background-color: #ffa800;
+	color: #fff;
+	text-decoration: none;
+}
+
+.setmail .t1 {
+	font-size: 14px;
+	line-height: 2em;
+}
+
+.setmail .t1 strong {
+	font-size: 18px;
+	font-weight: normal;
+}
+
+.setmail .go-email {
+	padding: 20px 0 0;
+}
+
+.setmail .go-email a {
+	width: 176px;
+	height: 36px;
+	line-height: 36px;
+	background-color: #ffa800;
+	text-align: center;
+	font-size: 16px;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	display: inline-block;
+}
+
+.setmail .t3 {
+	padding: 20px 0 0;
+}
+
+.setmail .t4 {
+	padding: 10px 0 0;
+	font-size: 12px;
+	color: #999;
+	line-height: 2em;
+}
+
+.setmail .t-tit {
+	font-size: 18px;
+	padding-bottom: 25px;
+}
+
+.setmail .t-tit i {
+	width: 18px;
+	height: 20px;
+	display: inline-block;
+	background: url(/images/isettings/i_btns4.png) -72px -1px no-repeat;
+	margin: 0 6px 0 0;
+	vertical-align: middle;
+}
+
+.setmail .set-mobile {
+	
+}
+
+.setmail .set-mobile .btn-code {
+	width: 148px;
+	height: 36px;
+	line-height: 36px;
+	background-color: #ffa800;
+	text-align: center;
+	font-size: 16px;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	display: inline-block;
+	margin-left: 10px;
+}
+
+/*修改绑定手机 */
+.set-mobile-v2 {
+	padding-left: 0;
+}
+
+.set-mobile-v2 .navtag {
+	margin-bottom: 46px;
+}
+
+.set-mobile-v2 .navtag a {
+	cursor: default;
+}
+
+.set-mobile-v2 .navtag a:hover {
+	text-decoration: none;
+}
+
+.set-mobile-v2 .tips {
+	font-size: 14px;
+	color: #444;
+	padding-left: 0px;
+}
+
+.set-mobile-v2 dl {
+	height: 36px;
+	line-height: 36px;
+	padding-bottom: 12px;
+}
+
+.set-mobile-v2 dt {
+	padding-top: 0px;
+}
+
+.set-mobile-v2 dd input, .set-mobile-v2 select {
+	display: block;
+	float: left;
+	margin-top: 4px;
+}
+
+.set-mobile-v2 .set-mobile {
+	margin-bottom: 60px;
+}
+
+.set-mobile-v2 .set-mobile .btn-code {
+	
+}
+
+.set-mobile-v2 .set-mobile .btn-code-dis {
+	background-color: #e5e5e5;
+	color: #666;
+	cursor: default;
+}
+
+.set-mobile-v2 .set-mobile .btn-code-dis:hover {
+	text-decoration: none;
+}
+
+.set-mobile-v2 .btn-sub {
+	width: 110px;
+}
+
+.set-mobile-v2 .sel-way {
+	width: 226px;
+	height: 28px;
+	margin-top: 4px;
+	position: relative;
+	float: left;
+}
+
+.set-mobile-v2 .sel-way input {
+	margin-top: 0px;
+	float: none;
+}
+
+.set-mobile-v2 .sel-way i {
+	display: block;
+	width: 0;
+	height: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 6px solid #ccc;
+	position: absolute;
+	right: 8px;
+	top: 11px;
+}
+
+.set-mobile-v2 .sel-way em {
+	display: block;
+	width: 1px;
+	height: 18px;
+	background-color: #ccc;
+	position: absolute;
+	right: 24px;
+	top: 5px;
+}
+
+.set-mobile-v2 .option {
+	width: 224px;
+	height: 52px;
+	border: 1px solid #d3d3d3;
+	position: absolute;
+	left: 0;
+	top: 28px;
+	background-color: #fff;
+}
+
+.set-mobile-v2 .option a {
+	display: block;
+	width: 100%;
+	height: 26px;
+	font-size: 12px;
+	line-height: 26px;
+	color: #999;
+	text-indent: 8px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.set-mobile-v2 .option a:hover {
+	background-color: #eee;
+	text-decoration: none;
+}
