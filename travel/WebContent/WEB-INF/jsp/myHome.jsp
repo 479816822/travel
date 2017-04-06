@@ -171,10 +171,10 @@ $(function() {
 	//2.ajax进行顶的数据同步更新
 	$(".praise_1").click(function() {
 		var travel = {
-			"traId" : $(this).parent().children().html(),
-			"traPraise" : $(this).parent().children().next().html()
+			"mdRecid" : $(this).parent().children().html(),
+			"mdStdname" : $(this).parent().children().next().html()
 		}
-		url = "updataPraise"
+		url = "updatePraise"
 		ajax1($(this).parent().children().next(), travel);
 	});
 
@@ -236,25 +236,25 @@ $(function() {
 					function() {
 						//获得留言的内容
 						var leave = {
-							"homeId" : $("#user_id").html(),
-							"leaveMsg" : $(this).prev().val()
+							mdHostUserRecid : $("#user_id").html(),
+							mdLvMessage : $(this).prev().val(),
+							mdLvRefId : ""//父节点
 						};
-
+						
 						$
 								.ajax({
 									type : "POST",
-									url : "leave_word",
-									data : JSON.stringify(leave),
-									contentType : 'application/json; charset=utf-8',
+									url : "leaveWord",
+									data : leave,
 									dataType : 'json',
 									success : function(msg) {
 										//更新数据
-										var str = "<li><div class='word_one'><div class='word_one_one'><img  src='"+msg.result.leave.userHead+" 'class='word_one_one'></div><div class='word_one_two'><div class='word_one_two_one'>"
-												+ msg.result.leave.userNick
+										var str = "<li><div class='word_one'><div class='word_one_one'><img  src='"+msg.message.lvUser.userHeadImg+" 'class='word_one_one'></div><div class='word_one_two'><div class='word_one_two_one'>"
+												+ msg.message.lvUser.mdUserName
 												+ "</div><div class='word_one_two_two'>"
-												+ msg.result.time
+												+ msg.message.mdLvTime
 												+ "</div></div></div><div class='word_two'>"
-												+ msg.result.leaveMsg
+												+ msg.message.mdLvMessage
 												+ "</div></li>";
 										var $node = $(str);
 										$("._j_msgboard_list")
@@ -263,7 +263,6 @@ $(function() {
 									},
 									error : function(msg) {
 										//提示输需要入的信息
-
 									}
 								});
 
@@ -289,15 +288,21 @@ $(function() {
 
 		//ajax公用的方法
 		function ajax1(p, travel) {
+			var num=p.html();
+			if(num==null)
+				num="0";
+			var n=parseInt(num);
 			$.ajax({
 				type : "POST",
 				url : url,
-				data : JSON.stringify(travel),
-				contentType : 'application/json; charset=utf-8',
+				data : travel,
 				dataType : 'json',
 				success : function(msg) {
 					//更新数据
-					p.html(msg.praiseNum.traPraise);
+					if(url=="updatePraise"&&msg>0){
+						n=n+1;
+					$(".the_number").html(n);
+					}
 				},
 				error : function(msg) {
 					//提示输需要入的信息
@@ -1099,17 +1104,20 @@ $(function() {
 				<!-- -**********用户的游记的************** -->
 				<!-- -**********用户的游记的************** -->
 				<!-- -**********用户的游记的************** -->
-				<c:forEach items="${trackList}" var="trackInfo">
 
 
+<c:set var="num" value="0" />
 					<div class="common_block my_notes">
+						<c:forEach items="${trackList}" var="trackInfo">
+						<c:set var="num" value="${num+1 }" />
+						<c:if test="${num<=8}">
 						<div class="notes_list">
 							<ul>
 								<li data-order="1" data-top="0">
 									<dl>
 										<dt>
 											<!-- 封面的图片对应的是游记的标题图片 -->
-											<a href="" target="_blank" id="_j_coverlink_5663645"><img
+											<a href="showTravel?traId=${trackInfo.mdRecid }&userId=${trackInfo.user.mdUserRecid }" target="_blank" id="_j_coverlink_5663645"><img
 												src="${trackInfo.mdThemeImg}" height="400"
 												width="680" alt="封面"></a>
 											<div class="hover_item">
@@ -1135,14 +1143,14 @@ $(function() {
 											<div class="note_title clearfix">
 												<div class="MDing">
 													<span style="display: none;" class="praise_one">${trackInfo.mdRecid}</span>
-													<span id="topvote5663645">${trackInfo.mdStdname}</span> <a
+													<span id="topvote5663645" class="the_number">${trackInfo.mdStdname}</span> <a
 														class="praise_1" data-vote="0" title="顶一下">顶</a>
 													<!-- 顶一下更新数据库的内容 -->
 													<!--用户的游记-->
 												</div>
 												<div class="note_info">
 													<h3>
-														<a href="" target="_blank" title="${trackInfo.mdTheme}">${trackInfo.mdTheme}</a>
+														<a href="showTravel?traId=${trackInfo.mdRecid }&userId=${trackInfo.user.mdUserRecid }" target="_blank" title="${trackInfo.mdTheme}">${trackInfo.mdTheme}</a>
 													</h3>
 													<div class="note_more">
 
@@ -1153,24 +1161,35 @@ $(function() {
 													</div>
 												</div>
 											</div>
-											<div class="note_word"></div>
 										</dd>
+										<dd style="height:62px;;overflow:hidden;text-overflow:ellipsis;font-size: 16px ">
+												<c:set var="flag" value="true" />
+													<c:forEach items="${trackInfo.listTravlePagragraph}" var="i"
+														varStatus="loopstatus">
+														<c:if test="${ flag && (i.mdContent != null) }">
+															<c:set var="data" value="${i.mdContent }" />
+														</c:if>
+														<c:if test="${i.mdContent != null}">
+															<c:set var="flag" value="false" />
+														</c:if>
+													</c:forEach>
+														<span> ${data }.... </span>
+												</dd>
 									</dl>
 								</li>
-
-
 							</ul>
 						</div>
-
-
+						</c:if>
+						
+	</c:forEach>
 						<div class="more_notes">
-							<a class="btn_deleted" href=""><i></i>已删除游记</a> <a href="">共<strong>${trackList.size()}</strong>篇随笔
+							 <a href="">共<strong>${trackList.size()}</strong>篇随笔
 							</a>
 						</div>
 
 					</div>
 
-				</c:forEach>
+			
 
 				<!-- ---------***********************************用户问答************************* -->
 				<c:if test="${anserList != null }">

@@ -54,7 +54,17 @@ public class FileControler {
 			Calendar date=Calendar.getInstance();
 			// 循环进行数据处理
 			for (int i = 0; i < files.length; i++) {
-				String fileName=date.getTimeInMillis()+ files[i].getOriginalFilename();
+				//找到音乐文件
+				String fileName=null;
+				boolean t=false;
+				if(files[i].getOriginalFilename().endsWith(".flac")){
+					fileName=date.getTimeInMillis()+".flac";
+					t=true;
+				}else{
+					fileName=date.getTimeInMillis()+ files[i].getOriginalFilename();
+				}
+				
+				
 				File targetFile = new File(savePath, fileName);
 				if (!targetFile.exists()) {
 					targetFile.mkdirs();
@@ -63,6 +73,9 @@ public class FileControler {
 					files[i].transferTo(targetFile);
 				} catch (Exception e) {
 					log.logger.debug("文件上传失败",e);
+				}
+				if(t){
+					fileName=fileName+";"+files[i].getOriginalFilename();
 				}
 				filePaths[i] = "upload/" + fileName;
 			}

@@ -16,6 +16,7 @@ public class MDTravelNote {
 
 	private BigDecimal mdStdcode;
 
+
 	private Date mdAlertDate;
 
 	private String mdAlertUser;
@@ -39,7 +40,7 @@ public class MDTravelNote {
 
 	private Short mdDayNumber;
 
-	private String mdTravelPeople;
+	private String mdTravelPeople;//人物
 
 	private Long mdCostMoney;
 

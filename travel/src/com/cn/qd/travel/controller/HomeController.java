@@ -1,5 +1,6 @@
 package com.cn.qd.travel.controller;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,6 +18,7 @@ import com.cn.qd.travel.entity.MdUserLeaveMessage;
 import com.cn.qd.travel.service.CommentLeavelService;
 import com.cn.qd.travel.service.TravelService;
 import com.cn.qd.travel.service.UserService;
+import com.cn.qd.travel.util.GUID;
 
 /**
  * 用户主页
@@ -69,13 +71,18 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "leaveWord", method = { RequestMethod.POST })
 	@ResponseBody
-	public  Map<String, String> leaveWord(Model model, HttpSession session,MdUserLeaveMessage message) {
-		Map<String, String> result = new HashMap<String, String>();
+	public  Map<String, MdUserLeaveMessage> leaveWord(Model model, HttpSession session,MdUserLeaveMessage message) {
+		Map<String, MdUserLeaveMessage> result = new HashMap<String, MdUserLeaveMessage>();
+		MdUser user=(MdUser)session.getAttribute("user");
+		message.setMdLvRecid(GUID.createGuid());
+		message.setMdLvTime(new Date());
+		message.setMdLvUserRecid(user.getMdUserRecid());
+		message.setLvUser(user);
 		int ret =commentService.insert(message,null );	
 		if (ret > 0) {
-			result.put("success", "success");
+			result.put("message", message);
 		} else {
-			result.put("success", "error");
+			result.put("result", null);
 		}
 		return result;
 	}

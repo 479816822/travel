@@ -1,8 +1,11 @@
 package com.cn.qd.travel.controller;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -19,17 +22,21 @@ import com.cn.qd.travel.entity.MDTravelNote;
 import com.cn.qd.travel.entity.MDTravelParagraph;
 import com.cn.qd.travel.entity.MdUser;
 import com.cn.qd.travel.service.TravelService;
+import com.cn.qd.travel.util.ChangeIcon;
 import com.cn.qd.travel.util.GUID;
+import com.cn.qd.travel.util.Log;
 
 @Controller
 public class TravelController {
+	private Log log = Log.getLogger();
 
 	@Autowired
 	TravelService travelService;
 
 	// 游记写入成功插入数据库
 	@RequestMapping(value = "writeTravel", method = { RequestMethod.POST })
-	public Object saveTravel(@RequestBody String[] objArray, HttpSession session) {
+	@ResponseBody
+	public Map<String, String> saveTravel(@RequestBody String[] objArray, HttpSession session) {
 		MdUser user = (MdUser) session.getAttribute("loginUser");
 		String travelId = GUID.createGuid();
 		// 进行数据封装
@@ -64,9 +71,15 @@ public class TravelController {
 		travelInfo.setListTravlePagragraph(travelList);
 		travelInfo.setMdRecid(travelId);
 		travelInfo.setUser(user);
+		travelInfo.setMdCreateTime(new Date());
+		travelInfo.setMdCreateUserId(user.getMdUserRecid());
+		travelInfo.setMdStdname("0");
+		travelInfo.setMdLevel(Short.valueOf("1"));
 		boolean trueOrFfalse = travelService.insertTravel(travelInfo, null);
+		Map<String, String> result = new HashMap<String, String>();
 		if (trueOrFfalse) {
-			return trueOrFfalse;
+			result.put("id", travelInfo.getMdRecid());
+			return result;
 		} else {
 			return null;
 		}
@@ -89,14 +102,23 @@ public class TravelController {
 	 * @return
 	 */
 	@RequestMapping(value = "showTravel")
-	public String showTravel(Model model, HttpSession session) {
+	public String showTravel(Model model, HttpSession session, String traId, String userId,
+			HttpServletRequest request) {
 		ArrayList<Object> travels = new ArrayList<Object>();
-		travels.addAll(travelService.oneResultProvider("CEE149094883048298964LCQP", null));
+		travels.addAll(travelService.oneResultProvider(traId, null));
 		MDTravelNote travelInfo = null;
 		if (travels.size() >= 1) {
 			travelInfo = (MDTravelNote) travels.get(0);
 		}
-		model.addAttribute("travelInfo", travelInfo);
+
+		String savePath = request.getSession().getServletContext().getRealPath("upload");
+		String userHeadImg = ChangeIcon.changeImg(travelInfo.getUser().getMdIcon(), savePath);
+		travelInfo.getUser().setUserHeadImg(userHeadImg);
+		
+		SimpleDateFormat sim=new SimpleDateFormat("YYYY-MM-DD");
+		String date=sim.format(travelInfo.getMdStartTime());
+		travelInfo.setMdStartTime(new Date(date));
+		model.addAttribute("travelInfos", travelInfo);
 		return "show_travels";
 	}
 
@@ -131,15 +153,14 @@ public class TravelController {
 	 * @param session
 	 * @return
 	 */
-	@RequestMapping(value = "updatePraise",method = { RequestMethod.POST })
+	@RequestMapping(value = "updatePraise", method = { RequestMethod.POST })
 	@ResponseBody
 	public int updateTravelPraise(Model model, HttpSession session, MDTravelNote travel) {
 		StringBuffer sql = new StringBuffer();
-		if(travel.getMdStdname()!=null&&!"".equals(travel.getMdStdname())){
+		if (travel.getMdStdname() != null && !"".equals(travel.getMdStdname())) {
 			travel.setMdStdname(String.valueOf((Integer.valueOf(travel.getMdStdname()) + 1)));
 			sql.append("set MD_STDNAME =").append(Integer.valueOf(travel.getMdStdname()) + 1);
-		}
-		else{
+		} else {
 			travel.setMdStdname(String.valueOf(1));
 			sql.append("MD_STDNAME =").append(1);
 		}
@@ -147,6 +168,36 @@ public class TravelController {
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		map.put("sql", sql.toString());
 		return travelService.update(travel, null);
+	}
+
+	/**
+	 * 更新游记的基本信息
+	 * 
+	 * @param model
+	 * @param session
+	 * @param travel
+	 * @return
+	 */
+	@RequestMapping(value = "updateTravelNews", method = { RequestMethod.POST })
+	@ResponseBody
+	public int updateTravelNew(Model model, @RequestBody String[] objArray) {
+		MDTravelNote travels = new MDTravelNote();
+		travels.setMdRecid(objArray[0]);
+		travels.setMdTravelPeople(objArray[1]);
+		travels.setMdCostMoney(Long.valueOf(objArray[2]));
+		travels.setMdDayNumber(Short.valueOf(objArray[3]));
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		Date date = null;
+		try {
+			date = format.parse(objArray[4]);
+		} catch (Exception e) {
+			log.logger.error("日期转换出错");
+		}
+		travels.setMdStartTime(date);
+		if (travelService.updateTravel(travels, null)) {
+			return 1;
+		}
+		return 0;
 	}
 
 }

@@ -109,7 +109,7 @@
    d.MD_STDCODE as p_MD_STDCODE,
    d.MD_TAVEL_ID as p_MD_TAVEL_ID 
    from MD_TRAVE_NOTE t,MD_TRAVEL_PARAGRAPH d,MD_USER u
-    where t.MD_RECID = #{id,jdbcType=VARCHAR} and t.MD_CREATE_USER_ID=u.MD_USER_RECID
+    where t.MD_RECID = #{id,jdbcType=VARCHAR} and t.MD_CREATE_USER_ID=u.MD_USER_RECID and d.MD_TAVEL_ID=t.MD_RECID
   </select>
   
   
@@ -146,10 +146,9 @@
    d.MD_CONTENT as p_MD_CONTENT,
    d.MD_STDCODE as p_MD_STDCODE,
    d.MD_TAVEL_ID as p_MD_TAVEL_ID 
-   from MD_TRAVE_NOTE t left outer join MD_TRAVEL_PARAGRAPH d 
-   on t.MD_CREATE_USER_ID = #{id,jdbcType=VARCHAR} and d.MD_TAVEL_ID=t.MD_RECID
-   left outer join MD_USER u
-   on t.MD_CREATE_USER_ID=u.MD_USER_RECID
+   from MD_TRAVE_NOTE t , MD_TRAVEL_PARAGRAPH d ,MD_USER u
+   where t.MD_CREATE_USER_ID = #{id,jdbcType=VARCHAR} and d.MD_TAVEL_ID=t.MD_RECID
+  and  t.MD_CREATE_USER_ID=u.MD_USER_RECID
   </select>
   
   
@@ -334,6 +333,8 @@
       </if>
     </trim>
   </insert>
+  
+    <!--更新游记基本信息-->
   <update id="updateByPrimaryKeySelective" parameterType="com.cn.qd.travel.entity.MDTravelNote">
     update MD_TRAVE_NOTE
     <set>
@@ -391,6 +392,8 @@
     </set>
     where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
   </update>
+  
+
   <update id="updateByPrimaryKey" parameterType="com.cn.qd.travel.entity.MDTravelNote">
     update MD_TRAVE_NOTE
     set MD_STDNAME = #{mdStdname,jdbcType=VARCHAR},

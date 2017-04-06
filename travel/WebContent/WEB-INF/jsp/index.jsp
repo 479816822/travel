@@ -449,7 +449,6 @@
 
 	//ajax公用的方法
 	function ajax1(p, travel,add) {
-		alert(add)
 		var num=p.html();
 		if(num==null)
 			num="0";
