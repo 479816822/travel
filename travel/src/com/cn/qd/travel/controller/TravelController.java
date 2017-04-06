@@ -18,9 +18,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.cn.qd.travel.entity.MDCommentOne;
 import com.cn.qd.travel.entity.MDTravelNote;
 import com.cn.qd.travel.entity.MDTravelParagraph;
 import com.cn.qd.travel.entity.MdUser;
+import com.cn.qd.travel.service.CommentLeavelService;
 import com.cn.qd.travel.service.TravelService;
 import com.cn.qd.travel.util.ChangeIcon;
 import com.cn.qd.travel.util.GUID;
@@ -32,6 +34,8 @@ public class TravelController {
 
 	@Autowired
 	TravelService travelService;
+	@Autowired
+	CommentLeavelService commentTravel;
 
 	// 游记写入成功插入数据库
 	@RequestMapping(value = "writeTravel", method = { RequestMethod.POST })
@@ -115,9 +119,16 @@ public class TravelController {
 		String userHeadImg = ChangeIcon.changeImg(travelInfo.getUser().getMdIcon(), savePath);
 		travelInfo.getUser().setUserHeadImg(userHeadImg);
 		
-		SimpleDateFormat sim=new SimpleDateFormat("YYYY-MM-DD");
+		SimpleDateFormat sim=new SimpleDateFormat("YYYY-MM-dd");
 		String date=sim.format(travelInfo.getMdStartTime());
-		travelInfo.setMdStartTime(new Date(date));
+		travelInfo.setCreateDate(date);
+		String strdate=sim.format(travelInfo.getMdStartTime());
+		travelInfo.setStartDate(strdate);
+		
+		//查询游记评论
+		ArrayList<MDCommentOne> commentList=commentTravel.selectTravelComment(traId,request);
+		
+		model.addAttribute("replyList", commentList);
 		model.addAttribute("travelInfos", travelInfo);
 		return "show_travels";
 	}

@@ -2,13 +2,22 @@ package com.cn.qd.travel.entity;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
+
+/**
+ * 游记回复评论
+ * @author langren
+ *
+ */
 public class MDCommentOne {
-	private String mdRecid;
+	private String mdRecid;//主键
+	
+	private List<MDCommentOne> commentChildren;
 
 	private String mdStdname;
 
-	private String mdRefId;
+	private String mdRefId;//被评论的评论id，第一级为null
 
 	private BigDecimal mdStdcode;
 
@@ -20,22 +29,63 @@ public class MDCommentOne {
 
 	private Short mdLevel;
 
-	private Date mdCommentTime;
+	private Date mdCommentTime;//评论时间
+	
+	private String commentDate;
 
-	private String mdCommentContent;
-
-
-	private MdUser user;
-
-	private MDTravelNote travel;
-
-	private String mdImg;
-
-	private String mdVideo;
-
-	private Long mdPraise;
+	private String mdCommentContent;//评论内容
 
 
+	private String mdCommentPeople;//评论人
+	
+	
+	private MdUser user;//评论人
+
+	private MDTravelNote travel;//被评论的游记
+	
+	private String mdTravelId;
+
+	private String mdImg;//评论的图片
+
+	private String mdVideo;//视频
+
+	private Long mdPraise;//获赞数
+
+
+
+
+
+	public List<MDCommentOne> getCommentChildren() {
+		return commentChildren;
+	}
+
+	public void setCommentChildren(List<MDCommentOne> commentChildren) {
+		this.commentChildren = commentChildren;
+	}
+
+	public String getCommentDate() {
+		return commentDate;
+	}
+
+	public void setCommentDate(String commentDate) {
+		this.commentDate = commentDate;
+	}
+
+	public String getMdTravelId() {
+		return mdTravelId;
+	}
+
+	public void setMdTravelId(String mdTravelId) {
+		this.mdTravelId = mdTravelId;
+	}
+
+	public String getMdCommentPeople() {
+		return mdCommentPeople;
+	}
+
+	public void setMdCommentPeople(String mdCommentPeople) {
+		this.mdCommentPeople = mdCommentPeople;
+	}
 
 	public String getMdRecid() {
 		return mdRecid;

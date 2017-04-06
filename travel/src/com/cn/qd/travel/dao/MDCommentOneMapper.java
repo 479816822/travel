@@ -1,5 +1,7 @@
 package com.cn.qd.travel.dao;
 
+import java.util.ArrayList;
+
 import com.cn.qd.travel.entity.MDCommentOne;
 
 public interface MDCommentOneMapper {
@@ -9,7 +11,19 @@ public interface MDCommentOneMapper {
 
     int insertSelective(MDCommentOne record);
 
-    MDCommentOne selectByPrimaryKey(String mdRecid);
+    /**
+     * 通过id查询评论
+     * @param id
+     * @return
+     */
+    ArrayList<MDCommentOne> selectByPrimaryKey(String id);
+    
+    /**
+     * 通过id查询评论
+     * @param id
+     * @return
+     */
+    ArrayList<MDCommentOne> selectListBy(String id);
 
     int updateByPrimaryKeySelective(MDCommentOne record);
 

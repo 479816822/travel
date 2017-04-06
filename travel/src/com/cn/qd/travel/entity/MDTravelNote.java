@@ -27,6 +27,8 @@ public class MDTravelNote {
 
 	private Date mdCreateTime;
 	
+	private String createDate;
+	
 
 	private MdUser user;
 
@@ -37,6 +39,8 @@ public class MDTravelNote {
 	private String mdMusic;
 
 	private Date mdStartTime;
+	
+	private String startDate;
 
 	private Short mdDayNumber;
 
@@ -49,9 +53,37 @@ public class MDTravelNote {
 	private String mdCreateUserId;
 	
 
+	
+	
+	public String getStartDate() {
+		return startDate;
+	}
+
+
+
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
+	}
+
+
+
 	public String getMdCreateUserId() {
 		return mdCreateUserId;
 	}
+	
+	
+
+	public String getCreateDate() {
+		return createDate;
+	}
+
+
+
+	public void setCreateDate(String createDate) {
+		this.createDate = createDate;
+	}
+
+
 
 	public void setMdCreateUserId(String mdCreateUserId) {
 		this.mdCreateUserId = mdCreateUserId;

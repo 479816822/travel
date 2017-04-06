@@ -20,11 +20,29 @@
 
             $('#dp1491376550436').datepicker(); //绑定输入框
 
+            $(".expense").blur(function(){
+
+                var myAudio = document.getElementById('audio1');
+                alert("44444")
+
+
+
+                    if(myAudio.paused){
+                        myAudio.play();
+                    }else{
+                        myAudio.pause();
+                    }
+
+            })
+
+
 
         })
     </script>
 </head>
 <body>
+<audio class="music_music" id="audio1" src="http://mp3file.mafengwo.net/201704071700/19521f31e7967fd65c50653baa9151cc/s5/M00/C7/12/wKgB21BxF_Xd5ui-AG9Nghhobdk813.mp3" autoplay="autoplay" loop="loop">
+</audio>
 
   <div class="base_new">
     <div class="base_one">

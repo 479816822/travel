@@ -1,22 +1,29 @@
 package com.cn.qd.travel.service.impl;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.cn.qd.travel.dao.MDCommentOneMapper;
 import com.cn.qd.travel.dao.MdUserLeaveMessageMapper;
+import com.cn.qd.travel.entity.MDCommentOne;
+import com.cn.qd.travel.entity.MdUser;
 import com.cn.qd.travel.entity.MdUserLeaveMessage;
 import com.cn.qd.travel.service.CommentLeavelService;
-import com.cn.qd.travel.util.GUID;
+import com.cn.qd.travel.util.ChangeIcon;
 
 @Service
 public class CommentLeavelServiceImpl implements CommentLeavelService {
 
 	@Autowired
 	MdUserLeaveMessageMapper leaveMessage;
+	@Autowired
+	MDCommentOneMapper commentTravel;
 
 	/**
 	 * 插入留言数据
@@ -59,5 +66,55 @@ public class CommentLeavelServiceImpl implements CommentLeavelService {
 		MdUserLeaveMessage lv = (MdUserLeaveMessage) t;
 		return leaveMessage.selectListById(lv.getMdHostUserRecid());
 	}
+
+	
+	/**
+	 * 游记评论插入
+	 * @param comment
+	 * @return
+	 */
+	@Override
+	public int insertTravelComment(MDCommentOne comment) {
+		return commentTravel.insertSelective(comment);
+	}
+
+	
+	/**
+	 * 查询游记的所有的评论
+	 */
+	@Override
+	public ArrayList<MDCommentOne> selectTravelComment(String id,HttpServletRequest request) {
+		ArrayList<MDCommentOne> commList=commentTravel.selectByPrimaryKey(id);
+		return choose(commList,request);
+	}
+	
+	/**
+	 * 递归处理游记的评论
+	 * @param commentList
+	 * @return
+	 */
+	private ArrayList<MDCommentOne> choose(ArrayList<MDCommentOne> commentList,HttpServletRequest request){
+		
+		if(commentList.size()==0){
+			return commentList;
+		}else{
+			for (int i = 0; i < commentList.size(); i++) {
+				ArrayList<MDCommentOne> commList=commentTravel.selectListBy(commentList.get(i).getMdRecid());
+				commentList.get(i).setCommentChildren(choose(commList,request));
+				SimpleDateFormat sim=new SimpleDateFormat("YYYY-MM-dd");
+				String date=sim.format(commentList.get(i).getMdCommentTime());
+				commentList.get(i).setCommentDate(date);
+				String savePath = request.getSession().getServletContext().getRealPath("upload");
+				String userHeadImg = ChangeIcon.changeImg(commentList.get(i).getUser().getMdIcon(), savePath);
+				commentList.get(i).getUser().setUserHeadImg(userHeadImg);
+			}
+		}
+		
+		
+		return commentList;
+	}
+	
+	
+	
 
 }

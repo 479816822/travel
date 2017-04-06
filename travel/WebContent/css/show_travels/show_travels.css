@@ -15,6 +15,10 @@
     line-height: 33px;
 }
 
+.div_imgs{
+	background-image: url('syste_img/nn_sprite_v23.png');
+}
+
 * {
     padding: 0px;
     margin: 0px;
@@ -179,13 +183,13 @@ body {
 }
 
 .main_header_rigths {
-    height: 96px;
+    height: 90px;
     width: 35%;
     float: right;
 }
 
 .main_header_rigth_one1 {
-    height: 80px;
+    height: 60px;
     width: 34%;
     float: left;
 
@@ -201,13 +205,13 @@ body {
 }
 
 .main_header_rigth_one {
-    height: 80px;
+    height: 60px;
     width: 32%;
     float: right;
 }
 
 .main_header_rigth_two {
-    height: 80px;
+    height: 60px;
     width: 30%;
     float: right;
 }

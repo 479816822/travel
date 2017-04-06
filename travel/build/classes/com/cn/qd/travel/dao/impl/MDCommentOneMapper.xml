@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cn.qd.travel.dao.MDCommentOneMapper">
+
+
+
+
+ <resultMap id="UserResultMap" type="com.cn.qd.travel.entity.MdUser">
+    <id column="MD_USER_RECID" jdbcType="VARCHAR" property="mdUserRecid" />
+    <result column="MD_STDNAME" jdbcType="VARCHAR" property="mdStdname" />
+    <result column="MD_REF_ID" jdbcType="VARCHAR" property="mdRefId" />
+    <result column="MD_STDCODE" jdbcType="DECIMAL" property="mdStdcode" />
+    <result column="MD_ALERT_DATE" jdbcType="DATE" property="mdAlertDate" />
+    <result column="MD_ALERT_USER" jdbcType="VARCHAR" property="mdAlertUser" />
+    <result column="MD_USER_NAME" jdbcType="VARCHAR" property="mdUserName" />
+    <result column="MD_TELEPHONE" jdbcType="VARCHAR" property="mdTelephone" />
+    <result column="MD_SEX" jdbcType="VARCHAR" property="mdSex" />
+    <result column="MD_AGE" jdbcType="DECIMAL" property="mdAge" />
+    <result column="MD_CREATE_TIME" jdbcType="DATE" property="mdCreateTime" />
+    <result column="MD_PASSWORD" jdbcType="VARCHAR" property="mdPassword" />
+    <result column="MD_EMAIL" jdbcType="VARCHAR" property="mdEmail" />
+    <result column="MD_SCHOOL" jdbcType="VARCHAR" property="mdSchool" />
+    <result column="MD_IS_VIP" jdbcType="VARCHAR" property="mdIsVip" />
+    <result column="MD_LEVEL" jdbcType="VARCHAR" property="mdLevel" />
+    <result column="MD_SIGNATURE" jdbcType="VARCHAR" property="mdSignature" />
+    <result column="MD_SCORE" jdbcType="DECIMAL" property="mdScore" />
+    <result column="MD_GRADUATION_DATE" jdbcType="DATE" property="mdGraduationDate" />
+    <result column="MD_EMS_CODE" jdbcType="DECIMAL" property="mdEmsCode" />
+    <result column="MD_PRAISE" jdbcType="DECIMAL" property="mdPraise" />
+  </resultMap>
+  <resultMap extends="UserResultMap" id="UserResultMapWithBLOBs" type="com.cn.qd.travel.entity.MdUser">
+    <result column="MD_ICON" jdbcType="BLOB" property="mdIcon" />
+  </resultMap>
+
+
+
+
+
+
+
   <resultMap id="BaseResultMap" type="com.cn.qd.travel.entity.MDCommentOne">
     <id column="MD_RECID" jdbcType="VARCHAR" property="mdRecid" />
     <result column="MD_STDNAME" jdbcType="VARCHAR" property="mdStdname" />
@@ -17,18 +54,73 @@
     <result column="MD_VIDEO" jdbcType="VARCHAR" property="mdVideo" />
     <result column="MD_PRAISE" jdbcType="DECIMAL" property="mdPraise" />
     <result column="MD_TRAVEL_ID" jdbcType="VARCHAR" property="mdTravelId" />
+    <association property="user" column="MD_COMMENT_PEOPLE" resultMap="UserResultMapWithBLOBs" columnPrefix="user_"/>
   </resultMap>
   <sql id="Base_Column_List">
     MD_RECID, MD_STDNAME, MD_REF_ID, MD_STDCODE, MD_CREATE_TIME, MD_ALERT_DATE, MD_ALERT_USER, 
     MD_LEVEL, MD_COMMENT_TIME, MD_COMMENT_CONTENT, MD_COMMENT_PEOPLE, MD_IMG, MD_VIDEO, 
     MD_PRAISE, MD_TRAVEL_ID
   </sql>
+  
+  <!--通过游记的id查询相关的所有的游记-->
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from MD_COMMENT_ONE
-    where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
+    select m.*,
+   u.MD_GRADUATION_DATE as user_MD_GRADUATION_DATE,
+   u.MD_EMS_CODE as user_MD_EMS_CODE,
+   u.MD_PRAISE as user_MD_PRAISE,
+   u.MD_ICON as user_MD_ICON,
+   u.MD_PASSWORD as user_MD_PASSWORD,
+   u.MD_EMAIL as user_MD_EMAIL,
+   u.MD_SCHOOL as user_MD_SCHOOL,
+   u.MD_IS_VIP as user_MD_IS_VIP,
+   u.MD_LEVEL as user_MD_LEVEL,
+   u.MD_SIGNATURE as user_MD_SIGNATURE,
+   u.MD_SCORE as user_MD_SCORE,
+   u.MD_USER_RECID as user_MD_USER_RECID,
+   u.MD_STDNAME as user_MD_STDNAME,
+   u.MD_REF_ID as user_MD_REF_ID,
+   u.MD_STDCODE as user_MD_STDCODE,
+   u.MD_ALERT_DATE as user_MD_ALERT_DATE,
+   u.MD_ALERT_USER as user_MD_ALERT_USER,
+   u.MD_USER_NAME as user_MD_USER_NAME,
+   u.MD_TELEPHONE as user_MD_TELEPHONE,
+   u.MD_SEX as user_MD_SEX,
+   u.MD_AGE as user_MD_AGE,
+   u.MD_CREATE_TIME as user_MD_CREATE_TIME
+    from MD_COMMENT_ONE m,MD_USER u
+    where m.MD_TRAVEL_ID = #{id,jdbcType=VARCHAR}
   </select>
+  
+    <!--通过游记的id查询相关的所有的游记-->
+  <select id="selectListBy" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select m.*,
+   u.MD_GRADUATION_DATE as user_MD_GRADUATION_DATE,
+   u.MD_EMS_CODE as user_MD_EMS_CODE,
+   u.MD_PRAISE as user_MD_PRAISE,
+   u.MD_ICON as user_MD_ICON,
+   u.MD_PASSWORD as user_MD_PASSWORD,
+   u.MD_EMAIL as user_MD_EMAIL,
+   u.MD_SCHOOL as user_MD_SCHOOL,
+   u.MD_IS_VIP as user_MD_IS_VIP,
+   u.MD_LEVEL as user_MD_LEVEL,
+   u.MD_SIGNATURE as user_MD_SIGNATURE,
+   u.MD_SCORE as user_MD_SCORE,
+   u.MD_USER_RECID as user_MD_USER_RECID,
+   u.MD_STDNAME as user_MD_STDNAME,
+   u.MD_REF_ID as user_MD_REF_ID,
+   u.MD_STDCODE as user_MD_STDCODE,
+   u.MD_ALERT_DATE as user_MD_ALERT_DATE,
+   u.MD_ALERT_USER as user_MD_ALERT_USER,
+   u.MD_USER_NAME as user_MD_USER_NAME,
+   u.MD_TELEPHONE as user_MD_TELEPHONE,
+   u.MD_SEX as user_MD_SEX,
+   u.MD_AGE as user_MD_AGE,
+   u.MD_CREATE_TIME as user_MD_CREATE_TIME
+   from MD_COMMENT_ONE m,MD_USER u
+    where m.MD_REF_ID = #{id,jdbcType=VARCHAR}
+  </select>
+  
+  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from MD_COMMENT_ONE
     where MD_RECID = #{mdRecid,jdbcType=VARCHAR}
@@ -47,6 +139,8 @@
       #{mdVideo,jdbcType=VARCHAR}, #{mdPraise,jdbcType=DECIMAL}, #{mdTravelId,jdbcType=VARCHAR}
       )
   </insert>
+  
+  <!--游记评论插入数据-->
   <insert id="insertSelective" parameterType="com.cn.qd.travel.entity.MDCommentOne">
     insert into MD_COMMENT_ONE
     <trim prefix="(" suffix=")" suffixOverrides=",">
