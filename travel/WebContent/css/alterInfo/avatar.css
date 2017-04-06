@@ -1,0 +1,722 @@
+@charset "UTF-8";
+/*我的头像css*/
+body {
+	font-size: 12px;
+	/*input输入框里的字体*/
+	font-family: Arial, "Lucida Grande", "Microsoft Yahei",
+		"Hiragino Sans GB", "Hiragino Sans GB W3", SimSun, "PingFang SC",
+		STHeiti;
+	_font-family: Tahoma, Arial, Helvetica, STHeiti;
+	color: #666
+}
+
+input, select, textarea, button {
+	/*input输入框里的字体*/
+	font-family: Arial, "Lucida Grande", "Microsoft Yahei",
+		"Hiragino Sans GB", "Hiragino Sans GB W3", "PingFang SC", STHeiti;
+	_font-family: Tahoma, Arial, Helvetica, STHeiti
+}
+
+body, p, div {
+	margin: 0;
+	padding: 0;
+	word-wrap: break-word
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+	font-size: 100%
+}
+
+ul, ol, li, dl, dd, dt {
+	margin: 0;
+	padding: 0;
+	list-style: none
+}
+/*去除超链接的下划线*/
+a {
+	color: #ff9d00;
+	text-decoration: none;
+	cursor: pointer
+}
+
+td {
+	font-size: 12px;
+	color: #666
+}
+
+img {
+	border: 0;
+	vertical-align: middle
+}
+
+input {
+	outline: 0
+}
+
+.line20 {
+	line-height: 20px
+}
+
+.tdcenter {
+	text-align: center
+}
+
+.hide {
+	display: none
+}
+/*空间*/
+.clearbg {
+	background: 0
+}
+
+.clear {
+	clear: both;
+	display: block;
+	height: 0;
+	font-size: 0;
+	line-height: 0;
+	overflow: hidden
+}
+
+.clearfix:after, .wrapper:after, .article:after {
+	content: '\20';
+	clear: both;
+	display: block
+}
+
+.clearfix, .wrapper, .article {
+	*zoom: 1
+}
+/* iSetting */
+body {
+	background: #fff;
+}
+
+.wrapper {
+	width: 1000px;
+	margin: 0 auto;
+	padding: 25px 0;
+	font-size: 14px;
+	color: #666;
+}
+
+.aside {
+	width: 220px;
+	float: left;
+}
+
+.content {
+	width: 740px;
+	min-height: 480px;
+	float: right;
+	background: #fff;
+}
+
+.cssradio {
+	position: relative;
+	cursor: pointer;
+	display: inline-block;
+	vertical-align: middle;
+	width: 18px;
+	height: 18px;
+	line-height: 18px;
+}
+
+.cssradio input[type=radio] {
+	position: absolute;
+	opacity: 0;
+	margin: 0;
+	width: 16px;
+	height: 16px;
+	top: 1px;
+	left: 1px;
+}
+
+.cssradio span {
+	position: relative;
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	border-radius: 100%;
+	background: #fff;
+	border: 1px solid #ffa800;
+}
+
+.cssradio span:after {
+	content: "";
+	position: absolute;
+	top: 2px;
+	right: 2px;
+	bottom: 2px;
+	left: 2px;
+	border-radius: 100%;
+	background-color: #fff;
+	opacity: 0;
+	-webkit-transition: all .15s ease-out;
+	transition: all .15s ease-out;
+	-webkit-transform: scale(.5);
+	transform: scale(.5);
+}
+
+.cssradio input:checked+span:after {
+	opacity: 1;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	background-color: #ffa800;
+}
+
+.alert {
+	padding: 15px 35px 15px 15px;
+	color: #fff;
+	border: 1px solid transparent;
+	margin-bottom: 20px;
+	border-radius: 3px;
+}
+
+.alert .close {
+	float: right;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 1;
+	cursor: pointer;
+	position: relative;
+	top: -8px;
+	right: -22px;
+	color: #000;
+	opacity: .25;
+	background: 0 0;
+	border: 0;
+	padding: 0;
+}
+
+.alert .close:hover {
+	opacity: .5;
+}
+
+.alert-success {
+	border-color: #d6e9c6;
+	background-color: #dff0d8;
+	color: #468847;
+}
+
+.alert-error {
+	border-color: #eed3d7;
+	background-color: #f2dede;
+	color: #b94a48;
+}
+
+.alert-notice {
+	border-color: #faebcc;
+	background-color: #fcf8e3;
+	color: #8a6d3b;
+}
+
+/* Aside */
+.aside a {
+	display: block;
+	line-height: 46px;
+	font-size: 14px;
+	color: #666;
+	border-radius: 3px;
+	margin-bottom: 8px;
+	position: relative;
+	overflow: hidden;
+}
+
+.aside a:hover {
+	background-color: #f0f0f0;
+	text-decoration: none;
+}
+
+.aside a.on {
+	background-color: #ffa800;
+	color: #fff;
+}
+
+.aside a.on:hover {
+	text-decoration: none;
+}
+
+.aside a span.ripple {
+	display: block;
+	position: absolute;
+	background: rgba(102, 102, 102, .3);
+	border-radius: 100%;
+	-webkit-transform: scale(0);
+	transform: scale(0);
+	width: 201px;
+	height: 201px;
+}
+
+.aside a span.ripple.animate {
+	-webkit-animation: ripple 1s ease-out;
+	animation: ripple 1s ease-out;
+}
+
+.aside i {
+	width: 22px;
+	height: 22px;
+	display: inline-block;
+	background: url(syste_img/alterInfo_img/i_left4.png) no-repeat;
+	margin: 0 10px 0 24px;
+	vertical-align: middle;
+}
+
+.aside .i1 {
+	background-position: 0 0;
+}
+
+.aside a.on .i1 {
+	background-position: -22px 0;
+}
+
+.aside .i2 {
+	background-position: 0 -22px;
+}
+
+.aside a.on .i2 {
+	background-position: -22px -22px;
+}
+
+.aside .i3 {
+	background-position: 0 -44px;
+}
+
+.aside a.on .i3 {
+	background-position: -22px -44px;
+}
+
+.aside .i4 {
+	background-position: 0 -66px;
+}
+
+.aside a.on .i4 {
+	background-position: -22px -66px;
+}
+
+.aside .i5 {
+	background-position: 0 -88px;
+}
+
+.aside a.on .i5 {
+	background-position: -22px -88px;
+}
+
+.aside .i6 {
+	background-position: 0 -110px;
+}
+
+.aside a.on .i6 {
+	background-position: -22px -110px;
+}
+
+.aside .i7 {
+	background-position: 0 -132px;
+}
+
+.aside a.on .i7 {
+	background-position: -22px -132px;
+}
+
+.aside .i8 {
+	background-position: 0 -154px;
+}
+
+.aside a.on .i8 {
+	background-position: -22px -154px;
+}
+
+.aside .i9 {
+	background-position: 0 -176px;
+}
+
+.aside a.on .i9 {
+	background-position: -22px -176px;
+}
+
+.aside .i10 {
+	background-position: 0 -198px;
+}
+
+.aside a.on .i10 {
+	background-position: -22px -198px;
+}
+/* Content */
+.content .hd {
+	padding-bottom: 18px;
+	margin: 0 0 20px 0;
+	*position: relative;
+	border-bottom: 1px solid #eee;
+}
+
+.content .hd strong {
+	font-size: 24px;
+	color: #444;
+	font-weight: normal;
+}
+
+.content .hd span {
+	margin-left: 18px;
+	font-size: 14px;
+	color: #999;
+}
+
+.content .hd .progress {
+	width: 110px;
+	height: 16px;
+	display: inline-block;
+	background-color: #bddf7d;
+	margin-left: 8px;
+	position: relative;
+	vertical-align: middle;
+	*position: absolute;
+	*left: 200px;
+	*top: 10px;
+}
+
+.content .hd .progress .on {
+	background-color: #add75c;
+	height: 16px;
+}
+
+.content .hd .progress .num {
+	font-size: 12px;
+	color: #fff;
+	position: absolute;
+	right: 3px;
+	line-height: 16px;
+}
+
+.content dl {
+	clear: both;
+	padding-bottom: 15px;
+}
+
+.content dt {
+	width: 85px;
+	float: left;
+	padding: 6px 10px 0 0;
+	text-align: right;
+	color: #a1a1a1;
+	font-size: 16px;
+}
+
+.content dd {
+	width: 490px;
+	float: left;
+}
+
+.content dd label {
+	padding-right: 20px;
+	line-height: 32px;
+	float: left;
+	cursor: pointer;
+}
+
+.content dd label .cssradio {
+	float: left;
+	margin: 6px 6px 0 0;
+}
+
+.content dd input[type=text], .content dd input[type=password] {
+	width: 208px;
+	border: 1px solid #d3d3d3;
+	height: 18px;
+	padding: 6px 8px;
+	line-height: 18px;
+	font-size: 14px;
+	color: #999;
+	outline: none;
+	transition: box-shadow 0.25s linear 0s;
+	border-radius: 3px;
+}
+
+.content dd input[type=text]:focus, .content dd input[type=password]:focus
+	{
+	border: 1px solid #ffa800;
+	transition: box-shadow 0.25s linear 0s;
+	box-shadow: 0 0 5px #ffa200;
+}
+
+.content i.radio {
+	width: 18px;
+	height: 19px;
+	display: inline-block;
+	background: url(/images/isettings/i_btns4.png) -36px 0 no-repeat;
+	float: left;
+}
+
+.content i.radio.on {
+	background-position: -54px 0;
+}
+
+.content i.checkbox {
+	width: 18px;
+	height: 19px;
+	display: inline-block;
+	background: url(/images/isettings/i_btns4.png) 0 0 no-repeat;
+	vertical-align: middle;
+	margin-right: 10px;
+	cursor: pointer;
+}
+
+.content i.checkbox.on {
+	background-position: -18px 0;
+}
+
+.content .input-group {
+	position: relative;
+}
+
+.content .input-group .input-suggest {
+	position: absolute;
+	z-index: 99;
+	width: 218px;
+	border: 1px solid #dfdede;
+	background: #fff;
+	line-height: 24px;
+	font-size: 12px;
+	left: 3px;
+	top: 31px;
+	display: none;
+}
+
+.content .input-group .input-suggest li a {
+	padding: 5px 7px;
+	display: block;
+	height: 24px;
+	color: #999;
+	overflow: hidden;
+}
+
+.content .input-group .input-suggest li a:hover {
+	background: #efefef;
+	text-decoration: none;
+	color: #ffa800;
+}
+
+.content .input-group .input-suggest i {
+	float: left;
+	margin-right: 9px;
+	width: 24px;
+	height: 24px;
+	background: url(/images/suggest-sprite5.png) no-repeat;
+	overflow: hidden;
+}
+
+.content .input-group .input-suggest i.place {
+	background-position: 0 0;
+}
+
+.content .input-group .input-suggest em {
+	padding-left: 10px;
+	font-style: normal;
+}
+
+.content dl.error dt {
+	color: #ff3c00;
+}
+
+.content dl.error dd input[type=text] {
+	border-color: #ff3c00;
+}
+
+.content dl.error dd label {
+	color: #ff3c00;
+}
+
+/* UserLogo 我的头像 */
+.userlogo .hd {
+	padding-bottom: 6px;
+	border-bottom: 2px solid #efefef;
+}
+/*头像div*/
+.userlogo .avatar {
+	width: 120px;
+	height: 120px;
+	padding: 30px 0 20px;
+	position: relative;
+}
+
+.userlogo .avatar .progress {
+	width: 120px;
+	height: 120px;
+	background-color: #000;
+	background-color: rgba(0, 0, 0, .6);
+	position: absolute;
+	bottom: 20px;
+	left: 0;
+}
+
+.userlogo .avatar .progress .bar {
+	width: 120px;
+	height: 16px;
+	display: block;
+	background-color: #95b44b;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+.userlogo .avatar .progress .on {
+	background-color: #add75c;
+	height: 16px;
+}
+
+.userlogo .avatar .progress .num {
+	font-size: 12px;
+	color: #fff;
+	position: absolute;
+	right: 3px;
+	line-height: 16px;
+}
+/*选择图片按钮*/
+.userlogo .btn-sub {
+	position: relative;
+	font-size: 12px;
+	margin-bottom: 10px;
+}
+
+.userlogo .btn-sub .btn-upload {
+	position: absolute;
+	top: 0;
+	left: 0;
+	border: none;
+	opacity: 0;
+	width: 112px;
+	height: 36px;
+	cursor: pointer;
+}
+
+.userlogo .btn-sub .btn {
+	width: 120px;
+	height: 36px;
+	line-height: 36px;
+	background-color: #ffa800;
+	text-align: center;
+	font-size: 16px;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	vertical-align: middle;
+	margin-right: 12px;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.userlogo .btn-sub .btn.disable {
+	background-color: #eee;
+	color: #fff;
+	cursor: default;
+}
+/*编辑图片*/
+.userlogo .editor {
+	padding-top: 30px;
+	position: relative;
+	display: none;
+}
+
+.userlogo .editor .preview {
+	float: right;
+	width: 180px;
+}
+
+.userlogo .editor .plan {
+	float: left;
+}
+
+.userlogo .editor .plan, .userlogo .editor .plan img {
+	width: 330px;
+}
+
+.userlogo .editor .btns {
+	padding: 20px 0;
+}
+
+.userlogo .editor .btns a {
+	width: 92px;
+	height: 36px;
+	display: inline-block;
+	line-height: 36px;
+	text-align: center;
+	font-size: 16px;
+	color: #fff;
+	border-radius: 5px;
+}
+
+.userlogo .editor .btns a:hover {
+	text-decoration: none;
+}
+
+.userlogo .editor .btns a.btn1 {
+	background-color: #ffa800;
+}
+
+.userlogo .editor .btns a.btn1:hover {
+	background-color: #ff8a00;
+}
+
+.userlogo .editor .btns a.btn2 {
+	background-color: #eee;
+	color: #999;
+	margin-left: 20px;
+}
+
+.userlogo .editor .btns a.btn2:hover {
+	background-color: #ccc;
+	color: #fff;
+}
+
+.userlogo .editor .btns a.disable, .userlogo .editor .btns a.disable:hover
+	{
+	background-color: #eee;
+	color: #fff;
+	cursor: default;
+}
+/*裁剪*/
+.userlogo .preview p {
+	font-size: 14px;
+	padding: 0 0 10px;
+}
+
+.userlogo .preview dl {
+	line-height: 1.6em;
+	padding: 0;
+}
+
+.userlogo .preview dt {
+	float: none;
+	overflow: hidden;
+	position: relative;
+	padding: 0;
+}
+
+.userlogo .preview dt img {
+	float: left;
+	width: 100%;
+	height: 100%;
+}
+
+.userlogo .preview dl.large dt {
+	width: 120px;
+	height: 120px;
+}
+
+.userlogo .preview dl.normal dt {
+	width: 48px;
+	height: 48px;
+}
+
+.userlogo .preview dl.small dt {
+	width: 16px;
+	height: 16px;
+}
+
+.userlogo .preview dd {
+	height: 30px;
+	font-size: 12px;
+	color: #666;
+	float: none;
+}
