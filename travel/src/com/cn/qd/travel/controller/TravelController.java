@@ -22,6 +22,7 @@ import com.cn.qd.travel.entity.MDTravelNote;
 import com.cn.qd.travel.entity.MDTravelParagraph;
 import com.cn.qd.travel.entity.MdUser;
 import com.cn.qd.travel.service.TravelService;
+import com.cn.qd.travel.util.ChangeIcon;
 import com.cn.qd.travel.util.GUID;
 import com.cn.qd.travel.util.Log;
 
@@ -70,7 +71,10 @@ public class TravelController {
 		travelInfo.setListTravlePagragraph(travelList);
 		travelInfo.setMdRecid(travelId);
 		travelInfo.setUser(user);
+		travelInfo.setMdCreateTime(new Date());
+		travelInfo.setMdCreateUserId(user.getMdUserRecid());
 		travelInfo.setMdStdname("0");
+		travelInfo.setMdLevel(Short.valueOf("1"));
 		boolean trueOrFfalse = travelService.insertTravel(travelInfo, null);
 		Map<String, String> result = new HashMap<String, String>();
 		if (trueOrFfalse) {
@@ -98,14 +102,23 @@ public class TravelController {
 	 * @return
 	 */
 	@RequestMapping(value = "showTravel")
-	public String showTravel(Model model, HttpSession session) {
+	public String showTravel(Model model, HttpSession session, String traId, String userId,
+			HttpServletRequest request) {
 		ArrayList<Object> travels = new ArrayList<Object>();
-		travels.addAll(travelService.oneResultProvider("CEE149094883048298964LCQP", null));
+		travels.addAll(travelService.oneResultProvider(traId, null));
 		MDTravelNote travelInfo = null;
 		if (travels.size() >= 1) {
 			travelInfo = (MDTravelNote) travels.get(0);
 		}
-		model.addAttribute("travelInfo", travelInfo);
+
+		String savePath = request.getSession().getServletContext().getRealPath("upload");
+		String userHeadImg = ChangeIcon.changeImg(travelInfo.getUser().getMdIcon(), savePath);
+		travelInfo.getUser().setUserHeadImg(userHeadImg);
+		
+		SimpleDateFormat sim=new SimpleDateFormat("YYYY-MM-DD");
+		String date=sim.format(travelInfo.getMdStartTime());
+		travelInfo.setMdStartTime(new Date(date));
+		model.addAttribute("travelInfos", travelInfo);
 		return "show_travels";
 	}
 
@@ -167,19 +180,19 @@ public class TravelController {
 	 */
 	@RequestMapping(value = "updateTravelNews", method = { RequestMethod.POST })
 	@ResponseBody
-	public int  updateTravelNew(Model model, @RequestBody String[] objArray) {
-		MDTravelNote travels=new MDTravelNote();
+	public int updateTravelNew(Model model, @RequestBody String[] objArray) {
+		MDTravelNote travels = new MDTravelNote();
 		travels.setMdRecid(objArray[0]);
 		travels.setMdTravelPeople(objArray[1]);
 		travels.setMdCostMoney(Long.valueOf(objArray[2]));
 		travels.setMdDayNumber(Short.valueOf(objArray[3]));
-		   SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); 
-		   Date date = null; 
-		   try { 
-		    date = format.parse(objArray[4]); 
-		   } catch (Exception e) { 
-			   log.logger.error("日期转换出错");
-		   } 
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		Date date = null;
+		try {
+			date = format.parse(objArray[4]);
+		} catch (Exception e) {
+			log.logger.error("日期转换出错");
+		}
 		travels.setMdStartTime(date);
 		if (travelService.updateTravel(travels, null)) {
 			return 1;

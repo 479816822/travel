@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Title</title>
+<title>${travelInfos.mdTheme }</title>
 <link href="css/show_travels/show_travels.css" rel="stylesheet"
 	type="text/css">
 	<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
@@ -30,6 +30,16 @@
 			url = "replyNote"
 			ajax(reply);
 		});
+		
+		//2.ajax进行顶的数据同步更新
+		$(".praise_1").click(function() {
+			var travel = {
+				"mdRecid" : $(".praise_oness").html(),
+				"mdStdname" : $(".the_number").html()
+			}
+			url = "updatePraise"
+			ajax1($(this), travel);
+		});
 
 		//ajax公用的方法
 		function ajax(reply) {
@@ -49,6 +59,32 @@
 			});
 		}
 
+		
+		//ajax公用的方法
+		function ajax1(p, travel) {
+			var num=$(".the_number").html();
+			if(num==null)
+				num="0";
+			var n=parseInt(num);
+			$.ajax({
+				type : "POST",
+				url : url,
+				data : travel,
+				dataType : 'json',
+				success : function(msg) {
+					//更新数据
+					if(url=="updatePraise"&&msg>0){
+						n=n+1;
+					$(".the_number").html(n);
+					}
+				},
+				error : function(msg) {
+					//提示输需要入的信息
+
+				}
+			});
+		}
+		
 		//处理游记的回复的内容
 		function fun(reply) {
 			//复制显示的div
@@ -135,46 +171,70 @@
 
 
 
-	<div class="header">
 		<div class="header1">
-			<iframe src="Mheader" frameborder="0" scrolling="no" marginheight="0"
+			<iframe src="VisitHead" frameborder="0" scrolling="no" marginheight="0"
 				marginwidth="0" style="margin: 0px auto;"></iframe>
 		</div>
-	</div>
 
 
 
-	<div class="main">
-
+	<div class="mains">
+		<div class="travel_user_head" style="height: 100px;width: 100px;border-radius: 50px; position: absolute;margin-top: 430px;margin-left: 18%">
+							<!--游记的用户的头像-->
+									<img style="height: 100px;width: 100px;border-radius: 50px;" class="travel_user_head" src="${travelInfos.user.userHeadImg}">
+					</div>
+					
+		<div style="font-size: 25px;color: white;margin-top: 430px;margin-left: 26%;position: absolute;">${travelInfos.mdTheme }</div>		
+		
+		
+			<div class="MDing" style="height: 80px;width: 80px;margin-top: 400px;margin-left: 75%;position: absolute; ">
+					<span style="display: none;" class="praise_oness">${travelInfos.mdRecid}</span>
+						 <a 
+						class="praise_1" data-vote="0" title="顶一下" style=" float:right; vertical-align: middle;height: 34px;width: 40px; 
+    background-image: url(http://images.mafengwo.net/images/home_new2015/ico_sprite_v7.png);
+    background-position: 0 -90px;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(228, 128, 11, 0.71);
+    line-height: 33px;">顶</a>
+													<!-- 顶一下更新数据库的内容 -->
+			</div>	
+			
+			<div style="font-size: 25px;color: white;margin-top: 435px;margin-left: 78.5%;position: absolute;">
+			
+			<span id="topvote5663645" class="the_number" style="color:white;font-size: 15px;width: 50px;height: 30px;">${travelInfos.mdStdname}</span>
+			</div>
+					
 		<!-- 游记的封面图 -->
 		<div class="main_header">
-			<img src="${travelInfo.mdThemeImg }" class="main_header"> <span
-				class="user_travel_id" style="display: none;">${travelinfo.mdRecid }</span>
+			<img src="${travelInfos.mdThemeImg }" class="main_header"> <span
+				class="user_travel_id" style="display: none;">${travelinfos.mdRecid }</span>
 		</div>
 
-		<div class="mian_one">
-			<div class="main_main">
-				<div class="main_header_left">
+
+		<div class="mian_onesss" style=" border-bottom: 2px solid #e8e8e6;height: 100px; width: 100%" >
+		<div class="main_main">
+				<div class="main_header_lefts">
 					<div class="main_header_left_one">
-						<a class="per_name" href="">${userInfo.userNick} </a>
+						<a class="per_name" href="">${travelinfos.user.mdUserName} </a>
 						<!-- 游记用户的id隐藏 -->
-						<span class="it_is_my_id" style="display: none;">${userInfo.mdRecid}</span>
+						<span class="it_is_my_id" style="display: none;">${travelinfos.mdRecid}</span>
 					</div>
 					<div class="main_header_left_two">
-						<a class="a_one">LV.${userInfo.userLevel} </a>
-					</div>
+						<a class="a_one">LV.${travelinfos.mdLevel} </a> </div>
 					<div class="main_header_left_three">
 						<!-- 更新它的关注的信息 -->
 						<a class="a_three"><span>[关注TA]</span> </a>
 					</div>
-					<div class="main_header_left_four">${travelInfo.mdCreateTime}</div>
+					<div class="main_header_left_four">${travelinfos.mdCreateTime}</div>
 					<div class="main_header_left_five"></div>
-					<div class="main_header_left_six">${travelinfo}</div>
+					<div class="main_header_left_six">${travelinfos.mdStdname}</div>
 				</div>
-				<div class="main_header_rigth">
+				<div class="main_header_rigths">
 					<div class="main_header_rigth_one1">
 						<!-- 背景音乐 -->
-						<audio src="${travelInfo.mdMusic }" controls="controls"  class="music_img" height="18px" width="40px" >
+						<audio src="${travelInfos.mdMusic.split(';')[0] }" controls="controls"  class="music_img" height="18px" width="40px" >
 Your browser does not support the audio element.
 </audio>
  <!--img src="syste_img/img/show_travels/music.gif" height="18px"
@@ -184,12 +244,10 @@ Your browser does not support the audio element.
 						<div class="one_one1"></div>
 						<div class="one_two1">43分享</div>
 					</div>
-					<div class="main_header_rigth_two">
-						<div class="one_one"></div>
-						<div class="one_two">238收藏</div>
-					</div>
 				</div>
 			</div>
+		
+	
 		</div>
 
 		<!--中间的主要内容-->
@@ -198,12 +256,12 @@ Your browser does not support the audio element.
 				<div class="center_left">
 					<div class="left_one">
 						<ul>
-							<li class="time">出发时间<span>/</span>2015-10-17<i></i></li>
-							<li class="day">出行天数<span>/</span>5 天
+							<li class="time">出发时间<span>/</span>${travelInfos.mdStartTime}<i></i></li>
+							<li class="day">出行天数<span>/</span>${travelInfos.mdDayNumber} 天
 							</li>
-							<li class="people">人物<span>/</span>小两口
+							<li class="people">人物<span>/</span>${travelInfos.mdTravelPeople}
 							</li>
-							<li class="cost">人均费用<span>/</span>6000RMB
+							<li class="cost">人均费用<span>/</span>${travelInfos.mdCostMoney}RMB
 							</li>
 						</ul>
 					</div>
@@ -211,7 +269,7 @@ Your browser does not support the audio element.
 					<div class="div_two">
 						<!--这里根据内容选择图片的div和文字的div-->
 
-						<c:forEach items="${travelInfo.listTravlePagragraph}"
+						<c:forEach items="${travelInfos.listTravlePagragraph}"
 							var="travelDetail">
 							<c:choose>
 								<c:when test="${travelDetail.mdImg != null }">
@@ -245,14 +303,14 @@ Your browser does not support the audio element.
 								<!--回复人-->
 								<div class="answer_people">
 									<div class="people_info">
-										<img src="${reply.user.userHead}" class="people_info">
+										<img src="${reply.users.userHead}" class="people_info">
 									</div>
 									<div class="people_info1">
 										<div class="name">
-											<a class="name">${reply.user.userNick}</a>
+											<a class="name">${reply.users.userNick}</a>
 										</div>
 										<div class="level name">
-											<a class="level">LV${reply.user.userLevel}</a>
+											<a class="level">LV${reply.users.userLevel}</a>
 										</div>
 									</div>
 									<div class="floor">${replyNum}#</div>
@@ -302,7 +360,7 @@ Your browser does not support the audio element.
 							<div class="write_msg_left">
 								<div class="write_msg_left_img">
 									<!--输入用户的用户的头像-->
-									<img class="write_msg_left_img" src="${user.userHead }">
+									<img class="write_msg_left_img" src="${user.userHeadImg }">
 								</div>
 							</div>
 							<div class="write_msg_rigth">
@@ -381,7 +439,7 @@ Your browser does not support the audio element.
 							<div class="paragraph">
 								<!-- 循环显示用户的游记的段落 -->
 								<c:set var="num" value="0"></c:set>
-								<c:forEach items="${travelInfo.listTravlePagragraph}" var="travel">
+								<c:forEach items="${travelInfos.listTravlePagragraph}" var="travel">
 									<c:if test="${travel.mdParagraphName!=null }">
 										<c:set var="num" value="${num+1}"></c:set>
 										<div class="paragraph_main">

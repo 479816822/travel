@@ -1,4 +1,20 @@
 
+
+.MDing a {
+    width: 37px;
+    display: inline-block;
+    background-image: url(http://images.mafengwo.net/images/home_new2015/ico_sprite_v7.png);
+    background-position: 0 -90px;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(228, 128, 11, 0.71);
+}
+.MDing span, .MDing a {
+    vertical-align: middle;
+    line-height: 33px;
+}
+
 * {
     padding: 0px;
     margin: 0px;
@@ -8,34 +24,26 @@ body {
     background-color: #fff;
 }
 
-.main {
+.mains {
 	
     width: 100%;
     height: auto;
     clear:both;
     margin: auto;
-    background: red;
 }
 
 .main_header {
-    top: 0px;
+    top: 10px;
     height: 480px;
     width: 100%;
-}
-
-.mian_one {
-    height: 130px;
-    width: 100%;
-    clear: both;
-    border-bottom: 1px solid #e8e8e6;;
 }
 
 
 
 .header1 {
     width: 100%;
-    height: 60px;
-    margin: 0 auto;
+    height: 68px;
+    margin: 0 auto 0 auto;
     position: fixed;
     z-index: 999;
     border-bottom: 2px solid #eee;
@@ -48,14 +56,14 @@ body {
 }
 
 .main_main {
-    height: 130px;
+    height: 100px;
     width: 1015px;
     margin: auto;
     clear: both;
 }
 
-.main_header_left {
-    height: 120px;
+.main_header_lefts {
+    height: 96px;
     width: 65%;
     float: left;
 }
@@ -73,6 +81,21 @@ body {
     height: auto;
     clear:both;
     background-color: #ffffff;
+}
+.mian_onessss {
+    height: 100px;
+    width: 100%;
+    clear: both;
+    border-bottom: 2px solid #e8e8e6;
+    background: red;
+}
+
+
+.travel_user_head{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background: red;
 }
 
 
@@ -155,8 +178,8 @@ body {
     font-size: 12px;
 }
 
-.main_header_rigth {
-    height: 120px;
+.main_header_rigths {
+    height: 96px;
     width: 35%;
     float: right;
 }

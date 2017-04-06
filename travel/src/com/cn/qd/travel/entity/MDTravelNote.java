@@ -16,6 +16,7 @@ public class MDTravelNote {
 
 	private BigDecimal mdStdcode;
 
+
 	private Date mdAlertDate;
 
 	private String mdAlertUser;
