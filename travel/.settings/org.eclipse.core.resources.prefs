@@ -10,6 +10,7 @@ encoding//WebContent/WEB-INF/jsp/back_login.jsp=UTF-8
 encoding//WebContent/WEB-INF/jsp/index.jsp=UTF-8
 encoding//WebContent/WEB-INF/jsp/mytravels.jsp=UTF-8
 encoding//WebContent/WEB-INF/jsp/show_travels.jsp=UTF-8
+encoding//WebContent/css/alterInfo/message.css=UTF-8
 encoding//src/com/cn/qd/travel/constant/MdCommentConstant.java=UTF-8
 encoding//src/com/cn/qd/travel/constant/MdTravelNoteConstant.java=UTF-8
 encoding//src/com/cn/qd/travel/constant/MdUserConstant.java=UTF-8

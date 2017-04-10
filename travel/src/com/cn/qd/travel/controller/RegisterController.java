@@ -80,6 +80,7 @@ public class RegisterController {
 		user.setMdIcon(pic);
 		user.setMdScore((long)0);
 		user.setMdStdname("未登陆");
+		user.setMdAddress("北京");
 		int ret = userService.insertSelective(user);
 		if (ret > 0) {
 			model.addAttribute("registMsg", "注册成功！");

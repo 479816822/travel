@@ -20,6 +20,11 @@ public interface UserService extends BaseService{
 
 	
 	/**
+	 * 查询用户详细信息
+	 */
+	public ArrayList<MdUser> selectById(String id);
+	
+	/**
 	 * 用户注册,注册成功返回true 否则false
 	 * 
 	 * @param T
@@ -115,4 +120,11 @@ public interface UserService extends BaseService{
 	 * @return
 	 */
 	public int updateBySql(Map<String,Object> map);
+	
+	
+	/**
+	 * 修改用户信息
+	 */
+	
+	public int updateUserInfo(MdUser user);
 }

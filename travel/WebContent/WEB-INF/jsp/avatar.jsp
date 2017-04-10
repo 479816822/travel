@@ -6,96 +6,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>${user.mdUserName }的头像</title>
+<title>我的头像</title>
 <link href="css/alterInfo/avatar.css" rel="stylesheet" type="text/css">
-
-
-   <script src="js/jquery-3.1.0.min.js" type="text/javascript"></script>
-<link rel="stylesheet"
-	href="pluing/publicity/zyupload/skins/zyupload-1.0.0.min.css "
-	type="text/css">
-<script type="text/javascript"
-	src="pluing/publicity/zyupload/zyupload-1.0.0.min.js"></script>
-	
-<script type="text/javascript">
-$(function() {
-	// 初始化插件
-	function fun1(p) {
-		$("#zyupload").zyUpload(
-				{
-					width : "700px", // 宽度
-					height : "800px", // 宽度
-					itemWidth : "140px", // 文件项的宽度
-					itemHeight : "140px", // 文件项的高度
-					url : "upload", // 上传文件的路径
-					fileType : [ "jpeg", "JPG", "JPEG", "jpg", "png"],// 上传文件的类型
-					fileSize : 5120000000000, // 上传文件的大小
-					multiple : true, // 是否可以多个文件上传
-					dragDrop : true, // 是否可以拖动上传文件
-					tailor : true, // 是否可以裁剪图片
-					del : true, // 是否可以删除文件
-					finishDel : true, // 是否在上传文件完成后删除预览
-					/* 外部获得的回调接口 */
-					onSelect : function(selectFiles, allFiles) { // 选择文件的回调方法  selectFile:当前选中的文件  allFiles:还没上传的全部文件
-						console.info("当前选择了以下文件：");
-						console.info(selectFiles);
-					},
-					onDelete : function(file, files) { // 删除一个文件的回调方法 file:当前删除的文件  files:删除之后的文件
-						console.info("当前删除了此文件：");
-						console.info(file.name);
-					},
-					onSuccess : function(file, response) { // 文件上传成功的回调方法
-						console.info("此文件上传成功：");
-						console.info(file.name);
-						console.info("此文件上传到服务器地址：");
-						console.info(response);
-						$("#uploadInf").append(
-								"<p style='display:none' class='img_only_id'>"
-										+ response + "</p>");
-						fun(response,p);
-						//	$(".close_div").hide();
-					},
-					onFailure : function(file, response) { // 文件上传失败的回调方法
-						console.info("此文件上传失败：");
-						console.info(file.name);
-					},
-					onComplete : function(response) { // 上传完成的回调方法
-						console.info("文件上传完成");
-						console.info(response);
-					}
-				});
-	}
-	
-	$("#_j_upload").click(function(){
-		var $newnode11 = $model5.clone(true);
-		$(".header").append($newnode11);
-		$(".close_div").show();
-		fun1($(this))
-	})
-
-	function fun(str, t) {
-		var str1 = str.length;
-		var n = str1 - 2;
-		var str2 = str.substring(2, n)
-		$(".close_div").remove();
-		$(".imgss").attr("src",str2);
-		$.ajax({
-			type : "POST",
-			url : "updateHeaderImg",
-			data : {str:str2},
-			dataType : 'json',
-			success : function(msg) {
-				alert("dddddddddddddd")
-			},
-			error : function(msg) {
-				alert("kkk")
-			}
-		});
-	}
-	
-	var $model5 = $(".zyupload").detach();
-});
-</script>	
 </head>
 <body>
 
@@ -109,8 +21,6 @@ $(function() {
 	z-index: 999;
 	border-bottom: 2px solid #eee;"></iframe>
 	 </div>
-
-<div id="zyupload" class="zyupload close_div" style="position: absolute;z-index: 999;margin-top: 80px;margin-left: 60px;"></div>
 
 	<div class="wrapper clearfix">
 
@@ -137,7 +47,7 @@ $(function() {
 			<!--中部-->
 			<div class="userlogo">
 				<div class="avatar" id="_j_avatar_box">
-					<img src="${user.userHeadImg }" width="120" height="120" border="0" class="imgss">
+					<img src="images/avatar.gif" width="120" height="120" border="0">
 					<div class="progress" id="percentContent" style="display: none;">
 						<div class="bar">
 							<div class="num" id="percentNum">0%</div>

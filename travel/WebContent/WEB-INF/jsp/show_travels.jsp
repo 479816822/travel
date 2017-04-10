@@ -156,7 +156,7 @@
 <body>
 
 
-<audio id="audio1" src="http://mp3file.mafengwo.net/201704071700/19521f31e7967fd65c50653baa9151cc/s5/M00/C7/12/wKgB21BxF_Xd5ui-AG9Nghhobdk813.mp3" autoplay="autoplay" loop="loop">
+<audio id="audio1" src="${travelInfos.mdMusic }" autoplay="autoplay" loop="loop">
 </audio>
 
 	<!-- 这是隐藏的 -->
@@ -208,8 +208,8 @@
 	<div class="mains">
 		<div class="travel_user_head" style="height: 100px;width: 100px;border-radius: 50px; position: absolute;margin-top: 430px;margin-left: 18%">
 							<!--游记的用户的头像-->
-									<img style="height: 100px;width: 100px;border-radius: 50px;" class="travel_user_head" src="${travelInfos.user.userHeadImg}">
-					</div>
+								<a href="toHostHome?userId=${travelInfos.user.mdUserRecid }">	<img style="height: 100px;width: 100px;border-radius: 50px;" class="travel_user_head" src="${travelInfos.user.userHeadImg}">
+					</a></div>
 					
 		<div style="font-size: 25px;color: white;margin-top: 430px;margin-left: 26%;position: absolute;">${travelInfos.mdTheme }</div>		
 		
@@ -243,8 +243,8 @@
 		<div class="mian_onesss" style=" border-bottom: 2px solid #e8e8e6;height: 100px; width: 100%" >
 		<div class="main_main">
 				<div class="main_header_lefts">
-					<div class="main_header_left_one" style="min-width: 50px;height: 50px;line-height: 30px;font-size: 20px;margin-top: 15px;text-align: center;">
-						<a class="per_name" style="font-size: 18px;" href="">${travelInfos.user.mdUserName} </a>
+					<div class="main_header_left_one" style="min-width: 20px;height: 50px;line-height: 30px;font-size: 20px;margin-top: 15px;">
+						<a class="per_name" style="font-size: 18px;" href="toHostHome?userId=${travelInfos.user.mdUserRecid }">${travelInfos.user.mdUserName} </a>
 						<!-- 游记用户的id隐藏 -->
 						<span class="it_is_my_id" style="display: none;">${travelInfos.mdRecid}</span>
 					</div>

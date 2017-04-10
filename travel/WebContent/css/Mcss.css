@@ -51,7 +51,7 @@ img {
 .topBarC{
     height: 46px;
     width: 70%;
-    margin: 0 15%;
+    margin: 0 15% 0 18%;
     background-color:  rgba(34, 35, 36, 0.95);
     position: relative;
     z-index: 90;
@@ -59,7 +59,7 @@ img {
 
 .topBarC .logo {
     float: left;
-    width: 32px;
+    width: 42px;
     display: inline;
     margin: 9px 20px 0 0
 }
@@ -67,7 +67,7 @@ img {
 .topBarC .logo a {
     display: inline-block;
     height: 29px;
-    width: 32px;
+    width: 42px;
     background: url(../syste_img/img/question/logo.png) 0 0 no-repeat;
     text-indent: -9999px;
     *text-indent: 0;
@@ -124,7 +124,7 @@ img {
     position: absolute;
     left: 0;
     top: 30px;
-    width: 110px;
+    width: 120px;
     background-color: #222;
     display: none;
     opacity: .9;

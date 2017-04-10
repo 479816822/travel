@@ -236,11 +236,12 @@ $(function() {
 					function() {
 						//获得留言的内容
 						var leave = {
-							mdHostUserRecid : $("#user_id").html(),
-							mdLvMessage : $(this).prev().val(),
+							mdHostUserRecid : $("#user_id_host").html(),//被留言人
+							mdLvMessage : $(this).prev().val(),//留言内容
 							mdLvRefId : ""//父节点
 						};
 						
+						if($(this).prev().val()!=null){
 						$
 								.ajax({
 									type : "POST",
@@ -249,24 +250,116 @@ $(function() {
 									dataType : 'json',
 									success : function(msg) {
 										//更新数据
-										var str = "<li><div class='word_one'><div class='word_one_one'><img  src='"+msg.message.lvUser.userHeadImg+" 'class='word_one_one'></div><div class='word_one_two'><div class='word_one_two_one'>"
+										var str = "<li><div class='word_one'><div class='word_one_one'><a href='toHostHome?userId="
+												+ msg.message.lvUser.mdUserRecid 
+										        +"'><img  src='"
+												+ msg.message.lvUser.userHeadImg+"' class='word_one_one'></a></div><div class='word_one_two'>"
+												+"<a href='toHostHome?userId="
+											    + msg.message.lvUser.mdUserRecid "'>"
+												+"<div class='word_one_two_one'>"
 												+ msg.message.lvUser.mdUserName
-												+ "</div><div class='word_one_two_two'>"
-												+ msg.message.mdLvTime
+												+ "</div></a><div class='word_one_two_two'>"
+												+ msg.message.mdLvDate
 												+ "</div></div></div><div class='word_two'>"
 												+ msg.message.mdLvMessage
+												+ "</div><div class='word_two_recid' style='display:none'>"
+												+ msg.message.lvUser.mdUserRecid
 												+ "</div></li>";
 										var $node = $(str);
 										$("._j_msgboard_list")
-												.append($node);
+												.prepend($node);
 										$("._j_msgboard_area").val("");
 									},
 									error : function(msg) {
 										//提示输需要入的信息
 									}
 								});
+						}
 
 					})
+					
+	//8.留言上一页
+	$(".left_page").click(function(){
+		var nums= $("._j_msgboard_list").children().length
+		var pageCurrent=$(this).next().html();
+		if(pageCurrent>1){	
+			var numss1=parseInt(pageCurrent);
+			var numss=numss1-1;
+		var page={
+			cache : $("#user_id_host").html(),//被留言人
+			dataCount:nums,//当前页的大小
+			pageCurrent:numss1,//当前页
+			pageSize:$(this).next().next().next().html(),//每页大小
+			nextPage:-1,
+			prePage:numss
+		}
+		pages(page);
+		var numss=parseInt(pageCurrent);
+		numss=numss-1;
+		$(this).next().html(numss);
+		}
+	})
+	
+	//9留言下一页
+	$(".rigth_page").click(function(){
+		var nums= $("._j_msgboard_list").children().length
+		
+		var pageCurrent=parseInt($(this).prev().prev().prev().html());
+		var pageCount=parseInt($(this).prev().prev().html());
+		
+		if(pageCurrent<pageCount){
+		var page={
+			cache : $("#user_id_host").html(),//被留言人
+			dataCount:nums,
+			pageCurrent:pageCurrent,
+			pageSize:$(this).prev().html(),
+			nextPage:pageCurrent+1,
+			prePage:-1
+		}
+		pages(page);
+		var numss=parseInt(pageCurrent);
+		numss=numss+1;
+		$(this).prev().prev().prev().html(numss)
+		}
+	})
+	//page的ajax
+	function pages(page){
+		$.ajax({
+			type : "POST",
+			url : "commentPage",
+			data : page,
+			dataType : "json",
+			success : function(data) {
+				//清空ul下的数据
+				$("._j_msgboard_list").children().remove();
+				
+				var obj=data.lvMessage;
+				for(i=0;i<obj.length;i++){
+				var str = "<li><div class='word_one'><div class='word_one_one'><a href='toHostHome?userId="
+					+ obj[i].lvUser.mdUserRecid 
+			        +"'><img  src='"+obj[i].lvUser.userHeadImg+"' class='word_one_one'></a></div><div class='word_one_two'>"
+			        +"<a href='toHostHome?userId="
+						+ obj[i].lvUser.mdUserRecid 
+				        +"'><div class='word_one_two_one'>"
+				+ obj[i].lvUser.mdUserName
+				+ "</div></a><div class='word_one_two_two'>" + obj[i].mdLvDate
+				+ "</div></div></div><div class='word_two'>"
+				+ obj[i].mdLvMessage
+				+ "</div><div class='word_two_recid' style='display:none'>"
+				+ obj[i].lvUser.mdUserRecid
+				+ "</div></li>";
+		var $node = $(str);
+		$("._j_msgboard_list")
+				.prepend($node);
+				}
+			},
+			error : function(msg) {
+				//提示输需要入的信息
+alert("eeror")
+			}
+		});
+	}
+	
 
 	//ajax公用的方法
 	function ajax(user) {
@@ -276,11 +369,10 @@ $(function() {
 			data : user,
 			dataType : "json",
 			success : function(msg) {
-				alert(msg)
 				$("#true").show();
 			},
 			error : function(msg) {
-				//提示输需要入的信息
+				
 
 			}
 		});
@@ -318,11 +410,15 @@ $(function() {
 
 <body>
 
-	<!-- 本用户的id -->
+
+		<!-- 本主界面用户的id -->
+	<span style="display: none;" id="user_id_host">${userInfo.mdUserRecid}</span>
+
+	<!-- 本主界面用户的id -->
 	<span style="display: none;" id="user_id">${user.mdUserRecid}</span>
 	<div class="topBar">
 
-		<div class="header1">
+		<div class="header1" >
 			<iframe src="Mheader" frameborder="0" scrolling="no" marginheight="0"
 					marginwidth="0" style="margin: 0px auto;"></iframe>
 		</div>
@@ -455,6 +551,8 @@ $(function() {
 
 
 			<div class="tags_bar">
+			
+			<c:if test="${userInfo.mdUserRecid==user.mdUserRecid }">
 				<div class="center clearfix">
 					<ul class="flt2">
 						<!--主要需要实现的功能-->
@@ -484,6 +582,41 @@ $(function() {
 							</div></li>
 					</ul>
 				</div>
+			</c:if>
+			
+			
+				<c:if test="${userInfo.mdUserRecid!=user.mdUserRecid }">
+				<div class="center clearfix">
+					<ul class="flt2">
+						<!--主要需要实现的功能-->
+						<li class="on"><a class="tags_link" href="/" title="他的窝">他的窝</a></li>
+						<li><a class="tags_link" href="toMyTravel" title="他的游记">他的游记</a></li>
+						<li><a class="tags_link" href="to_question" title="他的问答">他的问答</a></li>
+						<li id="_j_pathnav"><a class="tags_link" href="my_track"
+							title="我的足迹">他的足迹</a></li>
+						<li><a class="tags_link" href="" title="他的点评">他的点评</a></li>
+						<li><a class="tags_link" href="goTogether" title="他的结伴">他的结伴</a></li>
+						<li class="more mygroup_tips"><span class="tags_link"
+							role="button" title="更多" style="cursor: default">更多<i
+								class="MDownMore"></i></span>
+							<div class="tags_more_list">
+								<ul>
+									<li data-cs-t="go_to_activity"><a href="" title="他的活动"
+										data-cs-p="activity"><i class="ico_activity"></i><span>他的活动</span></a></li>
+									<li><a href="" title="他的小组"><i class="ico_group"></i><span>他的小组</span></a>
+									</li>
+									<li><a href="" title="他的收藏"><i class="ico_collect"></i><span>他的收藏</span></a></li>
+									<li><a href="" title="他的订单"><i class="ico_order"></i><span>他的订单</span></a></li>
+									<li><a href="" title="他的优惠券"><i class="ico_ticket"></i><span>他的优惠券</span></a></li>
+									<li><a href="" title="他的兑换"><i class="ico_exchange"></i><span>他的兑换</span></a></li>
+									<li><a href="goLocal" title="他的当地人"><i
+											class="ico_rent"></i><span>他的当地人</span></a></li>
+								</ul>
+							</div></li>
+					</ul>
+				</div>
+			</c:if>
+				
 			</div>
 
 		</div>
@@ -726,11 +859,11 @@ $(function() {
 						<!--用户的头像-->
 						<!--用户的头像-->
 						<!--用户的详细的信息-->
-						<img src="${user.userHeadImg }" height="120" width="120"
-							alt="${user.mdUserName}"><a href="" class="MAvaUp"><i
+						<img src="${userInfo.userHeadImg }" height="120" width="120"
+							alt="${userInfo.mdUserName}"><a href="" class="MAvaUp"><i
 							class="Mphoto"></i></a></i>
 					</div>
-					<div class="MAvaName">${user.mdUserName}<i
+					<div class="MAvaName">${userInfo.mdUserName}<i
 							class="MGenderMale"></i>
 					</div>
 					<div class="its_tags">
@@ -741,16 +874,16 @@ $(function() {
 					</div>
 					<div class="MAvaInfo clearfix MAvaMyInfo">
 						<span class="MAvaLevel flt1">等级：<a href=""
-							title="${user.mdLevel}" target="_blank">Lv.${user.mdLevel }</a></span>
-						<span class="MAvaPlace flt1" title="青岛">现居：青岛</span> <span
+							title="${userInfo.mdLevel}" target="_blank">Lv.${userInfo.mdLevel }</a></span>
+						<span class="MAvaPlace flt1" title="青岛">现居：${userInfo.mdAddress }</span> <span
 							class="MAvaSet"><a title="设置" href="updateUserNews"
 							target="_blank"></a></span>
 					</div>
 					<!-- 用户的个性签名 -->
 					<div id="_j_profilearea" class="MAvaProfile">
 						<div class="MProfile _j_showintrobox"
-							data-intro="${user.mdSignature}">
-							<pre>${user.mdSignature}</pre>
+							data-intro="${userInfo.mdSignature}">
+							<pre>${userInfo.mdSignature}</pre>
 						</div>
 						<!-- 用户个性签名的输入 -->
 						<!-- 用户个性签名的输入 -->
@@ -783,7 +916,12 @@ $(function() {
 				<!-- ************************************我获得的特权 -->
 				<!-- 我获得的特权 -->
 				<div class="MHonor">
+				<c:if test="${userInfo.mdUserRecid!=user.mdUserRecid }">
+					<div class="MHonTitle">他获得的特权</div>
+				</c:if>
+				<c:if test="${userInfo.mdUserRecid==user.mdUserRecid }">
 					<div class="MHonTitle">我获得的特权</div>
+				</c:if>
 					<div class="MHonDetail" id="_j_privicnt">
 						<div class="MHonList">
 							<ul class="clearfix" id="_j_privi_listcnt">
@@ -809,7 +947,12 @@ $(function() {
 
 
 				<div class="MUsers">
+				<c:if test="${userInfo.mdUserRecid!=user.mdUserRecid }">
+					<div class="MUsersTitle">他的关注</div>
+					</c:if>
+						<c:if test="${userInfo.mdUserRecid==user.mdUserRecid }">
 					<div class="MUsersTitle">我的关注</div>
+					</c:if>
 					<div class="MUsersDetail" id="_j_followcnt">
 						<div class="MUsersAtom">
 							<ul class="clearfix _j_followlist">
@@ -884,7 +1027,12 @@ $(function() {
 
 
 				<div class="MGroup">
+				<c:if test="${userInfo.mdUserRecid!=user.mdUserRecid }">
+					<div class="MGroupTitle">他的小组</div>
+				</c:if>	
+				<c:if test="${userInfo.mdUserRecid==user.mdUserRecid }">
 					<div class="MGroupTitle">我的小组</div>
+				</c:if>	
 					<div class="MGroupDetail">
 						<ul>
 							<li><a href="" target="_blank"><img
@@ -929,26 +1077,72 @@ $(function() {
 							id="_j_msgboard_submit">留言</a>
 					</div>
 					<div class="MGuestList">
+					<c:set var="nums" value="${0 }" />
 						<ul class="_j_msgboard_list">
 							<c:if test="${messageList != null }">
 								<c:forEach items="${messageList}" var="message">
+									<c:set var="nums" value="${nums+1 }" />
+								<c:if test="${nums<=6 }">
 									<li>
 										<div class='word_one'>
 											<div class='word_one_one'>
-												<img src="${message.leave.userHead}" class='word_one_one'>
+												<a href="toHostHome?userId=${message.lvUser.mdUserRecid }"><img src="${message.lvUser.userHeadImg}" class='word_one_one'></a>
 											</div>
 											<div class='word_one_two'>
-												<div class='word_one_two_one'>${message.leave.userNick}</div>
-												<div class='word_one_two_two'>${message.time}</div>
+												<a href="toHostHome?userId=${message.lvUser.mdUserRecid }"><div class='word_one_two_one'>${message.lvUser.mdUserName}</div></a>
+												<div class='word_one_two_two'>${message.mdLvDate}</div>
 											</div>
 										</div>
-										<div class='word_two'>${message.leaveMsg}</div>
+										<div class='word_two'>${message.mdLvMessage}</div>
+										<div class='word_two_recid' style='display:none'> ${message.lvUser.mdUserRecid}</div>
 									</li>
+									</c:if>
 								</c:forEach>
 							</c:if>
-
-
 						</ul>
+						<c:if test="${messageList.size()>6 }">
+						<!-- 设置分页 -->
+						
+						<div class="left_page" style="color: orange; background-image: url('syste_img/twice_ico_sprite_v9.png');
+								background-position: -177px -241px;
+ 								background-position-x: -177px;
+								background-position-y: -241px;
+								background-size: 220px auto;
+								color: rgb(102, 102, 102);
+								cursor: pointer;
+								display: inline-block;
+								font-family: Arial,verdana,'Lucida Grande';
+								font-size: 14px;
+								height: 20px;
+								margin-bottom: 0px;
+								margin-left: 70px;
+								margin-right: 10px;
+								margin-top: 20px;
+								overflow-wrap: break-word;
+								text-align: center;
+								width: 20px;">  </div>
+								<div style="display: none">${page.pageCurrent }</div>
+								<div style="display: none">${page.pageCount }</div>
+								<div style="display: none">${page.pageSize }</div> 
+						        <div  class="rigth_page" style="color: orange;background-image: url('syste_img/twice_ico_sprite_v9.png');
+                              background-position: -177px -262px;
+background-position-x: -177px;
+background-position-y: -262px;
+background-size: 220px auto;
+color: rgb(102, 102, 102);
+cursor: pointer;
+display: inline-block;
+font-family: Arial,verdana,SimSun,STHeiti;
+font-size: 14px;
+height: 20px;
+margin-bottom: 0px;
+margin-left: 50px;
+margin-right: 10px;
+margin-top: 20px;
+overflow-wrap: break-word;
+text-align: center;
+width: 20px;">  </div>
+						</c:if>
 					</div>
 				</div>
 
@@ -1010,7 +1204,7 @@ $(function() {
 				<div class="common_block personal_info" id="_j_taskwrap">
 					<div class="personal_tips">
 						<p>
-							<strong>${user.mdUserName }</strong>，这里是你的【窝】！
+							<strong>${userInfo.mdUserName }</strong>，这里是你的【窝】！
 						</p>
 						<p>是记录你的旅行记忆，结交各路豪杰的地盘儿。现在开启蚂蜂窝旅程！</p>
 					</div>
@@ -1234,7 +1428,11 @@ $(function() {
 						});
 					});
 				</script>
+				
+				
+				<c:if test="${commnetList.size()>0 }">
 				<div class="common_block my_ask my_dp" id="_j_commentwrap">
+				<c:forEach items="${commnetList}" var="comment">
 					<div class="dp_list">
 						<ul>
 							<li class="first">
@@ -1274,12 +1472,15 @@ $(function() {
 							</li>
 						</ul>
 					</div>
+					
+					</c:forEach>
+					
 					<div class="more_notes">
 						<a href="">共<strong>1</strong>点评
 						</a>
 					</div>
 				</div>
-
+				</c:if>
 				<!-- ---------***********************************用户的点评************************* -->
 				<!-- 用户的回答*************************************************8 -->
 				<!-- 用户的回答*************************************************8 -->
@@ -1354,7 +1555,7 @@ $(function() {
 	<!-- ************************************设置封面的图片************************** -->
 	<!-- ************************************设置封面的图片************************** -->
 
-	<div class="page_syste_img/img" id="page"></div>
+	<!-- div class="page_syste_img/img" id="page"></div>
 	<div class="page_syste_img/img1111">
 		<div class="page_syste_img/img1112">
 			<h1 style="margin: 10px auto auto 30px;">选择封面的图片</h1>
@@ -1367,7 +1568,7 @@ $(function() {
 		<div class="page_syste_img/img1114">
 			<span class="true_true">确定</span> <span class="back">&nbsp;取消</span>
 		</div>
-	</div>
+	</div-->
 
 	<!-- ************************************设置封面的图片************************** -->
 </body>

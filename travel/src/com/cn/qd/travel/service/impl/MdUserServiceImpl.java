@@ -71,6 +71,7 @@ public class MdUserServiceImpl implements UserService{
 		return 0;
 	}
 
+	@SuppressWarnings("rawtypes")
 	@Override
 	public ArrayList<Object> getUserRole(MdUser t, Map map) {
 		return null;
@@ -116,6 +117,16 @@ public class MdUserServiceImpl implements UserService{
 	@Override
 	public int updateBySql(Map<String, Object> map) {
 		return userDao.updateBySql((String)map.get("sql"));
+	}
+
+	@Override
+	public int updateUserInfo(MdUser user) {
+		return userDao.updateByMap(user);
+	}
+
+	@Override
+	public ArrayList<MdUser> selectById(String id) {
+		return userDao.selectByUserId(id);
 	}
 
 }

@@ -1,5 +1,6 @@
 package com.cn.qd.travel.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -78,7 +79,7 @@ public interface MdUserMapper {
      * @param mdUserRecid
      * @return
      */
-	List<MdUser> selectByUserId(String id);
+	ArrayList<MdUser> selectByUserId(String id);
     
     
     
@@ -109,8 +110,7 @@ public interface MdUserMapper {
      * @param mdUserRecid
      * @return
      */
-    @SuppressWarnings("rawtypes")
-	int updateByMap(Map map);
+	int updateByMap(MdUser user);
     
     /**
      * 数据更新,通过sql

@@ -53,8 +53,8 @@
 						<a href="javascript:;" id="set-pw-btn">修改密码</a>
 						<div id="set-pw">
 							<div class="ways">
-								<a href="setMobile" class="byphone"><i></i>
-								<p>手机验证修改</p></a> <a href="setMail" class="bymail disable"><i></i>
+								<a href="/setting/security/password/?by=mobile" class="byphone"><i></i>
+								<p>手机验证修改</p></a> <a href="javascript:;" class="bymail disable"><i></i>
 								<p>邮箱验证修改</p></a>
 							</div>
 
@@ -65,7 +65,7 @@
 				<dl class="clearfix">
 					<dt>绑定邮箱：</dt>
 					<dd>
-						<a href="setMail">设置邮箱</a>
+						<a href="/setting/security/email/">设置邮箱</a>
 					</dd>
 				</dl>
 				<!--绑定手机-->
@@ -74,7 +74,7 @@
 					<dd>
 						156****5662<span class="status"><i></i>已绑定 <a
 							style="margin-left: 15px;"
-							href="setMobile">更改号码</a></span>
+							href="/setting/security/mobile/?type=change">更改号码</a></span>
 					</dd>
 				</dl>
 

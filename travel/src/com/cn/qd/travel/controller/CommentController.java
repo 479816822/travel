@@ -1,10 +1,12 @@
 package com.cn.qd.travel.controller;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.cn.qd.travel.entity.MDCommentOne;
 import com.cn.qd.travel.entity.MdUser;
+import com.cn.qd.travel.entity.MdUserLeaveMessage;
+import com.cn.qd.travel.entity.Page;
 import com.cn.qd.travel.service.CommentLeavelService;
 import com.cn.qd.travel.util.GUID;
 
@@ -25,6 +29,15 @@ public class CommentController {
 	@Autowired
 	CommentLeavelService commentTravel;
 	
+	
+	
+	/**
+	 * 游记评论
+	 * @param model
+	 * @param session
+	 * @param travelComment
+	 * @return
+	 */
 	@RequestMapping(value = "replyTravel", method = { RequestMethod.POST })
 	@ResponseBody
 	public Map<String, MDCommentOne> travelComment(Model model, HttpSession session, MDCommentOne travelComment) {
@@ -48,5 +61,21 @@ public class CommentController {
 		return result;
 	}
 
+	
+	/**
+	 * 用户留言分页
+	 * @param page
+	 * @param lvMessage
+	 * @return
+	 */
+	@RequestMapping(value = "commentPage", method = { RequestMethod.POST })
+	@ResponseBody
+	public Map<String,Object> lvMeaagePage(Page page,HttpServletRequest request){
+		Map<String, Object> result = new HashMap<String, Object>();
+		ArrayList<MdUserLeaveMessage> LvMessageList=commentTravel.selectLvMeaagePage(page,request);
+		result.put("lvMessage", LvMessageList);
+		return result;
+	}
+	
 
 }

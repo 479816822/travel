@@ -11,6 +11,8 @@
 	<!-- 引用图片上传的插件的js和css -->
 <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
 
+<link href="css/alterInfo/message.css" rel="stylesheet" type="text/css">
+
 <link rel="stylesheet"
 		  href="pluing/publicity/zyupload/skins/zyupload-1.0.0.min.css " type="text/css">
 <script type="text/javascript"
@@ -118,23 +120,22 @@ $(function() {
 	
 
 <form action="update" method="POST">	
-<div class="user_heads">
-	<!--************************************content begin ****************************************-->
+	<!--************************************content end ****************************************-->	
+	
 	<div class="wrapper clearfix">
-		<!--content 右-->
+		<!--aside 左边部分-->
 		<div class="aside">
-			<a class="on user_new" ><i class="i1"></i>我的信息</a> 
-			<a class="user_head"><i class="i2 " ></i>我的头像</a> 
-			<a href=""><i class="i3"></i>绑定设置</a> <a href=""><i class="i4"></i>账号安全</a> <a href=""><i
-				class="i8"></i>我的窝设置</a> <a href=""><i class="i9"></i>黑名单管理</a> <a
-				href=""><i class="i10"></i>我的钱包</a>
+			<a href="/setting/" class="on"><i class="i1"></i>我的信息</a> <a
+				href="/setting/avatar/"><i class="i2"></i>我的头像</a> <a
+				href="/setting/security/"><i class="i4"></i>账号安全</a> <a
+				href="/setting/wallet/"><i class="i10"></i>我的钱包</a>
 		</div>
 
-		<!-- ******************************用户的基本信息***************************** -->
-		<!--content 左-->
-		<div class="content user_news_101">
+		<!--content 右边部分-->
+		<div class="content">
+			<!--头部-->
 			<div class="hd">
-				<strong>我的信息</strong> <span> 资料完善度
+				<strong>我的信息</strong> <span> 资料完善度 <!--进度条-->
 					<div class="progress">
 						<div class="num">30%</div>
 						<div class="on" style="width: 30%"></div>
@@ -142,42 +143,43 @@ $(function() {
 				</span>
 			</div>
 
+			<!--中部-->
 			<div class="userinfo">
-					<div class="alert alert-danger"
+				<form action="" method="post">
+					<div
 						style="color: #a94442; background-color: #f2dede; border-color: #ebccd1; display: none"></div>
+
+					<!--名号-->
 					<dl class="clearfix">
 						<dt>名号：</dt>
 						<dd>
-							<input type="text" name="userNick" value="${user.mdUserName}" maxlength="16"
+							<input type="text" name="name" value="安梅花" maxlength="16"
 								autocomplete="off" />
 						</dd>
 					</dl>
-
-					<!-- 用来存用户的头像的地址 -->
-					<input type="text" name="userHead" value="${user.userHeadImg}" class="hide 10101"/>
+					<!--性别-->
 					<dl class="clearfix">
 						<dt>性别：</dt>
 						<dd>
 							<label><span class="cssradio"><input type="radio"
-									name="userGender" value="男" /><span></span></span>男</label> <label><span
-								class="cssradio"><input type="radio" name="userGender"
-									value="女" /><span></span></span>女</label> <label><span
+									name="gender" value="1" /><span></span></span>男</label> <label><span
+								class="cssradio"><input type="radio" name="gender"
+									value="0" /><span></span></span>女</label> <label><span
 								class="cssradio"><input type="radio" name="gender"
 									value="2" checked="true" /><span></span></span>保密</label>
 						</dd>
 					</dl>
-
+					<!--居住城市-->
 					<dl class="clearfix">
 						<dt>居住城市：</dt>
 						<dd>
 							<div class="input-group">
-								<input type="text" name="city" value="" autocomplete="off"
-									data-verification-name="居住城市" class="" />
+								<input type="text" name="city" value="" autocomplete="off" />
 								<ul class="input-suggest"></ul>
 							</div>
 						</dd>
 					</dl>
-
+					<!--出生日期-->
 					<dl class="clearfix">
 						<dt>出生日期：</dt>
 						<dd>
@@ -185,22 +187,23 @@ $(function() {
 								data-verification-name="出生日期" class="" autocomplete="off" />
 						</dd>
 					</dl>
-
+					<!--个人简介-->
 					<dl class="clearfix">
 						<dt>个人简介：</dt>
 						<dd>
-							<textarea name="userResume" data-verification-name="个人简介"
-								placeholder="例：摄影师/旅居澳洲/潜水爱好者" maxlength="100"></textarea>
+							<textarea name="intro" data-verification-name="个人简介"
+								placeholder="例：摄影师/旅居澳洲/潜水爱好者"
+								class="verification[maxSize[100]]" maxlength="100"></textarea>
 						</dd>
 					</dl>
-
+					<!--收货地址-->
 					<dl class="clearfix">
 						<dt>收货地址：</dt>
 						<dd class="myaddress">
-							<a href="">新增收货地址</a>
+							<a href="/setting/address/">新增收货地址</a>
 						</dd>
 					</dl>
-
+					<!--提示信息-->
 					<dl class="clearfix">
 						<dt></dt>
 						<dd class="tips">
@@ -210,81 +213,187 @@ $(function() {
 							<p>如果您在蚂蜂窝活动中获得奖品，我们将按照该收货地址发送奖品， 所以请填写 真实有效 的收货信息。</p>
 						</dd>
 					</dl>
-
+					<!--保存-->
 					<div class="btn-sub">
 						<button type="submit">保存</button>
 					</div>
+				</form>
 			</div>
 		</div>
 
-		<!-- --------------***************************** 我的头像*************************** -->
-
-		<div class="content user_headers hide">
-		<!-- 这是上传图片的div不上传时是隐藏着 -->
-		<div id="zyupload" class="zyupload the_img"></div>
-		
-			<div class="hd">
-				<strong>我的头像</strong> <span> 资料完善度
-					<div class="progress">
-						<div class="num">30%</div>
-						<div class="on" style="width: 30%"></div>
-					</div>
-				</span>
-			</div>
-
-			<div class="userlogo">
-				<div class="avatar" id="_j_avatar_box">
-					<img src="${user.userHeadImg}" width="120" class="img_img101"
-						height="120" border="0">
-					<div class="progress" id="percentContent" style="display: none;">
-						<div class="bar">
-							<div class="num" id="percentNum">0%</div>
-							<div class="on" style="width: 0%" id="uploadPercent"></div>
-						</div>
-					</div>
-				</div>
-				<div class="btn-sub choose_img">
-					<div class="btn" id="_j_upload">选择图片</div>
-					支持jpg、png、jpeg、bmp，图片大小5M以内
-				</div>
-				<div class="editor" id="_j_crop_box">
-					<div class="clearfix">
-						<div class="plan">
-							<img src="http://file.mafengwo.net/images/pp600.gif">
-						</div>
-						<div class="preview">
-							<p>预览</p>
-							<dl class="large">
-								<dt>
-									<img src="http://file.mafengwo.net/images/pp600.gif">
-								</dt>
-								<dd>120*120</dd>
-							</dl>
-							<dl class="normal">
-								<dt>
-									<img src="http://images.mafengwo.net/images/pp600.gif">
-								</dt>
-								<dd>48*48</dd>
-							</dl>
-							<dl class="small">
-								<dt>
-									<img src="http://images.mafengwo.net/images/pp600.gif">
-								</dt>
-								<dd>16*16</dd>
-							</dl>
-						</div>
-					</div>
-					<div class="btns">
-						<a href="#" class="btn1">保存</a> <a href="#" class="btn2">取消</a>
-					</div>
-				</div>
-			</div>
-
-		</div>
 	</div>
-</div>	
 
-	<!--************************************content end ****************************************-->	
+
+
+
+	<script type="text/javascript">
+		$(function() {
+			$('.aside a').not('.on').on(
+					'click',
+					function(e) {
+						var left, top;
+						$('.aside .ripple').removeClass('animate');
+						0 === $(this).children('.ripple').size()
+								&& $(this).prepend(
+										'<span class="ripple"></span>');
+						var ripple = $(this).children('.ripple');
+						left = e.pageX - $(this).offset().left - ripple.width()
+								/ 2, top = e.pageY - $(this).offset().top
+								- ripple.height() / 2, ripple.css({
+							top : top,
+							left : left
+						}).addClass('animate');
+					});
+			$('.content .alert .close').on('click', function() {
+				$(this).closest('.alert').fadeOut(500, function() {
+					$(this).remove();
+				});
+			});
+		});
+	</script>
+
+
+	<script type="text/javascript">
+		$(function() {
+			var timer = 0;
+			var eventName = ($.browser.msie && parseInt($.browser.version, 10) < 9) ? 'keyup'
+					: 'input';
+			var success = function(field) {
+				field.closest('dl').removeClass('error');
+				$(".alert-danger").html("");
+				$(".alert-danger").hide();
+				console.log('show succ');
+				console.log(field);
+			};
+			var failed = function(field, message) {
+				field.closest('dl').addClass('error');
+				$(".alert-danger").html(message);
+				$(".alert-danger").show();
+				console.log('show failed');
+				console.log(field);
+			};
+			$('#_j_form')
+					.delegate(
+							'[name="city"]',
+							eventName,
+							function() {
+								var self = $(this);
+								var word = $.trim(self.val());
+								var suggest = self.closest('.input-group')
+										.find('.input-suggest');
+								clearTimeout(timer);
+								if (!word) {
+									suggest.empty().hide();
+								} else {
+									timer = setTimeout(
+											function() {
+												$
+														.getJSON(
+																'/home/setting.php/citySuggest?word='
+																		+ encodeURIComponent(word),
+																function(data) {
+																	console
+																			.log('here');
+																	console
+																			.log(data);
+																	suggest
+																			.empty();
+																	if (data.length > 0) {
+																		for ( var i in data) {
+																			$(
+																					'<li><a href="#"><i class="place"></i><span>'
+																							+ data[i]
+																							+ '</span></a></li>')
+																					.appendTo(
+																							suggest);
+																		}
+																		suggest
+																				.show();
+																	}
+																});
+											}, 500);
+								}
+							})
+					.delegate(
+							'.input-group .input-suggest a',
+							'click',
+							function(e) {
+								e.preventDefault();
+								var self = $(this);
+								var group = self.closest('.input-group');
+								group.find(':text').val(
+										self.find('span').text());
+								group.find('.input-suggest').empty().hide();
+								console.log(group.find(':text'));
+								$('#_j_form').verification('verifyField',
+										group.find(':text'));
+							})
+					.verification(
+							{
+								customFuncs : {
+									checkNickname : function(field) {
+										var value = $.trim(field.val());
+										var len = 0;
+										for (var i = 0; i < value.length; i++) {
+											if (value.charAt(i).match(
+													/[^\x4e00-\x9fa5]/ig)) {
+												len += 2;
+											} else {
+												len++;
+											}
+										}
+										if (len > 16) {
+											failed(field,
+													'名号不能长于8个汉字长度（或16个英文字符）');
+											$.verification.verifyFailed(field);
+										} else {
+											success(field);
+											$.verification.verifySuccess(field);
+										}
+									},
+									checkCity : function(field) {
+										$.get('/home/setting.php/checkCity', {
+											city : $.trim(field.val())
+										}, function(data) {
+											if (data) {
+												failed(field, '居住城市填写不正确');
+												$.verification
+														.verifyFailed(field);
+											} else {
+												success(field);
+												$.verification
+														.verifySuccess(field);
+											}
+										});
+									}
+								},
+								success : function(field) {
+									success(field);
+								},
+								failed : function(field, message) {
+									failed(field, message);
+								}
+							});
+
+			$('[name="birthday"]', '#_j_form').datepicker({
+				endDate : new Date()
+			}).on('changeDate', function() {
+				$('#_j_form').verification('verifyField', $(this));
+				$(this).datepicker('hide');
+			});
+		});
+	</script>
+
+	<script language="javascript" type="text/javascript">
+		if (typeof M !== "undefined" && typeof M.loadResource === "function") {
+			M
+					.loadResource("https://js.mafengwo.net/js/cv/js+Dropdown:js+pageletcommon+pageHeadUserInfoWWWNormal:js+jquery.tmpl:js+M+module+InputListener:js+M+module+SuggestionXHR:js+M+module+DropList:js+M+module+Suggestion:js+M+module+MesSearchEvent:js+SiteSearch:js+AHeader:js+M+module+dialog+Layer:js+M+module+dialog+DialogBase:js+M+module+dialog+Dialog:js+M+module+FrequencyVerifyControl:js+M+module+FrequencySystemVerify:js+ALogin:js+ACnzzGaLog:js+ARecruit^Z1VQ^1485230927.js");
+		}
+	</script>
+	
+	
+	
+	
 </form>
 	
 	

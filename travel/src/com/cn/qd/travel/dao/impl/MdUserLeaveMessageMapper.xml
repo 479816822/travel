@@ -25,6 +25,8 @@
     <result column="MD_GRADUATION_DATE" jdbcType="DATE" property="mdGraduationDate" />
     <result column="MD_EMS_CODE" jdbcType="DECIMAL" property="mdEmsCode" />
     <result column="MD_PRAISE" jdbcType="DECIMAL" property="mdPraise" />
+     <result column="MD_ADDRESS" jdbcType="VARCHAR" property="mdAddress" />
+    <result column="USERHEADIMG" jdbcType="VARCHAR" property="userHeadImg" />
   </resultMap>
   <resultMap extends="UserResultMap" id="ResultMapWithBLOBs" type="com.cn.qd.travel.entity.MdUser">
     <result column="MD_ICON" jdbcType="BLOB" property="mdIcon" />
@@ -82,30 +84,32 @@
    h.MD_SEX as h_MD_SEX,
    h.MD_AGE as h_MD_AGE,
    h.MD_CREATE_TIME as h_MD_CREATE_TIME,
-   l.MD_GRADUATION_DATE as h_MD_GRADUATION_DATE,
-   l.MD_EMS_CODE as h_MD_EMS_CODE,
-   l.MD_PRAISE as h_MD_PRAISE,
-   l.MD_ICON as h_MD_ICON,
-   l.MD_PASSWORD as h_MD_PASSWORD,
-   l.MD_EMAIL as h_MD_EMAIL,
-   l.MD_SCHOOL as h_MD_SCHOOL,
-   l.MD_IS_VIP as h_MD_IS_VIP,
-   l.MD_LEVEL as h_MD_LEVEL,
-   l.MD_SIGNATURE as h_MD_SIGNATURE,
-   l.MD_SCORE as h_MD_SCORE,
+   h.userHeadImg as h_userHeadImg,
+   l.userHeadImg as l_userHeadImg,
+   l.MD_GRADUATION_DATE as l_MD_GRADUATION_DATE,
+   l.MD_EMS_CODE as l_MD_EMS_CODE,
+   l.MD_PRAISE as l_MD_PRAISE,
+   l.MD_ICON as l_MD_ICON,
+   l.MD_PASSWORD as l_MD_PASSWORD,
+   l.MD_EMAIL as l_MD_EMAIL,
+   l.MD_SCHOOL as l_MD_SCHOOL,
+   l.MD_IS_VIP as l_MD_IS_VIP,
+   l.MD_LEVEL as l_MD_LEVEL,
+   l.MD_SIGNATURE as l_MD_SIGNATURE,
+   l.MD_SCORE as l_MD_SCORE,
    l.MD_USER_RECID as h_MD_USER_RECID,
-   l.MD_STDNAME as h_MD_STDNAME,
-   l.MD_REF_ID as h_MD_REF_ID,
-   l.MD_STDCODE as h_MD_STDCODE,
-   l.MD_ALERT_DATE as h_MD_ALERT_DATE,
-   l.MD_ALERT_USER as h_MD_ALERT_USER,
-   l.MD_USER_NAME as h_MD_USER_NAME,
-   l.MD_TELEPHONE as h_MD_TELEPHONE,
-   l.MD_SEX as h_MD_SEX,
-   l.MD_AGE as h_MD_AGE,
-   l.MD_CREATE_TIME as h_MD_CREATE_TIME
+   l.MD_STDNAME as l_MD_STDNAME,
+   l.MD_REF_ID as l_MD_REF_ID,
+   l.MD_STDCODE as l_MD_STDCODE,
+   l.MD_ALERT_DATE as l_MD_ALERT_DATE,
+   l.MD_ALERT_USER as l_MD_ALERT_USER,
+   l.MD_USER_NAME as l_MD_USER_NAME,
+   l.MD_TELEPHONE as l_MD_TELEPHONE,
+   l.MD_SEX as l_MD_SEX,
+   l.MD_AGE as l_MD_AGE,
+   l.MD_CREATE_TIME as l_MD_CREATE_TIME
     from MD_USER_LEAVE_MESSAGE m ,  MD_USER l ,MD_USER h
-    where m.MD_HOST_USER_RECID=#{id,jdbcType=VARCHAR} and m.MD_HOST_USER_RECID=h.MD_USER_RECID and m.MD_LV_USER_RECID=l.MD_USER_RECID
+    where m.MD_HOST_USER_RECID=#{id,jdbcType=VARCHAR} and m.MD_HOST_USER_RECID=h.MD_USER_RECID and m.MD_LV_USER_RECID=l.MD_USER_RECID order by MD_LV_TIME ASC
   </select>
   
     <!--查询下级的留言-->
@@ -134,30 +138,31 @@
    h.MD_SEX as h_MD_SEX,
    h.MD_AGE as h_MD_AGE,
    h.MD_CREATE_TIME as h_MD_CREATE_TIME,
-   l.MD_GRADUATION_DATE as h_MD_GRADUATION_DATE,
-   l.MD_EMS_CODE as h_MD_EMS_CODE,
-   l.MD_PRAISE as h_MD_PRAISE,
-   l.MD_ICON as h_MD_ICON,
-   l.MD_PASSWORD as h_MD_PASSWORD,
-   l.MD_EMAIL as h_MD_EMAIL,
-   l.MD_SCHOOL as h_MD_SCHOOL,
-   l.MD_IS_VIP as h_MD_IS_VIP,
-   l.MD_LEVEL as h_MD_LEVEL,
-   l.MD_SIGNATURE as h_MD_SIGNATURE,
-   l.MD_SCORE as h_MD_SCORE,
-   l.MD_USER_RECID as h_MD_USER_RECID,
-   l.MD_STDNAME as h_MD_STDNAME,
-   l.MD_REF_ID as h_MD_REF_ID,
-   l.MD_STDCODE as h_MD_STDCODE,
-   l.MD_ALERT_DATE as h_MD_ALERT_DATE,
-   l.MD_ALERT_USER as h_MD_ALERT_USER,
-   l.MD_USER_NAME as h_MD_USER_NAME,
-   l.MD_TELEPHONE as h_MD_TELEPHONE,
-   l.MD_SEX as h_MD_SEX,
-   l.MD_AGE as h_MD_AGE,
-   l.MD_CREATE_TIME as h_MD_CREATE_TIME
-    from MD_USER_LEAVE_MESSAGE m , MD_USER_LEAVE_MESSAGE u ,,  MD_USER l ,MD_USER h where 
-   m.MD_LV_RECID=u.MD_LV_REF_ID and u.MD_HOST_USER_RECID=h.MD_USER_RECID and u.MD_LV_USER_RECID=l.MD_USER_RECID
+   l.MD_GRADUATION_DATE as l_MD_GRADUATION_DATE,
+   l.MD_EMS_CODE as l_MD_EMS_CODE,
+   l.MD_PRAISE as l_MD_PRAISE,
+   l.MD_ICON as l_MD_ICON,
+   l.MD_PASSWORD as l_MD_PASSWORD,
+   l.MD_EMAIL as l_MD_EMAIL,
+   l.MD_SCHOOL as l_MD_SCHOOL,
+   l.MD_IS_VIP as l_MD_IS_VIP,
+   l.MD_LEVEL as l_MD_LEVEL,
+   l.userHeadImg as l_userHeadImg,
+   l.MD_SIGNATURE as l_MD_SIGNATURE,
+   l.MD_SCORE as l_MD_SCORE,
+   l.MD_USER_RECID as l_MD_USER_RECID,
+   l.MD_STDNAME as l_MD_STDNAME,
+   l.MD_REF_ID as l_MD_REF_ID,
+   l.MD_STDCODE as l_MD_STDCODE,
+   l.MD_ALERT_DATE as l_MD_ALERT_DATE,
+   l.MD_ALERT_USER as l_MD_ALERT_USER,
+   l.MD_USER_NAME as l_MD_USER_NAME,
+   l.MD_TELEPHONE as l_MD_TELEPHONE,
+   l.MD_SEX as l_MD_SEX,
+   l.MD_AGE as l_MD_AGE,
+   l.MD_CREATE_TIME as l_MD_CREATE_TIME
+    from MD_USER_LEAVE_MESSAGE m , MD_USER_LEAVE_MESSAGE u ,  MD_USER l ,MD_USER h where 
+   m.MD_LV_RECID=u.MD_LV_REF_ID and u.MD_HOST_USER_RECID=h.MD_USER_RECID and u.MD_LV_USER_RECID=l.MD_USER_RECID order by MD_LV_TIME ASC
   </select>
   
   

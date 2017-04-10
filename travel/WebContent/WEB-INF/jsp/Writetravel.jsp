@@ -41,7 +41,7 @@
 						itemHeight : "140px", // 文件项的高度
 						url : "upload", // 上传文件的路径
 						fileType : [ "jpeg", "JPG", "JPEG", "jpg", "png",
-								"ogg", "mp4", "WebM", "MPEG4","MP3","WMA","MOD","flac" ],// 上传文件的类型
+								"ogg", "mp4", "WebM", "MPEG4","MP3","WMA","MOD","flac","mp3" ],// 上传文件的类型
 						fileSize : 5120000000000, // 上传文件的大小
 						multiple : true, // 是否可以多个文件上传
 						dragDrop : true, // 是否可以拖动上传文件
@@ -139,8 +139,7 @@
 		
 		
 		//*****************************************************填写信息
-		  $('#dp1491376550436').datepicker(); //绑定输入框
-
+		  $('#dp1491376550436').datepicker(); //绑定输入框 
 
             //选择人物
             $("input[name='mdTravelPeople']").blur(function() {
@@ -328,10 +327,9 @@
 					//成功了
 					$(".travel_id").html(msg.id);
 					travelSuccess();
-				//location.href = "toMyHome";
 				},
 				error : function(msg) {
-					location.href = "toMyHome";
+					alert("发表失败")
 				}
 			});
 
@@ -393,7 +391,7 @@
                      <strong class="dd_title">
                          <i class="send_date"></i>出发时间<span>*</span></strong>
                      <div class="dd_select">
-                         <input value=""  name="mdStartTime" style="z-index: 551; position: relative;" id="dp1491376550436" type="text">
+                         <input value=""  name="mdStartTime" style="z-index: 551; position: relative;" id="dp1491376550436" type="text"/>
 
                          <a role="button" tabindex="0" class="time _j_dateicon"></a>
                      </div>             </dd>             <dd class="go_days">
@@ -406,7 +404,7 @@
                  <dd class="go_figure" style="position:relative;z-index:10;(fuck IE7/6)">
                  <strong class="dd_title">
                      <i class="send_peo"></i>人&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;物<span>*</span></strong>
-                 <div class="dd_select">                     <input class="_j_personhiddeninput" name="mdTravelPeople0" type="hidden" >
+                 <div class="dd_select">                     <input class="_j_personhiddeninput" name="mdTravelPeople0" type="hidden" />
                      <input class="_j_personinput" value="请选择出行人物"  type="text" name="mdTravelPeople">
                      <a role="button" tabindex="0" class="down _j_downarr"></a>
                      <ul class="down_con hidn_news" >

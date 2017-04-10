@@ -9,9 +9,13 @@ import org.springframework.stereotype.Service;
 import com.cn.qd.travel.core.BaseService;
 import com.cn.qd.travel.entity.MDCommentOne;
 import com.cn.qd.travel.entity.MdUserLeaveMessage;
+import com.cn.qd.travel.entity.Page;
 
 @Service
 public interface CommentLeavelService extends BaseService {
+	
+	
+	public ArrayList<MdUserLeaveMessage> selectLvMeaagePage(Page page,HttpServletRequest request);
 	
 	/**
 	 * 查询数据
@@ -25,7 +29,7 @@ public interface CommentLeavelService extends BaseService {
 	 * @param t
 	 * @return
 	 */
-	public ArrayList<MdUserLeaveMessage> selectById(Object t); 
+	public ArrayList<MdUserLeaveMessage> selectById(Object t,HttpServletRequest request); 
 	
 
 	/**

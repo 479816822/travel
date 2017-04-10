@@ -36,9 +36,9 @@ public class MdUser {
 
     private BigDecimal mdStdcode;
 
-    private Date mdAlertDate;
+    private Date mdAlertDate;//出生日期
 
-    private String mdAlertUser;
+    private String mdAlertUser; 
 
     private String mdSex;
 
@@ -50,11 +50,11 @@ public class MdUser {
 
     private String mdLevel;
 
-    private String mdSignature;
+    private String mdSignature;//个性签名
 
     private Long mdScore;
 
-    private Date mdGraduationDate;
+    private Date mdGraduationDate;//毕业日期
 
     private Integer mdEmsCode;
 
@@ -64,7 +64,18 @@ public class MdUser {
     
     private String mdSchool;
     
-    //用户银行
+    private String mdAddress;//居住地址
+    
+    
+    public String getMdAddress() {
+		return mdAddress;
+	}
+
+	public void setMdAddress(String mdAddress) {
+		this.mdAddress = mdAddress;
+	}
+
+	//用户银行
     private MD_BANK_ACUONT userBank;
     
 

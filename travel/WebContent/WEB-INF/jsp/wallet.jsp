@@ -22,8 +22,6 @@
 	border-bottom: 2px solid #eee;"></iframe>
 	 </div>
 
-
-
 	<div class="wrapper clearfix">
 		<!--aside 左边部分-->
 			<div class="aside">

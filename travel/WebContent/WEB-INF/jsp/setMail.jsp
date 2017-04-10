@@ -23,11 +23,11 @@
 	 </div>
 
 	<div class="wrapper clearfix">
-			<div class="aside">
-			<a href="updateUserNews" class="on"  style="background-color: white;color: #666;"><i class="i1"></i>我的信息</a> <a
-				href="avatar" style="background-color: white;color: #666;"><i class="i2 " ></i>我的头像</a> <a
-				href="security" style="background-color: white;color: #666;"><i class="i4"></i>账号安全</a> <a
-				href="wallet" style="background-color: #ffa800;color: white;"><i class="i10"></i>我的钱包</a>
+		<div class="aside">
+			<a href="/setting/" class="on"><i class="i1"></i>我的信息</a> <a
+				href="/setting/avatar/"><i class="i2"></i>我的头像</a> <a
+				href="/setting/security/"><i class="i4"></i>账号安全</a> <a
+				href="/setting/wallet/"><i class="i10"></i>我的钱包</a>
 		</div>
 
 		<div class="content">

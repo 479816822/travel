@@ -142,7 +142,7 @@ public class LoginController {
 			}
 		}
 
-		if (list.size() == 1) {// 登陆成功
+		if (list!=null&&list.size() == 1) {// 登陆成功
 			MdUser user = (MdUser) list.get(0);
 			if ("已登陆".equals(user.getMdStdname())) {
 				model.addAttribute("user", user.getMdStdname());
@@ -171,6 +171,9 @@ public class LoginController {
 	@RequestMapping(value = "toOutLogin")
 	public String toOutLogin(Model model, HttpSession session) {
 		MdUser user = (MdUser) session.getAttribute("user");
+		if(user==null){
+			return "redirect:/to_index";
+		}
 		user.setMdStdname("未登陆");
 		userService.update(user, null);
 		session.removeAttribute("user");

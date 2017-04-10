@@ -41,7 +41,7 @@ public class TravelController {
 	@RequestMapping(value = "writeTravel", method = { RequestMethod.POST })
 	@ResponseBody
 	public Map<String, String> saveTravel(@RequestBody String[] objArray, HttpSession session) {
-		MdUser user = (MdUser) session.getAttribute("loginUser");
+		MdUser user = (MdUser) session.getAttribute("user");
 		String travelId = GUID.createGuid();
 		// 进行数据封装
 		MDTravelParagraph travel = null;
@@ -120,10 +120,15 @@ public class TravelController {
 		travelInfo.getUser().setUserHeadImg(userHeadImg);
 		
 		SimpleDateFormat sim=new SimpleDateFormat("YYYY-MM-dd");
-		String date=sim.format(travelInfo.getMdStartTime());
-		travelInfo.setCreateDate(date);
-		String strdate=sim.format(travelInfo.getMdStartTime());
-		travelInfo.setStartDate(strdate);
+		if(travelInfo.getMdStartTime()!=null){
+			String strdate=sim.format(travelInfo.getMdStartTime());
+			travelInfo.setStartDate(strdate);
+		}
+		
+		if(travelInfo.getMdCreateTime()!=null){
+			String date=sim.format(travelInfo.getMdCreateTime());
+			travelInfo.setCreateDate(date);
+		}
 		
 		//查询游记评论
 		ArrayList<MDCommentOne> commentList=commentTravel.selectTravelComment(traId,request);

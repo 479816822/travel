@@ -1,4 +1,3 @@
-<!--我的信息-->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -8,15 +7,103 @@
 <meta charset="UTF-8">
 <title>我的信息</title>
 <link href="css/alterInfo/message.css" rel="stylesheet" type="text/css">
+
+
+
+   <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+
+    <link href="css/jquery-ui.css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery-1.8.1.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/dateinput-ch-ZN.js"></script>
+    <link href="css/red-datepicker.css" rel="stylesheet">
+
+    <script>
+        $(document).ready(function() {
+
+            $('#popupDatepicker').datepicker(); //绑定输入框
+            
+            
+          //确定信息更新
+    		$(".buttonss").click(function(){
+    			$(".a1000").html($("input[name='mdUserName']").val())
+    			$(".a1001").html($("input[name='mdSex']").val())
+    			$(".a1002").html($("input[name='mdAddress']").val())
+    			$(".a1003").html($("input[name='mdAlertDate']").val())
+    			$(".a1004").html($("#mdSignature").val())
+    			mdUserName =$(".a1000").html();
+    			mdSex = $(".a1001").html();
+    			mdAddress = $(".a1002").html();
+    			mdAlertDate = $(".a1003").html(); 
+    			mdSignature = $(".a1004").html(); 
+    			user ={
+    					mdUserName : mdUserName,
+    					mdSex : mdSex,
+    					mdAddress : mdAddress,
+    					mdAlertDate : mdAlertDate,
+    					mdSignature : mdSignature 
+    					};
+    			
+    			var objArray = new Array();
+    			objArray[0]=mdUserName;
+    			objArray[1]=mdSex;
+    			objArray[2]=mdAddress;
+    			objArray[3]=mdAlertDate;
+    			objArray[4]=mdSignature;
+    			
+    			
+    			
+    			$.ajax({
+    				type : "POST",
+    				url : "userinfo",
+    				data : JSON.stringify(objArray),
+    				contentType : 'application/json; charset=utf-8',
+    				dataType : 'json',
+    				success : function(msg) {
+    					alert("fdd")
+    					//成功了
+    				},
+    				error : function(msg) {
+    				}
+    			});
+    		});
+    		
+
+        });
+    </script>
 </head>
 <body>
+
+<div class="a1000" style="display: none;"></div>
+<div class="a1001" style="display: none;"></div>
+<div  class="a1002" style="display: none;"></div>
+<div class="a1003" style="display: none;"></div>
+<div class="a1004" style="display: none;"></div>
+
+
+
+    <div class="header" style=" width: 100%;
+ height:60px;">
+ 	<iframe src="VisitHead" frameborder="0" scrolling="no" marginheight="0"
+			marginwidth="0" style="margin: 0px auto; 	width: 100%;
+	height: 60px;
+	margin: 0 auto;
+	position: fixed;
+	z-index: 999;
+	border-bottom: 2px solid #eee;"></iframe>
+	 </div>
+
+
+
+
+
 	<div class="wrapper clearfix">
 		<!--aside 左边部分-->
 		<div class="aside">
-			<a href="/setting/" class="on"><i class="i1"></i>我的信息</a> <a
-				href="/setting/avatar/"><i class="i2"></i>我的头像</a> <a
-				href="/setting/security/"><i class="i4"></i>账号安全</a> <a
-				href="/setting/wallet/"><i class="i10"></i>我的钱包</a>
+			<a href="updateUserNews" class="on"><i class="i1"></i>我的信息</a> <a
+				href="avatar"><i class="i2"></i>我的头像</a> <a
+				href="security"><i class="i4"></i>账号安全</a> <a
+				href="wallet"><i class="i10"></i>我的钱包</a>
 		</div>
 
 		<!--content 右边部分-->
@@ -33,7 +120,7 @@
 
 			<!--中部-->
 			<div class="userinfo">
-				<form action="" method="post">
+				<form action="" method="post" >
 					<div
 						style="color: #a94442; background-color: #f2dede; border-color: #ebccd1; display: none"></div>
 
@@ -41,7 +128,7 @@
 					<dl class="clearfix">
 						<dt>名号：</dt>
 						<dd>
-							<input type="text" name="name" value="安梅花" maxlength="16"
+							<input type="text" name="mdUserName" value="${user.mdUserName }" maxlength="16"
 								autocomplete="off" />
 						</dd>
 					</dl>
@@ -50,11 +137,11 @@
 						<dt>性别：</dt>
 						<dd>
 							<label><span class="cssradio"><input type="radio"
-									name="gender" value="1" /><span></span></span>男</label> <label><span
-								class="cssradio"><input type="radio" name="gender"
-									value="0" /><span></span></span>女</label> <label><span
-								class="cssradio"><input type="radio" name="gender"
-									value="2" checked="true" /><span></span></span>保密</label>
+									name="mdSex" value="男" /><span></span></span>男</label> <label><span
+								class="cssradio"><input type="radio" name="mdSex"
+									value="女" /><span></span></span>女</label> <label><span
+								class="cssradio"><input type="radio" name="mdSex"
+									value="保密" checked="true" /><span></span></span>保密</label>
 						</dd>
 					</dl>
 					<!--居住城市-->
@@ -62,7 +149,7 @@
 						<dt>居住城市：</dt>
 						<dd>
 							<div class="input-group">
-								<input type="text" name="city" value="" autocomplete="off" />
+								<input type="text" name="mdAddress" value="${user.mdAddress }" autocomplete="off" />
 								<ul class="input-suggest"></ul>
 							</div>
 						</dd>
@@ -71,24 +158,24 @@
 					<dl class="clearfix">
 						<dt>出生日期：</dt>
 						<dd>
-							<input type="text" readonly="true" name="birthday" value=""
-								data-verification-name="出生日期" class="" autocomplete="off" />
+							<input type="text" readonly="readonly" name="mdAlertDate" value="${user.mdAlertDate }"
+								data-verification-name="出生日期" class="" autocomplete="off" id="popupDatepicker" readonly/>
 						</dd>
 					</dl>
 					<!--个人简介-->
 					<dl class="clearfix">
 						<dt>个人简介：</dt>
 						<dd>
-							<textarea name="intro" data-verification-name="个人简介"
+							<textarea name="mdSignature" data-verification-name="个人简介" id="mdSignature"
 								placeholder="例：摄影师/旅居澳洲/潜水爱好者"
-								class="verification[maxSize[100]]" maxlength="100"></textarea>
+								class="verification[maxSize[100]]" maxlength="100">${user.mdSignature }</textarea>
 						</dd>
 					</dl>
 					<!--收货地址-->
 					<dl class="clearfix">
 						<dt>收货地址：</dt>
 						<dd class="myaddress">
-							<a href="/setting/address/">新增收货地址</a>
+							<a href="address">新增收货地址</a>
 						</dd>
 					</dl>
 					<!--提示信息-->
@@ -103,7 +190,9 @@
 					</dl>
 					<!--保存-->
 					<div class="btn-sub">
-						<button type="submit">保存</button>
+					
+					<button type="/" class="buttonss">保存</button>
+						
 					</div>
 				</form>
 			</div>
@@ -111,7 +200,12 @@
 
 	</div>
 
-
+  	<div class="footer" style="	clear: both;
+	height: 480px;">
+		<iframe src="IndexFooter" frameborder="0" scrolling="no" marginheight="0"
+			marginwidth="0" style="margin: 0px auto;	width: 100%;
+	height: 480px;"></iframe>
+	</div>
 
 
 	<script type="text/javascript">
@@ -262,7 +356,6 @@
 									failed(field, message);
 								}
 							});
-
 			$('[name="birthday"]', '#_j_form').datepicker({
 				endDate : new Date()
 			}).on('changeDate', function() {
@@ -278,6 +371,8 @@
 					.loadResource("https://js.mafengwo.net/js/cv/js+Dropdown:js+pageletcommon+pageHeadUserInfoWWWNormal:js+jquery.tmpl:js+M+module+InputListener:js+M+module+SuggestionXHR:js+M+module+DropList:js+M+module+Suggestion:js+M+module+MesSearchEvent:js+SiteSearch:js+AHeader:js+M+module+dialog+Layer:js+M+module+dialog+DialogBase:js+M+module+dialog+Dialog:js+M+module+FrequencyVerifyControl:js+M+module+FrequencySystemVerify:js+ALogin:js+ACnzzGaLog:js+ARecruit^Z1VQ^1485230927.js");
 		}
 	</script>
+	
+	
 
 </body>
 </html>

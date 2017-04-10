@@ -9,8 +9,8 @@
     <link href="css/Mcss.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div class="header">
-    <div class="topBarC">
+<div class="header" style="width: 100%;">
+    <div class="topBarC" style="margin-left: 24%;margin-right: 13%">
         <div class="logo">
             <a title="蚂蜂窝自由行" href="/">蚂蜂窝自由行</a>
         </div>

@@ -1,7 +1,7 @@
 package com.cn.qd.travel.entity;
 
+import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 public class MdUserLeaveMessage {
 
@@ -10,13 +10,15 @@ public class MdUserLeaveMessage {
 	private MdUser hostUser;//被留言人
 	
 	
-	private List<MdUserLeaveMessage> lvMoreMessage;// 多级留言
+	private ArrayList<MdUserLeaveMessage> lvMoreMessage;// 多级留言
 
 	private String mdLvRecid;//主键
 
 	private String mdLvMessage;//留言
 
 	private Date mdLvTime;
+	
+	private String mdLvDate;
 
 	private String mdLvUserRecid;//留言人
 
@@ -30,6 +32,14 @@ public class MdUserLeaveMessage {
 
 	
 	
+	public String getMdLvDate() {
+		return mdLvDate;
+	}
+
+	public void setMdLvDate(String mdLvDate) {
+		this.mdLvDate = mdLvDate;
+	}
+
 	public MdUser getLvUser() {
 		return lvUser;
 	}
@@ -50,11 +60,12 @@ public class MdUserLeaveMessage {
 
 
 
-	public List<MdUserLeaveMessage> getLvMoreMessage() {
+
+	public ArrayList<MdUserLeaveMessage> getLvMoreMessage() {
 		return lvMoreMessage;
 	}
 
-	public void setLvMoreMessage(List<MdUserLeaveMessage> lvMoreMessage) {
+	public void setLvMoreMessage(ArrayList<MdUserLeaveMessage> lvMoreMessage) {
 		this.lvMoreMessage = lvMoreMessage;
 	}
 
