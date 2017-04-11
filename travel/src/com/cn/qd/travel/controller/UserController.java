@@ -98,12 +98,44 @@ public class UserController {
 			} else {
 				page.setPageCount(commnetList.size() / 6 + 1);
 			}
+			
+			
 			model.addAttribute("page", page);
 			model.addAttribute("trackList", travelList);
 			model.addAttribute("messageList", commnetList);
 			model.addAttribute("userInfo", user);
 		}
 		return "myHome";
+	}
+	
+	
+	
+	/**
+	 * 用户游记页面
+	 * @param model
+	 * @param session
+	 * @param userId
+	 * @param request
+	 * @return
+	 */
+	public String toMyTravel(Model model, HttpSession session, String userId, HttpServletRequest request){
+		ArrayList<MdUser> userList = userService.selectById(userId);
+		if (userList.size() > 0) {
+			MdUser user = null;
+			user = userList.get(0);
+			// 查询用户的所有游记
+			List<MDTravelNote> travelList = travelService.selectTravelList(null, userId);
+			// 用户头像转换
+			String savePath = request.getSession().getServletContext().getRealPath("upload");
+			String userHeadImg = ChangeIcon.changeImg(user.getMdIcon(), savePath);
+			user.setUserHeadImg(userHeadImg);
+			//查询评论
+			
+			
+			model.addAttribute("trackList", travelList);
+			model.addAttribute("userInfo", user);
+		}
+		return "mytravels";
 	}
 
 	/**

@@ -250,14 +250,7 @@ $(function() {
 									dataType : 'json',
 									success : function(msg) {
 										//更新数据
-										var str = "<li><div class='word_one'><div class='word_one_one'><a href='toHostHome?userId="
-												+ msg.message.lvUser.mdUserRecid 
-										        +"'><img  src='"
-												+ msg.message.lvUser.userHeadImg+"' class='word_one_one'></a></div><div class='word_one_two'>"
-												+"<a href='toHostHome?userId="
-											    + msg.message.lvUser.mdUserRecid "'>"
-												+"<div class='word_one_two_one'>"
-												+ msg.message.lvUser.mdUserName
+										var str = "<li><div class='word_one'><div class='word_one_one'><a href='toHostHome?userId="+msg.message.lvUser.mdUserRecid +"'><img  src='"+msg.message.mdLvUserRecid+" 'class='word_one_one'></a></div><div class='word_one_two'><a href='toHostHome?userId="+msg.message.mdLvUserRecid +"'><div class='word_one_two_one'>" + msg.message.lvUser.mdUserName
 												+ "</div></a><div class='word_one_two_two'>"
 												+ msg.message.mdLvDate
 												+ "</div></div></div><div class='word_two'>"
@@ -274,14 +267,16 @@ $(function() {
 										//提示输需要入的信息
 									}
 								});
-						}
+						};
 
 					})
 					
 	//8.留言上一页
 	$(".left_page").click(function(){
 		var nums= $("._j_msgboard_list").children().length
+		var pageCount=parseInt($(this).next().next().html());
 		var pageCurrent=$(this).next().html();
+		nums=parseInt(nums);
 		if(pageCurrent>1){	
 			var numss1=parseInt(pageCurrent);
 			var numss=numss1-1;
@@ -294,6 +289,24 @@ $(function() {
 			prePage:numss
 		}
 		pages(page);
+		if(nums>6){
+			var i=nums/6;
+			var j=nums%6;
+			i=parseInt(i);
+			j=parseInt(j);
+			var pageC;
+			if(i>1){
+				if(j>0){
+					pageC=i+1;
+				}else{
+					pageC=i;
+				}
+			pageC=parseInt(pageC)
+			pageCount=pageCount+pageC-1;
+			}
+			alert(pageCount)
+			$(this).next().next().html(pageCount)
+		}
 		var numss=parseInt(pageCurrent);
 		numss=numss-1;
 		$(this).next().html(numss);
@@ -303,10 +316,10 @@ $(function() {
 	//9留言下一页
 	$(".rigth_page").click(function(){
 		var nums= $("._j_msgboard_list").children().length
-		
+		nums=parseInt(nums);
 		var pageCurrent=parseInt($(this).prev().prev().prev().html());
 		var pageCount=parseInt($(this).prev().prev().html());
-		
+		nums=parseInt(nums);
 		if(pageCurrent<pageCount){
 		var page={
 			cache : $("#user_id_host").html(),//被留言人
@@ -315,6 +328,24 @@ $(function() {
 			pageSize:$(this).prev().html(),
 			nextPage:pageCurrent+1,
 			prePage:-1
+		}
+		
+		if(nums>6){
+		var i=nums/6;
+		var j=nums%6;
+		i=parseInt(i);
+		j=parseInt(j);
+		var pageC;
+		if(i>1){
+			if(j>0){
+				pageC=i+1;
+			}else{
+				pageC=i;
+			}
+		pageC=parseInt(pageC);
+		pageCount=pageCount+pageC-1;
+		}
+		$(this).prev().prev().html(pageCount)
 		}
 		pages(page);
 		var numss=parseInt(pageCurrent);
@@ -335,14 +366,9 @@ $(function() {
 				
 				var obj=data.lvMessage;
 				for(i=0;i<obj.length;i++){
-				var str = "<li><div class='word_one'><div class='word_one_one'><a href='toHostHome?userId="
-					+ obj[i].lvUser.mdUserRecid 
-			        +"'><img  src='"+obj[i].lvUser.userHeadImg+"' class='word_one_one'></a></div><div class='word_one_two'>"
-			        +"<a href='toHostHome?userId="
-						+ obj[i].lvUser.mdUserRecid 
-				        +"'><div class='word_one_two_one'>"
-				+ obj[i].lvUser.mdUserName
-				+ "</div></a><div class='word_one_two_two'>" + obj[i].mdLvDate
+				var str = "<li><div class='word_one'><div class='word_one_one'><a href='toHostHome?userId="+obj[i].mdLvUserRecid+"'><img  src='"+obj[i].lvUser.userHeadImg+" 'class='word_one_one'></a></div><div class='word_one_two'><a href='toHostHome?userId="+obj[i].mdLvUserRecid+"'><div class='word_one_two_one'>" + obj[i].lvUser.mdUserName
+				+ "</div></a><div class='word_one_two_two'>"
+				+ obj[i].mdLvDate
 				+ "</div></div></div><div class='word_two'>"
 				+ obj[i].mdLvMessage
 				+ "</div><div class='word_two_recid' style='display:none'>"
@@ -1086,10 +1112,9 @@ alert("eeror")
 									<li>
 										<div class='word_one'>
 											<div class='word_one_one'>
-												<a href="toHostHome?userId=${message.lvUser.mdUserRecid }"><img src="${message.lvUser.userHeadImg}" class='word_one_one'></a>
-											</div>
+											<a href="toHostHome?userId=${message.mdLvUserRecid }">	<img src="${message.lvUser.userHeadImg}" class='word_one_one'> </a> </div>
 											<div class='word_one_two'>
-												<a href="toHostHome?userId=${message.lvUser.mdUserRecid }"><div class='word_one_two_one'>${message.lvUser.mdUserName}</div></a>
+												<a href="toHostHome?userId=${message.mdLvUserRecid }">	<div class='word_one_two_one'>${message.lvUser.mdUserName}</div></a>
 												<div class='word_one_two_two'>${message.mdLvDate}</div>
 											</div>
 										</div>

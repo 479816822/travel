@@ -39,6 +39,7 @@
     <result column="MD_LV_TIME" jdbcType="DATE" property="mdLvTime" />
     <result column="MD_LV_NEST_USER_RECID" jdbcType="VARCHAR" property="mdLvNestUserRecid" />
     <result column="MD_LV_LEVEL" jdbcType="DECIMAL" property="mdLvLevel" />
+    <result column="MD_LV_USER_RECID" jdbcType="VARCHAR" property="mdLvUserRecid" />
      <association property="hostUser" column="MD_HOST_USER_RECID" resultMap="ResultMapWithBLOBs" columnPrefix="h_"/>
      <association property="lvUser" column="MD_LV_USER_RECID" resultMap="ResultMapWithBLOBs" columnPrefix="l_"/>
      <collection property="lvMoreMessage" column="MD_LV_REF_ID"  select="selectListById" ></collection> 
