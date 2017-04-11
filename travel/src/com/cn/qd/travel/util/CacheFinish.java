@@ -59,12 +59,15 @@ public class CacheFinish {
 	}
 
 	/**
-	 * 获取指定缓存的指定数据
+	 * 获取指定缓存的数据的大小
 	 * 
 	 * @return
 	 */
-	public static boolean getDataByLong(String cacheName, ArrayList<String> list) {
-
-		return true;
+	@SuppressWarnings("rawtypes")
+	public static long getDataByLong(String cacheName) {
+		Cache cache = CacheManager.getCacheInfo(cacheName);
+		Cache ch=(Cache)cache.getValue();
+		HashMap map = (HashMap)ch.getValue();
+		return map.size();
 	}
 }

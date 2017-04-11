@@ -2,6 +2,7 @@ package com.cn.qd.travel.controller;
 
 import java.util.ArrayList;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,6 +19,7 @@ import com.cn.qd.travel.service.TravelService;
 import com.cn.qd.travel.service.UserService;
 import com.cn.qd.travel.util.ChangeIcon;
 import com.cn.qd.travel.util.Page;
+import com.cn.qd.travel.util.PageFinish;
 
 /**
  * @author anmeihua 登录Controller
@@ -91,16 +93,29 @@ public class LoginController {
 	 * @param response
 	 * @return
 	 */
+	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/to_index")
 	public String to_index(Model model, HttpServletRequest request, HttpSession session) {
 		// 查询游记分页显示
-		ArrayList<Object> travelObject = travelService.oneListResultProvider(null, null);
-		ArrayList<MDTravelNote> travelList = new ArrayList<MDTravelNote>();
-		for (Object object : travelObject) {
-			travelList.add((MDTravelNote) object);
+		ArrayList<Object> travelObject = null;
+		ArrayList<MDTravelNote> travelList = null;
+		ServletContext application = request.getSession().getServletContext();
+		String travelPage = (String) application.getAttribute("travelPage");
+		Page pages = (Page) application.getAttribute("page");
+		if (travelPage == null) {//第一次初始化
+			travelObject = travelService.oneListResultProvider(null, null);
+			travelList = new ArrayList<MDTravelNote>();
+			for (Object object : travelObject) {
+				travelList.add((MDTravelNote) object);
+			}
+			application.setAttribute("travelPage", "travelPage");
+			Page page = travelService.getPage();
+			application.setAttribute("page", page);
+			model.addAttribute("page", page);
+		} else {//已经初始化了分页数据在缓存中查找
+			travelList = (ArrayList<MDTravelNote>) PageFinish.getPageData(pages);
+			model.addAttribute("page", pages);
 		}
-		Page page = travelService.getPage();
-		model.addAttribute("page", page);
 		model.addAttribute("travelList", travelList);
 		return "index";
 	}
@@ -142,7 +157,7 @@ public class LoginController {
 			}
 		}
 
-		if (list!=null&&list.size() == 1) {// 登陆成功
+		if (list != null && list.size() == 1) {// 登陆成功
 			MdUser user = (MdUser) list.get(0);
 			if ("已登陆".equals(user.getMdStdname())) {
 				model.addAttribute("user", user.getMdStdname());
@@ -160,7 +175,7 @@ public class LoginController {
 		}
 		return "redirect:/to_index";
 	}
-	
+
 	/**
 	 * 用户退出登陆
 	 * 
@@ -171,13 +186,13 @@ public class LoginController {
 	@RequestMapping(value = "toOutLogin")
 	public String toOutLogin(Model model, HttpSession session) {
 		MdUser user = (MdUser) session.getAttribute("user");
-		if(user==null){
+		if (user == null) {
 			return "redirect:/to_index";
 		}
 		user.setMdStdname("未登陆");
 		userService.update(user, null);
 		session.removeAttribute("user");
-		//重定向
+		// 重定向
 		return "redirect:/to_index";
 	}
 

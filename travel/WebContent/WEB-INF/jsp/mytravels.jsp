@@ -63,11 +63,11 @@
 				<div class="center clearfix">
 					<div class="MAvatar clearfix">
 						<div class="MAvaImg flt1">
-							<img width="120" height="120" alt="" src="${user.userHead}">
+							<a><img width="120" height="120" alt="" src="${userInfo.userHeadImg}"></a>
 						</div>
 						<div class="MAvaEasyWord flt1">
-							<span class="MAvaName">${user.userNick}</span> <span
-								class="MAvaLevel">Lv.${user.userLevel}</span>
+						<a>	<span class="MAvaName">${userInfo.mdUserName}</span> </a> <span
+								class="MAvaLevel">Lv.${userInfo.mdLevel}</span>
 						</div>
 					</div>
 					<ul class="flt2">
@@ -153,7 +153,7 @@
 					</div>
 					<div class="travel_news_four"></div>
 					<div class="travel_news_three">
-						<div class="travel_news_three_one">${num}</div>
+						<div class="travel_news_three_one">${userInfo.mdStdcode}</div>
 						<div class="travel_news_three_two">阅读</div>
 					</div>
 
@@ -167,15 +167,15 @@
 					<div class="travel_content">
 						<!--游记的主要内容--->
 						<!--游记的主要图片只是显示一张--->
-						<a href="showTravel?traId=${travel.traId}&userId=${user.userId}"
+						<a href="showTravel?traId=${travel.mdRecid}&userId=${userInfo.mdUserRecid}"
 							target="_blank">
 							<div class="travel_content_img">
-								<img src="${travel.traImg}" class="travel_content_img">
+								<img src="${travel.mdThemeImg}" class="travel_content_img">
 							</div>
 						</a>
 						<!--游记的主要文字内容--->
 						<div class="travel_content_Article">
-							<div class="Article_title">${travel.traTitle}</div>
+							<div class="Article_title">${travel.mdTheme}</div>
 							<div class="Article_date">
 								<div class="Article_date_one">
 									<div class="Article_date_one_one"></div>
@@ -185,12 +185,12 @@
 									<div class="Article_date_two_one"></div>
 									0
 								</div>
-								<div class="Article_date_three">${travel.sendDate}</div>
+								<div class="Article_date_three">${travel.createDate}</div>
 							</div>
-							<div class="Article_address">${travel.traAddress}</div>
+							<div class="Article_address">${travel.mdAimAddress}</div>
 						</div>
 						<div class="travel_content_praise">
-							<div class="travel_content_praise_one">${travel.traPraise}</div>
+							<div class="travel_content_praise_one">${travel.mdStdname}</div>
 							<div class="travel_content_praise_two"></div>
 						</div>
 					</div>

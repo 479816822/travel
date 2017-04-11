@@ -70,7 +70,7 @@ public class TravelServiceImpl implements TravelService {
 	public ArrayList<Object> oneListResultProvider(Object t, Map<String, Object> map) {
 
 		List<MDTravelNote> travelList = travel.selectList();
-		page = PageFinish.initPage(20, travelList);
+		page = PageFinish.initPage(10, travelList,"travelPage");
 		ArrayList<Object> pageTravelList = (ArrayList<Object>) PageFinish.getPageData(page);
 		return pageTravelList;
 	}

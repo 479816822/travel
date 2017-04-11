@@ -1,5 +1,6 @@
 package com.cn.qd.travel.controller;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.cn.qd.travel.entity.MDTravelNote;
 import com.cn.qd.travel.entity.MdUser;
 import com.cn.qd.travel.entity.MdUserLeaveMessage;
-import com.cn.qd.travel.entity.Page;
+import com.cn.qd.travel.entity.Pages;
 import com.cn.qd.travel.service.CommentLeavelService;
 import com.cn.qd.travel.service.TravelService;
 import com.cn.qd.travel.service.UserService;
@@ -49,7 +50,7 @@ public class UserController {
 		MdUserLeaveMessage comments = new MdUserLeaveMessage();
 		comments.setMdHostUserRecid(user.getMdUserRecid());
 		ArrayList<MdUserLeaveMessage> commnetList = comment.selectById(comments, request);
-		Page page = new Page();
+		Pages page = new Pages();
 		page.setPageCurrent(1);
 		page.setPageSize(6);
 		int num = commnetList.size();
@@ -89,7 +90,7 @@ public class UserController {
 			String userHeadImg = ChangeIcon.changeImg(user.getMdIcon(), savePath);
 			user.setUserHeadImg(userHeadImg);
 			ArrayList<MdUserLeaveMessage> commnetList = comment.selectById(comments, request);
-			Page page = new Page();
+			Pages page = new Pages();
 			page.setPageCurrent(1);
 			page.setPageSize(6);
 			int num = commnetList.size();
@@ -98,8 +99,7 @@ public class UserController {
 			} else {
 				page.setPageCount(commnetList.size() / 6 + 1);
 			}
-			
-			
+
 			model.addAttribute("page", page);
 			model.addAttribute("trackList", travelList);
 			model.addAttribute("messageList", commnetList);
@@ -107,18 +107,18 @@ public class UserController {
 		}
 		return "myHome";
 	}
-	
-	
-	
+
 	/**
 	 * 用户游记页面
+	 * 
 	 * @param model
 	 * @param session
 	 * @param userId
 	 * @param request
 	 * @return
 	 */
-	public String toMyTravel(Model model, HttpSession session, String userId, HttpServletRequest request){
+	@RequestMapping(value = "toMyTravel")
+	public String myTravelPage(Model model, HttpSession session, String userId, HttpServletRequest request) {
 		ArrayList<MdUser> userList = userService.selectById(userId);
 		if (userList.size() > 0) {
 			MdUser user = null;
@@ -129,13 +129,28 @@ public class UserController {
 			String savePath = request.getSession().getServletContext().getRealPath("upload");
 			String userHeadImg = ChangeIcon.changeImg(user.getMdIcon(), savePath);
 			user.setUserHeadImg(userHeadImg);
-			//查询评论
-			
-			
-			model.addAttribute("trackList", travelList);
+			// 查询评论
+			model.addAttribute("travelList", changDate(travelList));
 			model.addAttribute("userInfo", user);
 		}
 		return "mytravels";
+	}
+
+	/**
+	 * 改变游记日期
+	 * @param travelList
+	 * @return
+	 */
+	private List<MDTravelNote> changDate(List<MDTravelNote> travelList) {
+		for (int i = 0; i < travelList.size(); i++) {
+			SimpleDateFormat sim = new SimpleDateFormat("YYYY-MM-dd");
+			if (travelList.get(i).getMdStartTime() != null) {
+				String strdate = sim.format(travelList.get(i).getMdStartTime());
+				travelList.get(i).setStartDate(strdate);
+			}
+		}
+
+		return travelList;
 	}
 
 	/**

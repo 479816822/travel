@@ -10,8 +10,6 @@
     <result column="MD_VIDEO" jdbcType="VARCHAR" property="mdVideo" />
     <result column="MD_STDCODE" jdbcType="DECIMAL" property="mdStdcode" />
     <result column="MD_TAVEL_ID" jdbcType="VARCHAR" property="mdTavelId" />
-     <collection property="tavel" resultMap="TravelResultMap"></collection>
-     
   </resultMap>
   <resultMap extends="TravelPaResultMap" id="TravelPaResultMapWithBLOBs" type="com.cn.qd.travel.entity.MDTravelParagraph">
     <result column="MD_CONTENT" jdbcType="CLOB" property="mdContent" />

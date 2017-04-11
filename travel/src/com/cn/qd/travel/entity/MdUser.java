@@ -34,7 +34,7 @@ public class MdUser {
 
     private String mdRefId;
 
-    private BigDecimal mdStdcode;
+    private BigDecimal mdStdcode;//游记被阅读数
 
     private Date mdAlertDate;//出生日期
 
@@ -56,7 +56,7 @@ public class MdUser {
 
     private Date mdGraduationDate;//毕业日期
 
-    private Integer mdEmsCode;
+    private Integer mdEmsCode;//累计访问量
 
     private Long mdPraise;
 

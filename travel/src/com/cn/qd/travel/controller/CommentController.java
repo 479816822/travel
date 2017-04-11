@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.cn.qd.travel.entity.MDCommentOne;
 import com.cn.qd.travel.entity.MdUser;
 import com.cn.qd.travel.entity.MdUserLeaveMessage;
-import com.cn.qd.travel.entity.Page;
+import com.cn.qd.travel.entity.Pages;
 import com.cn.qd.travel.service.CommentLeavelService;
 import com.cn.qd.travel.util.GUID;
 
@@ -70,7 +70,7 @@ public class CommentController {
 	 */
 	@RequestMapping(value = "commentPage", method = { RequestMethod.POST })
 	@ResponseBody
-	public Map<String,Object> lvMeaagePage(Page page,HttpServletRequest request){
+	public Map<String,Object> lvMeaagePage(Pages page,HttpServletRequest request){
 		Map<String, Object> result = new HashMap<String, Object>();
 		ArrayList<MdUserLeaveMessage> LvMessageList=commentTravel.selectLvMeaagePage(page,request);
 		result.put("lvMessage", LvMessageList);

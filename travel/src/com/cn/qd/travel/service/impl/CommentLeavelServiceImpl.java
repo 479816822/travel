@@ -13,7 +13,7 @@ import com.cn.qd.travel.dao.MDCommentOneMapper;
 import com.cn.qd.travel.dao.MdUserLeaveMessageMapper;
 import com.cn.qd.travel.entity.MDCommentOne;
 import com.cn.qd.travel.entity.MdUserLeaveMessage;
-import com.cn.qd.travel.entity.Page;
+import com.cn.qd.travel.entity.Pages;
 import com.cn.qd.travel.service.CommentLeavelService;
 import com.cn.qd.travel.util.ChangeIcon;
 
@@ -151,7 +151,7 @@ public class CommentLeavelServiceImpl implements CommentLeavelService {
 	 * 用户留言分页数据查询
 	 */
 	@Override
-	public ArrayList<MdUserLeaveMessage> selectLvMeaagePage(Page page, HttpServletRequest request) {
+	public ArrayList<MdUserLeaveMessage> selectLvMeaagePage(Pages page, HttpServletRequest request) {
 		ArrayList<MdUserLeaveMessage> messageList = finishLvMessage(leaveMessage.selectListById(page.getCache()),
 				request);
 

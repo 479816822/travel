@@ -1402,7 +1402,7 @@ width: 20px;">  </div>
 						
 	</c:forEach>
 						<div class="more_notes">
-							 <a href="">共<strong>${trackList.size()}</strong>篇随笔
+							 <a href="toMyTravel?userId=${userInfo.mdUserRecid }">共<strong>${trackList.size()}</strong>篇随笔
 							</a>
 						</div>
 

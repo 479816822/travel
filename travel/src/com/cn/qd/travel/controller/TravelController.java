@@ -152,17 +152,6 @@ public class TravelController {
 	}
 
 	/**
-	 * 
-	 * @param model
-	 * @param session
-	 * @return
-	 */
-	@RequestMapping(value = "toMyTravel")
-	public String toMyTravel(Model model, HttpSession session) {
-		return "mytravels";
-	}
-
-	/**
 	 * 更新用户游记赞数
 	 * 
 	 * @param model

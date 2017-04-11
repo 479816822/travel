@@ -203,7 +203,6 @@
 			var pageNum = parseInt($(".pg-current").html());//获得当前页的页码
 			if (pageNum < pageCount) {
 				pageNum++;
-				$("#lblCurent").val(pageNum);
 			}
 			$(".pg-current").html(pageNum);
 			pageFunction(pageNum);
@@ -247,7 +246,6 @@
 			var numbers= parseInt($("#pageCount").val());//总条数
 			var pageSize= parseInt($("#pageSize").val());//每页大小
 			var cache=$("#cache").val()//缓存名
-			
 			var page={
 					pageCount:pageCount,
 					pageSize:pageSize,
@@ -352,86 +350,89 @@
 
 		//分页处理
 		function getPageData(page,urls) {
-			$
-					.ajax({
-						type : "POST",
-						url : urls,
-						async : false,
-						data : page,
-						dataType : "json",
-						success : function(data) {
+			$.ajax({
+				type : "POST",
+				url : urls,
+				data : page,
+				async : false,
+				dataType : "json",
+				success : function(data) {
 							$(".tn-list").children().remove();
-							$
-									.each(
-											data,
-											function(pageNum, n) {
+							//**********************
+							var obj=data.travlLists;
+							
+							for(i=0;i< obj.length;i++){
 												var msg;
-												for (i = 0; i < n.listTravlePagragraph.length; i++) {
-													if (n.listTravlePagragraph[i].mdContent != null) {
-														msg = n.listTravlePagragraph[i].mdContent;
+												for (j = 0; j < obj[i].listTravlePagragraph.length; j++) {
+													if (obj[i].listTravlePagragraph[j].mdContent != null) {
+														msg = obj[i].listTravlePagragraph[j].mdContent;
 														break;
 													}
 												}
-
-												$(".tn-list")
-														.append(
-																"<div class='tn-item clearfix'>"
-																		+ "<div class='tn-image'>"
-																		+ "<a href='showTravel?traId="
-																		+ n.mdRecid
-																		+ "&userId="
-																		+ n.user.mdUserRecid
-																		+ "' target='_blank'><img class=''  src='"+n.mdThemeImg+"' style='display: inline;'></a>"
-																		+ "</div>"
-																		+ "<div class='tn-wrapper'>"
-																		+ "<dl>"
-																		+ "<dt><a href='showTravel?traId="
-																		+ n.mdRecid
-																		+ "&userId="
-																		+ n.user.mdUserRecid
-																		+ "' target='_blank'>"
-																		+ n.mdTheme
-																		+ "</a> </dt>"
-																		+ "<dd style='height:80px;;overflow:hidden;text-overflow:ellipsis; '><a  href='showTravel?traId="
-																		+ n.mdRecid
-																		+ "&userId="
-																		+ n.user.mdUserRecid
-																		+ "' target='_blank'>"
-																		+ msg
-																		+ "...</a></dd>"
-																		+ "</dl>"
-																		+ "<div class='tn-extra'>"
-																		+ "<span class='tn-ding ' onclick='funs(this)'> "
-																		+ "<span style='display: none;'>"
-																		+ n.mdRecid
-																		+ "</span> <a class='btn-ding ' rel='nofollow'></a> <em>"
-																		+ n.mdStdname
-																		+ "</em>"
-																		+ "</span> "
-																		+ "  <span class='tn-place'><i></i><a  href='showTravel?traId="
-																		+ n.mdRecid
-																		+ "&userId="
-																		+ n.user.mdUserRecid
-																		+ "' class='_j_gs_item' rel='nofollow'>"
-																		+ n.mdTheme
-																		+ "</a>，by "
-																		+ n.user.mdUserName
-																		+ "</span>"
-																		+ "<span class='tn-user'> "
-																		+ "	<a  href='showTravel?traId="
-																		+ n.mdRecid
-																		+ "&userId="
-																		+ n.user.mdUserRecid
-																		+ "' target='_blank' rel='nofollow'> <img src='"
-																		+ n.user.userHeadImgs
-																		+"'>"
-																		+ "</a>"
-																		+ "</span> <span class='tn-nums'><i></i>15620/262</span>"
-																		+ "</div>"
-																		+ "</div></div>");
-											});
-						}
-					})
+												var str =	"<div class='tn-item clearfix'>"
+													+ "<div class='tn-image'>"
+													+ "<a href='showTravel?traId="
+													+ obj[i].mdRecid
+													+ "&userId="
+													+ obj[i].user.mdUserRecid
+													+ "' target='_blank'><img class=''  src='"+obj[i].mdThemeImg+"' style='display: inline;'></a>"
+													+ "</div>"
+													+ "<div class='tn-wrapper'>"
+													+ "<dl>"
+													+ "<dt><a href='showTravel?traId="
+													+ obj[i].mdRecid
+													+ "&userId="
+													+ obj[i].user.mdUserRecid
+													+ "' target='_blank'>"
+													+ obj[i].mdTheme
+													+ "</a> </dt>"
+													+ "<dd style='height:80px;;overflow:hidden;text-overflow:ellipsis; '><a  href='showTravel?traId="
+													+ obj[i].mdRecid
+													+ "&userId="
+													+ obj[i].user.mdUserRecid
+													+ "' target='_blank'>"
+													+ msg
+													+ "...</a></dd>"
+													+ "</dl>"
+													+ "<div class='tn-extra'>"
+													+ "<span class='tn-ding ' onclick='funs(this)'> "
+													+ "<span style='display: none;'>"
+													+ obj[i].mdRecid
+													+ "</span> <a class='btn-ding ' rel='nofollow'></a> <em>"
+													+ obj[i].mdStdname
+													+ "</em>"
+													+ "</span> "
+													+ "  <span class='tn-place'><i></i><a  href='showTravel?traId="
+													+ obj[i].mdRecid
+													+ "&userId="
+													+ obj[i].user.mdUserRecid
+													+ "' class='_j_gs_item' rel='nofollow'>"
+													+ obj[i].mdTheme
+													+ "</a>，by "
+													+ obj[i].user.mdUserName
+													+ "</span>"
+													+ "<span class='tn-user'> "
+													+ "	<a  href='showTravel?traId="
+													+ obj[i].mdRecid
+													+ "&userId="
+													+ obj[i].user.mdUserRecid
+													+ "' target='_blank' rel='nofollow'> <img src='"
+													+ obj[i].user.userHeadImg
+													+"'>"
+													+ "</a>"
+													+ "</span> <span class='tn-nums'><i></i>15620/262</span>"
+													+ "</div>"
+													+ "</div></div>";
+												var $node = $(str);
+												$(".tn-list").append($node);
+						       	}
+							//*************************88
+							 }, 
+					    error : function(msg) {
+													//提示输需要入的信息
+									alert("eeror")
+							}
+					});
 		}
 
 	});

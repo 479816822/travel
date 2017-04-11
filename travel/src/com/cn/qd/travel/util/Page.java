@@ -60,6 +60,10 @@ public class Page {
 		}
 	}
 
+	public Page(){
+		
+	}
+	
 	public int getPageCurrent() {
 		return pageCurrent;
 	}
