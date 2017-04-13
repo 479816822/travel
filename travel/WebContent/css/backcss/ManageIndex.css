@@ -1,0 +1,147 @@
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    /* overflow:hidden; */
+}
+
+a {
+    text-decoration: none;
+
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.ma_header{
+    width: 100%;
+    height:40px;
+    background: rgb(236, 236, 236);
+}
+
+.ma_center{
+    width: 100%;
+    height: 665px;
+}
+
+.ma_fotter{
+    width: 100%;
+    height: 30px;
+    background: rgb(18, 147, 217);
+}
+
+.mn_left{
+    width: 18%;
+    height: 100%;
+    float: left;
+    background: rgb(255, 255, 255);
+    overflow: auto;
+}
+
+.ma_rigth{
+    width: 81.3%;
+    height: 100%;
+    float: right;
+    background: rgb(255, 255, 255);
+
+    overflow: auto;
+}
+
+.fl_left{
+    float: left;
+}
+
+.fl_rigth{
+    float: right;
+}
+
+.head_font{
+    font-size: 30px;
+    padding-top: 5px;
+    padding-left: 15px;
+}
+
+.out_1{
+    padding-top: 10px;
+    padding-right: 10px;
+}
+
+.left_date{
+    padding-left: 10px;
+    padding-top: 6px;
+}
+
+.left_date1{
+    padding-right: 20px;
+    padding-top: 6px;
+}
+
+
+.comment_header{
+    width:100%;
+    height: 30px;
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+.comment_comment{
+    width:100%;
+    height: 635px;
+}
+
+#tab_bar {
+    width:100%;
+    height: 20px;
+    float: left;
+}
+#tab_bar ul {
+    padding: 0px;
+    margin: 0px;
+    height: 20px;
+    text-align: center;
+}
+
+#tab_bar li {
+    list-style-type: none;
+    float: left;
+    width: 133.3px;
+    height: 20px;
+    background-color: gray;
+}
+
+.tab_css {
+    width: 400px;
+    height: 200px;
+    background-color: orange;
+    display: none;
+    float: left;
+}
+
+.comment_header ul{
+    list-style-type:none;
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+.comment_header ul li{
+    list-style-type:none;
+    float: left;
+    width:40px;
+}
+
+.folders{
+      margin-left: 6px;
+      margin-top: 6px;
+    border: 1px solid #CCCCCC;
+    width: 100px;
+  }
+
+.folders1{
+    margin-left: 6px;
+    margin-top: 6px;
+    border: 1px solid #CCCCCC;
+}
+

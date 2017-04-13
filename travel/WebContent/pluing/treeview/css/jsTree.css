@@ -1,0 +1,115 @@
+/*------------------树样式区-------------------*/
+div.control{
+display:block;
+border:1px solid #aaaaaa;
+}
+/*---树item的块---*/
+div.item{
+display:block;
+width:90%;
+font-size:10pt;
+text-align:left;
+margin:1px;
+background-color :transparent;		
+color: black;
+white-space:nowrap;/*超强悍的属性,我喜欢,div超出父div的宽度内联元素不会自动换行滴,哈哈!*/
+/*border:1px solid blue;/**/
+}
+div.wrap{
+border:1px solid #aaaaaa;
+width:98%;
+margin:1px;
+}
+/*---树item的文本---*/
+div.text{
+/*background-image:url(backimg.jpg );/**/
+display: inline;
+/*width:65%;/*指定宽度
+border:1px solid green;*/
+height :12px;
+font-size:10pt;
+line-height:15px;
+PADDING-RIGHT: 2px;
+CURSOR: hand; 
+background-color:white;/**/
+PADDING-bottom:2px;
+}
+div.menuitem{		
+	display:block;
+	text-align:center;
+	padding:3px;
+	width : 98px;
+	height : 20px;
+	color : navy;
+	margin:5px;
+	border-bottom:1px solid #aaaaaa;
+}
+/*对话框背景以及输入中心*/
+div.back{	
+	position:absolute;	
+	z-index:2;		
+	border:1px solid silver;
+	background-color:light blue;
+}
+div.inputtitle{
+display:block;
+background-color:#F0F7F9;
+vertical-align: middle;
+border-bottom:1px solid silver;
+font-size:9pt;
+color:blue;
+width:100%;
+}
+div.center{  
+	display:block;
+	background-color:white;
+	font-size:9pt;
+	width:100%;		
+}
+div.error{
+	display:block;
+	background-color:#F0F7F9;
+	border-top:1px solid silver;	
+	font-size:9pt;
+	color:red;
+	width:100%;		
+}
+label{font-size:9pt;color:green;width:160px;height:20px;display:inline}
+img.delflag{
+display:inline;
+filter:alpha(opacity=15)
+-moz-opacity:0.5;
+ opacity: 0.2;/*火狐*/
+}
+img.addflag{
+display:inline;
+filter:alpha(opacity=15);
+-moz-opacity:0.5;
+ opacity: 0.2;/*火狐*/
+}
+img.modflag{
+display:inline;
+filter:alpha(opacity=15);
+-moz-opacity:0.5;
+ opacity: 0.2;/*火狐*/
+}
+img.expand{
+display:inline;
+}
+
+/*  数据表 */
+div.datatable{
+position:absolute;
+overflow:auto;     
+  scrollbar-face-color:9999ff;     
+  height:expression((document.body.clientHeight-this.offsetTop-15>this.children[0].offsetHeight)?(this.children[0].offsetHeight+15):(document.body.clientHeight-this.offsetTop-15));     
+  width:expression(document.body.clientWidth-15);
+  font-size:9pt;
+ }
+.fixedhead{     
+position:absolute;     
+top:expression(this.offsetParent.scrollTop); 
+background-color:navy;
+cursor:hand;
+} 
+ 

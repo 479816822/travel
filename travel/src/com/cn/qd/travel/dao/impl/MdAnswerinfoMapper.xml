@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cn.qd.travel.dao.MdAnswerinfoMapper">
+  <resultMap id="BaseResultMap" type="com.cn.qd.travel.entity.MdAnswerinfo">
+    <id column="ANSWER_ID" jdbcType="VARCHAR" property="answerId" />
+    <result column="QUES_ID" jdbcType="VARCHAR" property="quesId" />
+    <result column="ANSWER_USER_ID" jdbcType="VARCHAR" property="answerUserId" />
+    <result column="SEND_DATE" jdbcType="DATE" property="sendDate" />
+    <result column="ANSWER_MSG" jdbcType="VARCHAR" property="answerMsg" />
+    <result column="ANSWER_IMG" jdbcType="VARCHAR" property="answerImg" />
+    <result column="ANSWER_CHOOSE" jdbcType="VARCHAR" property="answerChoose" />
+    <result column="ANSWER_PRAISE" jdbcType="DECIMAL" property="answerPraise" />
+    <result column="ANSWER_REC" jdbcType="DECIMAL" property="answerRec" />
+    <result column="ANSWE_RECNUM" jdbcType="DECIMAL" property="answeRecnum" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ANSWER_ID, QUES_ID, ANSWER_USER_ID, SEND_DATE, ANSWER_MSG, ANSWER_IMG, ANSWER_CHOOSE, 
+    ANSWER_PRAISE, ANSWER_REC, ANSWE_RECNUM
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from MD_ANSWERINFO
+    where ANSWER_ID = #{answerId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from MD_ANSWERINFO
+    where ANSWER_ID = #{answerId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cn.qd.travel.entity.MdAnswerinfo">
+    insert into MD_ANSWERINFO (ANSWER_ID, QUES_ID, ANSWER_USER_ID, 
+      SEND_DATE, ANSWER_MSG, ANSWER_IMG, 
+      ANSWER_CHOOSE, ANSWER_PRAISE, ANSWER_REC, 
+      ANSWE_RECNUM)
+    values (#{answerId,jdbcType=VARCHAR}, #{quesId,jdbcType=VARCHAR}, #{answerUserId,jdbcType=VARCHAR}, 
+      #{sendDate,jdbcType=DATE}, #{answerMsg,jdbcType=VARCHAR}, #{answerImg,jdbcType=VARCHAR}, 
+      #{answerChoose,jdbcType=VARCHAR}, #{answerPraise,jdbcType=DECIMAL}, #{answerRec,jdbcType=DECIMAL}, 
+      #{answeRecnum,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cn.qd.travel.entity.MdAnswerinfo">
+    insert into MD_ANSWERINFO
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="answerId != null">
+        ANSWER_ID,
+      </if>
+      <if test="quesId != null">
+        QUES_ID,
+      </if>
+      <if test="answerUserId != null">
+        ANSWER_USER_ID,
+      </if>
+      <if test="sendDate != null">
+        SEND_DATE,
+      </if>
+      <if test="answerMsg != null">
+        ANSWER_MSG,
+      </if>
+      <if test="answerImg != null">
+        ANSWER_IMG,
+      </if>
+      <if test="answerChoose != null">
+        ANSWER_CHOOSE,
+      </if>
+      <if test="answerPraise != null">
+        ANSWER_PRAISE,
+      </if>
+      <if test="answerRec != null">
+        ANSWER_REC,
+      </if>
+      <if test="answeRecnum != null">
+        ANSWE_RECNUM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="answerId != null">
+        #{answerId,jdbcType=VARCHAR},
+      </if>
+      <if test="quesId != null">
+        #{quesId,jdbcType=VARCHAR},
+      </if>
+      <if test="answerUserId != null">
+        #{answerUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="sendDate != null">
+        #{sendDate,jdbcType=DATE},
+      </if>
+      <if test="answerMsg != null">
+        #{answerMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="answerImg != null">
+        #{answerImg,jdbcType=VARCHAR},
+      </if>
+      <if test="answerChoose != null">
+        #{answerChoose,jdbcType=VARCHAR},
+      </if>
+      <if test="answerPraise != null">
+        #{answerPraise,jdbcType=DECIMAL},
+      </if>
+      <if test="answerRec != null">
+        #{answerRec,jdbcType=DECIMAL},
+      </if>
+      <if test="answeRecnum != null">
+        #{answeRecnum,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cn.qd.travel.entity.MdAnswerinfo">
+    update MD_ANSWERINFO
+    <set>
+      <if test="quesId != null">
+        QUES_ID = #{quesId,jdbcType=VARCHAR},
+      </if>
+      <if test="answerUserId != null">
+        ANSWER_USER_ID = #{answerUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="sendDate != null">
+        SEND_DATE = #{sendDate,jdbcType=DATE},
+      </if>
+      <if test="answerMsg != null">
+        ANSWER_MSG = #{answerMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="answerImg != null">
+        ANSWER_IMG = #{answerImg,jdbcType=VARCHAR},
+      </if>
+      <if test="answerChoose != null">
+        ANSWER_CHOOSE = #{answerChoose,jdbcType=VARCHAR},
+      </if>
+      <if test="answerPraise != null">
+        ANSWER_PRAISE = #{answerPraise,jdbcType=DECIMAL},
+      </if>
+      <if test="answerRec != null">
+        ANSWER_REC = #{answerRec,jdbcType=DECIMAL},
+      </if>
+      <if test="answeRecnum != null">
+        ANSWE_RECNUM = #{answeRecnum,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where ANSWER_ID = #{answerId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cn.qd.travel.entity.MdAnswerinfo">
+    update MD_ANSWERINFO
+    set QUES_ID = #{quesId,jdbcType=VARCHAR},
+      ANSWER_USER_ID = #{answerUserId,jdbcType=VARCHAR},
+      SEND_DATE = #{sendDate,jdbcType=DATE},
+      ANSWER_MSG = #{answerMsg,jdbcType=VARCHAR},
+      ANSWER_IMG = #{answerImg,jdbcType=VARCHAR},
+      ANSWER_CHOOSE = #{answerChoose,jdbcType=VARCHAR},
+      ANSWER_PRAISE = #{answerPraise,jdbcType=DECIMAL},
+      ANSWER_REC = #{answerRec,jdbcType=DECIMAL},
+      ANSWE_RECNUM = #{answeRecnum,jdbcType=DECIMAL}
+    where ANSWER_ID = #{answerId,jdbcType=VARCHAR}
+  </update>
+</mapper>

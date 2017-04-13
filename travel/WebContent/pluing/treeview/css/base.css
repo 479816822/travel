@@ -1,0 +1,16 @@
+/*--全局样式--*/
+* {
+margin:0;
+padding:0;
+cursor:default;
+font-family:Time New Roman;
+}
+div.checktxt_orange{
+font-size:9pt;color:orange;width:160px;height:20px;display:inline
+}
+div.checktxt_blue{
+font-size:9pt;color:blue;width:160px;height:20px;display:inline
+}
+div.showmessage{
+width:160px;height:20px;display:inline;border:1px solid silver;float:right;margin-right:13px;color:red;font-size:10pt;text-align:center;line-height:20px
+}

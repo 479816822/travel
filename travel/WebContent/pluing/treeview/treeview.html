@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!-- ie/chrome/firefox/safari/opera -->
+<html lang="en">
+	<head>
+		<title>JSON编辑器V1</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=gb2312">			 
+		<script type="text/javascript" src="lazyload.js"></script>		 
+		<script type="text/javascript">
+			LazyLoad.css(["all"]);			
+		</script>			
+	</head>
+	<body  >	
+		<div class="main">
+			<script type="text/javascript">	
+				 LazyLoad.js("jquery,jquery.gameframe",function(){
+					$(".main").prepend( $("<label>" + GF.Browser.type + " : " + GF.Browser.version + "</label>" ) );	
+				});
+			</script>
+			<div class="top">
+				<div class="top_left">
+				 
+				</div>	
+				<div class="top_right">
+					<textarea style="width:100%;height:100%" onkeyup="_updateTreeView();" >
+					[{"1":1,"2":{"3":[1,2,3],"4":[1,{"2":1}]}},{"1":1,"2":{"3":[1,2,3],"4":[1,{"2":1}]}}]					
+					</textarea>
+				</div>
+			</div>			
+			<div class="bottom">
+				<input id="synforView" type=checkbox checked  onclick="_updateTreeView();"/>
+				<div class="checktxt_orange">同步更新树视图</div>
+				<input id="synforText" type=checkbox checked  onclick="_updateJsonText();"/>
+				<div class="checktxt_orange" >同步更新JSON文本区</div>
+				<input id="cpModel" type="radio"  name="format" checked onclick="_reverseModel();"/>
+				<div class="checktxt_blue" >紧凑模式</div>
+				<input id="indModel" type="radio" name="format"  onclick="_reverseModel();"/>
+				<div class="checktxt_blue">缩进模式</div>				 
+			</div>
+		</div>
+	</body>		
+	<script> 
+		var jsonedit,jtree;
+		LazyLoad.js("jquery.treeview",function(){
+			 jsonedit = $(".top_right textarea");
+			 var json = jsonedit.val().replace(/^\s+|\s+$/g,"");		         		 
+			 jtree = $(".top_left").treeview(json);
+			 jtree.init();			
+		});			
+		function _updateTreeView( ){		 
+				var json = jsonedit.val().replace(/^\s+|\s+$/g,"");
+				if($("#synforView").is(":checked")){					
+					jtree = $(".top_left").treeview(json);
+					jtree.init();		 			 
+				};			 
+		};
+		function _reverseModel(){	
+			var str = jsonedit.val();
+			if($("#indModel").is(":checked")){	
+				try{
+					jtree.confs.text = "";
+					str = jtree.dealIndent( str );	
+				}catch(e){alert(e)}	
+				jsonedit.val( str );
+			}else{				 
+				str = str.replace(/\s|\r|\n/g,"");
+				jsonedit.val( str );
+			}			
+		};
+	</script>
+</html>

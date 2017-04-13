@@ -217,20 +217,3 @@ div.panel.window {
 	background-color: white;
 	color: orange;
 }
-
-#product-container {
-	height: 245px;
-    overflow: scroll;
-    width: 530px;
-    border: 2px solid #eee;
-    zoom:1.1;
-    
-    scrollbar-face-color: #FFFFFF;　/* 滚动条凸出部分的颜色 */
-    scrollbar-highlight-color: #FFFFFF; 　/* 滚动条空白部分的颜色 */
-    scrollbar-shadow-color: #FFFFFF; 　/* 立体滚动条阴影的颜色 */
-    scrollbar-3dlight-color: #FFFFFF;　/* 滚动条亮边的颜色 */
-    scrollbar-arrow-color: #FF0000; 　/* 上下按钮上三角箭头的颜色 */
-	scrollbar-track-color: #FFFFFF; 　/* 滚动条的背景颜色 */
-	scrollbar-darkshadow-color: #FFFFFF;　/* 滚动条强阴影的颜色 */
-	scrollbar-base-color: #FFFFFF; 　/* 滚动条的基本颜色 */ 　
-}

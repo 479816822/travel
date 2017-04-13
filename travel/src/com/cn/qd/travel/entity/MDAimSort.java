@@ -12,15 +12,25 @@ public class MDAimSort {
 
     private Short mdLevel;
 
-    private String mdStdname;
+    private String mdStdname;//主题名
 
-    private BigDecimal mdStdcode;
+    private BigDecimal mdStdcode;//主题等级三位
+    
+    private String sortLv;//主题等级三位
 
     private Date mdCreateTime;
 
     private Date mdAlertTime;
 
-    public String getMdRecid() {
+    public String getSortLv() {
+		return sortLv;
+	}
+
+	public void setSortLv(String sortLv) {
+		this.sortLv = sortLv;
+	}
+
+	public String getMdRecid() {
         return mdRecid;
     }
 

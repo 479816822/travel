@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cn.qd.travel.dao.MdQuestionInfoMapper">
+  <resultMap id="BaseResultMap" type="com.cn.qd.travel.entity.MdQuestionInfo">
+    <id column="QUES_ID" jdbcType="VARCHAR" property="quesId" />
+    <result column="ASK_QUESTIONER_ID" jdbcType="VARCHAR" property="askQuestionerId" />
+    <result column="QUES_TITLE" jdbcType="VARCHAR" property="quesTitle" />
+    <result column="QUES_MES" jdbcType="VARCHAR" property="quesMes" />
+    <result column="QUES_IMG" jdbcType="VARCHAR" property="quesImg" />
+    <result column="KEY_WORD" jdbcType="VARCHAR" property="keyWord" />
+    <result column="SEND_DATE" jdbcType="DATE" property="sendDate" />
+    <result column="QUES_PRAISE" jdbcType="DECIMAL" property="quesPraise" />
+    <result column="QUES_BROWSE" jdbcType="DECIMAL" property="quesBrowse" />
+    <result column="QUES_DES" jdbcType="VARCHAR" property="quesDes" />
+    <result column="QUES_FOLLOW" jdbcType="VARCHAR" property="quesFollow" />
+    <result column="IS_ANSWERED" jdbcType="VARCHAR" property="isAnswered" />
+    <result column="QUES_HONEY" jdbcType="DECIMAL" property="quesHoney" />
+    <result column="IS_PHONE" jdbcType="VARCHAR" property="isPhone" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    QUES_ID, ASK_QUESTIONER_ID, QUES_TITLE, QUES_MES, QUES_IMG, KEY_WORD, SEND_DATE, 
+    QUES_PRAISE, QUES_BROWSE, QUES_DES, QUES_FOLLOW, IS_ANSWERED, QUES_HONEY, IS_PHONE
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from MD_QUESTIONINFO
+    where QUES_ID = #{quesId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from MD_QUESTIONINFO
+    where QUES_ID = #{quesId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cn.qd.travel.entity.MdQuestionInfo">
+    insert into MD_QUESTIONINFO (QUES_ID, ASK_QUESTIONER_ID, QUES_TITLE, 
+      QUES_MES, QUES_IMG, KEY_WORD, 
+      SEND_DATE, QUES_PRAISE, QUES_BROWSE, 
+      QUES_DES, QUES_FOLLOW, IS_ANSWERED, 
+      QUES_HONEY, IS_PHONE)
+    values (#{quesId,jdbcType=VARCHAR}, #{askQuestionerId,jdbcType=VARCHAR}, #{quesTitle,jdbcType=VARCHAR}, 
+      #{quesMes,jdbcType=VARCHAR}, #{quesImg,jdbcType=VARCHAR}, #{keyWord,jdbcType=VARCHAR}, 
+      #{sendDate,jdbcType=DATE}, #{quesPraise,jdbcType=DECIMAL}, #{quesBrowse,jdbcType=DECIMAL}, 
+      #{quesDes,jdbcType=VARCHAR}, #{quesFollow,jdbcType=VARCHAR}, #{isAnswered,jdbcType=VARCHAR}, 
+      #{quesHoney,jdbcType=DECIMAL}, #{isPhone,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cn.qd.travel.entity.MdQuestionInfo">
+    insert into MD_QUESTIONINFO
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="quesId != null">
+        QUES_ID,
+      </if>
+      <if test="askQuestionerId != null">
+        ASK_QUESTIONER_ID,
+      </if>
+      <if test="quesTitle != null">
+        QUES_TITLE,
+      </if>
+      <if test="quesMes != null">
+        QUES_MES,
+      </if>
+      <if test="quesImg != null">
+        QUES_IMG,
+      </if>
+      <if test="keyWord != null">
+        KEY_WORD,
+      </if>
+      <if test="sendDate != null">
+        SEND_DATE,
+      </if>
+      <if test="quesPraise != null">
+        QUES_PRAISE,
+      </if>
+      <if test="quesBrowse != null">
+        QUES_BROWSE,
+      </if>
+      <if test="quesDes != null">
+        QUES_DES,
+      </if>
+      <if test="quesFollow != null">
+        QUES_FOLLOW,
+      </if>
+      <if test="isAnswered != null">
+        IS_ANSWERED,
+      </if>
+      <if test="quesHoney != null">
+        QUES_HONEY,
+      </if>
+      <if test="isPhone != null">
+        IS_PHONE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="quesId != null">
+        #{quesId,jdbcType=VARCHAR},
+      </if>
+      <if test="askQuestionerId != null">
+        #{askQuestionerId,jdbcType=VARCHAR},
+      </if>
+      <if test="quesTitle != null">
+        #{quesTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="quesMes != null">
+        #{quesMes,jdbcType=VARCHAR},
+      </if>
+      <if test="quesImg != null">
+        #{quesImg,jdbcType=VARCHAR},
+      </if>
+      <if test="keyWord != null">
+        #{keyWord,jdbcType=VARCHAR},
+      </if>
+      <if test="sendDate != null">
+        #{sendDate,jdbcType=DATE},
+      </if>
+      <if test="quesPraise != null">
+        #{quesPraise,jdbcType=DECIMAL},
+      </if>
+      <if test="quesBrowse != null">
+        #{quesBrowse,jdbcType=DECIMAL},
+      </if>
+      <if test="quesDes != null">
+        #{quesDes,jdbcType=VARCHAR},
+      </if>
+      <if test="quesFollow != null">
+        #{quesFollow,jdbcType=VARCHAR},
+      </if>
+      <if test="isAnswered != null">
+        #{isAnswered,jdbcType=VARCHAR},
+      </if>
+      <if test="quesHoney != null">
+        #{quesHoney,jdbcType=DECIMAL},
+      </if>
+      <if test="isPhone != null">
+        #{isPhone,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cn.qd.travel.entity.MdQuestionInfo">
+    update MD_QUESTIONINFO
+    <set>
+      <if test="askQuestionerId != null">
+        ASK_QUESTIONER_ID = #{askQuestionerId,jdbcType=VARCHAR},
+      </if>
+      <if test="quesTitle != null">
+        QUES_TITLE = #{quesTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="quesMes != null">
+        QUES_MES = #{quesMes,jdbcType=VARCHAR},
+      </if>
+      <if test="quesImg != null">
+        QUES_IMG = #{quesImg,jdbcType=VARCHAR},
+      </if>
+      <if test="keyWord != null">
+        KEY_WORD = #{keyWord,jdbcType=VARCHAR},
+      </if>
+      <if test="sendDate != null">
+        SEND_DATE = #{sendDate,jdbcType=DATE},
+      </if>
+      <if test="quesPraise != null">
+        QUES_PRAISE = #{quesPraise,jdbcType=DECIMAL},
+      </if>
+      <if test="quesBrowse != null">
+        QUES_BROWSE = #{quesBrowse,jdbcType=DECIMAL},
+      </if>
+      <if test="quesDes != null">
+        QUES_DES = #{quesDes,jdbcType=VARCHAR},
+      </if>
+      <if test="quesFollow != null">
+        QUES_FOLLOW = #{quesFollow,jdbcType=VARCHAR},
+      </if>
+      <if test="isAnswered != null">
+        IS_ANSWERED = #{isAnswered,jdbcType=VARCHAR},
+      </if>
+      <if test="quesHoney != null">
+        QUES_HONEY = #{quesHoney,jdbcType=DECIMAL},
+      </if>
+      <if test="isPhone != null">
+        IS_PHONE = #{isPhone,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where QUES_ID = #{quesId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cn.qd.travel.entity.MdQuestionInfo">
+    update MD_QUESTIONINFO
+    set ASK_QUESTIONER_ID = #{askQuestionerId,jdbcType=VARCHAR},
+      QUES_TITLE = #{quesTitle,jdbcType=VARCHAR},
+      QUES_MES = #{quesMes,jdbcType=VARCHAR},
+      QUES_IMG = #{quesImg,jdbcType=VARCHAR},
+      KEY_WORD = #{keyWord,jdbcType=VARCHAR},
+      SEND_DATE = #{sendDate,jdbcType=DATE},
+      QUES_PRAISE = #{quesPraise,jdbcType=DECIMAL},
+      QUES_BROWSE = #{quesBrowse,jdbcType=DECIMAL},
+      QUES_DES = #{quesDes,jdbcType=VARCHAR},
+      QUES_FOLLOW = #{quesFollow,jdbcType=VARCHAR},
+      IS_ANSWERED = #{isAnswered,jdbcType=VARCHAR},
+      QUES_HONEY = #{quesHoney,jdbcType=DECIMAL},
+      IS_PHONE = #{isPhone,jdbcType=VARCHAR}
+    where QUES_ID = #{quesId,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>简洁的支持展开关闭的tab标签代码</title>
+<link href="css/lanrenzhijia.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="js/jquery-1.4.min.js" ></script>
+<script type="text/javascript">
+        $(document).ready(function() {
+            $("#lanrenzhijia a").click(function() {
+                addTab($(this));
+            });
+
+            $('#tabs a.tab').live('click', function() {
+                // Get the tab name
+                var contentname = $(this).attr("id") + "_content";
+
+                // hide all other tabs
+                $("#content p").hide();
+                $("#tabs li").removeClass("current");
+
+                // show current tab
+                $("#" + contentname).show();
+                $(this).parent().addClass("current");
+            });
+
+            $('#tabs a.remove').live('click', function() {
+                // Get the tab name
+                var tabid = $(this).parent().find(".tab").attr("id");
+
+                // remove tab and related content
+                var contentname = tabid + "_content";
+                $("#" + contentname).remove();
+                $(this).parent().remove();
+
+                // if there is no current tab and if there are still tabs left, show the first one
+                if ($("#tabs li.current").length == 0 && $("#tabs li").length > 0) {
+
+                    // find the first tab    
+                    var firsttab = $("#tabs li:first-child");
+                    firsttab.addClass("current");
+
+                    // get its link name and show related content
+                    var firsttabid = $(firsttab).find("a.tab").attr("id");
+                    $("#" + firsttabid + "_content").show();
+                }
+            });
+        });
+        function addTab(link) {
+            // If tab already exist in the list, return
+            if ($("#" + $(link).attr("rel")).length != 0)
+                return;
+            
+            // hide other tabs
+            $("#tabs li").removeClass("current");
+            $("#content p").hide();
+            
+            // add new tab and related content
+            $("#tabs").append("<li class='current'><a class='tab' id='" +
+                $(link).attr("rel") + "' href='#'>" + $(link).html() + 
+                "</a><a href='#' class='remove'>x</a></li>");
+
+            $("#content").append("<p id='" + $(link).attr("rel") + "_content'>" + 
+                $(link).attr("title") + "</p>");
+            
+            // set the newly added tab as current
+            $("#" + $(link).attr("rel") + "_content").show();
+        }
+    </script>
+</head>
+<body>
+<div id="main">
+  <div id="doclist">
+    <h2>懒人之家栏目</h2>
+    <ul id="lanrenzhijia">
+      <li><a href="#" rel="焦点图" title="jquery幻灯片,焦点图,banner特效,Flash焦点图_懒人之家">焦点图</a></li>
+      <li><a href="#" rel="菜单导航" title="导航菜单,菜单导航,nav标签,导航代码,二级下拉菜单,横向导航,网页菜单,网页导航">菜单导航</a></li>
+      <li><a href="#" rel="jquery特效" title="jquery特效,jquery插件库,jquery代码,收集最全的jquery插件特效">jquery特效</a></li>
+      <li><a href="#" rel="tab标签" title="tab标签,tab选项卡,多页签代码,选项卡代码">tab标签</a></li>
+      <li><a href="#" rel="在线客服" title="QQ在线客服代码,在线客服QQ,在线客服qq代码,右侧漂浮客服">在线客服</a></li>
+    </ul>
+  </div>
+  <div id="wrapper">
+    <ul id="tabs">
+    </ul>
+    <div id="content"> </div>
+  </div>
+</div>
+</body>
+</html>
