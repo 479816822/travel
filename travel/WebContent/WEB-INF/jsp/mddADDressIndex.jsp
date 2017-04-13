@@ -1,12 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8"
-	import="com.mfw.dao.*, com.mfw.entity.*,java.util.List,java.util.ArrayList"%>
+	pageEncoding="utf-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%
-	String path = request.getContextPath();
-	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
-			+ path + "/";
-%>
 <!DOCTYPE HTML>
 <html xmlns="">
 <head>
@@ -15,106 +9,23 @@
 
 <!--样式-->
 <link href="css/mudidi.css" rel="stylesheet">
-<link href="css/headera.css" rel="stylesheet">
-<link href="css/footera.css" rel="stylesheet">
-
-
+<script language="javascript" src="js/jquery-3.1.0.min.js"
+			type="text/javascript"></script>
+<script language="javascript" src="js/jquery-validation-1.15.1.js"></script> </head>
 <script language="javascript" src="js/mudidi.js" type="text/javascript"></script>
-
-
-
-
-
-</head>
 <body>
 	<!--********************导航栏 begin ********************-->
-	<div id="header">
-		<div class="mfw-header">
-			<div class="header-wrap clearfix">
-				<div class="head-logo">
-					<a class="mfw-logo" title="蚂蜂窝自由行"> <img
-						src="img/header/mafengwo.png">
-					</a>
-				</div>
-				<ul class="head-nav" data-cs-t="headnav" id="_j_head_nav">
-					<li class="head-nav-index" ><a href="autoLogin">首页</a></li>
-					<li class="head-nav-place" ><a href=""
-						title="目的地">目的地</a></li>
-					<li class="head-nav-gonglve" ><a href="to_strategy"
-						title="旅游攻略">旅游攻略</a></li>
-					<li class="head-nav-sales head-nav-dropdown _j_sales_nav_show"
-						id="_j_nav_sales" ><a class="drop-toggle"
-						href="to_you"
-						style="cursor: pointer; display: block; border-bottom: 0 none;"
-						data-sales-nav="自由行商城"> <span class="head-act-96"></span> <span>自由行商城<i
-								class="icon-caret-down"></i></span>
-					</a> <!-- 自由行商城下拉面板 begin -->
-						<div class="dropdown-menu dropdown-sales hide _j_sales_top"
-							id="_j_sales_panel" data-cs-t="sales_nav">
-							<ul>
-								<li><a target="_blank" href="to_hotel" >机票＋酒店</a></li>
-								<li><a target="_blank" href="" data-sales-nav="当地游">当地游</a></li>
-								<li><a target="_blank" href="" data-sales-nav="签证">签证</a></li>
-								<li><a target="_blank" href="" data-sales-nav="国际租车">国际租车</a></li>
-								<li><a target="_blank" href="" >保险</a></li>
-							</ul>
-						</div> <!-- 自由行商城下拉面板 end --></li>
-					<li class="head-nav-hotel" ><a href="to_hotel"
-						title="酒店">酒店</a></li>
-					<li class=" head-nav-dropdown ">
-						<div class="drop-toggle">
-							<a href="goIndex" target="_blank">社区</a>
-						</div>
-				</ul>
-				<!--头部搜索栏 begin-->
-				<div class="head-search">
-					<div class="head-search-wrapper">
-						<div class="head-searchform">
-							<input name="q" type="text" id="_j_head_search_input"
-								autocomplete="off"> <a role="button" class="icon-search"
-								id="_j_head_search_link"><img
-								src="img/header/fangdajing.png"></a>
-						</div>
-					</div>
-				</div>
-
-				<!--头部登录 begin-->
-			<c:if test="${user == null }">
-					<div class="login-out">
-						<a class="weibo-login" href="" title="微博登录"><img
-							src="img/header/xinlang.png"></a> <a class="qq-login" href=""
-							title="QQ登录"><img src="img/header/qq.png"></a> <a
-							class="weixin-login" href="" title="微信登录"><img
-							src="img/header/weixin.png"></a> <a id="_j_showlogin"
-							title="登录蚂蜂窝" href="login" target="_blank" >登录</a><span class="split">|</span><a
-							href="register" title="注册帐号" target="_blank" >注册</a>
-					</div>
-				</c:if>
-
-
-				<c:if test="${user != null }">
-						<div class="login-info" >
-						<div class="head-user" id="_j_head_user">
-							<a target="_blank" class="drop-trigger" href="to_myHome" title="${user.userNick }的窝">
-								<div class="user-image">  
-									<img src="${user.userHead }" class="img_img" alt="${user.userNick }的窝">
-								</div> 
-							</a>
-						</div>
-						<div class="head-msg" >
-							消息
-						</div>
-						<div class="head-daka daka-complete">
-							<a >打卡</a> 
-						</div>
-					</div>
-				</c:if>
-
-
-
-			</div>
-			<div class="dropdown-group"></div>
-		</div>
+		<div class="header" style="	width: 100%;
+	height: 60px;
+	margin: 0 auto;
+	position: fixed;
+	z-index: 999;
+	border-bottom: 2px solid #eee;">
+		<iframe src="VisitHead" frameborder="0" scrolling="no" marginheight="0"
+			marginwidth="0" style="margin: 0px auto;z-index: 999;
+	width: 100%;
+	height: 300px;"></iframe>
+	</div>
 		<!-- 新自由行菜单 end -->
 		<!--********************导航栏 end ********************-->
 
@@ -125,14 +36,14 @@
 				<div class="show-banner show-info-line">
 					<div class="cover">
 						<a class="bigimg" href="" target="_blank" data-cs-l="图片"> <img
-							class="index" data-ow="1920" data-oh="1330" src='img/10010.jpeg' />
+							class="index" data-ow="1920" data-oh="1330" src='syste_img/img/10010.jpeg' />
 							<div class="shade"></div>
 						</a>
 					</div>
 					<!--大图上的消息-->
 					<div class="show-info show-info-sm">
 						<!--头图右边白线图-->
-						<img src="img/mudidi/toutu-line.png" />
+						<img src="syste_img/img/mudidi/toutu-line.png" />
 						<div class="show-name">
 							<a href="" target="_blank" data-t="目的地"> <span class="day"><em>DAY</em><br>
 								<strong>6</strong></span>
@@ -326,20 +237,19 @@
 				});
 				$('.show-links').find('.icon-arr').eq(0).hide();
 			</script>
-			<!--******************************国内推荐 begin ******************************-->
 
 			<!--广告-->
 			<div class="iamad-fxckme">
 				<div style="position: relative">
 					<a target="_blank" href=""> <img border="0"
-						src="img/mudidi/guanggao3.jpeg" /></a> <img
-						src="img/mudidi/guanggao.png"
+						src="syste_img/img/mudidi/guanggao3.jpeg" style="margin-left: 0%;margin-right: 15%"/></a> <img
+						src="syste_img/img/mudidi/guanggao.png"
 						style="position: absolute; bottom: 4px; left: 4px; width: 22px; height: 12px;" />
 				</div>
 			</div>
 
 
-			<!--******************************国内推荐 begin ******************************-->
+			<!--******************************热门目的地 begin ******************************-->
 
 
 <c:forEach items="${allList1 }" var="only_one"> 
@@ -495,8 +405,8 @@
 				<div class="iamad-fxckme middle" style="margin: 20px auto 0;">
 					<div style="position: relative">
 						<a target="_blank" href=""><img border="0"
-							src="img/mudidi/guanggao1.png" /></a> <img
-							src="img/mudidi/guanggao.png"
+							src="syste_img/img/mudidi/guanggao1.png" /></a> <img
+							src="syste_img/img/mudidi/guanggao.png"
 							style="position: absolute; bottom: 4px; left: 4px; width: 22px; height: 12px;" />
 					</div>
 				</div>
@@ -508,8 +418,10 @@
 
 </c:forEach>
 
-			<!--******************************国内推荐 end ******************************-->
+			<!--******************************热门目的地 end ******************************-->
+<!--******************************当季 begin ******************************-->
 
+<!--******************************当季end ******************************-->
 
 			<!--*分隔线*-->
 			<div class="row-line"></div>
@@ -519,7 +431,7 @@
 
 
 
-			<!--******************************第一次出国 begin ******************************-->
+			<!--******************************主题精选 begin ******************************-->
 			<div class="row row-routelines" data-cs-p="玩法路线">
 				<div class="wrapper">
 					<div class="r-title">
@@ -902,7 +814,7 @@
 					</div>
 				</div>
 			</div>
-			<!--******************************第一次出国 end ******************************-->
+			<!--******************************主题精选end ******************************-->
 
 
 			<!--*分隔线*-->
@@ -1902,127 +1814,9 @@
 
 
 
-
-		<!--**************************** footer ******************************-->
-		<div id="footer">
-			<div class="ft-content">
-				<div class="ft-info clearfix">
-					<dl class="ft-info-col ft-info-intro">
-						<dt>中国领先的自由行服务平台</dt>
-						<dd>覆盖全球200多个国家和地区</dd>
-						<dd>
-							<strong>100,000,000</strong> 位旅行者
-						</dd>
-						<dd>
-							<strong>920,000</strong> 家国际酒店
-						</dd>
-						<dd>
-							<strong>21,000,000</strong> 条真实点评
-						</dd>
-						<dd>
-							<strong>382,000,000</strong> 次攻略下载
-						</dd>
-						<dd>
-							<a class="highlight"
-								href="http://www.mafengwo.cn/activity/sales_report2015/index"
-								target="_blank">中国旅游行业第一部“玩法”</a>
-						</dd>
-					</dl>
-					<dl class="ft-info-col ft-info-about">
-						<dt>关于我们</dt>
-						<dd>
-							<a href="http://www.mafengwo.cn/s/about.html" rel="nofollow">关于蚂蜂窝</a>
-						</dd>
-						<dd>
-							<a href="http://www.mafengwo.cn/s/property.html" rel="nofollow">网络信息侵权通知指引</a>
-						</dd>
-						<dd>
-							<a href="http://www.mafengwo.cn/s/private.html" rel="nofollow">隐私政策</a>
-						</dd>
-						<dd>
-							<a href="http://www.mafengwo.cn/s/agreement.html" rel="nofollow">服务协议</a>
-						</dd>
-						<dd>
-							<a href="http://www.mafengwo.cn/s/contact.html" rel="nofollow">联系我们</a>
-						</dd>
-						<dd>
-							<a class="joinus highlight" title="蚂蜂窝团队招聘" target="_blank"
-								href="http://www.mafengwo.cn/s/hr.html" rel="nofollow">加入蚂蜂窝</a>
-						</dd>
-					</dl>
-					<dl class="ft-info-col ft-info-service">
-						<dt>旅行服务</dt>
-						<dd>
-							<ul class="clearfix">
-								<li><a target="_blank"
-									href="http://www.mafengwo.cn/gonglve/">旅游攻略</a></li>
-								<li><a target="_blank" href="http://www.mafengwo.cn/hotel/">酒店预订</a></li>
-								<li><a target="_blank" href="http://www.mafengwo.cn/sales/">旅游特价</a></li>
-								<li><a target="_blank" href="http://zuche.mafengwo.cn/">国际租车</a></li>
-								<li><a target="_blank" href="http://www.mafengwo.cn/wenda/">旅游问答</a></li>
-								<li><a target="_blank"
-									href="http://www.mafengwo.cn/insure/">旅游保险</a></li>
-								<li><a target="_blank" href="http://z.mafengwo.cn">旅游指南</a></li>
-								<li><a target="_blank" href="http://huoche.mafengwo.cn">订火车票</a></li>
-								<li><a target="_blank"
-									href="http://www.mafengwo.cn/travel-news/">旅游资讯</a></li>
-								<li><a target="_blank"
-									href="http://www.mafengwo.cn/app/intro/gonglve.php">APP下载</a></li>
-								<li><a target="_blank"
-									href="http://www.mafengwo.cn/sales/union.php" class="highlight">全球供应商入驻</a></li>
-							</ul>
-						</dd>
-					</dl>
-					<dl class="ft-info-col ft-info-qrcode">
-						<dd>
-							<span class="ft-qrcode-tejia"><img
-								src="img/footer/liangpin.png"></span>
-							<p>蚂蜂窝良品</p>
-						</dd>
-						<dd>
-							<span class="ft-qrcode-weixin"><img
-								src="img/footer/weixin.gif"></span>
-							<p>蚂蜂窝官方微信</p>
-						</dd>
-					</dl>
-					<dl class="ft-info-social">
-						<dt>关注我们</dt>
-						<dd>
-							<a class="ft-social-weibo" target="_blank"
-								href="http://weibo.com/mafengwovip"><i
-								class="ft-social-icon"></i><img src="img/footer/xinlang.png"></a>
-							<a class="ft-social-qqt" target="_blank"
-								href="http://t.qq.com/mafengwovip"><i class="ft-social-icon"></i><img
-								src="img/footer/tengxun.png"></a> <a class="ft-social-qzone"
-								target="_blank" href="http://1213600479.qzone.qq.com/"><i
-								class="ft-social-icon"></i><img src="img/footer/qqkj.png"></a>
-						</dd>
-					</dl>
-				</div>
-
-				<div class="ft-copyright">
-					<div class="ft-safety">
-						<a class="s-a" target="_blank"
-							href="https://search.szfw.org/cert/l/CX20140627008255008321"
-							id="___szfw_logo___"></a> <a class="s-b"
-							href="https://ss.knet.cn/verifyseal.dll?sn=e130816110100420286o93000000&ct=df&a=1&pa=787189"
-							target="_blank" rel="nofollow"></a> <a class="s-c"
-							href="http://www.itrust.org.cn/Home/Index/itrust_certifi/wm/1669928206.html"
-							target="_blank" rel="nofollow"></a>
-					</div>
-					<a href="http://www.mafengwo.cn"><i class="ft-mfw-logo"></i></a>
-					<p>
-						© 2016 Mafengwo.cn <a href="http://www.miibeian.gov.cn/"
-							target="_blank">京ICP备11015476号</a> 京公网安备110105013401号
-						京ICP证110318号
-					</p>
-					<p>
-						新出网证(京)字242号 全国统一客服电话：<span class="highlight">4006-345-678</span><a
-							target="_blank" href="http://www.mafengwo.cn/s/sitemap.html"
-							class="highlight m_l_10">网站地图</a>
-					</p>
-				</div>
-			</div>
-		</div>
-</body>
+	<div class="footer" style="clear: both;
+	height: 480px;">
+		<iframe src="IndexFooter" frameborder="0" scrolling="no" marginheight="0"
+			marginwidth="0" style="margin: 0px auto;width: 100%;
+	height: 480px;"></iframe> </div>
 </html>

@@ -80,6 +80,13 @@
 		from MD_USER
 		where MD_TELEPHONE = #{mdTelephone,jdbcType=VARCHAR}
 	</select>
+	
+	  <!-- 管理员登陆-->
+	<select id="backLogin" parameterType="com.cn.qd.travel.entity.MdUser"  resultMap="ResultMapWithBLOBs">
+		select *
+		from MD_USER
+		where MD_USER_NAME = #{mdUserName,jdbcType=VARCHAR} and MD_PASSWORD = #{mdPassword,jdbcType=VARCHAR}
+	</select>
   
     <!-- 查询用户的详细 -->
 	<select id="selectByUserId" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">

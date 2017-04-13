@@ -129,4 +129,12 @@ public class MdUserServiceImpl implements UserService{
 		return userDao.selectByUserId(id);
 	}
 
+	/**
+	 * 系统管理员登陆
+	 */
+	@Override
+	public MdUser backLogin(MdUser user) {
+		return userDao.backLogin(user);
+	}
+
 }

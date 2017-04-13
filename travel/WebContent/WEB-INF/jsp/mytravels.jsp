@@ -63,7 +63,7 @@
 				<div class="center clearfix">
 					<div class="MAvatar clearfix">
 						<div class="MAvaImg flt1">
-							<a><img width="120" height="120" alt="" src="${userInfo.userHeadImg}"></a>
+							<a href="toHostHome?userId=${userInfo.mdUserRecid }"><img width="120" height="120" alt="" src="${userInfo.userHeadImg}"></a>
 						</div>
 						<div class="MAvaEasyWord flt1">
 						<a>	<span class="MAvaName">${userInfo.mdUserName}</span> </a> <span
@@ -71,13 +71,13 @@
 						</div>
 					</div>
 					<ul class="flt2">
-						<li><a class="tags_link" href="to_myHome" title="我的窝">我的窝</a></li>
+						<li><a class="tags_link" href="toHostHome?userId=${userInfo.mdUserRecid }" title="我的窝">我的窝</a></li>
 						<li class="on"><a class="tags_link" href="" title="我的游记">我的游记</a></li>
-						<li><a class="tags_link" href="to_question" title="我的问答">我的问答</a></li>
+						<li><a class="tags_link" href="to_question?userId=${userInfo.mdUserRecid }" title="我的问答">我的问答</a></li>
 						<li id=""><a class="tags_link"
-							href="my_track" title="我的足迹">我的足迹</a></li>
+							href="to_track?userId=${userInfo.mdUserRecid }" title="我的足迹">我的足迹</a></li>
 						<li><a class="tags_link" href="" title="我的点评">我的点评</a></li>
-						<li><a class="tags_link" href="goTogether" title="我的结伴">我的结伴</a></li>
+						<li><a class="tags_link" href="goTogether?userId=${userInfo.mdUserRecid }" title="我的结伴">我的结伴</a></li>
 						<li class="more mygroup_tips"><span class="tags_link"
 							role="button" title="更多" style="cursor: default">更多<i
 								class="MDownMore"></i></span>
@@ -91,7 +91,7 @@
 									<li><a href="" title="我的订单"><i class="ico_order"></i><span>我的订单</span></a></li>
 									<li><a href="" title="我的优惠券"><i class="ico_ticket"></i><span>我的优惠券</span></a></li>
 									<li><a href="" title="我的兑换"><i class="ico_exchange"></i><span>我的兑换</span></a></li>
-									<li><a href="goLocal" title="我的当地人"><i class="ico_rent"></i><span>我的当地人</span></a></li>
+									<li><a href="goLocal?userId=${userInfo.mdUserRecid }" title="我的当地人"><i class="ico_rent"></i><span>我的当地人</span></a></li>
 								</ul>
 							</div></li>
 					</ul>

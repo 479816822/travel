@@ -1,4 +1,4 @@
-/*鍘绘帀瀛楀墠闈㈢殑鐐�*/
+/*閸樼粯甯��妤�闂堛垻娈戦悙锟�/
 ul, ol, li, dl, dd, dt {
     margin: 0;
     padding: 0;
@@ -25,13 +25,36 @@ h2 {
     font-weight: bold;
 }
 
-/*鍏ㄧ悆鐩殑鍦�*/
+/*閸忋劎鎮嗛惄顔炬畱閸︼拷*/
 .yazhou {
     width: 1000px;
     height: 517px
 }
 
+.header {
+	width: 100%;
+	height: 60px;
+	margin: 0 auto;
+	position: fixed;
+	z-index: 999;
+	border-bottom: 2px solid #eee;
+}
 
+.header iframe {
+	z-index: 999;
+	width: 100%;
+	height: 300px;
+}
+
+.footer {
+	clear: both;
+	height: 480px;
+}
+
+.footer iframe {
+	width: 100%;
+	height: 480px;
+}
 
 .beimei {
     width: 1000px;
@@ -81,7 +104,7 @@ html {
     -webkit-text-size-adjust: 100%;
 }
 
-/* 澶撮儴閫忔槑鏍峰紡 */
+/* 婢舵挳鍎撮柅蹇旀閺嶅嘲绱�*/
 .mfw-header {
     position: absolute;
     width: 100%;
@@ -90,7 +113,7 @@ html {
     right: 0;
 }
 
-/* *********澶村浘 鎼滅储********* */
+/* *********婢舵潙娴�閹兼粎鍌�******** */
 .place-search-panel {
     position: absolute;
     z-index: 2;
@@ -164,9 +187,9 @@ html {
     color: #fff;
 }
 
-/* *********澶村浘 鎼滅储 end********* */
+/* *********婢舵潙娴�閹兼粎鍌�end********* */
 
-/* *************涓棿閮ㄥ垎*****************/
+/* *************娑擃參妫块柈銊ュ瀻*****************/
 .row {
     padding: 40px 0;
 }
@@ -369,7 +392,7 @@ html {
     top: 0;
 }
 
-/* *****************涓棿閮ㄥ垎 鍥剧墖涓矾绾�******************** */
+/* *****************娑擃參妫块柈銊ュ瀻 閸ュ墽澧栨稉顓＄熅缁撅拷******************** */
 .tiles-item .title-line {
     padding-top: 65px;
 }
@@ -435,7 +458,7 @@ html {
     overflow: hidden;
 }
 
-/* ************涓棿閮ㄥ垎鍙宠竟鍧� **************/
+/* ************娑擃參妫块柈銊ュ瀻閸欏疇绔熼崸锟�**************/
 .tiles-left .tiles-b {
     height: 290px;
 }
@@ -496,7 +519,7 @@ html {
     margin-right: 0;
 }
 
-/* ****************鍏ㄧ悆鐩殑鍦�***************/
+/* ****************閸忋劎鎮嗛惄顔炬畱閸︼拷***************/
 .row-list {
     margin-bottom: 50px;
 }
@@ -589,7 +612,7 @@ html {
     background-color: #9f4d31;
     color: #fefefe;
     font-size: 12px;
-    font-family: sans-serif, Verdana, "Microsoft Yahei", Helvetica, "寰蒋闆呴粦", "瀹嬩綋";
+    font-family: sans-serif, Verdana, "Microsoft Yahei", Helvetica, "瀵邦喛钂嬮梿鍛寸拨", "鐎瑰缍�;
     margin-left: 40px;
     overflow: hidden;
     padding: 1px 3px;
@@ -597,7 +620,7 @@ html {
     text-decoration: none
 }
 
-/* ******************鍥藉唴鐩殑鍦�******************* */
+/* ******************閸ヨ棄鍞撮惄顔炬畱閸︼拷******************* */
 .bd-china .item {
     margin-bottom: 10px;
     padding-left: 100px;
@@ -650,13 +673,13 @@ html {
     margin-left: 2px;
 }
 
-/*骞垮憡*/
+/*楠炲灝鎲�/
 .iamad-fxckme {
     width: 980px;
     margin: 20px auto;
 }
 
-/**鐩殑鍦伴椤�*/
+/**閻╊喚娈戦崷浼搭浕妞わ拷*/
 #header, .container {
     min-width: 1000px;
 }
@@ -669,19 +692,19 @@ a {
     outline: none;
 }
 
-/************鐩殑鍦伴椤靛ご鍥鹃儴鍒�***********/
-/* 鎼滅储妗�*/
+/************閻╊喚娈戦崷浼搭浕妞ら潧銇旈崶楣冨劥閸掞拷***********/
+/* 閹兼粎鍌ㄥ锟�/
 .place-search-panel-sm {
     width: 360px;
     margin-top: -66px;
 }
 
-/*鎼滅储鏍�*/
+/*閹兼粎鍌ㄩ弽锟�/
 .place-search-panel-sm .searchbar {
     height: 36px;
 }
 
-/*鎼滅储鎸夐挳*/
+/*閹兼粎鍌ㄩ幐澶愭尦*/
 .place-search-panel-sm .search-button {
     height: 36px;
     width: 36px;
@@ -722,7 +745,7 @@ a.bigimg .shade {
     z-index: 1;
 }
 
-/**鏂囧瓧淇℃伅閮ㄥ垎*/
+/**閺傚洤鐡ф穱鈩冧紖闁劌鍨�/
 .header-place-default .shadow {
     display: none;
 }
@@ -742,7 +765,7 @@ a.bigimg .shade {
 }
 
 
-/* 澶撮儴閫忔槑鏍峰紡 */
+/* 婢舵挳鍎撮柅蹇旀閺嶅嘲绱�*/
 .mfw-header {
     position: absolute;
     width: 100%;
@@ -813,7 +836,7 @@ a.bigimg .shade {
     display: none;
 }
 
-/* 澶у浘 */
+/* 婢堆冩禈 */
 .place-focus {
     position: relative;
 }
@@ -896,7 +919,7 @@ a.bigimg .shade {
     vertical-align: middle;
 }
 
-/**************澶村浘 灏忓睆骞曠洰鐨勫湴锛堝瓧浣撳ぇ灏忥級 *****************/
+/**************婢舵潙娴�鐏忓繐鐫嗛獮鏇犳窗閻ㄥ嫬婀撮敍鍫濈摟娴ｆ挸銇囩亸蹇ョ礆 *****************/
 .show-banner .show-info-sm .show-name {
     top: 45px;
 }
@@ -1003,7 +1026,7 @@ a.bigimg .shade {
     height: 235px
 }
 
-/* **********澶村浘涓� 灏忕敾闈� ************** */
+/* **********婢舵潙娴樻稉锟�鐏忓繒鏁鹃棃锟�************** */
 .show-info-line .show-info-sm {
     height: 140px;
 }
@@ -1071,22 +1094,22 @@ a.bigimg .shade {
     color: #ff9d00;
 }
 
-/* *************涓棿鍐呭閮ㄥ垎***************/
+/* *************娑擃參妫块崘鍛啇闁劌鍨�**************/
 
-/*鍒嗛殧绾�*/
+/*閸掑棝娈х痪锟�/
 .row-line {
     height: 1px;
     background-color: #e4e4e4;
     overflow: hidden;
 }
 
-/*骞垮憡*/
+/*楠炲灝鎲�/
 .iamad-fxckme {
     width: 980px;
     margin: 20px auto;
 }
 
-/**鐩殑鍦伴椤�*/
+/**閻╊喚娈戦崷浼搭浕妞わ拷*/
 #header, .container {
     min-width: 1000px;
 }
@@ -1099,7 +1122,7 @@ a {
     outline: none;
 }
 
-/**鐩殑鍦伴椤靛ご鍥鹃儴鍒�*/
+/**閻╊喚娈戦崷浼搭浕妞ら潧銇旈崶楣冨劥閸掞拷*/
 
 .place-search-panel-sm {
     width: 360px;
@@ -1150,7 +1173,7 @@ a.bigimg .shade {
     z-index: 1;
 }
 
-/**鏂囧瓧淇℃伅閮ㄥ垎*/
+/**閺傚洤鐡ф穱鈩冧紖闁劌鍨�/
 .header-place-default .shadow {
     display: none;
 }

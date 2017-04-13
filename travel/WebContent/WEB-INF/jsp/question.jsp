@@ -243,99 +243,24 @@
 
 
 	<!--************************************* 头部-->
-
-	<!--*****************************头部*****************************-->
-	<!--************************************* 头部-->
-	<div class="header">
-		<div class="topBarC">
-			<!-- 头部-->
-			<!-- 后端处理页面和相应的地方-->
-			<div class="logo">
-				<a title="蚂蜂窝自由行" href="/">蚂蜂窝自由行</a>
-			</div>
-			<div class="t_nav">
-				<ul id="pnl_nav" data-cs-t="headnav_wo">
-					<li data-cs-p="index"><strong class="t"><a href="/">首页</a></strong>
-					</li>
-					<li data-cs-t="wenda" data-cs-p="wenda"><strong class="t"><a
-							data-cs-p="from_wo_nav" href="/wenda/">问答</a></strong></li>
-					<li data-cs-t="things" data-cs-p="things"><strong class="t"><a
-							data-cs-p="from_wo_nav" href="/mall/things.php">蚂蜂窝周边</a></strong></li>
-					<li data-cs-p="together"><strong class="t"><a
-							href="/together/">结伴</a></strong></li>
-					<li data-cs-p="group"><strong class="t"><a
-							href="/group/">小组</a></strong></li>
-					<li data-cs-p="mall"><strong class="t"><a
-							href="/mall/">蜂蜜兑换</a></strong></li>
-					<li class="drop" data-cs-p="other"><strong class="t"><a
-							href="">更多<b></b></a></strong>
-						<div class="c">
-							<a href="" target="_blank">当地人</a> <a href="" target="_blank">真人兽</a>
-							<a href="" target="_blank">蚂蜂窝高校</a> <a href="" target="_blank">照片PK</a>
-							<a href="" target="_blank">蚂蜂窝拍卖行</a> <a href="" target="_blank">道具商店</a>
-							<a href="" target="_blank">旅行电台</a> <a href="" target="_blank">蜂首聚乐部</a>
-							<a href="" target="_blank">VIP</a> <a href="" target="_blank">分歧终端机</a>
-						</div></li>
-				</ul>
-			</div>
-			<!--用户搜索-->
-			<div class="t_search">
-				<form method="post" action="" name="search">
-					<input type="text" class="key" value="" name="q" id="word">
-					<input type="submit" value="" class="btn">
-				</form>
-			</div>
-
-
-			<div class="t_info">
-				<ul class="user_info" data-cs-t="headnav_wo">
-					<li class="daka">
-						<!--最后处理打卡的功能实现--> <span class="daka_btn" id="_j_dakabtn"
-						data-japp="daka"> <a role="button" title="打卡"
-							class="daka_before">打卡</a> <a role="button" title="打卡推荐"
-							class="daka_after">打卡推荐</a>
-					</span>
-					</li>
-					<li class="account _j_hoverclass" data-hoverclass="on"
-						id="pnl_user_set" data-cs-p="other" class="drop">
-						<!--用户的信息头像--> <strong class="t"><a id="ttt" href="">消息<b></b></a></strong>
-						<div class="uSet c">
-							<a href="" rel="nofollow">私信</a> <a href="" rel="nofollow">文章消息</a>
-							<a href="" rel="nofollow">系统通知</a> <a href="" rel="nofollow">小组消息</a>
-							<a href="" rel="nofollow">问答消息</a>
-
-						</div>
-					<li class="ub-item ub-new-msg" id="head-new-msg"></li>
-
-					<li class="account _j_hoverclass" data-hoverclass="on"
-						id="pnl_user_set1" data-cs-p="other" class="drop">
-						<!--用户的信息头像--> <span class="t"><a class="infoItem"
-							href="to_myHome"><img src="${user.userHead }" width="35"
-								height="35" align="absmiddle"><b></b></a></span>
-						<div class="uSet c">
-							<a href="/rank/lv.php" class="containNum" target="_blank">等级
-								<span>LV.${user.userLevel }</span>
-							</a> <a href="/mall/" class="containNum hasLine" target="_blank">蜂蜜
-								<span id="_j_header_honey">${user.userHoney }</span>
-							</a> <a href="/user/lv.php#coin" class="containNum hasLine"
-								target="_blank">金币 <span id="_j_header_coin">${user.userMoney }</span></a>
-							<a href="to_myHome" target="_blank">我的蚂蜂窝</a> <a
-								href="writeTravel" target="_blank" class="menu">写游记</a> <a
-								href="" target="_blank" class="menu">我的好友</a> <a href=""
-								target="_blank" class="menu">我的收藏</a> <a href="" target="_blank">设置</a>
-							<a href="" target="_blank">分享设置</a> <a href="to_out">退出</a>
-
-						</div>
-					</li>
-
-				</ul>
-			</div>
-
-		</div>
-
-
+		<div class="header" style=" z-index: 200;
+    height: 46px;
+    width: 100%;
+    background-color: rgba(34, 35, 36, 0.95);
+    background-color: #2d2e2f \9; position: fixed;
+    top: 0;
+    left: 0;
+    clear: both;">
+		<div class="header1" style="    width: 100%;
+    height: 100%;
+    margin: 0 ;">
+			<iframe src="Mheader" frameborder="0" scrolling="no" marginheight="0"
+					marginwidth="0" style="margin: 0px auto;    z-index: -990;
+    width: 100%;
+    height: 410px;" ></iframe> </div>
 	</div>
 
+	
 	<!--************************************* 主要内容-->
 	<div class="main">
 
@@ -355,26 +280,26 @@
 
 			<!--大图片-->
 			<div class="banner_img banner_note" id="_j_banner">
-				<img alt="" src="img/banner_ask.gif">
+				<img alt="" src="syste_img/img/banner_ask.gif">
 			</div>
 			<div class="tags_bar second_tags_bar">
 				<div class="center clearfix">
 					<div class="MAvatar clearfix">
 						<div class="MAvaImg flt1">
-							<img width="120" height="120" alt="" src="${user.userHead}">
+							<a href="toHostHome?userId=${userInfo.mdUserRecid }"><img width="120" height="120" alt="" src="${userInfo.userHeadImg}"></a>
 						</div>
 						<div class="MAvaEasyWord flt1">
-							<span class="MAvaName">${user.userNick}</span> <span
-								class="MAvaLevel">Lv.${user.userLevel}</span>
+							<span class="MAvaName">${userInfo.mdUserName}</span> <span
+								class="MAvaLevel">Lv.${userInfo.mdLevel}</span>
 						</div>
 					</div>
 					<ul class="flt2">
-						<li><a class="tags_link" href="to_myHome" title="我的窝">我的窝</a></li>
-						<li class="on"><a class="tags_link" href="" title="我的游记">我的游记</a></li>
-						<li><a class="tags_link" href="to_question" title="我的问答">我的问答</a></li>
-						<li id=""><a class="tags_link" href="my_track" title="我的足迹">我的足迹</a></li>
+						<li><a class="tags_link" href="toHostHome?userId=${userInfo.mdUserRecid }" title="我的窝">我的窝</a></li>
+						<li class="on"><a class="tags_link" href="toMyTravel?userId=${userInfo.mdUserRecid }" title="我的游记">我的游记</a></li>
+						<li><a class="tags_link" href="" title="我的问答">我的问答</a></li>
+						<li id=""><a class="tags_link" href="to_track?userId=${userInfo.mdUserRecid }" title="我的足迹">我的足迹</a></li>
 						<li><a class="tags_link" href="" title="我的点评">我的点评</a></li>
-						<li><a class="tags_link" href="goTogether" title="我的结伴">我的结伴</a></li>
+						<li><a class="tags_link" href="goTogether?userId=${userInfo.mdUserRecid }" title="我的结伴">我的结伴</a></li>
 						<li class="more mygroup_tips"><span class="tags_link"
 							role="button" title="更多" style="cursor: default">更多<i
 								class="MDownMore"></i></span>
@@ -388,7 +313,7 @@
 									<li><a href="" title="我的订单"><i class="ico_order"></i><span>我的订单</span></a></li>
 									<li><a href="" title="我的优惠券"><i class="ico_ticket"></i><span>我的优惠券</span></a></li>
 									<li><a href="" title="我的兑换"><i class="ico_exchange"></i><span>我的兑换</span></a></li>
-									<li><a href="goLocal" title="我的当地人"><i
+									<li><a href="goLocal?userId=${userInfo.mdUserRecid }" title="我的当地人"><i
 											class="ico_rent"></i><span>我的当地人</span></a></li>
 								</ul>
 							</div></li>
@@ -438,13 +363,12 @@
 						</a> <span class="main_left_news"> 设置擅长的标签，抢先答！</span>
 					</div>
 					<div class="main_news_two">
-						<a href="to_ask_questions">
-							<div class="question_div">我要提问</div>
+						<a href="askQuestion?userId=${userInfo.mdUserRecid }" > <div class="question_div">我要提问</div>
 						</a>
 					</div>
 					<div class="main_news_three">
-						<a>
-							<div class="three_one"></div>
+						<a href="askQuestion?userId=${userInfo.mdUserRecid }">
+							<div class="three_one">我要提问</div>
 						</a> <a>
 							<div class="three_two"></div>
 						</a>

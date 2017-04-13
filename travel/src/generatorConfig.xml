@@ -39,13 +39,14 @@
 		</javaClientGenerator>
 		
 		<!--对应数据库表名1 -->
-	<table tableName="MD_USER_LEAVE_MESSAGE" domainObjectName="MdUserLeaveMessage"
+
+	<table tableName="MD_QUESTIONINFO" domainObjectName="MdQuestionInfo"
 			enableCountByExample="false" enableDeleteByExample="false"
 			enableSelectByExample="false" enableUpdateByExample="false">
 			<property name="useActualColumnNames" value="false" />
 		</table>
 		
-    	<table tableName="MD_USER_LEAVE_MORE_MESSAGE" domainObjectName="MdUserLeaveMoreMessage"
+    	<table tableName="MD_ANSWERINFO" domainObjectName="MdAnswerinfo"
 			enableCountByExample="false" enableDeleteByExample="false"
 			enableSelectByExample="false" enableUpdateByExample="false">
 			<property name="useActualColumnNames" value="false" />

@@ -102,7 +102,7 @@ public class LoginController {
 		ServletContext application = request.getSession().getServletContext();
 		String travelPage = (String) application.getAttribute("travelPage");
 		Page pages = (Page) application.getAttribute("page");
-		if (travelPage == null) {//第一次初始化
+		if (travelPage == null) {// 第一次初始化
 			travelObject = travelService.oneListResultProvider(null, null);
 			travelList = new ArrayList<MDTravelNote>();
 			for (Object object : travelObject) {
@@ -112,12 +112,28 @@ public class LoginController {
 			Page page = travelService.getPage();
 			application.setAttribute("page", page);
 			model.addAttribute("page", page);
-		} else {//已经初始化了分页数据在缓存中查找
+		} else {// 已经初始化了分页数据在缓存中查找
 			travelList = (ArrayList<MDTravelNote>) PageFinish.getPageData(pages);
 			model.addAttribute("page", pages);
 		}
-		model.addAttribute("travelList", travelList);
+		model.addAttribute("travelList", chageUserHead(travelList, request));
 		return "index";
+	}
+
+	/**
+	 * 修改用户头像
+	 * 
+	 * @param travel
+	 * @param request
+	 * @return
+	 */
+	private ArrayList<MDTravelNote> chageUserHead(ArrayList<MDTravelNote> travel, HttpServletRequest request) {
+		for (int i = 0; i < travel.size(); i++) {
+			String savePath = request.getSession().getServletContext().getRealPath("upload");
+			String userHeadImg = ChangeIcon.changeImg(travel.get(i).getUser().getMdIcon(), savePath);
+			travel.get(i).getUser().setUserHeadImg(userHeadImg);
+		}
+		return travel;
 	}
 
 	/**

@@ -92,7 +92,7 @@
             </div>
             <ul class="nav" data-cs-t="headnav" id="_j_head_nav">
                 <li class="index mainNav"><a href="to_index">首页</a></li>
-                <li class="place mainNav"><a href="" title="目的地"
+                <li class="place mainNav"><a href="mddIndex" title="目的地"
                                              target="_blank">目的地</a></li>
                 <li class="gonglve mainNav"><a href=""
                                                target="_blank" title="旅游攻略">旅游攻略</a></li>

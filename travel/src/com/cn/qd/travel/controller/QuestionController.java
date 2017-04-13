@@ -10,24 +10,23 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class QuestionController {
 
-	@RequestMapping(value = "toQuestion",method = { RequestMethod.GET })
-	public String askQuestion(Model model, HttpSession session) {
-		System.out.println();
-		return "ask_question";
+	@RequestMapping(value = "to_question", method = { RequestMethod.GET })
+	public String askQuestion(Model model, HttpSession session, String userId) {
+		return "question";
 	}
-	
+
 	/**
 	 * 到问题提问页面
+	 * 
 	 * @param model
 	 * @param session
 	 * @return
 	 */
 	@RequestMapping(value = "askQuestion")
-	public String toAskQuestion(Model model, HttpSession session) {
+	public String toAskQuestion(Model model, HttpSession session, String userId) {
 		return "ask_question";
 	}
-	
-	
+
 	/**
 	 * 搜索信息
 	 * 
@@ -35,9 +34,21 @@ public class QuestionController {
 	 * @param session
 	 * @return
 	 */
-	@RequestMapping(value = "search",method = { RequestMethod.POST })
+	@RequestMapping(value = "search", method = { RequestMethod.POST })
 	public String search(Model model, HttpSession session) {
 		return "";
 	}
+
+	/**
+	 * 我的足迹
+	 * @param model
+	 * @param session
+	 * @return
+	 */
+	@RequestMapping(value = "to_track", method = { RequestMethod.POST })
+	public String toMyTrake(Model model, HttpSession session,String userId) {
+		return "";
+	}
+
 	
 }

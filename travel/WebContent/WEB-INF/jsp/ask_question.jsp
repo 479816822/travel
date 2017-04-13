@@ -9,9 +9,6 @@
 
 <link href="css/ask_question/ask_question.css" rel="stylesheet"
 	type="text/css">
-<link href="css/write_travels/writer_header_css.css" rel="stylesheet"
-	type="text/css">
-<link rel="stylesheet" href="css/show_travels/footer1.css">
 
 
 <script language="javascript" src="js/jquery-3.1.0.min.js"
@@ -41,11 +38,23 @@
 
 </head>
 <body>
-	<div class="header">
-		<div class="header1">
-			<iframe src="MainHeader" frameborder="0" scrolling="no" marginheight="0"
-					marginwidth="0" style="margin: 0px auto;"></iframe>
-		</div>
+
+	<!--************************************* 头部-->
+		<div class="header" style=" z-index: 200;
+    height: 46px;
+    width: 100%;
+    background-color: rgba(34, 35, 36, 0.95);
+    background-color: #2d2e2f \9; position: fixed;
+    top: 0;
+    left: 0;
+    clear: both;">
+		<div class="header1" style="    width: 100%;
+    height: 100%;
+    margin: 0 ;">
+			<iframe src="Mheader" frameborder="0" scrolling="no" marginheight="0"
+					marginwidth="0" style="margin: 0px auto;    z-index: -990;
+    width: 100%;
+    height: 410px;" ></iframe> </div>
 	</div>
 
 

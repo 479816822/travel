@@ -127,4 +127,10 @@ public interface UserService extends BaseService{
 	 */
 	
 	public int updateUserInfo(MdUser user);
+	
+	/**
+	 * 
+	 */
+	public MdUser backLogin(MdUser user);
+	
 }

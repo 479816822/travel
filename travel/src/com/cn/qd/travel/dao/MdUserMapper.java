@@ -120,5 +120,7 @@ public interface MdUserMapper {
 	int updateBySql(String sql);
 
 	int checkPhone(String mdTelephone);
+	
+	public MdUser backLogin(MdUser user);
     
 }

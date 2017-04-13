@@ -315,10 +315,10 @@
 																		+ "...</a></dd>"
 																		+ "</dl>"
 																		+ "<div class='tn-extra'>"
-																		+ "<span class='tn-ding ' onclick='funs(this)'> "
+																		+ "<span class='tn-ding praise_1'> "
 																		+ "<span style='display: none;'>"
 																		+ n.mdRecid
-																		+ "</span> <a class='btn-ding ' rel='nofollow'></a> <em>"
+																		+ "</span> <a class='btn-ding praise' rel='nofollow'></a> <em>"
 																		+ n.mdStdname
 																		+ "</em>"
 																		+ "</span> "
@@ -395,10 +395,10 @@
 													+ "...</a></dd>"
 													+ "</dl>"
 													+ "<div class='tn-extra'>"
-													+ "<span class='tn-ding ' onclick='funs(this)'> "
+													+ "<span class='tn-ding praise_1'> "
 													+ "<span style='display: none;'>"
 													+ obj[i].mdRecid
-													+ "</span> <a class='btn-ding ' rel='nofollow'></a> <em>"
+													+ "</span> <a class='btn-ding praise' rel='nofollow'></a> <em>"
 													+ obj[i].mdStdname
 													+ "</em>"
 													+ "</span> "
@@ -1063,7 +1063,8 @@
 													style="display: none;">${listItem.mdRecid }</span> <a
 													class="btn-ding praise" rel="nofollow"></a> <em id="">${listItem.mdStdname }
 												</em><!-- 获赞数 -->
-												</span> <span class="tn-place"><i></i><a
+												</span> 
+												<span class="tn-place"><i></i><a
 													href="showTravel?traId=${listItem.mdRecid }&userId=${listItem.user.mdUserRecid }"
 													class="_j_gs_item" rel="nofollow">${listItem.mdTheme }</a>，by
 													${listItem.user.mdUserName }</span> <span class="tn-user"> <a

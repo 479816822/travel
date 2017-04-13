@@ -16,18 +16,18 @@
         </div>
         <div class="t_nav">
             <ul id="pnl_nav" data-cs-t="headnav_wo">
-                <li data-cs-p="index"><strong class="t"><a href="to_index">首页</a></strong>
+                <li data-cs-p="index"><strong class="t"><a href="to_index" target="_blank">首页</a></strong>
                 </li>
                 <li data-cs-t="wenda" data-cs-p="wenda"><strong class="t"><a
-                        data-cs-p="from_wo_nav" href="askQuestion">问答</a></strong></li>
+                        data-cs-p="from_wo_nav" href="askQuestion" target="_blank">问答</a></strong></li>
                 <li data-cs-t="things" data-cs-p="things"><strong class="t"><a
-                        data-cs-p="from_wo_nav" href="/mall/things.php">蚂蜂窝周边</a></strong></li>
+                        data-cs-p="from_wo_nav" href="/mall/things.php" target="_blank">蚂蜂窝周边</a></strong></li>
                 <li data-cs-p="together"><strong class="t"><a
-                        href="/together/">结伴</a></strong></li>
+                        href="" target="_blank">结伴</a></strong></li>
                 <li data-cs-p="group"><strong class="t"><a
-                        href="/group/">小组</a></strong></li>
+                        href="" target="_blank">小组</a></strong></li>
                 <li data-cs-p="mall"><strong class="t"><a
-                        href="/mall/">蜂蜜兑换</a></strong></li>
+                        href="" target="_blank">蜂蜜兑换</a></strong></li>
                 <li class="drop" ><strong class="t"><a
                         href="">更多<b></b></a></strong>
                     <div class="c">
@@ -69,17 +69,17 @@
 
                 <li class="account _j_hoverclass00 drop">
                    <span class="t"><a class="infoItem"
-                                                      href="to_myHome"><img src="${user.userHeadImg }" width="35"
+                                                      href=""><img src="${user.userHeadImg }" width="35"
                                                                             height="35"
                                                                             align="absmiddle"><b></b></a></span>
                     <div class="uSet c">
-                        <a href="/rank/lv.php" class="containNum" target="_blank">等级
+                        <a href="" class="containNum" target="_blank">等级
                             <span>LV.${user.mdLevel }</span>
-                        </a> <a href="/mall/" class="containNum hasLine" target="_blank">蜂蜜
+                        </a> <a href="" class="containNum hasLine" target="_blank">蜂蜜
                         <span id="_j_header_honey">${user.userBank.mdBalance }</span>
                     </a> <a href="/user/lv.php#coin" class="containNum hasLine"
                             target="_blank">金币 <span id="_j_header_coin">${user.userBank.mdBalance }</span></a>
-                        <a href="toMyHome" target="_blank">我的主页</a> <a
+                        <a href="toHostHome?userId=${user.mdUserRecid }" target="_blank">我的主页</a> <a
                             href="to_Writetravel" target="_blank" class="menu">写游记</a> <a
                             href="" target="_blank" class="menu">我的好友</a>  <a href="toOutLogin" target="_blank">退出</a>
 

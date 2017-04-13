@@ -250,7 +250,7 @@ $(function() {
 									dataType : 'json',
 									success : function(msg) {
 										//更新数据
-										var str = "<li><div class='word_one'><div class='word_one_one'><a href='toHostHome?userId="+msg.message.lvUser.mdUserRecid +"'><img  src='"+msg.message.mdLvUserRecid+" 'class='word_one_one'></a></div><div class='word_one_two'><a href='toHostHome?userId="+msg.message.mdLvUserRecid +"'><div class='word_one_two_one'>" + msg.message.lvUser.mdUserName
+										var str = "<li><div class='word_one'><div class='word_one_one'><a href='toHostHome?userId="+msg.message.lvUser.mdUserRecid +"'><img  src='"+msg.message.lvUser.userHeadImg+" 'class='word_one_one'></a></div><div class='word_one_two'><a href='toHostHome?userId="+msg.message.mdLvUserRecid +"'><div class='word_one_two_one'>" + msg.message.lvUser.mdUserName
 												+ "</div></a><div class='word_one_two_two'>"
 												+ msg.message.mdLvDate
 												+ "</div></div></div><div class='word_two'>"
@@ -582,13 +582,13 @@ alert("eeror")
 				<div class="center clearfix">
 					<ul class="flt2">
 						<!--主要需要实现的功能-->
-						<li class="on"><a class="tags_link" href="/" title="我的窝">我的窝</a></li>
-						<li><a class="tags_link" href="toMyTravel" title="我的游记">我的游记</a></li>
-						<li><a class="tags_link" href="to_question" title="我的问答">我的问答</a></li>
-						<li id="_j_pathnav"><a class="tags_link" href="my_track"
+						<li class="on"><a class="tags_link" href="" title="我的窝">我的窝</a></li>
+						<li><a class="tags_link" href="toMyTravel?userId=${userInfo.mdUserRecid }" title="我的游记">我的游记</a></li>
+						<li><a class="tags_link" href="to_question?userId=${userInfo.mdUserRecid }" title="我的问答">我的问答</a></li>
+						<li id="_j_pathnav"><a class="tags_link" href="to_track?userId=${userInfo.mdUserRecid }"
 							title="我的足迹">我的足迹</a></li>
 						<li><a class="tags_link" href="" title="我的点评">我的点评</a></li>
-						<li><a class="tags_link" href="goTogether" title="我的结伴">我的结伴</a></li>
+						<li><a class="tags_link" href="goTogether?userId=${userInfo.mdUserRecid }" title="我的结伴">我的结伴</a></li>
 						<li class="more mygroup_tips"><span class="tags_link"
 							role="button" title="更多" style="cursor: default">更多<i
 								class="MDownMore"></i></span>
@@ -596,13 +596,13 @@ alert("eeror")
 								<ul>
 									<li data-cs-t="go_to_activity"><a href="" title="我的活动"
 										data-cs-p="activity"><i class="ico_activity"></i><span>我的活动</span></a></li>
-									<li><a href="" title="我的小组"><i class="ico_group"></i><span>我的小组</span></a>
+									<li><a href="" title="我的小组"><i class=""></i><span>我的小组</span></a>
 									</li>
-									<li><a href="" title="我的收藏"><i class="ico_collect"></i><span>我的收藏</span></a></li>
-									<li><a href="" title="我的订单"><i class="ico_order"></i><span>我的订单</span></a></li>
-									<li><a href="" title="我的优惠券"><i class="ico_ticket"></i><span>我的优惠券</span></a></li>
-									<li><a href="" title="我的兑换"><i class="ico_exchange"></i><span>我的兑换</span></a></li>
-									<li><a href="goLocal" title="我的当地人"><i
+									<li><a href="" title="我的收藏"><i class=""></i><span>我的收藏</span></a></li>
+									<li><a href="" title="我的订单"><i class=""></i><span>我的订单</span></a></li>
+									<li><a href="" title="我的优惠券"><i class=""></i><span>我的优惠券</span></a></li>
+									<li><a href="" title="我的兑换"><i class=""></i><span>我的兑换</span></a></li>
+									<li><a href="to_goLocal?userId=${userInfo.mdUserRecid }" title="我的当地人"><i
 											class="ico_rent"></i><span>我的当地人</span></a></li>
 								</ul>
 							</div></li>
@@ -616,12 +616,12 @@ alert("eeror")
 					<ul class="flt2">
 						<!--主要需要实现的功能-->
 						<li class="on"><a class="tags_link" href="/" title="他的窝">他的窝</a></li>
-						<li><a class="tags_link" href="toMyTravel" title="他的游记">他的游记</a></li>
-						<li><a class="tags_link" href="to_question" title="他的问答">他的问答</a></li>
-						<li id="_j_pathnav"><a class="tags_link" href="my_track"
+						<li><a class="tags_link" href="toMyTravel?userId=${userInfo.mdUserRecid }" title="他的游记">他的游记</a></li>
+						<li><a class="tags_link" href="to_question?userId=${userInfo.mdUserRecid }" title="他的问答">他的问答</a></li>
+						<li id="_j_pathnav"><a class="tags_link" href="to_track?userId=${userInfo.mdUserRecid }"
 							title="我的足迹">他的足迹</a></li>
 						<li><a class="tags_link" href="" title="他的点评">他的点评</a></li>
-						<li><a class="tags_link" href="goTogether" title="他的结伴">他的结伴</a></li>
+						<li><a class="tags_link" href="goTogether?userId=${userInfo.mdUserRecid }" title="他的结伴">他的结伴</a></li>
 						<li class="more mygroup_tips"><span class="tags_link"
 							role="button" title="更多" style="cursor: default">更多<i
 								class="MDownMore"></i></span>
@@ -635,7 +635,7 @@ alert("eeror")
 									<li><a href="" title="他的订单"><i class="ico_order"></i><span>他的订单</span></a></li>
 									<li><a href="" title="他的优惠券"><i class="ico_ticket"></i><span>他的优惠券</span></a></li>
 									<li><a href="" title="他的兑换"><i class="ico_exchange"></i><span>他的兑换</span></a></li>
-									<li><a href="goLocal" title="他的当地人"><i
+									<li><a href="goLocal?userId=${userInfo.mdUserRecid }" title="他的当地人"><i
 											class="ico_rent"></i><span>他的当地人</span></a></li>
 								</ul>
 							</div></li>
