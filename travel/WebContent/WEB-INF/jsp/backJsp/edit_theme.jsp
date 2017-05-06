@@ -1,39 +1,35 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>目的地主题编辑</title>
-    <link rel="stylesheet" type="text/css" href="../../../pluing/easyui/themes/black/easyui.css">
-    <link rel="stylesheet" type="text/css" href="../../../pluing/easyui/themes/icon.css">
-    <script type="text/javascript" src="../../../pluing/easyui/jquery.min.js"></script>
-    <script type="text/javascript" src="../../../pluing/easyui/jquery.easyui.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../../../css/backcss/edit_theme.css">
+    <link rel="stylesheet" type="text/css" href="pluing/easyui/themes/black/easyui.css">
+    <link rel="stylesheet" type="text/css" href="pluing/easyui/themes/icon.css">
+    <script type="text/javascript" src="pluing/easyui/jquery.min.js"></script>
+    <script type="text/javascript" src="pluing/easyui/jquery.easyui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/backcss/edit_theme.css">
     <!-- 图片上传 -->
 
-    <script language="javascript" src="../../../js/jquery-3.1.0.min.js"
-            type="text/javascript"></script>
-    <script language="javascript" src="../../../js/jquery-validation-1.15.1.js"
+
+    <script language="javascript" src="js/jquery-validation-1.15.1.js"
             type="text/javascript"></script>
 
 
-    <link rel="stylesheet" type="text/css" href="../../../pluing/jeasyui/themes/default/easyui.css">
-    <link rel="stylesheet" type="text/css" href="../../../pluing/jeasyui/themes/icon.css">
-    <link rel="stylesheet" type="text/css" href="../../../pluing/jeasyui/demo/demo.css">
     <style type="text/css">
         .datagrid-header-rownumber,.datagrid-cell-rownumber{
             width:40px;
         }
     </style>
-    <script type="text/javascript" src="../../../pluing/jeasyui/jquery.easyui.min.js"></script>
-    <script type="text/javascript" src="../../../pluing/jeasyui/datagrid-scrollview.js"></script>
+
+    <link rel="stylesheet" href="pluing/publicity/zyupload/skins/zyupload-1.0.0.min.css " type="text/css">
+    <script type="text/javascript" src="pluing/publicity/zyupload/zyupload-1.0.0.min.js"></script>
 
 
-    <link rel="stylesheet" href="../../../pluing/publicity/zyupload/skins/zyupload-1.0.0.min.css " type="text/css">
-    <script type="text/javascript" src="../../../pluing/publicity/zyupload/zyupload-1.0.0.min.js"></script>
-
-
-    <link rel="stylesheet" href="../../../pluing/jquery-treeview-master/jquery.treeview.css" />
-    <script src="../../../pluing/jquery-treeview-master/demo/jquery.cookie.js" type="text/javascript"></script>
-    <script src="../../../pluing/jquery-treeview-master/jquery.treeview.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="pluing/jquery-treeview-master/jquery.treeview.css" />
+    <script src="pluing/jquery-treeview-master/demo/jquery.cookie.js" type="text/javascript"></script>
+    <script src="pluing/jquery-treeview-master/jquery.treeview.js" type="text/javascript"></script>
 
     <style type="text/css">
         .datagrid-header-rownumber,.datagrid-cell-rownumber{

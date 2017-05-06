@@ -10,17 +10,40 @@
     <result column="MD_STDNAME" jdbcType="VARCHAR" property="mdStdname" />
     <result column="MD_STDCODE" jdbcType="DECIMAL" property="mdStdcode" />
     <result column="MD_LEVEL" jdbcType="DECIMAL" property="mdLevel" />
+    <result column="AREA_LV" jdbcType="VARCHAR" property="areaLv" />
   </resultMap>
   <sql id="Base_Column_List">
     MD_AREA_ID, MD_REF_ID, MD_CREATE_TIME, MD_ALERT_DATE, MD_ALERT_USER, MD_STDNAME, 
-    MD_STDCODE, MD_LEVEL
+    MD_STDCODE, MD_LEVEL,AREA_LV
   </sql>
+  
+  <!--查询数据-->
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from MD_AREA
     where MD_AREA_ID = #{mdAreaId,jdbcType=VARCHAR}
   </select>
+  
+    <!--查询数据通过名字-->
+  <select id="selectByName" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from MD_AREA
+    where MD_STDNAME = #{parentName,jdbcType=VARCHAR} order by  MD_CREATE_TIME ASC
+  </select>
+  
+  
+    <!--通过父节点查询数据-->
+  <select id="selectById" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    *
+    from MD_AREA
+    where MD_REF_ID = #{id,jdbcType=VARCHAR} order by  MD_CREATE_TIME ASC
+  </select>
+  
+  
+  <!--删除数据-->
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from MD_AREA
     where MD_AREA_ID = #{mdAreaId,jdbcType=VARCHAR}
@@ -33,11 +56,16 @@
       #{mdAlertDate,jdbcType=DATE}, #{mdAlertUser,jdbcType=VARCHAR}, #{mdStdname,jdbcType=VARCHAR}, 
       #{mdStdcode,jdbcType=DECIMAL}, #{mdLevel,jdbcType=DECIMAL})
   </insert>
+  
+  <!--添加地址-->
   <insert id="insertSelective" parameterType="com.cn.qd.travel.entity.MDArea">
     insert into MD_AREA
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="mdAreaId != null">
         MD_AREA_ID,
+      </if>
+       <if test="areaLv != null">
+        AREA_LV,
       </if>
       <if test="mdRefId != null">
         MD_REF_ID,
@@ -65,6 +93,9 @@
       <if test="mdAreaId != null">
         #{mdAreaId,jdbcType=VARCHAR},
       </if>
+      <if test="areaLv != null">
+      #{areaLv,jdbcType=VARCHAR},
+      </if>
       <if test="mdRefId != null">
         #{mdRefId,jdbcType=VARCHAR},
       </if>
@@ -88,11 +119,16 @@
       </if>
     </trim>
   </insert>
+  
+  <!--修改数据-->
   <update id="updateByPrimaryKeySelective" parameterType="com.cn.qd.travel.entity.MDArea">
     update MD_AREA
     <set>
       <if test="mdRefId != null">
         MD_REF_ID = #{mdRefId,jdbcType=VARCHAR},
+      </if>
+       <if test="areaLv != null">
+      AREA_LV= #{areaLv,jdbcType=VARCHAR},
       </if>
       <if test="mdCreateTime != null">
         MD_CREATE_TIME = #{mdCreateTime,jdbcType=DATE},

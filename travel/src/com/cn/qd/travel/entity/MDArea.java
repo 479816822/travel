@@ -4,27 +4,43 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 public class MDArea {
-    private String mdAreaId;
+	
+	private String parentName;
+	
+    private String mdAreaId;//主键
 
-    private String mdRefId;
+    private String mdRefId;//父节点
 
-    private Date mdCreateTime;
+    private Date mdCreateTime;//创建时间
 
     private Date mdAlertDate;
 
     private String mdAlertUser;
 
-    private String mdStdname;
+    private String mdStdname;//地址名
 
-    private BigDecimal mdStdcode;
+    private BigDecimal mdStdcode;//地址等级13345
+    
+    private String areaLv;
 
-    private Short mdLevel;
+    private Short mdLevel;//等级州国省市县镇村0123456
 
     public String getMdAreaId() {
         return mdAreaId;
     }
 
-    public void setMdAreaId(String mdAreaId) {
+    
+    public String getAreaLv() {
+		return areaLv;
+	}
+
+
+	public void setAreaLv(String areaLv) {
+		this.areaLv = areaLv;
+	}
+
+
+	public void setMdAreaId(String mdAreaId) {
         this.mdAreaId = mdAreaId == null ? null : mdAreaId.trim();
     }
 
@@ -60,7 +76,19 @@ public class MDArea {
         this.mdAlertUser = mdAlertUser == null ? null : mdAlertUser.trim();
     }
 
-    public String getMdStdname() {
+    
+    
+    public String getParentName() {
+		return parentName;
+	}
+
+
+	public void setParentName(String parentName) {
+		this.parentName = parentName;
+	}
+
+
+	public String getMdStdname() {
         return mdStdname;
     }
 
